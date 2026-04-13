@@ -94,7 +94,7 @@ export default function HeroCarousel() {
       </div>
 
       {/* Slide indicators — larger, spaced out */}
-      <div className="absolute bottom-28 md:bottom-32 left-1/2 -translate-x-1/2 flex items-center gap-3 md:gap-4 z-10">
+      <div className="absolute bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 flex items-center gap-3 md:gap-4 z-10">
         {slides.map((sl, idx) => (
           <button
             key={sl.slug}
@@ -123,13 +123,13 @@ export default function HeroCarousel() {
         animate={{ y: [0, 6, 0] }}
         transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
         aria-label="Scroll down"
-        className="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors duration-500"
+        className="absolute bottom-5 md:bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors duration-500"
       >
-        <span className="relative w-[26px] h-[40px] rounded-full border-2 border-current flex items-start justify-center pt-2">
+        <span className="relative w-[20px] h-[32px] rounded-full border-[1.5px] border-current flex items-start justify-center pt-[6px]">
           <motion.span
-            animate={{ y: [0, 10, 0], opacity: [1, 0.2, 1] }}
+            animate={{ y: [0, 8, 0], opacity: [1, 0.2, 1] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="block w-[3px] h-[7px] rounded-full bg-current"
+            className="block w-[2px] h-[5px] rounded-full bg-current"
           />
         </span>
       </motion.a>

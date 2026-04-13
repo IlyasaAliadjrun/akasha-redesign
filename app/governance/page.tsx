@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { GOVERNANCE_PILLARS, GCG_PRINCIPLES } from "@/lib/investor";
 
 export const metadata = {
@@ -12,30 +11,21 @@ export default function GovernancePage() {
   return (
     <>
       {/* HERO */}
-      <section data-theme="dark" className="relative h-[80svh] min-h-[520px] overflow-hidden bg-ink text-white flex items-end">
-        <Image
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1800&auto=format&fit=crop"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-35"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/80" />
-        <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 pb-20 w-full">
+      <section className="relative h-[100svh] min-h-[760px] bg-white flex items-center">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 w-full">
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/80">
+            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-accent-beverage">
               Good Corporate Governance
             </span>
-            <span className="h-px w-8 bg-white/30" />
-            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/60">
+            <span className="h-px w-8 bg-ink/20" />
+            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/60">
               GCG
             </span>
           </div>
-          <h1 className="text-hero font-extrabold tracking-tightish leading-[1.02] max-w-4xl">
+          <h1 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
             Tata kelola yang menopang kepercayaan.
           </h1>
-          <p className="mt-6 text-subhead text-white/80 max-w-2xl">
+          <p className="mt-6 text-base lg:text-lg text-ink/60 max-w-2xl">
             Komitmen pada lima prinsip — transparansi, akuntabilitas, responsibilitas,
             independensi, dan fairness — dalam setiap keputusan perusahaan.
           </p>

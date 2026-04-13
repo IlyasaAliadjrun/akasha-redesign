@@ -45,13 +45,25 @@ export default function BrandHero({ brand }: { brand: Brand }) {
         </motion.div>
       </div>
 
-      <motion.div
-        animate={{ opacity: [0.3, 1, 0.3], y: [0, 6, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 text-[10px] tracking-[0.3em]"
+      <motion.a
+        href="#next"
+        onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+        }}
+        animate={{ y: [0, 6, 0] }}
+        transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+        aria-label="Scroll down"
+        className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors duration-500"
       >
-        SCROLL
-      </motion.div>
+        <span className="relative w-[20px] h-[32px] rounded-full border-[1.5px] border-current flex items-start justify-center pt-[6px]">
+          <motion.span
+            animate={{ y: [0, 8, 0], opacity: [1, 0.2, 1] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            className="block w-[2px] h-[5px] rounded-full bg-current"
+          />
+        </span>
+      </motion.a>
     </section>
   );
 }

@@ -29,8 +29,8 @@ export default function InvestorPage() {
   return (
     <>
       {/* HERO */}
-      <section className="pt-40 pb-20 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+      <section className="relative h-[100svh] min-h-[760px] bg-white flex items-center">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 w-full">
           <div className="flex items-center gap-3 mb-6">
             <span className="inline-block text-[10px] uppercase tracking-[0.3em] font-bold text-accent-beverage">
               IDX: ADES
@@ -40,10 +40,10 @@ export default function InvestorPage() {
               Since 1994
             </span>
           </div>
-          <h1 className="text-hero font-extrabold tracking-tightish leading-[1.02]">
+          <h1 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
             Investor Centre.
           </h1>
-          <p className="mt-6 text-subhead text-ink/60 max-w-2xl">
+          <p className="mt-6 text-base lg:text-lg text-ink/60 max-w-2xl">
             Performa keuangan, struktur saham, dan keterbukaan informasi untuk
             pemegang saham dan publik.
           </p>

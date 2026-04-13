@@ -75,18 +75,29 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
 
   return (
     <section className="bg-white py-24 lg:py-32">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-10 lg:mb-14 flex items-end justify-between gap-6">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-10 lg:mb-14">
         <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
           Explore the lineup.
         </h2>
-        <Link
-          href="#story"
-          className="hidden md:inline-block text-sm font-semibold transition-opacity duration-300 hover:opacity-60"
-          style={{ color: brand.accentHex }}
-        >
-          Compare all variants ›
-        </Link>
       </div>
+
+      <div className="relative">
+        <button
+          aria-label="Previous"
+          onClick={() => scrollBy(-1)}
+          disabled={!canPrev}
+          className="hidden md:flex absolute left-4 lg:left-6 top-[30%] -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/90 backdrop-blur text-ink shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)] items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-0 disabled:pointer-events-none"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
+        </button>
+        <button
+          aria-label="Next"
+          onClick={() => scrollBy(1)}
+          disabled={!canNext}
+          className="hidden md:flex absolute right-4 lg:right-6 top-[30%] -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/90 backdrop-blur text-ink shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)] items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-0 disabled:pointer-events-none"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 6l6 6-6 6" /></svg>
+        </button>
 
       <div ref={railRef} className="overflow-x-auto no-scrollbar select-none">
         <div className="flex gap-4 lg:gap-5 px-6 lg:px-10 snap-x snap-mandatory pb-2">
@@ -195,26 +206,8 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
           <div className="shrink-0 w-4" />
         </div>
       </div>
-
-      {/* Bottom nav arrows, Apple-style */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mt-10 flex items-center justify-end gap-3">
-        <button
-          aria-label="Previous"
-          onClick={() => scrollBy(-1)}
-          disabled={!canPrev}
-          className="w-11 h-11 rounded-full bg-ink/5 text-ink flex items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-ink/5 disabled:hover:text-ink"
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
-        </button>
-        <button
-          aria-label="Next"
-          onClick={() => scrollBy(1)}
-          disabled={!canNext}
-          className="w-11 h-11 rounded-full bg-ink/5 text-ink flex items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-ink/5 disabled:hover:text-ink"
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 6l6 6-6 6" /></svg>
-        </button>
       </div>
+
     </section>
   );
 }

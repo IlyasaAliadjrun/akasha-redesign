@@ -433,6 +433,12 @@ export const BRANDS: Brand[] = [
     heroImage:
       "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1800&auto=format&fit=crop",
     hero: false,
+    products: [
+      { name: "Botanipedia", variant: "Antioxidant Guide", size: "Digital Content" },
+      { name: "Home Farming", variant: "Starter Guide", size: "Digital Content" },
+      { name: "Botanical Lifestyle", variant: "Weekly Journal", size: "Digital Content" },
+      { name: "Plant-Based Recipes", variant: "Recipe Series", size: "Digital Content" },
+    ],
     reasons: [
       { icon: "🌱", title: "Edukasi antioksidan", body: "Memahami cara melindungi sel dari radikal bebas lewat tanaman sehari-hari." },
       { icon: "🪴", title: "Home farming guide", body: "Mulai kebun kecilmu sendiri — panduan praktis dari pot ke panen." },

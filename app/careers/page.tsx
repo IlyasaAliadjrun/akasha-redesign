@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export const metadata = {
   title: "Careers — Akasha Wira International",
   description: "Bergabung dengan tim yang membangun brand-brand besar Indonesia.",
@@ -8,24 +6,24 @@ export const metadata = {
 export default function CareersPage() {
   return (
     <>
-      <section data-theme="dark" className="relative h-[80svh] min-h-[520px] overflow-hidden bg-accent-beauty text-white flex items-end">
-        <Image
-          src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1800&auto=format&fit=crop"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-50"
-        />
-        <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 pb-20">
-          <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-white/80 mb-4">
-            Careers
+      {/* HERO */}
+      <section className="relative h-[100svh] min-h-[760px] bg-white flex items-center">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 w-full">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-accent-beverage">
+              Careers
+            </span>
+            <span className="h-px w-8 bg-ink/20" />
+            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/60">
+              Join us
+            </span>
           </div>
-          <h1 className="text-hero font-extrabold tracking-tightish leading-[1.02]">
+          <h1 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
             Build what matters.
           </h1>
-          <p className="mt-4 text-subhead text-white/90 max-w-xl">
-            Bangun brand yang dicintai jutaan orang.
+          <p className="mt-6 text-base lg:text-lg text-ink/60 max-w-2xl">
+            Bangun brand yang dicintai jutaan orang bersama tim lintas divisi
+            yang menjunjung kualitas, inovasi, dan dampak positif.
           </p>
         </div>
       </section>
