@@ -93,20 +93,20 @@ export default function HeroCarousel() {
         </AnimatePresence>
       </div>
 
-      {/* Slide indicators — larger, spaced out */}
-      <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-3 md:gap-4 z-10 px-4 max-w-[92vw] flex-wrap justify-center">
+      {/* Slide indicators — smaller on mobile, larger on desktop */}
+      <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 flex items-center gap-1.5 sm:gap-3 md:gap-4 z-10 px-4 max-w-[92vw] flex-wrap justify-center">
         {slides.map((sl, idx) => (
           <button
             key={sl.slug}
             onClick={() => setI(idx)}
             aria-label={`Go to ${sl.name}`}
-            className="group relative h-8 flex items-center justify-center"
+            className="group relative h-6 sm:h-8 flex items-center justify-center"
           >
             <span
               className={`block rounded-full transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                 idx === i
-                  ? "w-10 h-[6px] bg-white"
-                  : "w-[10px] h-[6px] bg-white/35 group-hover:bg-white/70"
+                  ? "w-5 h-[3px] sm:w-10 sm:h-[6px] bg-white"
+                  : "w-[5px] h-[3px] sm:w-[10px] sm:h-[6px] bg-white/35 group-hover:bg-white/70"
               }`}
             />
           </button>
