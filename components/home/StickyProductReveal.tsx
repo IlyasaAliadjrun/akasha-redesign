@@ -40,9 +40,9 @@ export default function StickyProductReveal() {
 
   return (
     <section ref={ref} className="relative bg-[#f2f7fb]" style={{ height: `${steps.length * 100}vh` }}>
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        <div className="max-w-[1400px] mx-auto w-full px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <div className="relative aspect-square w-full max-w-[560px] mx-auto">
+      <div className="sticky top-0 h-[100svh] flex items-center overflow-hidden">
+        <div className="max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center">
+          <div className="relative aspect-square w-full max-w-[clamp(280px,80vw,560px)] lg:max-w-[560px] mx-auto">
             {steps.map((s, i) => {
               const start = i / steps.length;
               const end = (i + 1) / steps.length;
@@ -66,8 +66,8 @@ export default function StickyProductReveal() {
                     src={s.image}
                     alt={s.title}
                     fill
-                    sizes="(min-width:1024px) 560px, 90vw"
-                    className="object-cover rounded-3xl"
+                    sizes="(min-width:1024px) 560px, (min-width:640px) 80vw, 90vw"
+                    className="object-cover rounded-2xl sm:rounded-3xl"
                   />
                 </motion.div>
               );
@@ -100,7 +100,7 @@ export default function StickyProductReveal() {
                   <h3 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
                     {s.title}
                   </h3>
-                  <p className="mt-5 text-lg text-ink/70 max-w-md">{s.body}</p>
+                  <p className="mt-4 sm:mt-5 text-base sm:text-lg text-ink/70 max-w-md">{s.body}</p>
                   {i === steps.length - 1 && (
                     <Link
                       href="/brands/nestle-pure-life"

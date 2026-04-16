@@ -70,8 +70,8 @@ export default function DivisionCards() {
   }, []);
 
   return (
-    <section className="bg-white py-24 lg:py-32">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-12 flex items-end justify-between gap-6">
+    <section className="bg-white py-16 sm:py-20 md:py-24 lg:py-32">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 md:mb-12 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
         <div>
           <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-ink/60 mb-3">
             Five divisions
@@ -104,7 +104,7 @@ export default function DivisionCards() {
         ref={railRef}
         className="overflow-x-auto no-scrollbar select-none"
       >
-        <div className="flex gap-6 px-6 lg:px-10 snap-x snap-mandatory">
+        <div className="flex gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 lg:px-10 snap-x snap-mandatory">
           {DIVISIONS.map((d) => {
             const first = brandsByDivision(d.id)[0];
             return (
@@ -113,14 +113,14 @@ export default function DivisionCards() {
                 data-card
                 href={first ? `/brands/${first.slug}` : "#"}
                 draggable={false}
-                className="snap-start shrink-0 w-[82vw] sm:w-[60vw] md:w-[44vw] lg:w-[30vw] h-[70vh] relative rounded-3xl overflow-hidden group"
+                className="snap-start shrink-0 w-[84vw] sm:w-[58vw] md:w-[42vw] lg:w-[30vw] xl:w-[26vw] max-w-[440px] aspect-[3/4] h-auto max-h-[720px] min-h-[440px] relative rounded-2xl sm:rounded-3xl overflow-hidden group"
               >
                 <Image
                   src={d.image}
                   alt={d.name}
                   fill
                   draggable={false}
-                  sizes="(min-width:1024px) 30vw, 80vw"
+                  sizes="(min-width:1280px) 26vw, (min-width:1024px) 30vw, (min-width:768px) 42vw, (min-width:640px) 58vw, 84vw"
                   className="object-cover transition-transform duration-[1200ms] group-hover:scale-105 pointer-events-none"
                 />
                 <div
@@ -129,18 +129,18 @@ export default function DivisionCards() {
                     background: `linear-gradient(180deg, ${d.accentHex}22 0%, rgba(0,0,0,0.55) 100%)`,
                   }}
                 />
-                <div className="absolute inset-0 p-8 flex flex-col justify-between text-white">
+                <div className="absolute inset-0 p-5 sm:p-6 md:p-7 lg:p-8 flex flex-col justify-between text-white">
                   <div>
                     <div className="text-[10px] uppercase tracking-[0.2em] font-bold">
                       {d.brandCount} {d.brandCount === 1 ? "brand" : "brands"}
                     </div>
                   </div>
                   <div>
-                    <div className="text-4xl md:text-5xl font-extrabold tracking-tightish leading-tight">
+                    <div className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold tracking-tightish leading-tight">
                       {d.name}
                     </div>
-                    <div className="mt-2 text-white/80">{d.tagline}</div>
-                    <div className="mt-6 text-sm font-medium opacity-80 group-hover:opacity-100 transition">
+                    <div className="mt-1.5 sm:mt-2 text-sm sm:text-base text-white/80">{d.tagline}</div>
+                    <div className="mt-4 sm:mt-5 md:mt-6 text-xs sm:text-sm font-medium opacity-80 group-hover:opacity-100 transition">
                       Explore →
                     </div>
                   </div>
@@ -152,7 +152,7 @@ export default function DivisionCards() {
         </div>
       </div>
 
-      <div className="md:hidden max-w-[1400px] mx-auto px-6 mt-6 flex items-center gap-3 justify-end">
+      <div className="md:hidden max-w-[1400px] mx-auto px-4 sm:px-6 mt-6 flex items-center gap-3 justify-end">
         <button
           aria-label="Previous"
           onClick={() => scrollBy(-1)}

@@ -3,6 +3,15 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
+    screens: {
+      xs: "400px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      "3xl": "1920px",
+    },
     extend: {
       fontFamily: {
         sans: ["var(--font-jakarta)", "system-ui", "sans-serif"],
@@ -30,9 +39,13 @@ const config: Config = {
         },
       },
       fontSize: {
-        hero: "clamp(48px, 8vw, 120px)",
-        headline: "clamp(36px, 5vw, 72px)",
-        subhead: "clamp(20px, 2.5vw, 32px)",
+        hero: "clamp(36px, 8vw, 120px)",
+        headline: "clamp(26px, 5vw, 72px)",
+        subhead: "clamp(16px, 2.5vw, 32px)",
+      },
+      maxWidth: {
+        "8xl": "1400px",
+        "9xl": "1600px",
       },
       letterSpacing: {
         tightish: "-0.02em",

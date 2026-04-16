@@ -4,8 +4,8 @@ import { BRANDS } from "@/lib/brands";
 export default function Footer() {
   return (
     <footer className="bg-[#0A0A0A] text-white/70">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-20">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
           <div>
             <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-white mb-4">
               Brands
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-white/50">
+        <div className="mt-10 sm:mt-12 md:mt-16 pt-6 sm:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-white/50">
           <div className="font-extrabold text-white text-lg tracking-tightish">AKASHA</div>
           <div>© 2026 PT Akasha Wira International Tbk · IDX: ADES · Since 1985</div>
         </div>

@@ -40,7 +40,7 @@ export default function HeroCarousel() {
   return (
     <section
       data-theme="dark"
-      className="relative h-[100svh] min-h-[560px] w-full overflow-hidden transition-colors duration-[1500ms]"
+      className="relative h-[100svh] min-h-[clamp(480px,70vh,720px)] max-h-[1100px] w-full overflow-hidden transition-colors duration-[1500ms]"
       style={{ backgroundColor: s.bg }}
     >
       <AnimatePresence mode="wait">
@@ -70,7 +70,7 @@ export default function HeroCarousel() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-6">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 md:px-8">
         <AnimatePresence mode="wait">
           <motion.div
             key={s.slug}
@@ -79,13 +79,13 @@ export default function HeroCarousel() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
           >
-            <h1 className="text-hero font-extrabold tracking-tightish leading-[1.02]">
+            <h1 className="text-hero font-extrabold tracking-tightish leading-[1.02] max-w-[22ch] mx-auto">
               {s.name}
             </h1>
-            <p className="mt-4 text-subhead font-light text-white/85">{s.tag}</p>
+            <p className="mt-3 sm:mt-4 text-subhead font-light text-white/85 max-w-[32ch] mx-auto">{s.tag}</p>
             <Link
               href={s.href}
-              className="mt-10 inline-block text-sm font-semibold px-6 py-3 rounded-full border border-white/80 hover:bg-white hover:text-ink transition-all duration-500 hover:scale-[1.03]"
+              className="mt-6 sm:mt-8 md:mt-10 inline-block text-[13px] sm:text-sm font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/80 hover:bg-white hover:text-ink transition-all duration-500 hover:scale-[1.03]"
             >
               Discover
             </Link>
@@ -94,7 +94,7 @@ export default function HeroCarousel() {
       </div>
 
       {/* Slide indicators — larger, spaced out */}
-      <div className="absolute bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 flex items-center gap-3 md:gap-4 z-10">
+      <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-3 md:gap-4 z-10 px-4 max-w-[92vw] flex-wrap justify-center">
         {slides.map((sl, idx) => (
           <button
             key={sl.slug}

@@ -88,7 +88,7 @@ export default function Navbar() {
             : "bg-transparent border-b border-transparent text-white"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between">
           <Link
             href="/"
             className="font-extrabold tracking-tightish text-lg transition-opacity duration-300 hover:opacity-70"
@@ -184,7 +184,7 @@ export default function Navbar() {
 
       <div
         aria-hidden={!mobileOpen}
-        className={`fixed inset-0 z-40 bg-white text-ink pt-20 px-6 overflow-y-auto transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden ${
+        className={`fixed inset-0 z-40 bg-white text-ink pt-[4.5rem] sm:pt-20 px-4 sm:px-6 overflow-y-auto transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden ${
           mobileOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-4 pointer-events-none"
