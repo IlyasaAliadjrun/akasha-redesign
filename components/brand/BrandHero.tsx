@@ -45,25 +45,58 @@ export default function BrandHero({ brand }: { brand: Brand }) {
         </motion.div>
       </div>
 
-      <motion.a
-        href="#next"
-        onClick={(e) => {
-          e.preventDefault();
-          window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
-        }}
-        animate={{ y: [0, 6, 0] }}
-        transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-        aria-label="Scroll down"
-        className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors duration-500"
-      >
-        <span className="relative w-[20px] h-[32px] rounded-full border-[1.5px] border-current flex items-start justify-center pt-[6px]">
-          <motion.span
-            animate={{ y: [0, 8, 0], opacity: [1, 0.2, 1] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="block w-[2px] h-[5px] rounded-full bg-current"
-          />
-        </span>
-      </motion.a>
+      {/* Scroll indicator — chevron on mobile, mouse on desktop */}
+      <div className="absolute bottom-5 md:bottom-8 left-1/2 -translate-x-1/2 z-10">
+        <motion.a
+          href="#next"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+          }}
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          aria-label="Scroll down"
+          className="flex flex-col items-center gap-1 sm:gap-2 text-white/70 hover:text-white transition-colors duration-500"
+        >
+          {/* Mobile: double chevron */}
+          <span className="sm:hidden flex flex-col items-center -space-y-1.5">
+            <svg
+              width="18"
+              height="10"
+              viewBox="0 0 24 14"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="opacity-50"
+            >
+              <path d="M4 4l8 7 8-7" />
+            </svg>
+            <svg
+              width="18"
+              height="10"
+              viewBox="0 0 24 14"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M4 4l8 7 8-7" />
+            </svg>
+          </span>
+
+          {/* Desktop: mouse icon */}
+          <span className="hidden sm:flex relative w-[20px] h-[32px] rounded-full border-[1.5px] border-current items-start justify-center pt-[6px]">
+            <motion.span
+              animate={{ y: [0, 8, 0], opacity: [1, 0.2, 1] }}
+              transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+              className="block w-[2px] h-[5px] rounded-full bg-current"
+            />
+          </span>
+        </motion.a>
+      </div>
     </section>
   );
 }
