@@ -2,8 +2,7 @@ export type DivisionId =
   | "beverage"
   | "beauty"
   | "professional"
-  | "food"
-  | "wellness";
+  | "food";
 
 export type Brand = {
   slug: string;
@@ -36,7 +35,7 @@ export const DIVISIONS: {
 }[] = [
   {
     id: "beverage",
-    name: "Beverage",
+    name: "Mineral Water",
     tagline: "Purity you can taste",
     brandCount: 2,
     accentHex: "#0066CC",
@@ -63,21 +62,12 @@ export const DIVISIONS: {
   },
   {
     id: "food",
-    name: "Food",
+    name: "Food and Beverage",
     tagline: "Flavors that bring people together",
-    brandCount: 3,
+    brandCount: 4,
     accentHex: "#E85D2C",
     image:
       "https://images.unsplash.com/photo-1635363638580-c2809d049eee?q=80&w=1600&auto=format&fit=crop",
-  },
-  {
-    id: "wellness",
-    name: "Wellness",
-    tagline: "Nature's best, for your best",
-    brandCount: 1,
-    accentHex: "#4A7C59",
-    image:
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1600&auto=format&fit=crop",
   },
 ];
 
@@ -424,7 +414,7 @@ export const BRANDS: Brand[] = [
   {
     slug: "fitmeup",
     name: "Fitmeup",
-    division: "wellness",
+    division: "food",
     tagline: "Botanical inspiration.",
     description:
       "Platform wellness tentang antioksidan, ilmu botani, dan gaya hidup sehat — karena alam menyajikan semuanya untukmu.",

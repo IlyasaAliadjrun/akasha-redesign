@@ -4,17 +4,24 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { BRANDS } from "@/lib/brands";
 
-// Explicit layout: col-span / row-span per brand slug
+// Explicit layout: col-span per brand slug.
+// Brands are rendered in BRANDS order; spans below fill every row of the
+// grid completely (no empty cells).
+//
+// BRANDS order: npl, vica, hair-energy, make-it, makarizo, wonhae, omoide, floaty, fitmeup
+//
+// Mobile (2 cols):  npl(2) | vica(2) | hair(1)+make(1) | makarizo(2) | wonhae(1)+omoide(1) | floaty(1)+fitmeup(1)   → 6 rows
+// md     (12 cols): npl(6)+vica(6) | hair(4)+make(4)+makarizo(4) | wonhae(3)+omoide(3)+floaty(3)+fitmeup(3)          → 3 rows
 const layout: Record<string, string> = {
-  "nestle-pure-life": "sm:col-span-6 md:col-span-8 md:row-span-2",
-  vica: "sm:col-span-3 md:col-span-4 md:row-span-2",
-  "hair-energy": "sm:col-span-3 md:col-span-4 md:row-span-2",
-  "make-it": "sm:col-span-3 md:col-span-4 md:row-span-2",
-  wonhae: "sm:col-span-3 md:col-span-4 md:row-span-2",
-  "makarizo-professional": "sm:col-span-6 md:col-span-12 md:row-span-1",
-  omoide: "sm:col-span-2 md:col-span-4 md:row-span-2",
-  floaty: "sm:col-span-2 md:col-span-4 md:row-span-2",
-  fitmeup: "sm:col-span-2 md:col-span-4 md:row-span-2",
+  "nestle-pure-life":     "col-span-2 md:col-span-6",
+  vica:                   "col-span-2 md:col-span-6",
+  "hair-energy":          "col-span-1 md:col-span-4",
+  "make-it":              "col-span-1 md:col-span-4",
+  "makarizo-professional": "col-span-2 md:col-span-4",
+  wonhae:                 "col-span-1 md:col-span-3",
+  omoide:                 "col-span-1 md:col-span-3",
+  floaty:                 "col-span-1 md:col-span-3",
+  fitmeup:                "col-span-1 md:col-span-3",
 };
 
 export default function BentoGrid() {
@@ -30,7 +37,7 @@ export default function BentoGrid() {
       </div>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-12 auto-rows-[clamp(180px,55vw,260px)] sm:auto-rows-[clamp(180px,26vw,220px)] md:auto-rows-[clamp(180px,15vw,240px)] gap-3 sm:gap-4 md:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-12 auto-rows-[clamp(160px,38vw,220px)] md:auto-rows-[clamp(220px,22vw,320px)] gap-3 sm:gap-4 md:gap-5">
           {BRANDS.map((b, i) => (
             <motion.div
               key={b.slug}
@@ -38,7 +45,7 @@ export default function BentoGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.05, ease: "easeOut" }}
-              className={`relative overflow-hidden group ${layout[b.slug] ?? "md:col-span-4 md:row-span-2"}`}
+              className={`relative overflow-hidden rounded-xl sm:rounded-2xl group ${layout[b.slug] ?? "col-span-1 md:col-span-3"}`}
             >
               <Link href={`/brands/${b.slug}`} className="block w-full h-full relative">
                 <Image

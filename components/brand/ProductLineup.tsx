@@ -74,8 +74,8 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
   if (!items.length) return null;
 
   return (
-    <section className="bg-white py-24 lg:py-32">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-10 lg:mb-14">
+    <section className="bg-white py-16 sm:py-20 md:py-24 lg:py-32">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 lg:mb-14">
         <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
           Explore the lineup.
         </h2>
@@ -86,7 +86,7 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
           aria-label="Previous"
           onClick={() => scrollBy(-1)}
           disabled={!canPrev}
-          className="hidden md:flex absolute left-4 lg:left-6 top-[30%] -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/90 backdrop-blur text-ink shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)] items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-0 disabled:pointer-events-none"
+          className="hidden md:flex absolute left-4 lg:left-6 top-[35%] -translate-y-1/2 z-20 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white/90 backdrop-blur text-ink shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)] items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-0 disabled:pointer-events-none"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
         </button>
@@ -94,13 +94,13 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
           aria-label="Next"
           onClick={() => scrollBy(1)}
           disabled={!canNext}
-          className="hidden md:flex absolute right-4 lg:right-6 top-[30%] -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/90 backdrop-blur text-ink shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)] items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-0 disabled:pointer-events-none"
+          className="hidden md:flex absolute right-4 lg:right-6 top-[35%] -translate-y-1/2 z-20 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white/90 backdrop-blur text-ink shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)] items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-0 disabled:pointer-events-none"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 6l6 6-6 6" /></svg>
         </button>
 
       <div ref={railRef} className="overflow-x-auto no-scrollbar select-none">
-        <div className="flex gap-4 lg:gap-5 px-6 lg:px-10 snap-x snap-mandatory pb-2">
+        <div className="flex gap-3 sm:gap-4 lg:gap-5 px-4 sm:px-6 lg:px-10 snap-x snap-mandatory pb-2">
           {items.map((p, i) => (
             <motion.article
               key={`${p.name}-${p.variant ?? i}`}
@@ -113,11 +113,11 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
                 delay: Math.min(i * 0.04, 0.3),
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="snap-start shrink-0 w-[78vw] sm:w-[46vw] md:w-[34vw] lg:w-[25vw] flex flex-col"
+              className="snap-start shrink-0 w-[72vw] xs:w-[62vw] sm:w-[44vw] md:w-[32vw] lg:w-[24vw] max-w-[320px] flex flex-col"
             >
-              {/* Product stage — big gradient rectangle, Apple-style */}
+              {/* Product stage — gradient square, Apple-style */}
               <div
-                className="relative aspect-[4/5] rounded-3xl overflow-hidden flex items-center justify-center group"
+                className="relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden flex items-center justify-center group"
                 style={{
                   background: `linear-gradient(180deg, ${brand.accentHex}1f 0%, ${brand.accentHex}08 55%, #f5f5f7 100%)`,
                 }}
@@ -136,19 +136,19 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
                 </div>
                 {/* Word mark watermark as stand-in product "image" */}
                 <div
-                  className="relative text-center px-6 transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1"
+                  className="relative text-center px-4 sm:px-5 w-full transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1"
                   style={{ color: brand.accentHex }}
                 >
-                  <div className="text-xs uppercase tracking-[0.3em] font-bold opacity-60 mb-2">
+                  <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] font-bold opacity-60 mb-1.5 sm:mb-2 truncate">
                     {brand.name}
                   </div>
-                  <div className="text-4xl lg:text-5xl font-extrabold tracking-tightish leading-[1.05]">
+                  <div className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-extrabold tracking-tightish leading-[1.05] break-words hyphens-auto">
                     {p.variant ?? p.name}
                   </div>
                 </div>
 
                 {/* Dots (mimic Apple's color swatches) */}
-                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
+                <div className="absolute bottom-4 sm:bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
                   {[0, 1, 2, 3].map((d) => (
                     <span
                       key={d}
@@ -163,26 +163,26 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
               </div>
 
               {/* Meta */}
-              <div className="pt-8 text-center">
-                <h3 className="text-[22px] lg:text-[26px] font-extrabold tracking-tightish leading-tight">
+              <div className="pt-5 sm:pt-6 md:pt-7 text-center px-2">
+                <h3 className="text-[17px] sm:text-[19px] lg:text-[22px] font-extrabold tracking-tightish leading-tight break-words">
                   {p.name}
                   {p.variant && (
-                    <span className="block text-ink/55 font-light text-[17px] mt-1">
+                    <span className="block text-ink/55 font-light text-[14px] sm:text-[15px] lg:text-[16px] mt-0.5 sm:mt-1">
                       {p.variant}
                     </span>
                   )}
                 </h3>
                 {p.size && (
-                  <div className="mt-3 text-sm text-ink/55">{p.size}</div>
+                  <div className="mt-2 sm:mt-2.5 text-xs sm:text-sm text-ink/55">{p.size}</div>
                 )}
               </div>
 
               {/* CTAs */}
-              <div className="pt-6 flex items-center justify-center gap-3">
+              <div className="pt-4 sm:pt-5 flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
                 <Link
                   href="#story"
                   draggable={false}
-                  className="text-sm font-semibold px-5 py-2.5 rounded-full border transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.97]"
+                  className="text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.97]"
                   style={{
                     borderColor: brand.accentHex,
                     color: brand.accentHex,
@@ -195,7 +195,7 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
                   target="_blank"
                   rel="noreferrer"
                   draggable={false}
-                  className="text-sm font-semibold px-5 py-2.5 rounded-full text-white transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.97]"
+                  className="text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-white transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.97]"
                   style={{ backgroundColor: brand.accentHex }}
                 >
                   Buy

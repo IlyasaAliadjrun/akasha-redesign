@@ -129,20 +129,13 @@ export default function DivisionCards() {
                     background: `linear-gradient(180deg, ${d.accentHex}22 0%, rgba(0,0,0,0.55) 100%)`,
                   }}
                 />
-                <div className="absolute inset-0 p-5 sm:p-6 md:p-7 lg:p-8 flex flex-col justify-between text-white">
-                  <div>
-                    <div className="text-[10px] uppercase tracking-[0.2em] font-bold">
-                      {d.brandCount} {d.brandCount === 1 ? "brand" : "brands"}
-                    </div>
+                <div className="absolute inset-0 p-5 sm:p-6 md:p-7 lg:p-8 flex flex-col justify-end text-white">
+                  <div className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold tracking-tightish leading-tight">
+                    {d.name}
                   </div>
-                  <div>
-                    <div className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold tracking-tightish leading-tight">
-                      {d.name}
-                    </div>
-                    <div className="mt-1.5 sm:mt-2 text-sm sm:text-base text-white/80">{d.tagline}</div>
-                    <div className="mt-4 sm:mt-5 md:mt-6 text-xs sm:text-sm font-medium opacity-80 group-hover:opacity-100 transition">
-                      Explore →
-                    </div>
+                  <div className="mt-1.5 sm:mt-2 text-sm sm:text-base text-white/80">{d.tagline}</div>
+                  <div className="mt-4 sm:mt-5 md:mt-6 text-xs sm:text-sm font-medium opacity-80 group-hover:opacity-100 transition">
+                    Explore →
                   </div>
                 </div>
               </Link>
