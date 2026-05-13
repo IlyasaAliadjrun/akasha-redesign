@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FACILITIES } from "@/lib/company";
 
 export const metadata = {
   title: "About — Akasha Wira International",
@@ -45,15 +46,6 @@ const COMMISSIONERS = [
 const DIRECTORS = [
   { name: "Wihardjo Hadiseputro", role: "President Director" },
   { name: "Fany Soegiarto", role: "Director" },
-];
-
-const FACILITIES = [
-  { type: "Head Office", location: "Jakarta Selatan", detail: "Jl. TB. Simatupang Kav. 89" },
-  { type: "Distribution Hub", location: "Jakarta Timur", detail: "Jl. Pulo Lentut Kav. E.5.a" },
-  { type: "Production Site", location: "Cibinong, Bogor", detail: "Manufacturing facility" },
-  { type: "Production Site", location: "Gunung Putri, Bogor", detail: "Manufacturing facility" },
-  { type: "Production Site", location: "Pasuruan, Jawa Timur", detail: "Manufacturing facility" },
-  { type: "Production Site", location: "Sukabumi, Jawa Barat", detail: "Manufacturing facility" },
 ];
 
 export default function AboutPage() {
