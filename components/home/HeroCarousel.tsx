@@ -36,6 +36,8 @@ export default function HeroCarousel() {
   }, []);
 
   const s = slides[i];
+  const prev = () => setI((v) => (v - 1 + slides.length) % slides.length);
+  const next = () => setI((v) => (v + 1) % slides.length);
 
   return (
     <section
@@ -91,6 +93,56 @@ export default function HeroCarousel() {
             </Link>
           </motion.div>
         </AnimatePresence>
+      </div>
+
+      {/* Prev / Next arrows — responsive, vertically centered, animated */}
+      <div className="absolute left-2 sm:left-4 md:left-8 lg:left-12 top-1/2 -translate-y-1/2 z-20">
+        <motion.button
+          onClick={prev}
+          aria-label="Previous slide"
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.9 }}
+          className="block p-2 sm:p-3 md:p-4 text-white hover:text-white/50 focus:text-white/50 focus:outline-none transition-colors duration-300"
+        >
+          <motion.svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+            animate={{ x: [0, -4, 0], opacity: [0.85, 1, 0.85] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            className="w-7 h-10 sm:w-10 sm:h-16 md:w-12 md:h-20 lg:w-14 lg:h-24 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+          >
+            <polyline points="15 5 8 12 15 19" />
+          </motion.svg>
+        </motion.button>
+      </div>
+      <div className="absolute right-2 sm:right-4 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 z-20">
+        <motion.button
+          onClick={next}
+          aria-label="Next slide"
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.9 }}
+          className="block p-2 sm:p-3 md:p-4 text-white hover:text-white/50 focus:text-white/50 focus:outline-none transition-colors duration-300"
+        >
+          <motion.svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+            animate={{ x: [0, 4, 0], opacity: [0.85, 1, 0.85] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            className="w-7 h-10 sm:w-10 sm:h-16 md:w-12 md:h-20 lg:w-14 lg:h-24 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+          >
+            <polyline points="9 5 16 12 9 19" />
+          </motion.svg>
+        </motion.button>
       </div>
 
       {/* Slide indicators — single row, smaller on mobile */}
