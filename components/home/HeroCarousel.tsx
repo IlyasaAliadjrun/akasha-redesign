@@ -86,7 +86,7 @@ export default function HeroCarousel() {
   return (
     <section
       data-theme="dark"
-      className="relative h-[75svh] sm:h-[100svh] min-h-[400px] sm:min-h-[clamp(480px,70vh,720px)] max-h-[1100px] w-full overflow-hidden transition-colors duration-[1500ms]"
+      className="relative h-[50svh] sm:h-[100svh] min-h-[300px] sm:min-h-[clamp(480px,70vh,720px)] max-h-[1100px] w-full overflow-hidden transition-colors duration-[1500ms]"
       style={{ backgroundColor: s.bg }}
     >
       <AnimatePresence mode="wait">
@@ -103,7 +103,7 @@ export default function HeroCarousel() {
             alt={s.name}
             fill
             priority
-            className="object-contain sm:object-cover"
+            className="object-cover object-right sm:object-center"
             sizes="100vw"
           />
         </motion.div>
@@ -111,13 +111,13 @@ export default function HeroCarousel() {
 
       <div className="relative z-10 h-full flex flex-col items-start justify-end sm:justify-center text-left text-white pl-6 sm:pl-20 md:pl-28 lg:pl-36 pr-6 sm:pr-10 md:pr-16 lg:pr-24 pb-28 sm:pb-0">
         <div className="max-w-md md:max-w-lg lg:max-w-xl">
-          <h1 className="text-[clamp(22px,3.6vw,52px)] font-extrabold tracking-tightish leading-[1.05] max-w-[14ch]">
+          <h1 className="text-[clamp(16px,3.6vw,52px)] font-extrabold tracking-tightish leading-[1.05] max-w-[14ch]">
             {s.name}
           </h1>
-          <p className="mt-3 sm:mt-4 text-[clamp(12px,1.2vw,17px)] font-light text-white/85">{s.tag}</p>
+          <p className="mt-2 sm:mt-4 max-w-[22ch] sm:max-w-none text-[clamp(10px,1.2vw,17px)] font-light text-white/85">{s.tag}</p>
           <Link
             href={s.href}
-            className="mt-6 sm:mt-8 md:mt-10 inline-block text-[13px] sm:text-sm font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/80 hover:bg-white hover:text-ink transition-all duration-500 hover:scale-[1.03]"
+            className="mt-4 sm:mt-8 md:mt-10 inline-block text-[11px] sm:text-sm font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-white/80 hover:bg-white hover:text-ink transition-all duration-500 hover:scale-[1.03]"
           >
             Discover
           </Link>
@@ -125,7 +125,7 @@ export default function HeroCarousel() {
       </div>
 
       {/* Prev / Next arrows — responsive, vertically centered, animated */}
-      <div className="absolute left-2 sm:left-4 md:left-8 lg:left-12 top-1/2 -translate-y-1/2 z-20">
+      <div className="hidden sm:block absolute left-2 sm:left-4 md:left-8 lg:left-12 top-1/2 -translate-y-1/2 z-20">
         <motion.button
           onClick={prev}
           aria-label="Previous slide"
@@ -149,7 +149,7 @@ export default function HeroCarousel() {
           </motion.svg>
         </motion.button>
       </div>
-      <div className="absolute right-2 sm:right-4 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 z-20">
+      <div className="hidden sm:block absolute right-2 sm:right-4 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 z-20">
         <motion.button
           onClick={next}
           aria-label="Next slide"

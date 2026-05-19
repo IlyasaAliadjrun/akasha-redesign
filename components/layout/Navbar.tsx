@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MegaMenu from "./MegaMenu";
 
 const NAV_LINKS = [
@@ -47,6 +47,22 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [brandsHover, setBrandsHover] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const closeBrandsTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openBrands = () => {
+    if (closeBrandsTimer.current) clearTimeout(closeBrandsTimer.current);
+    setBrandsHover(true);
+    setMenuOpen(true);
+  };
+
+  // Delay close so the cursor has time to travel from button to dropdown panel.
+  const scheduleCloseBrands = () => {
+    if (closeBrandsTimer.current) clearTimeout(closeBrandsTimer.current);
+    closeBrandsTimer.current = setTimeout(() => {
+      setBrandsHover(false);
+      setMenuOpen(false);
+    }, 150);
+  };
 
   // Sample sections with data-theme="dark" to decide if navbar sits over a dark area
   useEffect(() => {
@@ -109,7 +125,7 @@ export default function Navbar() {
               width={240}
               height={72}
               priority
-              className="h-9 sm:h-11 md:h-14 lg:h-16 w-auto"
+              className="h-12 sm:h-14 md:h-[72px] lg:h-[84px] w-auto"
             />
           </Link>
 
@@ -117,11 +133,9 @@ export default function Navbar() {
             <NavLink href="/about">About</NavLink>
 
             <button
-              onMouseEnter={() => {
-                setBrandsHover(true);
-                setMenuOpen(true);
-              }}
-              onFocus={() => setMenuOpen(true)}
+              onMouseEnter={openBrands}
+              onMouseLeave={scheduleCloseBrands}
+              onFocus={openBrands}
               className="relative group text-sm font-medium transition-opacity duration-300 opacity-80 hover:opacity-100"
             >
               <span className="relative inline-flex items-center gap-1.5">
@@ -186,11 +200,8 @@ export default function Navbar() {
         </div>
 
         <div
-          onMouseEnter={() => setMenuOpen(true)}
-          onMouseLeave={() => {
-            setMenuOpen(false);
-            setBrandsHover(false);
-          }}
+          onMouseEnter={openBrands}
+          onMouseLeave={scheduleCloseBrands}
           className={`hidden lg:block overflow-hidden transition-[max-height,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
             menuOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
           }`}

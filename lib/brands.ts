@@ -82,10 +82,10 @@ export const BRANDS: Brand[] = [
       "https://images.unsplash.com/photo-1564419320461-6870880221ad?q=80&w=1800&auto=format&fit=crop",
     hero: true,
     products: [
-      { name: "Pure Life", variant: "330 mL", size: "24 pack / dus" },
-      { name: "Pure Life", variant: "600 mL", size: "24 pack / dus" },
-      { name: "Pure Life", variant: "1500 mL", size: "12 pack / dus" },
-      { name: "Pure Life", variant: "Galon", size: "15 L" },
+      { name: "Pure Life", variant: "330 mL", size: "24 pack / dus", image: "/foto_sku/NPL/330 NPL.jpg" },
+      { name: "Pure Life", variant: "600 mL", size: "24 pack / dus", image: "/foto_sku/NPL/600 NPL.jpg" },
+      { name: "Pure Life", variant: "1500 mL", size: "12 pack / dus", image: "/foto_sku/NPL/1500 NPL.jpg" },
+      { name: "Pure Life", variant: "Galon", size: "15 L", image: "/foto_sku/NPL/15L NPL.jpg" },
     ],
     reasons: [
       { icon: "💧", title: "Dimurnikan 12 tahap", body: "Setiap botol melewati proses penyaringan berlapis sebelum sampai ke tanganmu." },

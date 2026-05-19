@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -115,51 +116,54 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
               }}
               className="snap-start shrink-0 w-[72vw] xs:w-[62vw] sm:w-[44vw] md:w-[32vw] lg:w-[24vw] max-w-[320px] flex flex-col"
             >
-              {/* Product stage — gradient square, Apple-style */}
+              {/* Product stage — elevated card with subtle accent wash */}
               <div
-                className="relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden flex items-center justify-center group"
-                style={{
-                  background: `linear-gradient(180deg, ${brand.accentHex}1f 0%, ${brand.accentHex}08 55%, #f5f5f7 100%)`,
-                }}
+                className="relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden flex items-center justify-center group bg-white shadow-[0_10px_30px_-12px_rgba(0,0,0,0.18),0_4px_10px_-4px_rgba(0,0,0,0.08)] ring-1 ring-black/[0.04] transition-shadow duration-500 hover:shadow-[0_20px_45px_-12px_rgba(0,0,0,0.25),0_8px_16px_-6px_rgba(0,0,0,0.12)]"
               >
-                {/* Soft glow */}
+                {/* Soft accent wash behind the product */}
                 <div
-                  className="absolute inset-0 flex items-center justify-center"
+                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
                   aria-hidden
                 >
                   <div
-                    className="w-[70%] aspect-square rounded-full blur-3xl opacity-70 transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+                    className="w-[75%] aspect-square rounded-full blur-3xl opacity-50 transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
                     style={{
-                      background: `radial-gradient(circle, ${brand.accentHex}80, transparent 65%)`,
+                      background: `radial-gradient(circle, ${brand.accentHex}55, transparent 65%)`,
                     }}
                   />
                 </div>
-                {/* Word mark watermark as stand-in product "image" */}
-                <div
-                  className="relative text-center px-4 sm:px-5 w-full transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1"
-                  style={{ color: brand.accentHex }}
-                >
-                  <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] font-bold opacity-60 mb-1.5 sm:mb-2 truncate">
-                    {brand.name}
+                {/* Product image if provided; otherwise show a placeholder. */}
+                {p.image ? (
+                  <Image
+                    src={p.image}
+                    alt={`${p.name}${p.variant ? ` ${p.variant}` : ""}`}
+                    fill
+                    sizes="(min-width:1024px) 24vw, (min-width:640px) 44vw, 72vw"
+                    className="object-contain p-6 sm:p-8 md:p-10 transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1"
+                  />
+                ) : (
+                  <div className="relative flex flex-col items-center justify-center gap-2 sm:gap-3 text-ink/35 transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1">
+                    <svg
+                      width="44"
+                      height="44"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden
+                      className="opacity-70"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <path d="M21 15l-5-5L5 21" />
+                    </svg>
+                    <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-semibold">
+                      Product image
+                    </span>
                   </div>
-                  <div className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-extrabold tracking-tightish leading-[1.05] break-words hyphens-auto">
-                    {p.variant ?? p.name}
-                  </div>
-                </div>
-
-                {/* Dots (mimic Apple's color swatches) */}
-                <div className="absolute bottom-4 sm:bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
-                  {[0, 1, 2, 3].map((d) => (
-                    <span
-                      key={d}
-                      className="w-1.5 h-1.5 rounded-full"
-                      style={{
-                        backgroundColor:
-                          d === 0 ? brand.accentHex : `${brand.accentHex}40`,
-                      }}
-                    />
-                  ))}
-                </div>
+                )}
               </div>
 
               {/* Meta */}
