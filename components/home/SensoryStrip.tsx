@@ -1,17 +1,9 @@
 import Image from "next/image";
+import { DIVISIONS } from "@/lib/brands";
 
-const images = [
-  "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1635363638580-c2809d049eee?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop",
-];
-
+// Mirrors One company. Many moments. — same image set and count as DivisionCards.
 export default function SensoryStrip() {
+  const images = DIVISIONS.map((d) => d.image);
   const doubled = [...images, ...images];
   return (
     <section className="bg-white py-12 sm:py-16 md:py-20 overflow-hidden">

@@ -76,8 +76,9 @@ export default function DivisionCards() {
           <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-ink/60 mb-3">
             Five divisions
           </div>
-          <h2 className="text-headline font-extrabold tracking-tightish max-w-3xl">
-            One company. Many moments of your day.
+          <h2 className="text-headline font-extrabold tracking-tightish max-w-5xl">
+            <span className="block whitespace-nowrap">One company.</span>
+            <span className="block whitespace-nowrap">Many moments of your day.</span>
           </h2>
         </div>
         <div className="hidden md:flex items-center gap-3 shrink-0">

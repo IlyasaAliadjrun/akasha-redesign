@@ -2,42 +2,74 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { BRANDS } from "@/lib/brands";
+import { useEffect, useRef, useState } from "react";
 
-// Map brand slug → short tagline for the hero (kept concise, Apple-style)
-const heroCopy: Record<string, { name: string; tag: string; bg: string }> = {
-  "nestle-pure-life": { name: "Nestlé Pure Life", tag: "Segar di setiap tetes.", bg: "#04243d" },
-  "hair-energy": { name: "Hair Energy", tag: "Salon-quality care, at home.", bg: "#3a1324" },
-  wonhae: { name: "Mujigae", tag: "Korean flavors, Indonesian hearts.", bg: "#2b0708" },
-  "make-it": { name: "Make It", tag: "Your scent. Your story.", bg: "#0d0d0d" },
-  omoide: { name: "Omoide", tag: "A bowl of Japanese memories.", bg: "#2a1805" },
-  vica: { name: "VICA", tag: "Mineral alami dari sumbernya.", bg: "#0d2a1a" },
-  "makarizo-professional": { name: "Makarizo Professional", tag: "43 tahun besar bersama salon Indonesia.", bg: "#131313" },
-  floaty: { name: "Floaty", tag: "Literally light. Seriously fun.", bg: "#052a36" },
-  fitmeup: { name: "Fitmeup", tag: "Botanical inspiration.", bg: "#162818" },
-};
+// Hero carousel — one slide per asset in /public/main_banner.
+const slides = [
+  {
+    slug: "nestle-pure-life",
+    name: "Nestlé Pure Life",
+    tag: "Gak dingin tetep seger.",
+    href: "/brands/nestle-pure-life",
+    bg: "#c2185b",
+    image: "/main_banner/main banner NPL.jpg",
+  },
+  {
+    slug: "hair-energy",
+    name: "Makarizo Hair Energy",
+    tag: "Wangi sepanjang hari.",
+    href: "/brands/hair-energy",
+    bg: "#d2691e",
+    image: "/main_banner/main banner HE.jpg",
+  },
+  {
+    slug: "make-it",
+    name: "Make It",
+    tag: "Your scent. Your story.",
+    href: "/brands/make-it",
+    bg: "#1c1c1c",
+    image: "/main_banner/Main banner make it.jpg",
+  },
+  {
+    slug: "barber-daily",
+    name: "Barber Daily",
+    tag: "Barbershop-quality grooming, every day.",
+    href: "/brands/barber-daily",
+    bg: "#2a323d",
+    image: "/main_banner/main banner BD.jpg",
+  },
+];
 
-const slides = BRANDS.map((b) => ({
-  slug: b.slug,
-  name: heroCopy[b.slug]?.name ?? b.name,
-  tag: heroCopy[b.slug]?.tag ?? b.tagline,
-  href: `/brands/${b.slug}`,
-  bg: heroCopy[b.slug]?.bg ?? "#0a0a0a",
-  image: b.heroImage,
-}));
+const AUTO_MS = 5500;
 
 export default function HeroCarousel() {
   const [i, setI] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const startTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(
+      () => setI((v) => (v + 1) % slides.length),
+      AUTO_MS
+    );
+  };
 
   useEffect(() => {
-    const t = setInterval(() => setI((v) => (v + 1) % slides.length), 5500);
-    return () => clearInterval(t);
+    startTimer();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
   }, []);
 
   const s = slides[i];
-  const prev = () => setI((v) => (v - 1 + slides.length) % slides.length);
-  const next = () => setI((v) => (v + 1) % slides.length);
+  const prev = () => {
+    setI((v) => (v - 1 + slides.length) % slides.length);
+    startTimer();
+  };
+  const next = () => {
+    setI((v) => (v + 1) % slides.length);
+    startTimer();
+  };
 
   return (
     <section

@@ -39,8 +39,7 @@ export const DIVISIONS: {
     tagline: "Purity you can taste",
     brandCount: 2,
     accentHex: "#0066CC",
-    image:
-      "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=1600&auto=format&fit=crop",
+    image: "/one_company_many_moments/BU Banner NPL.jpg",
   },
   {
     id: "beauty",
@@ -48,8 +47,7 @@ export const DIVISIONS: {
     tagline: "Confidence, bottled",
     brandCount: 2,
     accentHex: "#C9956B",
-    image:
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1600&auto=format&fit=crop",
+    image: "/one_company_many_moments/BU Banner MKZ HE.png",
   },
   {
     id: "professional",
@@ -57,8 +55,7 @@ export const DIVISIONS: {
     tagline: "43 years of hair mastery",
     brandCount: 1,
     accentHex: "#1A1A1A",
-    image:
-      "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1600&auto=format&fit=crop",
+    image: "/one_company_many_moments/BU Banner MKZ PROF.png",
   },
   {
     id: "food",
@@ -233,6 +230,18 @@ export const BRANDS: Brand[] = [
           "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?q=80&w=1400&auto=format&fit=crop",
       },
     ],
+  },
+  {
+    slug: "barber-daily",
+    name: "Barber Daily",
+    division: "beauty",
+    tagline: "Barbershop-quality grooming, every day.",
+    description:
+      "Grooming essentials untuk pria modern — pomade, beard care, dan rutinitas pasca-cukur ala barbershop di rumah.",
+    accentClass: "bg-brand-bd",
+    accentHex: "#5B6B7F",
+    heroImage: "/main_banner/main banner BD.jpg",
+    hero: false,
   },
   {
     slug: "makarizo-professional",

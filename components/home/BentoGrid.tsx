@@ -2,29 +2,58 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BRANDS } from "@/lib/brands";
+import { BRANDS, getBrand } from "@/lib/brands";
 
-// Explicit layout: col-span per brand slug.
-// Brands are rendered in BRANDS order; spans below fill every row of the
-// grid completely (no empty cells).
-//
-// BRANDS order: npl, vica, hair-energy, make-it, makarizo, wonhae, omoide, floaty, fitmeup
-//
-// Mobile (2 cols):  npl(2) | vica(2) | hair(1)+make(1) | makarizo(2) | wonhae(1)+omoide(1) | floaty(1)+fitmeup(1)   → 6 rows
-// md     (12 cols): npl(6)+vica(6) | hair(4)+make(4)+makarizo(4) | wonhae(3)+omoide(3)+floaty(3)+fitmeup(3)          → 3 rows
+// Render order — brands with banner assets first, then solid-color tiles.
+const ORDER = [
+  "nestle-pure-life",
+  "hair-energy",
+  "make-it",
+  "barber-daily",
+  "makarizo-professional",
+  "vica",
+  "wonhae",
+  "omoide",
+  "floaty",
+  "fitmeup",
+];
+
 const layout: Record<string, string> = {
-  "nestle-pure-life":     "col-span-2 md:col-span-6",
-  vica:                   "col-span-2 md:col-span-6",
-  "hair-energy":          "col-span-1 md:col-span-4",
-  "make-it":              "col-span-1 md:col-span-4",
-  "makarizo-professional": "col-span-2 md:col-span-4",
-  wonhae:                 "col-span-1 md:col-span-3",
-  omoide:                 "col-span-1 md:col-span-3",
-  floaty:                 "col-span-1 md:col-span-3",
-  fitmeup:                "col-span-1 md:col-span-3",
+  "nestle-pure-life":      "col-span-2 md:col-span-6",
+  "hair-energy":           "col-span-2 md:col-span-6",
+  "make-it":               "col-span-1 md:col-span-3",
+  "barber-daily":          "col-span-1 md:col-span-3",
+  "makarizo-professional": "col-span-2 md:col-span-6",
+  vica:                    "col-span-1 md:col-span-3",
+  wonhae:                  "col-span-1 md:col-span-3",
+  omoide:                  "col-span-1 md:col-span-3",
+  floaty:                  "col-span-1 md:col-span-3",
+  fitmeup:                 "col-span-2 md:col-span-12",
+};
+
+// Banner images for the bento (only brands with assets on disk).
+const bentoImage: Record<string, string> = {
+  "nestle-pure-life": "/ten_brands_one_company/Mini NPL.jpg",
+  "hair-energy": "/ten_brands_one_company/Mini HE.jpg",
+  "make-it": "/ten_brands_one_company/Mini banner Make it.jpg",
+  "barber-daily": "/ten_brands_one_company/Mini banner BD.jpg",
+};
+
+// Solid color tiles for brands without an image — matched to artboard.
+const solidColor: Record<string, string> = {
+  "makarizo-professional": "#0F0F0F",
+  vica: "#C9D24A",
+  wonhae: "#C53030",
+  omoide: "#C17817",
+  floaty: "#3FB8E0",
+  fitmeup: "#9B4D9F",
 };
 
 export default function BentoGrid() {
+  const items = ORDER.map((slug) => getBrand(slug)).filter(
+    (b): b is (typeof BRANDS)[number] => Boolean(b)
+  );
+
   return (
     <section className="bg-[#FAFAFA] py-16 sm:py-20 md:py-24 lg:py-32">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 md:mb-12">
@@ -38,36 +67,50 @@ export default function BentoGrid() {
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-2 md:grid-cols-12 auto-rows-[clamp(160px,38vw,220px)] md:auto-rows-[clamp(220px,22vw,320px)] gap-3 sm:gap-4 md:gap-5">
-          {BRANDS.map((b, i) => (
-            <motion.div
-              key={b.slug}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.05, ease: "easeOut" }}
-              className={`relative overflow-hidden rounded-xl sm:rounded-2xl group ${layout[b.slug] ?? "col-span-1 md:col-span-3"}`}
-            >
-              <Link href={`/brands/${b.slug}`} className="block w-full h-full relative">
-                <Image
-                  src={b.heroImage}
-                  alt={b.name}
-                  fill
-                  sizes="(min-width:1280px) 33vw, (min-width:768px) 40vw, (min-width:640px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                <div className="absolute inset-0 p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col justify-end text-white">
-                  <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tightish">
-                    {b.name}
+          {items.map((b, i) => {
+            const img = bentoImage[b.slug];
+            const bg = solidColor[b.slug] ?? b.accentHex;
+            return (
+              <motion.div
+                key={b.slug}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, delay: i * 0.05, ease: "easeOut" }}
+                className={`relative overflow-hidden rounded-xl sm:rounded-2xl group ${layout[b.slug] ?? "col-span-1 md:col-span-3"}`}
+                style={img ? undefined : { backgroundColor: bg }}
+              >
+                <Link
+                  href={`/brands/${b.slug}`}
+                  className="block w-full h-full relative"
+                >
+                  {img ? (
+                    <>
+                      <Image
+                        src={img}
+                        alt={b.name}
+                        fill
+                        sizes="(min-width:1280px) 50vw, (min-width:768px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    </>
+                  ) : null}
+                  <div className="absolute inset-0 p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col justify-end text-white">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tightish">
+                      {b.name}
+                    </div>
+                    <div className="text-xs sm:text-sm text-white/85 mt-1">
+                      {b.tagline}
+                    </div>
+                    <div className="mt-2 sm:mt-3 text-xs opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all">
+                      Explore →
+                    </div>
                   </div>
-                  <div className="text-xs sm:text-sm text-white/80 mt-1">{b.tagline}</div>
-                  <div className="mt-2 sm:mt-3 text-xs opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all">
-                    Explore →
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
