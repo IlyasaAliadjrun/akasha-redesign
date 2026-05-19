@@ -4,31 +4,32 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { BRANDS, getBrand } from "@/lib/brands";
 
-// Render order — brands with banner assets first, then solid-color tiles.
+// Render order — mirrors reference: row 1 (NPL, HE), row 2 (Vica, Make It,
+// Makarizo Pro), row 3 (Wonhae, Floaty, Fitmeup), row 4 (BD, Omoide extras).
 const ORDER = [
   "nestle-pure-life",
   "hair-energy",
+  "vica",
   "make-it",
   "barber-daily",
-  "makarizo-professional",
-  "vica",
   "wonhae",
-  "omoide",
   "floaty",
   "fitmeup",
+  "makarizo-professional",
+  "omoide",
 ];
 
 const layout: Record<string, string> = {
   "nestle-pure-life":      "col-span-2 md:col-span-6",
   "hair-energy":           "col-span-2 md:col-span-6",
-  "make-it":               "col-span-1 md:col-span-3",
-  "barber-daily":          "col-span-1 md:col-span-3",
-  "makarizo-professional": "col-span-2 md:col-span-6",
-  vica:                    "col-span-1 md:col-span-3",
-  wonhae:                  "col-span-1 md:col-span-3",
-  omoide:                  "col-span-1 md:col-span-3",
-  floaty:                  "col-span-1 md:col-span-3",
-  fitmeup:                 "col-span-2 md:col-span-12",
+  vica:                    "col-span-1 md:col-span-4",
+  "make-it":               "col-span-1 md:col-span-4",
+  "barber-daily":          "col-span-2 md:col-span-4",
+  wonhae:                  "col-span-1 md:col-span-4",
+  floaty:                  "col-span-1 md:col-span-4",
+  fitmeup:                 "col-span-2 md:col-span-4",
+  "makarizo-professional": "col-span-1 md:col-span-6",
+  omoide:                  "col-span-1 md:col-span-6",
 };
 
 // Banner images for the bento (only brands with assets on disk).
@@ -38,6 +39,22 @@ const bentoImage: Record<string, string> = {
   "make-it": "/ten_brands_one_company/Mini banner Make it.jpg",
   "barber-daily": "/ten_brands_one_company/Mini banner BD.jpg",
 };
+
+// Object-position per banner. NPL's source places its subjects centered, but
+// HE/Make It/BD banners put the subject on the right side of the artwork — so
+// those need `object-right` (regardless of tile width) to keep the subject in
+// frame. Anything else falls back to a column-width rule: narrow (1/3) tiles
+// also pull right so banners with off-center subjects don't get cropped.
+const bentoObjectPosition: Record<string, string> = {
+  "nestle-pure-life": "object-center",
+  "hair-energy": "object-right",
+  "make-it": "object-right",
+  "barber-daily": "object-right",
+};
+
+const objectPositionFor = (slug: string, layoutClass: string) =>
+  bentoObjectPosition[slug] ??
+  (layoutClass.includes("md:col-span-4") ? "object-right" : "object-center");
 
 // Solid color tiles for brands without an image — matched to artboard.
 const solidColor: Record<string, string> = {
@@ -70,6 +87,7 @@ export default function BentoGrid() {
           {items.map((b, i) => {
             const img = bentoImage[b.slug];
             const bg = solidColor[b.slug] ?? b.accentHex;
+            const layoutClass = layout[b.slug] ?? "col-span-1 md:col-span-3";
             return (
               <motion.div
                 key={b.slug}
@@ -77,7 +95,7 @@ export default function BentoGrid() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.6, delay: i * 0.05, ease: "easeOut" }}
-                className={`relative overflow-hidden rounded-xl sm:rounded-2xl group ${layout[b.slug] ?? "col-span-1 md:col-span-3"}`}
+                className={`relative overflow-hidden rounded-xl sm:rounded-2xl group ${layoutClass}`}
                 style={img ? undefined : { backgroundColor: bg }}
               >
                 <Link
@@ -91,7 +109,7 @@ export default function BentoGrid() {
                         alt={b.name}
                         fill
                         sizes="(min-width:1280px) 50vw, (min-width:768px) 50vw, 100vw"
-                        className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04]"
+                        className={`object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04] ${objectPositionFor(b.slug, layoutClass)}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                     </>

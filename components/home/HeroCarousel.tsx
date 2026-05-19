@@ -5,11 +5,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 // Hero carousel — one slide per asset in /public/main_banner.
+// max-w on the h1 is sized to fit "Nestlé Pure Life" on one line; anything
+// longer (e.g. "Makarizo Hair Energy") wraps naturally to a second line.
 const slides = [
   {
     slug: "nestle-pure-life",
     name: "Nestlé Pure Life",
-    tag: "Gak dingin tetep seger.",
+    tag: "Gak dingin tetep seger",
     href: "/brands/nestle-pure-life",
     bg: "#c2185b",
     image: "/main_banner/main banner NPL.jpg",
@@ -17,7 +19,7 @@ const slides = [
   {
     slug: "hair-energy",
     name: "Makarizo Hair Energy",
-    tag: "Wangi sepanjang hari.",
+    tag: "Wangi sepanjang hari",
     href: "/brands/hair-energy",
     bg: "#d2691e",
     image: "/main_banner/main banner HE.jpg",
@@ -25,7 +27,7 @@ const slides = [
   {
     slug: "make-it",
     name: "Make It",
-    tag: "Your scent. Your story.",
+    tag: "Your scent. Your story",
     href: "/brands/make-it",
     bg: "#1c1c1c",
     image: "/main_banner/Main banner make it.jpg",
@@ -33,10 +35,18 @@ const slides = [
   {
     slug: "barber-daily",
     name: "Barber Daily",
-    tag: "Barbershop-quality grooming, every day.",
+    tag: "Barbershop-quality grooming, every day",
     href: "/brands/barber-daily",
     bg: "#2a323d",
     image: "/main_banner/main banner BD.jpg",
+  },
+  {
+    slug: "wonhae",
+    name: "Wonhae",
+    tag: "Korean flavors, Indonesian hearts",
+    href: "/brands/wonhae",
+    bg: "#a8201a",
+    image: "/main_banner/main banner WONHAE.jpg",
   },
 ];
 
@@ -104,7 +114,7 @@ export default function HeroCarousel() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 md:px-8">
+      <div className="relative z-10 h-full flex flex-col items-start justify-end sm:justify-center text-left text-white pl-6 sm:pl-20 md:pl-28 lg:pl-36 pr-6 sm:pr-10 md:pr-16 lg:pr-24 pb-28 sm:pb-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={s.slug}
@@ -112,11 +122,12 @@ export default function HeroCarousel() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+            className="max-w-md md:max-w-lg lg:max-w-xl"
           >
-            <h1 className="text-hero font-extrabold tracking-tightish leading-[1.02] max-w-[22ch] mx-auto">
+            <h1 className="text-[clamp(22px,3.6vw,52px)] font-extrabold tracking-tightish leading-[1.05] max-w-[14ch]">
               {s.name}
             </h1>
-            <p className="mt-3 sm:mt-4 text-subhead font-light text-white/85 max-w-[32ch] mx-auto">{s.tag}</p>
+            <p className="mt-3 sm:mt-4 text-[clamp(12px,1.2vw,17px)] font-light text-white/85">{s.tag}</p>
             <Link
               href={s.href}
               className="mt-6 sm:mt-8 md:mt-10 inline-block text-[13px] sm:text-sm font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/80 hover:bg-white hover:text-ink transition-all duration-500 hover:scale-[1.03]"

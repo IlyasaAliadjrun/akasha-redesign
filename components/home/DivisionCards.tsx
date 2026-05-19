@@ -81,7 +81,7 @@ export default function DivisionCards() {
             <span className="block whitespace-nowrap">Many moments of your day.</span>
           </h2>
         </div>
-        <div className="hidden md:flex items-center gap-3 shrink-0">
+        <div className="hidden md:flex lg:hidden items-center gap-3 shrink-0">
           <button
             aria-label="Previous"
             onClick={() => scrollBy(-1)}
@@ -103,9 +103,9 @@ export default function DivisionCards() {
 
       <div
         ref={railRef}
-        className="overflow-x-auto no-scrollbar select-none"
+        className="overflow-x-auto lg:overflow-visible no-scrollbar select-none"
       >
-        <div className="flex gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 lg:px-10 snap-x snap-mandatory">
+        <div className="flex lg:grid lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 lg:px-10 snap-x snap-mandatory lg:snap-none max-w-[1400px] mx-auto">
           {DIVISIONS.map((d) => {
             const first = brandsByDivision(d.id)[0];
             return (
@@ -114,7 +114,7 @@ export default function DivisionCards() {
                 data-card
                 href={first ? `/brands/${first.slug}` : "#"}
                 draggable={false}
-                className="snap-start shrink-0 w-[84vw] sm:w-[58vw] md:w-[42vw] lg:w-[30vw] xl:w-[26vw] max-w-[440px] aspect-[3/4] h-auto max-h-[720px] min-h-[440px] relative rounded-2xl sm:rounded-3xl overflow-hidden group"
+                className="snap-start shrink-0 lg:shrink w-[84vw] sm:w-[58vw] md:w-[42vw] lg:w-auto max-w-[440px] lg:max-w-none aspect-[3/4] h-auto max-h-[720px] min-h-[440px] lg:min-h-0 relative rounded-2xl sm:rounded-3xl overflow-hidden group"
               >
                 <Image
                   src={d.image}
@@ -131,11 +131,11 @@ export default function DivisionCards() {
                   }}
                 />
                 <div className="absolute inset-0 p-5 sm:p-6 md:p-7 lg:p-8 flex flex-col justify-end text-white">
-                  <div className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold tracking-tightish leading-tight">
+                  <div className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-extrabold tracking-tightish leading-tight">
                     {d.name}
                   </div>
-                  <div className="mt-1.5 sm:mt-2 text-sm sm:text-base text-white/80">{d.tagline}</div>
-                  <div className="mt-4 sm:mt-5 md:mt-6 text-xs sm:text-sm font-medium opacity-80 group-hover:opacity-100 transition">
+                  <div className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-white/80">{d.tagline}</div>
+                  <div className="mt-3 sm:mt-4 md:mt-5 text-xs font-medium opacity-80 group-hover:opacity-100 transition">
                     Explore →
                   </div>
                 </div>

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -88,12 +89,20 @@ export default function Navbar() {
             : "bg-transparent border-b border-transparent text-white"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 h-14 sm:h-16 md:h-20 lg:h-24 flex items-center justify-between">
           <Link
             href="/"
-            className="font-extrabold tracking-tightish text-lg transition-opacity duration-300 hover:opacity-70"
+            aria-label="Akasha — home"
+            className="inline-flex items-center transition-opacity duration-300 hover:opacity-70"
           >
-            AKASHA
+            <Image
+              src={solid ? "/logo_warna.png" : "/logo_putih.png"}
+              alt="Akasha"
+              width={240}
+              height={72}
+              priority
+              className="h-9 sm:h-11 md:h-14 lg:h-16 w-auto"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -184,7 +193,7 @@ export default function Navbar() {
 
       <div
         aria-hidden={!mobileOpen}
-        className={`fixed inset-0 z-40 bg-white text-ink pt-[4.5rem] sm:pt-20 px-4 sm:px-6 overflow-y-auto transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden ${
+        className={`fixed inset-0 z-40 bg-white text-ink pt-[4.5rem] sm:pt-20 md:pt-24 px-4 sm:px-6 overflow-y-auto transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden ${
           mobileOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-4 pointer-events-none"
