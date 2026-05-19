@@ -36,15 +36,23 @@ function NavLink({
   );
 }
 
+// Routes whose first section is `data-theme="dark"` — used to seed the initial
+// onDark state so the navbar logo paints correctly before the DOM sample runs.
+const startsOnDark = (path: string) =>
+  path === "/" || path.startsWith("/brands/");
+
 export default function Navbar() {
   const pathname = usePathname() || "/";
-  const [onDark, setOnDark] = useState(false);
+  const [onDark, setOnDark] = useState(() => startsOnDark(pathname));
   const [menuOpen, setMenuOpen] = useState(false);
   const [brandsHover, setBrandsHover] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   // Sample sections with data-theme="dark" to decide if navbar sits over a dark area
   useEffect(() => {
+    // Reset to the route's known starting state when pathname changes — avoids
+    // carrying stale onDark across route transitions before the first sample.
+    setOnDark(startsOnDark(pathname));
     const sample = () => {
       const probeY = 32; // just inside the navbar top region
       const darkSections = document.querySelectorAll<HTMLElement>(

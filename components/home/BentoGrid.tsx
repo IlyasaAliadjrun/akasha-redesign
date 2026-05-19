@@ -4,40 +4,39 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { BRANDS, getBrand } from "@/lib/brands";
 
-// Render order — mirrors reference: row 1 (NPL, HE), row 2 (Vica, Make It,
-// Makarizo Pro), row 3 (Wonhae, Floaty, Fitmeup), row 4 (BD, Omoide extras).
+// Render order — mirrors the reference: 6+6 / 3+6+3 / 6+3+3. Vica and Omoide
+// aren't shown in this layout (they remain in lib/brands.ts for brand pages).
 const ORDER = [
   "nestle-pure-life",
   "hair-energy",
-  "vica",
-  "make-it",
   "barber-daily",
   "wonhae",
+  "make-it",
+  "makarizo-professional",
   "floaty",
   "fitmeup",
-  "makarizo-professional",
-  "omoide",
 ];
 
 const layout: Record<string, string> = {
   "nestle-pure-life":      "col-span-2 md:col-span-6",
   "hair-energy":           "col-span-2 md:col-span-6",
-  vica:                    "col-span-1 md:col-span-4",
-  "make-it":               "col-span-1 md:col-span-4",
-  "barber-daily":          "col-span-2 md:col-span-4",
-  wonhae:                  "col-span-1 md:col-span-4",
-  floaty:                  "col-span-1 md:col-span-4",
-  fitmeup:                 "col-span-2 md:col-span-4",
-  "makarizo-professional": "col-span-1 md:col-span-6",
-  omoide:                  "col-span-1 md:col-span-6",
+  "barber-daily":          "col-span-2 md:col-span-3",
+  wonhae:                  "col-span-2 md:col-span-6",
+  "make-it":               "col-span-2 md:col-span-3",
+  "makarizo-professional": "col-span-2 md:col-span-6",
+  floaty:                  "col-span-1 md:col-span-3",
+  fitmeup:                 "col-span-1 md:col-span-3",
 };
 
-// Banner images for the bento (only brands with assets on disk).
+// Banner images for the bento. All assets must come from
+// /public/ten_brands_one_company so this section stays consistent with its
+// dedicated folder. Brands without an asset there fall back to solid color.
 const bentoImage: Record<string, string> = {
   "nestle-pure-life": "/ten_brands_one_company/Mini NPL.jpg",
   "hair-energy": "/ten_brands_one_company/Mini HE.jpg",
   "make-it": "/ten_brands_one_company/Mini banner Make it.jpg",
   "barber-daily": "/ten_brands_one_company/Mini banner BD.jpg",
+  wonhae: "/ten_brands_one_company/Mini banner WONHAE.jpg",
 };
 
 // Object-position per banner. NPL's source places its subjects centered, but
@@ -54,7 +53,9 @@ const bentoObjectPosition: Record<string, string> = {
 
 const objectPositionFor = (slug: string, layoutClass: string) =>
   bentoObjectPosition[slug] ??
-  (layoutClass.includes("md:col-span-4") ? "object-right" : "object-center");
+  (layoutClass.includes("md:col-span-3") || layoutClass.includes("md:col-span-4")
+    ? "object-right"
+    : "object-center");
 
 // Solid color tiles for brands without an image — matched to artboard.
 const solidColor: Record<string, string> = {
@@ -77,7 +78,7 @@ export default function BentoGrid() {
         <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-ink/60 mb-3">
           Our brands
         </div>
-        <h2 className="text-headline font-extrabold tracking-tightish max-w-3xl">
+        <h2 className="text-headline font-extrabold tracking-tightish whitespace-nowrap">
           Ten brands. One family.
         </h2>
       </div>
@@ -103,16 +104,13 @@ export default function BentoGrid() {
                   className="block w-full h-full relative"
                 >
                   {img ? (
-                    <>
-                      <Image
-                        src={img}
-                        alt={b.name}
-                        fill
-                        sizes="(min-width:1280px) 50vw, (min-width:768px) 50vw, 100vw"
-                        className={`object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04] ${objectPositionFor(b.slug, layoutClass)}`}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                    </>
+                    <Image
+                      src={img}
+                      alt={b.name}
+                      fill
+                      sizes="(min-width:1280px) 50vw, (min-width:768px) 50vw, 100vw"
+                      className={`object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04] ${objectPositionFor(b.slug, layoutClass)}`}
+                    />
                   ) : null}
                   <div className="absolute inset-0 p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col justify-end text-white">
                     <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tightish">

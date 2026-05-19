@@ -50,18 +50,21 @@ const slides = [
   },
 ];
 
-const AUTO_MS = 5500;
+const AUTO_MS = 3000;
 
 export default function HeroCarousel() {
   const [i, setI] = useState(0);
+  // Image fade duration. Auto-advance crossfades 0.5s; user-driven changes
+  // (arrows, dots) snap instantly with 0s.
+  const [fadeMs, setFadeMs] = useState(0.5);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const startTimer = () => {
     if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(
-      () => setI((v) => (v + 1) % slides.length),
-      AUTO_MS
-    );
+    timerRef.current = setInterval(() => {
+      setFadeMs(0.5);
+      setI((v) => (v + 1) % slides.length);
+    }, AUTO_MS);
   };
 
   useEffect(() => {
@@ -72,19 +75,18 @@ export default function HeroCarousel() {
   }, []);
 
   const s = slides[i];
-  const prev = () => {
-    setI((v) => (v - 1 + slides.length) % slides.length);
+  const goTo = (idx: number) => {
+    setFadeMs(0);
+    setI(idx);
     startTimer();
   };
-  const next = () => {
-    setI((v) => (v + 1) % slides.length);
-    startTimer();
-  };
+  const prev = () => goTo((i - 1 + slides.length) % slides.length);
+  const next = () => goTo((i + 1) % slides.length);
 
   return (
     <section
       data-theme="dark"
-      className="relative h-[100svh] min-h-[clamp(480px,70vh,720px)] max-h-[1100px] w-full overflow-hidden transition-colors duration-[1500ms]"
+      className="relative h-[75svh] sm:h-[100svh] min-h-[400px] sm:min-h-[clamp(480px,70vh,720px)] max-h-[1100px] w-full overflow-hidden transition-colors duration-[1500ms]"
       style={{ backgroundColor: s.bg }}
     >
       <AnimatePresence mode="wait">
@@ -93,7 +95,7 @@ export default function HeroCarousel() {
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 1.02 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: fadeMs, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0"
         >
           <Image
@@ -101,41 +103,25 @@ export default function HeroCarousel() {
             alt={s.name}
             fill
             priority
-            className="object-cover opacity-60"
+            className="object-contain sm:object-cover"
             sizes="100vw"
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.65) 100%)",
-            }}
           />
         </motion.div>
       </AnimatePresence>
 
       <div className="relative z-10 h-full flex flex-col items-start justify-end sm:justify-center text-left text-white pl-6 sm:pl-20 md:pl-28 lg:pl-36 pr-6 sm:pr-10 md:pr-16 lg:pr-24 pb-28 sm:pb-0">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={s.slug}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-            className="max-w-md md:max-w-lg lg:max-w-xl"
+        <div className="max-w-md md:max-w-lg lg:max-w-xl">
+          <h1 className="text-[clamp(22px,3.6vw,52px)] font-extrabold tracking-tightish leading-[1.05] max-w-[14ch]">
+            {s.name}
+          </h1>
+          <p className="mt-3 sm:mt-4 text-[clamp(12px,1.2vw,17px)] font-light text-white/85">{s.tag}</p>
+          <Link
+            href={s.href}
+            className="mt-6 sm:mt-8 md:mt-10 inline-block text-[13px] sm:text-sm font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/80 hover:bg-white hover:text-ink transition-all duration-500 hover:scale-[1.03]"
           >
-            <h1 className="text-[clamp(22px,3.6vw,52px)] font-extrabold tracking-tightish leading-[1.05] max-w-[14ch]">
-              {s.name}
-            </h1>
-            <p className="mt-3 sm:mt-4 text-[clamp(12px,1.2vw,17px)] font-light text-white/85">{s.tag}</p>
-            <Link
-              href={s.href}
-              className="mt-6 sm:mt-8 md:mt-10 inline-block text-[13px] sm:text-sm font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/80 hover:bg-white hover:text-ink transition-all duration-500 hover:scale-[1.03]"
-            >
-              Discover
-            </Link>
-          </motion.div>
-        </AnimatePresence>
+            Discover
+          </Link>
+        </div>
       </div>
 
       {/* Prev / Next arrows — responsive, vertically centered, animated */}
@@ -157,7 +143,7 @@ export default function HeroCarousel() {
             aria-hidden="true"
             animate={{ x: [0, -4, 0], opacity: [0.85, 1, 0.85] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="w-7 h-10 sm:w-10 sm:h-16 md:w-12 md:h-20 lg:w-14 lg:h-24 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+            className="w-7 h-10 sm:w-10 sm:h-16 md:w-12 md:h-20 lg:w-14 lg:h-24"
           >
             <polyline points="15 5 8 12 15 19" />
           </motion.svg>
@@ -181,7 +167,7 @@ export default function HeroCarousel() {
             aria-hidden="true"
             animate={{ x: [0, 4, 0], opacity: [0.85, 1, 0.85] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="w-7 h-10 sm:w-10 sm:h-16 md:w-12 md:h-20 lg:w-14 lg:h-24 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+            className="w-7 h-10 sm:w-10 sm:h-16 md:w-12 md:h-20 lg:w-14 lg:h-24"
           >
             <polyline points="9 5 16 12 9 19" />
           </motion.svg>
@@ -193,7 +179,7 @@ export default function HeroCarousel() {
         {slides.map((sl, idx) => (
           <button
             key={sl.slug}
-            onClick={() => setI(idx)}
+            onClick={() => goTo(idx)}
             aria-label={`Go to ${sl.name}`}
             className="group relative h-5 sm:h-8 shrink-0 flex items-center justify-center"
           >
