@@ -132,7 +132,7 @@ export default function ScrollFeatureReveal({
         </div>
 
         {/* Brand tag top-left */}
-        <div className="absolute top-20 md:top-14 left-6 lg:left-10 z-10">
+        {/* <div className="absolute top-20 md:top-14 left-6 lg:left-10 z-10">
           <div className="inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] font-bold text-white/80">
             <span
               className="w-2 h-2 rounded-full"
@@ -140,7 +140,7 @@ export default function ScrollFeatureReveal({
             />
             {brandName} · The Story
           </div>
-        </div>
+        </div> */}
 
         {/* Right-side thin progress line */}
         <div className="absolute right-6 lg:right-10 top-1/2 -translate-y-1/2 z-10 hidden md:block">

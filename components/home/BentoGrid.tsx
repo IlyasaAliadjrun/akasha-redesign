@@ -37,6 +37,7 @@ const bentoImage: Record<string, string> = {
   "make-it": "/ten_brands_one_company/Mini banner Make it.jpg",
   "barber-daily": "/ten_brands_one_company/Mini banner BD.jpg",
   wonhae: "/ten_brands_one_company/Mini banner WONHAE.jpg",
+  "makarizo-professional": "/ten_brands_one_company/mini banner MAKPROF.jpg",
 };
 
 // Object-position per banner. NPL's source places its subjects centered, but
@@ -67,6 +68,9 @@ const solidColor: Record<string, string> = {
   fitmeup: "#9B4D9F",
 };
 
+// Tiles whose banner is bright enough to need dark (black) overlay text.
+const darkTextTile = new Set(["wonhae", "makarizo-professional"]);
+
 export default function BentoGrid() {
   const items = ORDER.map((slug) => getBrand(slug)).filter(
     (b): b is (typeof BRANDS)[number] => Boolean(b)
@@ -89,6 +93,7 @@ export default function BentoGrid() {
             const img = bentoImage[b.slug];
             const bg = solidColor[b.slug] ?? b.accentHex;
             const layoutClass = layout[b.slug] ?? "col-span-1 md:col-span-3";
+            const darkText = darkTextTile.has(b.slug);
             return (
               <motion.div
                 key={b.slug}
@@ -112,11 +117,19 @@ export default function BentoGrid() {
                       className={`object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04] ${objectPositionFor(b.slug, layoutClass)}`}
                     />
                   ) : null}
-                  <div className="absolute inset-0 p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col justify-end text-white">
+                  <div
+                    className={`absolute inset-0 p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col justify-end ${
+                      darkText ? "text-ink" : "text-white"
+                    }`}
+                  >
                     <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tightish">
                       {b.name}
                     </div>
-                    <div className="text-xs sm:text-sm text-white/85 mt-1">
+                    <div
+                      className={`text-xs sm:text-sm mt-1 ${
+                        darkText ? "text-ink/70" : "text-white/85"
+                      }`}
+                    >
                       {b.tagline}
                     </div>
                     <div className="mt-2 sm:mt-3 text-xs opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all">

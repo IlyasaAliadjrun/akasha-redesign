@@ -7,7 +7,19 @@ import { useEffect, useRef, useState } from "react";
 // Hero carousel — one slide per asset in /public/main_banner.
 // max-w on the h1 is sized to fit "Nestlé Pure Life" on one line; anything
 // longer (e.g. "Makarizo Hair Energy") wraps naturally to a second line.
-const slides = [
+// `light: true` marks banners that are bright enough to need dark UI (black
+// nav text + colored logo + black hero wording).
+type Slide = {
+  slug: string;
+  name: string;
+  tag: string;
+  href: string;
+  bg: string;
+  image: string;
+  light?: boolean;
+};
+
+const slides: Slide[] = [
   {
     slug: "nestle-pure-life",
     name: "Nestlé Pure Life",
@@ -45,12 +57,22 @@ const slides = [
     name: "Wonhae",
     tag: "Korean flavors, Indonesian hearts",
     href: "/brands/wonhae",
-    bg: "#a8201a",
+    bg: "#f4d04e",
     image: "/main_banner/main banner WONHAE.jpg",
+    light: true,
+  },
+  {
+    slug: "makarizo-professional",
+    name: "Makarizo Professional",
+    tag: "43 tahun besar bersama salon Indonesia",
+    href: "/brands/makarizo-professional",
+    bg: "#e8e8e8",
+    image: "/main_banner/main banner MAKPROF.jpg",
+    light: true,
   },
 ];
 
-const AUTO_MS = 3000;
+const AUTO_MS = 4000;
 
 export default function HeroCarousel() {
   const [i, setI] = useState(0);
@@ -75,6 +97,7 @@ export default function HeroCarousel() {
   }, []);
 
   const s = slides[i];
+  const light = s.light ?? false;
   const goTo = (idx: number) => {
     setFadeMs(0);
     setI(idx);
@@ -85,7 +108,7 @@ export default function HeroCarousel() {
 
   return (
     <section
-      data-theme="dark"
+      data-theme={light ? "light" : "dark"}
       className="relative h-[50svh] sm:h-[100svh] min-h-[300px] sm:min-h-[clamp(480px,70vh,720px)] max-h-[1100px] w-full overflow-hidden transition-colors duration-[1500ms]"
       style={{ backgroundColor: s.bg }}
     >
@@ -109,15 +132,29 @@ export default function HeroCarousel() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 h-full flex flex-col items-start justify-end sm:justify-center text-left text-white pl-6 sm:pl-20 md:pl-28 lg:pl-36 pr-6 sm:pr-10 md:pr-16 lg:pr-24 pb-28 sm:pb-0">
+      <div
+        className={`relative z-10 h-full flex flex-col items-start justify-end sm:justify-center text-left pl-6 sm:pl-20 md:pl-28 lg:pl-36 pr-6 sm:pr-10 md:pr-16 lg:pr-24 pb-28 sm:pb-0 ${
+          light ? "text-ink" : "text-white"
+        }`}
+      >
         <div className="max-w-md md:max-w-lg lg:max-w-xl">
           <h1 className="text-[clamp(16px,3.6vw,52px)] font-extrabold tracking-tightish leading-[1.05] max-w-[14ch]">
             {s.name}
           </h1>
-          <p className="mt-2 sm:mt-4 max-w-[22ch] sm:max-w-none text-[clamp(10px,1.2vw,17px)] font-light text-white/85">{s.tag}</p>
+          <p
+            className={`mt-2 sm:mt-4 max-w-[22ch] sm:max-w-none text-[clamp(10px,1.2vw,17px)] font-light ${
+              light ? "text-ink/80" : "text-white/85"
+            }`}
+          >
+            {s.tag}
+          </p>
           <Link
             href={s.href}
-            className="mt-4 sm:mt-8 md:mt-10 inline-block text-[11px] sm:text-sm font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-white/80 hover:bg-white hover:text-ink transition-all duration-500 hover:scale-[1.03]"
+            className={`mt-4 sm:mt-8 md:mt-10 inline-block text-[11px] sm:text-sm font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full border transition-all duration-500 hover:scale-[1.03] ${
+              light
+                ? "border-ink/70 hover:bg-ink hover:text-white"
+                : "border-white/80 hover:bg-white hover:text-ink"
+            }`}
           >
             Discover
           </Link>
@@ -131,7 +168,11 @@ export default function HeroCarousel() {
           aria-label="Previous slide"
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
-          className="block p-2 sm:p-3 md:p-4 text-white hover:text-white/50 focus:text-white/50 focus:outline-none transition-colors duration-300"
+          className={`block p-2 sm:p-3 md:p-4 focus:outline-none transition-colors duration-300 ${
+            light
+              ? "text-ink hover:text-ink/50 focus:text-ink/50"
+              : "text-white hover:text-white/50 focus:text-white/50"
+          }`}
         >
           <motion.svg
             viewBox="0 0 24 24"
@@ -155,7 +196,11 @@ export default function HeroCarousel() {
           aria-label="Next slide"
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
-          className="block p-2 sm:p-3 md:p-4 text-white hover:text-white/50 focus:text-white/50 focus:outline-none transition-colors duration-300"
+          className={`block p-2 sm:p-3 md:p-4 focus:outline-none transition-colors duration-300 ${
+            light
+              ? "text-ink hover:text-ink/50 focus:text-ink/50"
+              : "text-white hover:text-white/50 focus:text-white/50"
+          }`}
         >
           <motion.svg
             viewBox="0 0 24 24"
@@ -186,8 +231,12 @@ export default function HeroCarousel() {
             <span
               className={`block rounded-full transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                 idx === i
-                  ? "w-4 h-[3px] sm:w-10 sm:h-[6px] bg-white"
-                  : "w-[4px] h-[3px] sm:w-[10px] sm:h-[6px] bg-white/35 group-hover:bg-white/70"
+                  ? `w-4 h-[3px] sm:w-10 sm:h-[6px] ${light ? "bg-ink" : "bg-white"}`
+                  : `w-[4px] h-[3px] sm:w-[10px] sm:h-[6px] ${
+                      light
+                        ? "bg-ink/30 group-hover:bg-ink/60"
+                        : "bg-white/35 group-hover:bg-white/70"
+                    }`
               }`}
             />
           </button>
@@ -205,7 +254,9 @@ export default function HeroCarousel() {
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
           aria-label="Scroll down"
-          className="flex flex-col items-center gap-1 sm:gap-2 text-white/70 hover:text-white transition-colors duration-500"
+          className={`flex flex-col items-center gap-1 sm:gap-2 transition-colors duration-500 ${
+            light ? "text-ink/60 hover:text-ink" : "text-white/70 hover:text-white"
+          }`}
         >
           {/* Mobile: double chevron "scroll" */}
           <span className="sm:hidden flex flex-col items-center -space-y-1.5">

@@ -36,14 +36,22 @@ function NavLink({
   );
 }
 
+// Themed section the navbar currently sits over:
+//   "dark"  → transparent bar, white content (logo putih)
+//   "light" → transparent bar, dark content (logo warna)
+//   null    → solid white bar (body sections), dark content
+type Theme = "dark" | "light" | null;
+
 // Routes whose first section is `data-theme="dark"` — used to seed the initial
-// onDark state so the navbar logo paints correctly before the DOM sample runs.
+// state so the navbar paints correctly before the DOM sample runs.
 const startsOnDark = (path: string) =>
   path === "/" || path.startsWith("/brands/");
 
 export default function Navbar() {
   const pathname = usePathname() || "/";
-  const [onDark, setOnDark] = useState(() => startsOnDark(pathname));
+  const [overTheme, setOverTheme] = useState<Theme>(() =>
+    startsOnDark(pathname) ? "dark" : null
+  );
   const [menuOpen, setMenuOpen] = useState(false);
   const [brandsHover, setBrandsHover] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -64,28 +72,33 @@ export default function Navbar() {
     }, 150);
   };
 
-  // Sample sections with data-theme="dark" to decide if navbar sits over a dark area
+  // Sample which themed section (if any) the navbar sits over.
   useEffect(() => {
     // Reset to the route's known starting state when pathname changes — avoids
-    // carrying stale onDark across route transitions before the first sample.
-    setOnDark(startsOnDark(pathname));
+    // carrying a stale theme across route transitions before the first sample.
+    setOverTheme(startsOnDark(pathname) ? "dark" : null);
     const sample = () => {
       const probeY = 32; // just inside the navbar top region
-      const darkSections = document.querySelectorAll<HTMLElement>(
-        '[data-theme="dark"]'
-      );
-      let over = false;
-      darkSections.forEach((el) => {
+      const themed = document.querySelectorAll<HTMLElement>("[data-theme]");
+      let theme: Theme = null;
+      themed.forEach((el) => {
         const r = el.getBoundingClientRect();
-        if (r.top <= probeY && r.bottom >= probeY) over = true;
+        if (r.top <= probeY && r.bottom >= probeY) {
+          theme = (el.getAttribute("data-theme") as Theme) ?? null;
+        }
       });
-      setOnDark(over);
+      setOverTheme(theme);
     };
     sample();
     window.addEventListener("scroll", sample, { passive: true });
     window.addEventListener("resize", sample);
     const mo = new MutationObserver(sample);
-    mo.observe(document.body, { childList: true, subtree: true });
+    mo.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
     return () => {
       window.removeEventListener("scroll", sample);
       window.removeEventListener("resize", sample);
@@ -99,19 +112,21 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [pathname]);
 
-  // Navbar is solid (light bg, dark text) UNLESS it's sitting over a dark section.
-  // Open menus always force solid for legibility.
+  // Background is solid white only over body sections (no theme) or when a menu
+  // is open. Over the hero — dark OR light slide — the bar stays transparent.
+  // Content (text + logo) goes dark whenever it isn't over a dark section.
   const forcedOpen = menuOpen || brandsHover || mobileOpen;
-  const solid = forcedOpen || !onDark;
+  const navSolid = forcedOpen || overTheme === null;
+  const darkContent = navSolid || overTheme === "light";
 
   return (
     <>
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-[background-color,color,border-color,backdrop-filter] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-          solid
-            ? "bg-white/85 backdrop-blur-xl border-b border-black/5 text-ink"
-            : "bg-transparent border-b border-transparent text-white"
-        }`}
+          navSolid
+            ? "bg-white/85 backdrop-blur-xl border-b border-black/5"
+            : "bg-transparent border-b border-transparent"
+        } ${darkContent ? "text-ink" : "text-white"}`}
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 h-14 sm:h-16 md:h-20 lg:h-24 flex items-center justify-between">
           <Link
@@ -120,7 +135,7 @@ export default function Navbar() {
             className="inline-flex items-center transition-opacity duration-300 hover:opacity-70"
           >
             <Image
-              src={solid ? "/logo_warna.png" : "/logo_putih.png"}
+              src={darkContent ? "/logo_warna.png" : "/logo_putih.png"}
               alt="Akasha"
               width={240}
               height={72}
@@ -173,7 +188,7 @@ export default function Navbar() {
               target="_blank"
               rel="noreferrer"
               className={`hidden lg:inline-flex items-center text-sm font-semibold px-5 py-2 rounded-full border transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.98] ${
-                solid
+                darkContent
                   ? "border-ink/30 text-ink hover:bg-ink hover:text-white hover:border-ink"
                   : "border-white/70 text-white hover:bg-white hover:text-ink hover:border-white"
               }`}
