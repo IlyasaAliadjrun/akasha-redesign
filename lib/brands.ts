@@ -1,13 +1,14 @@
 export type DivisionId =
   | "beverage"
   | "beauty"
-  | "professional"
+  | "mens"
   | "food";
 
 export type Brand = {
   slug: string;
   name: string;
   division: DivisionId;
+  parent?: string; // slug of the parent brand, for sub-brands
   tagline: string;
   description: string;
   accentClass: string; // tailwind bg class
@@ -45,17 +46,17 @@ export const DIVISIONS: {
     id: "beauty",
     name: "Beauty & Personal Care",
     tagline: "Confidence, bottled",
-    brandCount: 2,
+    brandCount: 6,
     accentHex: "#C9956B",
     image: "/one_company_many_moments/BU Banner MKZ HE.png",
   },
   {
-    id: "professional",
-    name: "Professional Salon",
-    tagline: "43 years of hair mastery",
+    id: "mens",
+    name: "Men's Care",
+    tagline: "Groomed, every day",
     brandCount: 1,
-    accentHex: "#1A1A1A",
-    image: "/one_company_many_moments/BU Banner MKZ PROF.png",
+    accentHex: "#5B6B7F",
+    image: "/main_banner/main banner BD.jpg",
   },
   {
     id: "food",
@@ -138,10 +139,63 @@ export const BRANDS: Brand[] = [
       { icon: "🏠", title: "Pilihan rumah tangga", body: "Diproduksi sejak 2011, sudah dipercaya ribuan keluarga." },
     ],
   },
+
+  /* ───────────────── Beauty & Personal Care ───────────────── */
+
+  // 1 — Makarizo (umbrella brand)
+  {
+    slug: "makarizo",
+    name: "Makarizo",
+    division: "beauty",
+    tagline: "Ahli rambut Indonesia.",
+    description:
+      "Rumah bagi rangkaian perawatan rambut & tubuh Makarizo — dari Asters dan Advisor hingga Hair Energy, t1, dan 128.",
+    accentClass: "bg-brand-makarizo",
+    accentHex: "#D4447C",
+    heroImage: "/main_banner/main banner HE.jpg",
+    hero: false,
+    reasons: [
+      { icon: "💇", title: "Lebih dari 40 tahun keahlian rambut", body: "Inovasi perawatan rambut yang tumbuh bersama wanita Indonesia." },
+      { icon: "🧴", title: "Satu rumah, banyak rangkaian", body: "Dari daily care hingga fragrance — semua kebutuhan rambut dalam satu brand." },
+      { icon: "❤️", title: "Dipercaya lintas generasi", body: "Dari salon profesional hingga rutinitas di rumah." },
+    ],
+  },
+  // 1a — Asters
+  {
+    slug: "asters",
+    name: "Asters",
+    division: "beauty",
+    parent: "makarizo",
+    tagline: "Perawatan rambut harian yang lembut.",
+    description:
+      "Rangkaian perawatan rambut harian dari Makarizo untuk rambut sehat, lembut, dan mudah diatur setiap hari.",
+    accentClass: "bg-brand-asters",
+    accentHex: "#7C5CBF",
+    heroImage:
+      "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=1800&auto=format&fit=crop",
+    hero: false,
+  },
+  // 1b — Advisor
+  {
+    slug: "advisor",
+    name: "Advisor",
+    division: "beauty",
+    parent: "makarizo",
+    tagline: "Solusi rambut sehat dan kuat.",
+    description:
+      "Rangkaian Advisor dari Makarizo membantu merawat rambut agar tetap kuat, ternutrisi, dan bebas masalah.",
+    accentClass: "bg-brand-advisor",
+    accentHex: "#3A7BD5",
+    heroImage:
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1800&auto=format&fit=crop",
+    hero: false,
+  },
+  // 1c — Hair Energy
   {
     slug: "hair-energy",
     name: "Hair Energy",
     division: "beauty",
+    parent: "makarizo",
     tagline: "Salon-quality care, at home.",
     description:
       "Perawatan rambut lengkap dari Makarizo Hair Energy — untuk rambut rontok, kering, hingga berminyak.",
@@ -151,14 +205,28 @@ export const BRANDS: Brand[] = [
       "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1800&auto=format&fit=crop",
     hero: true,
     products: [
-      { name: "Scentsations", variant: "Cherry Blossom", size: "Hair & Body Fragrance · 100 mL" },
-      { name: "Scentsations", variant: "White Musk", size: "Hair & Body Fragrance · 100 mL" },
-      { name: "Scentsations", variant: "Fresh Bouquet", size: "Hair & Body Fragrance · 100 mL" },
-      { name: "Fibertherapy", variant: "Royal Jelly", size: "Creambath · 500 mL" },
-      { name: "Fibertherapy", variant: "Kiwi", size: "Creambath · 500 mL" },
-      { name: "Fibertherapy", variant: "Olive", size: "Creambath · 500 mL" },
-      { name: "#EasyStraight", variant: "Strong", size: "Hair Straightening · 120 mL" },
-      { name: "Vitaglitz", variant: "Hair Serum", size: "Revitalizing Care · 8 mL" },
+      { name: "Shampoo", variant: "Active Menthol", size: "Shampoo · 170 mL", image: "/foto_sku/HE/HE Shampoo Active Menthol 170mL.png" },
+      { name: "Shampoo", variant: "Aloe Melon", size: "Shampoo · 170 mL", image: "/foto_sku/HE/HE Shampoo Aloe Melon 170mL.png" },
+      { name: "Shampoo", variant: "Citrus Tea", size: "Shampoo · 170 mL", image: "/foto_sku/HE/HE Shampoo Citrus Tea 170mL.png" },
+      { name: "Shampoo", variant: "Kiwi", size: "Shampoo · 170 mL", image: "/foto_sku/HE/HE Shampoo Kiwi 170mL.png" },
+      { name: "Shampoo", variant: "Olive", size: "Shampoo · 170 mL", image: "/foto_sku/HE/HE Shampoo Olive 170mL.png" },
+      { name: "Shampoo", variant: "Royal Jelly", size: "Shampoo · 170 mL", image: "/foto_sku/HE/HE Shampoo Royal Jelly 170mL.png" },
+      { name: "Creambath", variant: "Aloe Melon", size: "Creambath · 500 mL", image: "/foto_sku/HE/HE Creambath Aloe Melon 500mL.png" },
+      { name: "Creambath", variant: "Ginseng", size: "Creambath · 500 mL", image: "/foto_sku/HE/HE Creambath Ginseng 500mL.png" },
+      { name: "Creambath", variant: "Kiwi", size: "Creambath · 500 mL", image: "/foto_sku/HE/HE Creambath Kiwi 500mL.png" },
+      { name: "Creambath", variant: "Olive", size: "Creambath · 500 mL", image: "/foto_sku/HE/HE Creambath Olive 500mL.png" },
+      { name: "Creambath", variant: "Royal Jelly", size: "Creambath · 500 mL", image: "/foto_sku/HE/HE Creambath Royal Jelly 500mL.png" },
+      { name: "Scentsations", variant: "Amber Wood", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Amber Wood 100mL.png" },
+      { name: "Scentsations", variant: "Blue Coast", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Blue Coast 100mL.png" },
+      { name: "Scentsations", variant: "Cherry Blossoms", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Cherry Blossoms 100mL.png" },
+      { name: "Scentsations", variant: "Emerald Crush", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Emerald Crush 100mL.png" },
+      { name: "Scentsations", variant: "Fresh Bouquet", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Fresh Bouquet 100mL.png" },
+      { name: "Scentsations", variant: "Morning Dew", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Morning Dew 100mL.png" },
+      { name: "Scentsations", variant: "Ocean Breeze", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Ocean Breeze 100mL.png" },
+      { name: "Scentsations", variant: "White Musk", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations White Musk 100mL.png" },
+      { name: "Vitaglitz", variant: "Aloe Melon", size: "Hair Serum · 6×1 mL", image: "/foto_sku/HE/HE Vitaglitz Aloe Melon 6x1mL.png" },
+      { name: "Vitaglitz", variant: "Kiwi", size: "Hair Serum · 6×1 mL", image: "/foto_sku/HE/HE Vitaglitz Kiwi 6x1mL.png" },
+      { name: "Vitaglitz", variant: "Royal Jelly", size: "Hair Serum · 6×1 mL", image: "/foto_sku/HE/HE Vitaglitz Royal Jelly 6x1mL.png" },
     ],
     reasons: [
       { icon: "🌸", title: "Wangi tahan seharian", body: "Formula fragrance yang menempel lembut di rambut dan tubuh." },
@@ -187,6 +255,216 @@ export const BRANDS: Brand[] = [
       },
     ],
   },
+  // 1d — t1
+  {
+    slug: "t1",
+    name: "t1",
+    division: "beauty",
+    parent: "makarizo",
+    tagline: "Styling tanpa batas.",
+    description:
+      "Rangkaian styling t1 dari Makarizo untuk tampilan rambut yang ekspresif, tahan lama, dan mudah dibentuk.",
+    accentClass: "bg-brand-t1",
+    accentHex: "#E07A5F",
+    heroImage:
+      "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1800&auto=format&fit=crop",
+    hero: false,
+  },
+  // 1e — 128
+  {
+    slug: "128",
+    name: "128",
+    division: "beauty",
+    parent: "makarizo",
+    tagline: "Perawatan rambut esensial.",
+    description:
+      "Rangkaian 128 dari Makarizo menghadirkan perawatan rambut esensial dengan formula yang ringan dan terjangkau.",
+    accentClass: "bg-brand-128",
+    accentHex: "#2A9D8F",
+    heroImage:
+      "https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1800&auto=format&fit=crop",
+    hero: false,
+  },
+
+  // 2 — Makarizo Professional
+  {
+    slug: "makarizo-professional",
+    name: "Makarizo Professional",
+    division: "beauty",
+    tagline: "43 tahun besar bersama salon Indonesia.",
+    description:
+      "Brand salon profesional terdepan di Indonesia. Edukasi, komunitas, dan produk untuk para ahli rambut.",
+    accentClass: "bg-brand-makpro",
+    accentHex: "#2C2C2C",
+    heroImage: "/main_banner/main banner MAKPROF.jpg",
+    hero: true,
+    products: [
+      { name: "Concept Ultimax SF3", variant: "Coloring System", size: "Professional Use" },
+      { name: "Rebonding System", variant: "Texturing", size: "Professional Use" },
+      { name: "Hydroprisma", variant: "Texturing", size: "Professional Use" },
+      { name: "Texture Experience", variant: "Treatment", size: "Salon Treatment" },
+      { name: "Honey Dew Nutriv Serum", variant: "Treatment", size: "Salon Care" },
+      { name: "Salon Daily", variant: "Hair Mask", size: "Home Care" },
+      { name: "Salon Daily", variant: "Styling", size: "Home Care" },
+      { name: "Salon Daily", variant: "Hair Care", size: "Home Care" },
+    ],
+    reasons: [
+      { icon: "🏆", title: "43 tahun keahlian", body: "Brand salon profesional paling lama di Indonesia — dipercaya lintas generasi." },
+      { icon: "🎓", title: "Didukung FAME Academy", body: "Edukasi berkelanjutan untuk hairdresser memastikan hasil selalu premium." },
+      { icon: "🎨", title: "Sistem pewarnaan presisi", body: "Concept Ultimax SF3 — warna akurat, konsisten, dan tahan lama." },
+      { icon: "🤝", title: "Komunitas Makarizo Circle", body: "360° salon business support: produk, edukasi, dan jaringan profesional." },
+    ],
+    features: [
+      {
+        title: "Coloring yang presisi",
+        body: "Concept Ultimax SF3 — sistem pewarnaan rambut yang diandalkan profesional.",
+        image:
+          "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?q=80&w=1400&auto=format&fit=crop",
+      },
+      {
+        title: "Texture Experience",
+        body: "Treatment yang mengubah tekstur rambut dengan kelembutan dan kilau salon.",
+        image:
+          "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1400&auto=format&fit=crop",
+      },
+      {
+        title: "FAME Academy",
+        body: "Edukasi berkelanjutan untuk hairdresser — karena ilmu adalah produk terbaik.",
+        image:
+          "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1400&auto=format&fit=crop",
+      },
+    ],
+  },
+  // 2a — Salon Daily
+  {
+    slug: "salon-daily",
+    name: "Salon Daily",
+    division: "beauty",
+    parent: "makarizo-professional",
+    tagline: "Rasa salon, setiap hari.",
+    description:
+      "Rangkaian home care Makarizo Professional untuk menjaga hasil perawatan salon tetap terasa setiap hari.",
+    accentClass: "bg-brand-salondaily",
+    accentHex: "#4A6FA5",
+    heroImage:
+      "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1800&auto=format&fit=crop",
+    hero: false,
+  },
+  // 2b — Honey Dew
+  {
+    slug: "honey-dew",
+    name: "Honey Dew",
+    division: "beauty",
+    parent: "makarizo-professional",
+    tagline: "Nutrisi madu untuk rambut.",
+    description:
+      "Honey Dew Nutriv Serum dari Makarizo Professional menutrisi rambut dengan kelembapan dan kilau alami.",
+    accentClass: "bg-brand-honeydew",
+    accentHex: "#C9A227",
+    heroImage:
+      "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?q=80&w=1800&auto=format&fit=crop",
+    hero: false,
+  },
+  // 2c — Concept Ultimax
+  {
+    slug: "concept-ultimax",
+    name: "Concept Ultimax",
+    division: "beauty",
+    parent: "makarizo-professional",
+    tagline: "Sistem pewarnaan presisi.",
+    description:
+      "Concept Ultimax SF3 — sistem pewarnaan rambut profesional dengan warna akurat, konsisten, dan tahan lama.",
+    accentClass: "bg-brand-ultimax",
+    accentHex: "#5B3A8E",
+    heroImage:
+      "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?q=80&w=1800&auto=format&fit=crop",
+    hero: false,
+  },
+  // 2d — Rebonding System
+  {
+    slug: "rebonding-system",
+    name: "Rebonding System",
+    division: "beauty",
+    parent: "makarizo-professional",
+    tagline: "Rambut lurus sempurna.",
+    description:
+      "Rebonding System Makarizo Professional meluruskan rambut dengan hasil halus, rapi, dan tahan lama.",
+    accentClass: "bg-brand-rebonding",
+    accentHex: "#2C6E7F",
+    heroImage:
+      "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1800&auto=format&fit=crop",
+    hero: false,
+  },
+  // 2e — Texture Experience
+  {
+    slug: "texture-experience",
+    name: "Texture Experience",
+    division: "beauty",
+    parent: "makarizo-professional",
+    tagline: "Tekstur rambut yang hidup.",
+    description:
+      "Texture Experience mengubah tekstur rambut dengan kelembutan dan kilau khas salon profesional.",
+    accentClass: "bg-brand-texture",
+    accentHex: "#B5651D",
+    heroImage:
+      "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1800&auto=format&fit=crop",
+    hero: false,
+  },
+  // 2f — MK3
+  {
+    slug: "mk3",
+    name: "MK3",
+    division: "beauty",
+    parent: "makarizo-professional",
+    tagline: "Performa salon profesional.",
+    description:
+      "MK3 dari Makarizo Professional menghadirkan rangkaian perawatan dengan performa tingkat salon.",
+    accentClass: "bg-brand-mk3",
+    accentHex: "#3D405B",
+    heroImage:
+      "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1800&auto=format&fit=crop",
+    hero: false,
+  },
+
+  // 3 — Inoskin
+  {
+    slug: "inoskin",
+    name: "Inoskin",
+    division: "beauty",
+    tagline: "Science-led skincare.",
+    description:
+      "Perawatan kulit berbasis sains dari Akasha — formula efektif untuk kulit yang sehat, cerah, dan terhidrasi.",
+    accentClass: "bg-brand-inoskin",
+    accentHex: "#2BB8A3",
+    heroImage:
+      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?q=80&w=1800&auto=format&fit=crop",
+    hero: false,
+    reasons: [
+      { icon: "🔬", title: "Formula berbasis sains", body: "Dikembangkan dengan bahan aktif yang teruji untuk hasil nyata." },
+      { icon: "💧", title: "Hidrasi mendalam", body: "Menjaga kelembapan kulit sepanjang hari tanpa terasa berat." },
+      { icon: "🌿", title: "Lembut untuk kulit sensitif", body: "Diformulasikan agar aman dipakai setiap hari." },
+    ],
+  },
+  // 4 — LOU
+  {
+    slug: "lou",
+    name: "LOU",
+    division: "beauty",
+    tagline: "Beauty, your way.",
+    description:
+      "Rangkaian personal care LOU yang memadukan perawatan dan ekspresi diri dalam sentuhan modern.",
+    accentClass: "bg-brand-lou",
+    accentHex: "#B5838D",
+    heroImage:
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1800&auto=format&fit=crop",
+    hero: false,
+    reasons: [
+      { icon: "✨", title: "Tampil sesuai dirimu", body: "Produk yang dirancang untuk mendukung ekspresi diri setiap hari." },
+      { icon: "🪞", title: "Perawatan yang menyenangkan", body: "Rutinitas perawatan yang terasa seperti me-time." },
+      { icon: "🌸", title: "Formula lembut", body: "Dipilih dengan bahan yang ramah di kulit." },
+    ],
+  },
+  // 5 — Make It
   {
     slug: "make-it",
     name: "Make It",
@@ -231,10 +509,31 @@ export const BRANDS: Brand[] = [
       },
     ],
   },
+  // 6 — Finest
+  {
+    slug: "finest",
+    name: "Finest",
+    division: "beauty",
+    tagline: "Crafted to the finest detail.",
+    description:
+      "Rangkaian personal care premium Finest — perawatan dengan kualitas terbaik di setiap detailnya.",
+    accentClass: "bg-brand-finest",
+    accentHex: "#8E7CC3",
+    heroImage:
+      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=1800&auto=format&fit=crop",
+    hero: false,
+    reasons: [
+      { icon: "💎", title: "Kualitas premium", body: "Dibuat dengan bahan pilihan untuk hasil terbaik." },
+      { icon: "🤍", title: "Detail yang diperhatikan", body: "Setiap produk dirancang dengan ketelitian tinggi." },
+      { icon: "🌟", title: "Pengalaman mewah", body: "Perawatan yang terasa istimewa setiap kali digunakan." },
+    ],
+  },
+
+  /* ───────────────── Men's Care ───────────────── */
   {
     slug: "barber-daily",
     name: "Barber Daily",
-    division: "beauty",
+    division: "mens",
     tagline: "Barbershop-quality grooming, every day.",
     description:
       "Grooming essentials untuk pria modern — pomade, beard care, dan rutinitas pasca-cukur ala barbershop di rumah.",
@@ -243,55 +542,8 @@ export const BRANDS: Brand[] = [
     heroImage: "/main_banner/main banner BD.jpg",
     hero: false,
   },
-  {
-    slug: "makarizo-professional",
-    name: "Makarizo Professional",
-    division: "professional",
-    tagline: "43 tahun besar bersama salon Indonesia.",
-    description:
-      "Brand salon profesional terdepan di Indonesia. Edukasi, komunitas, dan produk untuk para ahli rambut.",
-    accentClass: "bg-brand-makpro",
-    accentHex: "#2C2C2C",
-    heroImage:
-      "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1800&auto=format&fit=crop",
-    hero: true,
-    products: [
-      { name: "Concept Ultimax SF3", variant: "Coloring System", size: "Professional Use" },
-      { name: "Rebonding System", variant: "Texturing", size: "Professional Use" },
-      { name: "Hydroprisma", variant: "Texturing", size: "Professional Use" },
-      { name: "Texture Experience", variant: "Treatment", size: "Salon Treatment" },
-      { name: "Honey Dew Nutriv Serum", variant: "Treatment", size: "Salon Care" },
-      { name: "Salon Daily", variant: "Hair Mask", size: "Home Care" },
-      { name: "Salon Daily", variant: "Styling", size: "Home Care" },
-      { name: "Salon Daily", variant: "Hair Care", size: "Home Care" },
-    ],
-    reasons: [
-      { icon: "🏆", title: "43 tahun keahlian", body: "Brand salon profesional paling lama di Indonesia — dipercaya lintas generasi." },
-      { icon: "🎓", title: "Didukung FAME Academy", body: "Edukasi berkelanjutan untuk hairdresser memastikan hasil selalu premium." },
-      { icon: "🎨", title: "Sistem pewarnaan presisi", body: "Concept Ultimax SF3 — warna akurat, konsisten, dan tahan lama." },
-      { icon: "🤝", title: "Komunitas Makarizo Circle", body: "360° salon business support: produk, edukasi, dan jaringan profesional." },
-    ],
-    features: [
-      {
-        title: "Coloring yang presisi",
-        body: "Concept Ultimax SF3 — sistem pewarnaan rambut yang diandalkan profesional.",
-        image:
-          "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?q=80&w=1400&auto=format&fit=crop",
-      },
-      {
-        title: "Texture Experience",
-        body: "Treatment yang mengubah tekstur rambut dengan kelembutan dan kilau salon.",
-        image:
-          "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1400&auto=format&fit=crop",
-      },
-      {
-        title: "FAME Academy",
-        body: "Edukasi berkelanjutan untuk hairdresser — karena ilmu adalah produk terbaik.",
-        image:
-          "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1400&auto=format&fit=crop",
-      },
-    ],
-  },
+
+  /* ───────────────── Food and Beverage ───────────────── */
   {
     slug: "wonhae",
     name: "Wonhae",
@@ -462,5 +714,9 @@ export const BRANDS: Brand[] = [
 
 export const getBrand = (slug: string) => BRANDS.find((b) => b.slug === slug);
 export const heroBrands = () => BRANDS.filter((b) => b.hero);
+// Top-level brands of a division (sub-brands are excluded — reach them via childrenOf).
 export const brandsByDivision = (id: DivisionId) =>
-  BRANDS.filter((b) => b.division === id);
+  BRANDS.filter((b) => b.division === id && !b.parent);
+// Sub-brands that belong to a given parent brand.
+export const childrenOf = (slug: string) =>
+  BRANDS.filter((b) => b.parent === slug);

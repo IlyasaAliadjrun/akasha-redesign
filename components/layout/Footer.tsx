@@ -11,7 +11,7 @@ export default function Footer() {
               Brands
             </div>
             <ul className="space-y-2 text-sm">
-              {BRANDS.map((b) => (
+              {BRANDS.filter((b) => !b.parent).map((b) => (
                 <li key={b.slug}>
                   <Link href={`/brands/${b.slug}`} className="hover:text-white transition">
                     {b.name}

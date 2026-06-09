@@ -74,7 +74,7 @@ export default function DivisionCards() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 md:mb-12 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
         <div>
           <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-ink/60 mb-3">
-            Five divisions
+            Four divisions
           </div>
           <h2 className="text-headline font-extrabold tracking-tightish max-w-5xl">
             <span className="block whitespace-nowrap">One company.</span>
@@ -105,8 +105,8 @@ export default function DivisionCards() {
         ref={railRef}
         className="overflow-x-auto lg:overflow-visible no-scrollbar select-none"
       >
-        <div className="flex lg:grid lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 lg:px-10 snap-x snap-mandatory lg:snap-none max-w-[1400px] mx-auto">
-          {DIVISIONS.map((d) => {
+        <div className="flex lg:grid lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 lg:px-10 snap-x snap-mandatory lg:snap-none max-w-[1400px] mx-auto">
+          {DIVISIONS.filter((d) => d.id !== "mens").map((d) => {
             const first = brandsByDivision(d.id)[0];
             return (
               <Link

@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { DIVISIONS } from "@/lib/brands";
 
-// Mirrors One company. Many moments. — same image set and count as DivisionCards.
+// Mirrors One company. Many moments. — same image set and count as DivisionCards
+// (Men's Care is excluded there too, so keep it out here for consistency).
 export default function SensoryStrip() {
-  const images = DIVISIONS.map((d) => d.image);
+  const images = DIVISIONS.filter((d) => d.id !== "mens").map((d) => d.image);
   const doubled = [...images, ...images];
   return (
     <section className="bg-white py-12 sm:py-16 md:py-20 overflow-hidden">
