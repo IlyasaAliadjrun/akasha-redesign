@@ -44,6 +44,32 @@ a, button {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+/*
+ * Lineup rail alignment — the rail is full-bleed (fills the available width so
+ * cards can scroll past the heading on both sides), but the first/last card
+ * aligns with the centered max-w-[1400px] content gutter. `100%` resolves
+ * against the rail width (page content box), matching the heading's container
+ * exactly at every resolution. --gutter mirrors px-4/6/10.
+ */
+/* Mobile (<640px): symmetric inset so the active card sits centered with a
+   peek of the previous/next card on both sides (pairs with snap-center and the
+   ~80vw card width). */
+.lineup-inset {
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+/* sm+ : align the first/last card to the centered max-w-[1400px] gutter. */
+@media (min-width: 640px) {
+  .lineup-inset {
+    --gutter: 1.5rem;
+    padding-left: max(var(--gutter), calc((100% - 1400px) / 2 + var(--gutter)));
+    padding-right: max(var(--gutter), calc((100% - 1400px) / 2 + var(--gutter)));
+  }
+}
+@media (min-width: 1024px) {
+  .lineup-inset { --gutter: 2.5rem; }
+}
+
 /* Marquee for sensory strip */
 @keyframes marquee {
   from { transform: translateX(0); }

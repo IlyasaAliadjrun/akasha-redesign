@@ -7,8 +7,8 @@ export default function BrandHero({ brand }: { brand: Brand }) {
   return (
     <section
       data-theme="dark"
-      className="relative h-[100svh] min-h-[560px] w-full overflow-hidden"
-      style={{ backgroundColor: brand.accentHex }}
+      className="relative w-full overflow-hidden h-[33svh] min-h-[200px] md:h-[100svh] md:min-h-[560px]"
+      style={{ backgroundColor: brand.bannerBg ?? brand.accentHex }}
     >
       <motion.div
         initial={{ opacity: 0, scale: 1.06 }}
@@ -22,9 +22,9 @@ export default function BrandHero({ brand }: { brand: Brand }) {
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-55"
+          className="object-contain md:object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60" />
+        {/* Dark overlay removed so the brand banner shows at full strength. */}
       </motion.div>
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-6">
@@ -33,20 +33,19 @@ export default function BrandHero({ brand }: { brand: Brand }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3 }}
         >
-          <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-white/70 mb-6">
-            Akasha · {brand.division}
-          </div>
+          {/* Brand name & tagline temporarily commented — branding now lives in the banner asset.
           <h1 className="text-hero font-extrabold tracking-tightish leading-[1.02]">
             {brand.name}
           </h1>
           <p className="mt-4 text-subhead font-light text-white/85 max-w-2xl mx-auto">
             {brand.tagline}
           </p>
+          */}
         </motion.div>
       </div>
 
-      {/* Scroll indicator — chevron on mobile, mouse on desktop */}
-      <div className="absolute bottom-5 md:bottom-8 left-1/2 -translate-x-1/2 z-10">
+      {/* Scroll indicator — desktop only (hidden on mobile) */}
+      <div className="hidden md:block absolute bottom-5 md:bottom-8 left-1/2 -translate-x-1/2 z-10">
         <motion.a
           href="#next"
           onClick={(e) => {

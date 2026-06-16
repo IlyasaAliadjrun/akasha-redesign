@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import type { Brand } from "@/lib/brands";
 
@@ -76,49 +75,55 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
 
   return (
     <section className="bg-white py-16 sm:py-20 md:py-24 lg:py-32">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 lg:mb-14">
-        <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 lg:mb-14 flex items-end justify-center md:justify-between gap-6">
+        <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05] text-center md:text-left">
           Explore the lineup.
         </h2>
+        <div className="hidden md:flex items-center gap-3 shrink-0">
+          <button
+            aria-label="Previous"
+            onClick={() => scrollBy(-1)}
+            disabled={!canPrev}
+            className="w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-ink/5 text-ink flex items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-ink/5 disabled:hover:text-ink"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
+          </button>
+          <button
+            aria-label="Next"
+            onClick={() => scrollBy(1)}
+            disabled={!canNext}
+            className="w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-ink/5 text-ink flex items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-ink/5 disabled:hover:text-ink"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 6l6 6-6 6" /></svg>
+          </button>
+        </div>
       </div>
 
       <div className="relative">
-        <button
-          aria-label="Previous"
-          onClick={() => scrollBy(-1)}
-          disabled={!canPrev}
-          className="hidden md:flex absolute left-4 lg:left-6 top-[35%] -translate-y-1/2 z-20 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white/90 backdrop-blur text-ink shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)] items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-0 disabled:pointer-events-none"
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
-        </button>
-        <button
-          aria-label="Next"
-          onClick={() => scrollBy(1)}
-          disabled={!canNext}
-          className="hidden md:flex absolute right-4 lg:right-6 top-[35%] -translate-y-1/2 z-20 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white/90 backdrop-blur text-ink shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)] items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-0 disabled:pointer-events-none"
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 6l6 6-6 6" /></svg>
-        </button>
-
-      <div ref={railRef} className="overflow-x-auto no-scrollbar select-none">
-        <div className="flex gap-3 sm:gap-4 lg:gap-5 px-4 sm:px-6 lg:px-10 snap-x snap-mandatory pb-2">
-          {items.map((p, i) => (
-            <motion.article
+      <div
+        ref={railRef}
+        className="overflow-x-auto overflow-y-hidden no-scrollbar select-none"
+        style={{ touchAction: "pan-x" }}
+      >
+        <div className="flex gap-3 sm:gap-4 lg:gap-5 lineup-inset snap-x snap-mandatory pb-2">
+          {items.map((p, i) => {
+            // Full single-line product name, e.g.
+            // "Hair Energy Fibertherapy Shampoo Active Menthol 170 mL".
+            const parts = [brand.name];
+            if (p.name && !brand.name.toLowerCase().includes(p.name.toLowerCase()))
+              parts.push(p.name);
+            if (p.variant) parts.push(p.variant);
+            if (p.size) parts.push(p.size);
+            const title = parts.join(" ");
+            return (
+            <article
               key={`${p.name}-${p.variant ?? i}`}
               data-card
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{
-                duration: 0.6,
-                delay: Math.min(i * 0.04, 0.3),
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="snap-start shrink-0 w-[72vw] xs:w-[62vw] sm:w-[44vw] md:w-[32vw] lg:w-[24vw] max-w-[320px] flex flex-col"
+              className="snap-center sm:snap-start shrink-0 w-[80vw] sm:w-[46vw] md:w-[34vw] lg:w-[27vw] max-w-[380px] flex flex-col"
             >
-              {/* Product stage — elevated card with subtle accent wash */}
+              {/* Product stage — frameless, with a subtle accent wash behind the product */}
               <div
-                className="relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden flex items-center justify-center group bg-white shadow-[0_10px_30px_-12px_rgba(0,0,0,0.18),0_4px_10px_-4px_rgba(0,0,0,0.08)] ring-1 ring-black/[0.04] transition-shadow duration-500 hover:shadow-[0_20px_45px_-12px_rgba(0,0,0,0.25),0_8px_16px_-6px_rgba(0,0,0,0.12)]"
+                className="relative aspect-square overflow-hidden flex items-center justify-center group"
               >
                 {/* Soft accent wash behind the product */}
                 <div
@@ -136,10 +141,10 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
                 {p.image ? (
                   <Image
                     src={p.image}
-                    alt={`${p.name}${p.variant ? ` ${p.variant}` : ""}`}
+                    alt={title}
                     fill
-                    sizes="(min-width:1024px) 24vw, (min-width:640px) 44vw, 72vw"
-                    className="object-contain p-6 sm:p-8 md:p-10 transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1"
+                    sizes="(min-width:1024px) 27vw, (min-width:640px) 46vw, 80vw"
+                    className="object-contain p-1 sm:p-2 md:p-3 transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
                   />
                 ) : (
                   <div className="relative flex flex-col items-center justify-center gap-2 sm:gap-3 text-ink/35 transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1">
@@ -166,19 +171,11 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
                 )}
               </div>
 
-              {/* Meta */}
+              {/* Meta — full product name on one line */}
               <div className="pt-5 sm:pt-6 md:pt-7 text-center px-2">
-                <h3 className="text-[17px] sm:text-[19px] lg:text-[22px] font-extrabold tracking-tightish leading-tight break-words">
-                  {p.name}
-                  {p.variant && (
-                    <span className="block text-ink/55 font-light text-[14px] sm:text-[15px] lg:text-[16px] mt-0.5 sm:mt-1">
-                      {p.variant}
-                    </span>
-                  )}
+                <h3 className="text-[15px] sm:text-base lg:text-lg font-bold tracking-tightish leading-snug break-words">
+                  {title}
                 </h3>
-                {p.size && (
-                  <div className="mt-2 sm:mt-2.5 text-xs sm:text-sm text-ink/55">{p.size}</div>
-                )}
               </div>
 
               {/* CTAs */}
@@ -205,11 +202,31 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
                   Buy
                 </a>
               </div>
-            </motion.article>
-          ))}
-          <div className="shrink-0 w-4" />
+            </article>
+            );
+          })}
         </div>
       </div>
+      </div>
+
+      {/* Mobile nav arrows — bottom, since the top-right pair is desktop-only */}
+      <div className="flex md:hidden items-center justify-center gap-3 mt-6 px-4">
+        <button
+          aria-label="Previous"
+          onClick={() => scrollBy(-1)}
+          disabled={!canPrev}
+          className="w-11 h-11 rounded-full bg-ink/5 text-ink flex items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-ink/5 disabled:hover:text-ink"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
+        </button>
+        <button
+          aria-label="Next"
+          onClick={() => scrollBy(1)}
+          disabled={!canNext}
+          className="w-11 h-11 rounded-full bg-ink/5 text-ink flex items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-ink/5 disabled:hover:text-ink"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 6l6 6-6 6" /></svg>
+        </button>
       </div>
 
     </section>

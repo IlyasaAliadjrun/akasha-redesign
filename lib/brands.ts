@@ -14,6 +14,7 @@ export type Brand = {
   accentClass: string; // tailwind bg class
   accentHex: string;
   heroImage: string;
+  bannerBg?: string; // background behind a contained brand banner (hero)
   hero: boolean;
   products?: {
     name: string;
@@ -24,6 +25,11 @@ export type Brand = {
   }[];
   features?: { title: string; body: string; image: string }[];
   reasons?: { icon: string; title: string; body: string }[];
+  about?: { image: string; title: string }[];
+  // Poster-style showcase: a square hero graphic (foto_judul_3d/{brand}) with
+  // variant banners (foto_varian_3d/{brand}) overlapping its bottom edge.
+  // `variants` is optional — not every brand has variant assets.
+  showcase?: { hero: string; variants?: string[] };
 };
 
 export const DIVISIONS: {
@@ -201,32 +207,32 @@ export const BRANDS: Brand[] = [
       "Perawatan rambut lengkap dari Makarizo Hair Energy — untuk rambut rontok, kering, hingga berminyak.",
     accentClass: "bg-brand-he",
     accentHex: "#D4447C",
-    heroImage:
-      "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1800&auto=format&fit=crop",
+    heroImage: "/brand_banner/banner_hair_energy.png",
+    bannerBg: "#F46C22",
     hero: true,
     products: [
-      { name: "Shampoo", variant: "Active Menthol", size: "Shampoo · 170 mL", image: "/foto_sku/HE/HE Shampoo Active Menthol 170mL.png" },
-      { name: "Shampoo", variant: "Aloe Melon", size: "Shampoo · 170 mL", image: "/foto_sku/HE/HE Shampoo Aloe Melon 170mL.png" },
-      { name: "Shampoo", variant: "Citrus Tea", size: "Shampoo · 170 mL", image: "/foto_sku/HE/HE Shampoo Citrus Tea 170mL.png" },
-      { name: "Shampoo", variant: "Kiwi", size: "Shampoo · 170 mL", image: "/foto_sku/HE/HE Shampoo Kiwi 170mL.png" },
-      { name: "Shampoo", variant: "Olive", size: "Shampoo · 170 mL", image: "/foto_sku/HE/HE Shampoo Olive 170mL.png" },
-      { name: "Shampoo", variant: "Royal Jelly", size: "Shampoo · 170 mL", image: "/foto_sku/HE/HE Shampoo Royal Jelly 170mL.png" },
-      { name: "Creambath", variant: "Aloe Melon", size: "Creambath · 500 mL", image: "/foto_sku/HE/HE Creambath Aloe Melon 500mL.png" },
-      { name: "Creambath", variant: "Ginseng", size: "Creambath · 500 mL", image: "/foto_sku/HE/HE Creambath Ginseng 500mL.png" },
-      { name: "Creambath", variant: "Kiwi", size: "Creambath · 500 mL", image: "/foto_sku/HE/HE Creambath Kiwi 500mL.png" },
-      { name: "Creambath", variant: "Olive", size: "Creambath · 500 mL", image: "/foto_sku/HE/HE Creambath Olive 500mL.png" },
-      { name: "Creambath", variant: "Royal Jelly", size: "Creambath · 500 mL", image: "/foto_sku/HE/HE Creambath Royal Jelly 500mL.png" },
-      { name: "Scentsations", variant: "Amber Wood", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Amber Wood 100mL.png" },
-      { name: "Scentsations", variant: "Blue Coast", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Blue Coast 100mL.png" },
-      { name: "Scentsations", variant: "Cherry Blossoms", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Cherry Blossoms 100mL.png" },
-      { name: "Scentsations", variant: "Emerald Crush", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Emerald Crush 100mL.png" },
-      { name: "Scentsations", variant: "Fresh Bouquet", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Fresh Bouquet 100mL.png" },
-      { name: "Scentsations", variant: "Morning Dew", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Morning Dew 100mL.png" },
-      { name: "Scentsations", variant: "Ocean Breeze", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations Ocean Breeze 100mL.png" },
-      { name: "Scentsations", variant: "White Musk", size: "Hair & Body Fragrance · 100 mL", image: "/foto_sku/HE/HE Scentsations White Musk 100mL.png" },
-      { name: "Vitaglitz", variant: "Aloe Melon", size: "Hair Serum · 6×1 mL", image: "/foto_sku/HE/HE Vitaglitz Aloe Melon 6x1mL.png" },
-      { name: "Vitaglitz", variant: "Kiwi", size: "Hair Serum · 6×1 mL", image: "/foto_sku/HE/HE Vitaglitz Kiwi 6x1mL.png" },
-      { name: "Vitaglitz", variant: "Royal Jelly", size: "Hair Serum · 6×1 mL", image: "/foto_sku/HE/HE Vitaglitz Royal Jelly 6x1mL.png" },
+      { name: "Fibertherapy Shampoo", variant: "Active Menthol", size: "170 mL", image: "/foto_sku/HE/HE Shampoo Active Menthol 170mL.png" },
+      { name: "Fibertherapy Shampoo", variant: "Aloe Melon", size: "170 mL", image: "/foto_sku/HE/HE Shampoo Aloe Melon 170mL.png" },
+      { name: "Fibertherapy Shampoo", variant: "Citrus Tea", size: "170 mL", image: "/foto_sku/HE/HE Shampoo Citrus Tea 170mL.png" },
+      { name: "Fibertherapy Shampoo", variant: "Kiwi", size: "170 mL", image: "/foto_sku/HE/HE Shampoo Kiwi 170mL.png" },
+      { name: "Fibertherapy Shampoo", variant: "Olive", size: "170 mL", image: "/foto_sku/HE/HE Shampoo Olive 170mL.png" },
+      { name: "Fibertherapy Shampoo", variant: "Royal Jelly", size: "170 mL", image: "/foto_sku/HE/HE Shampoo Royal Jelly 170mL.png" },
+      { name: "Fibertherapy Creambath", variant: "Aloe Melon", size: "500 mL", image: "/foto_sku/HE/HE Creambath Aloe Melon 500mL.png" },
+      { name: "Fibertherapy Creambath", variant: "Ginseng", size: "500 mL", image: "/foto_sku/HE/HE Creambath Ginseng 500mL.png" },
+      { name: "Fibertherapy Creambath", variant: "Kiwi", size: "500 mL", image: "/foto_sku/HE/HE Creambath Kiwi 500mL.png" },
+      { name: "Fibertherapy Creambath", variant: "Olive", size: "500 mL", image: "/foto_sku/HE/HE Creambath Olive 500mL.png" },
+      { name: "Fibertherapy Creambath", variant: "Royal Jelly", size: "500 mL", image: "/foto_sku/HE/HE Creambath Royal Jelly 500mL.png" },
+      { name: "Scentsations", variant: "Amber Wood", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Amber Wood 100mL.png" },
+      { name: "Scentsations", variant: "Blue Coast", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Blue Coast 100mL.png" },
+      { name: "Scentsations", variant: "Cherry Blossoms", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Cherry Blossoms 100mL.png" },
+      { name: "Scentsations", variant: "Emerald Crush", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Emerald Crush 100mL.png" },
+      { name: "Scentsations", variant: "Fresh Bouquet", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Fresh Bouquet 100mL.png" },
+      { name: "Scentsations", variant: "Morning Dew", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Morning Dew 100mL.png" },
+      { name: "Scentsations", variant: "Ocean Breeze", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Ocean Breeze 100mL.png" },
+      { name: "Scentsations", variant: "White Musk", size: "100 mL", image: "/foto_sku/HE/HE Scentsations White Musk 100mL.png" },
+      { name: "Vitaglitz", variant: "Aloe Melon", size: "6×1 mL", image: "/foto_sku/HE/HE Vitaglitz Aloe Melon 6x1mL.png" },
+      { name: "Vitaglitz", variant: "Kiwi", size: "6×1 mL", image: "/foto_sku/HE/HE Vitaglitz Kiwi 6x1mL.png" },
+      { name: "Vitaglitz", variant: "Royal Jelly", size: "6×1 mL", image: "/foto_sku/HE/HE Vitaglitz Royal Jelly 6x1mL.png" },
     ],
     reasons: [
       { icon: "🌸", title: "Wangi tahan seharian", body: "Formula fragrance yang menempel lembut di rambut dan tubuh." },
@@ -234,6 +240,19 @@ export const BRANDS: Brand[] = [
       { icon: "💆", title: "Untuk setiap kondisi rambut", body: "Rontok, kering, berminyak, atau rusak — ada varian yang tepat untukmu." },
       { icon: "💖", title: "Dicintai Gen-Z Indonesia", body: "Rutinitas #EasyToKnow yang jadi favorit self-care di TikTok." },
     ],
+    about: [
+      { title: "Perawatan Rambut dengan Keratin", image: "/foto_about/Hair Energy/Asset HE-05.png" },
+      { title: "Formula pH Balance", image: "/foto_about/Hair Energy/Asset HE-06.png" },
+      { title: "Natural Extract", image: "/foto_about/Hair Energy/Asset HE-07.png" },
+    ],
+    showcase: {
+      hero: "/foto_judul_3d/Hair Energy/Asset HE-01.png",
+      variants: [
+        "/foto_varian_3d/Hair Energy/Asset HE-02.png",
+        "/foto_varian_3d/Hair Energy/Asset HE-03.png",
+        "/foto_varian_3d/Hair Energy/Asset HE-04.png",
+      ],
+    },
     features: [
       {
         title: "Creambath berkualitas salon",

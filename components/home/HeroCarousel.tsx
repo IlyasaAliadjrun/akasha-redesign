@@ -25,7 +25,7 @@ const slides: Slide[] = [
     name: "Nestlé Pure Life",
     tag: "Gak dingin tetep seger",
     href: "/brands/nestle-pure-life",
-    bg: "#c2185b",
+    bg: "#D20B68",
     image: "/main_banner/main banner NPL.jpg",
   },
   {
@@ -33,7 +33,7 @@ const slides: Slide[] = [
     name: "Makarizo Hair Energy",
     tag: "Wangi sepanjang hari",
     href: "/brands/hair-energy",
-    bg: "#d2691e",
+    bg: "#DA5B14",
     image: "/main_banner/main banner HE.jpg",
   },
   {
@@ -41,7 +41,7 @@ const slides: Slide[] = [
     name: "Make It",
     tag: "Your scent. Your story",
     href: "/brands/make-it",
-    bg: "#1c1c1c",
+    bg: "#640113",
     image: "/main_banner/Main banner make it.jpg",
   },
   {
@@ -49,7 +49,7 @@ const slides: Slide[] = [
     name: "Barber Daily",
     tag: "Barbershop-quality grooming, every day",
     href: "/brands/barber-daily",
-    bg: "#2a323d",
+    bg: "#793E1C",
     image: "/main_banner/main banner BD.jpg",
   },
   {
@@ -57,7 +57,7 @@ const slides: Slide[] = [
     name: "Wonhae",
     tag: "Korean flavors, Indonesian hearts",
     href: "/brands/wonhae",
-    bg: "#f4d04e",
+    bg: "#FDDC57",
     image: "/main_banner/main banner WONHAE.jpg",
     light: true,
   },
@@ -66,7 +66,7 @@ const slides: Slide[] = [
     name: "Makarizo Professional",
     tag: "43 tahun besar bersama salon Indonesia",
     href: "/brands/makarizo-professional",
-    bg: "#e8e8e8",
+    bg: "#E0DCD3",
     image: "/main_banner/main banner MAKPROF.jpg",
     light: true,
   },
@@ -109,7 +109,7 @@ export default function HeroCarousel() {
   return (
     <section
       data-theme={light ? "light" : "dark"}
-      className="relative h-[50svh] sm:h-[100svh] min-h-[300px] sm:min-h-[clamp(480px,70vh,720px)] max-h-[1100px] w-full overflow-hidden transition-colors duration-[1500ms]"
+      className="relative h-[33svh] sm:h-[100svh] min-h-[200px] sm:min-h-[clamp(480px,70vh,720px)] max-h-[1100px] w-full overflow-hidden transition-colors duration-[1500ms]"
       style={{ backgroundColor: s.bg }}
     >
       <AnimatePresence mode="wait">
@@ -126,7 +126,7 @@ export default function HeroCarousel() {
             alt={s.name}
             fill
             priority
-            className="object-cover object-right sm:object-center"
+            className="object-cover object-center"
             sizes="100vw"
           />
         </motion.div>
