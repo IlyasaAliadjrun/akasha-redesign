@@ -44,6 +44,7 @@ const config: Config = {
         subhead: "clamp(16px, 2.5vw, 32px)",
       },
       maxWidth: {
+        content: "var(--content-w)", // shared section width — see globals.css :root
         "8xl": "1400px",
         "9xl": "1600px",
       },

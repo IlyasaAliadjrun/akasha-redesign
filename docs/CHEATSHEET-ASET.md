@@ -2,6 +2,8 @@
 
 > Versi ringkas. Detail lengkap: [PANDUAN-ASET.md](./PANDUAN-ASET.md)
 
+> ⚙️ **Lebar section seragam ±980px** (area gambar ±900px desktop) — kecuali main banner & banner brand yang full-bleed. Rasio kartu **sama** di desktop & HP; hanya **banner** yang beda per viewport (lihat bawah).
+
 ## 📋 Ukuran semua aset
 
 | Aset | Folder | Rasio | Resolusi | Fit | Format |
@@ -10,13 +12,23 @@
 | Kartu divisi beranda | `one_company_many_moments/` | **3:4** | 1200×1600 | COVER | jpg |
 | Grid brand — tile besar | `ten_brands_one_company/` | **2:1** | 1600×800 | COVER | jpg |
 | Grid brand — tile kecil | `ten_brands_one_company/` | **1:1** | 1080×1080 | COVER | jpg |
-| Banner brand (hero) | `brand_banner/` | **16:9** | 2560×1440 | COVER/CONTAIN* | jpg/png |
+| Banner brand (hero) | `brand_banner/` | **16:9** | 2560×1440 | COVER* | jpg/png |
 | Foto produk (lineup) | `foto_sku/{BRAND}/` | **1:1** | 1200×1200 | CONTAIN | **PNG** |
 | 3 kartu "About" | `foto_about/{Brand}/` | **3:4** | 1200×1600 | COVER | jpg |
 | Showcase — gambar utama | `foto_judul_3d/{Brand}/` | **1:1** | 1500×1500 | CONTAIN | png |
-| Showcase — banner varian | `foto_varian_3d/{Brand}/` | **2:1** | 2000×1000 | COVER | jpg/png |
+| Showcase — banner varian | `foto_varian_3d/{Brand}/` | **2.5:1** | 2500×1000 | COVER | jpg/png |
 
-\* Banner brand: **desktop = COVER**, **HP = CONTAIN** (latar wajib 1 warna solid).
+\* Banner brand: **COVER & full screen di desktop MAUPUN HP**. Di HP (potret) sisi kiri-kanan terpotong banyak → taruh semua branding/subjek **benar-benar di tengah**. (`bannerBg` kini hanya warna latar saat loading.)
+
+## 📐 Rasio per viewport (Desktop vs HP)
+
+| Aset | Desktop | HP |
+|---|:---:|:---:|
+| Main banner beranda | 16:9 | 16:9 strip (center) |
+| **Banner brand (hero)** | **16:9** | **9:16** (aset mobile terpisah) |
+| Semua kartu (divisi, brand grid, produk, About, showcase) | sama seperti tabel atas | **sama** |
+
+→ Hanya **banner brand** yang butuh aset HP terpisah (9:16). Sisanya 1 aset cukup.
 
 ## ⚡ Aturan kilat
 

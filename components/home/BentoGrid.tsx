@@ -78,7 +78,7 @@ export default function BentoGrid() {
 
   return (
     <section className="bg-[#FAFAFA] py-16 sm:py-20 md:py-24 lg:py-32">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 md:mb-12">
+      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 md:mb-12">
         <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-ink/60 mb-3">
           Our brands
         </div>
@@ -87,7 +87,7 @@ export default function BentoGrid() {
         </h2>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-2 md:grid-cols-12 auto-rows-[clamp(160px,38vw,220px)] md:auto-rows-[clamp(220px,22vw,320px)] gap-3 sm:gap-4 md:gap-5">
           {items.map((b, i) => {
             const img = bentoImage[b.slug];

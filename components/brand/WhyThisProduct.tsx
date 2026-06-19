@@ -72,7 +72,7 @@ export default function WhyThisProduct({ brand }: { brand: Brand }) {
 
   return (
     <section className="bg-[#f5f5f7] py-24 lg:py-32">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-10 lg:mb-14 flex items-end justify-between gap-6">
+      <div className="max-w-content mx-auto px-6 lg:px-10 mb-10 lg:mb-14 flex items-end justify-between gap-6">
         <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05] max-w-3xl">
           Kenapa {brand.name} tempat terbaik untuk kebutuhanmu.
         </h2>
@@ -154,7 +154,7 @@ export default function WhyThisProduct({ brand }: { brand: Brand }) {
       </div>
 
       {/* Bottom nav arrows */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mt-10 flex items-center justify-end gap-3">
+      <div className="max-w-content mx-auto px-6 lg:px-10 mt-10 flex items-center justify-end gap-3">
         <button
           aria-label="Previous"
           onClick={() => scrollBy(-1)}

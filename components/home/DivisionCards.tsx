@@ -71,7 +71,7 @@ export default function DivisionCards() {
 
   return (
     <section className="bg-white py-16 sm:py-20 md:py-24 lg:py-32">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 md:mb-12 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
+      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 md:mb-12 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
         <div>
           <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-ink/60 mb-3">
             Four divisions
@@ -105,7 +105,7 @@ export default function DivisionCards() {
         ref={railRef}
         className="overflow-x-auto lg:overflow-visible no-scrollbar select-none"
       >
-        <div className="flex lg:grid lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 lg:px-10 snap-x snap-mandatory lg:snap-none max-w-[1400px] mx-auto">
+        <div className="flex lg:grid lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 lg:px-10 snap-x snap-mandatory lg:snap-none max-w-content mx-auto">
           {DIVISIONS.filter((d) => d.id !== "mens").map((d) => {
             const first = brandsByDivision(d.id)[0];
             return (
@@ -146,7 +146,7 @@ export default function DivisionCards() {
         </div>
       </div>
 
-      <div className="md:hidden max-w-[1400px] mx-auto px-4 sm:px-6 mt-6 flex items-center gap-3 justify-end">
+      <div className="md:hidden max-w-content mx-auto px-4 sm:px-6 mt-6 flex items-center gap-3 justify-end">
         <button
           aria-label="Previous"
           onClick={() => scrollBy(-1)}

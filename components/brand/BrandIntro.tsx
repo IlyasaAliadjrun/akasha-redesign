@@ -10,7 +10,7 @@ export default function BrandIntro({ brand }: { brand: Brand }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className="max-w-5xl mx-auto px-6 text-center"
+        className="max-w-content mx-auto px-6 lg:px-10 text-center"
       >
         <div
           className="text-[11px] uppercase tracking-[0.3em] font-bold mb-6"

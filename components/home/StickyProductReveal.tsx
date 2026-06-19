@@ -41,7 +41,7 @@ export default function StickyProductReveal() {
   return (
     <section ref={ref} className="relative bg-[#f2f7fb]" style={{ height: `${steps.length * 100}vh` }}>
       <div className="sticky top-0 h-[100svh] flex items-center overflow-hidden">
-        <div className="max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center">
+        <div className="max-w-content mx-auto w-full px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center">
           <div className="relative aspect-square w-full max-w-[clamp(280px,80vw,560px)] lg:max-w-[560px] mx-auto">
             {steps.map((s, i) => {
               const start = i / steps.length;

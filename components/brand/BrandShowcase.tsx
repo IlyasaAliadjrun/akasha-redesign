@@ -13,27 +13,31 @@ export default function BrandShowcase({ brand }: { brand: Brand }) {
   const variants = showcase.variants ?? [];
 
   return (
-    <section className="bg-white pt-4 sm:pt-6 pb-20 sm:pb-24 md:pb-28 px-4 sm:px-6">
+    <section className="bg-white pt-4 sm:pt-6 pb-20 sm:pb-24 md:pb-28">
       {/* Part 1 — square hero (title + person) */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="relative aspect-square max-w-2xl mx-auto"
-      >
-        <Image
-          src={showcase.hero}
-          alt={`${brand.name} highlight`}
-          fill
-          sizes="(min-width:672px) 672px, 100vw"
-          className="object-contain"
-        />
-      </motion.div>
+      <div className="px-6 lg:px-10">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="relative aspect-square max-w-3xl mx-auto"
+        >
+          <Image
+            src={showcase.hero}
+            alt={`${brand.name} highlight`}
+            fill
+            sizes="(min-width:768px) 768px, 100vw"
+            className="object-contain"
+          />
+        </motion.div>
+      </div>
 
-      {/* Part 2 — wider variant banners overlapping the bottom of part 1 */}
+      {/* Part 2 — wider variant banners overlapping the bottom of part 1.
+          Uses the same max-w-content + px-6 lg:px-10 container as every other
+          section (incl. CrossSell), so its edges line up exactly. */}
       {variants.length > 0 && (
-        <div className="max-w-4xl mx-auto relative z-10 -mt-10 sm:-mt-14 lg:-mt-16 space-y-4 sm:space-y-6">
+        <div className="max-w-content mx-auto px-6 lg:px-10 relative z-10 -mt-10 sm:-mt-14 lg:-mt-16 space-y-4 sm:space-y-6">
           {variants.map((src, i) => (
               <motion.div
                 key={src}
@@ -46,7 +50,7 @@ export default function BrandShowcase({ brand }: { brand: Brand }) {
                   delay: Math.min(i * 0.06, 0.18),
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="relative aspect-[5010/2354] rounded-2xl lg:rounded-3xl overflow-hidden"
+                className="relative aspect-[5/2] rounded-2xl lg:rounded-3xl overflow-hidden"
               >
                 <Image
                   src={src}

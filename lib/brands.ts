@@ -4,6 +4,29 @@ export type DivisionId =
   | "mens"
   | "food";
 
+// One image layer of a parallax (layered) hero banner. Layers render back-to-front
+// in array order; `depth` is how many px the layer drifts up as the hero scrolls
+// away — bigger = faster, so a foreground decoration (high depth) appears to float
+// over a slower product backdrop (low depth).
+export type HeroLayer = {
+  src: string;
+  depth?: number; // px of parallax travel (default 40)
+  fit?: "cover" | "contain"; // object-fit (default cover)
+  position?: string; // CSS object-position, e.g. "left top"
+  enterFrom?: "left" | "right"; // entrance slide direction (default: fade only)
+  enterDelay?: number; // entrance delay in seconds (default: staggered by layer order)
+  // When `width` is set, the layer renders as a *sized* element (not full-bleed)
+  // — e.g. a logo/wordmark anchored in a corner. These map to inline CSS (not
+  // Tailwind classes, because lib/ isn't scanned by Tailwind).
+  width?: string; // CSS width, e.g. "44vw"
+  maxWidth?: string; // e.g. "600px"
+  aspectRatio?: string; // e.g. "1576 / 1086" (intrinsic ratio of the asset)
+  left?: string;
+  top?: string;
+  right?: string;
+  bottom?: string;
+};
+
 export type Brand = {
   slug: string;
   name: string;
@@ -14,6 +37,10 @@ export type Brand = {
   accentClass: string; // tailwind bg class
   accentHex: string;
   heroImage: string;
+  // Optional layered/parallax hero. When set, it overrides `heroImage` and the
+  // layers animate at different scroll speeds (see BrandHero). Assets must be
+  // separated into layers (background/product opaque + decoration PNG transparan).
+  heroLayers?: HeroLayer[];
   bannerBg?: string; // background behind a contained brand banner (hero)
   hero: boolean;
   products?: {
@@ -208,7 +235,20 @@ export const BRANDS: Brand[] = [
     accentClass: "bg-brand-he",
     accentHex: "#D4447C",
     heroImage: "/brand_banner/banner_hair_energy.png",
-    bannerBg: "#F46C22",
+    heroLayers: [
+      // Back: orange backdrop + the three products. `contain` shows the full
+      // product composition (no top/bottom crop); the surrounding area is the
+      // identical orange of `bannerBg`, so it reads as one seamless banner.
+      // Drifts slowly; enters from the right, AFTER the gold motif (enterDelay).
+      { src: "/brand_banner/Asset HE-08.png", depth: 30, fit: "contain", position: "60% 50%", enterFrom: "right", enterDelay: 0.7 },
+      // Front: gold sparkle + white "MAKARIZO hair energy" wordmark (transparent
+      // PNG). Rendered as a sized element anchored top-left (not full-bleed) so the
+      // wordmark stays a reasonable size. Drifts faster; fades in FIRST.
+      { src: "/brand_banner/banner_hair_energy_2.png", depth: 60, enterDelay: 0, width: "25vw", aspectRatio: "1576 / 1086", left: "18%", top: "36%" },
+    ],
+    // Matches the exact orange baked into Asset HE-08 (rgb 243,108,33) so the
+    // contained product layer blends seamlessly with the section background.
+    bannerBg: "#F36C21",
     hero: true,
     products: [
       { name: "Fibertherapy Shampoo", variant: "Active Menthol", size: "170 mL", image: "/foto_sku/HE/HE Shampoo Active Menthol 170mL.png" },

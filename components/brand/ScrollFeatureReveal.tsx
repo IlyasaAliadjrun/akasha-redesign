@@ -154,7 +154,7 @@ export default function ScrollFeatureReveal({
 
         {/* Text content */}
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-[1400px] mx-auto w-full px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12">
+          <div className="max-w-content mx-auto w-full px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-7 relative min-h-[320px] md:min-h-[380px]">
               {features.map((f, i) => (
                 <FeatureText

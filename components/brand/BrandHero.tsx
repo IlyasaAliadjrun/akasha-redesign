@@ -1,51 +1,108 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import type { Brand } from "@/lib/brands";
+import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
+import { useRef } from "react";
+import type { Brand, HeroLayer } from "@/lib/brands";
+
+// One parallax layer. Lives in its own component so each can own a `useTransform`
+// hook (hooks can't be called inside the layers.map() loop in the parent).
+function ParallaxLayer({
+  layer,
+  progress,
+  index,
+}: {
+  layer: HeroLayer;
+  progress: MotionValue<number>;
+  index: number;
+}) {
+  const depth = layer.depth ?? 40;
+  // Travel up as the hero scrolls out of view. The wrapper is oversized
+  // (-inset-y) so this movement never reveals an edge.
+  const y = useTransform(progress, [0, 1], [0, -depth]);
+  const enterX =
+    layer.enterFrom === "left" ? -72 : layer.enterFrom === "right" ? 72 : 0;
+  // Three wrapper modes:
+  // - sized:    a positioned element (logo/wordmark) sized via inline CSS.
+  // - contain:  full-bleed, inset-0 — drift just reveals seamless background.
+  // - cover:    full-bleed, oversized (-inset-y) so drift never reveals an edge.
+  const sized = Boolean(layer.width);
+  const sizedStyle = sized
+    ? {
+        position: "absolute" as const,
+        left: layer.left,
+        top: layer.top,
+        right: layer.right,
+        bottom: layer.bottom,
+        width: layer.width,
+        maxWidth: layer.maxWidth,
+        aspectRatio: layer.aspectRatio,
+      }
+    : undefined;
+  const wrapper = sized
+    ? ""
+    : layer.fit === "contain"
+    ? "absolute inset-0"
+    : "absolute inset-x-0 -inset-y-[22%]";
+  return (
+    <motion.div
+      style={{ y, ...sizedStyle }}
+      initial={{ opacity: 0, x: enterX, scale: 1.06 }}
+      animate={{ opacity: 1, x: 0, scale: 1 }}
+      transition={{ duration: 1.4, delay: layer.enterDelay ?? index * 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className={wrapper}
+    >
+      <Image
+        src={layer.src}
+        alt=""
+        fill
+        priority={index === 0}
+        sizes="100vw"
+        className={sized || layer.fit === "contain" ? "object-contain" : "object-cover"}
+        style={layer.position ? { objectPosition: layer.position } : undefined}
+      />
+    </motion.div>
+  );
+}
 
 export default function BrandHero({ brand }: { brand: Brand }) {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const layers = brand.heroLayers;
+
   return (
     <section
+      ref={ref}
       data-theme="dark"
-      className="relative w-full overflow-hidden h-[33svh] min-h-[200px] md:h-[100svh] md:min-h-[560px]"
+      className="relative w-full overflow-hidden h-[100svh] min-h-[480px] md:min-h-[560px]"
       style={{ backgroundColor: brand.bannerBg ?? brand.accentHex }}
     >
-      <motion.div
-        initial={{ opacity: 0, scale: 1.06 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute inset-0"
-      >
-        <Image
-          src={brand.heroImage}
-          alt={brand.name}
-          fill
-          priority
-          sizes="100vw"
-          className="object-contain md:object-cover"
-        />
-        {/* Dark overlay removed so the brand banner shows at full strength. */}
-      </motion.div>
-
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-6">
+      {layers?.length ? (
+        layers.map((l, i) => (
+          <ParallaxLayer key={l.src} layer={l} progress={scrollYProgress} index={i} />
+        ))
+      ) : (
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.3 }}
+          initial={{ opacity: 0, scale: 1.06 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0"
         >
-          {/* Brand name & tagline temporarily commented — branding now lives in the banner asset.
-          <h1 className="text-hero font-extrabold tracking-tightish leading-[1.02]">
-            {brand.name}
-          </h1>
-          <p className="mt-4 text-subhead font-light text-white/85 max-w-2xl mx-auto">
-            {brand.tagline}
-          </p>
-          */}
+          <Image
+            src={brand.heroImage}
+            alt={brand.name}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
         </motion.div>
-      </div>
+      )}
 
-      {/* Scroll indicator — desktop only (hidden on mobile) */}
-      <div className="hidden md:block absolute bottom-5 md:bottom-8 left-1/2 -translate-x-1/2 z-10">
+      {/* Scroll indicator — chevron on mobile, mouse on desktop */}
+      <div className="absolute bottom-5 md:bottom-8 left-1/2 -translate-x-1/2 z-10">
         <motion.a
           href="#next"
           onClick={(e) => {

@@ -75,7 +75,7 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
 
   return (
     <section className="bg-white py-16 sm:py-20 md:py-24 lg:py-32">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 lg:mb-14 flex items-end justify-center md:justify-between gap-6">
+      <div className="max-w-content mx-auto px-6 lg:px-10 mb-8 sm:mb-10 lg:mb-14 flex items-end justify-center md:justify-between gap-6">
         <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05] text-center md:text-left">
           Explore the lineup.
         </h2>
@@ -103,7 +103,7 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
       <div
         ref={railRef}
         className="overflow-x-auto overflow-y-hidden no-scrollbar select-none"
-        style={{ touchAction: "pan-x" }}
+        style={{ touchAction: "pan-x pan-y" }}
       >
         <div className="flex gap-3 sm:gap-4 lg:gap-5 lineup-inset snap-x snap-mandatory pb-2">
           {items.map((p, i) => {

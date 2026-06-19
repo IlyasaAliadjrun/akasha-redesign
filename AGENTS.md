@@ -132,10 +132,24 @@ This site has a strong aesthetic identity. Preserve it:
 4. **Scroll-triggered reveals.** Use Framer Motion's `whileInView` or `useScroll` for entrance animations.
 5. **Respect `prefers-reduced-motion`.** Any new motion must degrade gracefully — Framer Motion handles this automatically when you use its `MotionConfig` / reduced-motion hooks; if you write custom animations, gate them on the user's preference.
 6. **Sentence case in copy.** Indonesian and English copy should both use sentence case unless it's a proper noun or product name.
+7. **Responsive, ratio-aware assets.** Every image must be reasoned about on **both** desktop and mobile before it ships — see §9. All content sections share one width token (`max-w-content`); only the main banners are full-bleed.
 
 ---
 
-## 9. Coding conventions
+## 9. Assets, responsiveness & image ratios (consider on EVERY asset change)
+
+Any change that touches an image, an aspect ratio, a section's width, or how an asset is displayed **must** be reasoned about per viewport (desktop **and** mobile) and then reflected in the asset guide, so the design team can supply correctly-sized files.
+
+1. **Two viewports, always.** Before changing how an asset renders, work out its display box on **desktop** (the ~900px-wide centered content column) and on **mobile** (full width minus gutter, or full-screen for banners). A landscape asset dropped into a portrait mobile box crops heavily — call it out and pick the right ratio for each view.
+2. **Shared section width.** All content sections use the `max-w-content` token (driven by `--content-w` in [app/globals.css](app/globals.css), currently `980px`). Only the main banners ([HeroCarousel](components/home/HeroCarousel.tsx), [BrandHero](components/brand/BrandHero.tsx)) are full-bleed. **Do not reintroduce ad-hoc `max-w-[…]` values on sections** — use `max-w-content` so every section stays edge-aligned. To retune the whole site's width, change the one CSS variable.
+3. **Keep the asset guide in sync.** When you change a ratio, width, fit, or add/rename an asset, update **both** [docs/PANDUAN-ASET.md](docs/PANDUAN-ASET.md) and [docs/CHEATSHEET-ASET.md](docs/CHEATSHEET-ASET.md): ratio + resolution + folder + desktop/mobile behavior. This is the **one exception** to "don't update docs unless asked" (§10) — these asset docs MUST stay current.
+4. **Best ratio per viewport.** Cards (product, About, division, brand grid, showcase) keep the **same** ratio on both viewports. Full-bleed banners **differ**: the brand banner is 16:9 on desktop but wants a separate **9:16** mobile asset. Record the chosen ratio for *both* views in the guide (see PANDUAN §2b "Rasio terbaik per viewport").
+5. **Fit matters.** `object-cover` crops (keep the subject centered in the safe-zone); `object-contain` shows the whole asset (needs a clean solid/transparent background). Always state which one applies.
+6. **next/image hygiene.** Always `fill` + an accurate `sizes`; ship one high-res master per asset (≥2× retina) and let the system downscale.
+
+---
+
+## 10. Coding conventions
 
 - **TypeScript strict** — no `any` unless unavoidable, and never widen function signatures to escape a type error.
 - **Functional React components only.** No class components.
@@ -143,11 +157,11 @@ This site has a strong aesthetic identity. Preserve it:
 - **Images:** always `next/image`. If you reference a new remote host, add it to `images.remotePatterns` in [next.config.mjs](next.config.mjs).
 - **No new dependencies without good reason.** The dependency surface is intentionally small (Next, React, Framer Motion, Tailwind). If a task seems to need a new library, prefer writing it yourself first.
 - **No comments explaining what the code does.** Only add a comment when *why* is non-obvious (a workaround, a hidden constraint, a subtle invariant).
-- **No README/docs updates unless asked.** Don't generate planning or status markdown files.
+- **No README/docs updates unless asked** — *except* the asset guide ([docs/PANDUAN-ASET.md](docs/PANDUAN-ASET.md), [docs/CHEATSHEET-ASET.md](docs/CHEATSHEET-ASET.md)), which §9 requires you to keep in sync on any asset/ratio/width change. Don't generate other planning or status markdown files.
 
 ---
 
-## 10. Working with content (lib/brands.ts, lib/investor.ts)
+## 11. Working with content (lib/brands.ts, lib/investor.ts)
 
 These files are the **single source of truth** for site content. When the user asks to change copy, add a product, swap an image, or tweak a feature card:
 
@@ -159,7 +173,7 @@ The `Brand` type in `lib/brands.ts` defines the schema. Respect it.
 
 ---
 
-## 11. Verification before reporting done
+## 12. Verification before reporting done
 
 For any change touching code:
 
@@ -172,7 +186,7 @@ If `npm run build` fails, **fix the root cause**. Do not weaken types, suppress 
 
 ---
 
-## 12. Things to avoid
+## 13. Things to avoid
 
 - **Don't add a backend, API routes, database, or auth.** This is a static marketing site.
 - **Don't introduce CSS-in-JS (styled-components, emotion).** Tailwind only.
@@ -184,13 +198,13 @@ If `npm run build` fails, **fix the root cause**. Do not weaken types, suppress 
 
 ---
 
-## 13. Platform notes
+## 14. Platform notes
 
 The maintainer develops on **Windows 11 with PowerShell**. Paths in this repo use forward slashes in code (`@/components/...`) but file system operations may need backslashes when run from PowerShell. If you generate shell scripts, prefer cross-platform npm scripts in `package.json` over `.sh` files.
 
 ---
 
-## 14. When in doubt
+## 15. When in doubt
 
 - Read [lib/brands.ts](lib/brands.ts) first — most "how does this work?" questions about content are answered there.
 - Read [app/layout.tsx](app/layout.tsx) and [app/page.tsx](app/page.tsx) to understand how scenes compose.
