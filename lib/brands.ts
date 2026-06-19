@@ -233,7 +233,9 @@ export const BRANDS: Brand[] = [
     description:
       "Perawatan rambut lengkap dari Makarizo Hair Energy — untuk rambut rontok, kering, hingga berminyak.",
     accentClass: "bg-brand-he",
-    accentHex: "#D4447C",
+    // Hair Energy's visual identity is orange (matches its banner / bannerBg),
+    // not the pink it used to inherit from Makarizo.
+    accentHex: "#F36C21",
     heroImage: "/brand_banner/banner_hair_energy.png",
     heroLayers: [
       // Back: orange backdrop + the three products. `contain` shows the full
