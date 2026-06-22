@@ -56,7 +56,7 @@ export default function CrossSell({ current }: { current: Brand }) {
               key={b.slug}
               data-card
               href={`/brands/${b.slug}`}
-              className="group relative snap-start shrink-0 md:shrink w-[80vw] sm:w-[46vw] md:w-auto h-[420px] rounded-3xl overflow-hidden"
+              className="group relative snap-start shrink-0 md:shrink w-[64vw] xs:w-[58vw] sm:w-[46vw] md:w-auto aspect-[3/4] md:aspect-auto md:h-[420px] rounded-3xl overflow-hidden"
             >
               <Image
                 src={b.heroImage}

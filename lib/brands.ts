@@ -289,13 +289,13 @@ export const BRANDS: Brand[] = [
       // produk-2 (front) sits slightly lower, with only a small overlap between them.
       // Creambath — left, enters from the LEFT (1st).
       { src: "/brand_banner/Hair Energy/produk-1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(30vw, 60vh)", aspectRatio: "2687 / 3660", left: "40%", top: "3%",
-        mobile: { left: "5%", top: "28%", width: "min(56vw, 45vh)" } },
+        mobile: { left: "5%", top: "32%", width: "min(54vw, 42vh)" } },
       // Scentsations — right, level with creambath, enters from the RIGHT (3rd).
       { src: "/brand_banner/Hair Energy/produk-3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(30vw, 60vh)", aspectRatio: "2687 / 3660", left: "60%", top: "0%",
-        mobile: { left: "45%", top: "26%", width: "min(56vw, 45vh)" } },
+        mobile: { left: "45%", top: "30%", width: "min(54vw, 42vh)" } },
       // Shampoo — front/centre, slightly lower, enters from the TOP (2nd).
       { src: "/brand_banner/Hair Energy/produk-2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(30vw, 60vh)", aspectRatio: "2687 / 3660", left: "50%", top: "15%",
-        mobile: { left: "25%", top: "36%", width: "min(56vw, 45vh)" } },
+        mobile: { left: "25%", top: "40%", width: "min(54vw, 42vh)" } },
     ],
     heroContent: {
       logo: "/brand_banner/Hair Energy/wordmark-1.png",

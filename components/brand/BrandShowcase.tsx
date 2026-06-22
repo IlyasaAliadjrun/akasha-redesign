@@ -1,8 +1,22 @@
 "use client";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Brand, ShowcaseVariant as TVariant } from "@/lib/brands";
+
+// Small-screen flag so the parallax drift can scale down on mobile (the banner is
+// much shorter there, so a desktop-sized drift looks like the product is floating).
+function useIsMobile() {
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const update = () => setMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  return mobile;
+}
 
 // One layered, parallax variant banner (reusable across brands):
 // - background art (text + sparkle) fades in with a subtle scroll parallax,
@@ -19,12 +33,17 @@ function ShowcaseVariant({
   brandName: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const bgY = useTransform(scrollYProgress, [0, 1], [8, -8]);
-  const productY = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  // Smaller drift on mobile (short banner) so the product stays put, larger on desktop.
+  const bgY = useTransform(scrollYProgress, [0, 1], isMobile ? [4, -4] : [8, -8]);
+  // Small drift so the product floats subtly and never leaves the (clipped) frame.
+  const productY = useTransform(scrollYProgress, [0, 1], isMobile ? [5, -5] : [12, -12]);
+  // Product fits INSIDE the banner frame (<100% height) instead of overflowing.
+  const productHeight = variant.productHeight ?? "110%";
   const fromLeft = index % 2 === 0; // banner 1,3,… enter from the left
 
   return (
@@ -54,8 +73,9 @@ function ShowcaseVariant({
         </motion.div>
       </motion.div>
 
-      {/* Product — centred, overflows the banner, slides in from a side. */}
-      <div className="absolute inset-0 flex items-center justify-center overflow-visible pointer-events-none">
+      {/* Product — centred and clipped to the frame, so it stays inside even while
+          the parallax drifts it on scroll. */}
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden rounded-2xl lg:rounded-3xl pointer-events-none">
         <motion.div
           initial={{ opacity: 0, x: fromLeft ? -90 : 90 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -63,7 +83,7 @@ function ShowcaseVariant({
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           style={{
             y: productY,
-            height: variant.productHeight ?? "128%",
+            height: productHeight,
             aspectRatio: variant.productAspect ?? "2687 / 3660",
           }}
           className="relative"
@@ -116,7 +136,7 @@ export default function BrandShowcase({ brand }: { brand: Brand }) {
           lg:px-10 container as every other section so the edges line up. Extra
           vertical spacing makes room for the products that overflow each banner. */}
       {variants.length > 0 && (
-        <div className="max-w-content mx-auto px-6 lg:px-10 relative z-10 -mt-6 sm:-mt-10 lg:-mt-12 space-y-10 sm:space-y-14 lg:space-y-16">
+        <div className="max-w-content mx-auto px-6 lg:px-10 relative z-10 -mt-6 sm:-mt-10 lg:-mt-12 space-y-6 sm:space-y-9 lg:space-y-11">
           {variants.map((variant, i) => (
             <ShowcaseVariant
               key={variant.bg}
