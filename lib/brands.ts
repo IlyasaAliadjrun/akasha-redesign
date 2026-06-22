@@ -13,7 +13,7 @@ export type HeroLayer = {
   depth?: number; // px of parallax travel (default 40)
   fit?: "cover" | "contain"; // object-fit (default cover)
   position?: string; // CSS object-position, e.g. "left top"
-  enterFrom?: "left" | "right"; // entrance slide direction (default: fade only)
+  enterFrom?: "left" | "right" | "top" | "bottom"; // entrance slide direction (default: fade only)
   enterDelay?: number; // entrance delay in seconds (default: staggered by layer order)
   // When `width` is set, the layer renders as a *sized* element (not full-bleed)
   // — e.g. a logo/wordmark anchored in a corner. These map to inline CSS (not
@@ -25,6 +25,49 @@ export type HeroLayer = {
   top?: string;
   right?: string;
   bottom?: string;
+  // Overrides applied on small screens (<768px) — reposition/resize a layer for
+  // mobile without touching the desktop values.
+  mobile?: {
+    left?: string;
+    top?: string;
+    right?: string;
+    bottom?: string;
+    width?: string;
+    enterFrom?: "left" | "right" | "top" | "bottom";
+  };
+};
+
+// One variant banner in the showcase, built from two layered assets that animate
+// independently (parallax on scroll + entrance), reusable across brands:
+//   bg      — landscape banner art with text/sparkle (the "{n}-2" file)
+//   product — portrait product that sits centred and overflows the banner top &
+//             bottom, sliding in from the left (odd banner) or right (even banner).
+export type ShowcaseVariant = {
+  bg: string;
+  product: string;
+  bgAspect?: string; // default "5010 / 2354"
+  productAspect?: string; // default "2687 / 3660"
+  productHeight?: string; // product height relative to the banner; default "128%"
+};
+
+// Optional HTML overlay on a (parallax) brand hero — a left-aligned column with a
+// logo/wordmark image, a tagline, and a CTA button. Positioned & coloured via CSS
+// so it's reusable per brand.
+export type HeroContent = {
+  logo?: string;
+  logoAspect?: string; // intrinsic ratio of the logo, e.g. "1576 / 1086"
+  logoWidth?: string; // CSS width, e.g. "32vw"
+  tagline?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  left?: string; // block left offset (default "5%")
+  maxWidth?: string; // block max width (omit to let the tagline run wider than the logo)
+  offsetY?: string; // vertical nudge from centre, e.g. "10vh" moves the block down
+  theme?: "light" | "dark"; // text colour (default "light" = white)
+  delay?: number; // entrance delay in seconds
+  // On mobile (<768px) the layout switches to: wordmark top-centre, tagline + CTA
+  // bottom-left. Only the logo size differs per brand, set here.
+  mobile?: { logoWidth?: string };
 };
 
 export type Brand = {
@@ -41,6 +84,7 @@ export type Brand = {
   // layers animate at different scroll speeds (see BrandHero). Assets must be
   // separated into layers (background/product opaque + decoration PNG transparan).
   heroLayers?: HeroLayer[];
+  heroContent?: HeroContent; // optional HTML overlay (wordmark + tagline + CTA)
   bannerBg?: string; // background behind a contained brand banner (hero)
   hero: boolean;
   products?: {
@@ -53,10 +97,10 @@ export type Brand = {
   features?: { title: string; body: string; image: string }[];
   reasons?: { icon: string; title: string; body: string }[];
   about?: { image: string; title: string }[];
-  // Poster-style showcase: a square hero graphic (foto_judul_3d/{brand}) with
-  // variant banners (foto_varian_3d/{brand}) overlapping its bottom edge.
-  // `variants` is optional — not every brand has variant assets.
-  showcase?: { hero: string; variants?: string[] };
+  // Poster-style showcase: a hero graphic (foto_judul_3d/{brand}) with layered
+  // parallax variant banners (foto_varian_3d/{brand}) overlapping its bottom edge.
+  // `heroAspect` = hero's intrinsic ratio (CSS aspect-ratio; defaults to square).
+  showcase?: { hero: string; heroAspect?: string; variants?: ShowcaseVariant[] };
 };
 
 export const DIVISIONS: {
@@ -89,7 +133,7 @@ export const DIVISIONS: {
     tagline: "Groomed, every day",
     brandCount: 1,
     accentHex: "#5B6B7F",
-    image: "/main_banner/main banner BD.jpg",
+    image: "/main_banner/BARBER-DAILY.jpg",
   },
   {
     id: "food",
@@ -185,7 +229,7 @@ export const BRANDS: Brand[] = [
       "Rumah bagi rangkaian perawatan rambut & tubuh Makarizo — dari Asters dan Advisor hingga Hair Energy, t1, dan 128.",
     accentClass: "bg-brand-makarizo",
     accentHex: "#D4447C",
-    heroImage: "/main_banner/main banner HE.jpg",
+    heroImage: "/main_banner/HAIR-ENERGY.jpg",
     hero: false,
     reasons: [
       { icon: "💇", title: "Lebih dari 40 tahun keahlian rambut", body: "Inovasi perawatan rambut yang tumbuh bersama wanita Indonesia." },
@@ -237,19 +281,36 @@ export const BRANDS: Brand[] = [
     // not the pink it used to inherit from Makarizo.
     accentHex: "#F36C21",
     heroImage: "/brand_banner/banner_hair_energy.png",
+    // Per-brand layered parallax banner. Order in this array = stacking (last =
+    // front); entrance timing is controlled by `enterDelay`, entrance direction by
+    // `enterFrom`. Positions/sizes are vw/% so the whole composition scales as one.
     heroLayers: [
-      // Back: orange backdrop + the three products. `contain` shows the full
-      // product composition (no top/bottom crop); the surrounding area is the
-      // identical orange of `bannerBg`, so it reads as one seamless banner.
-      // Drifts slowly; enters from the right, AFTER the gold motif (enterDelay).
-      { src: "/brand_banner/Asset HE-08.png", depth: 30, fit: "contain", position: "60% 50%", enterFrom: "right", enterDelay: 0.7 },
-      // Front: gold sparkle + white "MAKARIZO hair energy" wordmark (transparent
-      // PNG). Rendered as a sized element anchored top-left (not full-bleed) so the
-      // wordmark stays a reasonable size. Drifts faster; fades in FIRST.
-      { src: "/brand_banner/banner_hair_energy_2.png", depth: 60, enterDelay: 0, width: "25vw", aspectRatio: "1576 / 1086", left: "18%", top: "36%" },
+      // All three products share one (natural) size. produk-1 & produk-3 sit level;
+      // produk-2 (front) sits slightly lower, with only a small overlap between them.
+      // Creambath — left, enters from the LEFT (1st).
+      { src: "/brand_banner/Hair Energy/produk-1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(30vw, 60vh)", aspectRatio: "2687 / 3660", left: "40%", top: "3%",
+        mobile: { left: "5%", top: "28%", width: "min(56vw, 45vh)" } },
+      // Scentsations — right, level with creambath, enters from the RIGHT (3rd).
+      { src: "/brand_banner/Hair Energy/produk-3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(30vw, 60vh)", aspectRatio: "2687 / 3660", left: "60%", top: "0%",
+        mobile: { left: "45%", top: "26%", width: "min(56vw, 45vh)" } },
+      // Shampoo — front/centre, slightly lower, enters from the TOP (2nd).
+      { src: "/brand_banner/Hair Energy/produk-2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(30vw, 60vh)", aspectRatio: "2687 / 3660", left: "50%", top: "15%",
+        mobile: { left: "25%", top: "36%", width: "min(56vw, 45vh)" } },
     ],
-    // Matches the exact orange baked into Asset HE-08 (rgb 243,108,33) so the
-    // contained product layer blends seamlessly with the section background.
+    heroContent: {
+      logo: "/brand_banner/Hair Energy/wordmark-1.png",
+      logoAspect: "1576 / 1086",
+      logoWidth: "18vw",
+      maxWidth: "26vw",
+      tagline: "Rambut Lembut & Wangi Setiap Hari.",
+      ctaText: "Learn more",
+      ctaHref: "#about",
+      left: "24%",
+      offsetY: "10vh",
+      theme: "light",
+      delay: 0.6,
+      mobile: { logoWidth: "55vw" },
+    },
     bannerBg: "#F36C21",
     hero: true,
     products: [
@@ -288,11 +349,12 @@ export const BRANDS: Brand[] = [
       { title: "Natural Extract", image: "/foto_about/Hair Energy/Asset HE-07.png" },
     ],
     showcase: {
-      hero: "/foto_judul_3d/Hair Energy/Asset HE-01.png",
+      hero: "/foto_judul_3d/Hair Energy/1.png",
+      heroAspect: "5219 / 3799",
       variants: [
-        "/foto_varian_3d/Hair Energy/Asset HE-02.png",
-        "/foto_varian_3d/Hair Energy/Asset HE-03.png",
-        "/foto_varian_3d/Hair Energy/Asset HE-04.png",
+        { bg: "/foto_varian_3d/Hair Energy/1-2.png", product: "/foto_varian_3d/Hair Energy/1-1.png" },
+        { bg: "/foto_varian_3d/Hair Energy/2-2.png", product: "/foto_varian_3d/Hair Energy/2-1.png" },
+        { bg: "/foto_varian_3d/Hair Energy/3-2.png", product: "/foto_varian_3d/Hair Energy/3-1.png" },
       ],
     },
     features: [
@@ -357,7 +419,7 @@ export const BRANDS: Brand[] = [
       "Brand salon profesional terdepan di Indonesia. Edukasi, komunitas, dan produk untuk para ahli rambut.",
     accentClass: "bg-brand-makpro",
     accentHex: "#2C2C2C",
-    heroImage: "/main_banner/main banner MAKPROF.jpg",
+    heroImage: "/main_banner/MAKARIZO-PROFESSIONAL.jpg",
     hero: true,
     products: [
       { name: "Concept Ultimax SF3", variant: "Coloring System", size: "Professional Use" },
@@ -600,7 +662,7 @@ export const BRANDS: Brand[] = [
       "Grooming essentials untuk pria modern — pomade, beard care, dan rutinitas pasca-cukur ala barbershop di rumah.",
     accentClass: "bg-brand-bd",
     accentHex: "#5B6B7F",
-    heroImage: "/main_banner/main banner BD.jpg",
+    heroImage: "/main_banner/BARBER-DAILY.jpg",
     hero: false,
   },
 

@@ -4,7 +4,7 @@ import type { Brand } from "@/lib/brands";
 
 export default function BrandIntro({ brand }: { brand: Brand }) {
   return (
-    <section className="bg-white py-28 lg:py-40">
+    <section id="about" className="scroll-mt-24 bg-white py-28 lg:py-40">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}

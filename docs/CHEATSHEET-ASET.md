@@ -15,10 +15,13 @@
 | Banner brand (hero) | `brand_banner/` | **16:9** | 2560×1440 | COVER* | jpg/png |
 | Foto produk (lineup) | `foto_sku/{BRAND}/` | **1:1** | 1200×1200 | CONTAIN | **PNG** |
 | 3 kartu "About" | `foto_about/{Brand}/` | **3:4** | 1200×1600 | COVER | jpg |
-| Showcase — gambar utama | `foto_judul_3d/{Brand}/` | **1:1** | 1500×1500 | CONTAIN | png |
-| Showcase — banner varian | `foto_varian_3d/{Brand}/` | **2.5:1** | 2500×1000 | COVER | jpg/png |
+| Showcase — gambar utama | `foto_judul_3d/{Brand}/` | **bebas** (cth 1.37:1) | 5219×3799 | CONTAIN | png |
+| Showcase varian — latar `{n}-2` | `foto_varian_3d/{Brand}/` | **2.128:1** | 5010×2354 | COVER | jpg/png |
+| Showcase varian — produk `{n}-1` | `foto_varian_3d/{Brand}/` | **~3:4** | 2687×3660 | — | **PNG** |
 
 \* Banner brand: **COVER & full screen di desktop MAUPUN HP**. Di HP (potret) sisi kiri-kanan terpotong banyak → taruh semua branding/subjek **benar-benar di tengah**. (`bannerBg` kini hanya warna latar saat loading.)
+
+**Showcase varian = parallax berlapis:** tiap banner terdiri 2 file → `{n}-2` (latar+teks) & `{n}-1` (produk PNG, masuk dari kiri/kanan ke tengah). n = urutan banner (1,2,3…).
 
 ## 📐 Rasio per viewport (Desktop vs HP)
 

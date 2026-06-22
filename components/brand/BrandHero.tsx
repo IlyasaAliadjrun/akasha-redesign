@@ -1,76 +1,114 @@
 "use client";
 import Image from "next/image";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Brand, HeroLayer } from "@/lib/brands";
 
-// One parallax layer. Lives in its own component so each can own a `useTransform`
-// hook (hooks can't be called inside the layers.map() loop in the parent).
+// Tracks the small-screen breakpoint (<768px) so layers/content can swap to their
+// mobile placement. Starts false (desktop) on the server; corrects on mount.
+function useIsMobile() {
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const update = () => setMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  return mobile;
+}
+
+// One parallax layer. Entrance (slide + fade) lives on the outer element; the
+// continuous scroll parallax lives on an inner element, so an entrance that slides
+// vertically never fights the parallax y. On mobile, `layer.mobile` overrides the
+// position/size/entrance.
 function ParallaxLayer({
   layer,
   progress,
   index,
+  isMobile,
 }: {
   layer: HeroLayer;
   progress: MotionValue<number>;
   index: number;
+  isMobile: boolean;
 }) {
+  const o = (isMobile && layer.mobile) || {};
+  const left = o.left ?? layer.left;
+  const top = o.top ?? layer.top;
+  const right = o.right ?? layer.right;
+  const bottom = o.bottom ?? layer.bottom;
+  const width = o.width ?? layer.width;
+  const enterFrom = o.enterFrom ?? layer.enterFrom;
+
   const depth = layer.depth ?? 40;
-  // Travel up as the hero scrolls out of view. The wrapper is oversized
-  // (-inset-y) so this movement never reveals an edge.
-  const y = useTransform(progress, [0, 1], [0, -depth]);
-  const enterX =
-    layer.enterFrom === "left" ? -72 : layer.enterFrom === "right" ? 72 : 0;
-  // Three wrapper modes:
-  // - sized:    a positioned element (logo/wordmark) sized via inline CSS.
-  // - contain:  full-bleed, inset-0 — drift just reveals seamless background.
-  // - cover:    full-bleed, oversized (-inset-y) so drift never reveals an edge.
-  const sized = Boolean(layer.width);
-  const sizedStyle = sized
+  const parallaxY = useTransform(progress, [0, 1], [0, -depth]);
+  const enterX = enterFrom === "left" ? -80 : enterFrom === "right" ? 80 : 0;
+  const enterY = enterFrom === "top" ? -80 : enterFrom === "bottom" ? 80 : 0;
+
+  const sized = Boolean(width);
+  const positionStyle = sized
     ? {
         position: "absolute" as const,
-        left: layer.left,
-        top: layer.top,
-        right: layer.right,
-        bottom: layer.bottom,
-        width: layer.width,
+        left,
+        top,
+        right,
+        bottom,
+        width,
         maxWidth: layer.maxWidth,
         aspectRatio: layer.aspectRatio,
       }
     : undefined;
-  const wrapper = sized
+  const wrapperClass = sized
     ? ""
     : layer.fit === "contain"
     ? "absolute inset-0"
     : "absolute inset-x-0 -inset-y-[22%]";
+  const fitClass =
+    sized || layer.fit === "contain" ? "object-contain" : "object-cover";
+
   return (
     <motion.div
-      style={{ y, ...sizedStyle }}
-      initial={{ opacity: 0, x: enterX, scale: 1.06 }}
-      animate={{ opacity: 1, x: 0, scale: 1 }}
-      transition={{ duration: 1.4, delay: layer.enterDelay ?? index * 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className={wrapper}
+      initial={{ opacity: 0, x: enterX, y: enterY, scale: sized ? 1 : 1.06 }}
+      animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+      transition={{
+        duration: 1.1,
+        delay: layer.enterDelay ?? index * 0.5,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className={wrapperClass}
+      style={positionStyle}
     >
-      <Image
-        src={layer.src}
-        alt=""
-        fill
-        priority={index === 0}
-        sizes="100vw"
-        className={sized || layer.fit === "contain" ? "object-contain" : "object-cover"}
-        style={layer.position ? { objectPosition: layer.position } : undefined}
-      />
+      <motion.div style={{ y: parallaxY }} className="absolute inset-0">
+        <Image
+          src={layer.src}
+          alt=""
+          fill
+          priority={index === 0}
+          sizes="(min-width:768px) 50vw, 100vw"
+          className={fitClass}
+          style={layer.position ? { objectPosition: layer.position } : undefined}
+        />
+      </motion.div>
     </motion.div>
   );
 }
 
 export default function BrandHero({ brand }: { brand: Brand }) {
   const ref = useRef<HTMLElement>(null);
+  const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
   const layers = brand.heroLayers;
+  const content = brand.heroContent;
+  const darkText = content?.theme === "dark";
+
+  const taglineColor = darkText ? "text-ink" : "text-white";
+  const ctaClass = darkText
+    ? "border-ink/40 text-ink hover:bg-ink hover:text-white"
+    : "border-white/70 text-white hover:bg-white hover:text-ink";
 
   return (
     <section
@@ -81,7 +119,13 @@ export default function BrandHero({ brand }: { brand: Brand }) {
     >
       {layers?.length ? (
         layers.map((l, i) => (
-          <ParallaxLayer key={l.src} layer={l} progress={scrollYProgress} index={i} />
+          <ParallaxLayer
+            key={l.src}
+            layer={l}
+            progress={scrollYProgress}
+            index={i}
+            isMobile={isMobile}
+          />
         ))
       ) : (
         <motion.div
@@ -101,8 +145,85 @@ export default function BrandHero({ brand }: { brand: Brand }) {
         </motion.div>
       )}
 
+      {/* HTML overlay — DESKTOP: wordmark + tagline + CTA stacked, left column. */}
+      {content && (
+        <div
+          className="hidden md:flex absolute inset-y-0 z-20 flex-col justify-center pointer-events-none"
+          style={{
+            left: content.left ?? "5%",
+            maxWidth: content.maxWidth,
+            transform: content.offsetY ? `translateY(${content.offsetY})` : undefined,
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: content.delay ?? 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col"
+          >
+            {content.logo && (
+              <div
+                className="relative"
+                style={{ width: content.logoWidth ?? "32vw", aspectRatio: content.logoAspect }}
+              >
+                <Image src={content.logo} alt={`${brand.name} logo`} fill sizes="40vw" className="object-contain object-left" />
+              </div>
+            )}
+            {content.tagline && (
+              <p className={`font-display mt-3 sm:mt-5 font-semibold leading-tight text-[clamp(15px,2vw,30px)] ${taglineColor}`}>
+                {content.tagline}
+              </p>
+            )}
+            {content.ctaText && (
+              <a
+                href={content.ctaHref ?? "#"}
+                className={`font-display pointer-events-auto mt-5 sm:mt-7 inline-block w-fit rounded-full border px-6 sm:px-7 py-2 sm:py-2.5 text-sm font-medium transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.97] ${ctaClass}`}
+              >
+                {content.ctaText}
+              </a>
+            )}
+          </motion.div>
+        </div>
+      )}
+
+      {/* HTML overlay — MOBILE: wordmark top-centre, tagline + CTA bottom-left. */}
+      {content && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: content.delay ?? 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="md:hidden absolute inset-0 z-20 flex flex-col justify-between pointer-events-none px-7 pt-[11vh] pb-[9vh]"
+        >
+          {content.logo ? (
+            <div
+              className="self-center relative"
+              style={{ width: content.mobile?.logoWidth ?? "60vw", aspectRatio: content.logoAspect }}
+            >
+              <Image src={content.logo} alt={`${brand.name} logo`} fill sizes="70vw" className="object-contain" />
+            </div>
+          ) : (
+            <span />
+          )}
+          <div className="self-start flex flex-col">
+            {content.tagline && (
+              <p className={`font-display font-semibold leading-tight text-[clamp(18px,5.5vw,26px)] ${taglineColor}`}>
+                {content.tagline}
+              </p>
+            )}
+            {content.ctaText && (
+              <a
+                href={content.ctaHref ?? "#"}
+                className={`font-display pointer-events-auto mt-4 inline-block w-fit rounded-full border px-6 py-2 text-sm font-medium transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.97] ${ctaClass}`}
+              >
+                {content.ctaText}
+              </a>
+            )}
+          </div>
+        </motion.div>
+      )}
+
       {/* Scroll indicator — chevron on mobile, mouse on desktop */}
-      <div className="absolute bottom-5 md:bottom-8 left-1/2 -translate-x-1/2 z-10">
+      <div className="absolute bottom-5 md:bottom-8 left-1/2 -translate-x-1/2 z-30">
         <motion.a
           href="#next"
           onClick={(e) => {
@@ -114,36 +235,10 @@ export default function BrandHero({ brand }: { brand: Brand }) {
           aria-label="Scroll down"
           className="flex flex-col items-center gap-1 sm:gap-2 text-white/70 hover:text-white transition-colors duration-500"
         >
-          {/* Mobile: double chevron */}
           <span className="sm:hidden flex flex-col items-center -space-y-1.5">
-            <svg
-              width="18"
-              height="10"
-              viewBox="0 0 24 14"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="opacity-50"
-            >
-              <path d="M4 4l8 7 8-7" />
-            </svg>
-            <svg
-              width="18"
-              height="10"
-              viewBox="0 0 24 14"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M4 4l8 7 8-7" />
-            </svg>
+            <svg width="18" height="10" viewBox="0 0 24 14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="M4 4l8 7 8-7" /></svg>
+            <svg width="18" height="10" viewBox="0 0 24 14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l8 7 8-7" /></svg>
           </span>
-
-          {/* Desktop: mouse icon */}
           <span className="hidden sm:flex relative w-[20px] h-[32px] rounded-full border-[1.5px] border-current items-start justify-center pt-[6px]">
             <motion.span
               animate={{ y: [0, 8, 0], opacity: [1, 0.2, 1] }}

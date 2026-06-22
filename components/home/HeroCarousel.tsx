@@ -26,7 +26,7 @@ const slides: Slide[] = [
     tag: "Gak dingin tetep seger",
     href: "/brands/nestle-pure-life",
     bg: "#D20B68",
-    image: "/main_banner/main banner NPL.jpg",
+    image: "/main_banner/NESTLE-PURE-LIFE.jpg",
   },
   {
     slug: "hair-energy",
@@ -34,7 +34,7 @@ const slides: Slide[] = [
     tag: "Wangi sepanjang hari",
     href: "/brands/hair-energy",
     bg: "#DA5B14",
-    image: "/main_banner/main banner HE.jpg",
+    image: "/main_banner/HAIR-ENERGY.jpg",
   },
   {
     slug: "make-it",
@@ -42,7 +42,7 @@ const slides: Slide[] = [
     tag: "Your scent. Your story",
     href: "/brands/make-it",
     bg: "#640113",
-    image: "/main_banner/Main banner make it.jpg",
+    image: "/main_banner/MAKEIT.jpg",
   },
   {
     slug: "barber-daily",
@@ -50,7 +50,7 @@ const slides: Slide[] = [
     tag: "Barbershop-quality grooming, every day",
     href: "/brands/barber-daily",
     bg: "#793E1C",
-    image: "/main_banner/main banner BD.jpg",
+    image: "/main_banner/BARBER-DAILY.jpg",
   },
   {
     slug: "wonhae",
@@ -58,7 +58,7 @@ const slides: Slide[] = [
     tag: "Korean flavors, Indonesian hearts",
     href: "/brands/wonhae",
     bg: "#FDDC57",
-    image: "/main_banner/main banner WONHAE.jpg",
+    image: "/main_banner/WONHAE.jpg",
     light: true,
   },
   {
@@ -67,7 +67,7 @@ const slides: Slide[] = [
     tag: "43 tahun besar bersama salon Indonesia",
     href: "/brands/makarizo-professional",
     bg: "#E0DCD3",
-    image: "/main_banner/main banner MAKPROF.jpg",
+    image: "/main_banner/MAKARIZO-PROFESSIONAL.jpg",
     light: true,
   },
 ];

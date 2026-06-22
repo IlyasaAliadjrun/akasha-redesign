@@ -15,6 +15,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-jakarta)", "system-ui", "sans-serif"],
+        display: ["var(--font-poppins)", "var(--font-jakarta)", "sans-serif"],
       },
       colors: {
         ink: "#0A0A0A",

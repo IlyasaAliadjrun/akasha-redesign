@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -10,6 +10,15 @@ const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
   display: "swap",
   weight: ["300", "400", "500", "600", "700", "800"],
+});
+
+// Geometric display font used for brand-hero taglines/CTAs. Exposed as
+// `font-display` via Tailwind.
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +35,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={jakarta.variable}>
+    <html lang="id" className={`${jakarta.variable} ${poppins.variable}`}>
       <body className="font-sans antialiased bg-white text-ink">
         <Navbar />
         <main>{children}</main>
