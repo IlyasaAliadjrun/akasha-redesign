@@ -28,6 +28,7 @@ export type HeroLayer = {
   // Overrides applied on small screens (<768px) — reposition/resize a layer for
   // mobile without touching the desktop values.
   mobile?: {
+    src?: string; // swap to a different asset on mobile (e.g. a tight product crop)
     left?: string;
     top?: string;
     right?: string;
@@ -61,6 +62,11 @@ export type HeroContent = {
   ctaText?: string;
   ctaHref?: string;
   left?: string; // block left offset (default "5%")
+  // Extra left padding applied to the tagline + CTA only (desktop), to line them up
+  // with the *visible* wordmark letters when the logo art has transparent margin /
+  // glow on its left. Express relative to logoWidth (e.g. logo solid-edge at 2.5% of
+  // a 34vw logo → "0.85vw"). Omit for no indent.
+  bodyIndent?: string;
   maxWidth?: string; // block max width (omit to let the tagline run wider than the logo)
   offsetY?: string; // vertical nudge from centre, e.g. "10vh" moves the block down
   theme?: "light" | "dark"; // text colour (default "light" = white)
@@ -151,19 +157,59 @@ export const BRANDS: Brand[] = [
     slug: "nestle-pure-life",
     name: "Nestlé Pure Life",
     division: "beverage",
-    tagline: "Gak dingin tetep seger.",
+    tagline: "Kemurnian di setiap tetes",
     description:
       "Air minum murni premium. Rasa bersih yang tetap menyegarkan, dingin maupun suhu ruang.",
     accentClass: "bg-brand-npl",
     accentHex: "#0077B6",
-    heroImage:
-      "https://images.unsplash.com/photo-1564419320461-6870880221ad?q=80&w=1800&auto=format&fit=crop",
+    heroImage: "/brand_banner/Nestle Pure Life/background.jpg",
+    // Layered parallax banner — same scheme as Hair Energy, but here the three
+    // assets are pre-composed full-bleed layers on one shared 4267×2464 canvas, so
+    // they line up pixel-perfect at scroll-top (parallax offset = 0) and only drift
+    // apart as the hero scrolls away. Order = stacking (last = front).
+    heroLayers: [
+      // background.jpg — full-bleed gradient backdrop (image, not a flat colour).
+      // `cover` so it always fills the hero; it's a smooth gradient, so any crop is
+      // invisible. Slowest parallax drift, settles in first.
+      { src: "/brand_banner/Nestle Pure Life/background.jpg", depth: 20, enterDelay: 0 },
+      // produk-1.png — the bottles. DESKTOP: full landscape canvas shown `contain`,
+      // nudged right via `position`. MOBILE: swap to a tight bottles crop
+      // (produk-bottles.png) rendered as a *sized & positioned* layer (Hair-Energy
+      // style) so the product stays prominent and centred on a tall phone screen.
+      // `aspectRatio` is the mobile crop's ratio (only used by the sized mobile path).
+      { src: "/brand_banner/Nestle Pure Life/produk-1.png", depth: 70, fit: "contain", position: "72% 50%", enterFrom: "right", enterDelay: 0.4,
+        aspectRatio: "1084 / 1304",
+        mobile: { src: "/brand_banner/Nestle Pure Life/produk-bottles.png", width: "min(70vw, 46vh)", left: "20%", top: "25%" } },
+    ],
+    // Wordmark is an HTML overlay (same pattern as Hair Energy): the enlarged
+    // wordmark logo with a tagline + CTA button beneath it. `wordmark-lockup.png` is
+    // the tight content crop of the `wordmark-1.png` asset (the "NESTLÉ PURE LIFE"
+    // lockup + its drop shadow); the tagline + button below are our own HTML.
+    heroContent: {
+      logo: "/brand_banner/Nestle Pure Life/wordmark-lockup.png",
+      logoAspect: "1430 / 297",
+      logoWidth: "34vw",
+      tagline: "Kemurnian di setiap tetes",
+      ctaText: "Learn more",
+      ctaHref: "#about",
+      left: "9%",
+      bodyIndent: "0.85vw", // aligns tagline/CTA with the wordmark's visible letters
+      theme: "light",
+      delay: 0.5,
+      mobile: { logoWidth: "72vw" },
+    },
+    bannerBg: "#E6097E",
     hero: true,
+    about: [
+      { title: "Dimurnikan 12 Tahap", image: "/foto_about/Nestle Pure Life/1.png" },
+      { title: "Bebas Mineral Berlebih", image: "/foto_about/Nestle Pure Life/2.png" },
+      { title: "Aman untuk Keluarga", image: "/foto_about/Nestle Pure Life/3.png" },
+    ],
     products: [
-      { name: "Pure Life", variant: "330 mL", size: "24 pack / dus", image: "/foto_sku/NPL/330 NPL.jpg" },
-      { name: "Pure Life", variant: "600 mL", size: "24 pack / dus", image: "/foto_sku/NPL/600 NPL.jpg" },
-      { name: "Pure Life", variant: "1500 mL", size: "12 pack / dus", image: "/foto_sku/NPL/1500 NPL.jpg" },
-      { name: "Pure Life", variant: "Galon", size: "15 L", image: "/foto_sku/NPL/15L NPL.jpg" },
+      { name: "Pure Life", variant: "330 mL", size: "24 pack / dus", image: "/foto_sku/NESTLE-PURE-LIFE/330 NPL.jpg" },
+      { name: "Pure Life", variant: "600 mL", size: "24 pack / dus", image: "/foto_sku/NESTLE-PURE-LIFE/600 NPL.jpg" },
+      { name: "Pure Life", variant: "1500 mL", size: "12 pack / dus", image: "/foto_sku/NESTLE-PURE-LIFE/1500 NPL.jpg" },
+      { name: "Pure Life", variant: "Galon", size: "15 L", image: "/foto_sku/NESTLE-PURE-LIFE/15L NPL.jpg" },
     ],
     reasons: [
       { icon: "💧", title: "Dimurnikan 12 tahap", body: "Setiap botol melewati proses penyaringan berlapis sebelum sampai ke tanganmu." },
@@ -314,28 +360,28 @@ export const BRANDS: Brand[] = [
     bannerBg: "#F36C21",
     hero: true,
     products: [
-      { name: "Fibertherapy Shampoo", variant: "Active Menthol", size: "170 mL", image: "/foto_sku/HE/HE Shampoo Active Menthol 170mL.png" },
-      { name: "Fibertherapy Shampoo", variant: "Aloe Melon", size: "170 mL", image: "/foto_sku/HE/HE Shampoo Aloe Melon 170mL.png" },
-      { name: "Fibertherapy Shampoo", variant: "Citrus Tea", size: "170 mL", image: "/foto_sku/HE/HE Shampoo Citrus Tea 170mL.png" },
-      { name: "Fibertherapy Shampoo", variant: "Kiwi", size: "170 mL", image: "/foto_sku/HE/HE Shampoo Kiwi 170mL.png" },
-      { name: "Fibertherapy Shampoo", variant: "Olive", size: "170 mL", image: "/foto_sku/HE/HE Shampoo Olive 170mL.png" },
-      { name: "Fibertherapy Shampoo", variant: "Royal Jelly", size: "170 mL", image: "/foto_sku/HE/HE Shampoo Royal Jelly 170mL.png" },
-      { name: "Fibertherapy Creambath", variant: "Aloe Melon", size: "500 mL", image: "/foto_sku/HE/HE Creambath Aloe Melon 500mL.png" },
-      { name: "Fibertherapy Creambath", variant: "Ginseng", size: "500 mL", image: "/foto_sku/HE/HE Creambath Ginseng 500mL.png" },
-      { name: "Fibertherapy Creambath", variant: "Kiwi", size: "500 mL", image: "/foto_sku/HE/HE Creambath Kiwi 500mL.png" },
-      { name: "Fibertherapy Creambath", variant: "Olive", size: "500 mL", image: "/foto_sku/HE/HE Creambath Olive 500mL.png" },
-      { name: "Fibertherapy Creambath", variant: "Royal Jelly", size: "500 mL", image: "/foto_sku/HE/HE Creambath Royal Jelly 500mL.png" },
-      { name: "Scentsations", variant: "Amber Wood", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Amber Wood 100mL.png" },
-      { name: "Scentsations", variant: "Blue Coast", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Blue Coast 100mL.png" },
-      { name: "Scentsations", variant: "Cherry Blossoms", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Cherry Blossoms 100mL.png" },
-      { name: "Scentsations", variant: "Emerald Crush", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Emerald Crush 100mL.png" },
-      { name: "Scentsations", variant: "Fresh Bouquet", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Fresh Bouquet 100mL.png" },
-      { name: "Scentsations", variant: "Morning Dew", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Morning Dew 100mL.png" },
-      { name: "Scentsations", variant: "Ocean Breeze", size: "100 mL", image: "/foto_sku/HE/HE Scentsations Ocean Breeze 100mL.png" },
-      { name: "Scentsations", variant: "White Musk", size: "100 mL", image: "/foto_sku/HE/HE Scentsations White Musk 100mL.png" },
-      { name: "Vitaglitz", variant: "Aloe Melon", size: "6×1 mL", image: "/foto_sku/HE/HE Vitaglitz Aloe Melon 6x1mL.png" },
-      { name: "Vitaglitz", variant: "Kiwi", size: "6×1 mL", image: "/foto_sku/HE/HE Vitaglitz Kiwi 6x1mL.png" },
-      { name: "Vitaglitz", variant: "Royal Jelly", size: "6×1 mL", image: "/foto_sku/HE/HE Vitaglitz Royal Jelly 6x1mL.png" },
+      { name: "Fibertherapy Shampoo", variant: "Active Menthol", size: "170 mL", image: "/foto_sku/HAIR-ENERGY/HE Shampoo Active Menthol 170mL.png" },
+      { name: "Fibertherapy Shampoo", variant: "Aloe Melon", size: "170 mL", image: "/foto_sku/HAIR-ENERGY/HE Shampoo Aloe Melon 170mL.png" },
+      { name: "Fibertherapy Shampoo", variant: "Citrus Tea", size: "170 mL", image: "/foto_sku/HAIR-ENERGY/HE Shampoo Citrus Tea 170mL.png" },
+      { name: "Fibertherapy Shampoo", variant: "Kiwi", size: "170 mL", image: "/foto_sku/HAIR-ENERGY/HE Shampoo Kiwi 170mL.png" },
+      { name: "Fibertherapy Shampoo", variant: "Olive", size: "170 mL", image: "/foto_sku/HAIR-ENERGY/HE Shampoo Olive 170mL.png" },
+      { name: "Fibertherapy Shampoo", variant: "Royal Jelly", size: "170 mL", image: "/foto_sku/HAIR-ENERGY/HE Shampoo Royal Jelly 170mL.png" },
+      { name: "Fibertherapy Creambath", variant: "Aloe Melon", size: "500 mL", image: "/foto_sku/HAIR-ENERGY/HE Creambath Aloe Melon 500mL.png" },
+      { name: "Fibertherapy Creambath", variant: "Ginseng", size: "500 mL", image: "/foto_sku/HAIR-ENERGY/HE Creambath Ginseng 500mL.png" },
+      { name: "Fibertherapy Creambath", variant: "Kiwi", size: "500 mL", image: "/foto_sku/HAIR-ENERGY/HE Creambath Kiwi 500mL.png" },
+      { name: "Fibertherapy Creambath", variant: "Olive", size: "500 mL", image: "/foto_sku/HAIR-ENERGY/HE Creambath Olive 500mL.png" },
+      { name: "Fibertherapy Creambath", variant: "Royal Jelly", size: "500 mL", image: "/foto_sku/HAIR-ENERGY/HE Creambath Royal Jelly 500mL.png" },
+      { name: "Scentsations", variant: "Amber Wood", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Amber Wood 100mL.png" },
+      { name: "Scentsations", variant: "Blue Coast", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Blue Coast 100mL.png" },
+      { name: "Scentsations", variant: "Cherry Blossoms", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Cherry Blossoms 100mL.png" },
+      { name: "Scentsations", variant: "Emerald Crush", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Emerald Crush 100mL.png" },
+      { name: "Scentsations", variant: "Fresh Bouquet", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Fresh Bouquet 100mL.png" },
+      { name: "Scentsations", variant: "Morning Dew", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Morning Dew 100mL.png" },
+      { name: "Scentsations", variant: "Ocean Breeze", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Ocean Breeze 100mL.png" },
+      { name: "Scentsations", variant: "White Musk", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations White Musk 100mL.png" },
+      { name: "Vitaglitz", variant: "Aloe Melon", size: "6×1 mL", image: "/foto_sku/HAIR-ENERGY/HE Vitaglitz Aloe Melon 6x1mL.png" },
+      { name: "Vitaglitz", variant: "Kiwi", size: "6×1 mL", image: "/foto_sku/HAIR-ENERGY/HE Vitaglitz Kiwi 6x1mL.png" },
+      { name: "Vitaglitz", variant: "Royal Jelly", size: "6×1 mL", image: "/foto_sku/HAIR-ENERGY/HE Vitaglitz Royal Jelly 6x1mL.png" },
     ],
     reasons: [
       { icon: "🌸", title: "Wangi tahan seharian", body: "Formula fragrance yang menempel lembut di rambut dan tubuh." },
@@ -344,9 +390,9 @@ export const BRANDS: Brand[] = [
       { icon: "💖", title: "Dicintai Gen-Z Indonesia", body: "Rutinitas #EasyToKnow yang jadi favorit self-care di TikTok." },
     ],
     about: [
-      { title: "Perawatan Rambut dengan Keratin", image: "/foto_about/Hair Energy/Asset HE-05.png" },
-      { title: "Formula pH Balance", image: "/foto_about/Hair Energy/Asset HE-06.png" },
-      { title: "Natural Extract", image: "/foto_about/Hair Energy/Asset HE-07.png" },
+      { title: "Perawatan Rambut dengan Keratin", image: "/foto_about/Hair Energy/1.png" },
+      { title: "Formula pH Balance", image: "/foto_about/Hair Energy/2.png" },
+      { title: "Natural Extract", image: "/foto_about/Hair Energy/3.png" },
     ],
     showcase: {
       hero: "/foto_judul_3d/Hair Energy/1.png",

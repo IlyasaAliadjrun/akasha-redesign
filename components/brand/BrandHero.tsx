@@ -34,6 +34,7 @@ function ParallaxLayer({
   isMobile: boolean;
 }) {
   const o = (isMobile && layer.mobile) || {};
+  const src = o.src ?? layer.src;
   const left = o.left ?? layer.left;
   const top = o.top ?? layer.top;
   const right = o.right ?? layer.right;
@@ -81,7 +82,7 @@ function ParallaxLayer({
     >
       <motion.div style={{ y: parallaxY }} className="absolute inset-0">
         <Image
-          src={layer.src}
+          src={src}
           alt=""
           fill
           priority={index === 0}
@@ -169,18 +170,22 @@ export default function BrandHero({ brand }: { brand: Brand }) {
                 <Image src={content.logo} alt={`${brand.name} logo`} fill sizes="40vw" className="object-contain object-left" />
               </div>
             )}
-            {content.tagline && (
-              <p className={`font-display mt-3 sm:mt-5 font-semibold leading-tight text-[clamp(15px,2vw,30px)] ${taglineColor}`}>
-                {content.tagline}
-              </p>
-            )}
-            {content.ctaText && (
-              <a
-                href={content.ctaHref ?? "#"}
-                className={`font-display pointer-events-auto mt-5 sm:mt-7 inline-block w-fit rounded-full border px-6 sm:px-7 py-2 sm:py-2.5 text-sm font-medium transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.97] ${ctaClass}`}
-              >
-                {content.ctaText}
-              </a>
+            {(content.tagline || content.ctaText) && (
+              <div className="flex flex-col" style={{ paddingLeft: content.bodyIndent }}>
+                {content.tagline && (
+                  <p className={`font-display mt-3 sm:mt-5 font-semibold leading-tight text-[clamp(15px,2vw,30px)] ${taglineColor}`}>
+                    {content.tagline}
+                  </p>
+                )}
+                {content.ctaText && (
+                  <a
+                    href={content.ctaHref ?? "#"}
+                    className={`font-display pointer-events-auto mt-5 sm:mt-7 inline-block w-fit rounded-full border px-6 sm:px-7 py-2 sm:py-2.5 text-sm font-medium transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.97] ${ctaClass}`}
+                  >
+                    {content.ctaText}
+                  </a>
+                )}
+              </div>
             )}
           </motion.div>
         </div>
