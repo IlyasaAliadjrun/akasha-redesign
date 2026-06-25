@@ -17,6 +17,10 @@ type Slide = {
   bg: string;
   image: string;
   light?: boolean;
+  // Mobile object-position. The wide banner is cropped to a centre slice on a
+  // narrow phone, which can cut off a subject placed to the right — nudge the crop
+  // toward them here (e.g. "72% 50%"). Desktop always stays centred.
+  pos?: string;
 };
 
 const slides: Slide[] = [
@@ -27,6 +31,7 @@ const slides: Slide[] = [
     href: "/brands/nestle-pure-life",
     bg: "#D20B68",
     image: "/main_banner/NESTLE-PURE-LIFE.jpg",
+    pos: "62% 50%",
   },
   {
     slug: "hair-energy",
@@ -35,6 +40,7 @@ const slides: Slide[] = [
     href: "/brands/hair-energy",
     bg: "#DA5B14",
     image: "/main_banner/HAIR-ENERGY.jpg",
+    pos: "72% 50%",
   },
   {
     slug: "make-it",
@@ -51,6 +57,7 @@ const slides: Slide[] = [
     href: "/brands/barber-daily",
     bg: "#793E1C",
     image: "/main_banner/BARBER-DAILY.jpg",
+    pos: "76% 50%",
   },
   {
     slug: "wonhae",
@@ -69,6 +76,7 @@ const slides: Slide[] = [
     bg: "#E0DCD3",
     image: "/main_banner/MAKARIZO-PROFESSIONAL.jpg",
     light: true,
+    pos: "62% 50%",
   },
 ];
 
@@ -109,7 +117,7 @@ export default function HeroCarousel() {
   return (
     <section
       data-theme={light ? "light" : "dark"}
-      className="relative h-[33svh] sm:h-[100svh] min-h-[200px] sm:min-h-[clamp(480px,70vh,720px)] max-h-[1100px] w-full overflow-hidden transition-colors duration-[1500ms]"
+      className="relative h-[33svh] sm:h-[100svh] min-h-[330px] sm:min-h-[clamp(480px,70vh,720px)] max-h-[1100px] w-full overflow-hidden transition-colors duration-[1500ms]"
       style={{ backgroundColor: s.bg }}
     >
       <AnimatePresence mode="wait">
@@ -126,7 +134,8 @@ export default function HeroCarousel() {
             alt={s.name}
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-[var(--mpos)] sm:object-center"
+            style={{ ["--mpos"]: s.pos ?? "50% 50%" } as React.CSSProperties}
             sizes="100vw"
           />
         </motion.div>

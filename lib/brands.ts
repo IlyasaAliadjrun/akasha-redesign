@@ -158,8 +158,7 @@ export const BRANDS: Brand[] = [
     name: "Nestlé Pure Life",
     division: "beverage",
     tagline: "Kemurnian di setiap tetes",
-    description:
-      "Air minum murni premium. Rasa bersih yang tetap menyegarkan, dingin maupun suhu ruang.",
+    description: "Air mineral pH netral yang diproses ketat dengan 12 tahap kemurnian kualitas Nestlé",
     accentClass: "bg-brand-npl",
     accentHex: "#0077B6",
     heroImage: "/brand_banner/Nestle Pure Life/background.jpg",
@@ -201,9 +200,9 @@ export const BRANDS: Brand[] = [
     bannerBg: "#E6097E",
     hero: true,
     about: [
-      { title: "Dimurnikan 12 Tahap", image: "/foto_about/Nestle Pure Life/1.png" },
-      { title: "Bebas Mineral Berlebih", image: "/foto_about/Nestle Pure Life/2.png" },
-      { title: "Aman untuk Keluarga", image: "/foto_about/Nestle Pure Life/3.png" },
+      { title: "Dari Sumber Mata Air Bersuhu Dingin (hingga 18°C)", image: "/foto_about/Nestle Pure Life/1.png" },
+      { title: "Teknologi Standar Internasional", image: "/foto_about/Nestle Pure Life/2.png" },
+      { title: "Dikirim dengan Armada Tertutup", image: "/foto_about/Nestle Pure Life/3.png" },
     ],
     products: [
       { name: "Pure Life", variant: "330 mL", size: "24 pack / dus", image: "/foto_sku/NESTLE-PURE-LIFE/330 NPL.jpg" },

@@ -13,7 +13,7 @@ export default function BrandIntro({ brand }: { brand: Brand }) {
         className="max-w-content mx-auto px-6 lg:px-10 text-center"
       >
         <div
-          className="text-[11px] uppercase tracking-[0.3em] font-bold mb-6"
+          className="text-[18px] uppercase tracking-[0.3em] font-bold mb-6"
           style={{ color: brand.accentHex }}
         >
           About {brand.name}
