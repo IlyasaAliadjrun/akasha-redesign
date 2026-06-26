@@ -31,7 +31,7 @@ const slides: Slide[] = [
     href: "/brands/nestle-pure-life",
     bg: "#D20B68",
     image: "/main_banner/NESTLE-PURE-LIFE.jpg",
-    pos: "62% 50%",
+    pos: "75% 50%",
   },
   {
     slug: "hair-energy",
@@ -40,7 +40,7 @@ const slides: Slide[] = [
     href: "/brands/hair-energy",
     bg: "#DA5B14",
     image: "/main_banner/HAIR-ENERGY.jpg",
-    pos: "72% 50%",
+    pos: "75% 50%",
   },
   {
     slug: "make-it",
@@ -49,6 +49,7 @@ const slides: Slide[] = [
     href: "/brands/make-it",
     bg: "#640113",
     image: "/main_banner/MAKEIT.jpg",
+    pos: "80% 50%",
   },
   {
     slug: "barber-daily",
@@ -57,7 +58,7 @@ const slides: Slide[] = [
     href: "/brands/barber-daily",
     bg: "#793E1C",
     image: "/main_banner/BARBER-DAILY.jpg",
-    pos: "76% 50%",
+    pos: "80% 50%",
   },
   {
     slug: "wonhae",
@@ -67,6 +68,7 @@ const slides: Slide[] = [
     bg: "#FDDC57",
     image: "/main_banner/WONHAE.jpg",
     light: true,
+    pos: "75% 50%",
   },
   {
     slug: "makarizo-professional",
@@ -76,7 +78,7 @@ const slides: Slide[] = [
     bg: "#E0DCD3",
     image: "/main_banner/MAKARIZO-PROFESSIONAL.jpg",
     light: true,
-    pos: "62% 50%",
+    pos: "75% 50%",
   },
 ];
 
@@ -228,8 +230,9 @@ export default function HeroCarousel() {
         </motion.button>
       </div>
 
-      {/* Slide indicators — single row, smaller on mobile */}
-      <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 flex flex-nowrap items-center gap-1 sm:gap-3 md:gap-4 z-10 px-3 max-w-[96vw] justify-center">
+      {/* Slide indicators — single row, smaller on mobile. Centered via a full-width
+          row + justify-center (robust — doesn't rely on translate). */}
+      <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 inset-x-0 flex flex-nowrap items-center gap-1 sm:gap-3 md:gap-4 z-10 px-3 justify-center">
         {slides.map((sl, idx) => (
           <button
             key={sl.slug}
@@ -252,8 +255,9 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      {/* Scroll indicator — chevron on mobile, mouse on desktop */}
-      <div className="absolute bottom-5 md:bottom-6 left-1/2 -translate-x-1/2 z-10">
+      {/* Scroll indicator — chevron on mobile, mouse on desktop. Full-width +
+          justify-center so it's reliably centered (no translate dependency). */}
+      <div className="absolute bottom-5 md:bottom-6 inset-x-0 z-10 flex justify-center">
         <motion.a
           href="#next"
           onClick={(e) => {
