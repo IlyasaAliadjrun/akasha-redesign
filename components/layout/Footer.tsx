@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BRANDS } from "@/lib/brands";
+import { BRANDS, brandHref } from "@/lib/brands";
 
 export default function Footer() {
   return (
@@ -13,7 +13,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {BRANDS.filter((b) => !b.parent).map((b) => (
                 <li key={b.slug}>
-                  <Link href={`/brands/${b.slug}`} className="hover:text-white transition">
+                  <Link href={brandHref(b.slug)} className="hover:text-white transition">
                     {b.name}
                   </Link>
                 </li>

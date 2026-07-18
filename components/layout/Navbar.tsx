@@ -135,7 +135,7 @@ export default function Navbar() {
             className="inline-flex items-center transition-opacity duration-300 hover:opacity-70"
           >
             <Image
-              src={darkContent ? "/logo_warna.png" : "/logo_putih.png"}
+              src={darkContent ? "/shared/logo-color.png" : "/shared/logo-white.png"}
               alt="Akasha"
               width={240}
               height={72}

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { DIVISIONS, brandsByDivision } from "@/lib/brands";
+import { DIVISIONS, brandHref, brandsByDivision } from "@/lib/brands";
 
 export default function DivisionCards() {
   const railRef = useRef<HTMLDivElement>(null);
@@ -112,7 +112,7 @@ export default function DivisionCards() {
               <Link
                 key={d.id}
                 data-card
-                href={first ? `/brands/${first.slug}` : "#"}
+                href={first ? brandHref(first.slug) : "#"}
                 draggable={false}
                 className="snap-start shrink-0 lg:shrink w-[84vw] sm:w-[58vw] md:w-[42vw] lg:w-auto max-w-[440px] lg:max-w-none aspect-[3/4] h-auto max-h-[720px] min-h-[440px] lg:min-h-0 relative rounded-2xl sm:rounded-3xl overflow-hidden group"
               >

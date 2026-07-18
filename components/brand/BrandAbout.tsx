@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Brand } from "@/lib/brands";
 
 // Three image cards shown directly beneath BrandIntro. Renders nothing unless
-// the brand provides `about` entries (assets live in /public/foto_about/{brand}).
+// the brand provides `about` entries (assets live in /public/brand/{slug}/about).
 // Mobile: horizontal swipe slider with nav arrows (like Explore the lineup).
 // sm+: 3-column grid (arrows/rail behaviour are inert because there's no overflow).
 export default function BrandAbout({ brand }: { brand: Brand }) {

@@ -1,19 +1,11 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { BRANDS, getBrand } from "@/lib/brands";
-import BrandHero from "@/components/brand/BrandHero";
-import BrandIntro from "@/components/brand/BrandIntro";
-import BrandAbout from "@/components/brand/BrandAbout";
-import BrandShowcase from "@/components/brand/BrandShowcase";
-// Temporarily disabled across all brands:
-// import ScrollFeatureReveal from "@/components/brand/ScrollFeatureReveal";
-import ProductLineup from "@/components/brand/ProductLineup";
-// import WhyThisProduct from "@/components/brand/WhyThisProduct";
-import CrossSell from "@/components/brand/CrossSell";
-import BrandCTA from "@/components/brand/BrandCTA";
+import { getBrand, isUmbrella, pageBrands } from "@/lib/brands";
+import BrandPage from "@/components/brand/BrandPage";
+import SubBrandPage from "@/components/brand/SubBrandPage";
 
 export function generateStaticParams() {
-  return BRANDS.map((b) => ({ slug: b.slug }));
+  return pageBrands().map((b) => ({ slug: b.slug }));
 }
 
 export function generateMetadata({
@@ -22,38 +14,19 @@ export function generateMetadata({
   params: { slug: string };
 }): Metadata {
   const brand = getBrand(params.slug);
-  if (!brand) return {};
+  if (!brand || isUmbrella(brand)) return {};
   return {
     title: `${brand.name} — Akasha Wira International`,
     description: brand.description,
   };
 }
 
-export default function BrandPage({ params }: { params: { slug: string } }) {
+export default function Page({ params }: { params: { slug: string } }) {
   const brand = getBrand(params.slug);
-  if (!brand) notFound();
+  // Umbrella brands (Makarizo, Makarizo Professional) only group their sub-brands.
+  // They get no page of their own and must not redirect to a child — a 404 keeps
+  // the umbrella out of search results and out of the URL space entirely.
+  if (!brand || isUmbrella(brand)) notFound();
 
-  return (
-    <>
-      <BrandHero brand={brand} />
-      <ProductLineup brand={brand} />
-      <BrandIntro brand={brand} />
-      <BrandAbout brand={brand} />
-      <BrandShowcase brand={brand} />
-      {/* Temporarily commented out for all brands — re-enable when ready.
-      {brand.features && brand.features.length > 0 && (
-        <div id="story">
-          <ScrollFeatureReveal
-            features={brand.features}
-            brandName={brand.name}
-            accent={brand.accentHex}
-          />
-        </div>
-      )}
-      <WhyThisProduct brand={brand} />
-      */}
-      <CrossSell current={brand} />
-      <BrandCTA brand={brand} />
-    </>
-  );
+  return brand.parent ? <SubBrandPage brand={brand} /> : <BrandPage brand={brand} />;
 }

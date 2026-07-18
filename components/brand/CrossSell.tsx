@@ -2,10 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { BRANDS, type Brand } from "@/lib/brands";
+import { pageBrands, type Brand } from "@/lib/brands";
 
 export default function CrossSell({ current }: { current: Brand }) {
-  const others = BRANDS.filter((b) => b.slug !== current.slug).slice(0, 3);
+  // pageBrands() drops umbrella brands — they have no page, so a card linking to
+  // one would land on a 404.
+  const others = pageBrands()
+    .filter((b) => b.slug !== current.slug)
+    .slice(0, 3);
   const railRef = useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);

@@ -64,8 +64,11 @@ app/                          Next.js App Router pages
 components/
 ├── home/                     Homepage scenes (HeroCarousel, DivisionCards, StickyProductReveal,
 │                             BentoGrid, SensoryStrip, CompanyStatement)
-├── brand/                    Brand-page sections (BrandHero, BrandIntro, ScrollFeatureReveal,
-│                             ProductLineup, WhyThisProduct, CrossSell, BrandCTA)
+├── brand/                    Brand-page templates (BrandPage, SubBrandPage) + sections
+│                             (BrandHero, BrandIntro, ScrollFeatureReveal, ProductLineup,
+│                             WhyThisProduct, CrossSell, BrandCTA)
+├── page/                     PageHero — full-screen hero shared by the non-brand pages
+│                             (About, Investor, Governance, Contact, Careers)
 ├── investor/                 RevenueChart
 └── layout/                   Navbar, MegaMenu, Footer, BackToTop
 
@@ -93,21 +96,18 @@ Always use `@/...` for imports across folders. Use relative imports only within 
 
 ## 6. Brand routes
 
-The 9 brand slugs are defined in [lib/brands.ts](lib/brands.ts) and rendered through [app/brands/[slug]/page.tsx](app/brands/[slug]/page.tsx):
+All brand slugs are defined in [lib/brands.ts](lib/brands.ts) and rendered through the single dynamic route [app/brands/[slug]/page.tsx](app/brands/[slug]/page.tsx), which picks one of two templates:
 
-```
-/brands/nestle-pure-life
-/brands/vica
-/brands/hair-energy
-/brands/make-it
-/brands/makarizo-professional
-/brands/wonhae
-/brands/omoide
-/brands/floaty
-/brands/fitmeup
-```
+- **Top-level brand** → [components/brand/BrandPage.tsx](components/brand/BrandPage.tsx)
+- **Sub-brand** (has a `parent`, e.g. Hair Energy under Makarizo) → [components/brand/SubBrandPage.tsx](components/brand/SubBrandPage.tsx)
 
-When adding or modifying a brand, update [lib/brands.ts](lib/brands.ts) — do **not** create per-brand page files. The single dynamic route renders all of them.
+**Umbrella brands have no page.** A brand that has sub-brands (currently `makarizo` and `makarizo-professional`) exists only to group them: `/brands/makarizo` returns a **404 — deliberately not a redirect**. Consequences you must respect:
+
+- `generateStaticParams` builds from `pageBrands()`, not `BRANDS`.
+- **Never** hardcode `` `/brands/${slug}` `` for a brand that might be an umbrella. Use **`brandHref(slug)`** from [lib/brands.ts](lib/brands.ts) — it resolves an umbrella to its `flagship` sub-brand. Listings that shouldn't show umbrellas at all use `pageBrands()`.
+- Helpers: `isUmbrella(brand)`, `pageBrands()`, `brandHref(slug)`, `childrenOf(slug)`.
+
+When adding or modifying a brand, update [lib/brands.ts](lib/brands.ts) — do **not** create per-brand page files.
 
 ---
 
@@ -180,7 +180,7 @@ For any change touching code:
 1. Run `npm run build` and confirm it succeeds (this is the closest thing to a type check + lint we have).
 2. For UI changes, run `npm run dev` and visually confirm the page renders correctly. State explicitly if you couldn't verify visually.
 3. Check both desktop and mobile widths — many components rely on responsive Tailwind classes.
-4. If you touched a brand page, verify **all 9 brand slugs** still render (they share one template).
+4. If you touched a brand page, verify **every brand slug** still behaves: each slug in `pageBrands()` renders 200, and each umbrella slug (`makarizo`, `makarizo-professional`) returns 404. They share one route.
 
 If `npm run build` fails, **fix the root cause**. Do not weaken types, suppress errors with `@ts-ignore`, or comment out broken code to make the build pass.
 

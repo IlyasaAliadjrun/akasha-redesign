@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { GOVERNANCE_PILLARS, GCG_PRINCIPLES } from "@/lib/investor";
+import PageHero from "@/components/page/PageHero";
 
 export const metadata = {
   title: "Good Corporate Governance — Akasha Wira International",
@@ -11,26 +12,14 @@ export default function GovernancePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-[100svh] min-h-[760px] bg-white flex items-center">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 w-full">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-accent-beverage">
-              Good Corporate Governance
-            </span>
-            <span className="h-px w-8 bg-ink/20" />
-            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/60">
-              GCG
-            </span>
-          </div>
-          <h1 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
-            Tata kelola yang menopang kepercayaan.
-          </h1>
-          <p className="mt-6 text-base lg:text-lg text-ink/60 max-w-2xl">
-            Komitmen pada lima prinsip — transparansi, akuntabilitas, responsibilitas,
-            independensi, dan fairness — dalam setiap keputusan perusahaan.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        desktop="/governance/hero/desktop.jpg"
+        mobile="/governance/hero/mobile.jpg"
+        title="Governance that builds trust."
+        subtitle="Komitmen pada lima prinsip — transparansi, akuntabilitas, responsibilitas, independensi, dan fairness — dalam setiap keputusan perusahaan."
+        tone="dark"
+        bg="#880E17"
+      />
 
       {/* TARIF PRINCIPLES */}
       <section className="py-24 lg:py-32 bg-white">

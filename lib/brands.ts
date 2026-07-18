@@ -81,6 +81,10 @@ export type Brand = {
   name: string;
   division: DivisionId;
   parent?: string; // slug of the parent brand, for sub-brands
+  // Only meaningful on an umbrella brand (one that has sub-brands). An umbrella
+  // has no page of its own, so tiles/slides that carry its artwork link here
+  // instead. Falls back to the first sub-brand when unset.
+  flagship?: string;
   tagline: string;
   description: string;
   accentClass: string; // tailwind bg class
@@ -103,8 +107,8 @@ export type Brand = {
   features?: { title: string; body: string; image: string }[];
   reasons?: { icon: string; title: string; body: string }[];
   about?: { image: string; title: string }[];
-  // Poster-style showcase: a hero graphic (foto_judul_3d/{brand}) with layered
-  // parallax variant banners (foto_varian_3d/{brand}) overlapping its bottom edge.
+  // Poster-style showcase: a title graphic (brand/{slug}/showcase/title) with layered
+  // parallax variant banners (brand/{slug}/showcase/{n}-{1,2}) overlapping its bottom edge.
   // `heroAspect` = hero's intrinsic ratio (CSS aspect-ratio; defaults to square).
   showcase?: { hero: string; heroAspect?: string; variants?: ShowcaseVariant[] };
 };
@@ -123,7 +127,7 @@ export const DIVISIONS: {
     tagline: "Purity you can taste",
     brandCount: 2,
     accentHex: "#0066CC",
-    image: "/one_company_many_moments/BU Banner NPL.jpg",
+    image: "/home/division-cards/beverage.jpg",
   },
   {
     id: "beauty",
@@ -131,7 +135,7 @@ export const DIVISIONS: {
     tagline: "Confidence, bottled",
     brandCount: 6,
     accentHex: "#C9956B",
-    image: "/one_company_many_moments/BU Banner MKZ HE.png",
+    image: "/home/division-cards/beauty.png",
   },
   {
     id: "mens",
@@ -139,7 +143,7 @@ export const DIVISIONS: {
     tagline: "Groomed, every day",
     brandCount: 1,
     accentHex: "#5B6B7F",
-    image: "/main_banner/BARBER-DAILY.jpg",
+    image: "/home/hero-carousel/barber-daily.jpg",
   },
   {
     id: "food",
@@ -161,7 +165,7 @@ export const BRANDS: Brand[] = [
     description: "Air mineral pH netral yang diproses ketat dengan 12 tahap kemurnian kualitas Nestlé",
     accentClass: "bg-brand-npl",
     accentHex: "#0077B6",
-    heroImage: "/brand_banner/Nestle Pure Life/background.jpg",
+    heroImage: "/brand/nestle-pure-life/hero/background.jpg",
     // Layered parallax banner — same scheme as Hair Energy, but here the three
     // assets are pre-composed full-bleed layers on one shared 4267×2464 canvas, so
     // they line up pixel-perfect at scroll-top (parallax offset = 0) and only drift
@@ -170,22 +174,22 @@ export const BRANDS: Brand[] = [
       // background.jpg — full-bleed gradient backdrop (image, not a flat colour).
       // `cover` so it always fills the hero; it's a smooth gradient, so any crop is
       // invisible. Slowest parallax drift, settles in first.
-      { src: "/brand_banner/Nestle Pure Life/background.jpg", depth: 20, enterDelay: 0 },
+      { src: "/brand/nestle-pure-life/hero/background.jpg", depth: 20, enterDelay: 0 },
       // produk-1.png — the bottles. DESKTOP: full landscape canvas shown `contain`,
       // nudged right via `position`. MOBILE: swap to a tight bottles crop
       // (produk-bottles.png) rendered as a *sized & positioned* layer (Hair-Energy
       // style) so the product stays prominent and centred on a tall phone screen.
       // `aspectRatio` is the mobile crop's ratio (only used by the sized mobile path).
-      { src: "/brand_banner/Nestle Pure Life/produk-1.png", depth: 70, fit: "contain", position: "72% 50%", enterFrom: "right", enterDelay: 0.4,
+      { src: "/brand/nestle-pure-life/hero/1.png", depth: 70, fit: "contain", position: "72% 50%", enterFrom: "right", enterDelay: 0.4,
         aspectRatio: "1084 / 1304",
-        mobile: { src: "/brand_banner/Nestle Pure Life/produk-bottles.png", width: "min(70vw, 46vh)", left: "20%", top: "25%" } },
+        mobile: { src: "/brand/nestle-pure-life/hero/1-mobile.png", width: "min(70vw, 46vh)", left: "20%", top: "25%" } },
     ],
     // Wordmark is an HTML overlay (same pattern as Hair Energy): the enlarged
     // wordmark logo with a tagline + CTA button beneath it. `wordmark-lockup.png` is
     // the tight content crop of the `wordmark-1.png` asset (the "NESTLÉ PURE LIFE"
     // lockup + its drop shadow); the tagline + button below are our own HTML.
     heroContent: {
-      logo: "/brand_banner/Nestle Pure Life/wordmark-lockup.png",
+      logo: "/brand/nestle-pure-life/hero/wordmark.png",
       logoAspect: "1430 / 297",
       logoWidth: "34vw",
       tagline: "Kemurnian di setiap tetes",
@@ -200,15 +204,15 @@ export const BRANDS: Brand[] = [
     bannerBg: "#E6097E",
     hero: true,
     about: [
-      { title: "Dari Sumber Mata Air Bersuhu Dingin (hingga 18°C)", image: "/foto_about/Nestle Pure Life/1.png" },
-      { title: "Teknologi Standar Internasional", image: "/foto_about/Nestle Pure Life/2.png" },
-      { title: "Dikirim dengan Armada Tertutup", image: "/foto_about/Nestle Pure Life/3.png" },
+      { title: "Dari Sumber Mata Air Bersuhu Dingin (hingga 18°C)", image: "/brand/nestle-pure-life/about/1.png" },
+      { title: "Teknologi Standar Internasional", image: "/brand/nestle-pure-life/about/2.png" },
+      { title: "Dikirim dengan Armada Tertutup", image: "/brand/nestle-pure-life/about/3.png" },
     ],
     products: [
-      { name: "Pure Life", variant: "330 mL", size: "24 pack / dus", image: "/foto_sku/NESTLE-PURE-LIFE/330 NPL.jpg" },
-      { name: "Pure Life", variant: "600 mL", size: "24 pack / dus", image: "/foto_sku/NESTLE-PURE-LIFE/600 NPL.jpg" },
-      { name: "Pure Life", variant: "1500 mL", size: "12 pack / dus", image: "/foto_sku/NESTLE-PURE-LIFE/1500 NPL.jpg" },
-      { name: "Pure Life", variant: "Galon", size: "15 L", image: "/foto_sku/NESTLE-PURE-LIFE/15L NPL.jpg" },
+      { name: "Pure Life", variant: "330 mL", size: "24 pack / dus", image: "/brand/nestle-pure-life/product-lineup/330ml.jpg" },
+      { name: "Pure Life", variant: "600 mL", size: "24 pack / dus", image: "/brand/nestle-pure-life/product-lineup/600ml.jpg" },
+      { name: "Pure Life", variant: "1500 mL", size: "12 pack / dus", image: "/brand/nestle-pure-life/product-lineup/1500ml.jpg" },
+      { name: "Pure Life", variant: "Galon", size: "15 L", image: "/brand/nestle-pure-life/product-lineup/galon-15l.jpg" },
     ],
     reasons: [
       { icon: "💧", title: "Dimurnikan 12 tahap", body: "Setiap botol melewati proses penyaringan berlapis sebelum sampai ke tanganmu." },
@@ -269,12 +273,13 @@ export const BRANDS: Brand[] = [
     slug: "makarizo",
     name: "Makarizo",
     division: "beauty",
+    flagship: "hair-energy",
     tagline: "Ahli rambut Indonesia.",
     description:
       "Rumah bagi rangkaian perawatan rambut & tubuh Makarizo — dari Asters dan Advisor hingga Hair Energy, t1, dan 128.",
     accentClass: "bg-brand-makarizo",
     accentHex: "#D4447C",
-    heroImage: "/main_banner/HAIR-ENERGY.jpg",
+    heroImage: "/home/hero-carousel/hair-energy.jpg",
     hero: false,
     reasons: [
       { icon: "💇", title: "Lebih dari 40 tahun keahlian rambut", body: "Inovasi perawatan rambut yang tumbuh bersama wanita Indonesia." },
@@ -325,7 +330,9 @@ export const BRANDS: Brand[] = [
     // Hair Energy's visual identity is orange (matches its banner / bannerBg),
     // not the pink it used to inherit from Makarizo.
     accentHex: "#F36C21",
-    heroImage: "/brand_banner/banner_hair_energy.png",
+    // No standalone 3:4 brand card art yet — reuse the 16:9 home banner. Only
+    // CrossSell reads this; the hero itself renders from `heroLayers`.
+    heroImage: "/home/hero-carousel/hair-energy.jpg",
     // Per-brand layered parallax banner. Order in this array = stacking (last =
     // front); entrance timing is controlled by `enterDelay`, entrance direction by
     // `enterFrom`. Positions/sizes are vw/% so the whole composition scales as one.
@@ -333,17 +340,17 @@ export const BRANDS: Brand[] = [
       // All three products share one (natural) size. produk-1 & produk-3 sit level;
       // produk-2 (front) sits slightly lower, with only a small overlap between them.
       // Creambath — left, enters from the LEFT (1st).
-      { src: "/brand_banner/Hair Energy/produk-1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(30vw, 60vh)", aspectRatio: "2687 / 3660", left: "40%", top: "3%",
+      { src: "/brand/hair-energy/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(30vw, 60vh)", aspectRatio: "2687 / 3660", left: "40%", top: "3%",
         mobile: { left: "5%", top: "32%", width: "min(54vw, 42vh)" } },
       // Scentsations — right, level with creambath, enters from the RIGHT (3rd).
-      { src: "/brand_banner/Hair Energy/produk-3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(30vw, 60vh)", aspectRatio: "2687 / 3660", left: "60%", top: "0%",
+      { src: "/brand/hair-energy/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(30vw, 60vh)", aspectRatio: "2687 / 3660", left: "60%", top: "0%",
         mobile: { left: "45%", top: "30%", width: "min(54vw, 42vh)" } },
       // Shampoo — front/centre, slightly lower, enters from the TOP (2nd).
-      { src: "/brand_banner/Hair Energy/produk-2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(30vw, 60vh)", aspectRatio: "2687 / 3660", left: "50%", top: "15%",
+      { src: "/brand/hair-energy/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(30vw, 60vh)", aspectRatio: "2687 / 3660", left: "50%", top: "15%",
         mobile: { left: "25%", top: "40%", width: "min(54vw, 42vh)" } },
     ],
     heroContent: {
-      logo: "/brand_banner/Hair Energy/wordmark-1.png",
+      logo: "/brand/hair-energy/hero/wordmark.png",
       logoAspect: "1576 / 1086",
       logoWidth: "18vw",
       maxWidth: "26vw",
@@ -359,28 +366,28 @@ export const BRANDS: Brand[] = [
     bannerBg: "#F36C21",
     hero: true,
     products: [
-      { name: "Fibertherapy Shampoo", variant: "Active Menthol", size: "170 mL", image: "/foto_sku/HAIR-ENERGY/HE Shampoo Active Menthol 170mL.png" },
-      { name: "Fibertherapy Shampoo", variant: "Aloe Melon", size: "170 mL", image: "/foto_sku/HAIR-ENERGY/HE Shampoo Aloe Melon 170mL.png" },
-      { name: "Fibertherapy Shampoo", variant: "Citrus Tea", size: "170 mL", image: "/foto_sku/HAIR-ENERGY/HE Shampoo Citrus Tea 170mL.png" },
-      { name: "Fibertherapy Shampoo", variant: "Kiwi", size: "170 mL", image: "/foto_sku/HAIR-ENERGY/HE Shampoo Kiwi 170mL.png" },
-      { name: "Fibertherapy Shampoo", variant: "Olive", size: "170 mL", image: "/foto_sku/HAIR-ENERGY/HE Shampoo Olive 170mL.png" },
-      { name: "Fibertherapy Shampoo", variant: "Royal Jelly", size: "170 mL", image: "/foto_sku/HAIR-ENERGY/HE Shampoo Royal Jelly 170mL.png" },
-      { name: "Fibertherapy Creambath", variant: "Aloe Melon", size: "500 mL", image: "/foto_sku/HAIR-ENERGY/HE Creambath Aloe Melon 500mL.png" },
-      { name: "Fibertherapy Creambath", variant: "Ginseng", size: "500 mL", image: "/foto_sku/HAIR-ENERGY/HE Creambath Ginseng 500mL.png" },
-      { name: "Fibertherapy Creambath", variant: "Kiwi", size: "500 mL", image: "/foto_sku/HAIR-ENERGY/HE Creambath Kiwi 500mL.png" },
-      { name: "Fibertherapy Creambath", variant: "Olive", size: "500 mL", image: "/foto_sku/HAIR-ENERGY/HE Creambath Olive 500mL.png" },
-      { name: "Fibertherapy Creambath", variant: "Royal Jelly", size: "500 mL", image: "/foto_sku/HAIR-ENERGY/HE Creambath Royal Jelly 500mL.png" },
-      { name: "Scentsations", variant: "Amber Wood", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Amber Wood 100mL.png" },
-      { name: "Scentsations", variant: "Blue Coast", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Blue Coast 100mL.png" },
-      { name: "Scentsations", variant: "Cherry Blossoms", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Cherry Blossoms 100mL.png" },
-      { name: "Scentsations", variant: "Emerald Crush", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Emerald Crush 100mL.png" },
-      { name: "Scentsations", variant: "Fresh Bouquet", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Fresh Bouquet 100mL.png" },
-      { name: "Scentsations", variant: "Morning Dew", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Morning Dew 100mL.png" },
-      { name: "Scentsations", variant: "Ocean Breeze", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations Ocean Breeze 100mL.png" },
-      { name: "Scentsations", variant: "White Musk", size: "100 mL", image: "/foto_sku/HAIR-ENERGY/HE Scentsations White Musk 100mL.png" },
-      { name: "Vitaglitz", variant: "Aloe Melon", size: "6×1 mL", image: "/foto_sku/HAIR-ENERGY/HE Vitaglitz Aloe Melon 6x1mL.png" },
-      { name: "Vitaglitz", variant: "Kiwi", size: "6×1 mL", image: "/foto_sku/HAIR-ENERGY/HE Vitaglitz Kiwi 6x1mL.png" },
-      { name: "Vitaglitz", variant: "Royal Jelly", size: "6×1 mL", image: "/foto_sku/HAIR-ENERGY/HE Vitaglitz Royal Jelly 6x1mL.png" },
+      { name: "Fibertherapy Shampoo", variant: "Active Menthol", size: "170 mL", image: "/brand/hair-energy/product-lineup/shampoo-active-menthol-170ml.png" },
+      { name: "Fibertherapy Shampoo", variant: "Aloe Melon", size: "170 mL", image: "/brand/hair-energy/product-lineup/shampoo-aloe-melon-170ml.png" },
+      { name: "Fibertherapy Shampoo", variant: "Citrus Tea", size: "170 mL", image: "/brand/hair-energy/product-lineup/shampoo-citrus-tea-170ml.png" },
+      { name: "Fibertherapy Shampoo", variant: "Kiwi", size: "170 mL", image: "/brand/hair-energy/product-lineup/shampoo-kiwi-170ml.png" },
+      { name: "Fibertherapy Shampoo", variant: "Olive", size: "170 mL", image: "/brand/hair-energy/product-lineup/shampoo-olive-170ml.png" },
+      { name: "Fibertherapy Shampoo", variant: "Royal Jelly", size: "170 mL", image: "/brand/hair-energy/product-lineup/shampoo-royal-jelly-170ml.png" },
+      { name: "Fibertherapy Creambath", variant: "Aloe Melon", size: "500 mL", image: "/brand/hair-energy/product-lineup/creambath-aloe-melon-500ml.png" },
+      { name: "Fibertherapy Creambath", variant: "Ginseng", size: "500 mL", image: "/brand/hair-energy/product-lineup/creambath-ginseng-500ml.png" },
+      { name: "Fibertherapy Creambath", variant: "Kiwi", size: "500 mL", image: "/brand/hair-energy/product-lineup/creambath-kiwi-500ml.png" },
+      { name: "Fibertherapy Creambath", variant: "Olive", size: "500 mL", image: "/brand/hair-energy/product-lineup/creambath-olive-500ml.png" },
+      { name: "Fibertherapy Creambath", variant: "Royal Jelly", size: "500 mL", image: "/brand/hair-energy/product-lineup/creambath-royal-jelly-500ml.png" },
+      { name: "Scentsations", variant: "Amber Wood", size: "100 mL", image: "/brand/hair-energy/product-lineup/scentsations-amber-wood-100ml.png" },
+      { name: "Scentsations", variant: "Blue Coast", size: "100 mL", image: "/brand/hair-energy/product-lineup/scentsations-blue-coast-100ml.png" },
+      { name: "Scentsations", variant: "Cherry Blossoms", size: "100 mL", image: "/brand/hair-energy/product-lineup/scentsations-cherry-blossoms-100ml.png" },
+      { name: "Scentsations", variant: "Emerald Crush", size: "100 mL", image: "/brand/hair-energy/product-lineup/scentsations-emerald-crush-100ml.png" },
+      { name: "Scentsations", variant: "Fresh Bouquet", size: "100 mL", image: "/brand/hair-energy/product-lineup/scentsations-fresh-bouquet-100ml.png" },
+      { name: "Scentsations", variant: "Morning Dew", size: "100 mL", image: "/brand/hair-energy/product-lineup/scentsations-morning-dew-100ml.png" },
+      { name: "Scentsations", variant: "Ocean Breeze", size: "100 mL", image: "/brand/hair-energy/product-lineup/scentsations-ocean-breeze-100ml.png" },
+      { name: "Scentsations", variant: "White Musk", size: "100 mL", image: "/brand/hair-energy/product-lineup/scentsations-white-musk-100ml.png" },
+      { name: "Vitaglitz", variant: "Aloe Melon", size: "6×1 mL", image: "/brand/hair-energy/product-lineup/vitaglitz-aloe-melon-6x1ml.png" },
+      { name: "Vitaglitz", variant: "Kiwi", size: "6×1 mL", image: "/brand/hair-energy/product-lineup/vitaglitz-kiwi-6x1ml.png" },
+      { name: "Vitaglitz", variant: "Royal Jelly", size: "6×1 mL", image: "/brand/hair-energy/product-lineup/vitaglitz-royal-jelly-6x1ml.png" },
     ],
     reasons: [
       { icon: "🌸", title: "Wangi tahan seharian", body: "Formula fragrance yang menempel lembut di rambut dan tubuh." },
@@ -389,17 +396,17 @@ export const BRANDS: Brand[] = [
       { icon: "💖", title: "Dicintai Gen-Z Indonesia", body: "Rutinitas #EasyToKnow yang jadi favorit self-care di TikTok." },
     ],
     about: [
-      { title: "Perawatan Rambut dengan Keratin", image: "/foto_about/Hair Energy/1.png" },
-      { title: "Formula pH Balance", image: "/foto_about/Hair Energy/2.png" },
-      { title: "Natural Extract", image: "/foto_about/Hair Energy/3.png" },
+      { title: "Perawatan Rambut dengan Keratin", image: "/brand/hair-energy/about/1.png" },
+      { title: "Formula pH Balance", image: "/brand/hair-energy/about/2.png" },
+      { title: "Natural Extract", image: "/brand/hair-energy/about/3.png" },
     ],
     showcase: {
-      hero: "/foto_judul_3d/Hair Energy/1.png",
+      hero: "/brand/hair-energy/showcase/title.png",
       heroAspect: "5219 / 3799",
       variants: [
-        { bg: "/foto_varian_3d/Hair Energy/1-2.png", product: "/foto_varian_3d/Hair Energy/1-1.png" },
-        { bg: "/foto_varian_3d/Hair Energy/2-2.png", product: "/foto_varian_3d/Hair Energy/2-1.png" },
-        { bg: "/foto_varian_3d/Hair Energy/3-2.png", product: "/foto_varian_3d/Hair Energy/3-1.png" },
+        { bg: "/brand/hair-energy/showcase/1-2.png", product: "/brand/hair-energy/showcase/1-1.png" },
+        { bg: "/brand/hair-energy/showcase/2-2.png", product: "/brand/hair-energy/showcase/2-1.png" },
+        { bg: "/brand/hair-energy/showcase/3-2.png", product: "/brand/hair-energy/showcase/3-1.png" },
       ],
     },
     features: [
@@ -459,12 +466,13 @@ export const BRANDS: Brand[] = [
     slug: "makarizo-professional",
     name: "Makarizo Professional",
     division: "beauty",
+    flagship: "salon-daily",
     tagline: "43 tahun besar bersama salon Indonesia.",
     description:
       "Brand salon profesional terdepan di Indonesia. Edukasi, komunitas, dan produk untuk para ahli rambut.",
     accentClass: "bg-brand-makpro",
     accentHex: "#2C2C2C",
-    heroImage: "/main_banner/MAKARIZO-PROFESSIONAL.jpg",
+    heroImage: "/home/hero-carousel/makarizo-professional.jpg",
     hero: true,
     products: [
       { name: "Concept Ultimax SF3", variant: "Coloring System", size: "Professional Use" },
@@ -707,7 +715,7 @@ export const BRANDS: Brand[] = [
       "Grooming essentials untuk pria modern — pomade, beard care, dan rutinitas pasca-cukur ala barbershop di rumah.",
     accentClass: "bg-brand-bd",
     accentHex: "#5B6B7F",
-    heroImage: "/main_banner/BARBER-DAILY.jpg",
+    heroImage: "/home/hero-carousel/barber-daily.jpg",
     hero: false,
   },
 
@@ -888,3 +896,17 @@ export const brandsByDivision = (id: DivisionId) =>
 // Sub-brands that belong to a given parent brand.
 export const childrenOf = (slug: string) =>
   BRANDS.filter((b) => b.parent === slug);
+
+// An umbrella brand exists only to group its sub-brands (Makarizo, Makarizo
+// Professional). It has no page: /brands/{slug} 404s rather than redirecting to a
+// child, so nothing may link to it — use brandHref() to resolve a safe target.
+export const isUmbrella = (b: Brand) => BRANDS.some((x) => x.parent === b.slug);
+// Brands that actually get a page rendered at /brands/{slug}.
+export const pageBrands = () => BRANDS.filter((b) => !isUmbrella(b));
+// Where a tile/slide carrying `slug`'s artwork should link. Umbrella brands
+// resolve to their flagship sub-brand.
+export const brandHref = (slug: string) => {
+  const b = getBrand(slug);
+  if (!b || !isUmbrella(b)) return `/brands/${slug}`;
+  return `/brands/${b.flagship ?? childrenOf(slug)[0]?.slug ?? slug}`;
+};

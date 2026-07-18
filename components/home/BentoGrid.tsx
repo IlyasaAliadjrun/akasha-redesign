@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BRANDS, getBrand } from "@/lib/brands";
+import { BRANDS, brandHref, getBrand } from "@/lib/brands";
 
 // Render order — mirrors the reference: 6+6 / 3+6+3 / 6+3+3. Vica and Omoide
 // aren't shown in this layout (they remain in lib/brands.ts for brand pages).
@@ -29,15 +29,15 @@ const layout: Record<string, string> = {
 };
 
 // Banner images for the bento. All assets must come from
-// /public/ten_brands_one_company so this section stays consistent with its
+// /public/home/brand-grid so this section stays consistent with its
 // dedicated folder. Brands without an asset there fall back to solid color.
 const bentoImage: Record<string, string> = {
-  "nestle-pure-life": "/ten_brands_one_company/Mini NPL.jpg",
-  "hair-energy": "/ten_brands_one_company/Mini HE.jpg",
-  "make-it": "/ten_brands_one_company/Mini banner Make it.jpg",
-  "barber-daily": "/ten_brands_one_company/Mini banner BD.jpg",
-  wonhae: "/ten_brands_one_company/Mini banner WONHAE.jpg",
-  "makarizo-professional": "/ten_brands_one_company/mini banner MAKPROF.jpg",
+  "nestle-pure-life": "/home/brand-grid/nestle-pure-life.jpg",
+  "hair-energy": "/home/brand-grid/hair-energy.jpg",
+  "make-it": "/home/brand-grid/make-it.jpg",
+  "barber-daily": "/home/brand-grid/barber-daily.jpg",
+  wonhae: "/home/brand-grid/wonhae.jpg",
+  "makarizo-professional": "/home/brand-grid/makarizo-professional.jpg",
 };
 
 // Object-position per banner. NPL's source places its subjects centered, but
@@ -105,7 +105,7 @@ export default function BentoGrid() {
                 style={img ? undefined : { backgroundColor: bg }}
               >
                 <Link
-                  href={`/brands/${b.slug}`}
+                  href={brandHref(b.slug)}
                   className="block w-full h-full relative"
                 >
                   {img ? (

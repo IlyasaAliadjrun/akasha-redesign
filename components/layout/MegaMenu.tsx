@@ -27,25 +27,20 @@ function BrandItem({
     );
   }
 
-  // Brand with sub-brands: the list sits directly beneath the name and is
-  // revealed on hover (desktop) or by tapping the chevron (mobile).
+  // Umbrella brand: it has no page of its own, so the name is not a link — it only
+  // toggles the sub-brand list, which sits directly beneath it and is revealed on
+  // hover (desktop) or by tapping (mobile).
   return (
     <li className="group">
-      <div className="flex items-center gap-1.5">
-        <Link
-          onClick={onClose}
-          href={`/brands/${brand.slug}`}
-          className="text-base font-medium hover:opacity-60 transition"
-        >
-          {brand.name}
-        </Link>
-        <button
-          type="button"
-          aria-label={`Toggle ${brand.name} sub-brands`}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="p-1 -m-1 text-ink/40 hover:text-ink transition"
-        >
+      <button
+        type="button"
+        aria-label={`Toggle ${brand.name} sub-brands`}
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center gap-1.5 text-left hover:opacity-60 transition"
+      >
+        <span className="text-base font-medium">{brand.name}</span>
+        <span className="p-1 -m-1 text-ink/40">
           <svg
             width="12"
             height="12"
@@ -60,8 +55,8 @@ function BrandItem({
           >
             <path d="M6 9l6 6 6-6" />
           </svg>
-        </button>
-      </div>
+        </span>
+      </button>
 
       <ul
         className={`ml-1 pl-3 border-l border-black/10 space-y-1.5 overflow-hidden transition-all duration-200 ${

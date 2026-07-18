@@ -2,9 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import { brandHref } from "@/lib/brands";
 import { useEffect, useRef, useState } from "react";
 
-// Hero carousel — one slide per asset in /public/main_banner.
+// Hero carousel — one slide per asset in /public/home/hero-carousel.
 // max-w on the h1 is sized to fit "Nestlé Pure Life" on one line; anything
 // longer (e.g. "Makarizo Hair Energy") wraps naturally to a second line.
 // `light: true` marks banners that are bright enough to need dark UI (black
@@ -13,7 +14,6 @@ type Slide = {
   slug: string;
   name: string;
   tag: string;
-  href: string;
   bg: string;
   image: string;
   light?: boolean;
@@ -28,45 +28,40 @@ const slides: Slide[] = [
     slug: "nestle-pure-life",
     name: "Nestlé Pure Life",
     tag: "Gak dingin tetep seger",
-    href: "/brands/nestle-pure-life",
     bg: "#D20B68",
-    image: "/main_banner/NESTLE-PURE-LIFE.jpg",
+    image: "/home/hero-carousel/nestle-pure-life.jpg",
     pos: "75% 50%",
   },
   {
     slug: "hair-energy",
     name: "Makarizo Hair Energy",
     tag: "Wangi sepanjang hari",
-    href: "/brands/hair-energy",
     bg: "#DA5B14",
-    image: "/main_banner/HAIR-ENERGY.jpg",
+    image: "/home/hero-carousel/hair-energy.jpg",
     pos: "75% 50%",
   },
   {
     slug: "make-it",
     name: "Make It",
     tag: "Your scent. Your story",
-    href: "/brands/make-it",
     bg: "#640113",
-    image: "/main_banner/MAKEIT.jpg",
+    image: "/home/hero-carousel/make-it.jpg",
     pos: "80% 50%",
   },
   {
     slug: "barber-daily",
     name: "Barber Daily",
     tag: "Barbershop-quality grooming, every day",
-    href: "/brands/barber-daily",
     bg: "#793E1C",
-    image: "/main_banner/BARBER-DAILY.jpg",
+    image: "/home/hero-carousel/barber-daily.jpg",
     pos: "80% 50%",
   },
   {
     slug: "wonhae",
     name: "Wonhae",
     tag: "Korean flavors, Indonesian hearts",
-    href: "/brands/wonhae",
     bg: "#FDDC57",
-    image: "/main_banner/WONHAE.jpg",
+    image: "/home/hero-carousel/wonhae.jpg",
     light: true,
     pos: "75% 50%",
   },
@@ -74,9 +69,8 @@ const slides: Slide[] = [
     slug: "makarizo-professional",
     name: "Makarizo Professional",
     tag: "43 tahun besar bersama salon Indonesia",
-    href: "/brands/makarizo-professional",
     bg: "#E0DCD3",
-    image: "/main_banner/MAKARIZO-PROFESSIONAL.jpg",
+    image: "/home/hero-carousel/makarizo-professional.jpg",
     light: true,
     pos: "75% 50%",
   },
@@ -160,7 +154,7 @@ export default function HeroCarousel() {
             {s.tag}
           </p>
           <Link
-            href={s.href}
+            href={brandHref(s.slug)}
             className={`mt-4 sm:mt-8 md:mt-10 inline-block text-[11px] sm:text-sm font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full border transition-all duration-500 hover:scale-[1.03] ${
               light
                 ? "border-ink/70 hover:bg-ink hover:text-white"

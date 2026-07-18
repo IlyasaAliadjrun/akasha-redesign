@@ -43,6 +43,10 @@ const config: Config = {
         hero: "clamp(36px, 8vw, 120px)",
         headline: "clamp(26px, 5vw, 72px)",
         subhead: "clamp(16px, 2.5vw, 32px)",
+        // Page-hero title (PageHero). Smaller than `headline` on purpose: this copy
+        // sits over photography whose subject starts at ~36% of the frame, so the
+        // text column is capped at 30vw and the type has to wrap inside it.
+        "page-hero": "clamp(26px, 3.2vw, 48px)",
       },
       maxWidth: {
         content: "var(--content-w)", // shared section width — see globals.css :root

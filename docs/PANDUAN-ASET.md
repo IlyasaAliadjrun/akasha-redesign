@@ -48,18 +48,66 @@ Bagian luar zona aman bisa terpotong tergantung ukuran layar.
 
 ---
 
-## 2. Tabel Ringkas (Quick Reference)
+## 2. Struktur folder — **per halaman → per section** ⭐
+
+Sejak perapian aset, `public/` disusun mengikuti **halaman** situs, lalu dipecah lagi per **section** di halaman itu. Jadi kalau kamu diminta "ganti kartu About Hair Energy", tempatnya langsung ketemu: `public/brand/hair-energy/about/`.
+
+```
+public/
+├── home/                        ← Beranda
+│   ├── hero-carousel/           banner slider utama      → nestle-pure-life.jpg, hair-energy.jpg, …
+│   ├── division-cards/          kartu divisi             → beverage.jpg, beauty.png
+│   └── brand-grid/              grid "Ten brands…"       → hair-energy.jpg, wonhae.jpg, …
+├── brand/                       ← Halaman brand — 1 folder per brand, pakai slug
+│   ├── hair-energy/
+│   │   ├── hero/                1.png 2.png 3.png wordmark.png
+│   │   ├── product-lineup/      shampoo-aloe-melon-170ml.png, …
+│   │   ├── about/               1.png 2.png 3.png
+│   │   └── showcase/            title.png, 1-1.png, 1-2.png, 2-1.png, …
+│   └── nestle-pure-life/
+│       ├── hero/                background.jpg, 1.png, 1-mobile.png, wordmark.png
+│       ├── product-lineup/      330ml.jpg, 600ml.jpg, 1500ml.jpg, galon-15l.jpg
+│       └── about/               1.png 2.png 3.png
+├── about/                       ← Halaman lain — hero full screen, 2 aset
+│   └── hero/                    desktop.jpg (16:9) + mobile.jpg (9:16)
+├── investor/  governance/  contact/  careers/
+│   └── hero/                    idem — desktop.jpg + mobile.jpg
+└── shared/                      logo-white.png, logo-color.png  (navbar, semua halaman)
+```
+
+### Aturan penamaan
+
+1. **Semua huruf kecil + tanda hubung** (gaya slug). `BARBER-DAILY.jpg` → `barber-daily.jpg`; `HE Shampoo Kiwi 170mL.png` → `shampoo-kiwi-170ml.png`. Jangan pakai spasi.
+2. **Nama folder brand = slug brand** (sama persis dengan URL-nya): `hair-energy/`, `nestle-pure-life/`, `barber-daily/`.
+3. Di dalam section, dua gaya nama dipakai:
+   - **Urutan** — kalau posisinya yang penting: `1.png`, `2.png`, `1-1.png`, `1-2.png`.
+   - **Nama produk (slug)** — kalau identitasnya yang penting: `shampoo-aloe-melon-170ml.png`, `galon-15l.jpg`.
+4. Prefiks brand di nama file **tidak perlu lagi** — foldernya sudah menyebut brand. (`HE Shampoo …` → `shampoo-…`.)
+
+| Section | Pola nama | Contoh |
+|---|---|---|
+| `hero/` | urutan layer, plus `wordmark` / `background` | `1.png`, `2.png`, `3.png`, `wordmark.png`, `background.jpg` |
+| `hero/` versi HP | `{n}-mobile` | `1-mobile.png` (mengganti layer `1.png` di HP) |
+| `product-lineup/` | nama produk (slug) | `creambath-kiwi-500ml.png`, `330ml.jpg` |
+| `about/` | urutan | `1.png`, `2.png`, `3.png` |
+| `showcase/` | `title` + `{n}-1` / `{n}-2` | `title.png`, `1-1.png`, `1-2.png` |
+
+---
+
+## 2a. Tabel Ringkas (Quick Reference)
 
 | # | Dipakai di | Folder | Rasio | Resolusi master | Tampilan | Format |
 |---|---|---|---|---|---|---|
-| 1 | **Banner slider** beranda | `main_banner/` | **16:9** | 2560×1440 | COVER | jpg/webp |
-| 2 | **Kartu divisi** beranda | `one_company_many_moments/` | **3:4** | 1200×1600 | COVER | jpg/webp |
-| 3 | **Grid brand** beranda | `ten_brands_one_company/` | **2:1** (lebar) / **1:1** (kecil) | 1600×800 / 1080×1080 | COVER | jpg/webp |
-| 4 | **Banner brand** (hero halaman brand) | `brand_banner/` | **16:9** | 2560×1440 | COVER (desktop & HP, layar penuh) | jpg/png/webp |
-| 5 | **Foto produk** (Explore the lineup) | `foto_sku/{BRAND}/` | **1:1** | 1200×1200 | CONTAIN | **PNG transparan** |
-| 6 | **3 kartu "About"** | `foto_about/{Brand}/` | **3:4** | 1200×1600 | COVER | jpg/webp |
-| 7 | **Showcase – gambar utama** | `foto_judul_3d/{Brand}/` | **bebas** (cth 1.37:1) | 5219×3799 / 2000² | CONTAIN | png/webp |
-| 8 | **Showcase – banner varian** (2 layer parallax) | `foto_varian_3d/{Brand}/` | latar **2.128:1** + produk **3:4** | 5010×2354 / 2687×3660 | latar COVER · produk PNG | jpg/png |
+| 1 | **Banner slider** beranda | `home/hero-carousel/` | **16:9** | 2560×1440 | COVER | jpg/webp |
+| 2 | **Kartu divisi** beranda | `home/division-cards/` | **3:4** | 1200×1600 | COVER | jpg/webp |
+| 3 | **Grid brand** beranda | `home/brand-grid/` | **2:1** (lebar) / **1:1** (kecil) | 1600×800 / 1080×1080 | COVER | jpg/webp |
+| 4 | **Banner brand** (hero halaman brand) | `brand/{slug}/hero/` | **16:9** | 2560×1440 | COVER (desktop & HP, layar penuh) | jpg/png/webp |
+| 5 | **Foto produk** (Explore the lineup) | `brand/{slug}/product-lineup/` | **1:1** | 1200×1200 | CONTAIN | **PNG transparan** |
+| 6 | **3 kartu "About"** | `brand/{slug}/about/` | **3:4** | 1200×1600 | COVER | jpg/webp |
+| 7 | **Showcase – gambar utama** | `brand/{slug}/showcase/title.png` | **bebas** (cth 1.37:1) | 5219×3799 / 2000² | CONTAIN | png/webp |
+| 8 | **Showcase – banner varian** (2 layer parallax) | `brand/{slug}/showcase/{n}-1`,`{n}-2` | latar **2.128:1** + produk **3:4** | 5010×2354 / 2687×3660 | latar COVER · produk PNG | jpg/png |
+| 9 | **Hero halaman** (About/Investor/dll) — desktop | `{page}/hero/desktop.jpg` | **16:9** | 2560×1440 | COVER, layar penuh | jpg/webp |
+| 9b | **Hero halaman** — HP | `{page}/hero/mobile.jpg` | **9:16** | 1080×1920 | COVER, layar penuh | jpg/webp |
 
 > Folder `marquee` berjalan di beranda **memakai ulang** gambar Kartu Divisi (#2) — tidak perlu aset baru.
 
@@ -92,41 +140,45 @@ Ini jawaban ringkas "rasio terbaiknya berapa untuk desktop & HP". **Kartu** = ra
 
 ### 🏠 BERANDA (Homepage)
 
-#### 1) Banner Slider Utama — `public/main_banner/`
+#### 1) Banner Slider Utama — `public/home/hero-carousel/`
 - **Rasio:** 16:9 — **Resolusi:** 2560×1440 (minimum 1920×1080)
 - **Tampilan:** COVER. Desktop = layar penuh. **HP = pita lebar (1/3 tinggi layar)** — ini disengaja (beda dari banner brand yang kini full screen di HP).
 - **Panduan komposisi:**
   - Objek (model + produk + logo) taruh di **tengah ke kanan**, **jangan menempel tepi**.
   - **Latar belakang dibuat polos/satu warna** di area pinggir — supaya menyatu dengan warna section.
   - Di HP terpotong sedikit **kiri–kanan**; di layar lebar bisa terpotong sedikit **atas–bawah**.
-- Contoh file saat ini: `NESTLE-PURE-LIFE.jpg`, `HAIR-ENERGY.jpg`.
+- Contoh file saat ini: `nestle-pure-life.jpg`, `hair-energy.jpg`. **Nama file = slug brand.**
 
-#### 2) Kartu Divisi — `public/one_company_many_moments/`
+#### 2) Kartu Divisi — `public/home/division-cards/`
 - **Rasio:** 3:4 (potret) — **Resolusi:** 1200×1600 (min 900×1200)
 - **Tampilan:** COVER, bentuk kartu potret. Sama di desktop & HP.
 - **Panduan:** subjek di tengah; bagian bawah kartu tertimpa teks putih (nama divisi) — sisakan ruang.
+- **Nama file = id divisi:** `beverage.jpg`, `beauty.png`, `mens.jpg`, `food.jpg`.
+- ⚠️ **Belum ada:** `mens.jpg`. Divisi Men's Care sekarang meminjam banner 16:9 `home/hero-carousel/barber-daily.jpg` — rasionya tidak pas (harusnya 3:4). Kalau aset 3:4-nya sudah ada, kirim dan beri tahu developer.
+- Catatan: `makarizo-professional.png` ada di folder ini tapi **tidak dipakai** — sisa dari waktu "Professional" masih jadi divisi sendiri.
 
-#### 3) Grid Brand ("Ten brands. One family.") — `public/ten_brands_one_company/`
+#### 3) Grid Brand ("Ten brands. One family.") — `public/home/brand-grid/`
 - **Rasio:** kotak **lebar 2:1** (1600×800) untuk tile besar; **1:1** (1080×1080) untuk tile kecil.
 - **Tampilan:** COVER. Subjek cenderung **agak ke kanan** (lebih aman untuk tile sempit).
-- Contoh file: `Mini HE.jpg`, `Mini banner WONHAE.jpg`.
+- **Nama file = slug brand:** `hair-energy.jpg`, `wonhae.jpg`.
 
 ---
 
 ### 📄 HALAMAN BRAND (Brand Page)
 
-#### 4) Banner Brand (Hero) — `public/brand_banner/`
+#### 4) Banner Brand (Hero) — `public/brand/{slug}/hero/`
 - **Rasio per viewport:** **Desktop 16:9** (2560×1440) · **Mobile 9:16** (1290×2290, min 1080×1920).
 - **Tampilan:** **COVER, layar penuh (1 layar) di desktop MAUPUN HP.** (Sebelumnya HP CONTAIN/strip — sekarang HP juga full screen.)
 - **Idealnya 2 aset:** satu 16:9 untuk desktop, satu 9:16 untuk HP (potret). Dengan 1 aset 16:9 saja, di HP sisi kiri-kanan terpotong parah.
 
 ##### 4b) Banner Brand — versi PARALLAX BERLAPIS, **kustom per brand** (animated)
-Banner hero bisa dirakit dari **beberapa layer terpisah** yang dianimasikan sendiri-sendiri (`heroLayers` + `heroContent` di `lib/brands.ts`). **Efek & komposisi boleh beda tiap brand.** Aset ditaruh di subfolder per brand: **`brand_banner/{Nama Brand}/`**.
+Banner hero bisa dirakit dari **beberapa layer terpisah** yang dianimasikan sendiri-sendiri (`heroLayers` + `heroContent` di `lib/brands.ts`). **Efek & komposisi boleh beda tiap brand.** Aset ditaruh di **`brand/{slug}/hero/`**.
 
 **Aset per layer:**
-- **Produk:** tiap produk = **PNG transparan, potret** (~3:4), 1 botol/tube per file. Contoh Hair Energy: `produk-1.png` (creambath), `produk-2.png` (shampoo), `produk-3.png` (scentsations) — 2687×3660.
-- **Wordmark/logo:** **PNG transparan** (sparkle + logo). Contoh: `wordmark-1.png` (1576×1086).
-- **Latar:** cukup **1 warna solid** (`bannerBg` di `lib/brands.ts`) — tidak perlu file.
+- **Produk:** tiap produk = **PNG transparan, potret** (~3:4), 1 botol/tube per file. **Nama file = urutan layer.** Contoh Hair Energy: `1.png` (creambath), `2.png` (shampoo), `3.png` (scentsations) — 2687×3660.
+- **Wordmark/logo:** **PNG transparan** (sparkle + logo). Nama file: `wordmark.png` (Hair Energy: 1576×1086).
+- **Latar:** cukup **1 warna solid** (`bannerBg` di `lib/brands.ts`) — tidak perlu file. Kalau memang butuh gambar latar (seperti Nestlé Pure Life), namanya `background.jpg`.
+- **Versi HP:** kalau satu layer perlu aset khusus HP (mis. crop produk yang lebih rapat), namanya `{n}-mobile.png`. Contoh: `nestle-pure-life/hero/1-mobile.png` menggantikan `1.png` di layar <768px.
 
 **Animasi masuk** (diatur per layer via `enterFrom`): **`left` / `right` / `top` / `bottom`** (atau kosong = fade saja). Contoh Hair Energy: produk-1 dari kiri, produk-2 dari atas, produk-3 dari kanan, wordmark fade. Urutan waktu diatur `enterDelay`; kecepatan parallax saat scroll diatur `depth`.
 
@@ -135,27 +187,27 @@ Banner hero bisa dirakit dari **beberapa layer terpisah** yang dianimasikan send
 **Teks HTML (tagline + tombol)** lewat `heroContent`: `logo` (wordmark), `tagline`, `ctaText`/`ctaHref`, posisi (`left`), warna (`theme`). Ini HTML asli (bukan gambar) → tajam & bisa diklik.
 
 > Karena banner ini **full-screen di HP (potret)**, komposisi desktop (teks kiri + produk kanan) akan menyempit di HP — atur ulang posisi/ukuran per brand bila perlu. Subjek penting jangan mepet tepi.
-- Contoh file: `banner_hair_energy.png` (latar oranye solid `#F46C22`).
+- Contoh: `brand/hair-energy/hero/` (latar oranye solid `#F36C21`, tanpa file latar).
 - **Tips desain:** karena di HP banyak terpotong, pertimbangkan komposisi yang aman dibaca baik dalam bingkai lebar (desktop) maupun irisan tengah yang sempit (HP).
 
-#### 5) Foto Produk (Explore the lineup) — `public/foto_sku/{BRAND}/`
+#### 5) Foto Produk (Explore the lineup) — `public/brand/{slug}/product-lineup/`
 - **Rasio:** 1:1 (persegi) — **Resolusi:** 1200×1200 (min 1000×1000)
 - **Tampilan:** CONTAIN. **Wajib PNG dengan latar transparan.**
 - **Panduan:** 1 produk per file, **di tengah**, beri sedikit ruang kosong di sekeliling. Tidak perlu bayangan/latar.
-- Contoh: `foto_sku/HE/HE Shampoo Active Menthol 170mL.png`.
+- **Nama file = nama produk dalam slug**, tanpa prefiks brand: `shampoo-active-menthol-170ml.png`, `creambath-kiwi-500ml.png`, `330ml.jpg`, `galon-15l.jpg`.
 
-#### 6) Tiga Kartu "About" — `public/foto_about/{Brand}/`
+#### 6) Tiga Kartu "About" — `public/brand/{slug}/about/`
 - **Rasio:** 3:4 (potret) — **Resolusi:** 1200×1600 (min 900×1200)
 - **Tampilan:** COVER. Ada **judul putih** di kiri-bawah tiap kartu — sisakan area agak gelap/kosong di sana.
-- Contoh: `foto_about/Hair Energy/Asset HE-05.png` (3 file: HE-05, HE-06, HE-07).
+- **Nama file = urutan:** `1.png`, `2.png`, `3.png` (urutannya = urutan tampil di halaman).
 
-#### 7) Showcase — Gambar Utama (orang) — `public/foto_judul_3d/{Brand}/`
+#### 7) Showcase — Gambar Utama (orang) — `public/brand/{slug}/showcase/title.png`
 - **Rasio:** bebas (mengikuti gambar) — contoh aktif **landscape 5219×3799 (~1.37:1)**. Boleh juga 1:1.
 - **Tampilan:** CONTAIN (tampil utuh), poster di tengah (max ±768px) sebagai "jangkar" di atas banner varian (#8). Boleh transparan atau latar solid.
 - **Catatan:** developer mengisi rasio aslinya di `showcase.heroAspect` (`lib/brands.ts`) supaya tidak ada ruang kosong & responsif. Kalau ganti gambar dengan rasio beda, beri tahu developer rasionya.
-- Contoh: `foto_judul_3d/Hair Energy/1.png`.
+- Contoh: `brand/hair-energy/showcase/title.png`.
 
-#### 8) Showcase — Banner Varian Produk (PARALLAX BERLAPIS) — `public/foto_varian_3d/{Brand}/`
+#### 8) Showcase — Banner Varian Produk (PARALLAX BERLAPIS) — `public/brand/{slug}/showcase/`
 Tiap banner varian = **2 layer terpisah** yang dianimasikan sendiri-sendiri (parallax saat scroll + animasi masuk). Penamaan file: **`{n}-1`** dan **`{n}-2`** (n = urutan banner: 1, 2, 3, …).
 
 | Layer | File | Isi | Rasio | Resolusi | Animasi masuk |
@@ -166,22 +218,76 @@ Tiap banner varian = **2 layer terpisah** yang dianimasikan sendiri-sendiri (par
 - **Produk** diletakkan **di tengah** dan **menjorok keluar** (lebih tinggi dari banner) — beri ruang transparan secukupnya, jangan dipotong mepet.
 - **Latar** (`-2`): teks/sparkle **jangan mepet tepi** (sedikit ter-parallax).
 - Developer menautkan tiap banner sebagai `{ bg: "{n}-2.png", product: "{n}-1.png" }` di `showcase.variants` (`lib/brands.ts`). Arah masuk kiri/kanan otomatis dari urutan.
-- Contoh: `foto_varian_3d/Hair Energy/1-1.png` (produk) + `1-2.png` (latar), dst. sampai `3-*`.
-- Catatan: **opsional** — tidak semua brand wajib punya. Sistemnya **reusable**: brand lain cukup sediakan file `{n}-1`/`{n}-2` dengan rasio sama.
+- Contoh: `brand/hair-energy/showcase/1-1.png` (produk) + `1-2.png` (latar), dst. sampai `3-*`.
+- Catatan: **opsional** — tidak semua brand wajib punya. Sistemnya **reusable**: brand lain cukup sediakan file `{n}-1`/`{n}-2` dengan rasio sama, di `brand/{slug}/showcase/`.
+
+---
+
+### 📄 HALAMAN LAIN (About · Investor · Governance · Contact · Careers)
+
+#### 9) Hero Halaman — `public/{page}/hero/desktop.jpg` + `mobile.jpg`
+
+Modelnya **sama seperti banner brand**: foto full screen (COVER, 1 layar penuh) dengan **judul + subjudul sebagai teks HTML di atasnya** — bukan bagian dari foto. Ini aset pertama yang benar-benar punya **2 versi terpisah** desktop & HP.
+
+| | Desktop | HP |
+|---|:---:|:---:|
+| **Nama file** | `desktop.jpg` | `mobile.jpg` |
+| **Rasio** | **16:9** | **9:16** |
+| **Resolusi** | 2560×1440 (min 1920×1080) | 1080×1920 |
+| **Tampilan** | COVER, layar penuh | COVER, layar penuh |
+
+**Komposisi — ini yang paling penting:**
+
+```
+DESKTOP 16:9                          HP 9:16
+├────── 36% ──────┤                   ┌──────────────┐
+┌─────────────────┬────────────┐      │  ruang teks  │  ← atas ±35% kosong
+│                 │            │      ├──────────────┤
+│  ruang teks     │   SUBJEK   │      │              │
+│ (judul+subjudul)│  (orang)   │      │    SUBJEK    │  ← subjek bawah/tengah
+│                 │            │      │              │
+└─────────────────┴────────────┘      └──────────────┘
+  kosong/polos      mulai di 36%
+```
+
+- **Desktop:** subjek di **KANAN**, mulai kira-kira di **36% dari kiri**. Sisi **kiri 36% harus kosong/polos** (warna latar rata) — di situ judul + subjudul ditaruh. Kolom teksnya memang dipatok segitu (mulai `6vw`, lebar maks `30vw`), jadi **subjek yang masuk lebih ke kiri dari 36% akan ketimpa teks**.
+- **HP:** subjek di **BAWAH atau tengah-bawah**. Bagian **atas ±35% kosong/polos** — di situ judulnya ditaruh.
+- **JANGAN taruh teks di dalam foto.** Judul & subjudul dirender HTML supaya tajam, bisa diterjemahkan, dan bisa dibaca screen reader.
+- Judul dipasang lebih kecil dari headline biasa (token `text-page-hero` = `clamp(26px, 3.2vw, 48px)`) supaya muat di kolom 30vw itu dan tidak menabrak subjek.
+
+**Wajib disebutkan ke developer** untuk tiap foto hero:
+1. Foto ini **terang** atau **gelap**? → menentukan warna teks (hitam untuk foto terang, putih untuk foto gelap) **dan** warna navbar di atasnya.
+2. **Kode warna latar** (hex) area kosongnya → dipakai sebagai warna sementara saat foto masih loading.
+
+Yang terpasang sekarang:
+
+| Halaman | Warna latar | Terang/gelap | Teks |
+|---|---|:---:|:---:|
+| About | `#AEC0CD` (studio putih) | terang | hitam |
+| Investor | `#0F4930` (hijau) | gelap | putih |
+| Governance | `#880E17` (merah) | gelap | putih |
+| Contact | `#E5B91A` (kuning) | terang | hitam |
+| Careers | `#0C426A` (biru) | gelap | putih |
+
+> Developer: dirender oleh [components/page/PageHero.tsx](../components/page/PageHero.tsx). Prop `tone` = terang/gelap foto (`"light"` → teks ink, `"dark"` → teks putih); nilainya juga dikirim ke `data-theme` yang dibaca `Navbar` untuk membalik warna logo & link. Prop `bg` = warna latar saat loading. Kolom teks di desktop **di-anchor pakai persen** (`ml-[6vw]` + `max-w-[30vw]`), **bukan** container `max-w-[1400px] mx-auto` — sama seperti `BrandHero`, karena ini banner full-bleed: subjek fotonya duduk di ~36% frame di semua lebar layar, sedangkan container yang di-center makin menggeser teks ke kanan di layar >1400px sampai menabrak subjek.
 
 ---
 
 ## 4. Penamaan Folder per Brand
 
-Setiap brand punya subfolder sendiri. Ikuti pola yang sudah ada:
+Setiap brand punya **satu folder** berisi semua sectionnya — dinamai persis seperti **slug** brand itu (sama dengan URL-nya, `/brands/hair-energy` → `brand/hair-energy/`).
 
 | Jenis aset | Pola folder | Contoh (Hair Energy) |
 |---|---|---|
-| Foto produk | `foto_sku/{KODE}/` | `foto_sku/HE/` |
-| Kartu About | `foto_about/{Nama Brand}/` | `foto_about/Hair Energy/` |
-| Showcase utama | `foto_judul_3d/{Nama Brand}/` | `foto_judul_3d/Hair Energy/` |
-| Showcase varian | `foto_varian_3d/{Nama Brand}/` | `foto_varian_3d/Hair Energy/` |
-| Banner brand | `brand_banner/banner_{slug}.png` | `brand_banner/banner_hair_energy.png` |
+| Banner brand (hero) | `brand/{slug}/hero/` | `brand/hair-energy/hero/1.png` |
+| Foto produk | `brand/{slug}/product-lineup/` | `brand/hair-energy/product-lineup/shampoo-kiwi-170ml.png` |
+| Kartu About | `brand/{slug}/about/` | `brand/hair-energy/about/1.png` |
+| Showcase utama | `brand/{slug}/showcase/title.png` | `brand/hair-energy/showcase/title.png` |
+| Showcase varian | `brand/{slug}/showcase/{n}-1`,`{n}-2` | `brand/hair-energy/showcase/1-1.png` |
+
+Slug brand yang berlaku sekarang: `nestle-pure-life`, `vica`, `hair-energy`, `asters`, `advisor`, `t1`, `128`, `salon-daily`, `honey-dew`, `concept-ultimax`, `rebonding-system`, `texture-experience`, `mk3`, `inoskin`, `lou`, `make-it`, `finest`, `barber-daily`, `wonhae`, `omoide`, `floaty`, `fitmeup`.
+
+> **Makarizo** dan **Makarizo Professional** adalah brand payung — keduanya **tidak punya halaman sendiri** (`/brands/makarizo` sengaja 404), jadi tidak perlu folder aset. Aset masuk ke sub-brand-nya (mis. `brand/hair-energy/`).
 
 > Kalau ragu nama folder/file, **kirim apa adanya** dan beri tahu developer — penamaan final disambungkan di kode.
 
@@ -202,7 +308,11 @@ Setiap brand punya subfolder sendiri. Ikuti pola yang sudah ada:
 
 ## 6. Catatan untuk Developer
 
+- **Struktur `public/` = per halaman → per section** (lihat §2). Aset baru wajib ikut pola ini; jangan bikin folder top-level baru di luar nama halaman.
 - Path semua aset dirujuk dari `lib/brands.ts` (field `heroImage`, `bannerBg`, `products[].image`, `about[]`, `showcase`) dan dari komponen home (`HeroCarousel`, `DivisionCards`, `BentoGrid`, `SensoryStrip`).
+- Halaman brand dirender lewat satu route `app/brands/[slug]/page.tsx`, yang memilih template: `components/brand/BrandPage.tsx` (brand utama) atau `components/brand/SubBrandPage.tsx` (brand yang punya `parent`, mis. Hair Energy).
+- Hero halaman non-brand memakai `components/page/PageHero.tsx`. Art direction desktop/HP dilakukan dengan **dua `next/image`** (`md:hidden` / `hidden md:block`) — pola art-direction resmi Next.js; konsekuensinya browser bisa mengunduh kedua aset, jadi jaga tiap file < ~400 KB.
+- Brand payung (`isUmbrella()` — punya sub-brand) **tidak dirender**: `generateStaticParams` melewatinya dan halamannya `notFound()`. Jangan pernah menaut ke `/brands/{umbrella}` — pakai `brandHref(slug)` dari `lib/brands.ts`, yang otomatis mengarah ke sub-brand `flagship`.
 - Render gambar memakai `next/image` (`fill` + `sizes`) — srcset responsif dibuat otomatis; cukup 1 sumber resolusi tinggi.
 - `object-contain` dipakai di: foto produk lineup, showcase gambar utama. Sisanya `object-cover` — **termasuk banner brand yang kini COVER di desktop & mobile** (`components/brand/BrandHero.tsx`, full screen `h-[100svh]`).
 - Untuk banner brand baru: isi `heroImage` + `bannerBg` (warna tepi banner, dipakai sebagai latar saat loading). Karena COVER, pastikan subjek/branding di tengah agar tidak terpotong di layar HP potret.

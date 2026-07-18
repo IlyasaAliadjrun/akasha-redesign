@@ -8,6 +8,7 @@ import {
   INVESTOR_SECTIONS,
 } from "@/lib/investor";
 import RevenueChart from "@/components/investor/RevenueChart";
+import PageHero from "@/components/page/PageHero";
 
 export const metadata = {
   title: "Investor Centre — Akasha Wira International",
@@ -29,26 +30,14 @@ export default function InvestorPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-[100svh] min-h-[760px] bg-white flex items-center">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 w-full">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="inline-block text-[10px] uppercase tracking-[0.3em] font-bold text-accent-beverage">
-              IDX: ADES
-            </span>
-            <span className="h-px w-8 bg-ink/20" />
-            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/60">
-              Since 1994
-            </span>
-          </div>
-          <h1 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
-            Investor Centre.
-          </h1>
-          <p className="mt-6 text-base lg:text-lg text-ink/60 max-w-2xl">
-            Performa keuangan, struktur saham, dan keterbukaan informasi untuk
-            pemegang saham dan publik.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        desktop="/investor/hero/desktop.jpg"
+        mobile="/investor/hero/mobile.jpg"
+        title="Investor centre."
+        subtitle="Performa keuangan, struktur saham, dan keterbukaan informasi untuk pemegang saham dan publik."
+        tone="dark"
+        bg="#0F4930"
+      />
 
       {/* KEY METRICS */}
       <section className="py-12 bg-white border-y border-black/5">
