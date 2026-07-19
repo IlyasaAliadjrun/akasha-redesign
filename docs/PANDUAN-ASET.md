@@ -202,24 +202,30 @@ Banner hero bisa dirakit dari **beberapa layer terpisah** yang dianimasikan send
 - **Nama file = urutan:** `1.png`, `2.png`, `3.png` (urutannya = urutan tampil di halaman).
 
 #### 7) Showcase — Gambar Utama (orang) — `public/brand/{slug}/showcase/title.png`
-- **Rasio:** bebas (mengikuti gambar) — contoh aktif **landscape 5219×3799 (~1.37:1)**. Boleh juga 1:1.
-- **Tampilan:** CONTAIN (tampil utuh), poster di tengah (max ±768px) sebagai "jangkar" di atas banner varian (#8). Boleh transparan atau latar solid.
-- **Catatan:** developer mengisi rasio aslinya di `showcase.heroAspect` (`lib/brands.ts`) supaya tidak ada ruang kosong & responsif. Kalau ganti gambar dengan rasio beda, beri tahu developer rasionya.
-- Contoh: `brand/hair-energy/showcase/title.png`.
+- **Rasio:** bebas (mengikuti gambar). Dua pola yang dipakai sekarang:
+  - **Landscape** (Hair Energy) — cth `5219×3799 (~1.37:1)`, teks kampanye menyatu di dalam gambar.
+  - **Potret** (Nestlé Pure Life) — cth `2048×3179 (~0.64:1)`, **cutout orang tanpa teks**.
+- **Tampilan:** CONTAIN (tampil utuh), poster di tengah sebagai "jangkar" di atas banner varian (#8). Boleh transparan atau latar solid.
+- **Catatan developer:** rasio asli diisi di `showcase.heroAspect`. Untuk title **potret**, WAJIB set `showcase.heroMaxWidth` (mis. `"min(72vw, 22rem)"`) supaya tinggi title tidak jauh lebih besar dari title landscape (default lebarnya 768px → potret jadi kelewat tinggi). Kalau ganti gambar dengan rasio beda, beri tahu developer.
+- Contoh: `brand/hair-energy/showcase/title.png` (landscape), `brand/nestle-pure-life/showcase/title.png` (potret).
 
 #### 8) Showcase — Banner Varian Produk (PARALLAX BERLAPIS) — `public/brand/{slug}/showcase/`
 Tiap banner varian = **2 layer terpisah** yang dianimasikan sendiri-sendiri (parallax saat scroll + animasi masuk). Penamaan file: **`{n}-1`** dan **`{n}-2`** (n = urutan banner: 1, 2, 3, …).
 
 | Layer | File | Isi | Rasio | Resolusi | Animasi masuk |
 |---|---|---|:---:|:---:|---|
-| Latar | **`{n}-2.png`** | Banner oranye + teks + sparkle (TANPA produk) | **2.128:1** (lebar) | 5010×2354 | fade-in |
-| Produk | **`{n}-1.png`** | Produk/botol saja, **PNG transparan** | **~3:4** (potret) | 2687×3660 | fade-in dari **kiri** (banner ganjil) / **kanan** (banner genap), berhenti **persis di tengah** |
+| Latar | **`{n}-2.png`** | Banner + (opsional) teks/sparkle, **TANPA produk** | **~2.1–2.26:1** (lebar) | cth 5010×2354 / 4591×2032 | fade-in |
+| Produk | **`{n}-1.png`** | Produk/botol saja, **PNG transparan** | bebas (potret/kotak) | cth 2687×3660 / 1809×2015 | slide dari **kiri** (banner ganjil) / **kanan** (banner genap) |
 
-- **Produk** diletakkan **di tengah** dan **menjorok keluar** (lebih tinggi dari banner) — beri ruang transparan secukupnya, jangan dipotong mepet.
-- **Latar** (`-2`): teks/sparkle **jangan mepet tepi** (sedikit ter-parallax).
-- Developer menautkan tiap banner sebagai `{ bg: "{n}-2.png", product: "{n}-1.png" }` di `showcase.variants` (`lib/brands.ts`). Arah masuk kiri/kanan otomatis dari urutan.
-- Contoh: `brand/hair-energy/showcase/1-1.png` (produk) + `1-2.png` (latar), dst. sampai `3-*`.
-- Catatan: **opsional** — tidak semua brand wajib punya. Sistemnya **reusable**: brand lain cukup sediakan file `{n}-1`/`{n}-2` dengan rasio sama, di `brand/{slug}/showcase/`.
+**Dua mode tata letak produk** (`showcase.productAlign` di `lib/brands.ts`):
+- **`"center"`** (default, Hair Energy) — produk berhenti **di tengah**, menimpa latar yang penuh teks/art. Latar `-2` berisi teks kampanye.
+- **`"sides"`** (Nestlé Pure Life) — produk berhenti **di sisi tempat ia masuk** (ganjil→kiri, genap→kanan), separuh banner lain **dibiarkan kosong** (menyerupai referensi berdampingan). Latar `-2` **polos tanpa teks**.
+
+- **Skala relatif:** kalau semua SKU digambar pada **satu kanvas ukuran sama** (cth NPL: semua `-1` di kanvas 1809×2015), ukuran botol antar-banner otomatis proporsional (330 mL kecil → galon besar). Jaga tiap botol di posisi yang konsisten dalam kanvas.
+- **Produk** boleh **menjorok keluar** (lebih tinggi dari banner) — beri ruang transparan, jangan dipotong mepet.
+- Developer menautkan tiap banner sebagai `{ bg: "{n}-2.png", product: "{n}-1.png", bgAspect, productAspect, productHeight }`. Rasio & tinggi produk diisi per aset. Arah masuk kiri/kanan otomatis dari urutan.
+- Contoh: `brand/hair-energy/showcase/1-1.png` + `1-2.png` (mode center), `brand/nestle-pure-life/showcase/1-1.png` … `4-*` (mode sides).
+- Catatan: **opsional & reusable** — brand lain cukup sediakan `{n}-1`/`{n}-2` dengan rasio sama di `brand/{slug}/showcase/`.
 
 ---
 

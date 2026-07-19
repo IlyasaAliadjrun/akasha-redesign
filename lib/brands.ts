@@ -48,7 +48,13 @@ export type ShowcaseVariant = {
   product: string;
   bgAspect?: string; // default "5010 / 2354"
   productAspect?: string; // default "2687 / 3660"
-  productHeight?: string; // product height relative to the banner; default "128%"
+  productHeight?: string; // product height relative to the banner; default "110%" (see BrandShowcase)
+  // Sit this product on the banner's bottom edge instead of centring it vertically.
+  groundBottom?: boolean;
+  // CSS translateY (e.g. "16%") applied only when `groundBottom` — set it to the
+  // product PNG's transparent bottom margin so the bottle's *base* (not the canvas
+  // edge) lands on the banner bottom.
+  productBottomOffset?: string;
 };
 
 // Optional HTML overlay on a (parallax) brand hero — a left-aligned column with a
@@ -110,7 +116,21 @@ export type Brand = {
   // Poster-style showcase: a title graphic (brand/{slug}/showcase/title) with layered
   // parallax variant banners (brand/{slug}/showcase/{n}-{1,2}) overlapping its bottom edge.
   // `heroAspect` = hero's intrinsic ratio (CSS aspect-ratio; defaults to square).
-  showcase?: { hero: string; heroAspect?: string; variants?: ShowcaseVariant[] };
+  // `heroMaxWidth` caps the title width (CSS, e.g. "22rem") — needed for a portrait
+  //   title so it doesn't render far taller than a landscape one at the 768px default.
+  // `productAlign` = where each variant's product rests: "center" (default, over
+  //   full-bleed bg art like Hair Energy) or "sides" (alternating left/right on a
+  //   plain bg, mirroring a side-by-side reference like NPL).
+  // `parallax` = whether banners drift on scroll (default true); set false for a
+  //   fully static showcase (NPL).
+  showcase?: {
+    hero: string;
+    heroAspect?: string;
+    heroMaxWidth?: string;
+    productAlign?: "center" | "sides";
+    parallax?: boolean;
+    variants?: ShowcaseVariant[];
+  };
 };
 
 export const DIVISIONS: {
@@ -240,6 +260,39 @@ export const BRANDS: Brand[] = [
           "https://images.unsplash.com/photo-1523362289600-a70b4a0e09aa?q=80&w=1400&auto=format&fit=crop",
       },
     ],
+    // Same poster-style showcase system as Hair Energy, four variant banners (one
+    // per SKU: 330 mL, 600 mL, 1500 mL, 15 L). NPL's assets differ from HE's:
+    //   - title is a PORTRAIT person cutout (2048×3179), not a landscape poster —
+    //     hence heroMaxWidth caps it so it isn't far taller than HE's title;
+    //   - each variant bg (`{n}-2`) is a plain blue gradient with NO baked-in text
+    //     (the design has no wording), so productAlign "sides" rests the bottle on
+    //     alternating left/right (per the reference) with the other half left clear;
+    //   - products (`{n}-1`) share one 1809×2015 canvas with each SKU drawn at its
+    //     true relative size, so the 330 mL reads small and the 15 L gallon large.
+    showcase: {
+      hero: "/brand/nestle-pure-life/showcase/title.png",
+      heroAspect: "2048 / 3179",
+      // Portrait title: cap it so it isn't far taller than HE's landscape title.
+      // min() shrinks it on a phone too (72vw) while holding ~22rem on desktop.
+      heroMaxWidth: "min(72vw, 22rem)",
+      productAlign: "sides",
+      // Whole NPL showcase is static — no scroll parallax on product or background.
+      parallax: false,
+      variants: [
+        // productHeight is tuned per SKU so every bottle sits FULLY INSIDE its banner
+        // (no overflow/clipping). Each bottle fills a different share of the shared
+        // 1809×2015 canvas (330 mL only 61%, gallon 93%), so the smaller SKUs take a
+        // larger value to land at a comparable on-screen size; the gallon still reads
+        // largest because it's much wider.
+        // 330 mL & 600 mL: vertically centred.
+        { bg: "/brand/nestle-pure-life/showcase/1-2.png", product: "/brand/nestle-pure-life/showcase/1-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "125%" },
+        { bg: "/brand/nestle-pure-life/showcase/2-2.png", product: "/brand/nestle-pure-life/showcase/2-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "100%" },
+        // 1500 mL & 15 L: grounded on the banner bottom.
+        // Their PNGs have ~0 transparent margin below the bottle, so no bottom offset.
+        { bg: "/brand/nestle-pure-life/showcase/3-2.png", product: "/brand/nestle-pure-life/showcase/3-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "96%", groundBottom: true },
+        { bg: "/brand/nestle-pure-life/showcase/4-2.png", product: "/brand/nestle-pure-life/showcase/4-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "92%", groundBottom: true },
+      ],
+    },
   },
   {
     slug: "vica",
@@ -433,7 +486,7 @@ export const BRANDS: Brand[] = [
   // 1d — t1
   {
     slug: "t1",
-    name: "t1",
+    name: "T1",
     division: "beauty",
     parent: "makarizo",
     tagline: "Styling tanpa batas.",

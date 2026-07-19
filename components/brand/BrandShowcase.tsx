@@ -27,10 +27,21 @@ function ShowcaseVariant({
   variant,
   index,
   brandName,
+  align,
+  parallax,
 }: {
   variant: TVariant;
   index: number;
   brandName: string;
+  // "center" (default): product rests centred over the banner art — used when the
+  // bg carries full-bleed text/art behind it (Hair Energy).
+  // "sides": product rests on the side it enters from, alternating per banner
+  // (odd→left, even→right), leaving the opposite half of the banner clear — used
+  // when the bg is plain and the layout mirrors a side-by-side reference (NPL).
+  align: "center" | "sides";
+  // Whether the background + product drift on scroll. Off for showcases that want a
+  // completely static composition (NPL).
+  parallax: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
@@ -38,13 +49,28 @@ function ShowcaseVariant({
     target: ref,
     offset: ["start end", "end start"],
   });
-  // Smaller drift on mobile (short banner) so the product stays put, larger on desktop.
-  const bgY = useTransform(scrollYProgress, [0, 1], isMobile ? [4, -4] : [8, -8]);
-  // Small drift so the product floats subtly and never leaves the (clipped) frame.
-  const productY = useTransform(scrollYProgress, [0, 1], isMobile ? [5, -5] : [12, -12]);
-  // Product fits INSIDE the banner frame (<100% height) instead of overflowing.
+  // Subtle depth parallax (same feel as Hair Energy): the background drifts a little,
+  // the product a bit more, so on scroll the product gently floats in front of the
+  // banner. Gated by `parallax` — when off, both layers stay static.
+  const bgYRaw = useTransform(scrollYProgress, [0, 1], isMobile ? [4, -4] : [8, -8]);
+  const productYRaw = useTransform(scrollYProgress, [0, 1], isMobile ? [5, -5] : [12, -12]);
+  const bgY = parallax ? bgYRaw : undefined;
+  const productY = parallax ? productYRaw : undefined;
+  // Product height relative to the banner (default 110%). NPL keeps its bottles
+  // ≤ banner height so they sit fully inside instead of overflowing.
   const productHeight = variant.productHeight ?? "110%";
   const fromLeft = index % 2 === 0; // banner 1,3,… enter from the left
+  const sides = align === "sides";
+  // Horizontal rest: centred, or anchored to the entering side with a small inset.
+  const justify = sides ? (fromLeft ? "justify-start" : "justify-end") : "justify-center";
+  const sidePad = sides ? "px-[2%] sm:px-[4%]" : "";
+  // Vertical rest is PER VARIANT: `groundBottom` sits the product on the banner's
+  // bottom edge; otherwise it stays vertically centred.
+  const alignItems = variant.groundBottom ? "items-end" : "items-center";
+  // Each product PNG has some transparent margin below the bottle; this drop shifts
+  // the (grounded) box down by that margin so the bottle's *base* — not the canvas
+  // edge — sits on the banner bottom. Only meaningful together with groundBottom.
+  const bottomDrop = variant.groundBottom ? variant.productBottomOffset : undefined;
 
   return (
     <div ref={ref} className="relative" style={{ aspectRatio: "5 / 2" }}>
@@ -73,29 +99,36 @@ function ShowcaseVariant({
         </motion.div>
       </motion.div>
 
-      {/* Product — centred and clipped to the frame, so it stays inside even while
-          the parallax drifts it on scroll. */}
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden rounded-2xl lg:rounded-3xl pointer-events-none">
-        <motion.div
-          initial={{ opacity: 0, x: fromLeft ? -90 : 90 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+      {/* Product — clipped to the frame, so it stays inside even while the parallax
+          drifts it on scroll. Anchored per `align` horizontally (centred / entering
+          side) and vertically (centred / grounded on the bottom). The outer box sizes
+          & drops the product; the inner motion layer carries the entrance + parallax. */}
+      <div className={`absolute inset-0 flex ${alignItems} ${justify} ${sidePad} overflow-hidden rounded-2xl lg:rounded-3xl pointer-events-none`}>
+        <div
+          className="relative"
           style={{
-            y: productY,
             height: productHeight,
             aspectRatio: variant.productAspect ?? "2687 / 3660",
+            transform: bottomDrop ? `translateY(${bottomDrop})` : undefined,
           }}
-          className="relative"
         >
-          <Image
-            src={variant.product}
-            alt=""
-            fill
-            sizes="(min-width:1024px) 360px, 45vw"
-            className="object-contain"
-          />
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: fromLeft ? -90 : 90 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            style={{ y: productY }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={variant.product}
+              alt=""
+              fill
+              sizes="(min-width:1024px) 360px, 45vw"
+              className="object-contain"
+            />
+          </motion.div>
+        </div>
       </div>
     </div>
   );
@@ -109,17 +142,25 @@ export default function BrandShowcase({ brand }: { brand: Brand }) {
   if (!showcase) return null;
 
   const variants = showcase.variants ?? [];
+  const align = showcase.productAlign ?? "center";
+  const parallax = showcase.parallax ?? true;
 
   return (
     <section className="bg-white pt-4 sm:pt-6 pb-20 sm:pb-24 md:pb-28">
-      {/* Part 1 — hero (person/poster); aspect follows the asset (default square) */}
+      {/* Part 1 — hero (person/poster); aspect follows the asset (default square).
+          `heroMaxWidth` caps the width: a landscape title (Hair Energy) fills the
+          768px column, but a portrait title (NPL) needs a much smaller cap or it
+          renders far too tall. */}
       <div className="px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          style={{ aspectRatio: showcase.heroAspect ?? "1 / 1" }}
+          style={{
+            aspectRatio: showcase.heroAspect ?? "1 / 1",
+            maxWidth: showcase.heroMaxWidth,
+          }}
           className="relative w-full max-w-3xl mx-auto"
         >
           <Image
@@ -143,6 +184,8 @@ export default function BrandShowcase({ brand }: { brand: Brand }) {
               variant={variant}
               index={i}
               brandName={brand.name}
+              align={align}
+              parallax={parallax}
             />
           ))}
         </div>
