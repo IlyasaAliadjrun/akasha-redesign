@@ -16,7 +16,11 @@ public/
 │   ├── hero/                    banner hero (berlapis/parallax)
 │   ├── product-lineup/          foto SKU
 │   ├── about/                   3 kartu About
-│   └── showcase/                poster 3D + banner varian
+│   ├── showcase/                poster 3D + banner varian
+│   └── {sub-brand}/             ← Halaman sub-brand (product line), cth creambath/
+│       ├── hero/                banner sub-brand (berlapis/parallax)
+│       └── showcase/            gambar title + gambar tiap kartu varian
+│                                (gambar kartu SUDAH termasuk background & border)
 ├── about/ investor/ governance/ contact/ careers/   ← Halaman lain
 │   └── hero/                    desktop.jpg + mobile.jpg
 └── shared/                      logo navbar (dipakai semua halaman)

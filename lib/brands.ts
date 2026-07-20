@@ -46,9 +46,16 @@ export type HeroLayer = {
 export type ShowcaseVariant = {
   bg: string;
   product: string;
+  // When set, the whole banner becomes a link — used to send each variant to its
+  // sub-brand page (e.g. "/brands/hair-energy/creambath").
+  href?: string;
   bgAspect?: string; // default "5010 / 2354"
   productAspect?: string; // default "2687 / 3660"
   productHeight?: string; // product height relative to the banner; default "110%" (see BrandShowcase)
+  // Nudge the product horizontally (CSS translateX, % of the product box). Negative
+  // moves it left, positive right — used to shift a bottle off text baked into the
+  // banner background. e.g. "-14%".
+  productShiftX?: string;
   // Sit this product on the banner's bottom edge instead of centring it vertically.
   groundBottom?: boolean;
   // CSS translateY (e.g. "16%") applied only when `groundBottom` — set it to the
@@ -271,10 +278,10 @@ export const BRANDS: Brand[] = [
     //     true relative size, so the 330 mL reads small and the 15 L gallon large.
     showcase: {
       hero: "/brand/nestle-pure-life/showcase/title.png",
-      heroAspect: "2048 / 3179",
-      // Portrait title: cap it so it isn't far taller than HE's landscape title.
-      // min() shrinks it on a phone too (72vw) while holding ~22rem on desktop.
-      heroMaxWidth: "min(72vw, 22rem)",
+      heroAspect: "1250 / 763",
+      // Landscape title poster — sized close to the variant banners below it. min()
+      // caps it at ~52rem on desktop and holds it at 92vw on a phone.
+      heroMaxWidth: "min(92vw, 52rem)",
       productAlign: "sides",
       // Whole NPL showcase is static — no scroll parallax on product or background.
       parallax: false,
@@ -284,9 +291,10 @@ export const BRANDS: Brand[] = [
         // 1809×2015 canvas (330 mL only 61%, gallon 93%), so the smaller SKUs take a
         // larger value to land at a comparable on-screen size; the gallon still reads
         // largest because it's much wider.
-        // 330 mL & 600 mL: vertically centred.
-        { bg: "/brand/nestle-pure-life/showcase/1-2.png", product: "/brand/nestle-pure-life/showcase/1-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "125%" },
-        { bg: "/brand/nestle-pure-life/showcase/2-2.png", product: "/brand/nestle-pure-life/showcase/2-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "100%" },
+        // 330 mL & 600 mL: vertically centred. productShiftX nudges the bottle off
+        // the wording baked into the banner background (left banner → left, etc.).
+        { bg: "/brand/nestle-pure-life/showcase/1-2.png", product: "/brand/nestle-pure-life/showcase/1-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "125%", productShiftX: "-14%" },
+        { bg: "/brand/nestle-pure-life/showcase/2-2.png", product: "/brand/nestle-pure-life/showcase/2-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "100%", productShiftX: "14%" },
         // 1500 mL & 15 L: grounded on the banner bottom.
         // Their PNGs have ~0 transparent margin below the bottle, so no bottom offset.
         { bg: "/brand/nestle-pure-life/showcase/3-2.png", product: "/brand/nestle-pure-life/showcase/3-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "96%", groundBottom: true },
@@ -456,10 +464,13 @@ export const BRANDS: Brand[] = [
     showcase: {
       hero: "/brand/hair-energy/showcase/title.png",
       heroAspect: "5219 / 3799",
+      // Each variant banner links to its sub-brand (product-line) page. NOTE: verify
+      // the banner→line mapping matches the artwork, and add a 4th banner for
+      // Vitaglitz (currently only Shampoo/Creambath/Scentsations have showcase art).
       variants: [
-        { bg: "/brand/hair-energy/showcase/1-2.png", product: "/brand/hair-energy/showcase/1-1.png" },
-        { bg: "/brand/hair-energy/showcase/2-2.png", product: "/brand/hair-energy/showcase/2-1.png" },
-        { bg: "/brand/hair-energy/showcase/3-2.png", product: "/brand/hair-energy/showcase/3-1.png" },
+        { bg: "/brand/hair-energy/showcase/1-2.png", product: "/brand/hair-energy/showcase/1-1.png", href: "/brands/hair-energy/shampoo" },
+        { bg: "/brand/hair-energy/showcase/2-2.png", product: "/brand/hair-energy/showcase/2-1.png", href: "/brands/hair-energy/creambath" },
+        { bg: "/brand/hair-energy/showcase/3-2.png", product: "/brand/hair-energy/showcase/3-1.png", href: "/brands/hair-energy/scentsations" },
       ],
     },
     features: [

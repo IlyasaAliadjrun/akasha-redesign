@@ -69,6 +69,8 @@ components/
 │                             WhyThisProduct, CrossSell, BrandCTA)
 ├── page/                     PageHero — full-screen hero shared by the non-brand pages
 │                             (About, Investor, Governance, Contact, Careers)
+├── subbrand/                 Sub-brand (product-line) page: SubBrandTemplate + sections
+│                             (SubBrandHero, SubBrandSpec, SubBrandShowcase)
 ├── investor/                 RevenueChart
 └── layout/                   Navbar, MegaMenu, Footer, BackToTop
 
@@ -108,6 +110,13 @@ All brand slugs are defined in [lib/brands.ts](lib/brands.ts) and rendered throu
 - Helpers: `isUmbrella(brand)`, `pageBrands()`, `brandHref(slug)`, `childrenOf(slug)`.
 
 When adding or modifying a brand, update [lib/brands.ts](lib/brands.ts) — do **not** create per-brand page files.
+
+**Sub-brands (product lines).** A third level exists below brands: a *product line* inside a brand — e.g. Hair Energy's Fibertherapy Creambath, Scentsations, Shampoo, Vitaglitz. These are the "sub-brands". They live in [lib/subBrands.ts](lib/subBrands.ts) (`SUB_BRANDS`) and render at the nested route **`/brands/{parent}/{line}`** (e.g. `/brands/hair-energy/creambath`) via [components/subbrand/SubBrandTemplate.tsx](components/subbrand/SubBrandTemplate.tsx).
+
+- **Not in the navbar.** A sub-brand page is reached only by clicking a variant banner in the parent brand's showcase — wire it with `href` on the `ShowcaseVariant` in [lib/brands.ts](lib/brands.ts).
+- **Layout** = brand page minus About + Product-lineup: **banner (parallax) → showcase (title image + card grid) → cross-sell → CTA**. The banner keeps parallax; the showcase does **not** (each card image is whole). Card images already include their own background + border, so no card chrome is drawn around them — the image is placed as-is (see `SubBrandShowcase`). Cross-sell + CTA use the **parent** brand ("Rasakan Hair Energy sekarang").
+- **Skeleton-first.** Every image field in `SUB_BRANDS` may be empty — an empty slot renders a plain placeholder, so the page works as a wireframe until assets are dropped into `public/brand/{parent}/{line}/{hero,showcase}/` and the paths are filled in. Copy is placeholder too; replace with real wording.
+- Terminology note: `components/brand/SubBrandPage.tsx` is a *different, older* thing (the template for a brand that has a `parent` umbrella, e.g. Hair Energy under Makarizo). The product-line template is `components/subbrand/SubBrandTemplate.tsx`.
 
 ---
 

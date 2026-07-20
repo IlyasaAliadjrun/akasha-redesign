@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import type { Brand, ShowcaseVariant as TVariant } from "@/lib/brands";
@@ -71,6 +72,13 @@ function ShowcaseVariant({
   // the (grounded) box down by that margin so the bottle's *base* — not the canvas
   // edge — sits on the banner bottom. Only meaningful together with groundBottom.
   const bottomDrop = variant.groundBottom ? variant.productBottomOffset : undefined;
+  // Optional horizontal nudge + the (grounded) vertical drop, composed into one
+  // transform on the product box.
+  const shiftX = variant.productShiftX;
+  const boxTransform =
+    shiftX || bottomDrop
+      ? `translateX(${shiftX ?? "0"}) translateY(${bottomDrop ?? "0"})`
+      : undefined;
 
   return (
     <div ref={ref} className="relative" style={{ aspectRatio: "5 / 2" }}>
@@ -109,7 +117,7 @@ function ShowcaseVariant({
           style={{
             height: productHeight,
             aspectRatio: variant.productAspect ?? "2687 / 3660",
-            transform: bottomDrop ? `translateY(${bottomDrop})` : undefined,
+            transform: boxTransform,
           }}
         >
           <motion.div
@@ -178,16 +186,31 @@ export default function BrandShowcase({ brand }: { brand: Brand }) {
           vertical spacing makes room for the products that overflow each banner. */}
       {variants.length > 0 && (
         <div className="max-w-content mx-auto px-6 lg:px-10 relative z-10 -mt-6 sm:-mt-10 lg:-mt-12 space-y-6 sm:space-y-9 lg:space-y-11">
-          {variants.map((variant, i) => (
-            <ShowcaseVariant
-              key={variant.bg}
-              variant={variant}
-              index={i}
-              brandName={brand.name}
-              align={align}
-              parallax={parallax}
-            />
-          ))}
+          {variants.map((variant, i) => {
+            const banner = (
+              <ShowcaseVariant
+                variant={variant}
+                index={i}
+                brandName={brand.name}
+                align={align}
+                parallax={parallax}
+              />
+            );
+            // A variant with `href` links to its sub-brand page; a subtle hover
+            // lift signals it's clickable.
+            return variant.href ? (
+              <Link
+                key={variant.bg}
+                href={variant.href}
+                aria-label={`${brand.name} — buka halaman varian`}
+                className="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.01]"
+              >
+                {banner}
+              </Link>
+            ) : (
+              <div key={variant.bg}>{banner}</div>
+            );
+          })}
         </div>
       )}
     </section>

@@ -297,6 +297,23 @@ Slug brand yang berlaku sekarang: `nestle-pure-life`, `vica`, `hair-energy`, `as
 
 > Kalau ragu nama folder/file, **kirim apa adanya** dan beri tahu developer — penamaan final disambungkan di kode.
 
+### 4a. Halaman Sub-Brand (Product Line) — `public/brand/{brand}/{sub-brand}/`
+
+Sub-brand = **lini produk** di dalam sebuah brand (cth Hair Energy → Fibertherapy Creambath, Scentsations, Shampoo, Vitaglitz). Halamannya di `/brands/{brand}/{sub-brand}` (cth `/brands/hair-energy/creambath`), **tidak ada di navbar** — diakses dari banner varian di showcase halaman brand. Layout: **banner (parallax) → showcase (gambar title + grid kartu) → cross-sell → CTA** (tanpa About, lineup, & blok kandungan).
+
+Aset ditaruh **bersarang di dalam folder brand induk**:
+
+| Bagian | Folder | Isi | Fit | Parallax? |
+|---|---|---|:---:|:---:|
+| Banner hero | `brand/{brand}/{sub}/hero/` | Layer produk (PNG) — sama seperti banner brand berlapis (`1.png`, `2.png`, …). Judul & tombol = teks HTML, **bukan** gambar. | contain | **ya** |
+| Showcase — title | `brand/{brand}/{sub}/showcase/` | 1 gambar title di atas grid kartu. | contain | tidak |
+| Showcase — kartu | `brand/{brand}/{sub}/showcase/` | 1 gambar per varian. **Gambar SUDAH termasuk background + border kartunya** — developer hanya menempatkan gambar, tidak menambah bingkai/latar apa pun. | contain | **tidak** (gambar utuh) |
+
+- **Rasio kartu:** semua kartu di satu halaman **rasionya sama** (biar grid rapi) — beri tahu developer rasio title, kartu grid, dan kartu featured (full-width) supaya diset di `lib/subBrands.ts` (`showcaseTitleAspect`, `cardAspect`, `featuredAspect`) dan tidak ada ruang kosong.
+- **Skeleton:** selama folder masih kosong, tiap slot gambar tampil sebagai **kotak placeholder polos** (abu muda, tanpa bingkai) — jadi halaman sudah tampil sebagai wireframe. Begitu aset dimasukkan & path diisi di [lib/subBrands.ts](../lib/subBrands.ts), gambar asli langsung menggantikannya.
+- **Teks** (tagline hero, tombol) diisi di `lib/subBrands.ts`; sisanya (judul, nama varian) sudah menyatu di dalam gambar showcase.
+- Contoh folder: `brand/hair-energy/creambath/hero/`, `brand/hair-energy/creambath/showcase/`.
+
 ---
 
 ## 5. Checklist Sebelum Kirim Aset ✅
