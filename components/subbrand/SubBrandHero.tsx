@@ -99,11 +99,23 @@ function MobileProduct({ layer, index, style, zoom }: { layer: HeroLayer; index:
   );
 }
 
-// Bottle/product cluster positions on mobile (percentages of the cluster box).
+// Default bottle/product cluster positions on mobile (percentages of the cluster
+// box). Used when a layer has no `mobile` override in the sub-brand data.
 const MOBILE_POS: React.CSSProperties[] = [
   { right: "3%", top: "15%", width: "62%" }, // layer 0 (jar, back)
   { left: "3%", bottom: "15%", width: "54%" }, // layer 1 (tube, front)
 ];
+
+// Resolve a product's mobile placement. A layer's own `mobile` override (from the
+// sub-brand data — left/right/top/bottom/width) wins so each sub-brand can size &
+// position its mobile products independently; otherwise fall back to MOBILE_POS.
+function mobilePos(layer: HeroLayer, i: number): React.CSSProperties {
+  const m = layer.mobile;
+  if (m && (m.left || m.right || m.top || m.bottom || m.width)) {
+    return { left: m.left, right: m.right, top: m.top, bottom: m.bottom, width: m.width };
+  }
+  return MOBILE_POS[i] ?? MOBILE_POS[0];
+}
 
 export default function SubBrandHero({ sub }: { sub: SubBrand }) {
   const ref = useRef<HTMLElement>(null);
@@ -125,7 +137,7 @@ export default function SubBrandHero({ sub }: { sub: SubBrand }) {
       initial={reduce ? false : { opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className="relative w-[100px] md:w-[120px]"
+      className="relative w-[102px] md:w-[120px]"
       style={{
         aspectRatio: sub.heroWordmarkAspect ?? "767 / 529",
         transform: `scale(${zoom})`,
@@ -187,7 +199,7 @@ export default function SubBrandHero({ sub }: { sub: SubBrand }) {
           {/* Produk (kotak cluster) — ukuran di w-[..]/max-w-[..], posisi di top-[..] */}
           <div className="absolute left-1/2 -translate-x-1/2 top-[26%] z-10 w-[80vw] max-w-[340px] aspect-square">
             {hasProducts ? (
-              products.map((l, i) => <MobileProduct key={l.src} layer={l} index={i} style={MOBILE_POS[i] ?? MOBILE_POS[0]} zoom={zoom} />)
+              products.map((l, i) => <MobileProduct key={l.src} layer={l} index={i} style={mobilePos(l, i)} zoom={zoom} />)
             ) : (
               <motion.div style={{ y: reduce ? undefined : phY }} className="absolute inset-x-8 inset-y-0 rounded-3xl border-2 border-dashed border-white/40 bg-white/10 flex flex-col items-center justify-center gap-2 text-white/75">
                 <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" /></svg>

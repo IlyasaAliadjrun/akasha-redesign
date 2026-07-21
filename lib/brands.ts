@@ -464,13 +464,12 @@ export const BRANDS: Brand[] = [
     showcase: {
       hero: "/brand/hair-energy/showcase/title.png",
       heroAspect: "5219 / 3799",
-      // Each variant banner links to its sub-brand (product-line) page. NOTE: verify
-      // the banner→line mapping matches the artwork, and add a 4th banner for
-      // Vitaglitz (currently only Shampoo/Creambath/Scentsations have showcase art).
+      // Each variant banner links to its sub-brand (product-line) page.
       variants: [
         { bg: "/brand/hair-energy/showcase/1-2.png", product: "/brand/hair-energy/showcase/1-1.png", href: "/brands/hair-energy/shampoo" },
         { bg: "/brand/hair-energy/showcase/2-2.png", product: "/brand/hair-energy/showcase/2-1.png", href: "/brands/hair-energy/creambath" },
         { bg: "/brand/hair-energy/showcase/3-2.png", product: "/brand/hair-energy/showcase/3-1.png", href: "/brands/hair-energy/scentsations" },
+        { bg: "/brand/hair-energy/showcase/4-2.png", product: "/brand/hair-energy/showcase/4-1.png", productAspect: "1470 / 2073", productHeight: "75%", href: "/brands/hair-energy/vitaglitz" },
       ],
     },
     features: [
