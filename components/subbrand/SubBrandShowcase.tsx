@@ -51,51 +51,56 @@ export default function SubBrandShowcase({ sub }: { sub: SubBrand }) {
   return (
     <section id="showcase" className="scroll-mt-24 bg-white pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 md:pb-28">
       <div className="max-w-content mx-auto px-6 lg:px-10">
-        {/* Title image */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto max-w-2xl"
-        >
-          {sub.showcaseTitle ? (
-            <div className="relative w-full" style={{ aspectRatio: titleAspect }}>
-              <Image src={sub.showcaseTitle} alt={`${sub.name} showcase`} fill sizes="(min-width:768px) 672px, 100vw" className="object-contain" />
-            </div>
-          ) : (
-            <div className="relative w-full rounded-2xl bg-ink/[0.04] flex flex-col items-center justify-center gap-2 text-ink/30" style={{ aspectRatio: titleAspect }}>
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" /></svg>
-              <span className="text-[10px] uppercase tracking-[0.2em] font-semibold">Gambar title showcase</span>
-            </div>
-          )}
-        </motion.div>
+        {/* Master width for the WHOLE showcase. Shrink/enlarge every asset (title,
+            featured, grid) in one place: lower `max-w-*` to shrink on tablet/desktop,
+            lower the `w-[..]` to shrink on mobile. */}
+        <div className="mx-auto w-[100%] sm:w-full max-w-2xl">
+          {/* Title image — capped smaller than the master so it never dominates. */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="mx-auto w-3/4 sm:w-full max-w-xl"
+          >
+            {sub.showcaseTitle ? (
+              <div className="relative w-full" style={{ aspectRatio: titleAspect }}>
+                <Image src={sub.showcaseTitle} alt={`${sub.name} showcase`} fill sizes="(min-width:768px) 384px, 66vw" className="object-contain" />
+              </div>
+            ) : (
+              <div className="relative w-full rounded-2xl bg-ink/[0.04] flex flex-col items-center justify-center gap-2 text-ink/30" style={{ aspectRatio: titleAspect }}>
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" /></svg>
+                <span className="text-[10px] uppercase tracking-[0.2em] font-semibold">Gambar title showcase</span>
+              </div>
+            )}
+          </motion.div>
 
-        {/* Cards */}
-        <div className="mt-10 sm:mt-12 lg:mt-14 space-y-5 sm:space-y-6">
-          {sub.featured && (
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <Slot card={sub.featured} aspect={featuredAspect} sizes="(min-width:1024px) 980px, 100vw" />
-            </motion.div>
-          )}
-
-          <div className="grid grid-cols-2 gap-3 sm:gap-6">
-            {sub.cards.map((card, i) => (
+          {/* Cards */}
+          <div className="space-y-5 sm:space-y-6">
+            {sub.featured && (
               <motion.div
-                key={card.label ?? i}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.55, delay: (i % 2) * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
-                <Slot card={card} aspect={cardAspect} sizes="(min-width:640px) 46vw, 90vw" />
+                <Slot card={sub.featured} aspect={featuredAspect} sizes="(min-width:768px) 672px, 88vw" />
               </motion.div>
-            ))}
+            )}
+
+            <div className="grid grid-cols-2 gap-3 sm:gap-6">
+              {sub.cards.map((card, i) => (
+                <motion.div
+                  key={card.label ?? i}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.55, delay: (i % 2) * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <Slot card={card} aspect={cardAspect} sizes="(min-width:768px) 330px, 44vw" />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

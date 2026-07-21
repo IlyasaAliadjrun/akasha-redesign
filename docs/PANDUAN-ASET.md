@@ -305,7 +305,7 @@ Aset ditaruh **bersarang di dalam folder brand induk**:
 
 | Bagian | Folder | Isi | Fit | Parallax? |
 |---|---|---|:---:|:---:|
-| Banner hero | `brand/{brand}/{sub}/hero/` | Layer produk (PNG) — sama seperti banner brand berlapis (`1.png`, `2.png`, …). Judul & tombol = teks HTML, **bukan** gambar. | contain | **ya** |
+| Banner hero | `brand/{brand}/{sub}/hero/` | `wordmark.png` (logo, fade-in) + layer produk PNG **dinamai angka urut fade-in** (`1.png`, `2.png`, …). Produk 1 fade-in dari kiri, produk 2 dari kanan. Judul/subjudul/tombol = teks HTML, **bukan** gambar. Di HP urutannya vertikal: wordmark → produk → wording. | contain | **ya** |
 | Showcase — title | `brand/{brand}/{sub}/showcase/` | 1 gambar title di atas grid kartu. | contain | tidak |
 | Showcase — kartu | `brand/{brand}/{sub}/showcase/` | 1 gambar per varian. **Gambar SUDAH termasuk background + border kartunya** — developer hanya menempatkan gambar, tidak menambah bingkai/latar apa pun. | contain | **tidak** (gambar utuh) |
 

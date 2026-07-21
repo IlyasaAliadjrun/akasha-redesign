@@ -1,24 +1,30 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import BackToTop from "@/components/layout/BackToTop";
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+// Fonts are self-hosted (files in ./fonts, sourced from @fontsource) rather than
+// fetched from Google Fonts at build time — so builds never depend on the network
+// and the real fonts always render. Exposed as `font-sans` / `font-display`.
+const jakarta = localFont({
+  src: "./fonts/plus-jakarta-sans-variable.woff2",
   variable: "--font-jakarta",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: "300 800",
 });
 
-// Geometric display font used for brand-hero taglines/CTAs. Exposed as
-// `font-display` via Tailwind.
-const poppins = Poppins({
-  subsets: ["latin"],
+// Geometric display font used for brand-hero taglines/CTAs.
+const poppins = localFont({
+  src: [
+    { path: "./fonts/poppins-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/poppins-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/poppins-600.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/poppins-700.woff2", weight: "700", style: "normal" },
+  ],
   variable: "--font-poppins",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {

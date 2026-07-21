@@ -197,7 +197,7 @@ export default function BrandHero({ brand }: { brand: Brand }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: content.delay ?? 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="md:hidden absolute inset-0 z-20 flex flex-col justify-between pointer-events-none px-7 pt-[11vh] pb-[9vh]"
+          className="md:hidden absolute inset-0 z-20 flex flex-col justify-between pointer-events-none px-7 pt-[10vh] pb-[9vh]"
         >
           {content.logo ? (
             <div
