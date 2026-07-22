@@ -56,6 +56,22 @@ export type ShowcaseVariant = {
   // moves it left, positive right — used to shift a bottle off text baked into the
   // banner background. e.g. "-14%".
   productShiftX?: string;
+  // Nudge the product vertically (CSS translateY, % of the product box). Negative =
+  // up, positive = down. Works whether the product is centred OR grounded.
+  productShiftY?: string;
+  // Per-viewport (mobile, <768px) overrides for size/position, so the composition can
+  // be tuned independently on phones vs desktop. Any omitted field falls back to the
+  // shared value above. All are % / CSS strings, so they hold at any resolution.
+  mobile?: {
+    productHeight?: string;
+    productShiftX?: string;
+    productShiftY?: string;
+  };
+  // In "sides" mode only: force which side the product rests on (and enters from),
+  // overriding the default index-parity alternation (odd→left, even→right). Use when
+  // each banner's baked-in text dictates the side per-SKU (Vica alternates the other
+  // way: banner 1's bottle sits right).
+  side?: "left" | "right";
   // Sit this product on the banner's bottom edge instead of centring it vertically.
   groundBottom?: boolean;
   // CSS translateY (e.g. "16%") applied only when `groundBottom` — set it to the
@@ -116,6 +132,9 @@ export type Brand = {
     size?: string;
     price?: string;
     image?: string;
+    // Per-product size tweak in the lineup (default 1). <1 shrinks a product whose
+    // artwork reads larger than its siblings (e.g. less transparent margin).
+    imageScale?: number;
   }[];
   features?: { title: string; body: string; image: string }[];
   reasons?: { icon: string; title: string; body: string }[];
@@ -306,25 +325,86 @@ export const BRANDS: Brand[] = [
     slug: "vica",
     name: "VICA",
     division: "beverage",
-    tagline: "Mineral alami dari sumbernya.",
+    tagline: "Tutup Kuning, Paling Bening.",
+    // Becomes the BrandIntro headline (BrandIntro appends its own period, so no
+    // trailing "." here; no ". " inside so it stays one line).
     description:
-      "Air mineral alami yang diproduksi sejak Oktober 2011. Tersedia dalam 330 mL, 600 mL, 1500 mL, dan galon 19 L.",
+      "Kemurnian dari kaki Gunung Salak, disempurnakan filtrasi 0.2 micron",
     accentClass: "bg-brand-vica",
-    accentHex: "#2E8B57",
+    accentHex: "#0044A1", // Vica splat blue (buttons, eyebrow, CTA)
     heroImage:
       "https://images.unsplash.com/photo-1616118132534-381148898bb4?q=80&w=1800&auto=format&fit=crop",
+    // Hero — yellow banner (bannerBg) with the "ViCA" splat wordmark on the left and
+    // the 3-bottle cluster (hero/1.png) on the right. Mirrors the Hair Energy hero
+    // pattern; matches the provided VICA landing-page reference.
+    heroLayers: [
+      // Full transparent landscape canvas: bottles baked into the right ~52–85%.
+      // DESKTOP shows it `contain`, nudged right. MOBILE swaps to a tight bottles crop
+      // (1-mobile.png, generated from this asset) sized & centred on the phone screen.
+      { src: "/brand/vica/hero/1.png", fit: "contain", position: "74% 50%", depth: 0, enterFrom: "right", enterDelay: 0.3,
+        aspectRatio: "1442 / 1938",
+        mobile: { src: "/brand/vica/hero/1-mobile.png", width: "min(58vw, 34vh)", left: "21%", top: "45%" } },
+    ],
+    // Wordmark image already includes the "Tutup Kuning, Paling Bening" tagline, so no
+    // separate HTML tagline/CTA (the reference hero has none either).
+    heroContent: {
+      logo: "/brand/vica/hero/wordmark.png",
+      logoAspect: "550 / 595",
+      logoWidth: "22vw",
+      left: "10%",
+      theme: "dark",
+      delay: 0.5,
+      mobile: { logoWidth: "46vw" },
+    },
+    bannerBg: "#ECE700", // Vica yellow
     hero: false,
     products: [
-      { name: "VICA", variant: "330 mL" },
-      { name: "VICA", variant: "600 mL" },
-      { name: "VICA", variant: "1500 mL" },
-      { name: "VICA", variant: "Galon", size: "19 L" },
+      { name: "VICA", variant: "220 mL", image: "/brand/vica/product-lineup/vica_220ml.png", imageScale: 0.7 },
+      { name: "VICA", variant: "330 mL", image: "/brand/vica/product-lineup/vica_330ml.png", imageScale: 0.8},
+      { name: "VICA", variant: "600 mL", image: "/brand/vica/product-lineup/vica_600ml.png", imageScale: 0.9 },
+      { name: "VICA", variant: "1010 mL", image: "/brand/vica/product-lineup/vica_1010ml.png", imageScale: 0.9 },
+      { name: "VICA", variant: "1500 mL", image: "/brand/vica/product-lineup/vica_1500ml.png" },
+    ],
+    about: [
+      { title: "Dari mata air yang kemurniannya terjaga lebih dari 100 tahun", image: "/brand/vica/about/1.png" },
+      { title: "Melalui teknologi filtrasi 0,2 micron", image: "/brand/vica/about/2.png" },
+      { title: "Diproses mesin Krones dengan full automation", image: "/brand/vica/about/3.png" },
     ],
     reasons: [
-      { icon: "⛰️", title: "Bersumber dari alam", body: "Air mineral alami langsung dari sumber pegunungan Indonesia." },
+      { icon: "⛰️", title: "Bersumber dari alam", body: "Air mineral alami langsung dari Mata Air Ciburial, kaki Gunung Salak." },
       { icon: "✨", title: "Mineral seimbang", body: "Kandungan mineral alami untuk menjaga kesegaran tubuh sepanjang hari." },
       { icon: "🏠", title: "Pilihan rumah tangga", body: "Diproduksi sejak 2011, sudah dipercaya ribuan keluarga." },
     ],
+    // Poster-style showcase (same engine as Hair Energy / NPL). title.png = the
+    // "Murni dari sumbernya" banner; then 5 SKU banners. Each bg ({n}-2) is a yellow
+    // card with the giant name baked in, leaving one side clear for the bottle, so
+    // productAlign "sides" — but the sides ALTERNATE the opposite way to the default
+    // (banner 1's bottle sits RIGHT), hence the explicit `side` per variant.
+    showcase: {
+      hero: "/brand/vica/showcase/title.png",
+      heroAspect: "1250 / 764",
+      heroMaxWidth: "min(92vw, 52rem)",
+      productAlign: "sides",
+      parallax: false,
+      variants: [
+        // Sizing/position knobs per banner (all % → resolution-independent; each also
+        // takes an optional `mobile: { productHeight?, productShiftX?, productShiftY? }`
+        // to tune phones separately):
+        //   productHeight — size (% of banner height)
+        //   productShiftX / productShiftY — nudge left-right / up-down (% of product box)
+        //   groundBottom — sit the bottle base on the banner's bottom edge
+        // 220 mL — MINI BOOSTER (bottle right, centred)
+        { bg: "/brand/vica/showcase/1-2.png", product: "/brand/vica/showcase/1-1.png", bgAspect: "1080 / 465", productAspect: "297 / 463", productHeight: "78%", side: "right" },
+        // 330 mL — POCKET FRESH (bottle left, centred)
+        { bg: "/brand/vica/showcase/2-2.png", product: "/brand/vica/showcase/2-1.png", bgAspect: "1080 / 465", productAspect: "347 / 527", productHeight: "82%", side: "left" },
+        // 600 mL — DAILY BUDDY (bottle right, grounded)
+        { bg: "/brand/vica/showcase/3-2.png", product: "/brand/vica/showcase/3-1.png", bgAspect: "1080 / 465", productAspect: "454 / 484", productHeight: "80%", side: "right", groundBottom: true },
+        // 1010 mL — LONGER HYDRATION (bottle left, grounded)
+        { bg: "/brand/vica/showcase/4-2.png", product: "/brand/vica/showcase/4-1.png", bgAspect: "1080 / 465", productAspect: "458 / 525", productHeight: "84%", side: "left", groundBottom: true },
+        // 1500 mL — ALL-DAY HYDRATION (bottle right, grounded)
+        { bg: "/brand/vica/showcase/5-2.png", product: "/brand/vica/showcase/5-1.png", bgAspect: "1080 / 465", productAspect: "446 / 525", productHeight: "86%", side: "right", groundBottom: true },
+      ],
+    },
   },
 
   /* ───────────────── Beauty & Personal Care ───────────────── */

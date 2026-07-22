@@ -59,11 +59,17 @@ function ShowcaseVariant({
   const productY = parallax ? productYRaw : undefined;
   // Product height relative to the banner (default 110%). NPL keeps its bottles
   // ≤ banner height so they sit fully inside instead of overflowing.
-  const productHeight = variant.productHeight ?? "110%";
-  const fromLeft = index % 2 === 0; // banner 1,3,… enter from the left
+  // Mobile overrides (if any) win on small screens, so size & position can be tuned
+  // per-viewport. All values are % / CSS strings → resolution-independent.
+  const mob = isMobile ? variant.mobile : undefined;
+  const productHeight = mob?.productHeight ?? variant.productHeight ?? "110%";
+  const fromLeft = index % 2 === 0; // default: banner 1,3,… enter from the left
   const sides = align === "sides";
-  // Horizontal rest: centred, or anchored to the entering side with a small inset.
-  const justify = sides ? (fromLeft ? "justify-start" : "justify-end") : "justify-center";
+  // Which side the product rests on. Defaults to the index-parity alternation, but a
+  // per-variant `side` overrides it (Vica's banners dictate the side per SKU).
+  const onLeft = sides && variant.side ? variant.side === "left" : fromLeft;
+  // Horizontal rest: centred, or anchored to its side with a small inset.
+  const justify = sides ? (onLeft ? "justify-start" : "justify-end") : "justify-center";
   const sidePad = sides ? "px-[2%] sm:px-[4%]" : "";
   // Vertical rest is PER VARIANT: `groundBottom` sits the product on the banner's
   // bottom edge; otherwise it stays vertically centred.
@@ -72,12 +78,14 @@ function ShowcaseVariant({
   // the (grounded) box down by that margin so the bottle's *base* — not the canvas
   // edge — sits on the banner bottom. Only meaningful together with groundBottom.
   const bottomDrop = variant.groundBottom ? variant.productBottomOffset : undefined;
-  // Optional horizontal nudge + the (grounded) vertical drop, composed into one
-  // transform on the product box.
-  const shiftX = variant.productShiftX;
+  // Horizontal + vertical nudge (per-viewport) plus the (grounded) vertical drop,
+  // composed into one transform on the product box. Multiple translateY() are
+  // additive, so the manual shiftY and the grounding drop stack cleanly.
+  const shiftX = mob?.productShiftX ?? variant.productShiftX;
+  const shiftY = mob?.productShiftY ?? variant.productShiftY;
   const boxTransform =
-    shiftX || bottomDrop
-      ? `translateX(${shiftX ?? "0"}) translateY(${bottomDrop ?? "0"})`
+    shiftX || shiftY || bottomDrop
+      ? `translateX(${shiftX ?? "0"}) translateY(${shiftY ?? "0"}) translateY(${bottomDrop ?? "0"})`
       : undefined;
 
   return (
@@ -121,7 +129,7 @@ function ShowcaseVariant({
           }}
         >
           <motion.div
-            initial={{ opacity: 0, x: fromLeft ? -90 : 90 }}
+            initial={{ opacity: 0, x: onLeft ? -90 : 90 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}

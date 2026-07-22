@@ -137,15 +137,23 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
                     }}
                   />
                 </div>
-                {/* Product image if provided; otherwise show a placeholder. */}
+                {/* Product image if provided; otherwise show a placeholder. The
+                    optional per-product `imageScale` shrinks/grows just this product
+                    (wrapper scale); the image keeps its own hover zoom on top. */}
                 {p.image ? (
-                  <Image
-                    src={p.image}
-                    alt={title}
-                    fill
-                    sizes="(min-width:1024px) 27vw, (min-width:640px) 46vw, 80vw"
-                    className="object-contain p-1 sm:p-2 md:p-3 transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
-                  />
+                  <div
+                    className="absolute inset-0"
+                    style={p.imageScale ? { transform: `scale(${p.imageScale})` } : undefined}
+                  >
+                    <Image
+                      src={p.image}
+                      alt={title}
+                      fill
+                      draggable={false}
+                      sizes="(min-width:1024px) 27vw, (min-width:640px) 46vw, 80vw"
+                      className="object-contain p-1 sm:p-2 md:p-3 transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 select-none pointer-events-none"
+                    />
+                  </div>
                 ) : (
                   <div className="relative flex flex-col items-center justify-center gap-2 sm:gap-3 text-ink/35 transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1">
                     <svg
