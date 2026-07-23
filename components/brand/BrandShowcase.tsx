@@ -131,7 +131,11 @@ function ShowcaseVariant({
           <motion.div
             initial={{ opacity: 0, x: onLeft ? -90 : 90 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
+            // Vertical-only inset. A horizontal inset would break the trigger on
+            // narrow screens: the entrance offset (±90px) plus a side `productShiftX`
+            // can push the box outside a horizontally-shrunken root, so the observer
+            // never fires and the product stays invisible.
+            viewport={{ once: true, margin: "-60px 0px" }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             style={{ y: productY }}
             className="absolute inset-0"

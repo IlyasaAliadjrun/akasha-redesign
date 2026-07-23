@@ -393,16 +393,29 @@ export const BRANDS: Brand[] = [
         //   productHeight — size (% of banner height)
         //   productShiftX / productShiftY — nudge left-right / up-down (% of product box)
         //   groundBottom — sit the bottle base on the banner's bottom edge
+        // NOTE: the product PNGs are 1220×1220 SQUARE canvases with the bottle drawn
+        // inside, so `productAspect` is 1/1 and the bottle only fills ~84–92% of the
+        // box height — hence productHeight runs higher than the bottle's visual size.
+        // productShiftX pushes the box back toward its side to cancel the canvas's
+        // transparent side padding (~18–30%).
+        // MOBILE: the banner is much narrower, so the bottle needs to be bigger
+        // relative to it and sit OVER the wording (no side shift) — matching the
+        // mobile reference. Hence `mobile: { productHeight, productShiftX: "0%" }`.
         // 220 mL — MINI BOOSTER (bottle right, centred)
-        { bg: "/brand/vica/showcase/1-2.png", product: "/brand/vica/showcase/1-1.png", bgAspect: "1080 / 465", productAspect: "297 / 463", productHeight: "78%", side: "right" },
+        { bg: "/brand/vica/showcase/1-2.png", product: "/brand/vica/showcase/1-1.png", bgAspect: "1080 / 465", productAspect: "1 / 1", productHeight: "93%", side: "right", productShiftX: "-15%",
+          mobile: { productHeight: "112%", productShiftX: "-5%" } },
         // 330 mL — POCKET FRESH (bottle left, centred)
-        { bg: "/brand/vica/showcase/2-2.png", product: "/brand/vica/showcase/2-1.png", bgAspect: "1080 / 465", productAspect: "347 / 527", productHeight: "82%", side: "left" },
+        { bg: "/brand/vica/showcase/2-2.png", product: "/brand/vica/showcase/2-1.png", bgAspect: "1080 / 465", productAspect: "1 / 1", productHeight: "90%", side: "left", productShiftX: "25%",
+          mobile: { productHeight: "106%", productShiftX: "20%" } },
         // 600 mL — DAILY BUDDY (bottle right, grounded)
-        { bg: "/brand/vica/showcase/3-2.png", product: "/brand/vica/showcase/3-1.png", bgAspect: "1080 / 465", productAspect: "454 / 484", productHeight: "80%", side: "right", groundBottom: true },
+        { bg: "/brand/vica/showcase/3-2.png", product: "/brand/vica/showcase/3-1.png", bgAspect: "1080 / 465", productAspect: "1 / 1", productHeight: "88%", side: "right", productShiftX: "-20%", groundBottom: true,
+          mobile: { productHeight: "106%", productShiftX: "-10%" } },
         // 1010 mL — LONGER HYDRATION (bottle left, grounded)
-        { bg: "/brand/vica/showcase/4-2.png", product: "/brand/vica/showcase/4-1.png", bgAspect: "1080 / 465", productAspect: "458 / 525", productHeight: "84%", side: "left", groundBottom: true },
+        { bg: "/brand/vica/showcase/4-2.png", product: "/brand/vica/showcase/4-1.png", bgAspect: "1080 / 465", productAspect: "1 / 1", productHeight: "92%", side: "left", productShiftX: "18%", groundBottom: true,
+          mobile: { productHeight: "106%", productShiftX: "15%" } },
         // 1500 mL — ALL-DAY HYDRATION (bottle right, grounded)
-        { bg: "/brand/vica/showcase/5-2.png", product: "/brand/vica/showcase/5-1.png", bgAspect: "1080 / 465", productAspect: "446 / 525", productHeight: "86%", side: "right", groundBottom: true },
+        { bg: "/brand/vica/showcase/5-2.png", product: "/brand/vica/showcase/5-1.png", bgAspect: "1080 / 465", productAspect: "1 / 1", productHeight: "93%", side: "right", productShiftX: "-16%", groundBottom: true,
+          mobile: { productHeight: "106%", productShiftX: "-5%" } },
       ],
     },
   },
