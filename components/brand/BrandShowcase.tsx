@@ -30,10 +30,15 @@ function ShowcaseVariant({
   brandName,
   align,
   parallax,
+  frameAspect,
 }: {
   variant: TVariant;
   index: number;
   brandName: string;
+  // Aspect of the banner frame itself (default "5 / 2"). Set it to the bg art's own
+  // ratio when the banner is a designed card that must show in full without a cover
+  // crop (128: 2160×1015 text banners).
+  frameAspect?: string;
   // "center" (default): product rests centred over the banner art — used when the
   // bg carries full-bleed text/art behind it (Hair Energy).
   // "sides": product rests on the side it enters from, alternating per banner
@@ -89,7 +94,7 @@ function ShowcaseVariant({
       : undefined;
 
   return (
-    <div ref={ref} className="relative" style={{ aspectRatio: "5 / 2" }}>
+    <div ref={ref} className="relative" style={{ aspectRatio: frameAspect ?? "5 / 2" }}>
       {/* Background banner — clipped & rounded. The inner layer is full WIDTH
           (so the edge-to-edge text is never side-cropped) and taller than the
           frame (its natural ratio), so the vertical parallax drift only ever
@@ -144,7 +149,11 @@ function ShowcaseVariant({
               src={variant.product}
               alt=""
               fill
-              sizes="(min-width:1024px) 360px, 45vw"
+              // The product can be a wide multi-item cluster spanning most of the
+              // banner (128, Wonhae), so the slot is much bigger than a single bottle.
+              // A generous `sizes` makes Next serve a high-res candidate (sharp on
+              // Retina) instead of a ~360px one that gets upscaled.
+              sizes="(min-width:1024px) 820px, 92vw"
               className="object-contain"
             />
           </motion.div>
@@ -164,6 +173,7 @@ export default function BrandShowcase({ brand }: { brand: Brand }) {
   const variants = showcase.variants ?? [];
   const align = showcase.productAlign ?? "center";
   const parallax = showcase.parallax ?? true;
+  const frameAspect = showcase.bannerAspect;
 
   return (
     <section className="bg-white pt-4 sm:pt-6 pb-20 sm:pb-24 md:pb-28">
@@ -206,6 +216,7 @@ export default function BrandShowcase({ brand }: { brand: Brand }) {
                 brandName={brand.name}
                 align={align}
                 parallax={parallax}
+                frameAspect={frameAspect}
               />
             );
             // A variant with `href` links to its sub-brand page; a subtle hover

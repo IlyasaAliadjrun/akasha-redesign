@@ -107,6 +107,7 @@ export default function BrandHero({ brand }: { brand: Brand }) {
   const darkText = content?.theme === "dark";
 
   const taglineColor = darkText ? "text-ink" : "text-white";
+  const subtitleColor = darkText ? "text-ink/70" : "text-white/80";
   const ctaClass = darkText
     ? "border-ink/40 text-ink hover:bg-ink hover:text-white"
     : "border-white/70 text-white hover:bg-white hover:text-ink";
@@ -114,7 +115,10 @@ export default function BrandHero({ brand }: { brand: Brand }) {
   return (
     <section
       ref={ref}
-      data-theme="dark"
+      // Tell the navbar how to paint itself over this hero. `heroContent.theme:"dark"`
+      // means DARK TEXT — i.e. a LIGHT banner (Vica/Wonhae yellow) — so the navbar
+      // needs its dark treatment; otherwise the banner is dark and the navbar goes white.
+      data-theme={darkText ? "light" : "dark"}
       className="relative w-full overflow-hidden h-[100svh] min-h-[480px] md:min-h-[560px]"
       style={{ backgroundColor: brand.bannerBg ?? brand.accentHex }}
     >
@@ -170,11 +174,16 @@ export default function BrandHero({ brand }: { brand: Brand }) {
                 <Image src={content.logo} alt={`${brand.name} logo`} fill sizes="40vw" className="object-contain object-left" />
               </div>
             )}
-            {(content.tagline || content.ctaText) && (
+            {(content.tagline || content.subtitle || content.ctaText) && (
               <div className="flex flex-col" style={{ paddingLeft: content.bodyIndent }}>
                 {content.tagline && (
                   <p className={`font-display mt-3 sm:mt-5 font-semibold leading-tight text-[clamp(15px,2vw,30px)] ${taglineColor}`}>
                     {content.tagline}
+                  </p>
+                )}
+                {content.subtitle && (
+                  <p className={`font-display mt-2 sm:mt-3 font-normal leading-snug whitespace-pre-line text-[clamp(13px,1.25vw,19px)] ${subtitleColor}`}>
+                    {content.subtitle}
                   </p>
                 )}
                 {content.ctaText && (
@@ -213,6 +222,11 @@ export default function BrandHero({ brand }: { brand: Brand }) {
             {content.tagline && (
               <p className={`font-display font-semibold leading-tight text-[clamp(18px,5.5vw,26px)] ${taglineColor}`}>
                 {content.tagline}
+              </p>
+            )}
+            {content.subtitle && (
+              <p className={`font-display mt-2 font-normal leading-snug whitespace-pre-line text-[clamp(12px,3.6vw,16px)] ${subtitleColor}`}>
+                {content.subtitle}
               </p>
             )}
             {content.ctaText && (

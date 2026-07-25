@@ -88,6 +88,9 @@ export type HeroContent = {
   logoAspect?: string; // intrinsic ratio of the logo, e.g. "1576 / 1086"
   logoWidth?: string; // CSS width, e.g. "32vw"
   tagline?: string;
+  // Optional second line under the tagline — a lighter, smaller supporting sentence
+  // (the tagline reads as the heading). Honours "\n" for a manual line break.
+  subtitle?: string;
   ctaText?: string;
   ctaHref?: string;
   left?: string; // block left offset (default "5%")
@@ -126,6 +129,9 @@ export type Brand = {
   heroContent?: HeroContent; // optional HTML overlay (wordmark + tagline + CTA)
   bannerBg?: string; // background behind a contained brand banner (hero)
   hero: boolean;
+  // Heading above the product carousel (default "Explore the lineup."). Wonhae's
+  // reference uses "Product.".
+  lineupTitle?: string;
   products?: {
     name: string;
     variant?: string;
@@ -155,6 +161,9 @@ export type Brand = {
     heroMaxWidth?: string;
     productAlign?: "center" | "sides";
     parallax?: boolean;
+    // Aspect of each variant banner frame (default "5 / 2"). Set to the bg art's own
+    // ratio when the banners are designed cards that must render in full (128).
+    bannerAspect?: string;
     variants?: ShowcaseVariant[];
   };
 };
@@ -338,12 +347,13 @@ export const BRANDS: Brand[] = [
     // the 3-bottle cluster (hero/1.png) on the right. Mirrors the Hair Energy hero
     // pattern; matches the provided VICA landing-page reference.
     heroLayers: [
-      // Full transparent landscape canvas: bottles baked into the right ~52–85%.
-      // DESKTOP shows it `contain`, nudged right. MOBILE swaps to a tight bottles crop
-      // (1-mobile.png, generated from this asset) sized & centred on the phone screen.
-      { src: "/brand/vica/hero/1.png", fit: "contain", position: "74% 50%", depth: 0, enterFrom: "right", enterDelay: 0.3,
-        aspectRatio: "1442 / 1938",
-        mobile: { src: "/brand/vica/hero/1-mobile.png", width: "min(58vw, 34vh)", left: "21%", top: "45%" } },
+      // hero/1.png is now a TIGHT portrait cluster of the 3 bottles (transparent,
+      // 2785×3778) — one asset for both viewports, rendered as a sized layer.
+      // DESKTOP: anchored right, vertically centred. MOBILE: centred between the
+      // wordmark (top) and the tagline block (bottom). No parallax (depth 0).
+      { src: "/brand/vica/hero/1.png", depth: 0, enterFrom: "right", enterDelay: 0.3,
+        width: "min(32vw, 460px)", aspectRatio: "2785 / 3778", right: "9%", top: "17%",
+        mobile: { width: "min(58vw, 34vh)", left: "21%", top: "42%" } },
     ],
     // Wordmark image already includes the "Tutup Kuning, Paling Bening" tagline, so no
     // separate HTML tagline/CTA (the reference hero has none either).
@@ -447,9 +457,9 @@ export const BRANDS: Brand[] = [
     name: "Asters",
     division: "beauty",
     parent: "makarizo",
-    tagline: "Perawatan rambut harian yang lembut.",
+    tagline: "Solusi Teruji Klinis untuk Semua Masalah Kulit Kepala dan Rambut",
     description:
-      "Rangkaian perawatan rambut harian dari Makarizo untuk rambut sehat, lembut, dan mudah diatur setiap hari.",
+      "Advisor menghadirkan solusi berstandar klinis untuk rambut. Setiap formula dikembangkan oleh apoteker denagn dosis yang berkhasiat.",
     accentClass: "bg-brand-asters",
     accentHex: "#7C5CBF",
     heroImage:
@@ -462,14 +472,14 @@ export const BRANDS: Brand[] = [
     name: "Advisor",
     division: "beauty",
     parent: "makarizo",
-    tagline: "Solusi rambut sehat dan kuat.",
+    tagline: "Solusi Teruji Klinis untuk Semua Masalah Kulit Kepala dan Rambut",
     description:
-      "Rangkaian Advisor dari Makarizo membantu merawat rambut agar tetap kuat, ternutrisi, dan bebas masalah.",
+      "Advisor menghadirkan solusi berstandar klinis untuk rambut. Setiap formula dikembangkan oleh apoteker denagn dosis yang berkhasiat.",
     accentClass: "bg-brand-advisor",
-    accentHex: "#3A7BD5",
+    accentHex: "#727272",
     heroImage:
       "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1800&auto=format&fit=crop",
-    hero: false,
+    hero: true,
   },
   // 1c — Hair Energy
   {
@@ -606,15 +616,74 @@ export const BRANDS: Brand[] = [
     slug: "128",
     name: "128",
     division: "beauty",
-    parent: "makarizo",
-    tagline: "Perawatan rambut esensial.",
+    tagline: "Rahasia Kecantikan dari Dasar Samudera.",
+    // Becomes the BrandIntro headline (it appends its own period, so none here).
     description:
-      "Rangkaian 128 dari Makarizo menghadirkan perawatan rambut esensial dengan formula yang ringan dan terjangkau.",
+      "Skincare pertama di Indonesia dengan Saccharina Japonica, yang melembapkan, menenangkan, dan kaya antioksidan",
     accentClass: "bg-brand-128",
-    accentHex: "#2A9D8F",
+    accentHex: "#E8735C", // 128 coral — Learn more / Buy / CTA
     heroImage:
-      "https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1800&auto=format&fit=crop",
-    hero: false,
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1800&auto=format&fit=crop",
+    // Hero — coral banner (bannerBg) with the "128" wordmark + tagline on the left and
+    // the product cluster (composited from hero/1–4) on the right. Hair Energy pattern.
+    heroLayers: [
+      { src: "/brand/128/hero/cluster.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
+        width: "min(52vw, 700px)", aspectRatio: "3493 / 2130", right: "1%", top: "20%",
+        mobile: { width: "min(96vw, 440px)", left: "2%", top: "34%" } },
+    ],
+    heroContent: {
+      logo: "/brand/128/hero/wordmark.png",
+      logoAspect: "2160 / 1415",
+      logoWidth: "22vw",
+      maxWidth: "40vw",
+      tagline: "Rahasia Kecantikan\ndari Dasar Samudera",
+      ctaText: "Learn more",
+      ctaHref: "#about",
+      left: "9%",
+      // white text on the coral banner (theme omitted = white)
+      delay: 0.5,
+      mobile: { logoWidth: "50vw" },
+    },
+    bannerBg: "#FBA084", // 128 coral
+    hero: true,
+    // Full skincare line-up (9 SKU across the four ranges).
+    products: [
+      { name: "Facial Wash", variant: "Bright & Radiance", image: "/brand/128/product-lineup/facial-wash-bright-radiance.png" },
+      { name: "Toner", variant: "Bright & Radiance", image: "/brand/128/product-lineup/toner-bright-radiance.png" },
+      { name: "Serum", variant: "Bright & Radiance", image: "/brand/128/product-lineup/serum-bright-radiance.png" },
+      { name: "Moisturizer", variant: "Bright & Radiance", image: "/brand/128/product-lineup/moisturizer-bright-radiance.png" },
+      { name: "Facial Wash", variant: "Intensive Barrier Care", image: "/brand/128/product-lineup/facial-wash-intensive-barrier-care.png" },
+      { name: "Primer", variant: "Intensive Barrier Care", image: "/brand/128/product-lineup/primer-intensive-barrier-care.png" },
+      { name: "Boost", variant: "Intensive Barrier Care", image: "/brand/128/product-lineup/boost-intensive-barrier-care.png" },
+      { name: "Moisturizer", variant: "Pro Acne Defense", image: "/brand/128/product-lineup/moisturizer-pro-acne-defense.png" },
+      { name: "Moisturizer", variant: "Advanced Age Repair", image: "/brand/128/product-lineup/moisturizer-advanced-age-repair.png" },
+    ],
+    about: [
+      { title: "Diperkaya Saccharina Japonica", image: "/brand/128/about/1.png" },
+      { title: "Melembapkan Kulit", image: "/brand/128/about/2.png" },
+      { title: "Skin Barrier Lebih Kuat", image: "/brand/128/about/3.png" },
+    ],
+    // Showcase — title poster then four range banners. Each bg ({n}-last) is a designed
+    // coral/nude/green/purple text card (2160×1015), and the product cluster ({cluster-n},
+    // composited from that range's product PNGs) sits centred over it. bannerAspect keeps
+    // the designed card uncropped.
+    showcase: {
+      hero: "/brand/128/showcase/title.png",
+      heroAspect: "2160 / 1348",
+      heroMaxWidth: "min(92vw, 46rem)",
+      productAlign: "center",
+      bannerAspect: "2160 / 1015",
+      variants: [
+        // BRIGHT & RADIANCE — 4 products (wide cluster → sits centred, text peeks at edges)
+        { bg: "/brand/128/showcase/1-5.png", product: "/brand/128/showcase/cluster-1.png", bgAspect: "2160 / 1015", productAspect: "3307 / 2090", productHeight: "88%" },
+        // INTENSIVE BARRIER CARE — 3 products
+        { bg: "/brand/128/showcase/2-4.png", product: "/brand/128/showcase/cluster-2.png", bgAspect: "2160 / 1015", productAspect: "2661 / 2090", productHeight: "94%" },
+        // PRO ACNE DEFENSE — 2 products, nudged left of the wording
+        { bg: "/brand/128/showcase/3-3.png", product: "/brand/128/showcase/cluster-3.png", bgAspect: "2160 / 1015", productAspect: "1802 / 2090", productHeight: "102%", productShiftX: "-24%" },
+        // ADVANCED AGE REPAIR — 1 product, slightly left of centre
+        { bg: "/brand/128/showcase/4-2.png", product: "/brand/128/showcase/cluster-4.png", bgAspect: "2160 / 1015", productAspect: "1494 / 2090", productHeight: "102%", productShiftX: "-6%" },
+      ],
+    },
   },
 
   // 2 — Makarizo Professional
@@ -880,30 +949,105 @@ export const BRANDS: Brand[] = [
     slug: "wonhae",
     name: "Wonhae",
     division: "food",
-    tagline: "Korean flavors, Indonesian hearts.",
+    tagline: "It's All You Want.",
+    // Becomes the BrandIntro headline (it appends its own period, so none here).
     description:
-      "Makanan & snack inspirasi Korea. Dua sub-brand: Wonhae (snack & minuman) dan Mujigae by Wonhae (hidangan Korea).",
+      "Cita rasa autentik Korea Selatan, dikurasi khusus untuk Anda",
     accentClass: "bg-brand-wonhae",
-    accentHex: "#E63946",
+    accentHex: "#E63946", // Wonhae red — Learn more / Buy / CTA
     heroImage:
       "https://images.unsplash.com/photo-1635363638580-c2809d049eee?q=80&w=1800&auto=format&fit=crop",
+    // Hero — yellow banner (bannerBg) with the WONHAE lockup on the left and the
+    // product cluster on the right. Same pattern as the Hair Energy hero.
+    heroLayers: [
+      { src: "/brand/wonhae/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
+        width: "min(46vw, 620px)", aspectRatio: "1949 / 1828", right: "3%", top: "14%",
+        mobile: { width: "min(90vw, 410px)", left: "5%", top: "33%" } },
+    ],
+    // The wordmark image already includes the "IT'S ALL YOU WANT" heading + subtitle
+    // (per the updated asset / reference), so no separate HTML tagline is drawn — just
+    // the lockup. Dark text theme keeps the navbar legible on the yellow banner.
+    heroContent: {
+      logo: "/brand/wonhae/hero/wordmark.png",
+      logoAspect: "1000 / 579",
+      logoWidth: "26vw",
+      left: "9%",
+      theme: "dark",
+      delay: 0.5,
+      mobile: { logoWidth: "62vw" },
+    },
+    bannerBg: "#FFDD58", // Wonhae yellow
     hero: true,
     products: [
-      { name: "Mujigae Topokki", variant: "Original", size: "170g" },
-      { name: "Mujigae Topokki", variant: "Spicy", size: "195g" },
-      { name: "Mujigae Topokki", variant: "with Fish Cake", size: "180g" },
-      { name: "Mujigae Jajangmyeon", variant: "Korean Black Bean", size: "265g" },
-      { name: "Mujigae Rapokki", variant: "Spicy", size: "260g" },
-      { name: "Mujigae Ramyun", variant: "Butter Corn", size: "120g" },
-      { name: "Mujigae Ramyun", variant: "Cheese", size: "120g" },
-      { name: "Mujigae Ramyun", variant: "Fried Rose", size: "120g" },
-      { name: "Mujigae Oden", variant: "Fish Cake Broth", size: "65g" },
-      { name: "Wonhae Banana Milk Bites", variant: "Original", size: "60g" },
-      { name: "Wonhae Banana Milk Bites", variant: "Chocolate", size: "60g" },
-      { name: "Wonhae Banana Milk", variant: "Watermelon", size: "250mL" },
-      { name: "Wonhae Nori", variant: "Crispy Snack", size: "Seaweed" },
-      { name: "Wonhae Potato", variant: "Spicy Korean", size: "Snack" },
+      // Ready to eat — topokki & ramyun
+      { name: "Spicy Rapokki", size: "155 g", image: "/brand/wonhae/product-lineup/spicy-rapokki-155g.png" },
+      { name: "Topokki", variant: "Carbonara", size: "80 g", image: "/brand/wonhae/product-lineup/topokki-carbonara-80g.png" },
+      { name: "Topokki Kids", variant: "Carbonara", size: "80 g", image: "/brand/wonhae/product-lineup/topokki-kids-carbo-new-80g.png" },
+      { name: "Topokki Kids", variant: "Baby Shark", size: "80 g", image: "/brand/wonhae/product-lineup/topokki-kids-baby-shark-80g.png" },
+      { name: "Black Fried Ramyun", size: "125 g", image: "/brand/wonhae/product-lineup/black-fried-ramyun-125g-front.png" },
+      { name: "Cheese Ramyun", size: "120 g", image: "/brand/wonhae/product-lineup/cheese-ramyun-120gr.png" },
+      { name: "Cheese Ramyun", size: "90 g", image: "/brand/wonhae/product-lineup/cheese-ramyun-90g.png" },
+      { name: "Fried Rose Ramyun", size: "120 g", image: "/brand/wonhae/product-lineup/fried-rose-ramyun-120gr.png" },
+      { name: "Fried Rose Ramyun", size: "97 g", image: "/brand/wonhae/product-lineup/fried-rose-ramyun-97g.png" },
+      { name: "Fried Corn Cheese Ramyun", size: "120 g", image: "/brand/wonhae/product-lineup/fried-corn-cheese-ramyun-120gr.png" },
+      // Snacks
+      { name: "Topokki Snack", variant: "Creamy Rose", size: "80 g", image: "/brand/wonhae/product-lineup/topokki-snack-rose-80-gr.png" },
+      { name: "Topokki Snack", variant: "Sweet & Spicy", size: "80 g", image: "/brand/wonhae/product-lineup/topokki-snack-ss-80-gr.png" },
+      { name: "Topokki Snack", variant: "Cheese Buldak", size: "80 g", image: "/brand/wonhae/product-lineup/topokki-snack-cheese-buldak-80g.png" },
+      { name: "Topokki Snack", variant: "Cheese Truffle Mayo", size: "80 g", image: "/brand/wonhae/product-lineup/topokki-snack-cheese-truffle-mayo-80gr.png" },
+      { name: "Topokki Snack", variant: "Creamy Rose", size: "16 g", image: "/brand/wonhae/product-lineup/topokki-snack-creamy-rose-16gr.png" },
+      { name: "Topokki Snack", variant: "Sweet & Spicy", size: "16 g", image: "/brand/wonhae/product-lineup/topokki-snack-spicy-sweet-16gr.png" },
+      { name: "Potato Snack", variant: "Spicy Korean", size: "60 g", image: "/brand/wonhae/product-lineup/potatosnack-spicy-korean-60gr.png" },
+      { name: "Nori Crispy", image: "/brand/wonhae/product-lineup/nori-crispy.png" },
+      { name: "Beef Seaweed", size: "120 g", image: "/brand/wonhae/product-lineup/beef-seaweed-120gr.png" },
+      { name: "Churros Snack", variant: "Original", size: "60 g", image: "/brand/wonhae/product-lineup/churros-original.png" },
+      { name: "Churros Snack", variant: "Peanut Butter", size: "60 g", image: "/brand/wonhae/product-lineup/churros-peanut-butter.png" },
+      // Confectionery
+      { name: "Banana Bites", variant: "Original", size: "60 g", image: "/brand/wonhae/product-lineup/banana-bites-ori-60gr.png" },
+      { name: "Banana Bites", variant: "Choco", size: "60 g", image: "/brand/wonhae/product-lineup/banana-bites-choco-60gr.png" },
+      { name: "Banana Bites", size: "12 g", image: "/brand/wonhae/product-lineup/banana-bites-12gr.png" },
+      { name: "Matcha Berry Bites", image: "/brand/wonhae/product-lineup/matcha-berry-bites-mockup.png" },
+      { name: "Pistachio Choco Bites", size: "30 g", image: "/brand/wonhae/product-lineup/pistachio-choco-bites-30g.png" },
+      { name: "Strawberry Cheesecake Bites", size: "30 g", image: "/brand/wonhae/product-lineup/strawberry-cheesecake-30g.png" },
+      { name: "Choco Gummy", size: "35 g", image: "/brand/wonhae/product-lineup/choco-gummy-35-gr.png" },
+      { name: "Yogurt Gummy", size: "48 g", image: "/brand/wonhae/product-lineup/yogurt-gummy-48gr.png" },
+      // Ready to drink
+      { name: "Banana Milk", variant: "Original", size: "250 mL", image: "/brand/wonhae/product-lineup/banana-milk-ori.png" },
+      { name: "Banana Milk", variant: "Choco", size: "250 mL", image: "/brand/wonhae/product-lineup/banana-milk-choco.png" },
+      { name: "Banana Milk", variant: "Creamy", size: "250 mL", image: "/brand/wonhae/product-lineup/banana-milk-creamy.png" },
+      { name: "Banana Milk", variant: "Strawberry", size: "250 mL", image: "/brand/wonhae/product-lineup/banana-milk-strawberry.png" },
+      { name: "Watermelon Milk", size: "180 mL", image: "/brand/wonhae/product-lineup/watermelon-milk-180ml.png" },
+      { name: "Melon Milk", size: "180 mL", image: "/brand/wonhae/product-lineup/melon-milk-180ml-alfamart.png" },
+      { name: "Cheesecake Milk", size: "250 mL", image: "/brand/wonhae/product-lineup/cheesecake-milk-250ml.png" },
+      { name: "DIY Cafe", variant: "Blue Lemonade", size: "180 mL", image: "/brand/wonhae/product-lineup/diy-cafe-front-blue-lemonade-180ml.png" },
+      { name: "DIY Cafe", variant: "Peach Lemonade", size: "180 mL", image: "/brand/wonhae/product-lineup/diy-cafe-front-peach-lemonade-180ml.png" },
+      { name: "DIY Cafe", variant: "Pineapple Lemonade", size: "180 mL", image: "/brand/wonhae/product-lineup/diy-cafe-front-pineapple-lemonade-180ml.png" },
     ],
+    about: [
+      { title: "Cita Rasa Korea yang Autentik", image: "/brand/wonhae/about/1.png" },
+      { title: "Beragam Pilihan Produk", image: "/brand/wonhae/about/2.png" },
+      { title: "Bahan Baku Berkualitas Tinggi", image: "/brand/wonhae/about/3.png" },
+    ],
+    // Showcase — title poster then four category banners. Each bg ({n}-2) carries the
+    // baked wording, and the product cluster ({n}-1) sits OVER it, so productAlign is
+    // "center" (Hair Energy pattern). Banners 3 & 4 place the cluster to one side, so
+    // they get a productShiftX; banners 1 & 2 stay centred.
+    showcase: {
+      hero: "/brand/wonhae/showcase/title.png",
+      heroAspect: "2340 / 1443",
+      heroMaxWidth: "min(92vw, 52rem)",
+      productAlign: "center",
+      variants: [
+        // READY TO EAT — cluster centred
+        { bg: "/brand/wonhae/showcase/1-2.png", product: "/brand/wonhae/showcase/1-1.png", bgAspect: "1121 / 505", productAspect: "722 / 502", productHeight: "112%" },
+        // READY TO DRINK — cluster centred
+        { bg: "/brand/wonhae/showcase/2-2.png", product: "/brand/wonhae/showcase/2-1.png", bgAspect: "1121 / 505", productAspect: "722 / 502", productHeight: "104%" },
+        // CONFECTIONERY — wording left, cluster right
+        { bg: "/brand/wonhae/showcase/3-2.png", product: "/brand/wonhae/showcase/3-1.png", bgAspect: "1121 / 505", productAspect: "722 / 502", productHeight: "110%", productShiftX: "26%" },
+        // SNACKS — cluster left, wording right
+        { bg: "/brand/wonhae/showcase/4-2.png", product: "/brand/wonhae/showcase/4-1.png", bgAspect: "1121 / 505", productAspect: "722 / 502", productHeight: "112%", productShiftX: "-25%" },
+      ],
+    },
     reasons: [
       { icon: "🇰🇷", title: "Rasa otentik Korea", body: "Dikembangkan dengan referensi langsung ke street food Korea — bukan sekadar terinspirasi." },
       { icon: "⏱️", title: "Siap dalam 3 menit", body: "Semua produk Mujigae praktis diolah — cocok untuk lapar tengah malam." },

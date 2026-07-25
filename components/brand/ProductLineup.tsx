@@ -77,7 +77,7 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
     <section className="bg-white py-16 sm:py-20 md:py-24 lg:py-32">
       <div className="max-w-content mx-auto px-6 lg:px-10 mb-8 sm:mb-10 lg:mb-14 flex items-end justify-center md:justify-start gap-6">
         <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05] text-center md:text-left">
-          Explore the lineup.
+          {brand.lineupTitle ?? "Explore the lineup."}
         </h2>
       </div>
 
