@@ -86,7 +86,11 @@ function ParallaxLayer({
           alt=""
           fill
           priority={index === 0}
-          sizes="(min-width:768px) 50vw, 100vw"
+          // Full-bleed background layers span the whole viewport, so they need the
+          // full-width candidate; only *sized* layers (a product/wordmark capped at
+          // ~50vw) can take the smaller hint. A blanket 50vw served the background at
+          // half-res on desktop.
+          sizes={sized ? "(min-width:768px) 50vw, 100vw" : "100vw"}
           className={fitClass}
           style={layer.position ? { objectPosition: layer.position } : undefined}
         />

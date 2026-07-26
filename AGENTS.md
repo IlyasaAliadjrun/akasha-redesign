@@ -109,9 +109,9 @@ All brand slugs are defined in [lib/brands.ts](lib/brands.ts) and rendered throu
 - **Never** hardcode `` `/brands/${slug}` `` for a brand that might be an umbrella. Use **`brandHref(slug)`** from [lib/brands.ts](lib/brands.ts) — it resolves an umbrella to its `flagship` sub-brand. Listings that shouldn't show umbrellas at all use `pageBrands()`.
 - Helpers: `isUmbrella(brand)`, `pageBrands()`, `brandHref(slug)`, `childrenOf(slug)`.
 
-When adding or modifying a brand, update [lib/brands.ts](lib/brands.ts) — do **not** create per-brand page files.
+**Brands are auto-discovered — do not edit a shared registry to add one.** Each brand is a standalone module in `content/brands/*.ts` (default-exporting a `Brand`); `lib/brands.ts` collects them via webpack `require.context`. **Adding a brand = one new file in `content/brands/` + its asset folder — nothing else is touched.** To *edit* an existing brand, edit its own file in `content/brands/`. Do **not** add brands to `lib/brands.ts`, and do **not** create per-brand page files. Full workflow, section anatomy, and the "structure = Hair Energy" rules live in **[docs/BRAND_PAGE_GUIDE.md](docs/BRAND_PAGE_GUIDE.md)** — read it before building any brand page.
 
-**Sub-brands (product lines).** A third level exists below brands: a *product line* inside a brand — e.g. Hair Energy's Fibertherapy Creambath, Scentsations, Shampoo, Vitaglitz. These are the "sub-brands". They live in [lib/subBrands.ts](lib/subBrands.ts) (`SUB_BRANDS`) and render at the nested route **`/brands/{parent}/{line}`** (e.g. `/brands/hair-energy/creambath`) via [components/subbrand/SubBrandTemplate.tsx](components/subbrand/SubBrandTemplate.tsx).
+**Sub-brands (product lines).** A third level exists below brands: a *product line* inside a brand — e.g. Hair Energy's Fibertherapy Creambath, Scentsations, Shampoo, Vitaglitz. These are the "sub-brands". Like brands, they are **auto-discovered**: each is a standalone module in `content/sub-brands/*.ts` (default-exporting a `SubBrand`), collected by `lib/subBrands.ts` via `require.context`. **Adding a sub-brand = one new file in `content/sub-brands/` + its nested asset folder.** They render at the nested route **`/brands/{parent}/{line}`** (e.g. `/brands/hair-energy/creambath`) via [components/subbrand/SubBrandTemplate.tsx](components/subbrand/SubBrandTemplate.tsx).
 
 - **Not in the navbar.** A sub-brand page is reached only by clicking a variant banner in the parent brand's showcase — wire it with `href` on the `ShowcaseVariant` in [lib/brands.ts](lib/brands.ts).
 - **Layout** = brand page minus About + Product-lineup: **banner (parallax) → showcase (title image + card grid) → cross-sell → CTA**. The banner keeps parallax; the showcase does **not** (each card image is whole). Card images already include their own background + border, so no card chrome is drawn around them — the image is placed as-is (see `SubBrandShowcase`). Cross-sell + CTA use the **parent** brand ("Rasakan Hair Energy sekarang").
@@ -172,13 +172,13 @@ Any change that touches an image, an aspect ratio, a section's width, or how an 
 
 ## 11. Working with content (lib/brands.ts, lib/investor.ts)
 
-These files are the **single source of truth** for site content. When the user asks to change copy, add a product, swap an image, or tweak a feature card:
+These are the **single source of truth** for site content. When the user asks to change copy, add a product, swap an image, or tweak a feature card:
 
-1. Find the entry in `lib/brands.ts` or `lib/investor.ts`.
-2. Edit there — do not duplicate the content into a component.
+1. Find the entry: a brand → `content/brands/{slug}.ts`; a sub-brand → `content/sub-brands/{parent}--{slug}.ts`; investor data → `lib/investor.ts`. (`lib/brands.ts` / `lib/subBrands.ts` now hold only the `Brand`/`SubBrand` types, `DIVISIONS`, and helpers — the registries are auto-discovered from `content/`; don't add data there.)
+2. Edit the brand's own file — do not duplicate the content into a component.
 3. Components consume the data; they should not hardcode brand-specific strings.
 
-The `Brand` type in `lib/brands.ts` defines the schema. Respect it.
+The `Brand` type in `lib/brands.ts` (and `SubBrand` in `lib/subBrands.ts`) defines the schema. Respect it. Note `accentClass` (`bg-brand-*`) is legacy and unused — brand accent colour comes from `accentHex`; do not add `bg-brand-*` keys to `tailwind.config.ts`.
 
 ---
 

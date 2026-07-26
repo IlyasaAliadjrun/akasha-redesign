@@ -65,7 +65,7 @@ export default function SubBrandShowcase({ sub }: { sub: SubBrand }) {
           >
             {sub.showcaseTitle ? (
               <div className="relative w-full" style={{ aspectRatio: titleAspect }}>
-                <Image src={sub.showcaseTitle} alt={`${sub.name} showcase`} fill sizes="(min-width:768px) 384px, 66vw" className="object-contain" />
+                <Image src={sub.showcaseTitle} alt={`${sub.name} showcase`} fill sizes="(min-width:768px) 576px, 66vw" className="object-contain" />
               </div>
             ) : (
               <div className="relative w-full rounded-2xl bg-ink/[0.04] flex flex-col items-center justify-center gap-2 text-ink/30" style={{ aspectRatio: titleAspect }}>

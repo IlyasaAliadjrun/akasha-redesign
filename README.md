@@ -3,41 +3,42 @@
 Apple/Tesla-inspired cinematic product site untuk PT Akasha Wira International Tbk (IDX: ADES).
 
 ## Stack
-- Next.js 14 App Router + TypeScript
-- Tailwind CSS
-- Framer Motion
-- Plus Jakarta Sans (Google Fonts)
+- Next.js 14 App Router + TypeScript (strict)
+- Tailwind CSS 3.4
+- Framer Motion 11
+- Plus Jakarta Sans + Poppins (self-hosted via `next/font/local`)
 
 ## Run
 ```bash
 npm install
-npm run dev
+npm run dev      # http://localhost:3000
+npm run build    # type-check + lint + prerender (jalankan sebelum PR)
 ```
-Buka http://localhost:3000
 
 ## Struktur
-- `app/page.tsx` — Homepage (7 cinematic scenes)
-- `app/brands/[slug]/page.tsx` — Brand page template (dynamic route untuk 9 brand)
-- `app/about`, `app/investor`, `app/careers`, `app/contact` — halaman info
-- `lib/brands.ts` — sumber data semua brand, produk, dan features
+- `app/page.tsx` — Homepage (cinematic scenes)
+- `app/brands/[slug]/page.tsx` — Brand page (dynamic route)
+- `app/brands/[slug]/[line]/page.tsx` — Sub-brand / product-line page
+- `app/about`, `app/investor`, `app/careers`, `app/contact`, `app/governance` — halaman info
+- `content/brands/*.ts` — **satu file config per brand** (sumber data brand: teks, warna, produk, showcase)
+- `content/sub-brands/*.ts` — satu file config per sub-brand (product line)
+- `lib/brands.ts`, `lib/subBrands.ts` — tipe + helper; registry `BRANDS`/`SUB_BRANDS` **di-auto-discover** dari `content/` (webpack `require.context`)
 - `components/home/*` — scene homepage (HeroCarousel, DivisionCards, StickyProductReveal, BentoGrid, SensoryStrip, CompanyStatement)
-- `components/brand/*` — template brand page (Hero, ScrollFeatureReveal, ProductLineup, LifestyleGallery, CrossSell, CTA)
-- `components/layout/*` — Navbar, MegaMenu, Footer
+- `components/brand/*` — section brand page (BrandHero, ProductLineup, BrandIntro, BrandAbout, BrandShowcase, CrossSell, BrandCTA)
+- `components/subbrand/*` — section sub-brand page (SubBrandHero, SubBrandShowcase, SubBrandTemplate)
+- `components/layout/*` — Navbar, MegaMenu, Footer, BackToTop
 
-## Brand Routes
-- `/brands/nestle-pure-life`
-- `/brands/vica`
-- `/brands/hair-energy`
-- `/brands/make-it`
-- `/brands/makarizo-professional`
-- `/brands/wonhae`
-- `/brands/omoide`
-- `/brands/floaty`
-- `/brands/fitmeup`
+## Menambah brand / sub-brand
+**Registrasi otomatis.** Menambah brand = membuat **satu file** `content/brands/{slug}.ts` + folder aset
+`public/brand/{slug}/`. Menambah sub-brand = satu file `content/sub-brands/{parent}--{slug}.ts` + folder
+aset bersarang. Tidak perlu mengedit registry mana pun; route muncul otomatis.
+
+Panduan lengkap (struktur wajib = Hair Energy, aturan aset, checklist): **[docs/BRAND_PAGE_GUIDE.md](docs/BRAND_PAGE_GUIDE.md)**.
+Konvensi umum: **[AGENTS.md](AGENTS.md)**. Spesifikasi ukuran aset: `docs/PANDUAN-ASET.md` dkk.
 
 ## Design principles
 - Satu ide per viewport
-- Full-bleed imagery
+- Full-bleed imagery (hanya banner hero yang full-bleed; section lain pakai `max-w-content`)
 - Casual-modern typography (Plus Jakarta Sans, sentence case)
 - Scroll-triggered reveals
 - `prefers-reduced-motion` respected

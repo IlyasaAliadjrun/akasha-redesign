@@ -3,8 +3,13 @@
 > Panduan ukuran, rasio, dan format gambar untuk **tim desain**.
 > Tujuannya: setiap gambar tampil **tajam, tidak gepeng, dan tidak terpotong** di HP maupun desktop.
 >
-> Catatan teknis: nama file & lokasinya sudah "disambungkan" di kode (`lib/brands.ts`).
-> Tim desain cukup ikuti **rasio + resolusi + folder** di bawah; developer yang menautkan filenya.
+> Catatan teknis: nama file & lokasinya sudah "disambungkan" di kode. Tim desain cukup ikuti
+> **rasio + resolusi + folder** di bawah; developer yang menautkan filenya.
+>
+> **Update arsitektur:** config brand kini ada di **`content/brands/{slug}.ts`** dan config
+> sub-brand di **`content/sub-brands/{parent}--{slug}.ts`** (auto-discovery). Di mana pun dokumen
+> ini menyebut `lib/brands.ts` / `lib/subBrands.ts` sebagai tempat mengisi data, baca sebagai file
+> `content/` tersebut. Tipe & helper tetap di `lib/`. Lihat [BRAND_PAGE_GUIDE.md](BRAND_PAGE_GUIDE.md).
 
 > **PENTING — lebar section (update terbaru):** semua section konten kini memakai **satu lebar seragam ala Apple** — kolom di tengah selebar **±980px** (area gambar efektif **±900px** di desktop). Hanya **main banner beranda** & **banner brand (hero)** yang tetap **full-bleed / layar penuh**. Akibatnya gambar di tiap section tampil lebih kecil dari sebelumnya. Resolusi di tabel **tetap dipertahankan tinggi (≥2× retina)** — lebih besar selalu aman, sistem mengecilkan otomatis. Lebar global ini diatur dari satu variabel `--content-w` di `app/globals.css`, jadi bisa diubah sewaktu-waktu.
 
@@ -291,7 +296,9 @@ Setiap brand punya **satu folder** berisi semua sectionnya — dinamai persis se
 | Showcase utama | `brand/{slug}/showcase/title.png` | `brand/hair-energy/showcase/title.png` |
 | Showcase varian | `brand/{slug}/showcase/{n}-1`,`{n}-2` | `brand/hair-energy/showcase/1-1.png` |
 
-Slug brand yang berlaku sekarang: `nestle-pure-life`, `vica`, `hair-energy`, `asters`, `advisor`, `t1`, `128`, `salon-daily`, `honey-dew`, `concept-ultimax`, `rebonding-system`, `texture-experience`, `mk3`, `inoskin`, `lou`, `make-it`, `finest`, `barber-daily`, `wonhae`, `omoide`, `floaty`, `fitmeup`.
+Slug brand yang berlaku sekarang (nama folder aset = slug ini, **huruf kecil semua**): `nestle-pure-life`, `vica`, `asters`, `advisor`, `hair-energy`, `t1`, `128`, `salon-daily`, `honey-dew`, `concept-ultimax`, `rebonding-system`, `texture-experience`, `mk3`, `inoskin`, `lou`, `make-it` (folder aset: `makeit`), `finest`, `barber-daily`, `wonhae`, `omoide`, `floaty`, `fitmeup`. Beberapa brand/sub-brand punya folder aset tapi belum di-wire (mis. `advisor-rx`, `hydroprisma`, dan sub-brand `advisor-rx/grey-hair`, `advisor-rx/strong-hair`) — itu normal.
+
+> Registrasi brand kini **otomatis dari `content/brands/*.ts`** (satu file per brand), bukan lagi didaftarkan manual. Lihat [BRAND_PAGE_GUIDE.md](BRAND_PAGE_GUIDE.md) §G.
 
 > **Makarizo** dan **Makarizo Professional** adalah brand payung — keduanya **tidak punya halaman sendiri** (`/brands/makarizo` sengaja 404), jadi tidak perlu folder aset. Aset masuk ke sub-brand-nya (mis. `brand/hair-energy/`).
 

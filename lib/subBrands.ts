@@ -55,138 +55,16 @@ export type SubBrand = {
   cards: SubBrandCard[]; // the variant card grid (2 columns on desktop)
 };
 
-const CARD = (label: string): SubBrandCard => ({ label });
-const HE_ACCENT = "#F36C21"; // Hair Energy orange — sub-brands inherit it
+// Auto-discovered sub-brand (product-line) registry. One module per sub-brand in
+// content/sub-brands/*.ts, collected by webpack require.context at build time, so
+// ADDING A SUB-BRAND NEVER EDITS THIS FILE. See docs/BRAND_PAGE_GUIDE.md §G.
+const subCtx = (require as unknown as WebpackRequire).context("../content/sub-brands", false, /\.ts$/);
+export const SUB_BRANDS: SubBrand[] = subCtx
+  .keys()
+  .sort()
+  .map((k) => (subCtx(k) as { default: SubBrand }).default);
 
-export const SUB_BRANDS: SubBrand[] = [
-  // ── Hair Energy → Fibertherapy Creambath ──────────────────────────────────
-  {
-    slug: "creambath",
-    parent: "hair-energy",
-    name: "Fibertherapy Creambath",
-    tagline: `Creambath 5X Conditioner.\n5X lebih melembutkan dan menutrisi.`,
-    ctaText: "Learn more",
-    accentHex: HE_ACCENT,
-    bannerBg: HE_ACCENT,
-    heroWordmark: "/brand/hair-energy/creambath/hero/wordmark.png",
-    heroWordmarkAspect: "767 / 529",
-    // Products render back-to-front. Jar (2.png) sits behind, upper-right, enters
-    // from the right; tube (1.png) sits in front, centre, enters from the left and
-    // fades in first (per the filename order).
-    // Widths are a FIXED px (no vw term): the products keep exactly this size on
-    // every desktop width — they never shrink or grow when the window is resized.
-    // (The section is `overflow-hidden`, so on very narrow desktop widths the jar is
-    // simply clipped rather than triggering a horizontal scrollbar.)
-    heroLayers: [
-      { src: "/brand/hair-energy/creambath/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "350px", aspectRatio: "2139 / 2345", left: "60%", top: "25%" },
-      { src: "/brand/hair-energy/creambath/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "275px", aspectRatio: "1646 / 2786", left: "48%", top: "10%" },
-    ],
-    showcaseTitle: "/brand/hair-energy/creambath/showcase/title.png",
-    showcaseTitleAspect: "4871 / 3832",
-    featured: { image: "/brand/hair-energy/creambath/showcase/1.png", label: "Fibertherapy Creambath — varian unggulan" },
-    featuredAspect: "4868 / 2326",
-    cardAspect: "2397 / 3110",
-    cards: [
-      { image: "/brand/hair-energy/creambath/showcase/2.png", label: "Fibertherapy Creambath varian 1" },
-      { image: "/brand/hair-energy/creambath/showcase/3.png", label: "Fibertherapy Creambath varian 2" },
-      { image: "/brand/hair-energy/creambath/showcase/4.png", label: "Fibertherapy Creambath varian 3" },
-      { image: "/brand/hair-energy/creambath/showcase/5.png", label: "Fibertherapy Creambath varian 4" },
-    ],
-  },
-  // ── Hair Energy → Scentsations ────────────────────────────────────────────
-  {
-    slug: "scentsations",
-    parent: "hair-energy",
-    name: "Scentsations",
-    tagline: `Hair & Body Fragrance.\nWangi tahan hingga 8 jam.`,
-    ctaText: "Learn more",
-    accentHex: HE_ACCENT,
-    bannerBg: HE_ACCENT,
-    heroWordmark: "/brand/hair-energy/scentsations/hero/wordmark.png",
-    heroWordmarkAspect: "767 / 529",
-    // 1.png = spray depan (masuk dari kiri), 2.png = spray belakang (masuk dari kanan).
-    heroLayers: [
-      { src: "/brand/hair-energy/scentsations/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "260px", aspectRatio: "2139 / 2753", left: "57%", top: "14%",
-        mobile: { right: "16%", top: "3%", width: "52%" } },
-      { src: "/brand/hair-energy/scentsations/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "250px", aspectRatio: "2054 / 3538", left: "50%", top: "12%",
-        mobile: { left: "16%", bottom: "15%", width: "49%" } },
-    ],
-    // showcase/1.png = gambar title (produk + manfaat); tidak ada featured lebar.
-    showcaseTitle: "/brand/hair-energy/scentsations/showcase/1.png",
-    showcaseTitleAspect: "4871 / 3832",
-    cardAspect: "2397 / 3110",
-    cards: [
-      { image: "/brand/hair-energy/scentsations/showcase/2.png", label: "Scentsations varian 1" },
-      { image: "/brand/hair-energy/scentsations/showcase/3.png", label: "Scentsations varian 2" },
-      { image: "/brand/hair-energy/scentsations/showcase/4.png", label: "Scentsations varian 3" },
-      { image: "/brand/hair-energy/scentsations/showcase/5.png", label: "Scentsations varian 4" },
-      { image: "/brand/hair-energy/scentsations/showcase/6.png", label: "Scentsations varian 5" },
-      { image: "/brand/hair-energy/scentsations/showcase/7.png", label: "Scentsations varian 6" },
-      { image: "/brand/hair-energy/scentsations/showcase/8.png", label: "Scentsations varian 7" },
-      { image: "/brand/hair-energy/scentsations/showcase/9.png", label: "Scentsations varian 8" },
-    ],
-  },
-  // ── Hair Energy → Fibertherapy Shampoo ────────────────────────────────────
-  {
-    slug: "shampoo",
-    parent: "hair-energy",
-    name: "Fibertherapy Shampoo",
-    tagline: `Conditioning Shampoo dengan Keratin.\nRambut lebih halus, kuat & berkilau.`,
-    ctaText: "Learn more",
-    accentHex: HE_ACCENT,
-    bannerBg: HE_ACCENT,
-    heroWordmark: "/brand/hair-energy/shampoo/hero/wordmark.png",
-    heroWordmarkAspect: "767 / 529",
-    // 1.png = botol depan (masuk dari kiri), 2.png = botol belakang (masuk dari kanan).
-    heroLayers: [
-      { src: "/brand/hair-energy/shampoo/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "180px", aspectRatio: "1313 / 2345", left: "65%", top: "13%",
-        mobile: { right: "14%", top: "1%", width: "38%" } },
-      { src: "/brand/hair-energy/shampoo/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "240px", aspectRatio: "1646 / 2786", left: "52%", top: "16%",
-        mobile: { left: "13%", bottom: "12%", width: "50%" } },
-    ],
-    // showcase/1.png = gambar title (produk + manfaat); tidak ada featured lebar.
-    showcaseTitle: "/brand/hair-energy/shampoo/showcase/1.png",
-    showcaseTitleAspect: "4448 / 3832",
-    cardAspect: "2397 / 3110",
-    cards: [
-      { image: "/brand/hair-energy/shampoo/showcase/2.png", label: "Fibertherapy Shampoo varian 1" },
-      { image: "/brand/hair-energy/shampoo/showcase/3.png", label: "Fibertherapy Shampoo varian 2" },
-      { image: "/brand/hair-energy/shampoo/showcase/4.png", label: "Fibertherapy Shampoo varian 3" },
-      { image: "/brand/hair-energy/shampoo/showcase/5.png", label: "Fibertherapy Shampoo varian 4" },
-      { image: "/brand/hair-energy/shampoo/showcase/6.png", label: "Fibertherapy Shampoo varian 5" },
-      { image: "/brand/hair-energy/shampoo/showcase/7.png", label: "Fibertherapy Shampoo varian 6" },
-    ],
-  },
-  // ── Hair Energy → Vitaglitz ───────────────────────────────────────────────
-  {
-    slug: "vitaglitz",
-    parent: "hair-energy",
-    name: "Vitaglitz",
-    tagline: `Hair Serum Vitamin 3in1.\nHeat protection, nourish & repair.`,
-    ctaText: "Learn more",
-    accentHex: HE_ACCENT,
-    bannerBg: HE_ACCENT,
-    heroWordmark: "/brand/hair-energy/vitaglitz/hero/wordmark.png",
-    heroWordmarkAspect: "767 / 529",
-    // 1.png = sachet depan (masuk dari kiri), 2.png = sachet belakang (masuk dari kanan).
-    heroLayers: [
-      { src: "/brand/hair-energy/vitaglitz/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "260px", aspectRatio: "2139 / 2345", left: "60%", top: "13%",
-        mobile: { right: "12%", top: "2%", width: "50%" } },
-      { src: "/brand/hair-energy/vitaglitz/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "250px", aspectRatio: "2054 / 2786", left: "52%", top: "27%",
-        mobile: { left: "14%", bottom: "14%", width: "50%" } },
-    ],
-    // showcase/1.png = title, showcase/2.png = featured lebar, 3–4 = kartu.
-    showcaseTitle: "/brand/hair-energy/vitaglitz/showcase/1.png",
-    showcaseTitleAspect: "4871 / 3832",
-    featured: { image: "/brand/hair-energy/vitaglitz/showcase/2.png", label: "Vitaglitz — varian unggulan" },
-    featuredAspect: "4868 / 2326",
-    cardAspect: "2397 / 3110",
-    cards: [
-      { image: "/brand/hair-energy/vitaglitz/showcase/3.png", label: "Vitaglitz varian 1" },
-      { image: "/brand/hair-energy/vitaglitz/showcase/4.png", label: "Vitaglitz varian 2" },
-    ],
-  },
-];
+
 
 export const getSubBrand = (parent: string, slug: string) =>
   SUB_BRANDS.find((s) => s.parent === parent && s.slug === slug);
