@@ -6,6 +6,7 @@
 > ambigu, itu bug dokumen — laporkan.
 >
 > **Prinsip inti dokumen ini, hafalkan:**
+> 0. **Wajib ada file referensi dulu.** Kalau user TIDAK melampirkan file referensi desain, **BERHENTI** — minta file-nya diupload dulu sebelum mengerjakan apa pun (lihat §A "Prasyarat").
 > 1. **Struktur halaman = Hair Energy. Selalu. Tanpa kecuali** (satu pengecualian: hero tanpa wording — lihat §C).
 > 2. **Tampilan (warna/tipografi/foto/mood) = file referensi.** Referensi **bukan** acuan struktur.
 > 3. **Menambah brand = membuat satu file config baru + satu folder aset. Titik.** Tidak pernah mengedit file milik brand lain.
@@ -31,6 +32,22 @@ dan lima dokumen aset di `docs/` (lihat §D) untuk ukuran kirim ke tim desain.
 
 <a id="a-menentukan-scope"></a>
 ## A. Menentukan scope: brand page saja, atau ada sub-brand?
+
+### Prasyarat — WAJIB ada file referensi dulu (berhenti kalau belum ada)
+
+**File referensi desain adalah syarat mutlak sebelum mulai.** Referensi menentukan tampilan akhir
+(warna, tipografi, fotografi, mood) **dan** jumlah scope (§A: 1 file = brand page saja; >1 file =
+ada sub-brand).
+
+- Kalau user **tidak melampirkan** file referensi apa pun → **BERHENTI. Jangan mulai membuat/menebak
+  apa pun.** Minta user mengupload file referensi desain dulu, lalu tunggu.
+- **Jangan** mengarang desain sendiri, memakai folder aset saja tanpa referensi, atau mulai dengan
+  asumsi "nanti disusul". Tanpa referensi, kemiripan visual (prioritas #1, §E) tidak bisa dinilai.
+- Baru lanjut setelah minimal **satu** file referensi tersedia.
+
+> Kalimat yang bisa dipakai: *"Belum ada file referensi desain yang dilampirkan. Tolong upload dulu
+> file referensi untuk brand ini (satu file = brand page saja; lampirkan file tambahan untuk tiap
+> sub-brand). Saya lanjut begitu file-nya ada."*
 
 Sebuah brand punya folder aset di `public/brand/{slug}/`. **Empat folder default** sebuah brand:
 
@@ -536,6 +553,7 @@ itu satu-satunya titik yang bisa bentrok (jarang, mudah di-resolve).
 ## H. Anti-pattern (jangan dilakukan)
 
 - ❌ Menghapus, menambah, menggabung, memecah, atau mengganti nama section.
+- ❌ Mulai mengerjakan brand page **tanpa file referensi** yang dilampirkan — harus berhenti & minta dulu (§A Prasyarat).
 - ❌ Menyimpulkan struktur dari file referensi alih-alih dari Hair Energy.
 - ❌ Meng-upscale atau men-stretch aset untuk menutupi resolusi/rasio yang kurang.
 - ❌ Menyembunyikan masalah aset alih-alih melaporkannya (tabel temuan §D.2).
