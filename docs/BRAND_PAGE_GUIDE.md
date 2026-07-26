@@ -46,8 +46,11 @@ ada sub-brand).
 - Baru lanjut setelah minimal **satu** file referensi tersedia.
 
 > Kalimat yang bisa dipakai: *"Belum ada file referensi desain yang dilampirkan. Tolong upload dulu
-> file referensi untuk brand ini (satu file = brand page saja; lampirkan file tambahan untuk tiap
-> sub-brand). Saya lanjut begitu file-nya ada."*
+> minimal satu file referensi untuk brand ini. Kalau ada sub-brand yang tampilannya berbeda, boleh
+> lampirkan file tambahan untuknya — tapi tidak wajib tiap sub-brand punya file sendiri. Saya lanjut
+> begitu file-nya ada."*
+>
+> (Catatan: jumlah **sub-brand** ikut **folder aset**, bukan jumlah lampiran — lihat tabel di bawah.)
 
 Sebuah brand punya folder aset di `public/brand/{slug}/`. **Empat folder default** sebuah brand:
 
@@ -59,20 +62,24 @@ public/brand/{slug}/
 └── about/           # 3 kartu "About" (3:4)
 ```
 
-**Aturan penentuan scope (pakai DUA sinyal, harus cocok):**
+**Dua sinyal dengan PERAN BERBEDA — folder = struktur, lampiran = tampilan:**
 
-| Sinyal | Brand page saja | Ada sub-brand page |
-|---|---|---|
-| **Folder aset** | Folder `public/brand/{slug}/` **hanya** berisi keempat folder default | Ada folder **di luar** keempat itu → tiap folder tambahan = **satu sub-brand** |
-| **Lampiran referensi** | **1 file** referensi desain | **>1 file** → tiap file tambahan = referensi desain **satu sub-brand** terkait |
+| Sinyal | Perannya |
+|---|---|
+| **Folder aset** (`public/brand/{slug}/`) | **OTORITATIF untuk menentukan APA yang dibangun.** Hanya keempat folder default → brand page saja. Ada folder **di luar** keempat itu → tiap folder ekstra = **satu sub-brand** yang wajib dibuatkan halamannya. |
+| **Lampiran referensi** | Menentukan **TAMPILAN** (warna/tipografi/foto/mood). Jumlahnya **boleh lebih sedikit** dari jumlah sub-brand — **tidak semua sub-brand punya file referensi sendiri.** |
 
 - Contoh **brand page saja**: `public/brand/vica/` hanya punya `hero, product-lineup, showcase, about` → cukup buat brand page VICA.
 - Contoh **ada sub-brand**: `public/brand/hair-energy/` punya folder ekstra `creambath/`, `scentsations/`, `shampoo/`, `vitaglitz/` → selain brand page Hair Energy, buat **satu sub-brand page per folder ekstra**. (`advisor-rx/` juga contoh nyata: punya folder ekstra `grey-hair/` dan `strong-hair/`.)
 
-**Konfirmasi silang wajib.** Kedua sinyal harus sepakat:
-- Folder ekstra = N **dan** file referensi tambahan = N → buat N sub-brand page. ✅
-- **Kalau bertentangan** (mis. ada 2 folder ekstra tapi cuma 1 file referensi tambahan, atau sebaliknya) →
-  **BERHENTI dan tanya user.** Jangan menebak. Jangan diam-diam membuat/menghapus sub-brand.
+**Kasus penting — hanya 1 lampiran, tapi folder aset punya folder di luar yang default → kemungkinan besar itu sub-brand.** Ini **BUKAN** dianggap bertentangan; **jangan berhenti.** Yang benar:
+- Tetap bangun **brand page-nya** **dan** satu **sub-brand page** untuk **tiap** folder ekstra (jumlah halaman ikut **folder**, bukan jumlah lampiran).
+- Sub-brand yang **tidak punya file referensi sendiri** tetap dibangun penuh: **struktur = Hair Energy (§B.2)**, **aset dari folder sub-brand itu**, dan **arah visual mengikuti referensi brand induk** (warna/tipografi/mood yang sama dengan brand-nya). **Jangan mengarang gaya baru.**
+- Sub-brand yang **punya** lampiran referensi sendiri (kalau memang ada file tambahan) → pakai file itu sebagai acuan tampilannya.
+
+**Kapan TETAP berhenti & tanya user (§A hard-stop hanya untuk yang benar-benar ambigu):**
+- **Sama sekali tidak ada lampiran** untuk brand-nya → berhenti, minta minimal satu (lihat Prasyarat di atas).
+- Lampiran/permintaan menyebut sub-brand yang **tidak ada foldernya**, atau kamu tak yakin sebuah folder ekstra itu sub-brand atau bukan → tanya. (Sinyal **folder yang menang** untuk "apa yang dibangun"; kalau folder pun tidak jelas, barulah tanya.)
 
 > **Folder ekstra ≠ otomatis jadi halaman.** Folder aset hanya *menandai* keberadaan sub-brand.
 > Halaman baru muncul setelah kamu membuat **file config**-nya (§G). Ada brand/sub-brand yang
