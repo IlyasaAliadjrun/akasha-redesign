@@ -5,45 +5,94 @@ const entry: Brand = {
     slug: "make-it",
     name: "Make It",
     division: "beauty",
-    tagline: "Your scent. Your story.",
+    tagline: "Lets Make It Happen.",
+    // BrandIntro renders the first sentence bold and anything after ". " in a light
+    // grey block. The reference shows one uninterrupted bold statement, so the two
+    // clauses are joined with an em dash (the component appends the full stop).
     description:
-      "Parfum untuk individu proaktif yang berani mewujudkan mimpi. Empat karakter, empat aroma.",
+      "Make It hadir untuk kamu yang berani mendobrak batas dan tampil beda — berani jadikan Make It nyata",
     accentClass: "bg-brand-makeit",
-    accentHex: "#1C1C1C",
-    heroImage:
-      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1800&auto=format&fit=crop",
+    // Make It's identity is the deep maroon of its banners (sampled from
+    // showcase/1-2.png). Drives the intro eyebrow, lineup buttons and the closing CTA.
+    accentHex: "#7D2628",
+    // No standalone 3:4 brand card art — reuse the 16:9 home banner. Only CrossSell
+    // reads this; the hero itself renders from `heroLayers`.
+    heroImage: "/home/hero-carousel/make-it.jpg",
+    // Layered parallax banner on the flat maroon `bannerBg`: three bottles clustered
+    // on the right half, the (upright) Mango Glacé sitting highest and furthest back,
+    // with the two tilted bottles overlapping it from either side.
+    // Each width is min(vw, vh) with the **vh term deliberately the smaller one** at
+    // every realistic desktop ratio, so the box height tracks the hero height and the
+    // composition is identical from 1024×600 to 3840×2160; the vw term is only the
+    // guard rail for viewports narrower than ~1.1:1 (tablet portrait). Layers are
+    // anchored on `bottom`, not `top`: when the vw guard rail does kick in the boxes
+    // shrink, and a bottom anchor slides the cluster *down* into the banner instead of
+    // off the top edge. Every offset already subtracts the transparent margin baked
+    // into its PNG (measured from the alpha channel).
+    heroLayers: [
+      // Mango Glacé — back, centre of the cluster, enters from the TOP (2nd).
+      { src: "/brand/makeit/hero/2.png", depth: 34, enterFrom: "top", enterDelay: 0.2, width: "min(48vw, 53vh)", aspectRatio: "1977 / 3514", left: "53%", bottom: "19.8%",
+        mobile: { left: "11.8%", bottom: "29.5%", width: "min(76vw, 34vh)" } },
+      // Essence Sanctuary — front-left, tilted, enters from the LEFT (1st).
+      { src: "/brand/makeit/hero/1.png", depth: 56, enterFrom: "left", enterDelay: 0, width: "min(52vw, 61vh)", aspectRatio: "2547 / 3799", left: "43%", bottom: "3.5%",
+        mobile: { left: "-11%", bottom: "20.3%", width: "min(85vw, 38vh)" } },
+      // Keep in Touch — front-right, tilted, enters from the RIGHT (3rd).
+      { src: "/brand/makeit/hero/3.png", depth: 72, enterFrom: "right", enterDelay: 0.4, width: "min(48vw, 58vh)", aspectRatio: "2359 / 3713", left: "62%", bottom: "2.7%",
+        mobile: { left: "32.5%", bottom: "19.1%", width: "min(82vw, 36.5vh)" } },
+    ],
+    heroContent: {
+      logo: "/brand/makeit/hero/wordmark.png",
+      // The wordmark PNG is cropped tight to the glyphs, so no bodyIndent is needed.
+      logoAspect: "1499 / 446",
+      logoWidth: "27vw",
+      maxWidth: "30vw",
+      tagline: "Untuk Mereka yang Proaktif dan Berani Bertindak Bersama Make It",
+      ctaText: "Learn more",
+      ctaHref: "#about",
+      left: "9%",
+      offsetY: "6vh",
+      theme: "light",
+      delay: 0.6,
+      mobile: { logoWidth: "58vw" },
+    },
+    bannerBg: "#7D2628",
     hero: false,
     products: [
-      { name: "Keep In Touch", variant: "Warm & Connecting", size: "Eau de Parfum" },
-      { name: "Weekday Hustle", variant: "Focused & Resilient", size: "Eau de Parfum" },
-      { name: "Dream Chaser", variant: "Ambitious & Confident", size: "Eau de Parfum" },
-      { name: "Social Butterfly", variant: "Charismatic & Magnetic", size: "Eau de Parfum" },
+      { name: "Essence Sanctuary", variant: "Fragrance Enhancing Primer", image: "/brand/makeit/product-lineup/essence-sanctuary.png" },
+      { name: "Mango Glacé", variant: "Extrait d'Intense Parfum", image: "/brand/makeit/product-lineup/mango-glace.png" },
+      { name: "Bold Venture", variant: "Parfum", image: "/brand/makeit/product-lineup/bold-venture.png" },
+      { name: "Keep in Touch", variant: "Parfum", image: "/brand/makeit/product-lineup/keep-in-touch.png" },
+      { name: "Dream Chaser", variant: "Parfum", image: "/brand/makeit/product-lineup/dream-chaser.png" },
+      { name: "Weekday Hustle", variant: "Parfum", image: "/brand/makeit/product-lineup/weekday-hustle.png" },
+      { name: "Social Butterfly", variant: "Parfum", image: "/brand/makeit/product-lineup/social-butterfly.png" },
     ],
-    reasons: [
-      { icon: "🎯", title: "Dibuat untuk karakter", body: "Empat archetype — pilih yang paling menggambarkan kamu hari ini." },
-      { icon: "🌃", title: "Long-lasting performance", body: "Top, heart, dan base notes yang berkembang sepanjang hari." },
-      { icon: "🪞", title: "Signature scent ready", body: "Formula clean yang mudah dipadupadankan dengan wardrobe-mu." },
+    about: [
+      { title: "30%–50% Konsentrat Parfum", image: "/brand/makeit/about/1.png" },
+      { title: "Tahan Hingga 12 Jam", image: "/brand/makeit/about/2.png" },
+      { title: "Aroma Yang Unik", image: "/brand/makeit/about/3.png" },
     ],
-    features: [
-      {
-        title: "Dream Chaser",
-        body: "Semangat ambisi dan tekad — menyalakan motivasi dan memancarkan rasa percaya diri.",
-        image:
-          "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1400&auto=format&fit=crop",
-      },
-      {
-        title: "Weekday Hustle",
-        body: "Produktivitas, ketahanan, dan fokus dalam satu semprotan.",
-        image:
-          "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1400&auto=format&fit=crop",
-      },
-      {
-        title: "Social Butterfly",
-        body: "Karisma sosial dan daya tarik magnetik yang memantik percakapan.",
-        image:
-          "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?q=80&w=1400&auto=format&fit=crop",
-      },
-    ],
+    // Showcase — the "#1 Primer Parfum" poster, then the three range banners.
+    // The banner art is a designed card (4810×2261, rounded corners baked in), so
+    // `bannerAspect` keeps it uncropped; each `bgAspect` is a touch taller than the
+    // frame so the scroll parallax drifts inside the overflow instead of exposing an
+    // empty strip. There are no sub-brand pages, so the banners carry no `href`.
+    showcase: {
+      hero: "/brand/makeit/showcase/title.png",
+      heroAspect: "4325 / 4280",
+      productAlign: "center",
+      bannerAspect: "4810 / 2261",
+      variants: [
+        // Fragrance Enhancing Primer — Essence Sanctuary
+        { bg: "/brand/makeit/showcase/1-2.png", bgAspect: "4810 / 2440", product: "/brand/makeit/showcase/1-1.png", productAspect: "2547 / 3799", productHeight: "180%", productShiftX: "-11%", productShiftY: "-1.5%",
+          mobile: { productHeight: "168%", productShiftX: "-9%" } },
+        // Extrait d'Intense Parfum — Mango Glacé
+        { bg: "/brand/makeit/showcase/2-2.png", bgAspect: "4810 / 2440", product: "/brand/makeit/showcase/2-1.png", productAspect: "1977 / 3514", productHeight: "172%", productShiftX: "-6%", productShiftY: "-4%",
+          mobile: { productHeight: "160%", productShiftX: "-5%" } },
+        // Extrait de Parfum — Keep in Touch
+        { bg: "/brand/makeit/showcase/3-2.png", bgAspect: "4810 / 2440", product: "/brand/makeit/showcase/3-1.png", productAspect: "2359 / 3713", productHeight: "176%", productShiftX: "-8%",
+          mobile: { productHeight: "164%", productShiftX: "-7%" } },
+      ],
+    },
   };
 
 export default entry;
