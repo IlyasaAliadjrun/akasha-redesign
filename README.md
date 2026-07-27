@@ -12,7 +12,9 @@ Apple/Tesla-inspired cinematic product site untuk PT Akasha Wira International T
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build    # type-check + lint + prerender (jalankan sebelum PR)
+npm run typecheck # tsc --noEmit
+npm run lint     # next lint
+npm run build    # prerender (JANGAN dijalankan di sesi paralel per-brand — lihat AGENTS.md §3)
 ```
 
 ## Struktur

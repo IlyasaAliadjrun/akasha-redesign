@@ -212,7 +212,7 @@ export const DIVISIONS: {
 ];
 
 // Auto-discovered brand registry. Each brand is a standalone module in
-// content/brands/*.ts (see docs/BRAND_PAGE_GUIDE.md §G). webpack's require.context
+// content/brands/*.ts (see docs/BRAND_PAGE_GUIDE.md §5). webpack's require.context
 // collects them at build time, so ADDING A BRAND NEVER EDITS THIS FILE — you drop
 // one new file in content/brands/ and it appears everywhere automatically.
 // Files are ordered by their numeric filename prefix (010-, 020-, …); an
@@ -220,6 +220,11 @@ export const DIVISIONS: {
 const brandCtx = (require as unknown as WebpackRequire).context("../content/brands", false, /\.ts$/);
 export const BRANDS: Brand[] = brandCtx
   .keys()
+  // keys() lists every *request form* that resolves to a module, not every file:
+  // tsconfig's `baseUrl: "."` puts the project root on webpack's resolve path, so
+  // each brand appears twice — "./010-x.ts" and "content/brands/010-x.ts". Keep only
+  // the relative form; without this filter every brand is duplicated everywhere.
+  .filter((k) => k.startsWith("./"))
   .sort()
   .map((k) => (brandCtx(k) as { default: Brand }).default);
 

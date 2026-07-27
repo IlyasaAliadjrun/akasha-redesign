@@ -57,10 +57,14 @@ export type SubBrand = {
 
 // Auto-discovered sub-brand (product-line) registry. One module per sub-brand in
 // content/sub-brands/*.ts, collected by webpack require.context at build time, so
-// ADDING A SUB-BRAND NEVER EDITS THIS FILE. See docs/BRAND_PAGE_GUIDE.md §G.
+// ADDING A SUB-BRAND NEVER EDITS THIS FILE. See docs/BRAND_PAGE_GUIDE.md §5.
 const subCtx = (require as unknown as WebpackRequire).context("../content/sub-brands", false, /\.ts$/);
 export const SUB_BRANDS: SubBrand[] = subCtx
   .keys()
+  // See lib/brands.ts: keys() also returns the baseUrl form
+  // ("content/sub-brands/010-x.ts") of every module, so filter to the relative form
+  // or each sub-brand is listed twice.
+  .filter((k) => k.startsWith("./"))
   .sort()
   .map((k) => (subCtx(k) as { default: SubBrand }).default);
 

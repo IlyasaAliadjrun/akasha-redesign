@@ -37,12 +37,30 @@ There is no test framework, no Storybook, no linter config beyond `next lint`, a
 ```bash
 npm install      # install dependencies
 npm run dev      # start dev server on http://localhost:3000
+npm run typecheck # tsc --noEmit (non-incremental — writes no shared file)
 npm run build    # production build (this is the closest thing to a CI check — it runs the TS compiler)
+npm run build:verify # same build, reserved for infra / final-integration sessions (see below)
 npm run start    # serve the production build
-npm run lint     # run next lint
+npm run lint     # next lint (eslint-config-next, `next/core-web-vitals`) — baseline is clean
 ```
 
 **Before opening a PR, you must at minimum run `npm run build` and confirm it succeeds.** There are no unit tests to run.
+
+**Exception — parallel per-brand sessions.** When several sessions run at once (one brand each), `npm run build`
+is **forbidden**: concurrent builds fight over the output dir and crash every session. Those sessions verify with
+`npm run typecheck` + `npm run lint` plus their **own isolated dev server**, and never build:
+
+```bash
+NEXT_DIST_DIR=.next-{brand} PORT=31xx npm run dev
+```
+
+`next.config.mjs` reads `NEXT_DIST_DIR` (default `.next`) and derives a matching `tsconfig.next-{brand}.json`, so no
+two sessions share a build dir, a port, or a tsconfig. See [docs/BRAND_PAGE_GUIDE.md](docs/BRAND_PAGE_GUIDE.md) §5.
+
+The infra / final-integration session builds via `npm run build:verify`, and only when no other session is running.
+Brand auto-discovery is verified to survive a production build: `lib/brands.ts` uses webpack `require.context` with a
+static path. Never replace it with a runtime `fs.readdirSync` or a variable dynamic `import()` — both work in dev and
+silently drop routes from the build.
 
 ---
 
@@ -187,7 +205,9 @@ The `Brand` type in `lib/brands.ts` (and `SubBrand` in `lib/subBrands.ts`) defin
 For any change touching code:
 
 1. Run `npm run build` and confirm it succeeds (this is the closest thing to a type check + lint we have).
-2. For UI changes, run `npm run dev` and visually confirm the page renders correctly. State explicitly if you couldn't verify visually.
+   **In a parallel per-brand session, run `npm run typecheck` + `npm run lint` instead — `npm run build` is forbidden there (§3).**
+2. For UI changes, run `npm run dev` and visually confirm the page renders correctly (parallel sessions: with their own
+   `NEXT_DIST_DIR`+`PORT`). State explicitly if you couldn't verify visually.
 3. Check both desktop and mobile widths — many components rely on responsive Tailwind classes.
 4. If you touched a brand page, verify **every brand slug** still behaves: each slug in `pageBrands()` renders 200, and each umbrella slug (`makarizo`, `makarizo-professional`) returns 404. They share one route.
 

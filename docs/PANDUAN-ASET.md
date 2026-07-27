@@ -298,7 +298,7 @@ Setiap brand punya **satu folder** berisi semua sectionnya — dinamai persis se
 
 Slug brand yang berlaku sekarang (nama folder aset = slug ini, **huruf kecil semua**): `nestle-pure-life`, `vica`, `asters`, `advisor`, `hair-energy`, `t1`, `128`, `salon-daily`, `honey-dew`, `concept-ultimax`, `rebonding-system`, `texture-experience`, `mk3`, `inoskin`, `lou`, `make-it` (folder aset: `makeit`), `finest`, `barber-daily`, `wonhae`, `omoide`, `floaty`, `fitmeup`. Beberapa brand/sub-brand punya folder aset tapi belum di-wire (mis. `advisor-rx`, `hydroprisma`, dan sub-brand `advisor-rx/grey-hair`, `advisor-rx/strong-hair`) — itu normal.
 
-> Registrasi brand kini **otomatis dari `content/brands/*.ts`** (satu file per brand), bukan lagi didaftarkan manual. Lihat [BRAND_PAGE_GUIDE.md](BRAND_PAGE_GUIDE.md) §G.
+> Registrasi brand kini **otomatis dari `content/brands/*.ts`** (satu file per brand), bukan lagi didaftarkan manual. Lihat [BRAND_PAGE_GUIDE.md](BRAND_PAGE_GUIDE.md) §5.
 
 > **Makarizo** dan **Makarizo Professional** adalah brand payung — keduanya **tidak punya halaman sendiri** (`/brands/makarizo` sengaja 404), jadi tidak perlu folder aset. Aset masuk ke sub-brand-nya (mis. `brand/hair-energy/`).
 
