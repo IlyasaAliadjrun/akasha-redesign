@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:verify)",
+      "Bash(npm run lint:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx next lint:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git push:*)",
+      "Edit(src/**)",
+      "Write(src/**)",
+      "Edit(public/**)",
+      "Write(public/**)",
+      "Edit(docs/**)",
+      "Write(docs/**)"
+    ],
+    "deny": [
+      "Bash(npm run build)",
+      "Bash(next build:*)",
+      "Bash(npx next build:*)",
+      "Bash(git reset:*)",
+      "Bash(git clean:*)",
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  }
+}
