@@ -4,12 +4,31 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import type { Brand } from "@/lib/brands";
 
-// Three image cards shown directly beneath BrandIntro. Renders nothing unless
+// Image cards shown directly beneath BrandIntro. Renders nothing unless
 // the brand provides `about` entries (assets live in /public/brand/{slug}/about).
 // Mobile: horizontal swipe slider with nav arrows (like Explore the lineup).
-// sm+: 3-column grid (arrows/rail behaviour are inert because there's no overflow).
+// sm+: grid whose column count follows how many cards the brand actually has
+// (3 assets → 3 columns, 2 → 2, 1 → a single card kept at 3-column size), so a
+// brand that only received two photos never leaves a hole in the row.
+// (arrows/rail behaviour are inert at sm+ because there's no overflow).
+
+// Static class strings — Tailwind only ships classes it can see literally.
+const COLS: Record<number, string> = {
+  1: "sm:grid-cols-1 sm:max-w-[320px] lg:max-w-[360px]",
+  2: "sm:grid-cols-2",
+  3: "sm:grid-cols-3",
+};
+// Matches the column width each layout gives a card inside `max-w-content`.
+const SIZES: Record<number, string> = {
+  1: "(min-width:640px) 360px, 64vw",
+  2: "(min-width:640px) 50vw, 64vw",
+  3: "(min-width:640px) 33vw, 64vw",
+};
+
 export default function BrandAbout({ brand }: { brand: Brand }) {
   const cards = brand.about ?? [];
+  // 4+ cards keep wrapping in 3 columns, the densest layout the section supports.
+  const cols = Math.min(Math.max(cards.length, 1), 3);
   const railRef = useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);
@@ -48,7 +67,7 @@ export default function BrandAbout({ brand }: { brand: Brand }) {
       <div className="max-w-content mx-auto px-6 lg:px-10">
         <div
           ref={railRef}
-          className="flex sm:grid sm:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 overflow-x-auto overflow-y-hidden sm:overflow-x-visible sm:overflow-y-visible no-scrollbar snap-x snap-mandatory"
+          className={`flex sm:grid ${COLS[cols]} sm:mx-auto gap-3 sm:gap-4 lg:gap-5 overflow-x-auto overflow-y-hidden sm:overflow-x-visible sm:overflow-y-visible no-scrollbar snap-x snap-mandatory`}
         >
           {cards.map((c, i) => (
             <motion.div
@@ -68,7 +87,7 @@ export default function BrandAbout({ brand }: { brand: Brand }) {
                 src={c.image}
                 alt={c.title}
                 fill
-                sizes="(min-width:640px) 33vw, 64vw"
+                sizes={SIZES[cols]}
                 className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
               />
               {/* Soft gradient so the label stays readable over any artwork. */}

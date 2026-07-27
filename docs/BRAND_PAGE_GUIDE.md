@@ -103,7 +103,7 @@ Untuk **setiap** aset: baca **dimensi natural (px)** dan rasio dari file (jangan
 | Hero · produk layer (sized) | cap `width` layer (HE `min(28vw,56vh)` ≈ 540px) | contain | `50vw` | **1800×2400** |
 | Hero · wordmark | `logoWidth`/`maxWidth` (HE ≈ 350–500px) | contain | `40vw` | **900×620** |
 | ProductLineup · kartu | **380px** (`max-w-[380px]`, 1:1) | contain | `(min-width:1024px)27vw,(min-width:640px)46vw,80vw` | **1200×1200** |
-| BrandAbout · kartu | ≈ 300×400 (3 kolom dlm 980, 3:4) | **cover** | `(min-width:640px)33vw,64vw` | **900×1200** |
+| BrandAbout · kartu | ≈ 300×400 (3 kolom dlm 980, 3:4); 2 kartu → 2 kolom ≈ 440×587, 1 kartu → tetap ≈ 360 | **cover** | `33vw`/`50vw`/`360px` sesuai jumlah kartu | **900×1200** |
 | Showcase · title graphic | **768px** (`max-w-3xl`) atau `heroMaxWidth` | contain | `(min-width:768px)768px,100vw` | **1800×1200** |
 | Showcase · varian bg | ≈ 900px | cover | `(min-width:1024px)900px,100vw` | **2160×1015** |
 | Showcase · varian produk | ≈ 820px | contain | `(min-width:1024px)820px,92vw` | tinggi ≥ **1200** |
