@@ -1,0 +1,30 @@
+import type { SubBrand } from "@/lib/subBrands";
+
+  // ── Concept Ultimax → Bleaching Powder ────────────────────────────────────
+const entry: SubBrand = {
+    slug: "bleaching-powder",
+    parent: "concept-ultimax",
+    name: "Bleaching Powder",
+    tagline: `Solusi bleaching cepat dan aman yang membuat\nrambut lebih mudah menyerap pigment warna baru.`,
+    ctaText: "Learn more",
+    accentHex: "#E34686",
+    // See color-tube: SubBrandHero's wording is always white, so the banner uses the
+    // palette's deep brown (rgb(62,33,32)) rather than the reference's pale sage.
+    bannerBg: "#3E2120",
+    heroWordmark: "/brand/concept-ultimax/bleaching-powder/hero/wordmark.png",
+    heroWordmarkAspect: "2339 / 473",
+    heroLayers: [
+      { src: "/brand/concept-ultimax/bleaching-powder/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 44, width: "min(34vw, 58vh)", aspectRatio: "2639 / 3297", left: "52%", top: "16%",
+        mobile: { left: "0%", top: "-2%", width: "100%" } },
+    ],
+    // NOTE: no title graphic was delivered for this line — bleaching-powder/showcase/
+    // contains a single wide banner. The reference sheet's "Bleaching Powder
+    // Profesional Vegan" block (jar + three check points) and the shade cards have no
+    // matching asset, so `showcaseTitle` stays unset (the component's own placeholder
+    // marks the gap) and the grid is empty. Reported to the design team.
+    featured: { image: "/brand/concept-ultimax/bleaching-powder/showcase/1.png", label: "Bleaching Powder — solusi bleaching cepat dan aman untuk rambut" },
+    featuredAspect: "5365 / 2434",
+    cards: [],
+  };
+
+export default entry;
