@@ -1,0 +1,41 @@
+import type { SubBrand } from "@/lib/subBrands";
+
+  // ── Texture Experience → Vanilla Milk ─────────────────────────────────────
+const entry: SubBrand = {
+    slug: "vanilla-milk",
+    parent: "texture-experience",
+    name: "Vanilla Milk",
+    tagline: `Perawatan dengan Aroma Vanilla Milk\nuntuk Rambut Terproses Kimia.`,
+    ctaText: "Learn more",
+    // The reference paints EVERY sub-brand hero in the same light beige with dark
+    // wording. SubBrandHero renders its wording in white only, so the banner takes that
+    // one shared beige darkened to the minimum that clears white text (10.8:1) while
+    // still letting the taupe wordmark read against it (2.1:1) — a single neutral for
+    // all five variants, exactly as the reference does. See the note to the brand owner.
+    accentHex: "#423A31",
+    bannerBg: "#423A31",
+    heroWordmark: "/brand/texture-experience/vanilla-milk/hero/wordmark.png",
+    heroWordmarkAspect: "502 / 214",
+    // One composed cluster (creambath tube + Vanilla Souffle hair perfume) → a single
+    // layer. This PNG has the most transparent padding of the five (the products fill
+    // only ~48% × 64% of the canvas), so the layer box is far larger than the pair looks.
+    heroLayers: [
+      { src: "/brand/texture-experience/vanilla-milk/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
+        width: "min(57vw, 112vh)", aspectRatio: "3967 / 4372", left: "38.8%", top: "-7.1%",
+        mobile: { left: "-5.2%", top: "-13%", width: "126%" } },
+    ],
+    showcaseTitle: "/brand/texture-experience/vanilla-milk/showcase/title.png",
+    showcaseTitleAspect: "3605 / 3233",
+    // The creambath line-up ships as a landscape card, so it takes the full-width slot.
+    featured: { image: "/brand/texture-experience/vanilla-milk/showcase/3.png", label: "Creambath Vanilla Milk — sachet, tube & jar" },
+    featuredAspect: "4695 / 2222",
+    cardAspect: "2302 / 2986",
+    cards: [
+      { image: "/brand/texture-experience/vanilla-milk/showcase/1.png", label: "Shampoo Vanilla Milk" },
+      { image: "/brand/texture-experience/vanilla-milk/showcase/2.png", label: "Conditioner Vanilla Milk" },
+      { image: "/brand/texture-experience/vanilla-milk/showcase/4.png", label: "Hair Perfume Vanilla Souffle" },
+      { image: "/brand/texture-experience/vanilla-milk/showcase/5.png", label: "Smooth-Bright Body Essence Vanilla Milk" },
+    ],
+  };
+
+export default entry;

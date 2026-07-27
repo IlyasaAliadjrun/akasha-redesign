@@ -1,0 +1,41 @@
+import type { SubBrand } from "@/lib/subBrands";
+
+  // ── Texture Experience → Mint Sorbet ──────────────────────────────────────
+const entry: SubBrand = {
+    slug: "mint-sorbet",
+    parent: "texture-experience",
+    name: "Mint Sorbet",
+    tagline: `Perawatan dengan Sensasi Mint Sorbet\nSegar untuk Kulit Kepala Berketombe.`,
+    ctaText: "Learn more",
+    // The reference paints EVERY sub-brand hero in the same light beige with dark
+    // wording. SubBrandHero renders its wording in white only, so the banner takes that
+    // one shared beige darkened to the minimum that clears white text (10.8:1) while
+    // still letting the taupe wordmark read against it (2.1:1) — a single neutral for
+    // all five variants, exactly as the reference does. See the note to the brand owner.
+    accentHex: "#423A31",
+    bannerBg: "#423A31",
+    heroWordmark: "/brand/texture-experience/mint-sorbet/hero/wordmark.png",
+    heroWordmarkAspect: "502 / 214",
+    // One composed cluster (Mint Mocktail hair perfume + creambath tube) → a single
+    // layer. The PNG has transparent padding (the products fill ~62% × 79% of the
+    // canvas), so the layer box is larger than the pair looks.
+    heroLayers: [
+      { src: "/brand/texture-experience/mint-sorbet/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
+        width: "min(52vw, 92vh)", aspectRatio: "3772 / 3748", left: "35.1%", top: "1.3%",
+        mobile: { left: "-18.7%", top: "-2.5%", width: "115%" } },
+    ],
+    showcaseTitle: "/brand/texture-experience/mint-sorbet/showcase/title.png",
+    showcaseTitleAspect: "3332 / 3233",
+    // This variant ships no landscape creambath card — all four SKU are portrait cards,
+    // so the grid carries them and there is no full-width featured slot (as in the
+    // reference).
+    cardAspect: "2302 / 2986",
+    cards: [
+      { image: "/brand/texture-experience/mint-sorbet/showcase/1.png", label: "Shampoo Mint Sorbet" },
+      { image: "/brand/texture-experience/mint-sorbet/showcase/2.png", label: "Conditioner Mint Sorbet" },
+      { image: "/brand/texture-experience/mint-sorbet/showcase/3.png", label: "Creambath Mint Sorbet" },
+      { image: "/brand/texture-experience/mint-sorbet/showcase/4.png", label: "Hair Perfume Mint Mocktail" },
+    ],
+  };
+
+export default entry;
