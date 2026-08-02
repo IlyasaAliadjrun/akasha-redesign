@@ -2,9 +2,9 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import type { Brand } from "@/lib/brands";
+import type { ResolvedBrand } from "@/lib/locale/resolve";
 
-export default function WhyThisProduct({ brand }: { brand: Brand }) {
+export default function WhyThisProduct({ brand }: { brand: ResolvedBrand }) {
   const railRef = useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);

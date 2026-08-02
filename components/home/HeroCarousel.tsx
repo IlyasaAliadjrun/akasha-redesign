@@ -4,6 +4,8 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { brandHref } from "@/lib/brands";
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { home } from "@/dictionaries/home";
 
 // Hero carousel — one slide per asset in /public/home/hero-carousel.
 // max-w on the h1 is sized to fit "Nestlé Pure Life" on one line; anything
@@ -13,7 +15,7 @@ import { useEffect, useRef, useState } from "react";
 type Slide = {
   slug: string;
   name: string;
-  tag: string;
+  tag: { en: string; id: string };
   bg: string;
   image: string;
   light?: boolean;
@@ -27,7 +29,7 @@ const slides: Slide[] = [
   {
     slug: "nestle-pure-life",
     name: "Nestlé Pure Life",
-    tag: "Gak dingin tetep seger",
+    tag: { en: "Fresh, even without the chill", id: "Gak dingin tetep seger" },
     bg: "#D20B68",
     image: "/home/hero-carousel/nestle-pure-life.jpg",
     pos: "75% 50%",
@@ -35,7 +37,7 @@ const slides: Slide[] = [
   {
     slug: "hair-energy",
     name: "Makarizo Hair Energy",
-    tag: "Wangi sepanjang hari",
+    tag: { en: "Fragrance that lasts all day", id: "Wangi sepanjang hari" },
     bg: "#DA5B14",
     image: "/home/hero-carousel/hair-energy.jpg",
     pos: "75% 50%",
@@ -43,7 +45,7 @@ const slides: Slide[] = [
   {
     slug: "make-it",
     name: "Make It",
-    tag: "Your scent. Your story",
+    tag: { en: "Your scent. Your story", id: "Aromamu. Ceritamu." },
     bg: "#640113",
     image: "/home/hero-carousel/make-it.jpg",
     pos: "80% 50%",
@@ -51,7 +53,10 @@ const slides: Slide[] = [
   {
     slug: "barber-daily",
     name: "Barber Daily",
-    tag: "Barbershop-quality grooming, every day",
+    tag: {
+      en: "Barbershop-quality grooming, every day",
+      id: "Perawatan ala barbershop, setiap hari",
+    },
     bg: "#793E1C",
     image: "/home/hero-carousel/barber-daily.jpg",
     pos: "80% 50%",
@@ -59,7 +64,7 @@ const slides: Slide[] = [
   {
     slug: "wonhae",
     name: "Wonhae",
-    tag: "Korean flavors, Indonesian hearts",
+    tag: { en: "Korean flavors, Indonesian hearts", id: "Cita rasa Korea, hati Indonesia" },
     bg: "#FDDC57",
     image: "/home/hero-carousel/wonhae.jpg",
     light: true,
@@ -68,7 +73,10 @@ const slides: Slide[] = [
   {
     slug: "makarizo-professional",
     name: "Makarizo Professional",
-    tag: "43 tahun besar bersama salon Indonesia",
+    tag: {
+      en: "43 years growing with Indonesian salons",
+      id: "43 tahun besar bersama salon Indonesia",
+    },
     bg: "#E0DCD3",
     image: "/home/hero-carousel/makarizo-professional.jpg",
     light: true,
@@ -79,6 +87,7 @@ const slides: Slide[] = [
 const AUTO_MS = 4000;
 
 export default function HeroCarousel() {
+  const { asset, href, t } = useLocale();
   const [i, setI] = useState(0);
   // Image fade duration. Auto-advance crossfades 0.5s; user-driven changes
   // (arrows, dots) snap instantly with 0s.
@@ -126,7 +135,7 @@ export default function HeroCarousel() {
           className="absolute inset-0"
         >
           <Image
-            src={s.image}
+            src={asset(s.image)}
             alt={s.name}
             fill
             priority
@@ -151,17 +160,17 @@ export default function HeroCarousel() {
               light ? "text-ink/80" : "text-white/85"
             }`}
           >
-            {s.tag}
+            {t(s.tag)}
           </p>
           <Link
-            href={brandHref(s.slug)}
+            href={href(brandHref(s.slug))}
             className={`mt-4 sm:mt-8 md:mt-10 inline-block text-[11px] sm:text-sm font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full border transition-all duration-500 hover:scale-[1.03] ${
               light
                 ? "border-ink/70 hover:bg-ink hover:text-white"
                 : "border-white/80 hover:bg-white hover:text-ink"
             }`}
           >
-            Discover
+            {t(home.hero.discover)}
           </Link>
         </div>
       </div>
@@ -170,7 +179,7 @@ export default function HeroCarousel() {
       <div className="hidden sm:block absolute left-2 sm:left-4 md:left-8 lg:left-12 top-1/2 -translate-y-1/2 z-20">
         <motion.button
           onClick={prev}
-          aria-label="Previous slide"
+          aria-label={t(home.carousel.previousSlide)}
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
           className={`block p-2 sm:p-3 md:p-4 focus:outline-none transition-colors duration-300 ${
@@ -198,7 +207,7 @@ export default function HeroCarousel() {
       <div className="hidden sm:block absolute right-2 sm:right-4 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 z-20">
         <motion.button
           onClick={next}
-          aria-label="Next slide"
+          aria-label={t(home.carousel.nextSlide)}
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
           className={`block p-2 sm:p-3 md:p-4 focus:outline-none transition-colors duration-300 ${
@@ -231,7 +240,7 @@ export default function HeroCarousel() {
           <button
             key={sl.slug}
             onClick={() => goTo(idx)}
-            aria-label={`Go to ${sl.name}`}
+            aria-label={`${t(home.carousel.goToSlide)} ${sl.name}`}
             className="group relative h-5 sm:h-8 shrink-0 flex items-center justify-center"
           >
             <span
@@ -260,7 +269,7 @@ export default function HeroCarousel() {
           }}
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-          aria-label="Scroll down"
+          aria-label={t(home.carousel.scrollDown)}
           className={`flex flex-col items-center gap-1 sm:gap-2 transition-colors duration-500 ${
             light ? "text-ink/60 hover:text-ink" : "text-white/70 hover:text-white"
           }`}

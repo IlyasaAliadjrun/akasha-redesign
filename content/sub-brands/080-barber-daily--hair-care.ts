@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "hair-care",
     parent: "barber-daily",
     name: "Hair Care",
-    tagline: `Meningkatkan kesehatan\nrambut & kulit kepala.`,
-    ctaText: "Learn more",
+    tagline: { en: `Improves the health\nof hair & scalp.`, id: `Meningkatkan kesehatan\nrambut & kulit kepala.` },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#6B3F1D",
     bannerBg: "#6B3F1D",
     heroWordmark: "/brand/barber-daily/hair-care/hero/wordmark.png",
@@ -26,14 +26,14 @@ const entry: SubBrand = {
     showcaseTitleAspect: "5138 / 3538",
     // Pomade is the one landscape card in the set, so it takes the full-width
     // `featured` slot; the four portrait cards fill the 2-column grid.
-    featured: { image: "/brand/barber-daily/hair-care/showcase/5.png", label: "Pomade" },
+    featured: { image: "/brand/barber-daily/hair-care/showcase/5.png", label: { en: "Pomade", id: "Pomade" } },
     featuredAspect: "4687 / 2222",
     cardAspect: "2302 / 2987",
     cards: [
-      { image: "/brand/barber-daily/hair-care/showcase/1.png", label: "Shampoo" },
-      { image: "/brand/barber-daily/hair-care/showcase/2.png", label: "4 in 1" },
-      { image: "/brand/barber-daily/hair-care/showcase/3.png", label: "Hair Tonic" },
-      { image: "/brand/barber-daily/hair-care/showcase/4.png", label: "Styling Gel" },
+      { image: "/brand/barber-daily/hair-care/showcase/1.png", label: { en: "Shampoo", id: "Shampoo" } },
+      { image: "/brand/barber-daily/hair-care/showcase/2.png", label: { en: "4 in 1", id: "4 in 1" } },
+      { image: "/brand/barber-daily/hair-care/showcase/3.png", label: { en: "Hair Tonic", id: "Hair Tonic" } },
+      { image: "/brand/barber-daily/hair-care/showcase/4.png", label: { en: "Styling Gel", id: "Styling Gel" } },
     ],
   };
 

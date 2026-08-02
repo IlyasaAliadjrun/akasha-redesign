@@ -1,4 +1,4 @@
-import type { Brand } from "@/lib/brands";
+import type { ResolvedBrand } from "@/lib/locale/resolve";
 import BrandHero from "@/components/brand/BrandHero";
 import BrandIntro from "@/components/brand/BrandIntro";
 import BrandAbout from "@/components/brand/BrandAbout";
@@ -13,7 +13,7 @@ import BrandCTA from "@/components/brand/BrandCTA";
 // as the seam: sub-brand-specific sections diverge here without touching top-level
 // brand pages. Hair Energy is the only sub-brand with a full content set so far;
 // the rest render the sections their data supports and skip the others.
-export default function SubBrandPage({ brand }: { brand: Brand }) {
+export default function SubBrandPage({ brand }: { brand: ResolvedBrand }) {
   return (
     <>
       <BrandHero brand={brand} />

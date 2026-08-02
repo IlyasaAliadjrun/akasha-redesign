@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "mint-sorbet",
     parent: "texture-experience",
     name: "Mint Sorbet",
-    tagline: `Perawatan dengan Sensasi Mint Sorbet\nSegar untuk Kulit Kepala Berketombe.`,
-    ctaText: "Learn more",
+    tagline: { en: "Care with a Refreshing Mint Sorbet\nSensation for Dandruff-Prone Scalp.", id: "Perawatan dengan Sensasi Mint Sorbet\nSegar untuk Kulit Kepala Berketombe." },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // The reference paints EVERY sub-brand hero in the same light beige with dark
     // wording. SubBrandHero renders its wording in white only, so the banner takes that
     // one shared beige darkened to the minimum that clears white text (10.8:1) while
@@ -31,10 +31,10 @@ const entry: SubBrand = {
     // reference).
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/texture-experience/mint-sorbet/showcase/1.png", label: "Shampoo Mint Sorbet" },
-      { image: "/brand/texture-experience/mint-sorbet/showcase/2.png", label: "Conditioner Mint Sorbet" },
-      { image: "/brand/texture-experience/mint-sorbet/showcase/3.png", label: "Creambath Mint Sorbet" },
-      { image: "/brand/texture-experience/mint-sorbet/showcase/4.png", label: "Hair Perfume Mint Mocktail" },
+      { image: "/brand/texture-experience/mint-sorbet/showcase/1.png", label: { en: "Shampoo Mint Sorbet", id: "Shampoo Mint Sorbet" } },
+      { image: "/brand/texture-experience/mint-sorbet/showcase/2.png", label: { en: "Conditioner Mint Sorbet", id: "Conditioner Mint Sorbet" } },
+      { image: "/brand/texture-experience/mint-sorbet/showcase/3.png", label: { en: "Creambath Mint Sorbet", id: "Creambath Mint Sorbet" } },
+      { image: "/brand/texture-experience/mint-sorbet/showcase/4.png", label: { en: "Hair Perfume Mint Mocktail", id: "Hair Perfume Mint Mocktail" } },
     ],
   };
 

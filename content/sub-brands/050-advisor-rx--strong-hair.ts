@@ -6,8 +6,8 @@ const entry: SubBrand = {
     parent: "advisor-rx",
     name: "Strong Hair Expert Care",
     // Copy taken verbatim from the line's own showcase banner art.
-    tagline: `Membantu mengurangi rambut rontok,\nkebotakan dini, dan menumbuhkan rambut.`,
-    ctaText: "Learn more",
+    tagline: { en: "Helps reduce hair loss,\npremature balding, and promotes hair growth.", id: "Membantu mengurangi rambut rontok,\nkebotakan dini, dan menumbuhkan rambut." },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // Strong Hair green — sampled from the line's banner and card art (rgb(0,149,97)).
     accentHex: "#009561",
     bannerBg: "#009561",
@@ -43,10 +43,10 @@ const entry: SubBrand = {
     // Card art ratios vary by <1.5 %, so one box ratio holds them all without letterboxing.
     cardAspect: "2303 / 3026",
     cards: [
-      { image: "/brand/advisor-rx/strong-hair/showcase/1.png", label: "Strong Hair Shampoo" },
-      { image: "/brand/advisor-rx/strong-hair/showcase/2.png", label: "Strong Hair Boosting Mask" },
-      { image: "/brand/advisor-rx/strong-hair/showcase/3.png", label: "Strong Hair Hair Tonic" },
-      { image: "/brand/advisor-rx/strong-hair/showcase/4.png", label: "Strong Hair Scalp Serum" },
+      { image: "/brand/advisor-rx/strong-hair/showcase/1.png", label: { en: "Strong Hair Shampoo", id: "Strong Hair Shampoo" } },
+      { image: "/brand/advisor-rx/strong-hair/showcase/2.png", label: { en: "Strong Hair Boosting Mask", id: "Strong Hair Masker Penguat" } },
+      { image: "/brand/advisor-rx/strong-hair/showcase/3.png", label: { en: "Strong Hair Hair Tonic", id: "Strong Hair Tonik Rambut" } },
+      { image: "/brand/advisor-rx/strong-hair/showcase/4.png", label: { en: "Strong Hair Scalp Serum", id: "Strong Hair Serum Kulit Kepala" } },
     ],
   };
 

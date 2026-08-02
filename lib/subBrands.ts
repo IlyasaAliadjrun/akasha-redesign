@@ -1,4 +1,5 @@
 import type { HeroLayer, HeroContent } from "./brands";
+import type { Localized } from "@/lib/locale/paths";
 
 // ── Sub-brands (product lines) ────────────────────────────────────────────────
 // Terminology (confirmed by the brand owner):
@@ -22,15 +23,15 @@ import type { HeroLayer, HeroContent } from "./brands";
 export type SubBrandCard = {
   image?: string; // complete card graphic (product + background + border baked in)
   href?: string; // optional link (defaults to the shop link)
-  label?: string; // alt text / internal identifier
+  label?: Localized<string>; // alt text / internal identifier
 };
 
 export type SubBrand = {
   slug: string; // e.g. "creambath" → /brands/{parent}/creambath
   parent: string; // parent brand slug, e.g. "hair-energy"
-  name: string; // e.g. "Fibertherapy Creambath"
-  tagline: string; // hero subtitle (1–2 short lines)
-  ctaText?: string; // hero button label (default "Learn more")
+  name: string; // e.g. "Fibertherapy Creambath" — proper noun, not translated
+  tagline: Localized<string>; // hero subtitle (1–2 short lines)
+  ctaText?: Localized<string>; // hero button label (default "Learn more")
   ctaHref?: string; // hero button target (default "#showcase")
   accentHex: string; // banner colour (usually inherits the parent brand)
   bannerBg?: string; // solid colour behind the hero while it loads

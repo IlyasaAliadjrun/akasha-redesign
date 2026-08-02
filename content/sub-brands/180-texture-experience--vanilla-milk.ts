@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "vanilla-milk",
     parent: "texture-experience",
     name: "Vanilla Milk",
-    tagline: `Perawatan dengan Aroma Vanilla Milk\nuntuk Rambut Terproses Kimia.`,
-    ctaText: "Learn more",
+    tagline: { en: "Care with Vanilla Milk Fragrance\nfor Chemically Processed Hair.", id: "Perawatan dengan Aroma Vanilla Milk\nuntuk Rambut Terproses Kimia." },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // The reference paints EVERY sub-brand hero in the same light beige with dark
     // wording. SubBrandHero renders its wording in white only, so the banner takes that
     // one shared beige darkened to the minimum that clears white text (10.8:1) while
@@ -27,14 +27,14 @@ const entry: SubBrand = {
     showcaseTitle: "/brand/texture-experience/vanilla-milk/showcase/title.png",
     showcaseTitleAspect: "3605 / 3233",
     // The creambath line-up ships as a landscape card, so it takes the full-width slot.
-    featured: { image: "/brand/texture-experience/vanilla-milk/showcase/3.png", label: "Creambath Vanilla Milk — sachet, tube & jar" },
+    featured: { image: "/brand/texture-experience/vanilla-milk/showcase/3.png", label: { en: "Creambath Vanilla Milk — sachet, tube & jar", id: "Creambath Vanilla Milk — sachet, tube & jar" } },
     featuredAspect: "4695 / 2222",
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/texture-experience/vanilla-milk/showcase/1.png", label: "Shampoo Vanilla Milk" },
-      { image: "/brand/texture-experience/vanilla-milk/showcase/2.png", label: "Conditioner Vanilla Milk" },
-      { image: "/brand/texture-experience/vanilla-milk/showcase/4.png", label: "Hair Perfume Vanilla Souffle" },
-      { image: "/brand/texture-experience/vanilla-milk/showcase/5.png", label: "Smooth-Bright Body Essence Vanilla Milk" },
+      { image: "/brand/texture-experience/vanilla-milk/showcase/1.png", label: { en: "Shampoo Vanilla Milk", id: "Shampoo Vanilla Milk" } },
+      { image: "/brand/texture-experience/vanilla-milk/showcase/2.png", label: { en: "Conditioner Vanilla Milk", id: "Conditioner Vanilla Milk" } },
+      { image: "/brand/texture-experience/vanilla-milk/showcase/4.png", label: { en: "Hair Perfume Vanilla Souffle", id: "Hair Perfume Vanilla Souffle" } },
+      { image: "/brand/texture-experience/vanilla-milk/showcase/5.png", label: { en: "Smooth-Bright Body Essence Vanilla Milk", id: "Smooth-Bright Body Essence Vanilla Milk" } },
     ],
   };
 

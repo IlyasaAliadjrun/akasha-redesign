@@ -7,11 +7,11 @@ const entry: Brand = {
     division: "beauty",
     // Reads as the CTA sub-line ("Rasakan Finest sekarang." + this) and on the
     // CrossSell card — the reference's closing coral panel wording.
-    tagline: "Naturally Whitening & Oral Microbiome-Friendly",
+    tagline: { en: "Naturally Whitening & Oral Microbiome-Friendly", id: "Memutihkan Alami & Ramah Mikrobioma Oral" },
     // BrandIntro splits on ". ": sentence 1 becomes the bold headline, the rest the
     // lighter continuation. Copy taken from the reference's "About Finest" block.
     description:
-      "Perlindungan Ekstra Lembut, bebas fluoride dan SLS. Aman digunakan oleh semua usia, termasuk ibu hamil. Diperkaya Nano Hydroxyapatite serta bersertifikasi BPOM dan Halal, bekerja maksimal memperkuat gigi sensitif tanpa iritasi.",
+      { en: "Extra Gentle Protection, free from fluoride and SLS. Safe for all ages, including pregnant women. Enriched with Nano Hydroxyapatite and certified by BPOM and Halal, working at its best to strengthen sensitive teeth without irritation.", id: "Perlindungan Ekstra Lembut, bebas fluoride dan SLS. Aman digunakan oleh semua usia, termasuk ibu hamil. Diperkaya Nano Hydroxyapatite serta bersertifikasi BPOM dan Halal, bekerja maksimal memperkuat gigi sensitif tanpa iritasi." },
     accentClass: "bg-brand-finest",
     accentHex: "#F5595C", // Finest coral — sampled from the wordmark / showcase art
     // No standalone 3:4 brand-card art in the folder; the About tooth visual is
@@ -41,8 +41,8 @@ const entry: Brand = {
       logoAspect: "1394 / 325",
       logoWidth: "25vw",
       maxWidth: "27vw",
-      tagline: "Remineralisasi, Pemutih Alami & Ramah Mikrobioma Oral",
-      ctaText: "Learn more",
+      tagline: { en: "Remineralizing, Naturally Whitening & Oral Microbiome-Friendly", id: "Remineralisasi, Pemutih Alami & Ramah Mikrobioma Oral" },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
       offsetY: "6vh",
@@ -54,19 +54,19 @@ const entry: Brand = {
     bannerBg: "#FCF6F5", // blush off-white, matching the reference hero
     hero: false,
     products: [
-      { name: "Toothpaste", variant: "Soft Mint", size: "90 g", image: "/brand/finest/product-lineup/toothpaste-soft-mint-90g.png" },
-      { name: "Toothpaste", variant: "Light Lemon", size: "90 g", image: "/brand/finest/product-lineup/toothpaste-light-lemon-90g.png" },
+      { name: "Toothpaste", variant: { en: "Soft Mint", id: "Soft Mint" }, size: { en: "90 g", id: "90 g" }, image: "/brand/finest/product-lineup/toothpaste-soft-mint-90g.png" },
+      { name: "Toothpaste", variant: { en: "Light Lemon", id: "Light Lemon" }, size: { en: "90 g", id: "90 g" }, image: "/brand/finest/product-lineup/toothpaste-light-lemon-90g.png" },
     ],
     reasons: [
-      { icon: "🦷", title: "10% Nano Hydroxyapatite", body: "Meremineralisasi email gigi dan memutihkan secara alami tanpa abrasi." },
-      { icon: "🌿", title: "Bebas fluoride & SLS", body: "Aman tertelan, ramah untuk semua usia — termasuk ibu hamil." },
-      { icon: "❄️", title: "Sensasi dingin lembut", body: "Formula mint lembut yang menyegarkan tanpa membuat gusi perih." },
-      { icon: "✅", title: "BPOM & Halal", body: "Tersertifikasi, diformulasikan untuk gigi sensitif tanpa iritasi." },
+      { icon: "🦷", title: { en: "10% Nano Hydroxyapatite", id: "10% Nano Hydroxyapatite" }, body: { en: "Remineralizes tooth enamel and whitens naturally without abrasion.", id: "Meremineralisasi email gigi dan memutihkan secara alami tanpa abrasi." } },
+      { icon: "🌿", title: { en: "Free from fluoride & SLS", id: "Bebas fluoride & SLS" }, body: { en: "Safe if swallowed, gentle for all ages — including pregnant women.", id: "Aman tertelan, ramah untuk semua usia — termasuk ibu hamil." } },
+      { icon: "❄️", title: { en: "Gentle cooling sensation", id: "Sensasi dingin lembut" }, body: { en: "A gentle mint formula that refreshes without stinging the gums.", id: "Formula mint lembut yang menyegarkan tanpa membuat gusi perih." } },
+      { icon: "✅", title: { en: "BPOM & Halal", id: "BPOM & Halal" }, body: { en: "Certified, formulated for sensitive teeth without irritation.", id: "Tersertifikasi, diformulasikan untuk gigi sensitif tanpa iritasi." } },
     ],
     about: [
-      { title: "Mengandung Nano Hydroxyapetite", image: "/brand/finest/about/1.png" },
-      { title: "Sensasi Dingin Menyegarkan", image: "/brand/finest/about/2.png" },
-      { title: "Segar Tahan Lama", image: "/brand/finest/about/3.png" },
+      { title: { en: "Contains Nano Hydroxyapatite", id: "Mengandung Nano Hydroxyapetite" }, image: "/brand/finest/about/1.png" },
+      { title: { en: "Refreshing Cool Sensation", id: "Sensasi Dingin Menyegarkan" }, image: "/brand/finest/about/2.png" },
+      { title: { en: "Long-Lasting Freshness", id: "Segar Tahan Lama" }, image: "/brand/finest/about/3.png" },
     ],
     // Showcase — the "Pasta Gigi Lembut Premium" poster, then the single TOOTHPASTE
     // banner. The bg is a designed card whose caption sits on its bottom edge, so

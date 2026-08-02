@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "bleaching-powder",
     parent: "concept-ultimax",
     name: "Bleaching Powder",
-    tagline: `Solusi bleaching cepat dan aman yang membuat\nrambut lebih mudah menyerap pigment warna baru.`,
-    ctaText: "Learn more",
+    tagline: { en: `A fast, safe bleaching solution that makes\nhair better able to absorb new color pigments.`, id: `Solusi bleaching cepat dan aman yang membuat\nrambut lebih mudah menyerap pigment warna baru.` },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#E34686",
     // See color-tube: SubBrandHero's wording is always white, so the banner uses the
     // palette's deep brown (rgb(62,33,32)) rather than the reference's pale sage.
@@ -22,7 +22,7 @@ const entry: SubBrand = {
     // Profesional Vegan" block (jar + three check points) and the shade cards have no
     // matching asset, so `showcaseTitle` stays unset (the component's own placeholder
     // marks the gap) and the grid is empty. Reported to the design team.
-    featured: { image: "/brand/concept-ultimax/bleaching-powder/showcase/1.png", label: "Bleaching Powder — solusi bleaching cepat dan aman untuk rambut" },
+    featured: { image: "/brand/concept-ultimax/bleaching-powder/showcase/1.png", label: { en: "Bleaching Powder — a fast, safe bleaching solution for hair", id: "Bleaching Powder — solusi bleaching cepat dan aman untuk rambut" } },
     featuredAspect: "5365 / 2434",
     cards: [],
   };

@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "black-chocolate",
     parent: "texture-experience",
     name: "Black Chocolate",
-    tagline: `Perawatan dengan Ekstrak Dark Chocolate\nuntuk Rambut Kering & Rusak.`,
-    ctaText: "Learn more",
+    tagline: { en: "Care with Dark Chocolate Extract\nfor Dry & Damaged Hair.", id: "Perawatan dengan Ekstrak Dark Chocolate\nuntuk Rambut Kering & Rusak." },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // The reference paints EVERY sub-brand hero in the same light beige with dark
     // wording. SubBrandHero renders its wording in white only, so the banner takes that
     // one shared beige darkened to the minimum that clears white text (10.8:1) while
@@ -27,14 +27,14 @@ const entry: SubBrand = {
     showcaseTitle: "/brand/texture-experience/black-chocolate/showcase/title.png",
     showcaseTitleAspect: "3870 / 3233",
     // The creambath line-up ships as a landscape card, so it takes the full-width slot.
-    featured: { image: "/brand/texture-experience/black-chocolate/showcase/3.png", label: "Creambath Black Chocolate — sachet, tube & jar" },
+    featured: { image: "/brand/texture-experience/black-chocolate/showcase/3.png", label: { en: "Creambath Black Chocolate — sachet, tube & jar", id: "Creambath Black Chocolate — sachet, tube & jar" } },
     featuredAspect: "4695 / 2222",
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/texture-experience/black-chocolate/showcase/1.png", label: "Shampoo Black Chocolate" },
-      { image: "/brand/texture-experience/black-chocolate/showcase/2.png", label: "Conditioner Black Chocolate" },
-      { image: "/brand/texture-experience/black-chocolate/showcase/4.png", label: "Hair Perfume Choco Hazelnut" },
-      { image: "/brand/texture-experience/black-chocolate/showcase/5.png", label: "Smooth-Bright Body Essence Black Chocolate" },
+      { image: "/brand/texture-experience/black-chocolate/showcase/1.png", label: { en: "Shampoo Black Chocolate", id: "Shampoo Black Chocolate" } },
+      { image: "/brand/texture-experience/black-chocolate/showcase/2.png", label: { en: "Conditioner Black Chocolate", id: "Conditioner Black Chocolate" } },
+      { image: "/brand/texture-experience/black-chocolate/showcase/4.png", label: { en: "Hair Perfume Choco Hazelnut", id: "Hair Perfume Choco Hazelnut" } },
+      { image: "/brand/texture-experience/black-chocolate/showcase/5.png", label: { en: "Smooth-Bright Body Essence Black Chocolate", id: "Smooth-Bright Body Essence Black Chocolate" } },
     ],
   };
 

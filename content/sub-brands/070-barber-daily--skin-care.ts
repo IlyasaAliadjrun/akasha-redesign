@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "skin-care",
     parent: "barber-daily",
     name: "Skincare",
-    tagline: "Bantu merawat kulit wajah setiap hari.",
-    ctaText: "Learn more",
+    tagline: { en: "Helps care for your facial skin every day.", id: "Bantu merawat kulit wajah setiap hari." },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#6B3F1D",
     bannerBg: "#6B3F1D",
     heroWordmark: "/brand/barber-daily/skin-care/hero/wordmark.png",
@@ -33,10 +33,10 @@ const entry: SubBrand = {
     showcaseTitleAspect: "5711 / 4937",
     cardAspect: "2302 / 2987",
     cards: [
-      { image: "/brand/barber-daily/skin-care/showcase/1.png", label: "Face Wash" },
-      { image: "/brand/barber-daily/skin-care/showcase/2.png", label: "Moisturizer" },
-      { image: "/brand/barber-daily/skin-care/showcase/3.png", label: "Serum" },
-      { image: "/brand/barber-daily/skin-care/showcase/4.png", label: "Spot Gel" },
+      { image: "/brand/barber-daily/skin-care/showcase/1.png", label: { en: "Face Wash", id: "Sabun Cuci Muka" } },
+      { image: "/brand/barber-daily/skin-care/showcase/2.png", label: { en: "Moisturizer", id: "Pelembap" } },
+      { image: "/brand/barber-daily/skin-care/showcase/3.png", label: { en: "Serum", id: "Serum" } },
+      { image: "/brand/barber-daily/skin-care/showcase/4.png", label: { en: "Spot Gel", id: "Gel Totol Jerawat" } },
     ],
   };
 

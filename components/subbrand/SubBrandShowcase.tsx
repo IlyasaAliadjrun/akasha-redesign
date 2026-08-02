@@ -3,7 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { SubBrandCard } from "@/lib/subBrands";
-import type { SubBrand } from "@/lib/subBrands";
+import type { Resolved, ResolvedSubBrand } from "@/lib/locale/resolve";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { BRAND } from "@/dictionaries/brand";
 
 // A single image slot. The real card artwork already includes its own background &
 // border, so nothing is drawn around it — the image is just placed. Until an asset
@@ -14,10 +16,11 @@ function Slot({
   aspect,
   sizes,
 }: {
-  card: SubBrandCard;
+  card: Resolved<SubBrandCard>;
   aspect: string;
   sizes: string;
 }) {
+  const { t } = useLocale();
   const inner = card.image ? (
     <div className="relative w-full" style={{ aspectRatio: aspect }}>
       <Image src={card.image} alt={card.label ?? ""} fill sizes={sizes} className="object-contain" />
@@ -28,7 +31,7 @@ function Slot({
       style={{ aspectRatio: aspect }}
     >
       <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" /></svg>
-      <span className="text-[10px] uppercase tracking-[0.2em] font-semibold">{card.label ?? "Gambar"}</span>
+      <span className="text-[10px] uppercase tracking-[0.2em] font-semibold">{card.label ?? t(BRAND.subBrandShowcase.image)}</span>
     </div>
   );
   return card.href ? (
@@ -43,7 +46,8 @@ function Slot({
 // Sub-brand showcase = a title image on top, then a grid of complete card images.
 // No parallax (each image is whole) and no card chrome (each image carries its own
 // background + border). Optional full-width `featured` card above the grid.
-export default function SubBrandShowcase({ sub }: { sub: SubBrand }) {
+export default function SubBrandShowcase({ sub }: { sub: ResolvedSubBrand }) {
+  const { t } = useLocale();
   const titleAspect = sub.showcaseTitleAspect ?? "3 / 2";
   const featuredAspect = sub.featuredAspect ?? "12 / 5";
   const cardAspect = sub.cardAspect ?? "4 / 5";
@@ -70,7 +74,7 @@ export default function SubBrandShowcase({ sub }: { sub: SubBrand }) {
             ) : (
               <div className="relative w-full rounded-2xl bg-ink/[0.04] flex flex-col items-center justify-center gap-2 text-ink/30" style={{ aspectRatio: titleAspect }}>
                 <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" /></svg>
-                <span className="text-[10px] uppercase tracking-[0.2em] font-semibold">Gambar title showcase</span>
+                <span className="text-[10px] uppercase tracking-[0.2em] font-semibold">{t(BRAND.subBrandShowcase.titleImage)}</span>
               </div>
             )}
           </motion.div>

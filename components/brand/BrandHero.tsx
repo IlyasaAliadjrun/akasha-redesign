@@ -2,7 +2,10 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import type { Brand, HeroLayer } from "@/lib/brands";
+import type { HeroLayer } from "@/lib/brands";
+import type { ResolvedBrand } from "@/lib/locale/resolve";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { BRAND } from "@/dictionaries/brand";
 
 // Tracks the small-screen breakpoint (<768px) so layers/content can swap to their
 // mobile placement. Starts false (desktop) on the server; corrects on mount.
@@ -99,9 +102,10 @@ function ParallaxLayer({
   );
 }
 
-export default function BrandHero({ brand }: { brand: Brand }) {
+export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
   const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
+  const { t } = useLocale();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -255,7 +259,7 @@ export default function BrandHero({ brand }: { brand: Brand }) {
           }}
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-          aria-label="Scroll down"
+          aria-label={t(BRAND.common.scrollDown)}
           className="flex flex-col items-center gap-1 sm:gap-2 text-white/70 hover:text-white transition-colors duration-500"
         >
           <span className="sm:hidden flex flex-col items-center -space-y-1.5">

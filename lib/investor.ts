@@ -1,4 +1,5 @@
 // Data resmi dari akashainternational.com (PT Akasha Wira International Tbk, IDX: ADES)
+import type { Localized } from "@/lib/locale/paths";
 
 export const FINANCIAL_YEARS = [2024, 2023, 2022, 2021, 2020] as const;
 
@@ -22,70 +23,222 @@ export const RATIOS = {
   netMargin:       [27, 26, 28, 28, 20],
 };
 
-export const SHARE_ACTIONS = [
-  { date: "31 Mar 1994", action: "Initial Public Offering (IPO)", shares: "15.000.000", par: "Rp 1.000" },
-  { date: "31 Mar 1994", action: "Listing of Founder's Shares", shares: "23.000.000", par: "Rp 1.000" },
-  { date: "4 Agu 1997",  action: "Bonus Share Issuance (100 : 294)", shares: "38.000.000", par: "Rp 1.000" },
-  { date: "16 Jul 2004", action: "Rights Issue I (100 : 97)", shares: "73.720.000", par: "Rp 1.000" },
-  { date: "5 Des 2007",  action: "Rights Issue II", shares: "440.176.800", par: "Rp 1.000" },
+export const SHARE_ACTIONS: {
+  date: Localized<string>;
+  action: Localized<string>;
+  shares: string;
+  par: string;
+}[] = [
+  {
+    date: { en: "31 Mar 1994", id: "31 Mar 1994" },
+    action: { en: "Initial Public Offering (IPO)", id: "Penawaran Umum Perdana (IPO)" },
+    shares: "15.000.000",
+    par: "Rp 1.000",
+  },
+  {
+    date: { en: "31 Mar 1994", id: "31 Mar 1994" },
+    action: { en: "Listing of Founder's Shares", id: "Pencatatan Saham Pendiri" },
+    shares: "23.000.000",
+    par: "Rp 1.000",
+  },
+  {
+    date: { en: "4 Aug 1997", id: "4 Agu 1997" },
+    action: { en: "Bonus Share Issuance (100 : 294)", id: "Penerbitan Saham Bonus (100 : 294)" },
+    shares: "38.000.000",
+    par: "Rp 1.000",
+  },
+  {
+    date: { en: "16 Jul 2004", id: "16 Jul 2004" },
+    action: { en: "Rights Issue I (100 : 97)", id: "Penawaran Umum Terbatas I (100 : 97)" },
+    shares: "73.720.000",
+    par: "Rp 1.000",
+  },
+  {
+    date: { en: "5 Dec 2007", id: "5 Des 2007" },
+    action: { en: "Rights Issue II", id: "Penawaran Umum Terbatas II" },
+    shares: "440.176.800",
+    par: "Rp 1.000",
+  },
 ];
 
 export const OUTSTANDING_SHARES = "589.896.800";
 
-export const INVESTOR_SECTIONS = [
-  { id: "financial-highlights", title: "Financial Highlights", desc: "Ringkasan performa keuangan lima tahun terakhir." },
-  { id: "financial-report",     title: "Financial Report",     desc: "Laporan keuangan audited dan interim per kuartal." },
-  { id: "annual-report",        title: "Annual Report",        desc: "Laporan tahunan lengkap dengan tinjauan strategis." },
-  { id: "share-price",          title: "Share Price",          desc: "Pergerakan harga saham ADES secara real-time." },
-  { id: "chronological-share",  title: "Chronological Share",  desc: "Riwayat aksi korporasi sejak IPO 1994." },
-  { id: "stock-information",    title: "Stock Information",    desc: "Struktur pemegang saham dan permodalan." },
-  { id: "gms",                  title: "General Meeting",      desc: "Panggilan, materi, dan hasil RUPS tahunan." },
-  { id: "disclosure",           title: "Disclosure",           desc: "Keterbukaan informasi sesuai POJK." },
+export const INVESTOR_SECTIONS: {
+  id: string;
+  title: Localized<string>;
+  desc: Localized<string>;
+}[] = [
+  {
+    id: "financial-highlights",
+    title: { en: "Financial Highlights", id: "Ikhtisar Keuangan" },
+    desc: {
+      en: "Summary of financial performance over the last five years.",
+      id: "Ringkasan performa keuangan lima tahun terakhir.",
+    },
+  },
+  {
+    id: "financial-report",
+    title: { en: "Financial Report", id: "Laporan Keuangan" },
+    desc: {
+      en: "Audited and quarterly interim financial statements.",
+      id: "Laporan keuangan audited dan interim per kuartal.",
+    },
+  },
+  {
+    id: "annual-report",
+    title: { en: "Annual Report", id: "Laporan Tahunan" },
+    desc: {
+      en: "Full annual report with strategic review.",
+      id: "Laporan tahunan lengkap dengan tinjauan strategis.",
+    },
+  },
+  {
+    id: "share-price",
+    title: { en: "Share Price", id: "Harga Saham" },
+    desc: {
+      en: "Real-time movement of ADES share price.",
+      id: "Pergerakan harga saham ADES secara real-time.",
+    },
+  },
+  {
+    id: "chronological-share",
+    title: { en: "Chronological Share", id: "Kronologi Saham" },
+    desc: {
+      en: "History of corporate actions since the 1994 IPO.",
+      id: "Riwayat aksi korporasi sejak IPO 1994.",
+    },
+  },
+  {
+    id: "stock-information",
+    title: { en: "Stock Information", id: "Informasi Saham" },
+    desc: {
+      en: "Shareholder structure and capitalization.",
+      id: "Struktur pemegang saham dan permodalan.",
+    },
+  },
+  {
+    id: "gms",
+    title: { en: "General Meeting", id: "Rapat Umum" },
+    desc: {
+      en: "Notices, materials, and results of the annual GMS.",
+      id: "Panggilan, materi, dan hasil RUPS tahunan.",
+    },
+  },
+  {
+    id: "disclosure",
+    title: { en: "Disclosure", id: "Keterbukaan Informasi" },
+    desc: {
+      en: "Information disclosure in accordance with POJK regulations.",
+      id: "Keterbukaan informasi sesuai POJK.",
+    },
+  },
 ];
 
-export const GOVERNANCE_PILLARS = [
+export const GOVERNANCE_PILLARS: {
+  id: string;
+  title: Localized<string>;
+  desc: Localized<string>;
+  icon: string;
+}[] = [
   {
     id: "article-of-association",
-    title: "Article of Association",
-    desc: "Anggaran Dasar — dokumen legal fondasi yang mengatur struktur, hak, dan kewajiban perusahaan.",
+    title: { en: "Article of Association", id: "Anggaran Dasar" },
+    desc: {
+      en: "Article of Association — the foundational legal document governing the company's structure, rights, and obligations.",
+      id: "Anggaran Dasar — dokumen legal fondasi yang mengatur struktur, hak, dan kewajiban perusahaan.",
+    },
     icon: "📜",
   },
   {
     id: "bod-boc-charter",
-    title: "Direksi & Komisaris Charter",
-    desc: "Pedoman tata kelola untuk Dewan Direksi dan Dewan Komisaris dalam menjalankan fungsi pengawasan.",
+    title: { en: "BOD & BOC Charter", id: "Direksi & Komisaris Charter" },
+    desc: {
+      en: "Governance guidelines for the Board of Directors and Board of Commissioners in carrying out their oversight functions.",
+      id: "Pedoman tata kelola untuk Dewan Direksi dan Dewan Komisaris dalam menjalankan fungsi pengawasan.",
+    },
     icon: "⚖️",
   },
   {
     id: "csr",
-    title: "Corporate Social Responsibility",
-    desc: "Program tanggung jawab sosial dan kontribusi berkelanjutan terhadap komunitas serta lingkungan.",
+    title: { en: "Corporate Social Responsibility", id: "Tanggung Jawab Sosial Perusahaan" },
+    desc: {
+      en: "Social responsibility programs and sustained contribution to community and environment.",
+      id: "Program tanggung jawab sosial dan kontribusi berkelanjutan terhadap komunitas serta lingkungan.",
+    },
     icon: "🌱",
   },
   {
     id: "announcement",
-    title: "Announcement",
-    desc: "Pengumuman resmi perusahaan kepada publik dan pemegang saham.",
+    title: { en: "Announcement", id: "Pengumuman" },
+    desc: {
+      en: "Official company announcements to the public and shareholders.",
+      id: "Pengumuman resmi perusahaan kepada publik dan pemegang saham.",
+    },
     icon: "📢",
   },
   {
     id: "disclosure",
-    title: "Disclosure Information",
-    desc: "Keterbukaan informasi material sesuai ketentuan OJK dan Bursa Efek Indonesia.",
+    title: { en: "Disclosure Information", id: "Keterbukaan Informasi" },
+    desc: {
+      en: "Material information disclosure per OJK and Indonesia Stock Exchange regulations.",
+      id: "Keterbukaan informasi material sesuai ketentuan OJK dan Bursa Efek Indonesia.",
+    },
     icon: "🔍",
   },
   {
     id: "gms",
-    title: "General Meeting of Shareholders",
-    desc: "Prosedur dan dokumentasi Rapat Umum Pemegang Saham (RUPS) tahunan dan luar biasa.",
+    title: { en: "General Meeting of Shareholders", id: "Rapat Umum Pemegang Saham" },
+    desc: {
+      en: "Procedures and documentation for the annual and extraordinary General Meeting of Shareholders (GMS).",
+      id: "Prosedur dan dokumentasi Rapat Umum Pemegang Saham (RUPS) tahunan dan luar biasa.",
+    },
     icon: "🤝",
   },
 ];
 
-export const GCG_PRINCIPLES = [
-  { letter: "T", title: "Transparansi",   body: "Pengungkapan informasi yang material dan relevan secara tepat waktu dan akurat." },
-  { letter: "A", title: "Akuntabilitas",  body: "Kejelasan fungsi dan pertanggungjawaban seluruh organ perusahaan." },
-  { letter: "R", title: "Responsibilitas", body: "Kepatuhan terhadap peraturan dan tanggung jawab sosial terhadap stakeholder." },
-  { letter: "I", title: "Independensi",   body: "Pengelolaan secara profesional tanpa benturan kepentingan." },
-  { letter: "F", title: "Fairness",       body: "Perlakuan yang adil dan setara bagi seluruh pemegang saham." },
+export const GCG_PRINCIPLES: {
+  letter: string;
+  title: Localized<string>;
+  body: Localized<string>;
+}[] = [
+  {
+    letter: "T",
+    title: { en: "Transparency", id: "Transparansi" },
+    body: {
+      en: "Disclosure of material and relevant information in a timely and accurate manner.",
+      id: "Pengungkapan informasi yang material dan relevan secara tepat waktu dan akurat.",
+    },
+  },
+  {
+    letter: "A",
+    title: { en: "Accountability", id: "Akuntabilitas" },
+    body: {
+      en: "Clarity of function and accountability across every organ of the company.",
+      id: "Kejelasan fungsi dan pertanggungjawaban seluruh organ perusahaan.",
+    },
+  },
+  {
+    letter: "R",
+    title: { en: "Responsibility", id: "Responsibilitas" },
+    body: {
+      en: "Compliance with regulations and social responsibility toward stakeholders.",
+      id: "Kepatuhan terhadap peraturan dan tanggung jawab sosial terhadap stakeholder.",
+    },
+  },
+  {
+    letter: "I",
+    title: { en: "Independency", id: "Independensi" },
+    body: {
+      en: "Professional management free of conflicts of interest.",
+      id: "Pengelolaan secara profesional tanpa benturan kepentingan.",
+    },
+  },
+  {
+    letter: "F",
+    title: { en: "Fairness", id: "Fairness" },
+    body: {
+      en: "Fair and equal treatment for all shareholders.",
+      id: "Perlakuan yang adil dan setara bagi seluruh pemegang saham.",
+    },
+  },
 ];

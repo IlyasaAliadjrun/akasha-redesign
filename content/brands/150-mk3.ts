@@ -7,11 +7,11 @@ const entry: Brand = {
     division: "beauty",
     parent: "makarizo-professional",
     // Shown under the CTA headline ("Rasakan MK3 sekarang.").
-    tagline: "Performa salon profesional.",
+    tagline: { en: "Professional salon performance.", id: "Performa salon profesional." },
     // BrandIntro headline. One block (no ". " inside) so it renders as a single
     // extrabold paragraph, matching the reference.
     description:
-      "Perawatan rambut intensif untuk setiap kebutuhan rambut, diformulasikan dengan bahan berkualitas dan teknologi terkini",
+      { en: "Intensive hair care for every hair need, formulated with quality ingredients and the latest technology", id: "Perawatan rambut intensif untuk setiap kebutuhan rambut, diformulasikan dengan bahan berkualitas dan teknologi terkini" },
     accentClass: "bg-brand-mk3",
     // MK3 brown — sampled from the wordmark art (#3E2120). Drives the About eyebrow,
     // the lineup wash + Learn more/Buy buttons and the CTA block.
@@ -45,8 +45,8 @@ const entry: Brand = {
       logoWidth: "26vw",
       maxWidth: "37vw",
       // Reference wording — two lines, no full stop.
-      tagline: "Kemewahan Perawatan Rambut Profesional dari Indonesia",
-      ctaText: "Learn more",
+      tagline: { en: "The Luxury of Professional Hair Care from Indonesia", id: "Kemewahan Perawatan Rambut Profesional dari Indonesia" },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "7%",
       offsetY: "10vh",
@@ -63,21 +63,21 @@ const entry: Brand = {
     // so every product lands at roughly the same visual height. Every scaled render
     // stays far below the source resolution.
     products: [
-      { name: "Scalp Exfoliator", variant: "Dandruff & Hair Fall", size: "50 mL", image: "/brand/mk3/product-lineup/MK3 3D SCALP EXFO IJO BIRU 1.png", imageScale: 1.03 },
-      { name: "Shampoo", variant: "Color Revive", size: "250 mL", image: "/brand/mk3/product-lineup/MK3 3D SHAMPOO COLOR REVIVE 1.png", imageScale: 1.15 },
-      { name: "Shampoo", variant: "Damage Repair", size: "250 mL", image: "/brand/mk3/product-lineup/MK3 3D SHAMPOO DAMAGE REPAIR 1.png", imageScale: 1.15 },
-      { name: "Shampoo", variant: "Purple Treatment", size: "250 mL", image: "/brand/mk3/product-lineup/MK3 3D SHAMPOO PURPLE 1.png", imageScale: 1.15 },
-      { name: "Shampoo", variant: "Dandruff & Hair Fall", size: "250 mL", image: "/brand/mk3/product-lineup/MK3 3D SHAMPOO BIRU IJO 1.png", imageScale: 0.91 },
-      { name: "Conditioner", variant: "Repair & Revive", size: "250 mL", image: "/brand/mk3/product-lineup/MK3 3D CONDI REPAIR REVIVE 1.png", imageScale: 1.15 },
-      { name: "Hair Mask", variant: "Repair & Revive", image: "/brand/mk3/product-lineup/MK3 3D HAIR MASK 1.png", imageScale: 1.57 },
-      { name: "Restructuring Serum", variant: "Repair & Revive", size: "50 mL", image: "/brand/mk3/product-lineup/MK3 3D SERUM 2.png", imageScale: 1.33 },
-      { name: "Leave-In Hair Mask", variant: "Bond Repair", size: "50 mL", image: "/brand/mk3/product-lineup/MK3 Leave in Hair Mask.png", imageScale: 0.67 },
-      { name: "Scalp Serum", variant: "Hair Fall Treatment", size: "20 mL", image: "/brand/mk3/product-lineup/MK3 3D SCALP SERUM IJO 1.png", imageScale: 1.04 },
-      { name: "Scalp Serum", variant: "Dandruff Treatment", size: "20 mL", image: "/brand/mk3/product-lineup/MK3 3D SCALP SERUM BIRU 1.png", imageScale: 1.04 },
+      { name: "Scalp Exfoliator", variant: { en: "Dandruff & Hair Fall", id: "Dandruff & Hair Fall" }, size: { en: "50 mL", id: "50 mL" }, image: "/brand/mk3/product-lineup/MK3 3D SCALP EXFO IJO BIRU 1.png", imageScale: 1.03 },
+      { name: "Shampoo", variant: { en: "Color Revive", id: "Color Revive" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/mk3/product-lineup/MK3 3D SHAMPOO COLOR REVIVE 1.png", imageScale: 1.15 },
+      { name: "Shampoo", variant: { en: "Damage Repair", id: "Damage Repair" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/mk3/product-lineup/MK3 3D SHAMPOO DAMAGE REPAIR 1.png", imageScale: 1.15 },
+      { name: "Shampoo", variant: { en: "Purple Treatment", id: "Purple Treatment" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/mk3/product-lineup/MK3 3D SHAMPOO PURPLE 1.png", imageScale: 1.15 },
+      { name: "Shampoo", variant: { en: "Dandruff & Hair Fall", id: "Dandruff & Hair Fall" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/mk3/product-lineup/MK3 3D SHAMPOO BIRU IJO 1.png", imageScale: 0.91 },
+      { name: "Conditioner", variant: { en: "Repair & Revive", id: "Repair & Revive" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/mk3/product-lineup/MK3 3D CONDI REPAIR REVIVE 1.png", imageScale: 1.15 },
+      { name: "Hair Mask", variant: { en: "Repair & Revive", id: "Repair & Revive" }, image: "/brand/mk3/product-lineup/MK3 3D HAIR MASK 1.png", imageScale: 1.57 },
+      { name: "Restructuring Serum", variant: { en: "Repair & Revive", id: "Repair & Revive" }, size: { en: "50 mL", id: "50 mL" }, image: "/brand/mk3/product-lineup/MK3 3D SERUM 2.png", imageScale: 1.33 },
+      { name: "Leave-In Hair Mask", variant: { en: "Bond Repair", id: "Bond Repair" }, size: { en: "50 mL", id: "50 mL" }, image: "/brand/mk3/product-lineup/MK3 Leave in Hair Mask.png", imageScale: 0.67 },
+      { name: "Scalp Serum", variant: { en: "Hair Fall Treatment", id: "Hair Fall Treatment" }, size: { en: "20 mL", id: "20 mL" }, image: "/brand/mk3/product-lineup/MK3 3D SCALP SERUM IJO 1.png", imageScale: 1.04 },
+      { name: "Scalp Serum", variant: { en: "Dandruff Treatment", id: "Dandruff Treatment" }, size: { en: "20 mL", id: "20 mL" }, image: "/brand/mk3/product-lineup/MK3 3D SCALP SERUM BIRU 1.png", imageScale: 1.04 },
     ],
     about: [
-      { title: "Formula Murni", image: "/brand/mk3/about/1.png" },
-      { title: "Teknologi Keratin Berbasis Vegan", image: "/brand/mk3/about/2.png" },
+      { title: { en: "Pure Formula", id: "Formula Murni" }, image: "/brand/mk3/about/1.png" },
+      { title: { en: "Vegan-Based Keratin Technology", id: "Teknologi Keratin Berbasis Vegan" }, image: "/brand/mk3/about/2.png" },
     ],
     // Showcase — the "Perawatan Mewah untuk Rambutmu" poster, then the three range
     // banners. Each bg ({n}-2) is a designed 4810×2260 warm-grey card with the wording

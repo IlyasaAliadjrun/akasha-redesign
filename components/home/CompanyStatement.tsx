@@ -1,8 +1,11 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { home } from "@/dictionaries/home";
 
 export default function CompanyStatement() {
+  const { href, t } = useLocale();
   return (
     <section className="bg-white py-20 sm:py-24 md:py-32 lg:py-48">
       <motion.div
@@ -13,27 +16,27 @@ export default function CompanyStatement() {
         className="max-w-3xl mx-auto text-center px-4 sm:px-6"
       >
         <p className="text-headline font-extrabold tracking-tightish leading-[1.1]">
-          We don&apos;t just make products.
+          {t(home.statement.heading1)}
           <br />
           <span className="text-ink/50 font-light">
-            We craft moments — of freshness, confidence, flavor, and joy.
+            {t(home.statement.heading2)}
           </span>
         </p>
         <p className="mt-6 sm:mt-8 text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-ink/60">
-          Akasha Wira International · Since 1985
+          {t(home.statement.tagline)}
         </p>
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
           <Link
-            href="/about"
+            href={href("/about")}
             className="text-sm font-semibold px-6 py-3 rounded-full border border-ink hover:bg-ink hover:text-white transition text-center"
           >
-            Our Story
+            {t(home.statement.ourStory)}
           </Link>
           <Link
-            href="/investor"
+            href={href("/investor")}
             className="text-sm font-semibold px-6 py-3 rounded-full border border-ink/20 hover:border-ink hover:text-ink transition text-ink/70 text-center"
           >
-            Investor Relations
+            {t(home.statement.investorRelations)}
           </Link>
         </div>
       </motion.div>

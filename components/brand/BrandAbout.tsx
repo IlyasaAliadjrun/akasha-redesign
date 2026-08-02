@@ -2,7 +2,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import type { Brand } from "@/lib/brands";
+import type { ResolvedBrand } from "@/lib/locale/resolve";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { BRAND } from "@/dictionaries/brand";
 
 // Image cards shown directly beneath BrandIntro. Renders nothing unless
 // the brand provides `about` entries (assets live in /public/brand/{slug}/about).
@@ -25,7 +27,8 @@ const SIZES: Record<number, string> = {
   3: "(min-width:640px) 33vw, 64vw",
 };
 
-export default function BrandAbout({ brand }: { brand: Brand }) {
+export default function BrandAbout({ brand }: { brand: ResolvedBrand }) {
+  const { t } = useLocale();
   const cards = brand.about ?? [];
   // 4+ cards keep wrapping in 3 columns, the densest layout the section supports.
   const cols = Math.min(Math.max(cards.length, 1), 3);
@@ -105,7 +108,7 @@ export default function BrandAbout({ brand }: { brand: Brand }) {
         {/* Nav arrows — mobile only (sm+ is a static grid, no overflow). */}
         <div className="flex sm:hidden items-center justify-center gap-3 mt-6">
           <button
-            aria-label="Previous"
+            aria-label={t(BRAND.common.previous)}
             onClick={() => scrollBy(-1)}
             disabled={!canPrev}
             className="w-11 h-11 rounded-full bg-ink/5 text-ink flex items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-ink/5 disabled:hover:text-ink"
@@ -113,7 +116,7 @@ export default function BrandAbout({ brand }: { brand: Brand }) {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
           </button>
           <button
-            aria-label="Next"
+            aria-label={t(BRAND.common.next)}
             onClick={() => scrollBy(1)}
             disabled={!canNext}
             className="w-11 h-11 rounded-full bg-ink/5 text-ink flex items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-ink/5 disabled:hover:text-ink"

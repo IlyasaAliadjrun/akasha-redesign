@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "hair-accessories",
     parent: "asters",
     name: "Hair Accessories",
-    tagline: `Penata rambut elegan, untuk menjaga\ndan menyempurnakan bentuk rambut.`,
-    ctaText: "Learn more",
+    tagline: { en: `Elegant hair styling tools, to hold\nand perfect your hairstyle.`, id: `Penata rambut elegan, untuk menjaga\ndan menyempurnakan bentuk rambut.` },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#A67E6C",
     bannerBg: "#6E4E40",
     heroWordmark: "/brand/asters/hero/wordmark.png",
@@ -21,9 +21,9 @@ const entry: SubBrand = {
     // every card at its own ratio inside this box rather than stretching them.
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/asters/hair-accessories/showcase/1.png", label: "Asters Paddle Detangler Brush" },
-      { image: "/brand/asters/hair-accessories/showcase/2.png", label: "Asters Volumizing Bangs Clip" },
-      { image: "/brand/asters/hair-accessories/showcase/3.png", label: "Asters Scalp Therapy Massager" },
+      { image: "/brand/asters/hair-accessories/showcase/1.png", label: { en: "Asters Paddle Detangler Brush", id: "Asters Paddle Detangler Brush" } },
+      { image: "/brand/asters/hair-accessories/showcase/2.png", label: { en: "Asters Volumizing Bangs Clip", id: "Asters Volumizing Bangs Clip" } },
+      { image: "/brand/asters/hair-accessories/showcase/3.png", label: { en: "Asters Scalp Therapy Massager", id: "Asters Scalp Therapy Massager" } },
     ],
   };
 

@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "styling-tools",
     parent: "asters",
     name: "Styling Tools",
-    tagline: `Penata rambut berteknologi premium,\ndirancang untuk membantu mewujudkan hasil berkualitas salon.`,
-    ctaText: "Learn more",
+    tagline: { en: "Premium-technology styling tools,\ndesigned to help you achieve salon-quality results.", id: "Penata rambut berteknologi premium,\ndirancang untuk membantu mewujudkan hasil berkualitas salon." },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#A67E6C",
     // SubBrandHero always prints its heading, tagline and CTA in white, so the banner
     // must be a deep tone. This is the brand taupe darkened to the point where BOTH
@@ -25,10 +25,10 @@ const entry: SubBrand = {
     showcaseTitleAspect: "3090 / 3357",
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/asters/styling-tools/showcase/1.png", label: "Asters VOLA — volumizing styler" },
-      { image: "/brand/asters/styling-tools/showcase/2.png", label: "Asters MOVA — hair straightening brush" },
-      { image: "/brand/asters/styling-tools/showcase/3.png", label: "Asters High Speed Hair Dryer" },
-      { image: "/brand/asters/styling-tools/showcase/4.png", label: "Asters High Performance Hair Iron" },
+      { image: "/brand/asters/styling-tools/showcase/1.png", label: { en: "Asters VOLA — volumizing styler", id: "Asters VOLA — penata rambut bervolume" } },
+      { image: "/brand/asters/styling-tools/showcase/2.png", label: { en: "Asters MOVA — hair straightening brush", id: "Asters MOVA — sikat pelurus rambut" } },
+      { image: "/brand/asters/styling-tools/showcase/3.png", label: { en: "Asters High Speed Hair Dryer", id: "Asters High Speed Hair Dryer" } },
+      { image: "/brand/asters/styling-tools/showcase/4.png", label: { en: "Asters High Performance Hair Iron", id: "Asters High Performance Hair Iron" } },
     ],
   };
 

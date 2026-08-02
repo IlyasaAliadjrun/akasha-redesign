@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "micellar",
     parent: "t1",
     name: "Micellar",
-    tagline: `Merawat kulit kepala sensitif\ndan rambut berminyak.`,
-    ctaText: "Learn more",
+    tagline: { en: `Cares for sensitive scalp\nand oily hair.`, id: `Merawat kulit kepala sensitif\ndan rambut berminyak.` },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // SubBrandHero renders its wording in white only, so the banner takes the DEEP
     // olive off the Micellar bottle label rather than the pale pistachio of the card
     // art (white on that pale green is unreadable). Same treatment as MK3 / Honey Dew.
@@ -28,8 +28,8 @@ const entry: SubBrand = {
     showcaseTitleAspect: "3992 / 3243",
     cardAspect: "2302 / 2987",
     cards: [
-      { image: "/brand/t1/micellar/showcase/1.png", label: "Micellar Shampoo — kulit kepala sensitif & berminyak" },
-      { image: "/brand/t1/micellar/showcase/2.png", label: "Micellar Conditioner — rambut sensitif & berminyak" },
+      { image: "/brand/t1/micellar/showcase/1.png", label: { en: "Micellar Shampoo — for sensitive & oily scalp", id: "Micellar Shampoo — kulit kepala sensitif & berminyak" } },
+      { image: "/brand/t1/micellar/showcase/2.png", label: { en: "Micellar Conditioner — for sensitive & oily hair", id: "Micellar Conditioner — rambut sensitif & berminyak" } },
     ],
   };
 

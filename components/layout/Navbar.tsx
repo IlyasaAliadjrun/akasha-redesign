@@ -4,13 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import MegaMenu from "./MegaMenu";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { stripLocale } from "@/lib/locale/paths";
+import { NAV } from "@/dictionaries/layout";
 
 const NAV_LINKS = [
-  { href: "/about", label: "About" },
-  { href: "/investor", label: "Investor" },
-  { href: "/governance", label: "Governance" },
-  { href: "/careers", label: "Careers" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: NAV.about },
+  { href: "/investor", label: NAV.investor },
+  { href: "/governance", label: NAV.governance },
+  { href: "/careers", label: NAV.careers },
+  { href: "/contact", label: NAV.contact },
 ];
 
 function NavLink({
@@ -43,12 +47,16 @@ function NavLink({
 type Theme = "dark" | "light" | null;
 
 // Routes whose first section is `data-theme="dark"` — used to seed the initial
-// state so the navbar paints correctly before the DOM sample runs.
-const startsOnDark = (path: string) =>
-  path === "/" || path.startsWith("/brands/");
+// state so the navbar paints correctly before the DOM sample runs. Compared after
+// stripping the /en or /id locale prefix, so it doesn't care which locale is active.
+const startsOnDark = (path: string) => {
+  const p = stripLocale(path);
+  return p === "/" || p.startsWith("/brands/");
+};
 
 export default function Navbar() {
   const pathname = usePathname() || "/";
+  const { asset, href, t } = useLocale();
   const [overTheme, setOverTheme] = useState<Theme>(() =>
     startsOnDark(pathname) ? "dark" : null
   );
@@ -130,12 +138,12 @@ export default function Navbar() {
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 h-14 sm:h-16 md:h-20 lg:h-24 flex items-center justify-between">
           <Link
-            href="/"
+            href={href("/")}
             aria-label="Akasha — home"
             className="inline-flex items-center transition-opacity duration-300 hover:opacity-70"
           >
             <Image
-              src={darkContent ? "/shared/logo-color.png" : "/shared/logo-white.png"}
+              src={asset(darkContent ? "/shared/logo-color.png" : "/shared/logo-white.png")}
               alt="Akasha"
               width={240}
               height={72}
@@ -145,7 +153,7 @@ export default function Navbar() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
-            <NavLink href="/about">About</NavLink>
+            <NavLink href={href("/about")}>{t(NAV.about)}</NavLink>
 
             <button
               onMouseEnter={openBrands}
@@ -154,7 +162,7 @@ export default function Navbar() {
               className="relative group text-sm font-medium transition-opacity duration-300 opacity-80 hover:opacity-100"
             >
               <span className="relative inline-flex items-center gap-1.5">
-                Brands
+                {t(NAV.brands)}
                 <svg
                   width="10"
                   height="10"
@@ -176,13 +184,20 @@ export default function Navbar() {
               </span>
             </button>
 
-            <NavLink href="/investor">Investor</NavLink>
-            <NavLink href="/governance">Governance</NavLink>
-            <NavLink href="/careers">Careers</NavLink>
-            <NavLink href="/contact">Contact</NavLink>
+            <NavLink href={href("/investor")}>{t(NAV.investor)}</NavLink>
+            <NavLink href={href("/governance")}>{t(NAV.governance)}</NavLink>
+            <NavLink href={href("/careers")}>{t(NAV.careers)}</NavLink>
+            <NavLink href={href("/contact")}>{t(NAV.contact)}</NavLink>
           </nav>
 
           <div className="flex items-center gap-4">
+            <LanguageSwitcher
+              className={`hidden lg:inline-flex items-center text-sm font-semibold w-9 h-9 rounded-full border transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.98] justify-center ${
+                darkContent
+                  ? "border-ink/30 text-ink hover:bg-ink hover:text-white hover:border-ink"
+                  : "border-white/70 text-white hover:bg-white hover:text-ink hover:border-white"
+              }`}
+            />
             <a
               href="https://shop.akasha.co.id"
               target="_blank"
@@ -193,10 +208,10 @@ export default function Navbar() {
                   : "border-white/70 text-white hover:bg-white hover:text-ink hover:border-white"
               }`}
             >
-              Online Shop
+              {t(NAV.onlineShop)}
             </a>
             <button
-              aria-label="Menu"
+              aria-label={t(NAV.menu)}
               className="lg:hidden w-10 h-10 flex items-center justify-center relative"
               onClick={() => setMobileOpen((v) => !v)}
             >
@@ -239,22 +254,25 @@ export default function Navbar() {
             <Link
               key={l.href}
               onClick={() => setMobileOpen(false)}
-              href={l.href}
+              href={href(l.href)}
               className="transition-opacity duration-300 hover:opacity-60"
             >
-              {l.label}
+              {t(l.label)}
             </Link>
           ))}
         </div>
-        <a
-          href="https://shop.akasha.co.id"
-          target="_blank"
-          rel="noreferrer"
-          onClick={() => setMobileOpen(false)}
-          className="mt-10 mb-20 inline-block text-sm font-semibold px-6 py-3 rounded-full bg-ink text-white"
-        >
-          Online Shop →
-        </a>
+        <div className="mt-10 mb-20 flex items-center gap-3">
+          <a
+            href="https://shop.akasha.co.id"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => setMobileOpen(false)}
+            className="inline-block text-sm font-semibold px-6 py-3 rounded-full bg-ink text-white"
+          >
+            {t(NAV.onlineShop)} →
+          </a>
+          <LanguageSwitcher className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-ink/15 text-sm font-semibold" />
+        </div>
       </div>
     </>
   );

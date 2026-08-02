@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "damage-repair",
     parent: "mk3",
     name: "Damage Repair",
-    tagline: `Perbaikan Intensif untuk Rambut\nKering, Rapuh, dan Over-Processed`,
-    ctaText: "Learn more",
+    tagline: { en: `Intensive Repair for\nDry, Brittle, and Over-Processed Hair`, id: `Perbaikan Intensif untuk Rambut\nKering, Rapuh, dan Over-Processed` },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#3E2120",
     // SubBrandHero renders its wording in white only, so the banner keeps the MK3
     // brown rather than the reference's light beige (see the note handed to the
@@ -28,14 +28,14 @@ const entry: SubBrand = {
     showcaseTitle: "/brand/mk3/damage-repair/showcase/title.png",
     showcaseTitleAspect: "4153 / 3401",
     // The leave-in mask ships as a landscape card, so it takes the full-width slot.
-    featured: { image: "/brand/mk3/damage-repair/showcase/5.png", label: "Leave-In Hair Mask — masker rambut tanpa bilas" },
+    featured: { image: "/brand/mk3/damage-repair/showcase/5.png", label: { en: "Leave-In Hair Mask — a no-rinse hair mask", id: "Leave-In Hair Mask — masker rambut tanpa bilas" } },
     featuredAspect: "4811 / 2261",
     cardAspect: "1151 / 1493",
     cards: [
-      { image: "/brand/mk3/damage-repair/showcase/1.png", label: "Shampoo Damage Repair" },
-      { image: "/brand/mk3/damage-repair/showcase/2.png", label: "Conditioner Repair & Revive" },
-      { image: "/brand/mk3/damage-repair/showcase/3.png", label: "Hair Mask Repair & Revive" },
-      { image: "/brand/mk3/damage-repair/showcase/4.png", label: "Restructuring Serum Repair & Revive" },
+      { image: "/brand/mk3/damage-repair/showcase/1.png", label: { en: "Shampoo Damage Repair", id: "Shampoo Damage Repair" } },
+      { image: "/brand/mk3/damage-repair/showcase/2.png", label: { en: "Conditioner Repair & Revive", id: "Conditioner Repair & Revive" } },
+      { image: "/brand/mk3/damage-repair/showcase/3.png", label: { en: "Hair Mask Repair & Revive", id: "Hair Mask Repair & Revive" } },
+      { image: "/brand/mk3/damage-repair/showcase/4.png", label: { en: "Restructuring Serum Repair & Revive", id: "Restructuring Serum Repair & Revive" } },
     ],
   };
 

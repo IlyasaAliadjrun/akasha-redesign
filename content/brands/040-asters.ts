@@ -6,9 +6,11 @@ const entry: Brand = {
     name: "Asters",
     division: "beauty",
     parent: "makarizo",
-    tagline: "Alat kecantikan dengan performa terbaik, untuk semua.",
-    description:
-      "Gaya rambut ala salon setiap hari dari rumah. Wujudkan rambut memukau dengan koleksi premium dari Makarizo Asters. Dilengkapi teknologi pelindung panas pintar, ciptakan gaya tahan lama sekaligus jaga kesehatan rambut Anda dengan mudah.",
+    tagline: { en: "Beauty tools with the best performance, for everyone.", id: "Alat kecantikan dengan performa terbaik, untuk semua." },
+    description: {
+      en: "Salon-quality hairstyles every day, right at home. Achieve stunning hair with the premium collection from Makarizo Asters. Equipped with smart heat-protection technology, create long-lasting styles while keeping your hair healthy with ease.",
+      id: "Gaya rambut ala salon setiap hari dari rumah. Wujudkan rambut memukau dengan koleksi premium dari Makarizo Asters. Dilengkapi teknologi pelindung panas pintar, ciptakan gaya tahan lama sekaligus jaga kesehatan rambut Anda dengan mudah.",
+    },
     accentClass: "bg-brand-asters",
     // Sampled from the "asters" lettering in hero/wordmark.png — the same warm
     // taupe used for every heading baked into the showcase artwork.
@@ -32,8 +34,8 @@ const entry: Brand = {
       logoAspect: "1513 / 740",
       logoWidth: "32vw",
       maxWidth: "34vw",
-      tagline: "Alat kecantikan dengan performa terbaik, untuk semua",
-      ctaText: "Learn more",
+      tagline: { en: "Beauty tools with the best performance, for everyone", id: "Alat kecantikan dengan performa terbaik, untuk semua" },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
       offsetY: "12vh",
@@ -48,8 +50,8 @@ const entry: Brand = {
       // `imageScale` normalises the SKUs against each other: the artwork is cropped
       // tight per product, so a small accessory (massager, bangs clip) would
       // otherwise render as tall as a hair dryer inside the square stage.
-      { name: "VOLA", variant: "Volumizing Styler", image: "/brand/asters/product-lineup/vola-volumizing-styler.png" },
-      { name: "MOVA", variant: "Hair Straightening Brush", image: "/brand/asters/product-lineup/mova-hair-straightening-brush.png" },
+      { name: "VOLA", variant: { en: "Volumizing Styler", id: "Penata Rambut Bervolume" }, image: "/brand/asters/product-lineup/vola-volumizing-styler.png" },
+      { name: "MOVA", variant: { en: "Hair Straightening Brush", id: "Sikat Pelurus Rambut" }, image: "/brand/asters/product-lineup/mova-hair-straightening-brush.png" },
       { name: "High Speed Hair Dryer", image: "/brand/asters/product-lineup/high-speed-hair-dryer.png" },
       { name: "High Performance Hair Iron", image: "/brand/asters/product-lineup/high-performance-hair-iron.png" },
       { name: "Scalp Therapy Massager", image: "/brand/asters/product-lineup/scalp-therapy-massager.png", imageScale: 0.55 },
@@ -57,8 +59,8 @@ const entry: Brand = {
       { name: "Volumizing Bangs Clip", image: "/brand/asters/product-lineup/volumizing-bangs-clip.png", imageScale: 0.68 },
     ],
     about: [
-      { title: "Teknologi Canggih", image: "/brand/asters/about/1.png" },
-      { title: "Lembut di Rambut", image: "/brand/asters/about/2.png" },
+      { title: { en: "Advanced Technology", id: "Teknologi Canggih" }, image: "/brand/asters/about/1.png" },
+      { title: { en: "Gentle on Hair", id: "Lembut di Rambut" }, image: "/brand/asters/about/2.png" },
     ],
     showcase: {
       hero: "/brand/asters/showcase/title.png",

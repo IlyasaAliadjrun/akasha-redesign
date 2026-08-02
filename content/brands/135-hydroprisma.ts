@@ -8,12 +8,12 @@ const entry: Brand = {
     // HydroPrisma is the Makarizo Professional rebonding technology line — same
     // family as Rebonding System / Concept Ultimax, so it hangs off the same umbrella.
     parent: "makarizo-professional",
-    tagline: "Kreasi tak terbatas, kilau kuat tanpa batas.",
+    tagline: { en: "Unlimited creations, unstoppable shine.", id: "Kreasi tak terbatas, kilau kuat tanpa batas." },
     // Single sentence on purpose: BrandIntro renders the first sentence as the big
     // statement and everything after ". " as the light grey second line. The
     // reference carries only this one statement.
     description:
-      "Diformulasikan khusus untuk menghasilkan pelurusan dan pembentukan tekstur rambut yang sehat, lembut, serta bebas aroma menyengat",
+      { en: "Specially formulated to deliver healthy, smooth hair straightening and texturizing, free from strong odor", id: "Diformulasikan khusus untuk menghasilkan pelurusan dan pembentukan tekstur rambut yang sehat, lembut, serta bebas aroma menyengat" },
     accentClass: "bg-brand-hydroprisma",
     // HydroPrisma purple — sampled from the wordmark art and the showcase headings
     // (rgb(95,33,104) on hero/wordmark.png, rgb(98,31,102) on the MILD banner).
@@ -50,8 +50,8 @@ const entry: Brand = {
       // So `maxWidth` governs the TAGLINE only, and 24vw breaks it where the reference
       // breaks it: "1 Produk untuk Kreasi" / "Tak Terbatas".
       maxWidth: "24vw",
-      tagline: "1 Produk untuk Kreasi Tak Terbatas",
-      ctaText: "Learn more",
+      tagline: { en: "1 Product for Unlimited Creations", id: "1 Produk untuk Kreasi Tak Terbatas" },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "8%",
       // The reference sets the whole text column well below centre, under the product
@@ -70,17 +70,17 @@ const entry: Brand = {
       // `variant` carries the strength AND the pack format: the same three strengths
       // ship as a jar and as a pouch, and name+variant is the card's React key, so it
       // has to stay unique per SKU.
-      { name: "Straightening Cream", variant: "Mild · Jar", size: "500 mL", image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 1 500mL Jar Image 15102019 Mild.png" },
-      { name: "Straightening Cream", variant: "Medium · Jar", size: "500 mL", image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 1 500mL Jar Image 15102019 Medium.png" },
-      { name: "Straightening Cream", variant: "Strong · Jar", size: "500 mL", image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 1 500mL Jar Image 15102019 Strong.png" },
-      { name: "Liquid Neutralizer", variant: "Step 2", size: "500 mL", image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 2 Bottle Image 15102019 Liquid.png" },
+      { name: "Straightening Cream", variant: { en: "Mild · Jar", id: "Mild · Jar" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 1 500mL Jar Image 15102019 Mild.png" },
+      { name: "Straightening Cream", variant: { en: "Medium · Jar", id: "Medium · Jar" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 1 500mL Jar Image 15102019 Medium.png" },
+      { name: "Straightening Cream", variant: { en: "Strong · Jar", id: "Strong · Jar" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 1 500mL Jar Image 15102019 Strong.png" },
+      { name: "Liquid Neutralizer", variant: { en: "Step 2", id: "Step 2" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 2 Bottle Image 15102019 Liquid.png" },
       // The pouch artwork sits on a wide 4961×3508 canvas, so `object-contain` fits it
       // by WIDTH inside the square card. The pouch still lands at 219 px tall against
       // the jar's 243 px — close enough that no `imageScale` correction is needed, and
       // scaling it up would make the refill read taller than the jar it refills.
-      { name: "Straightening Cream", variant: "Mild · Pouch", size: "500 mL", image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Straightening Cream 500ml Pouch Imagery 23042019 MILD.png" },
-      { name: "Straightening Cream", variant: "Medium · Pouch", size: "500 mL", image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Straightening Cream 500ml Pouch Imagery 23042019 MEDIUM.png" },
-      { name: "Straightening Cream", variant: "Strong · Pouch", size: "500 mL", image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Straightening Cream 500ml Pouch Imagery 23042019 STRONG.png" },
+      { name: "Straightening Cream", variant: { en: "Mild · Pouch", id: "Mild · Pouch" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Straightening Cream 500ml Pouch Imagery 23042019 MILD.png" },
+      { name: "Straightening Cream", variant: { en: "Medium · Pouch", id: "Medium · Pouch" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Straightening Cream 500ml Pouch Imagery 23042019 MEDIUM.png" },
+      { name: "Straightening Cream", variant: { en: "Strong · Pouch", id: "Strong · Pouch" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Straightening Cream 500ml Pouch Imagery 23042019 STRONG.png" },
     ],
     // NOTE — BrandAbout is intentionally left out for now: public/brand/hydroprisma/about/
     // was delivered EMPTY, so there is no artwork for the two cards the reference shows

@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "body-care",
     parent: "barber-daily",
     name: "Body Care",
-    tagline: "Hilangkan keringat & bau badan.",
-    ctaText: "Learn more",
+    tagline: { en: "Eliminates sweat & body odor.", id: "Hilangkan keringat & bau badan." },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#6B3F1D",
     bannerBg: "#6B3F1D",
     heroWordmark: "/brand/barber-daily/body-care/hero/wordmark.png",
@@ -27,8 +27,8 @@ const entry: SubBrand = {
     showcaseTitleAspect: "5028 / 2908",
     cardAspect: "2302 / 2987",
     cards: [
-      { image: "/brand/barber-daily/body-care/1.png", label: "Antiperspirant" },
-      { image: "/brand/barber-daily/body-care/2.png", label: "Perfume" },
+      { image: "/brand/barber-daily/body-care/1.png", label: { en: "Antiperspirant", id: "Antiperspirant" } },
+      { image: "/brand/barber-daily/body-care/2.png", label: { en: "Perfume", id: "Perfume" } },
     ],
   };
 

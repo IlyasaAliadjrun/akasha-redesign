@@ -6,8 +6,8 @@ const entry: SubBrand = {
     parent: "honey-dew",
     name: "Deep Moist & Shine Shampoo",
     // Copy taken verbatim from the line's own reference banner.
-    tagline: `Perbaikan Intensif untuk Rambut\nKering, Rapuh, dan Over-Processed`,
-    ctaText: "Learn more",
+    tagline: { en: `Intensive Repair for\nDry, Brittle, and Over-Processed Hair`, id: `Perbaikan Intensif untuk Rambut\nKering, Rapuh, dan Over-Processed` },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#E0B058",
     // SubBrandHero always paints its wording white, so the banner takes the brand's
     // own honey-brown (sampled from the showcase title art, rgb(100,64,45)) instead

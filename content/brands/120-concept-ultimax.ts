@@ -6,12 +6,12 @@ const entry: Brand = {
     name: "Concept Ultimax",
     division: "beauty",
     parent: "makarizo-professional",
-    tagline: "Pewarna rambut permanen Vegan Vibrant.",
+    tagline: { en: "Permanent Vegan Vibrant hair color.", id: "Pewarna rambut permanen Vegan Vibrant." },
     // Single sentence on purpose: BrandIntro renders the first sentence as the big
     // statement and everything after ". " as the light grey second line. The
     // reference has only the one statement, so there is nothing after it.
     description:
-      "Pewarna rambut permanen Vegan Vibrant dengan efek warna yang lebih intens, lebih berkilau dan tahan lama berkat SUPER FOODS BIOMOLEKULER",
+      { en: "Permanent Vegan Vibrant hair color with a more intense, glossier, longer-lasting color effect thanks to SUPER FOODS BIOMOLECULAR", id: "Pewarna rambut permanen Vegan Vibrant dengan efek warna yang lebih intens, lebih berkilau dan tahan lama berkat SUPER FOODS BIOMOLEKULER" },
     accentClass: "bg-brand-ultimax",
     // Concept Ultimax pink — the magenta the reference uses for headings, the
     // check icons and the wordmark (sampled rgb(227,70,134) across the showcase art).
@@ -42,8 +42,8 @@ const entry: Brand = {
       // on the reference's two lines ("Pewarna Rambut Permanen" / "Vegan Vibrant").
       logoWidth: "44vw",
       maxWidth: "32vw",
-      tagline: "Pewarna Rambut Permanen Vegan Vibrant",
-      ctaText: "Learn more",
+      tagline: { en: "Permanent Vegan Vibrant Hair Color", id: "Pewarna Rambut Permanen Vegan Vibrant" },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "5%",
       offsetY: "10vh",
@@ -59,25 +59,25 @@ const entry: Brand = {
       // `variant` carries the full spec because the range repeats every developer
       // strength in two pack sizes — name+variant is the card's React key, so it has
       // to stay unique per SKU.
-      { name: "Color Tube", variant: "90 gr", image: "/brand/concept-ultimax/product-lineup/color-tube-90gr.png" },
-      { name: "Bleaching Powder", variant: "250 gr", image: "/brand/concept-ultimax/product-lineup/bleaching-powder-250gr.png" },
-      { name: "Bleaching Powder", variant: "500 gr", image: "/brand/concept-ultimax/product-lineup/bleaching-powder-500gr.png" },
-      { name: "Activator", variant: "135 mL", image: "/brand/concept-ultimax/product-lineup/activator-135ml.png" },
-      { name: "Cream Developer", variant: "10 Vol · 135 mL", image: "/brand/concept-ultimax/product-lineup/cream-developer-135ml-10-vol.png" },
-      { name: "Cream Developer", variant: "20 Vol · 135 mL", image: "/brand/concept-ultimax/product-lineup/cream-developer-135ml-20-vol.png" },
-      { name: "Cream Developer", variant: "30 Vol · 135 mL", image: "/brand/concept-ultimax/product-lineup/cream-developer-135ml-30-vol.png" },
-      { name: "Cream Developer", variant: "40 Vol · 135 mL", image: "/brand/concept-ultimax/product-lineup/cream-developer-135ml-40-vol.png" },
-      { name: "Activator", variant: "1000 mL", image: "/brand/concept-ultimax/product-lineup/activator-1000ml.png" },
-      { name: "Cream Developer", variant: "10 Vol · 1000 mL", image: "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-10-vol.png" },
-      { name: "Cream Developer", variant: "20 Vol · 1000 mL", image: "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-20-vol.png" },
-      { name: "Cream Developer", variant: "30 Vol · 1000 mL", image: "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-30-vol.png" },
-      { name: "Cream Developer", variant: "40 Vol · 1000 mL", image: "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-40-vol.png" },
+      { name: "Color Tube", variant: { en: "90 gr", id: "90 gr" }, image: "/brand/concept-ultimax/product-lineup/color-tube-90gr.png" },
+      { name: "Bleaching Powder", variant: { en: "250 gr", id: "250 gr" }, image: "/brand/concept-ultimax/product-lineup/bleaching-powder-250gr.png" },
+      { name: "Bleaching Powder", variant: { en: "500 gr", id: "500 gr" }, image: "/brand/concept-ultimax/product-lineup/bleaching-powder-500gr.png" },
+      { name: "Activator", variant: { en: "135 mL", id: "135 mL" }, image: "/brand/concept-ultimax/product-lineup/activator-135ml.png" },
+      { name: "Cream Developer", variant: { en: "10 Vol · 135 mL", id: "10 Vol · 135 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-135ml-10-vol.png" },
+      { name: "Cream Developer", variant: { en: "20 Vol · 135 mL", id: "20 Vol · 135 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-135ml-20-vol.png" },
+      { name: "Cream Developer", variant: { en: "30 Vol · 135 mL", id: "30 Vol · 135 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-135ml-30-vol.png" },
+      { name: "Cream Developer", variant: { en: "40 Vol · 135 mL", id: "40 Vol · 135 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-135ml-40-vol.png" },
+      { name: "Activator", variant: { en: "1000 mL", id: "1000 mL" }, image: "/brand/concept-ultimax/product-lineup/activator-1000ml.png" },
+      { name: "Cream Developer", variant: { en: "10 Vol · 1000 mL", id: "10 Vol · 1000 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-10-vol.png" },
+      { name: "Cream Developer", variant: { en: "20 Vol · 1000 mL", id: "20 Vol · 1000 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-20-vol.png" },
+      { name: "Cream Developer", variant: { en: "30 Vol · 1000 mL", id: "30 Vol · 1000 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-30-vol.png" },
+      { name: "Cream Developer", variant: { en: "40 Vol · 1000 mL", id: "40 Vol · 1000 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-40-vol.png" },
     ],
     // Super Foods Biomolekuler — the three actives, in the reference's order.
     about: [
-      { title: "Argan Oil", image: "/brand/concept-ultimax/about/3.png" },
-      { title: "Ekstrak Pomegranate", image: "/brand/concept-ultimax/about/2.png" },
-      { title: "Vegetal Keratin Complex", image: "/brand/concept-ultimax/about/1.png" },
+      { title: { en: "Argan Oil", id: "Argan Oil" }, image: "/brand/concept-ultimax/about/3.png" },
+      { title: { en: "Pomegranate Extract", id: "Ekstrak Pomegranate" }, image: "/brand/concept-ultimax/about/2.png" },
+      { title: { en: "Vegetal Keratin Complex", id: "Vegetal Keratin Complex" }, image: "/brand/concept-ultimax/about/1.png" },
     ],
     showcase: {
       hero: "/brand/concept-ultimax/showcase/title.png",

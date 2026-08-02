@@ -5,12 +5,12 @@ const entry: Brand = {
     slug: "make-it",
     name: "Make It",
     division: "beauty",
-    tagline: "Lets Make It Happen.",
+    tagline: { en: "Lets Make It Happen.", id: "Ayo, Make It Terjadi." },
     // BrandIntro renders the first sentence bold and anything after ". " in a light
     // grey block. The reference shows one uninterrupted bold statement, so the two
     // clauses are joined with an em dash (the component appends the full stop).
     description:
-      "Make It hadir untuk kamu yang berani mendobrak batas dan tampil beda — berani jadikan Make It nyata",
+      { en: "Make It is here for those who dare to break boundaries and stand out — bold enough to make Make It real", id: "Make It hadir untuk kamu yang berani mendobrak batas dan tampil beda — berani jadikan Make It nyata" },
     accentClass: "bg-brand-makeit",
     // Make It's identity is the deep maroon of its banners (sampled from
     // showcase/1-2.png). Drives the intro eyebrow, lineup buttons and the closing CTA.
@@ -46,8 +46,8 @@ const entry: Brand = {
       logoAspect: "1499 / 446",
       logoWidth: "27vw",
       maxWidth: "30vw",
-      tagline: "Untuk Mereka yang Proaktif dan Berani Bertindak Bersama Make It",
-      ctaText: "Learn more",
+      tagline: { en: "For Those Who Are Proactive and Bold, Together With Make It", id: "Untuk Mereka yang Proaktif dan Berani Bertindak Bersama Make It" },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
       offsetY: "6vh",
@@ -58,18 +58,18 @@ const entry: Brand = {
     bannerBg: "#7D2628",
     hero: false,
     products: [
-      { name: "Essence Sanctuary", variant: "Fragrance Enhancing Primer", image: "/brand/makeit/product-lineup/essence-sanctuary.png" },
-      { name: "Mango Glacé", variant: "Extrait d'Intense Parfum", image: "/brand/makeit/product-lineup/mango-glace.png" },
-      { name: "Bold Venture", variant: "Parfum", image: "/brand/makeit/product-lineup/bold-venture.png" },
-      { name: "Keep in Touch", variant: "Parfum", image: "/brand/makeit/product-lineup/keep-in-touch.png" },
-      { name: "Dream Chaser", variant: "Parfum", image: "/brand/makeit/product-lineup/dream-chaser.png" },
-      { name: "Weekday Hustle", variant: "Parfum", image: "/brand/makeit/product-lineup/weekday-hustle.png" },
-      { name: "Social Butterfly", variant: "Parfum", image: "/brand/makeit/product-lineup/social-butterfly.png" },
+      { name: "Essence Sanctuary", variant: { en: "Fragrance Enhancing Primer", id: "Primer Peningkat Aroma" }, image: "/brand/makeit/product-lineup/essence-sanctuary.png" },
+      { name: "Mango Glacé", variant: { en: "Extrait d'Intense Parfum", id: "Extrait d'Intense Parfum" }, image: "/brand/makeit/product-lineup/mango-glace.png" },
+      { name: "Bold Venture", variant: { en: "Parfum", id: "Parfum" }, image: "/brand/makeit/product-lineup/bold-venture.png" },
+      { name: "Keep in Touch", variant: { en: "Parfum", id: "Parfum" }, image: "/brand/makeit/product-lineup/keep-in-touch.png" },
+      { name: "Dream Chaser", variant: { en: "Parfum", id: "Parfum" }, image: "/brand/makeit/product-lineup/dream-chaser.png" },
+      { name: "Weekday Hustle", variant: { en: "Parfum", id: "Parfum" }, image: "/brand/makeit/product-lineup/weekday-hustle.png" },
+      { name: "Social Butterfly", variant: { en: "Parfum", id: "Parfum" }, image: "/brand/makeit/product-lineup/social-butterfly.png" },
     ],
     about: [
-      { title: "30%–50% Konsentrat Parfum", image: "/brand/makeit/about/1.png" },
-      { title: "Tahan Hingga 12 Jam", image: "/brand/makeit/about/2.png" },
-      { title: "Aroma Yang Unik", image: "/brand/makeit/about/3.png" },
+      { title: { en: "30%–50% Perfume Concentrate", id: "30%–50% Konsentrat Parfum" }, image: "/brand/makeit/about/1.png" },
+      { title: { en: "Lasts Up to 12 Hours", id: "Tahan Hingga 12 Jam" }, image: "/brand/makeit/about/2.png" },
+      { title: { en: "A Unique Scent", id: "Aroma Yang Unik" }, image: "/brand/makeit/about/3.png" },
     ],
     // Showcase — the "#1 Primer Parfum" poster, then the three range banners.
     // The banner art is a designed card (4810×2261, rounded corners baked in), so

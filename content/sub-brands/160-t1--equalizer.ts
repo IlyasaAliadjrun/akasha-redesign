@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "equalizer",
     parent: "t1",
     name: "Equalizer",
-    tagline: `Menenangkan kulit kepala sensitif\ndan rambut kering.`,
-    ctaText: "Learn more",
+    tagline: { en: "Soothes sensitive scalp\nand dry hair.", id: "Menenangkan kulit kepala sensitif\ndan rambut kering." },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#B15F45", // Equalizer terracotta, sampled from the line's banner art
     bannerBg: "#B15F45",
     heroWordmark: "/brand/t1/equalizer/hero/wordmark.png",
@@ -25,8 +25,8 @@ const entry: SubBrand = {
     // cards the same size and aligned instead of letterboxing them.
     cardAspect: "2302 / 3379",
     cards: [
-      { image: "/brand/t1/equalizer/showcase/1.png", label: "Equalizer Shampoo — kulit kepala sensitif & kering" },
-      { image: "/brand/t1/equalizer/showcase/2.png", label: "Equalizer Conditioner — rambut sensitif & kering" },
+      { image: "/brand/t1/equalizer/showcase/1.png", label: { en: "Equalizer Shampoo — for sensitive & dry scalp", id: "Equalizer Shampoo — kulit kepala sensitif & kering" } },
+      { image: "/brand/t1/equalizer/showcase/2.png", label: { en: "Equalizer Conditioner — for sensitive & dry hair", id: "Equalizer Conditioner — rambut sensitif & kering" } },
     ],
   };
 

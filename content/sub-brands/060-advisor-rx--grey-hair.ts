@@ -6,8 +6,8 @@ const entry: SubBrand = {
     parent: "advisor-rx",
     name: "Grey Hair Expert Care",
     // Copy taken verbatim from the line's own showcase banner art.
-    tagline: `Membantu mengurangi rambut uban,\ndan menghitamkan rambut.`,
-    ctaText: "Learn more",
+    tagline: { en: "Helps reduce grey hair,\nand restores natural hair color.", id: "Membantu mengurangi rambut uban,\ndan menghitamkan rambut." },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // Grey Hair rose — sampled from the line's banner and card art (rgb(247,162,154)).
     accentHex: "#F7A29A",
     bannerBg: "#F7A29A",
@@ -37,9 +37,9 @@ const entry: SubBrand = {
     // grid. Card art ratios vary by <1.5 %, so one box ratio holds them all.
     cardAspect: "2303 / 3026",
     cards: [
-      { image: "/brand/advisor-rx/grey-hair/showcase/1.png", label: "Grey Hair Shampoo" },
-      { image: "/brand/advisor-rx/grey-hair/showcase/2.png", label: "Grey Hair Boosting Mask" },
-      { image: "/brand/advisor-rx/grey-hair/showcase/3.png", label: "Grey Hair Scalp Serum" },
+      { image: "/brand/advisor-rx/grey-hair/showcase/1.png", label: { en: "Grey Hair Shampoo", id: "Grey Hair Shampoo" } },
+      { image: "/brand/advisor-rx/grey-hair/showcase/2.png", label: { en: "Grey Hair Boosting Mask", id: "Grey Hair Masker Penguat" } },
+      { image: "/brand/advisor-rx/grey-hair/showcase/3.png", label: { en: "Grey Hair Scalp Serum", id: "Grey Hair Serum Kulit Kepala" } },
     ],
   };
 

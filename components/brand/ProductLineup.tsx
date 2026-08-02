@@ -2,9 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import type { Brand } from "@/lib/brands";
+import type { ResolvedBrand } from "@/lib/locale/resolve";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { BRAND } from "@/dictionaries/brand";
 
-export default function ProductLineup({ brand }: { brand: Brand }) {
+export default function ProductLineup({ brand }: { brand: ResolvedBrand }) {
+  const { t } = useLocale();
   const railRef = useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);
@@ -77,7 +80,7 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
     <section className="bg-white py-16 sm:py-20 md:py-24 lg:py-32">
       <div className="max-w-content mx-auto px-6 lg:px-10 mb-8 sm:mb-10 lg:mb-14 flex items-end justify-center md:justify-start gap-6">
         <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05] text-center md:text-left">
-          {brand.lineupTitle ?? "Explore the lineup."}
+          {brand.lineupTitle ?? t(BRAND.lineup.defaultTitle)}
         </h2>
       </div>
 
@@ -85,7 +88,7 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
       {/* Desktop nav arrows — on the left/right sides, vertically centred on the
           product image. Mobile uses the bottom arrows below. */}
       <button
-        aria-label="Previous"
+        aria-label={t(BRAND.common.previous)}
         onClick={() => scrollBy(-1)}
         disabled={!canPrev}
         className="hidden md:flex absolute left-3 lg:left-6 top-[34%] -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white text-ink shadow-[0_4px_20px_rgba(0,0,0,0.12)] items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-0 disabled:pointer-events-none"
@@ -93,7 +96,7 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
       </button>
       <button
-        aria-label="Next"
+        aria-label={t(BRAND.common.next)}
         onClick={() => scrollBy(1)}
         disabled={!canNext}
         className="hidden md:flex absolute right-3 lg:right-6 top-[34%] -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white text-ink shadow-[0_4px_20px_rgba(0,0,0,0.12)] items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-0 disabled:pointer-events-none"
@@ -173,7 +176,7 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
                       <path d="M21 15l-5-5L5 21" />
                     </svg>
                     <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-semibold">
-                      Product image
+                      {t(BRAND.lineup.productImage)}
                     </span>
                   </div>
                 )}
@@ -197,7 +200,7 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
                     color: brand.accentHex,
                   }}
                 >
-                  Learn more
+                  {t(BRAND.common.learnMore)}
                 </Link>
                 <a
                   href="https://shop.akasha.co.id"
@@ -207,7 +210,7 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
                   className="text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-white transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.97]"
                   style={{ backgroundColor: brand.accentHex }}
                 >
-                  Buy
+                  {t(BRAND.common.buy)}
                 </a>
               </div>
             </article>
@@ -220,7 +223,7 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
       {/* Mobile nav arrows — bottom, since the top-right pair is desktop-only */}
       <div className="flex md:hidden items-center justify-center gap-3 mt-6 px-4">
         <button
-          aria-label="Previous"
+          aria-label={t(BRAND.common.previous)}
           onClick={() => scrollBy(-1)}
           disabled={!canPrev}
           className="w-11 h-11 rounded-full bg-ink/5 text-ink flex items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-ink/5 disabled:hover:text-ink"
@@ -228,7 +231,7 @@ export default function ProductLineup({ brand }: { brand: Brand }) {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
         </button>
         <button
-          aria-label="Next"
+          aria-label={t(BRAND.common.next)}
           onClick={() => scrollBy(1)}
           disabled={!canNext}
           className="w-11 h-11 rounded-full bg-ink/5 text-ink flex items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-ink/5 disabled:hover:text-ink"

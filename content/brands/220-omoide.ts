@@ -4,11 +4,11 @@ const entry: Brand = {
     slug: "omoide",
     name: "Omoide",
     division: "food",
-    tagline: "Kuliner Jepang yang otentik untuk kamu.",
+    tagline: { en: "Authentic Japanese cuisine, made for you.", id: "Kuliner Jepang yang otentik untuk kamu." },
     // No trailing period: BrandIntro appends its own to the first sentence, so a
     // period here renders as "khasnya..".
     description:
-      "Kami membawa kelezatan asli Jepang lebih dekat melalui produk berkualitas tinggi yang praktis, tanpa mengurangi karakter khasnya",
+      { en: "We bring authentic Japanese deliciousness closer through high-quality, convenient products, without losing its signature character", id: "Kami membawa kelezatan asli Jepang lebih dekat melalui produk berkualitas tinggi yang praktis, tanpa mengurangi karakter khasnya" },
     accentClass: "bg-brand-omoide",
     // Gold from the reference: the lineup's Learn more / Buy pills and the
     // "About Omoide" eyebrow are all #C17817. The maroon (#6E0F1D) in the
@@ -36,8 +36,8 @@ const entry: Brand = {
       logoAspect: "1800 / 902",
       logoWidth: "21.6vw",
       maxWidth: "30vw",
-      tagline: "Cita Rasa Jepang",
-      subtitle: "terinspirasi dari tradisi kuliner Jepang asli",
+      tagline: { en: "Taste of Japan", id: "Cita Rasa Jepang" },
+      subtitle: { en: "inspired by authentic Japanese culinary tradition", id: "terinspirasi dari tradisi kuliner Jepang asli" },
       left: "13.7%",
       offsetY: "-8.1vh",
       // Light cream banner => dark type, and the navbar paints itself to match.
@@ -48,18 +48,18 @@ const entry: Brand = {
     bannerBg: "#F5DEC6",
     hero: false,
     products: [
-      { name: "Tsukune", variant: "Original", size: "60g", image: "/brand/omoide/product-lineup/tsukune.png" },
+      { name: "Tsukune", variant: { en: "Original", id: "Original" }, size: { en: "60g", id: "60g" }, image: "/brand/omoide/product-lineup/tsukune.png" },
     ],
     reasons: [
-      { icon: "🍢", title: "Chunky & juicy", body: "Sate bakso ayam ala Jepang dengan tekstur tebal dan berisi." },
-      { icon: "🐔", title: "Daging ayam cincang", body: "Dibuat dari daging ayam berkualitas, digiling kasar khas tsukune." },
-      { icon: "⏱️", title: "Sudah matang, tinggal makan", body: "Cukup hangatkan sebentar — praktis untuk kapan saja." },
-      { icon: "🏭", title: "Proses produksi terjaga", body: "Diproduksi dengan standar mutu tinggi dan bersertifikat halal." },
+      { icon: "🍢", title: { en: "Chunky & juicy", id: "Tebal & Berisi" }, body: { en: "Japanese-style chicken meatball skewers with a thick, juicy texture.", id: "Sate bakso ayam ala Jepang dengan tekstur tebal dan berisi." } },
+      { icon: "🐔", title: { en: "Minced chicken meat", id: "Daging ayam cincang" }, body: { en: "Made from quality chicken, coarsely ground in the classic tsukune style.", id: "Dibuat dari daging ayam berkualitas, digiling kasar khas tsukune." } },
+      { icon: "⏱️", title: { en: "Fully cooked, ready to eat", id: "Sudah matang, tinggal makan" }, body: { en: "Just warm it up briefly — convenient anytime.", id: "Cukup hangatkan sebentar — praktis untuk kapan saja." } },
+      { icon: "🏭", title: { en: "Carefully controlled production", id: "Proses produksi terjaga" }, body: { en: "Produced to high quality standards and halal-certified.", id: "Diproduksi dengan standar mutu tinggi dan bersertifikat halal." } },
     ],
     about: [
-      { title: "Cita rasa Jepang asli", image: "/brand/omoide/about/1.jpg" },
-      { title: "Proses produksi yang berkualitas tinggi", image: "/brand/omoide/about/2.jpg" },
-      { title: "Kuliner Jepang yang siap disantap", image: "/brand/omoide/about/3.jpg" },
+      { title: { en: "Authentic Japanese flavor", id: "Cita rasa Jepang asli" }, image: "/brand/omoide/about/1.jpg" },
+      { title: { en: "High-quality production process", id: "Proses produksi yang berkualitas tinggi" }, image: "/brand/omoide/about/2.jpg" },
+      { title: { en: "Japanese cuisine ready to enjoy", id: "Kuliner Jepang yang siap disantap" }, image: "/brand/omoide/about/3.jpg" },
     ],
     showcase: {
       hero: "/brand/omoide/showcase/title.png",
@@ -82,18 +82,18 @@ const entry: Brand = {
     },
     features: [
       {
-        title: "Cita rasa Jepang asli",
-        body: "Sate bakso ayam ala Jepang, dibuat dari daging ayam berkualitas — juicy dan siap dinikmati.",
+        title: { en: "Authentic Japanese flavor", id: "Cita rasa Jepang asli" },
+        body: { en: "Japanese-style chicken meatball skewers, made from quality chicken — juicy and ready to enjoy.", id: "Sate bakso ayam ala Jepang, dibuat dari daging ayam berkualitas — juicy dan siap dinikmati." },
         image: "/brand/omoide/about/1.jpg",
       },
       {
-        title: "Proses produksi yang berkualitas tinggi",
-        body: "Setiap tsukune dicetak dan dikemas dengan standar mutu yang terjaga dari awal sampai akhir.",
+        title: { en: "High-quality production process", id: "Proses produksi yang berkualitas tinggi" },
+        body: { en: "Every tsukune is shaped and packed to a quality standard maintained from start to finish.", id: "Setiap tsukune dicetak dan dikemas dengan standar mutu yang terjaga dari awal sampai akhir." },
         image: "/brand/omoide/about/2.jpg",
       },
       {
-        title: "Kuliner Jepang yang siap disantap",
-        body: "Sudah matang, tinggal hangatkan — kelezatan Jepang yang praktis untuk kapan saja.",
+        title: { en: "Japanese cuisine ready to enjoy", id: "Kuliner Jepang yang siap disantap" },
+        body: { en: "Fully cooked, just warm it up — Japanese deliciousness that's convenient anytime.", id: "Sudah matang, tinggal hangatkan — kelezatan Jepang yang praktis untuk kapan saja." },
         image: "/brand/omoide/about/3.jpg",
       },
     ],

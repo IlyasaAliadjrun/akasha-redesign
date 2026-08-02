@@ -2,9 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { pageBrands, type Brand } from "@/lib/brands";
+import { pageBrands } from "@/lib/brands";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { BRAND } from "@/dictionaries/brand";
 
-export default function CrossSell({ current }: { current: Brand }) {
+export default function CrossSell({ current }: { current: { slug: string } }) {
+  const { asset, href, t } = useLocale();
   // pageBrands() drops umbrella brands — they have no page, so a card linking to
   // one would land on a 404.
   const others = pageBrands()
@@ -45,10 +48,10 @@ export default function CrossSell({ current }: { current: Brand }) {
     <section className="bg-[#FAFAFA] py-24">
       <div className="max-w-content mx-auto px-6 lg:px-10">
         <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/60 mb-3">
-          More from Akasha
+          {t(BRAND.crossSell.eyebrow)}
         </div>
         <h2 className="text-headline font-extrabold tracking-tightish mb-12">
-          Lanjutkan perjalananmu.
+          {t(BRAND.crossSell.heading)}
         </h2>
         {/* Mobile: horizontal swipe slider (like Explore the lineup). md+: 3-col grid. */}
         <div
@@ -59,11 +62,11 @@ export default function CrossSell({ current }: { current: Brand }) {
             <Link
               key={b.slug}
               data-card
-              href={`/brands/${b.slug}`}
+              href={href(`/brands/${b.slug}`)}
               className="group relative snap-start shrink-0 md:shrink w-[64vw] xs:w-[58vw] sm:w-[46vw] md:w-auto aspect-[3/4] md:aspect-auto md:h-[420px] rounded-3xl overflow-hidden"
             >
               <Image
-                src={b.heroImage}
+                src={asset(b.heroImage)}
                 alt={b.name}
                 fill
                 sizes="(min-width:768px) 33vw, 80vw"
@@ -72,7 +75,7 @@ export default function CrossSell({ current }: { current: Brand }) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
               <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
                 <div className="text-2xl font-extrabold tracking-tightish">{b.name}</div>
-                <div className="text-sm text-white/80 mt-1">{b.tagline}</div>
+                <div className="text-sm text-white/80 mt-1">{t(b.tagline)}</div>
               </div>
             </Link>
           ))}
@@ -81,7 +84,7 @@ export default function CrossSell({ current }: { current: Brand }) {
         {/* Nav arrows — mobile only (md+ is a static grid, no overflow). */}
         <div className="flex md:hidden items-center justify-center gap-3 mt-8">
           <button
-            aria-label="Previous"
+            aria-label={t(BRAND.common.previous)}
             onClick={() => scrollBy(-1)}
             disabled={!canPrev}
             className="w-11 h-11 rounded-full bg-ink/5 text-ink flex items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-ink/5 disabled:hover:text-ink"
@@ -89,7 +92,7 @@ export default function CrossSell({ current }: { current: Brand }) {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
           </button>
           <button
-            aria-label="Next"
+            aria-label={t(BRAND.common.next)}
             onClick={() => scrollBy(1)}
             disabled={!canNext}
             className="w-11 h-11 rounded-full bg-ink/5 text-ink flex items-center justify-center transition-all duration-500 hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-ink/5 disabled:hover:text-ink"

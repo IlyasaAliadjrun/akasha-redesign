@@ -1,9 +1,12 @@
+"use client";
 import Image from "next/image";
 import { DIVISIONS } from "@/lib/brands";
+import { useLocale } from "@/lib/locale/LocaleProvider";
 
 // Mirrors One company. Many moments. — same image set and count as DivisionCards
 // (Men's Care is excluded there too, so keep it out here for consistency).
 export default function SensoryStrip() {
+  const { asset } = useLocale();
   const images = DIVISIONS.filter((d) => d.id !== "mens").map((d) => d.image);
   const doubled = [...images, ...images];
   return (
@@ -15,7 +18,7 @@ export default function SensoryStrip() {
             className="relative h-[clamp(180px,30vh,340px)] md:h-[clamp(260px,38vh,460px)] w-[clamp(220px,48vw,420px)] md:w-[clamp(300px,32vw,520px)] shrink-0 overflow-hidden rounded-lg sm:rounded-xl"
           >
             <Image
-              src={src}
+              src={asset(src)}
               alt=""
               fill
               sizes="(min-width:1280px) 420px, (min-width:768px) 32vw, 48vw"

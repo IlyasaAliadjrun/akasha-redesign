@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "vitaglitz",
     parent: "hair-energy",
     name: "Vitaglitz",
-    tagline: `Hair Serum Vitamin 3in1.\nHeat protection, nourish & repair.`,
-    ctaText: "Learn more",
+    tagline: { en: "Hair Serum Vitamin 3in1.\nHeat protection, nourish & repair.", id: "Hair Serum Vitamin 3in1.\nMelindungi dari panas, menutrisi & memperbaiki rambut." },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#F36C21",
     bannerBg: "#F36C21",
     heroWordmark: "/brand/hair-energy/vitaglitz/hero/wordmark.png",
@@ -21,12 +21,12 @@ const entry: SubBrand = {
     // showcase/1.png = title, showcase/2.png = featured lebar, 3–4 = kartu.
     showcaseTitle: "/brand/hair-energy/vitaglitz/showcase/1.png",
     showcaseTitleAspect: "4871 / 3832",
-    featured: { image: "/brand/hair-energy/vitaglitz/showcase/2.png", label: "Vitaglitz — varian unggulan" },
+    featured: { image: "/brand/hair-energy/vitaglitz/showcase/2.png", label: { en: "Vitaglitz — signature variant", id: "Vitaglitz — varian unggulan" } },
     featuredAspect: "4868 / 2326",
     cardAspect: "2397 / 3110",
     cards: [
-      { image: "/brand/hair-energy/vitaglitz/showcase/3.png", label: "Vitaglitz varian 1" },
-      { image: "/brand/hair-energy/vitaglitz/showcase/4.png", label: "Vitaglitz varian 2" },
+      { image: "/brand/hair-energy/vitaglitz/showcase/3.png", label: { en: "Vitaglitz variant 1", id: "Vitaglitz varian 1" } },
+      { image: "/brand/hair-energy/vitaglitz/showcase/4.png", label: { en: "Vitaglitz variant 2", id: "Vitaglitz varian 2" } },
     ],
   };
 

@@ -3,8 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { DIVISIONS, brandHref, brandsByDivision } from "@/lib/brands";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { home } from "@/dictionaries/home";
 
 export default function DivisionCards() {
+  const { asset, href, t } = useLocale();
   const railRef = useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);
@@ -74,16 +77,16 @@ export default function DivisionCards() {
       <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 md:mb-12 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
         <div>
           <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-ink/60 mb-3">
-            Four divisions
+            {t(home.divisions.eyebrow)}
           </div>
           <h2 className="text-headline font-extrabold tracking-tightish max-w-5xl">
-            <span className="block whitespace-nowrap">One company.</span>
-            <span className="block whitespace-nowrap">Many moments of your day.</span>
+            <span className="block whitespace-nowrap">{t(home.divisions.heading1)}</span>
+            <span className="block whitespace-nowrap">{t(home.divisions.heading2)}</span>
           </h2>
         </div>
         <div className="hidden md:flex lg:hidden items-center gap-3 shrink-0">
           <button
-            aria-label="Previous"
+            aria-label={t(home.common.previous)}
             onClick={() => scrollBy(-1)}
             disabled={!canPrev}
             className="w-12 h-12 rounded-full border border-ink/15 flex items-center justify-center transition hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-ink"
@@ -91,7 +94,7 @@ export default function DivisionCards() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
           <button
-            aria-label="Next"
+            aria-label={t(home.common.next)}
             onClick={() => scrollBy(1)}
             disabled={!canNext}
             className="w-12 h-12 rounded-full border border-ink/15 flex items-center justify-center transition hover:bg-ink hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-ink"
@@ -112,13 +115,13 @@ export default function DivisionCards() {
               <Link
                 key={d.id}
                 data-card
-                href={first ? brandHref(first.slug) : "#"}
+                href={first ? href(brandHref(first.slug)) : "#"}
                 draggable={false}
                 className="snap-start shrink-0 lg:shrink w-[84vw] sm:w-[58vw] md:w-[42vw] lg:w-auto max-w-[440px] lg:max-w-none aspect-[3/4] h-auto max-h-[720px] min-h-[440px] lg:min-h-0 relative rounded-2xl sm:rounded-3xl overflow-hidden group"
               >
                 <Image
-                  src={d.image}
-                  alt={d.name}
+                  src={asset(d.image)}
+                  alt={t(d.name)}
                   fill
                   draggable={false}
                   sizes="(min-width:1280px) 26vw, (min-width:1024px) 30vw, (min-width:768px) 42vw, (min-width:640px) 58vw, 84vw"
@@ -132,11 +135,11 @@ export default function DivisionCards() {
                 />
                 <div className="absolute inset-0 p-5 sm:p-6 md:p-7 lg:p-8 flex flex-col justify-end text-white">
                   <div className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-extrabold tracking-tightish leading-tight">
-                    {d.name}
+                    {t(d.name)}
                   </div>
-                  <div className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-white/80">{d.tagline}</div>
+                  <div className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-white/80">{t(d.tagline)}</div>
                   <div className="mt-3 sm:mt-4 md:mt-5 text-xs font-medium opacity-80 group-hover:opacity-100 transition">
-                    Explore →
+                    {t(home.common.explore)} →
                   </div>
                 </div>
               </Link>
@@ -148,7 +151,7 @@ export default function DivisionCards() {
 
       <div className="md:hidden max-w-content mx-auto px-4 sm:px-6 mt-6 flex items-center gap-3 justify-end">
         <button
-          aria-label="Previous"
+          aria-label={t(home.common.previous)}
           onClick={() => scrollBy(-1)}
           disabled={!canPrev}
           className="w-11 h-11 rounded-full border border-ink/15 flex items-center justify-center disabled:opacity-30"
@@ -156,7 +159,7 @@ export default function DivisionCards() {
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
         <button
-          aria-label="Next"
+          aria-label={t(home.common.next)}
           onClick={() => scrollBy(1)}
           disabled={!canNext}
           className="w-11 h-11 rounded-full border border-ink/15 flex items-center justify-center disabled:opacity-30"

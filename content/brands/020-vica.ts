@@ -4,11 +4,13 @@ const entry: Brand = {
     slug: "vica",
     name: "VICA",
     division: "beverage",
-    tagline: "Tutup Kuning, Paling Bening.",
+    tagline: { en: "Yellow Cap, Crystal Clear.", id: "Tutup Kuning, Paling Bening." },
     // Becomes the BrandIntro headline (BrandIntro appends its own period, so no
     // trailing "." here; no ". " inside so it stays one line).
-    description:
-      "Kemurnian dari kaki Gunung Salak, disempurnakan filtrasi 0.2 micron",
+    description: {
+      en: "Purity from the foothills of Mount Salak, perfected by 0.2-micron filtration",
+      id: "Kemurnian dari kaki Gunung Salak, disempurnakan filtrasi 0.2 micron",
+    },
     accentClass: "bg-brand-vica",
     accentHex: "#0044A1", // Vica splat blue (buttons, eyebrow, CTA)
     heroImage:
@@ -39,21 +41,21 @@ const entry: Brand = {
     bannerBg: "#ECE700", // Vica yellow
     hero: false,
     products: [
-      { name: "VICA", variant: "220 mL", image: "/brand/vica/product-lineup/vica-220ml.png", imageScale: 0.7 },
-      { name: "VICA", variant: "330 mL", image: "/brand/vica/product-lineup/vica-330ml.png", imageScale: 0.8},
-      { name: "VICA", variant: "600 mL", image: "/brand/vica/product-lineup/vica-600ml.png", imageScale: 0.9 },
-      { name: "VICA", variant: "1010 mL", image: "/brand/vica/product-lineup/vica-1010ml.png", imageScale: 0.9 },
-      { name: "VICA", variant: "1500 mL", image: "/brand/vica/product-lineup/vica-1500ml.png" },
+      { name: "VICA", variant: { en: "220 mL", id: "220 mL" }, image: "/brand/vica/product-lineup/vica-220ml.png", imageScale: 0.7 },
+      { name: "VICA", variant: { en: "330 mL", id: "330 mL" }, image: "/brand/vica/product-lineup/vica-330ml.png", imageScale: 0.8},
+      { name: "VICA", variant: { en: "600 mL", id: "600 mL" }, image: "/brand/vica/product-lineup/vica-600ml.png", imageScale: 0.9 },
+      { name: "VICA", variant: { en: "1010 mL", id: "1010 mL" }, image: "/brand/vica/product-lineup/vica-1010ml.png", imageScale: 0.9 },
+      { name: "VICA", variant: { en: "1500 mL", id: "1500 mL" }, image: "/brand/vica/product-lineup/vica-1500ml.png" },
     ],
     about: [
-      { title: "Dari mata air yang kemurniannya terjaga lebih dari 100 tahun", image: "/brand/vica/about/1.png" },
-      { title: "Melalui teknologi filtrasi 0,2 micron", image: "/brand/vica/about/2.png" },
-      { title: "Diproses mesin Krones dengan full automation", image: "/brand/vica/about/3.png" },
+      { title: { en: "From a spring whose purity has been preserved for over 100 years", id: "Dari mata air yang kemurniannya terjaga lebih dari 100 tahun" }, image: "/brand/vica/about/1.png" },
+      { title: { en: "Through 0.2-micron filtration technology", id: "Melalui teknologi filtrasi 0,2 micron" }, image: "/brand/vica/about/2.png" },
+      { title: { en: "Processed with fully automated Krones machinery", id: "Diproses mesin Krones dengan full automation" }, image: "/brand/vica/about/3.png" },
     ],
     reasons: [
-      { icon: "⛰️", title: "Bersumber dari alam", body: "Air mineral alami langsung dari Mata Air Ciburial, kaki Gunung Salak." },
-      { icon: "✨", title: "Mineral seimbang", body: "Kandungan mineral alami untuk menjaga kesegaran tubuh sepanjang hari." },
-      { icon: "🏠", title: "Pilihan rumah tangga", body: "Diproduksi sejak 2011, sudah dipercaya ribuan keluarga." },
+      { icon: "⛰️", title: { en: "Sourced from nature", id: "Bersumber dari alam" }, body: { en: "Natural mineral water straight from Ciburial Spring, at the foot of Mount Salak.", id: "Air mineral alami langsung dari Mata Air Ciburial, kaki Gunung Salak." } },
+      { icon: "✨", title: { en: "Balanced minerals", id: "Mineral seimbang" }, body: { en: "Natural mineral content to keep your body refreshed all day long.", id: "Kandungan mineral alami untuk menjaga kesegaran tubuh sepanjang hari." } },
+      { icon: "🏠", title: { en: "A household favorite", id: "Pilihan rumah tangga" }, body: { en: "Produced since 2011, trusted by thousands of families.", id: "Diproduksi sejak 2011, sudah dipercaya ribuan keluarga." } },
     ],
     // Poster-style showcase (same engine as Hair Energy / NPL). title.png = the
     // "Murni dari sumbernya" banner; then 5 SKU banners. Each bg ({n}-2) is a yellow

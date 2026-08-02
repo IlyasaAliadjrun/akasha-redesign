@@ -1,8 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import type { Brand } from "@/lib/brands";
+import type { ResolvedBrand } from "@/lib/locale/resolve";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { BRAND } from "@/dictionaries/brand";
 
-export default function BrandIntro({ brand }: { brand: Brand }) {
+export default function BrandIntro({ brand }: { brand: ResolvedBrand }) {
+  const { t } = useLocale();
   return (
     <section id="about" className="scroll-mt-24 bg-white py-28 lg:py-40">
       <motion.div
@@ -16,7 +19,7 @@ export default function BrandIntro({ brand }: { brand: Brand }) {
           className="text-[18px] uppercase tracking-[0.3em] font-bold mb-6"
           style={{ color: brand.accentHex }}
         >
-          About {brand.name}
+          {t(BRAND.intro.about)} {brand.name}
         </div>
         <p className="text-[32px] md:text-[44px] lg:text-[56px] leading-[1.1] tracking-tightish font-extrabold">
           {brand.description.split(". ").slice(0, 1).join(". ")}.

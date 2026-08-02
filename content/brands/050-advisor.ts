@@ -6,9 +6,11 @@ const entry: Brand = {
     name: "Advisor",
     division: "beauty",
     parent: "makarizo",
-    tagline: "Solusi Teruji Klinis untuk Semua Masalah Kulit Kepala dan Rambut",
-    description:
-      "Advisor menghadirkan solusi berstandar klinis untuk rambut. Setiap formula dikembangkan oleh apoteker dengan dosis yang berkhasiat.",
+    tagline: { en: "Clinically Tested Solutions for All Scalp and Hair Problems", id: "Solusi Teruji Klinis untuk Semua Masalah Kulit Kepala dan Rambut" },
+    description: {
+      en: "Advisor brings clinical-grade hair care solutions. Every formula is developed by pharmacists with effective, clinically dosed ingredients.",
+      id: "Advisor menghadirkan solusi berstandar klinis untuk rambut. Setiap formula dikembangkan oleh apoteker dengan dosis yang berkhasiat.",
+    },
     accentClass: "bg-brand-advisor",
     // Advisor orange — sampled from the wordmark's check mark and the showcase title
     // graphic (both rgb(252,80,0)). Drives the eyebrow, product wash, CTA buttons.
@@ -42,9 +44,9 @@ const entry: Brand = {
       logoAspect: "1825 / 623",
       logoWidth: "24vw",
       maxWidth: "34vw",
-      tagline: "Teknologi Perawatan Rambut.",
-      subtitle: "#ScalpAndHairExpert — diformulasikan oleh apoteker.",
-      ctaText: "Learn more",
+      tagline: { en: "Hair Care Technology.", id: "Teknologi Perawatan Rambut." },
+      subtitle: { en: "#ScalpAndHairExpert — formulated by pharmacists.", id: "#ScalpAndHairExpert — diformulasikan oleh apoteker." },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
       offsetY: "4vh",
@@ -59,18 +61,18 @@ const entry: Brand = {
     // carousel (guide §B.3 default) until that asset is delivered.
     hero: false,
     products: [
-      { name: "Dual Defense Shampoo", variant: "Anti Dandruff & Hair Fall", size: "200 mL", image: "/brand/advisor/product-lineup/advisor-02.png" },
-      { name: "Hair & Scalp Tonic", variant: "Anti Dandruff & Hair Fall", size: "140 mL", image: "/brand/advisor/product-lineup/advisor-13.png" },
-      { name: "Hair & Scalp Tonic", variant: "Anti Dandruff & Hair Fall", size: "60 mL", image: "/brand/advisor/product-lineup/advisor-12.png" },
-      { name: "Hair Mask Repair", variant: "Dry & Damaged Hair", size: "100 mL", image: "/brand/advisor/product-lineup/advisor-01.png" },
-      { name: "Hair Mask Repair", variant: "Dry & Damaged Hair", size: "30 mL", image: "/brand/advisor/product-lineup/advisor-14.png" },
-      { name: "Hair Protection Keratin Spray", variant: "Dry & Damaged Hair", size: "60 mL", image: "/brand/advisor/product-lineup/advisor-11.png" },
-      { name: "Hair Recovery Vitamax", variant: "Dry & Damaged Hair", size: "8 mL × 3", image: "/brand/advisor/product-lineup/advisor-05.png" },
+      { name: "Dual Defense Shampoo", variant: { en: "Anti Dandruff & Hair Fall", id: "Anti Ketombe & Rambut Rontok" }, size: { en: "200 mL", id: "200 mL" }, image: "/brand/advisor/product-lineup/advisor-02.png" },
+      { name: "Hair & Scalp Tonic", variant: { en: "Anti Dandruff & Hair Fall", id: "Anti Ketombe & Rambut Rontok" }, size: { en: "140 mL", id: "140 mL" }, image: "/brand/advisor/product-lineup/advisor-13.png" },
+      { name: "Hair & Scalp Tonic", variant: { en: "Anti Dandruff & Hair Fall", id: "Anti Ketombe & Rambut Rontok" }, size: { en: "60 mL", id: "60 mL" }, image: "/brand/advisor/product-lineup/advisor-12.png" },
+      { name: "Hair Mask Repair", variant: { en: "Dry & Damaged Hair", id: "Rambut Kering & Rusak" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/advisor/product-lineup/advisor-01.png" },
+      { name: "Hair Mask Repair", variant: { en: "Dry & Damaged Hair", id: "Rambut Kering & Rusak" }, size: { en: "30 mL", id: "30 mL" }, image: "/brand/advisor/product-lineup/advisor-14.png" },
+      { name: "Hair Protection Keratin Spray", variant: { en: "Dry & Damaged Hair", id: "Rambut Kering & Rusak" }, size: { en: "60 mL", id: "60 mL" }, image: "/brand/advisor/product-lineup/advisor-11.png" },
+      { name: "Hair Recovery Vitamax", variant: { en: "Dry & Damaged Hair", id: "Rambut Kering & Rusak" }, size: { en: "8 mL × 3", id: "8 mL × 3" }, image: "/brand/advisor/product-lineup/advisor-05.png" },
     ],
     about: [
-      { title: "Diformulasikan oleh Apoteker", image: "/brand/advisor/about/1.png" },
-      { title: "Bahan Aktif Berdosis Klinis", image: "/brand/advisor/about/2.png" },
-      { title: "Solusi untuk Kulit Kepala & Rambut", image: "/brand/advisor/about/3.png" },
+      { title: { en: "Formulated by Pharmacists", id: "Diformulasikan oleh Apoteker" }, image: "/brand/advisor/about/1.png" },
+      { title: { en: "Clinically Dosed Active Ingredients", id: "Bahan Aktif Berdosis Klinis" }, image: "/brand/advisor/about/2.png" },
+      { title: { en: "Solutions for Scalp & Hair", id: "Solusi untuk Kulit Kepala & Rambut" }, image: "/brand/advisor/about/3.png" },
     ],
     // Poster-style showcase (same engine as Hair Energy): title graphic, then one
     // banner per product line with the giant line name baked into the card and the

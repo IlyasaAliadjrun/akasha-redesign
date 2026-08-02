@@ -5,11 +5,11 @@ const entry: Brand = {
     slug: "lou",
     name: "LOU",
     division: "beauty",
-    tagline: "Menemani Langkah Awal Perawatan Buah Hati.",
+    tagline: { en: "Accompanying Your Little One's First Steps of Care.", id: "Menemani Langkah Awal Perawatan Buah Hati." },
     // Becomes the BrandIntro headline (the component appends its own period, and a
     // ". " inside would split it into a second, lighter line — so keep one sentence).
     description:
-      "Perawatan 0+ terpercaya untuk menemani Langkah Awal Perawatan si Kecil",
+      { en: "Trusted 0+ care to accompany your little one's First Steps of Care", id: "Perawatan 0+ terpercaya untuk menemani Langkah Awal Perawatan si Kecil" },
     accentClass: "bg-brand-lou",
     // LOU aqua — the wordmark's planet + the showcase headline are #93D2DA; this is a
     // half-step deeper so white text on the BrandCTA band still separates from it.
@@ -49,8 +49,8 @@ const entry: Brand = {
       // Caps the block so the tagline breaks after "Awal", matching the reference's
       // two-line heading instead of running under the product cluster.
       maxWidth: "31vw",
-      tagline: "Menemani Langkah Awal Perawatan Buah Hati",
-      ctaText: "Learn more",
+      tagline: { en: "Accompanying Your Little One's First Steps of Care", id: "Menemani Langkah Awal Perawatan Buah Hati" },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "8%",
       offsetY: "8vh",
@@ -63,14 +63,14 @@ const entry: Brand = {
     bannerBg: "#E2F6F7", // pale aqua wash, the light centre of the LOU banner art
     hero: false,
     products: [
-      { name: "Rest Easy", variant: "Gentle Calming Cream", size: "50 mL", image: "/brand/lou/product-lineup/rest-easy-gentle-calming-cream-50ml.png" },
-      { name: "Grow More", variant: "Nourishing Hair Lotion", size: "100 mL", image: "/brand/lou/product-lineup/grow-more-nourishing-hair-lotion-100ml.png" },
-      { name: "Don't Cry", variant: "Moisturizing Hair and Body Wash", size: "250 mL", image: "/brand/lou/product-lineup/dont-cry-moisturizing-hair-and-body-wash-250ml.png" },
+      { name: "Rest Easy", variant: { en: "Gentle Calming Cream", id: "Krim Penenang Lembut" }, size: { en: "50 mL", id: "50 mL" }, image: "/brand/lou/product-lineup/rest-easy-gentle-calming-cream-50ml.png" },
+      { name: "Grow More", variant: { en: "Nourishing Hair Lotion", id: "Losion Rambut Penutrisi" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/lou/product-lineup/grow-more-nourishing-hair-lotion-100ml.png" },
+      { name: "Don't Cry", variant: { en: "Moisturizing Hair and Body Wash", id: "Sabun Rambut dan Tubuh Pelembap" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/lou/product-lineup/dont-cry-moisturizing-hair-and-body-wash-250ml.png" },
     ],
     about: [
-      { title: "Microbiome Balance Technology", image: "/brand/lou/about/1.png" },
-      { title: "Gentle Formulation", image: "/brand/lou/about/2.png" },
-      { title: "Aman untuk Bayi 0+", image: "/brand/lou/about/3.png" },
+      { title: { en: "Microbiome Balance Technology", id: "Teknologi Keseimbangan Mikrobioma" }, image: "/brand/lou/about/1.png" },
+      { title: { en: "Gentle Formulation", id: "Formula Lembut" }, image: "/brand/lou/about/2.png" },
+      { title: { en: "Safe for Babies 0+", id: "Aman untuk Bayi 0+" }, image: "/brand/lou/about/3.png" },
     ],
     // Showcase — title poster then the three product banners. Each bg ({n}-2) is a
     // designed card with its wording and rounded corners baked in, so `bannerAspect`
@@ -98,10 +98,10 @@ const entry: Brand = {
       ],
     },
     reasons: [
-      { icon: "🪐", title: "Microbiome Balance Technology", body: "Soymilk Biome™ menjaga keseimbangan mikrobioma kulit si Kecil sejak hari pertama." },
-      { icon: "🌙", title: "Formula lembut untuk bayi 0+", body: "Oat 5x Ceramide dan bahan bersertifikat Ecocert — dermatologically tested." },
-      { icon: "🫧", title: "Tanpa perih di mata", body: "Busa lembut Don't Cry membersihkan rambut dan tubuh tanpa membuat si Kecil rewel." },
-      { icon: "🌱", title: "Double Care prebiotic & postbiotic", body: "Merawat kulit dan kulit kepala sekaligus, dari mandi sampai waktu tidur." },
+      { icon: "🪐", title: { en: "Microbiome Balance Technology", id: "Teknologi Keseimbangan Mikrobioma" }, body: { en: "Soymilk Biome™ keeps your little one's skin microbiome balanced from day one.", id: "Soymilk Biome™ menjaga keseimbangan mikrobioma kulit si Kecil sejak hari pertama." } },
+      { icon: "🌙", title: { en: "Gentle formula for babies 0+", id: "Formula lembut untuk bayi 0+" }, body: { en: "Oat 5x Ceramide and Ecocert-certified ingredients — dermatologically tested.", id: "Oat 5x Ceramide dan bahan bersertifikat Ecocert — dermatologically tested." } },
+      { icon: "🫧", title: { en: "No more stinging eyes", id: "Tanpa perih di mata" }, body: { en: "Don't Cry's gentle foam cleanses hair and body without making your little one fussy.", id: "Busa lembut Don't Cry membersihkan rambut dan tubuh tanpa membuat si Kecil rewel." } },
+      { icon: "🌱", title: { en: "Double Care prebiotic & postbiotic", id: "Double Care Prebiotik & Postbiotik" }, body: { en: "Cares for skin and scalp at once, from bath time to bedtime.", id: "Merawat kulit dan kulit kepala sekaligus, dari mandi sampai waktu tidur." } },
     ],
   };
 

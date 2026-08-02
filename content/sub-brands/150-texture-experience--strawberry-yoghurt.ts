@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "strawberry-yoghurt",
     parent: "texture-experience",
     name: "Strawberry Yoghurt",
-    tagline: `Perawatan dengan Wangi Segar dan Manis\nuntuk Rambut Halus & Berkilau`,
-    ctaText: "Learn more",
+    tagline: { en: "Care with a Fresh and Sweet Fragrance\nfor Smooth & Shiny Hair", id: "Perawatan dengan Wangi Segar dan Manis\nuntuk Rambut Halus & Berkilau" },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // The reference paints EVERY sub-brand hero in the same light beige with dark
     // wording. SubBrandHero renders its wording in white only, so the banner takes that
     // one shared beige darkened to the minimum that clears white text (10.8:1) while
@@ -30,14 +30,14 @@ const entry: SubBrand = {
     showcaseTitle: "/brand/texture-experience/strawberry-yoghurt/showcase/title.png",
     showcaseTitleAspect: "4169 / 3233",
     // The creambath line-up ships as a landscape card, so it takes the full-width slot.
-    featured: { image: "/brand/texture-experience/strawberry-yoghurt/showcase/3.png", label: "Creambath Strawberry Yoghurt — sachet, tube & jar" },
+    featured: { image: "/brand/texture-experience/strawberry-yoghurt/showcase/3.png", label: { en: "Creambath Strawberry Yoghurt — sachet, tube & jar", id: "Creambath Strawberry Yoghurt — sachet, tube & jar" } },
     featuredAspect: "4695 / 2222",
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/texture-experience/strawberry-yoghurt/showcase/1.png", label: "Shampoo Strawberry Yoghurt" },
-      { image: "/brand/texture-experience/strawberry-yoghurt/showcase/2.png", label: "Conditioner Strawberry Yoghurt" },
-      { image: "/brand/texture-experience/strawberry-yoghurt/showcase/4.png", label: "Hair Perfume Berry Smoothie" },
-      { image: "/brand/texture-experience/strawberry-yoghurt/showcase/5.png", label: "Smooth-Bright Body Essence Strawberry Yoghurt" },
+      { image: "/brand/texture-experience/strawberry-yoghurt/showcase/1.png", label: { en: "Shampoo Strawberry Yoghurt", id: "Shampoo Strawberry Yoghurt" } },
+      { image: "/brand/texture-experience/strawberry-yoghurt/showcase/2.png", label: { en: "Conditioner Strawberry Yoghurt", id: "Conditioner Strawberry Yoghurt" } },
+      { image: "/brand/texture-experience/strawberry-yoghurt/showcase/4.png", label: { en: "Hair Perfume Berry Smoothie", id: "Hair Perfume Berry Smoothie" } },
+      { image: "/brand/texture-experience/strawberry-yoghurt/showcase/5.png", label: { en: "Smooth-Bright Body Essence Strawberry Yoghurt", id: "Smooth-Bright Body Essence Strawberry Yoghurt" } },
     ],
   };
 

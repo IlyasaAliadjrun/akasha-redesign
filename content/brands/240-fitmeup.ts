@@ -6,11 +6,11 @@ const entry: Brand = {
     division: "food",
     // The wordmark art already carries this line ("Sleep Better, Live Better"), so the
     // hero doesn't repeat it — it's still used by BrandCTA and the CrossSell card.
-    tagline: "Sleep Better, Live Better.",
+    tagline: { en: "Sleep Better, Live Better.", id: "Tidur Lebih Baik, Hidup Lebih Baik." },
     // Becomes the BrandIntro headline; everything after the first ". " renders as the
     // lighter supporting line.
     description:
-      "Minuman relaksasi dengan Triple Active Formula. Magnesium, L-Theanine, dan L-Tryptophan yang bekerja bersama untuk malam yang lebih tenang dan tidur yang lebih nyenyak",
+      { en: "A relaxation drink with Triple Active Formula. Magnesium, L-Theanine, and L-Tryptophan working together for calmer nights and deeper sleep", id: "Minuman relaksasi dengan Triple Active Formula. Magnesium, L-Theanine, dan L-Tryptophan yang bekerja bersama untuk malam yang lebih tenang dan tidur yang lebih nyenyak" },
     accentClass: "bg-brand-fitmeup",
     accentHex: "#B8336D", // Fitmeup magenta — sampled from the showcase banner + about art
     // No standalone brand-card art yet — reuse the 3:4 about photo, which already
@@ -45,12 +45,12 @@ const entry: Brand = {
       // ⚠️ public/brand/fitmeup/product-lineup/ does not exist yet, so this SKU renders
       // with ProductLineup's built-in empty stage. Drop a 1200×1200 transparent PNG in
       // that folder and add `image: "/brand/fitmeup/product-lineup/relax-160ml.png"`.
-      { name: "Relax", size: "160 mL" },
+      { name: "Relax", size: { en: "160 mL", id: "160 mL" } },
     ],
     about: [
-      { title: "Triple Active Formula", image: "/brand/fitmeup/about/1.png" },
-      { title: "Tidur Lebih Nyenyak Setiap Malam", image: "/brand/fitmeup/about/2.png" },
-      { title: "Relaksasi dalam Satu Botol", image: "/brand/fitmeup/about/3.jpeg" },
+      { title: { en: "Triple Active Formula", id: "Triple Active Formula" }, image: "/brand/fitmeup/about/1.png" },
+      { title: { en: "Deeper Sleep Every Night", id: "Tidur Lebih Nyenyak Setiap Malam" }, image: "/brand/fitmeup/about/2.png" },
+      { title: { en: "Relaxation in One Bottle", id: "Relaksasi dalam Satu Botol" }, image: "/brand/fitmeup/about/3.jpeg" },
     ],
     // Showcase — title poster ("Triple Active Formula") then the FOR BETTER SLEEP
     // banner. The bg is a designed card with its wording baked in and rounded corners,
@@ -69,9 +69,9 @@ const entry: Brand = {
       ],
     },
     reasons: [
-      { icon: "🌙", title: "Triple Active Formula", body: "Magnesium, L-Theanine, dan L-Tryptophan dalam satu botol 160 mL." },
-      { icon: "😴", title: "Bantu tidur lebih nyenyak", body: "Menenangkan tubuh dan pikiran sebelum waktunya beristirahat." },
-      { icon: "🫧", title: "Praktis dan siap minum", body: "Cukup satu botol di malam hari — tanpa takaran, tanpa ribet." },
+      { icon: "🌙", title: { en: "Triple Active Formula", id: "Triple Active Formula" }, body: { en: "Magnesium, L-Theanine, and L-Tryptophan in a single 160 mL bottle.", id: "Magnesium, L-Theanine, dan L-Tryptophan dalam satu botol 160 mL." } },
+      { icon: "😴", title: { en: "Helps you sleep more soundly", id: "Bantu tidur lebih nyenyak" }, body: { en: "Calms the body and mind before it's time to rest.", id: "Menenangkan tubuh dan pikiran sebelum waktunya beristirahat." } },
+      { icon: "🫧", title: { en: "Convenient and ready to drink", id: "Praktis dan siap minum" }, body: { en: "Just one bottle at night — no measuring, no hassle.", id: "Cukup satu botol di malam hari — tanpa takaran, tanpa ribet." } },
     ],
   };
 

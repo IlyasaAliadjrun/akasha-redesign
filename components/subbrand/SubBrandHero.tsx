@@ -8,8 +8,10 @@ import {
   type MotionValue,
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import type { SubBrand } from "@/lib/subBrands";
 import type { HeroLayer } from "@/lib/brands";
+import type { ResolvedSubBrand } from "@/lib/locale/resolve";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { BRAND } from "@/dictionaries/brand";
 
 function useIsMobile() {
   const [mobile, setMobile] = useState(false);
@@ -117,11 +119,12 @@ function mobilePos(layer: HeroLayer, i: number): React.CSSProperties {
   return MOBILE_POS[i] ?? MOBILE_POS[0];
 }
 
-export default function SubBrandHero({ sub }: { sub: SubBrand }) {
+export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
   const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
   const zoom = useZoomScale();
   const reduce = useReducedMotion();
+  const { t } = useLocale();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const phY = useTransform(scrollYProgress, [0, 1], [0, -60]);
   const products = sub.heroLayers ?? [];
@@ -148,7 +151,7 @@ export default function SubBrandHero({ sub }: { sub: SubBrand }) {
     </motion.div>
   ) : (
     // skeleton wordmark
-    <div className="w-[150px] h-[70px] rounded-xl border-2 border-dashed border-white/40 flex items-center justify-center text-white/70 text-[10px] uppercase tracking-[0.2em] font-semibold">Wordmark</div>
+    <div className="w-[150px] h-[70px] rounded-xl border-2 border-dashed border-white/40 flex items-center justify-center text-white/70 text-[10px] uppercase tracking-[0.2em] font-semibold">{t(BRAND.subBrandHero.wordmark)}</div>
   );
 
   const wording = (centered: boolean) => (
@@ -203,7 +206,7 @@ export default function SubBrandHero({ sub }: { sub: SubBrand }) {
             ) : (
               <motion.div style={{ y: reduce ? undefined : phY }} className="absolute inset-x-8 inset-y-0 rounded-3xl border-2 border-dashed border-white/40 bg-white/10 flex flex-col items-center justify-center gap-2 text-white/75">
                 <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" /></svg>
-                <span className="text-[10px] uppercase tracking-[0.2em] font-semibold">Produk</span>
+                <span className="text-[10px] uppercase tracking-[0.2em] font-semibold">{t(BRAND.subBrandHero.product)}</span>
               </motion.div>
             )}
           </div>
@@ -222,7 +225,7 @@ export default function SubBrandHero({ sub }: { sub: SubBrand }) {
             <motion.div style={{ y: reduce ? undefined : phY }} className="absolute inset-y-0 right-0 w-1/2 flex items-center justify-center p-8">
               <div className="w-[58%] max-w-[360px] aspect-[3/4] rounded-3xl border-2 border-dashed border-white/40 bg-white/10 flex flex-col items-center justify-center gap-3 text-white/75">
                 <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" /></svg>
-                <span className="text-[11px] uppercase tracking-[0.2em] font-semibold">Produk</span>
+                <span className="text-[11px] uppercase tracking-[0.2em] font-semibold">{t(BRAND.subBrandHero.product)}</span>
               </div>
             </motion.div>
           )}
@@ -246,7 +249,7 @@ export default function SubBrandHero({ sub }: { sub: SubBrand }) {
           onClick={scrollDown}
           animate={reduce ? undefined : { y: [0, 6, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-          aria-label="Scroll down"
+          aria-label={t(BRAND.common.scrollDown)}
           className="flex flex-col items-center gap-1 sm:gap-2 text-white/70 hover:text-white transition-colors duration-500"
         >
           <span className="sm:hidden flex flex-col items-center -space-y-1.5">

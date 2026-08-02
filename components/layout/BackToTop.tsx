@@ -1,11 +1,14 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { BACK_TO_TOP } from "@/dictionaries/layout";
 
 const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
+  const { t } = useLocale();
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.8);
@@ -55,7 +58,7 @@ export default function BackToTop() {
         <motion.button
           key="back-to-top"
           type="button"
-          aria-label="Back to top"
+          aria-label={t(BACK_TO_TOP.backToTop)}
           onClick={scrollToTop}
           initial={{ opacity: 0, y: 20, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}

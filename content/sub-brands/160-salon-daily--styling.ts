@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "styling",
     parent: "salon-daily",
     name: "Styling",
-    tagline: `Penataan instan dengan kualitas professional salon`,
-    ctaText: "Learn more",
+    tagline: { en: "Instant styling with professional salon quality", id: "Penataan instan dengan kualitas professional salon" },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#3C3836",
     // Same warm neutral as the Treatment banner — SubBrandHero's wording is always
     // white, so the reference's cream cannot be used here. See the handover note.
@@ -20,14 +20,14 @@ const entry: SubBrand = {
     ],
     showcaseTitle: "/brand/salon-daily/styling/showcase/title.png",
     showcaseTitleAspect: "4346 / 3205",
-    featured: { image: "/brand/salon-daily/styling/showcase/5.png", label: "Salon Daily Professional Keratin Hair Spray Non Aerosol — cocok untuk traveling dan sehari-hari" },
+    featured: { image: "/brand/salon-daily/styling/showcase/5.png", label: { en: "Salon Daily Professional Keratin Hair Spray Non Aerosol — perfect for travel and everyday use", id: "Salon Daily Professional Keratin Hair Spray Non Aerosol — cocok untuk traveling dan sehari-hari" } },
     featuredAspect: "4658 / 2260",
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/salon-daily/styling/showcase/1.png", label: "Salon Daily Hair Spray Strong Hold — cocok untuk hasil blow" },
-      { image: "/brand/salon-daily/styling/showcase/2.png", label: "Salon Daily Hair Spray — cocok untuk formal styling" },
-      { image: "/brand/salon-daily/styling/showcase/3.png", label: "Salon Daily Texturizing Mousse — cocok untuk rambut keriting" },
-      { image: "/brand/salon-daily/styling/showcase/4.png", label: "Salon Daily Styling Gel — cocok untuk wet look" },
+      { image: "/brand/salon-daily/styling/showcase/1.png", label: { en: "Salon Daily Hair Spray Strong Hold — perfect for blow-dry results", id: "Salon Daily Hair Spray Strong Hold — cocok untuk hasil blow" } },
+      { image: "/brand/salon-daily/styling/showcase/2.png", label: { en: "Salon Daily Hair Spray — perfect for formal styling", id: "Salon Daily Hair Spray — cocok untuk formal styling" } },
+      { image: "/brand/salon-daily/styling/showcase/3.png", label: { en: "Salon Daily Texturizing Mousse — perfect for curly hair", id: "Salon Daily Texturizing Mousse — cocok untuk rambut keriting" } },
+      { image: "/brand/salon-daily/styling/showcase/4.png", label: { en: "Salon Daily Styling Gel — perfect for a wet look", id: "Salon Daily Styling Gel — cocok untuk wet look" } },
     ],
   };
 

@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "color-revive",
     parent: "mk3",
     name: "Color Revive",
-    tagline: `Mengembalikan warna dan\nkesehatan rambut`,
-    ctaText: "Learn more",
+    tagline: { en: `Restores color and\nhair health`, id: `Mengembalikan warna dan\nkesehatan rambut` },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#3E2120",
     // White-only hero wording → brown banner instead of the reference's light beige
     // (see the note handed to the brand owner).
@@ -27,12 +27,12 @@ const entry: SubBrand = {
     // Grid order follows the reference, not the filenames: the Color Revive shampoo
     // (2.png) leads, the Purple Treatment shampoo (1.png) follows.
     cards: [
-      { image: "/brand/mk3/color-revive/showcase/2.png", label: "Shampoo Color Revive" },
-      { image: "/brand/mk3/color-revive/showcase/1.png", label: "Shampoo Purple Treatment" },
-      { image: "/brand/mk3/color-revive/showcase/3.png", label: "Conditioner Repair & Revive" },
-      { image: "/brand/mk3/color-revive/showcase/4.png", label: "Hair Mask Repair & Revive" },
-      { image: "/brand/mk3/color-revive/showcase/5.png", label: "Restructuring Serum Repair & Revive" },
-      { image: "/brand/mk3/color-revive/showcase/6.png", label: "Leave-In Hair Mask Bond Repair" },
+      { image: "/brand/mk3/color-revive/showcase/2.png", label: { en: "Shampoo Color Revive", id: "Shampoo Color Revive" } },
+      { image: "/brand/mk3/color-revive/showcase/1.png", label: { en: "Shampoo Purple Treatment", id: "Shampoo Purple Treatment" } },
+      { image: "/brand/mk3/color-revive/showcase/3.png", label: { en: "Conditioner Repair & Revive", id: "Conditioner Repair & Revive" } },
+      { image: "/brand/mk3/color-revive/showcase/4.png", label: { en: "Hair Mask Repair & Revive", id: "Hair Mask Repair & Revive" } },
+      { image: "/brand/mk3/color-revive/showcase/5.png", label: { en: "Restructuring Serum Repair & Revive", id: "Restructuring Serum Repair & Revive" } },
+      { image: "/brand/mk3/color-revive/showcase/6.png", label: { en: "Leave-In Hair Mask Bond Repair", id: "Leave-In Hair Mask Bond Repair" } },
     ],
   };
 

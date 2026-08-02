@@ -4,14 +4,14 @@ const entry: Brand = {
     slug: "floaty",
     name: "Floaty",
     division: "food",
-    tagline: "Ini Snack Buat Kamu.",
+    tagline: { en: "This Snack Is For You.", id: "Ini Snack Buat Kamu." },
     // Becomes the BrandIntro headline (the reference's "Selamat Datang di Dunia
     // FLOATY yang Hebat dan Menyenangkan!"). BrandIntro appends its own full stop,
     // so the sentence ends without punctuation here; no ". " inside it, so the whole
     // line stays in the bold lead paragraph instead of splitting into a grey second
     // line. Also used as the page's meta description.
     description:
-      "Selamat Datang di Dunia FLOATY yang Hebat dan Menyenangkan",
+      { en: "Welcome to the Great and Fun World of FLOATY", id: "Selamat Datang di Dunia FLOATY yang Hebat dan Menyenangkan" },
     accentClass: "bg-brand-floaty",
     accentHex: "#4E96D2", // the FLOATY logotype blue on-pack — Learn more / Buy / CTA
     // No dedicated 3:4 brand-card art yet (only CrossSell reads this; the hero itself
@@ -58,16 +58,16 @@ const entry: Brand = {
     bannerBg: "#5A9CD2", // Floaty blue — the same blue as the showcase cards
     // Heading above the carousel — the reference's "Our Product." (default is
     // "Explore the lineup.").
-    lineupTitle: "Our Product.",
+    lineupTitle: { en: "Our Product.", id: "Produk Kami." },
     // ProductLineup prints "{brand.name} {name} {variant} {size}" on one line, so
     // `name: "Snack"` yields the reference's "Floaty Snack Original 60g". Order and
     // wording follow the reference carousel: 60 g, Terserah, then the 16 g mini.
     // The gram weight rides in `variant` (not `size`) because the card's React key is
     // name+variant: two "Original" SKUs that differ only in `size` would collide.
     products: [
-      { name: "Snack", variant: "Original 60g", image: "/brand/floaty/product-lineup/original-60g.png" },
-      { name: "Snack", variant: "Terserah 60g", image: "/brand/floaty/product-lineup/terserah-60g.png" },
-      { name: "Snack", variant: "Original 16g", image: "/brand/floaty/product-lineup/original-16g.png" },
+      { name: "Snack", variant: { en: "Original 60g", id: "Original 60g" }, image: "/brand/floaty/product-lineup/original-60g.png" },
+      { name: "Snack", variant: { en: "Terserah 60g", id: "Terserah 60g" }, image: "/brand/floaty/product-lineup/terserah-60g.png" },
+      { name: "Snack", variant: { en: "Original 16g", id: "Original 16g" }, image: "/brand/floaty/product-lineup/original-16g.png" },
     ],
     // The about art is a FINISHED card: rounded corners, gradient, and the label are
     // all baked into the image (bottom-left) — exactly where BrandAbout prints its own
@@ -76,9 +76,9 @@ const entry: Brand = {
     // in length, purely to keep React's list keys unique. Once the designer supplies
     // about art WITHOUT baked-in wording, the real titles belong here.
     about: [
-      { title: "​", image: "/brand/floaty/about/1.png" },
-      { title: "​​", image: "/brand/floaty/about/2.png" },
-      { title: "​​​", image: "/brand/floaty/about/3.png" },
+      { title: { en: "​", id: "​" }, image: "/brand/floaty/about/1.png" },
+      { title: { en: "​​", id: "​​" }, image: "/brand/floaty/about/2.png" },
+      { title: { en: "​​​", id: "​​​" }, image: "/brand/floaty/about/3.png" },
     ],
     // Showcase — title poster then four SKU banners. Each bg ({n}-2) is a designed blue
     // card (2335×1052) whose wording leaves one side clear, and the pack ({n}-1) sits
@@ -110,20 +110,20 @@ const entry: Brand = {
       ],
     },
     reasons: [
-      { icon: "😹", title: "Packaging pemancing tawa", body: "Didesain seperti makanan kucing — jadi konten, jadi bahan prank." },
-      { icon: "🌾", title: "Tinggi kandungan oat", body: "Berbahan dasar oat, renyah dan ringan di perut." },
-      { icon: "🎁", title: "Varian Terserah", body: "Rasa misteri yang bikin penasaran — cocok buat seru-seruan." },
+      { icon: "😹", title: { en: "Packaging that sparks laughter", id: "Packaging pemancing tawa" }, body: { en: "Designed to look like cat food — perfect for content, perfect for pranks.", id: "Didesain seperti makanan kucing — jadi konten, jadi bahan prank." } },
+      { icon: "🌾", title: { en: "High in oats", id: "Tinggi kandungan oat" }, body: { en: "Oat-based, crunchy and light on the stomach.", id: "Berbahan dasar oat, renyah dan ringan di perut." } },
+      { icon: "🎁", title: { en: "The \"Terserah\" Variant", id: "Varian Terserah" }, body: { en: "A mystery flavor that keeps you guessing — perfect for having fun.", id: "Rasa misteri yang bikin penasaran — cocok buat seru-seruan." } },
     ],
     features: [
       {
-        title: "Ini MAKANAN KUCING",
-        body: "…bohong. Ini snack buat kamu. Packaging jenaka yang jadi bahan obrolan.",
+        title: { en: "This Is CAT FOOD", id: "Ini MAKANAN KUCING" },
+        body: { en: "…just kidding. This is a snack for you. Playful packaging that gets people talking.", id: "…bohong. Ini snack buat kamu. Packaging jenaka yang jadi bahan obrolan." },
         image:
           "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=1400&auto=format&fit=crop",
       },
       {
-        title: "Ringan beneran",
-        body: "Oat-based pillow snack. Renyah, ringan, dan tinggi kandungan oat.",
+        title: { en: "Actually light", id: "Ringan beneran" },
+        body: { en: "An oat-based pillow snack. Crunchy, light, and packed with oats.", id: "Oat-based pillow snack. Renyah, ringan, dan tinggi kandungan oat." },
         image:
           "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=1400&auto=format&fit=crop",
       },

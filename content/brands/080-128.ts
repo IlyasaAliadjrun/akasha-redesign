@@ -5,10 +5,12 @@ const entry: Brand = {
     slug: "128",
     name: "128",
     division: "beauty",
-    tagline: "Rahasia Kecantikan dari Dasar Samudera.",
+    tagline: { en: "Beauty Secrets from the Ocean Floor.", id: "Rahasia Kecantikan dari Dasar Samudera." },
     // Becomes the BrandIntro headline (it appends its own period, so none here).
-    description:
-      "Skincare pertama di Indonesia dengan Saccharina Japonica, yang melembapkan, menenangkan, dan kaya antioksidan",
+    description: {
+      en: "Indonesia's first skincare with Saccharina Japonica, which moisturizes, soothes, and is rich in antioxidants",
+      id: "Skincare pertama di Indonesia dengan Saccharina Japonica, yang melembapkan, menenangkan, dan kaya antioksidan",
+    },
     accentClass: "bg-brand-128",
     accentHex: "#E8735C", // 128 coral — Learn more / Buy / CTA
     heroImage:
@@ -25,8 +27,8 @@ const entry: Brand = {
       logoAspect: "2160 / 1415",
       logoWidth: "22vw",
       maxWidth: "40vw",
-      tagline: "Rahasia Kecantikan\ndari Dasar Samudera",
-      ctaText: "Learn more",
+      tagline: { en: "Beauty Secrets\nfrom the Ocean Floor", id: "Rahasia Kecantikan\ndari Dasar Samudera" },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
       // white text on the coral banner (theme omitted = white)
@@ -37,20 +39,20 @@ const entry: Brand = {
     hero: true,
     // Full skincare line-up (9 SKU across the four ranges).
     products: [
-      { name: "Facial Wash", variant: "Bright & Radiance", image: "/brand/128/product-lineup/facial-wash-bright-radiance.png" },
-      { name: "Toner", variant: "Bright & Radiance", image: "/brand/128/product-lineup/toner-bright-radiance.png" },
-      { name: "Serum", variant: "Bright & Radiance", image: "/brand/128/product-lineup/serum-bright-radiance.png" },
-      { name: "Moisturizer", variant: "Bright & Radiance", image: "/brand/128/product-lineup/moisturizer-bright-radiance.png" },
-      { name: "Facial Wash", variant: "Intensive Barrier Care", image: "/brand/128/product-lineup/facial-wash-intensive-barrier-care.png" },
-      { name: "Primer", variant: "Intensive Barrier Care", image: "/brand/128/product-lineup/primer-intensive-barrier-care.png" },
-      { name: "Boost", variant: "Intensive Barrier Care", image: "/brand/128/product-lineup/boost-intensive-barrier-care.png" },
-      { name: "Moisturizer", variant: "Pro Acne Defense", image: "/brand/128/product-lineup/moisturizer-pro-acne-defense.png" },
-      { name: "Moisturizer", variant: "Advanced Age Repair", image: "/brand/128/product-lineup/moisturizer-advanced-age-repair.png" },
+      { name: "Facial Wash", variant: { en: "Bright & Radiance", id: "Bright & Radiance" }, image: "/brand/128/product-lineup/facial-wash-bright-radiance.png" },
+      { name: "Toner", variant: { en: "Bright & Radiance", id: "Bright & Radiance" }, image: "/brand/128/product-lineup/toner-bright-radiance.png" },
+      { name: "Serum", variant: { en: "Bright & Radiance", id: "Bright & Radiance" }, image: "/brand/128/product-lineup/serum-bright-radiance.png" },
+      { name: "Moisturizer", variant: { en: "Bright & Radiance", id: "Bright & Radiance" }, image: "/brand/128/product-lineup/moisturizer-bright-radiance.png" },
+      { name: "Facial Wash", variant: { en: "Intensive Barrier Care", id: "Intensive Barrier Care" }, image: "/brand/128/product-lineup/facial-wash-intensive-barrier-care.png" },
+      { name: "Primer", variant: { en: "Intensive Barrier Care", id: "Intensive Barrier Care" }, image: "/brand/128/product-lineup/primer-intensive-barrier-care.png" },
+      { name: "Boost", variant: { en: "Intensive Barrier Care", id: "Intensive Barrier Care" }, image: "/brand/128/product-lineup/boost-intensive-barrier-care.png" },
+      { name: "Moisturizer", variant: { en: "Pro Acne Defense", id: "Pro Acne Defense" }, image: "/brand/128/product-lineup/moisturizer-pro-acne-defense.png" },
+      { name: "Moisturizer", variant: { en: "Advanced Age Repair", id: "Advanced Age Repair" }, image: "/brand/128/product-lineup/moisturizer-advanced-age-repair.png" },
     ],
     about: [
-      { title: "Diperkaya Saccharina Japonica", image: "/brand/128/about/1.png" },
-      { title: "Melembapkan Kulit", image: "/brand/128/about/2.png" },
-      { title: "Skin Barrier Lebih Kuat", image: "/brand/128/about/3.png" },
+      { title: { en: "Enriched with Saccharina Japonica", id: "Diperkaya Saccharina Japonica" }, image: "/brand/128/about/1.png" },
+      { title: { en: "Moisturizes Skin", id: "Melembapkan Kulit" }, image: "/brand/128/about/2.png" },
+      { title: { en: "Stronger Skin Barrier", id: "Skin Barrier Lebih Kuat" }, image: "/brand/128/about/3.png" },
     ],
     // Showcase — title poster then four range banners. Each bg ({n}-last) is a designed
     // coral/nude/green/purple text card (2160×1015), and the product cluster ({cluster-n},

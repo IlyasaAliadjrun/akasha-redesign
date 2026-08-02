@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "rosemary-oil",
     parent: "t1",
     name: "Rosemary Oil",
-    tagline: `Anti-rontok, lebatkan, dan haluskan\nrambut secara instan.`,
-    ctaText: "Learn more",
+    tagline: { en: "Anti hair-fall, thickens, and smooths\nhair instantly.", id: "Anti-rontok, lebatkan, dan haluskan\nrambut secara instan." },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#683B27", // Rosemary Oil brown, sampled from the line's banner art
     bannerBg: "#683B27",
     heroWordmark: "/brand/t1/rosemary-oil/hero/wordmark.png",
@@ -24,8 +24,8 @@ const entry: SubBrand = {
     showcaseTitleAspect: "4428 / 4061",
     cardAspect: "2302 / 2987",
     cards: [
-      { image: "/brand/t1/rosemary-oil/showcase/1.png", label: "Scalp & Hair Oil with Rosemary Oil" },
-      { image: "/brand/t1/rosemary-oil/showcase/2.png", label: "Protein Cream with Rosemary Oil" },
+      { image: "/brand/t1/rosemary-oil/showcase/1.png", label: { en: "Scalp & Hair Oil with Rosemary Oil", id: "Scalp & Hair Oil dengan Rosemary Oil" } },
+      { image: "/brand/t1/rosemary-oil/showcase/2.png", label: { en: "Protein Cream with Rosemary Oil", id: "Protein Cream dengan Rosemary Oil" } },
     ],
   };
 

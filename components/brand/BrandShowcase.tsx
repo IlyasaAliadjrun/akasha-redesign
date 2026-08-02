@@ -3,7 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import type { Brand, ShowcaseVariant as TVariant } from "@/lib/brands";
+import type { ShowcaseVariant as TVariant } from "@/lib/brands";
+import type { ResolvedBrand } from "@/lib/locale/resolve";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { BRAND } from "@/dictionaries/brand";
 
 // Small-screen flag so the parallax drift can scale down on mobile (the banner is
 // much shorter there, so a desktop-sized drift looks like the product is floating).
@@ -166,7 +169,8 @@ function ShowcaseVariant({
 // Poster section: a hero graphic with layered parallax variant banners overlapping
 // its bottom edge. Renders nothing unless the brand provides `showcase`; variant
 // banners are skipped when none are defined.
-export default function BrandShowcase({ brand }: { brand: Brand }) {
+export default function BrandShowcase({ brand }: { brand: ResolvedBrand }) {
+  const { t } = useLocale();
   const showcase = brand.showcase;
   if (!showcase) return null;
 
@@ -225,7 +229,7 @@ export default function BrandShowcase({ brand }: { brand: Brand }) {
               <Link
                 key={variant.bg}
                 href={variant.href}
-                aria-label={`${brand.name} — buka halaman varian`}
+                aria-label={`${brand.name} — ${t(BRAND.showcase.openVariant)}`}
                 className="block transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.01]"
               >
                 {banner}

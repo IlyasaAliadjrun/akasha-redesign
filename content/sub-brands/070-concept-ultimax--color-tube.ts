@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "color-tube",
     parent: "concept-ultimax",
     name: "Color Tube",
-    tagline: `Pewarna rambut permanen\nVegan Vibrant.`,
-    ctaText: "Learn more",
+    tagline: { en: `Permanent hair color.\nVegan Vibrant.`, id: `Pewarna rambut permanen\nVegan Vibrant.` },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#E34686",
     // SubBrandHero always sets its wording in white, so the pale sage the reference
     // uses cannot carry it. This is the darkest colour in the Concept Ultimax
@@ -29,18 +29,18 @@ const entry: SubBrand = {
     // Reference order is alphabetical by shade family, which is the reverse of the
     // delivered file order.
     cards: [
-      { image: "/brand/concept-ultimax/color-tube/showcase/12.png", label: "Hair Color Ash (1)" },
-      { image: "/brand/concept-ultimax/color-tube/showcase/11.png", label: "Hair Color Ash (2)" },
-      { image: "/brand/concept-ultimax/color-tube/showcase/10.png", label: "Hair Color Ash (3)" },
-      { image: "/brand/concept-ultimax/color-tube/showcase/9.png", label: "Hair Color Contrast" },
-      { image: "/brand/concept-ultimax/color-tube/showcase/8.png", label: "Hair Color Copper" },
-      { image: "/brand/concept-ultimax/color-tube/showcase/7.png", label: "Hair Color Corrector" },
-      { image: "/brand/concept-ultimax/color-tube/showcase/6.png", label: "Hair Color Extralift" },
-      { image: "/brand/concept-ultimax/color-tube/showcase/5.png", label: "Hair Color Gold" },
-      { image: "/brand/concept-ultimax/color-tube/showcase/4.png", label: "Hair Color Mahogany" },
-      { image: "/brand/concept-ultimax/color-tube/showcase/3.png", label: "Hair Color Natural" },
-      { image: "/brand/concept-ultimax/color-tube/showcase/2.png", label: "Hair Color Red" },
-      { image: "/brand/concept-ultimax/color-tube/showcase/1.png", label: "Hair Color Violet" },
+      { image: "/brand/concept-ultimax/color-tube/showcase/12.png", label: { en: "Hair Color Ash (1)", id: "Hair Color Ash (1)" } },
+      { image: "/brand/concept-ultimax/color-tube/showcase/11.png", label: { en: "Hair Color Ash (2)", id: "Hair Color Ash (2)" } },
+      { image: "/brand/concept-ultimax/color-tube/showcase/10.png", label: { en: "Hair Color Ash (3)", id: "Hair Color Ash (3)" } },
+      { image: "/brand/concept-ultimax/color-tube/showcase/9.png", label: { en: "Hair Color Contrast", id: "Hair Color Contrast" } },
+      { image: "/brand/concept-ultimax/color-tube/showcase/8.png", label: { en: "Hair Color Copper", id: "Hair Color Copper" } },
+      { image: "/brand/concept-ultimax/color-tube/showcase/7.png", label: { en: "Hair Color Corrector", id: "Hair Color Corrector" } },
+      { image: "/brand/concept-ultimax/color-tube/showcase/6.png", label: { en: "Hair Color Extralift", id: "Hair Color Extralift" } },
+      { image: "/brand/concept-ultimax/color-tube/showcase/5.png", label: { en: "Hair Color Gold", id: "Hair Color Gold" } },
+      { image: "/brand/concept-ultimax/color-tube/showcase/4.png", label: { en: "Hair Color Mahogany", id: "Hair Color Mahogany" } },
+      { image: "/brand/concept-ultimax/color-tube/showcase/3.png", label: { en: "Hair Color Natural", id: "Hair Color Natural" } },
+      { image: "/brand/concept-ultimax/color-tube/showcase/2.png", label: { en: "Hair Color Red", id: "Hair Color Red" } },
+      { image: "/brand/concept-ultimax/color-tube/showcase/1.png", label: { en: "Hair Color Violet", id: "Hair Color Violet" } },
     ],
   };
 

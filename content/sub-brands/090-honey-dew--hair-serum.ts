@@ -6,8 +6,8 @@ const entry: SubBrand = {
     parent: "honey-dew",
     name: "Hair Serum",
     // Copy taken verbatim from the line's own reference banner.
-    tagline: `Serum rambut yang melembapkan rambut dan\nmemberi kilau, serta ekstrak madu untuk revitalisasi rambut`,
-    ctaText: "Learn more",
+    tagline: { en: `Hair serum that moisturizes and\nadds shine, with honey extract to revitalize hair`, id: `Serum rambut yang melembapkan rambut dan\nmemberi kilau, serta ekstrak madu untuk revitalisasi rambut` },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#E0B058",
     // Same honey-brown banner as the other Honey Dew lines — see the note in
     // 070-honey-dew--shampoo.ts.
@@ -33,8 +33,8 @@ const entry: SubBrand = {
     // Both card graphics are 2302×2986 / 2301×2986 — one shared ratio.
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/honey-dew/hair-serum/showcase/1.png", label: "Honey Dew Nutriv Serum" },
-      { image: "/brand/honey-dew/hair-serum/showcase/2.png", label: "Honey Dew Restructuring Serum" },
+      { image: "/brand/honey-dew/hair-serum/showcase/1.png", label: { en: "Honey Dew Nutriv Serum", id: "Honey Dew Nutriv Serum" } },
+      { image: "/brand/honey-dew/hair-serum/showcase/2.png", label: { en: "Honey Dew Restructuring Serum", id: "Honey Dew Restructuring Serum" } },
     ],
   };
 

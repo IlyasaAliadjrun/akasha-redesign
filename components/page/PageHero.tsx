@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { BRAND } from "@/dictionaries/brand";
 
 export type PageHeroProps = {
   // Art direction: the desktop crop is ~16:9 with the subject on the right, the
@@ -29,6 +31,7 @@ export default function PageHero({
   bg,
 }: PageHeroProps) {
   const reduce = useReducedMotion();
+  const { asset, t } = useLocale();
   const dark = tone === "dark";
 
   const titleColor = dark ? "text-white" : "text-ink";
@@ -50,7 +53,7 @@ export default function PageHero({
         className="absolute inset-0"
       >
         <Image
-          src={mobile}
+          src={asset(mobile)}
           alt=""
           fill
           priority
@@ -58,7 +61,7 @@ export default function PageHero({
           className="object-cover md:hidden"
         />
         <Image
-          src={desktop}
+          src={asset(desktop)}
           alt=""
           fill
           priority
@@ -106,7 +109,7 @@ export default function PageHero({
           }}
           animate={reduce ? undefined : { y: [0, 6, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-          aria-label="Scroll down"
+          aria-label={t(BRAND.common.scrollDown)}
           className={`flex flex-col items-center gap-1 sm:gap-2 transition-colors duration-500 ${chevronColor}`}
         >
           <span className="sm:hidden flex flex-col items-center -space-y-1.5">

@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { DIVISIONS, brandsByDivision, childrenOf, type Brand } from "@/lib/brands";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { MEGA_MENU } from "@/dictionaries/layout";
 
 function BrandItem({
   brand,
@@ -12,13 +14,14 @@ function BrandItem({
 }) {
   const children = childrenOf(brand.slug);
   const [open, setOpen] = useState(false);
+  const { href, t } = useLocale();
 
   if (!children.length) {
     return (
       <li>
         <Link
           onClick={onClose}
-          href={`/brands/${brand.slug}`}
+          href={href(`/brands/${brand.slug}`)}
           className="text-base font-medium hover:opacity-60 transition"
         >
           {brand.name}
@@ -34,7 +37,7 @@ function BrandItem({
     <li className="group">
       <button
         type="button"
-        aria-label={`Toggle ${brand.name} sub-brands`}
+        aria-label={`${t(MEGA_MENU.toggle)} ${brand.name} ${t(MEGA_MENU.subBrands)}`}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
         className="flex items-center gap-1.5 text-left hover:opacity-60 transition"
@@ -69,7 +72,7 @@ function BrandItem({
           <li key={c.slug}>
             <Link
               onClick={onClose}
-              href={`/brands/${c.slug}`}
+              href={href(`/brands/${c.slug}`)}
               className="block text-sm text-ink/60 hover:text-ink transition"
             >
               {c.name}
@@ -88,6 +91,7 @@ export default function MegaMenu({
   onClose: () => void;
   mobile?: boolean;
 }) {
+  const { t } = useLocale();
   return (
     <div
       className={`${
@@ -105,7 +109,7 @@ export default function MegaMenu({
               className="text-[10px] uppercase tracking-[0.2em] font-bold mb-3"
               style={{ color: d.accentHex }}
             >
-              {d.name}
+              {t(d.name)}
             </div>
             <ul className="space-y-2">
               {brandsByDivision(d.id).map((b) => (

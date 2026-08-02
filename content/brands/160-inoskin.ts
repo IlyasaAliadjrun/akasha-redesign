@@ -5,11 +5,11 @@ const entry: Brand = {
     slug: "inoskin",
     name: "Inoskin",
     division: "beauty",
-    tagline: "#GlassSkinEssentials",
+    tagline: { en: "#GlassSkinEssentials", id: "#GlassSkinEssentials" },
     // BrandIntro appends its own period, so none here; no ". " inside so it stays
     // one headline block.
     description:
-      "Inoskin menggabungkan efektivitas yang terbukti secara klinis dengan perawatan kulit harian untuk menghadirkan kulit yang sehat dan bercahaya secara alami",
+      { en: "Inoskin combines clinically proven effectiveness with daily skincare to reveal naturally healthy, radiant skin", id: "Inoskin menggabungkan efektivitas yang terbukti secara klinis dengan perawatan kulit harian untuk menghadirkan kulit yang sehat dan bercahaya secara alami" },
     accentClass: "bg-brand-inoskin",
     // The INOSKIN wordmark gold, sampled from hero/wordmark.png — also the colour of
     // every heading baked into the showcase art.
@@ -40,8 +40,8 @@ const entry: Brand = {
       // on screens wider than ~2300px.
       logoWidth: "min(33vw, 760px)",
       maxWidth: "40vw",
-      tagline: "Perawatan Kulit dengan 3rd GEN BIOKOMPATIBEL COLLAGEN",
-      ctaText: "Learn more",
+      tagline: { en: "Skincare with 3rd GEN BIOCOMPATIBLE COLLAGEN", id: "Perawatan Kulit dengan 3rd GEN BIOKOMPATIBEL COLLAGEN" },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "8%",
       offsetY: "8vh",
@@ -60,15 +60,15 @@ const entry: Brand = {
       { name: "Young and Bright Moisturizer", image: "/brand/inoskin/product-lineup/young-and-bright-moisturizer.png" },
     ],
     reasons: [
-      { icon: "🧬", title: "Kolagen generasi ke-3", body: "Biokompatibel 100% dengan kulit manusia, jadi lebih mudah diterima." },
-      { icon: "⚡", title: "15× lebih cepat diserap", body: "Molekul 19.9 KDa — jauh lebih kecil dari kolagen biasa (300 KDa)." },
-      { icon: "🇰🇷", title: "Korean formulation", body: "Diformulasikan dengan teknologi perawatan kulit Korea." },
-      { icon: "🌿", title: "Aman untuk kulit sensitif", body: "Dermatologically tested, 0% alkohol, 0% pewangi." },
+      { icon: "🧬", title: { en: "3rd generation collagen", id: "Kolagen generasi ke-3" }, body: { en: "100% biocompatible with human skin, making it easier to absorb.", id: "Biokompatibel 100% dengan kulit manusia, jadi lebih mudah diterima." } },
+      { icon: "⚡", title: { en: "15× faster absorption", id: "15× lebih cepat diserap" }, body: { en: "19.9 KDa molecule — far smaller than ordinary collagen (300 KDa).", id: "Molekul 19.9 KDa — jauh lebih kecil dari kolagen biasa (300 KDa)." } },
+      { icon: "🇰🇷", title: { en: "Korean formulation", id: "Formulasi Korea" }, body: { en: "Formulated with Korean skincare technology.", id: "Diformulasikan dengan teknologi perawatan kulit Korea." } },
+      { icon: "🌿", title: { en: "Safe for sensitive skin", id: "Aman untuk kulit sensitif" }, body: { en: "Dermatologically tested, 0% alcohol, 0% fragrance.", id: "Dermatologically tested, 0% alkohol, 0% pewangi." } },
     ],
     about: [
-      { title: "Teknologi Formula Korea", image: "/brand/inoskin/about/1.png" },
-      { title: "Perawatan Kulit Tampak Lebih Muda", image: "/brand/inoskin/about/2.png" },
-      { title: "Kolagen Murni, Pancaran Alami", image: "/brand/inoskin/about/3.png" },
+      { title: { en: "Korean Formula Technology", id: "Teknologi Formula Korea" }, image: "/brand/inoskin/about/1.png" },
+      { title: { en: "Skincare for a Younger-Looking Complexion", id: "Perawatan Kulit Tampak Lebih Muda" }, image: "/brand/inoskin/about/2.png" },
+      { title: { en: "Pure Collagen, Natural Radiance", id: "Kolagen Murni, Pancaran Alami" }, image: "/brand/inoskin/about/3.png" },
     ],
     // Showcase — the #GlassSkinEssentials poster, then the single YOUNG & BRIGHT
     // banner that links to the sub-brand page. `bannerAspect` = the bg art's own ratio

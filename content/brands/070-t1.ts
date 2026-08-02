@@ -7,11 +7,13 @@ const entry: Brand = {
     division: "beauty",
     parent: "makarizo",
     // Also the CTA sub-line and the CrossSell card caption.
-    tagline: "Lahir dari Alam, Disempurnakan dengan Teknologi.",
+    tagline: { en: "Born from Nature, Perfected with Technology.", id: "Lahir dari Alam, Disempurnakan dengan Teknologi." },
     // BrandIntro renders the first sentence as the bold headline (it appends its own
     // period) and everything after the first ". " as the lighter supporting line.
-    description:
-      "Solusi premium dengan harga terjangkau untuk kulit kepala sensitif. Melalui #SensitiveScalpSolution, perpaduan teknologi ekstraksi terbaik dan bahan alami T1 siap merawat, menyembuhkan, dan melindungi kulit kepala setiap hari.",
+    description: {
+      en: "A premium solution at an affordable price for sensitive scalps. Through #SensitiveScalpSolution, T1's blend of the best extraction technology and natural ingredients is ready to care for, heal, and protect your scalp every day.",
+      id: "Solusi premium dengan harga terjangkau untuk kulit kepala sensitif. Melalui #SensitiveScalpSolution, perpaduan teknologi ekstraksi terbaik dan bahan alami T1 siap merawat, menyembuhkan, dan melindungi kulit kepala setiap hari.",
+    },
     accentClass: "bg-brand-t1",
     // T1 green — sampled from the brand's own showcase title art. Drives the intro
     // eyebrow, the lineup buttons/wash and the closing CTA band.
@@ -47,8 +49,8 @@ const entry: Brand = {
       logoAspect: "1424 / 556",
       logoWidth: "23vw",
       maxWidth: "32vw",
-      tagline: "Lahir dari Alam, Disempurnakan dengan Teknologi.",
-      ctaText: "Learn more",
+      tagline: { en: "Born from Nature, Perfected with Technology.", id: "Lahir dari Alam, Disempurnakan dengan Teknologi." },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "8%",
       offsetY: "8vh",
@@ -68,27 +70,27 @@ const entry: Brand = {
       // "with Rosemary Oil" belongs to `name`, not `variant`, on the two oils: their
       // ProductLineup React key is `name-variant`, so two SKUs that differ only by size
       // would collide. With `variant` unset the key falls back to the array index.
-      { name: "Scalp & Hair Oil with Rosemary Oil", size: "40 mL", image: "/brand/t1/product-lineup/scalp-hair-oil-rosemary-40ml.png" },
-      { name: "Scalp & Hair Oil with Rosemary Oil", size: "100 mL", image: "/brand/t1/product-lineup/scalp-hair-oil-rosemary-100ml.png" },
-      { name: "Micellar Shampoo", variant: "Sensitive–Oily Scalp", image: "/brand/t1/product-lineup/micellar-shampoo.png" },
-      { name: "Micellar Conditioner", variant: "Sensitive–Oily Hair", image: "/brand/t1/product-lineup/micellar-conditioner.png" },
-      { name: "Equalizer Shampoo", variant: "Sensitive to Dry Scalp", image: "/brand/t1/product-lineup/equalizer-shampoo.png" },
-      { name: "Equalizer Conditioner", variant: "Sensitive to Dry Hair", image: "/brand/t1/product-lineup/equalizer-conditioner.png" },
-      { name: "Protein Cream", variant: "with Rosemary Oil", size: "50 mL", image: "/brand/t1/product-lineup/protein-cream-rosemary-oil-50ml.png" },
+      { name: "Scalp & Hair Oil with Rosemary Oil", size: { en: "40 mL", id: "40 mL" }, image: "/brand/t1/product-lineup/scalp-hair-oil-rosemary-40ml.png" },
+      { name: "Scalp & Hair Oil with Rosemary Oil", size: { en: "100 mL", id: "100 mL" }, image: "/brand/t1/product-lineup/scalp-hair-oil-rosemary-100ml.png" },
+      { name: "Micellar Shampoo", variant: { en: "Sensitive–Oily Scalp", id: "Kulit Kepala Sensitif–Berminyak" }, image: "/brand/t1/product-lineup/micellar-shampoo.png" },
+      { name: "Micellar Conditioner", variant: { en: "Sensitive–Oily Hair", id: "Rambut Sensitif–Berminyak" }, image: "/brand/t1/product-lineup/micellar-conditioner.png" },
+      { name: "Equalizer Shampoo", variant: { en: "Sensitive to Dry Scalp", id: "Kulit Kepala Sensitif hingga Kering" }, image: "/brand/t1/product-lineup/equalizer-shampoo.png" },
+      { name: "Equalizer Conditioner", variant: { en: "Sensitive to Dry Hair", id: "Rambut Sensitif hingga Kering" }, image: "/brand/t1/product-lineup/equalizer-conditioner.png" },
+      { name: "Protein Cream", variant: { en: "with Rosemary Oil", id: "dengan Minyak Rosemary" }, size: { en: "50 mL", id: "50 mL" }, image: "/brand/t1/product-lineup/protein-cream-rosemary-oil-50ml.png" },
       { name: "Indigo Blue Bright Body Wash", image: "/brand/t1/product-lineup/indigo-blue-bright-body-wash.png" },
       { name: "Indigo Blue Bright Body Lotion", image: "/brand/t1/product-lineup/indigo-blue-bright-body-lotion.png" },
       { name: "Indigo Blue Bright Body Mask", image: "/brand/t1/product-lineup/indigo-blue-bright-body-mask.png" },
     ],
     reasons: [
-      { icon: "🌿", title: "Untuk kulit kepala sensitif", body: "Formula lembut yang merawat, menyembuhkan, dan melindungi kulit kepala setiap hari." },
-      { icon: "🧪", title: "Teknologi ekstraksi terbaik", body: "Bahan alami yang disempurnakan dengan proses ekstraksi presisi." },
-      { icon: "💧", title: "Satu rangkaian, semua kebutuhan", body: "Micellar, Equalizer, Rosemary Oil, hingga Indigo Blue untuk rambut dan tubuh." },
-      { icon: "💸", title: "Premium, harga terjangkau", body: "Perawatan kelas salon yang bisa dipakai setiap hari." },
+      { icon: "🌿", title: { en: "For sensitive scalps", id: "Untuk kulit kepala sensitif" }, body: { en: "A gentle formula that cares for, heals, and protects the scalp every day.", id: "Formula lembut yang merawat, menyembuhkan, dan melindungi kulit kepala setiap hari." } },
+      { icon: "🧪", title: { en: "The best extraction technology", id: "Teknologi ekstraksi terbaik" }, body: { en: "Natural ingredients perfected with a precision extraction process.", id: "Bahan alami yang disempurnakan dengan proses ekstraksi presisi." } },
+      { icon: "💧", title: { en: "One lineup, every need", id: "Satu rangkaian, semua kebutuhan" }, body: { en: "Micellar, Equalizer, Rosemary Oil, to Indigo Blue for hair and body.", id: "Micellar, Equalizer, Rosemary Oil, hingga Indigo Blue untuk rambut dan tubuh." } },
+      { icon: "💸", title: { en: "Premium, at an affordable price", id: "Premium, harga terjangkau" }, body: { en: "Salon-grade care you can use every day.", id: "Perawatan kelas salon yang bisa dipakai setiap hari." } },
     ],
     about: [
-      { title: "Perawatan Rambut Rosemary", image: "/brand/t1/about/1.png" },
-      { title: "Formula Teknologi & Alami", image: "/brand/t1/about/2.png" },
-      { title: "Untuk Semua Tipe Rambut", image: "/brand/t1/about/3.png" },
+      { title: { en: "Rosemary Hair Care", id: "Perawatan Rambut Rosemary" }, image: "/brand/t1/about/1.png" },
+      { title: { en: "Technology & Natural Formula", id: "Formula Teknologi & Alami" }, image: "/brand/t1/about/2.png" },
+      { title: { en: "For All Hair Types", id: "Untuk Semua Tipe Rambut" }, image: "/brand/t1/about/3.png" },
     ],
     // Poster showcase: the "#Sensitive Scalp Expert" title art, then the four line
     // banners. Each bg is a designed card with its wording and rounded corners baked

@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "green-tea-butter",
     parent: "texture-experience",
     name: "Green Tea Butter",
-    tagline: `Perawatan dengan Wangi Teh Hijau dan\nEkstrak L-Theanine untuk Rambut Rontok`,
-    ctaText: "Learn more",
+    tagline: { en: "Care with Green Tea Fragrance and\nL-Theanine Extract for Hair Loss", id: "Perawatan dengan Wangi Teh Hijau dan\nEkstrak L-Theanine untuk Rambut Rontok" },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // The reference paints EVERY sub-brand hero in the same light beige with dark
     // wording. SubBrandHero renders its wording in white only, so the banner takes that
     // one shared beige darkened to the minimum that clears white text (10.8:1) while
@@ -31,10 +31,10 @@ const entry: SubBrand = {
     // reference).
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/texture-experience/green-tea-butter/showcase/1.png", label: "Shampoo Green Tea Butter" },
-      { image: "/brand/texture-experience/green-tea-butter/showcase/2.png", label: "Conditioner Green Tea Butter" },
-      { image: "/brand/texture-experience/green-tea-butter/showcase/3.png", label: "Creambath Green Tea Butter" },
-      { image: "/brand/texture-experience/green-tea-butter/showcase/4.png", label: "Hair Perfume Tea Blossom" },
+      { image: "/brand/texture-experience/green-tea-butter/showcase/1.png", label: { en: "Shampoo Green Tea Butter", id: "Shampoo Green Tea Butter" } },
+      { image: "/brand/texture-experience/green-tea-butter/showcase/2.png", label: { en: "Conditioner Green Tea Butter", id: "Conditioner Green Tea Butter" } },
+      { image: "/brand/texture-experience/green-tea-butter/showcase/3.png", label: { en: "Creambath Green Tea Butter", id: "Creambath Green Tea Butter" } },
+      { image: "/brand/texture-experience/green-tea-butter/showcase/4.png", label: { en: "Hair Perfume Tea Blossom", id: "Hair Perfume Tea Blossom" } },
     ],
   };
 

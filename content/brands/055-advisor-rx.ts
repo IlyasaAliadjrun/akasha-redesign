@@ -7,11 +7,13 @@ const entry: Brand = {
     name: "Advisor RX",
     division: "beauty",
     parent: "makarizo",
-    tagline: "Era baru solusi rambut klinis, teruji secara dermatologi.",
+    tagline: { en: "A new era of clinical hair solutions, dermatologically tested.", id: "Era baru solusi rambut klinis, teruji secara dermatologi." },
     // BrandIntro renders the first sentence as the big headline and the rest as a
     // lighter sub-line, so the split at ". " is deliberate.
-    description:
-      "Advisor RX menghadirkan perawatan rambut berstandar klinis. Regenaxil™ untuk rambut rontok, Melanolix™ untuk uban.",
+    description: {
+      en: "Advisor RX brings clinical-grade hair care. Regenaxil™ for hair loss, Melanolix™ for gray hair.",
+      id: "Advisor RX menghadirkan perawatan rambut berstandar klinis. Regenaxil™ untuk rambut rontok, Melanolix™ untuk uban.",
+    },
     accentClass: "bg-brand-advisor-rx",
     // Advisor orange — sampled from the wordmark's check mark and the showcase title
     // art (both rgb(252,80,0)), identical to the sibling Advisor line. Drives the
@@ -48,9 +50,9 @@ const entry: Brand = {
       logoAspect: "1887 / 486",
       logoWidth: "24vw",
       maxWidth: "34vw",
-      tagline: "Era Baru Solusi Rambut Klinis.",
-      subtitle: "#ScalpAndHairExpert — teruji secara dermatologi.",
-      ctaText: "Learn more",
+      tagline: { en: "A New Era of Clinical Hair Solutions.", id: "Era Baru Solusi Rambut Klinis." },
+      subtitle: { en: "#ScalpAndHairExpert — dermatologically tested.", id: "#ScalpAndHairExpert — teruji secara dermatologi." },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
       offsetY: "4vh",
@@ -66,20 +68,20 @@ const entry: Brand = {
     // homepage carousel (guide §B.3 default) until that asset is delivered.
     hero: false,
     products: [
-      { name: "Strong Hair Shampoo", variant: "Regenaxil™", size: "250 mL", image: "/brand/advisor-rx/product-lineup/advisor-07.png" },
-      { name: "Strong Hair Boosting Mask", variant: "Regenaxil™", size: "100 mL", image: "/brand/advisor-rx/product-lineup/advisor-06.png" },
-      { name: "Strong Hair Hair Tonic", variant: "Regenaxil™", size: "100 mL", image: "/brand/advisor-rx/product-lineup/advisor-04.png" },
-      { name: "Strong Hair Scalp Serum", variant: "Regenaxil™", size: "40 mL", image: "/brand/advisor-rx/product-lineup/advisor-03.png" },
-      { name: "Strong Hair 4 Steps Regimen", variant: "Paket Lengkap", image: "/brand/advisor-rx/product-lineup/advisor-16.png" },
-      { name: "Grey Hair Shampoo", variant: "Melanolix™", size: "250 mL", image: "/brand/advisor-rx/product-lineup/advisor-08.png" },
-      { name: "Grey Hair Boosting Mask", variant: "Melanolix™", size: "100 mL", image: "/brand/advisor-rx/product-lineup/advisor-09.png" },
-      { name: "Grey Hair Scalp Serum", variant: "Melanolix™", size: "40 mL", image: "/brand/advisor-rx/product-lineup/advisor-10.png" },
-      { name: "Grey Hair 3 Steps Regimen", variant: "Paket Lengkap", image: "/brand/advisor-rx/product-lineup/advisor-15.png" },
+      { name: "Strong Hair Shampoo", variant: { en: "Regenaxil™", id: "Regenaxil™" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-07.png" },
+      { name: "Strong Hair Boosting Mask", variant: { en: "Regenaxil™", id: "Regenaxil™" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-06.png" },
+      { name: "Strong Hair Hair Tonic", variant: { en: "Regenaxil™", id: "Regenaxil™" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-04.png" },
+      { name: "Strong Hair Scalp Serum", variant: { en: "Regenaxil™", id: "Regenaxil™" }, size: { en: "40 mL", id: "40 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-03.png" },
+      { name: "Strong Hair 4 Steps Regimen", variant: { en: "Complete Package", id: "Paket Lengkap" }, image: "/brand/advisor-rx/product-lineup/advisor-16.png" },
+      { name: "Grey Hair Shampoo", variant: { en: "Melanolix™", id: "Melanolix™" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-08.png" },
+      { name: "Grey Hair Boosting Mask", variant: { en: "Melanolix™", id: "Melanolix™" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-09.png" },
+      { name: "Grey Hair Scalp Serum", variant: { en: "Melanolix™", id: "Melanolix™" }, size: { en: "40 mL", id: "40 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-10.png" },
+      { name: "Grey Hair 3 Steps Regimen", variant: { en: "Complete Package", id: "Paket Lengkap" }, image: "/brand/advisor-rx/product-lineup/advisor-15.png" },
     ],
     about: [
-      { title: "Teruji Secara Dermatologi", image: "/brand/advisor-rx/about/1.png" },
-      { title: "Bahan Aktif Berdosis Klinis", image: "/brand/advisor-rx/about/2.png" },
-      { title: "Rambut Kuat & Warna Alaminya Terjaga", image: "/brand/advisor-rx/about/3.png" },
+      { title: { en: "Dermatologically Tested", id: "Teruji Secara Dermatologi" }, image: "/brand/advisor-rx/about/1.png" },
+      { title: { en: "Clinically Dosed Active Ingredients", id: "Bahan Aktif Berdosis Klinis" }, image: "/brand/advisor-rx/about/2.png" },
+      { title: { en: "Strong Hair, Natural Color Preserved", id: "Rambut Kuat & Warna Alaminya Terjaga" }, image: "/brand/advisor-rx/about/3.png" },
     ],
     // Poster-style showcase (same engine as Hair Energy): the title graphic, then one
     // banner per line — each linking through to its sub-brand page.

@@ -9,11 +9,11 @@ const entry: Brand = {
     // Shown under the CTA headline ("Rasakan Rebonding System sekarang.") — the
     // reference's closing line.
     tagline:
-      "Wujudkan rambut lurus impian dengan perlindungan dan kelembapan maksimal.",
+      { en: "Achieve your dream straight hair with maximum protection and moisture.", id: "Wujudkan rambut lurus impian dengan perlindungan dan kelembapan maksimal." },
     // BrandIntro headline. One block (no ". " inside) so it renders as a single
     // extrabold paragraph, matching the reference.
     description:
-      "Kombinasi Hydrolyzed Collagen dan Hydrolyzed Milk Protein membantu meluruskan, menguatkan, dan menjaga kelembapan rambut agar tetap sehat dan halus",
+      { en: "A combination of Hydrolyzed Collagen and Hydrolyzed Milk Protein helps straighten, strengthen, and maintain hair moisture so it stays healthy and smooth", id: "Kombinasi Hydrolyzed Collagen dan Hydrolyzed Milk Protein membantu meluruskan, menguatkan, dan menjaga kelembapan rambut agar tetap sehat dan halus" },
     accentClass: "bg-brand-rebonding",
     // Rebonding System slate — sampled from the wordmark art (rgb 84,86,90). Drives
     // the About eyebrow, the lineup wash + Learn more/Buy buttons and the CTA block.
@@ -50,8 +50,8 @@ const entry: Brand = {
       logoWidth: "38vw",
       maxWidth: "40vw",
       // Reference wording — set uppercase, as drawn.
-      tagline: "PIONIR PELURUSAN RAMBUT DI INDONESIA",
-      ctaText: "Learn more",
+      tagline: { en: "PIONEER OF HAIR STRAIGHTENING IN INDONESIA", id: "PIONIR PELURUSAN RAMBUT DI INDONESIA" },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "7%",
       offsetY: "15vh",
@@ -67,16 +67,16 @@ const entry: Brand = {
     // canvas and one amount of padding, and the Step 2 bottle is genuinely taller
     // and slimmer than the jars, so no `imageScale` correction is needed.
     products: [
-      { name: "Hair Straightening", variant: "Super Gold+", size: "500 mL", image: "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 SG.png" },
-      { name: "Hair Straightening", variant: "Gold Edition+", size: "500 mL", image: "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 GE.png" },
-      { name: "Hair Straightening", variant: "Anti Resistant+", size: "500 mL", image: "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 AR.png" },
-      { name: "Hair Straightening", variant: "Extremely Damaged+", size: "500 mL", image: "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 ED.png" },
-      { name: "Milky Neutralizer+", variant: "Untuk Semua Jenis Rambut", size: "500 mL", image: "/brand/rebonding-system/product-lineup/RBS New Step 2 500mL Bottle Imagery 20241111 (3).png" },
+      { name: "Hair Straightening", variant: { en: "Super Gold+", id: "Super Gold+" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 SG.png" },
+      { name: "Hair Straightening", variant: { en: "Gold Edition+", id: "Gold Edition+" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 GE.png" },
+      { name: "Hair Straightening", variant: { en: "Anti Resistant+", id: "Anti Resistant+" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 AR.png" },
+      { name: "Hair Straightening", variant: { en: "Extremely Damaged+", id: "Extremely Damaged+" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 ED.png" },
+      { name: "Milky Neutralizer+", variant: { en: "For All Hair Types", id: "Untuk Semua Jenis Rambut" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/rebonding-system/product-lineup/RBS New Step 2 500mL Bottle Imagery 20241111 (3).png" },
     ],
     about: [
-      { title: "Hydrolyzed Keratin", image: "/brand/rebonding-system/about/1.png" },
-      { title: "Hydrolyzed Milk Protein", image: "/brand/rebonding-system/about/2.png" },
-      { title: "Natural Straight", image: "/brand/rebonding-system/about/3.png" },
+      { title: { en: "Hydrolyzed Keratin", id: "Hydrolyzed Keratin" }, image: "/brand/rebonding-system/about/1.png" },
+      { title: { en: "Hydrolyzed Milk Protein", id: "Hydrolyzed Milk Protein" }, image: "/brand/rebonding-system/about/2.png" },
+      { title: { en: "Natural Straight", id: "Lurus Alami" }, image: "/brand/rebonding-system/about/3.png" },
     ],
     // Showcase — the "Rambut Lurus Yang Sehat, Kuat, Lembut & Berkilau" poster, then
     // the four variant banners. Each bg ({n}-2) is a designed 4810×2260 off-white card

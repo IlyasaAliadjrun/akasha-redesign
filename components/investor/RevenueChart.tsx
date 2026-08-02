@@ -1,5 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { BRAND } from "@/dictionaries/brand";
 
 export default function RevenueChart({
   years,
@@ -10,6 +12,7 @@ export default function RevenueChart({
   netSales: number[];
   netIncome: number[];
 }) {
+  const { t } = useLocale();
   const max = Math.max(...netSales);
   const fmtM = (n: number) => {
     if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)} T`;
@@ -71,11 +74,11 @@ export default function RevenueChart({
       <div className="md:hidden mt-6 flex items-center justify-center gap-6 text-xs">
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-sm bg-accent-beverage" />
-          <span className="text-ink/60">Net Sales</span>
+          <span className="text-ink/60">{t(BRAND.investor.netSales)}</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-sm bg-ink" />
-          <span className="text-ink/60">Net Income</span>
+          <span className="text-ink/60">{t(BRAND.investor.netIncome)}</span>
         </div>
       </div>
     </div>

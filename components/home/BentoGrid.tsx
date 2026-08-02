@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { BRANDS, brandHref, getBrand } from "@/lib/brands";
+import { useLocale } from "@/lib/locale/LocaleProvider";
+import { home } from "@/dictionaries/home";
 
 // Render order — mirrors the reference: 6+6 / 3+6+3 / 6+3+3. Vica and Omoide
 // aren't shown in this layout (they remain in lib/brands.ts for brand pages).
@@ -72,6 +74,7 @@ const solidColor: Record<string, string> = {
 const darkTextTile = new Set(["wonhae", "makarizo-professional"]);
 
 export default function BentoGrid() {
+  const { asset, href, t } = useLocale();
   const items = ORDER.map((slug) => getBrand(slug)).filter(
     (b): b is (typeof BRANDS)[number] => Boolean(b)
   );
@@ -80,10 +83,10 @@ export default function BentoGrid() {
     <section className="bg-[#FAFAFA] py-16 sm:py-20 md:py-24 lg:py-32">
       <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 md:mb-12">
         <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-ink/60 mb-3">
-          Our brands
+          {t(home.brands.eyebrow)}
         </div>
         <h2 className="text-headline font-extrabold tracking-tightish whitespace-nowrap">
-          Ten brands. One family.
+          {t(home.brands.heading)}
         </h2>
       </div>
 
@@ -105,12 +108,12 @@ export default function BentoGrid() {
                 style={img ? undefined : { backgroundColor: bg }}
               >
                 <Link
-                  href={brandHref(b.slug)}
+                  href={href(brandHref(b.slug))}
                   className="block w-full h-full relative"
                 >
                   {img ? (
                     <Image
-                      src={img}
+                      src={asset(img)}
                       alt={b.name}
                       fill
                       sizes="(min-width:1280px) 50vw, (min-width:768px) 50vw, 100vw"
@@ -130,10 +133,10 @@ export default function BentoGrid() {
                         darkText ? "text-ink/70" : "text-white/85"
                       }`}
                     >
-                      {b.tagline}
+                      {t(b.tagline)}
                     </div>
                     <div className="mt-2 sm:mt-3 text-xs opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all">
-                      Explore →
+                      {t(home.common.explore)} →
                     </div>
                   </div>
                 </Link>

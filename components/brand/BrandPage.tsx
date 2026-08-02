@@ -1,4 +1,4 @@
-import type { Brand } from "@/lib/brands";
+import type { ResolvedBrand } from "@/lib/locale/resolve";
 import BrandHero from "@/components/brand/BrandHero";
 import BrandIntro from "@/components/brand/BrandIntro";
 import BrandAbout from "@/components/brand/BrandAbout";
@@ -11,7 +11,7 @@ import CrossSell from "@/components/brand/CrossSell";
 import BrandCTA from "@/components/brand/BrandCTA";
 
 // Page template for a top-level brand. Sub-brands render through SubBrandPage.
-export default function BrandPage({ brand }: { brand: Brand }) {
+export default function BrandPage({ brand }: { brand: ResolvedBrand }) {
   return (
     <>
       <BrandHero brand={brand} />

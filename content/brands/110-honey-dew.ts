@@ -6,11 +6,13 @@ const entry: Brand = {
     name: "Honey Dew",
     division: "beauty",
     parent: "makarizo-professional",
-    tagline: "Perawatan Professional dengan Nutrisi Madu Alami.",
+    tagline: { en: "Professional Care with Natural Honey Nutrition.", id: "Perawatan Professional dengan Nutrisi Madu Alami." },
     // Rendered by BrandIntro, which appends the full stop itself — so this string
     // deliberately ends without one.
-    description:
-      "Honey Dew adalah merek perawatan rambut profesional kelas atas yang menghadirkan kebaikan Nutrisi Madu untukmu",
+    description: {
+      en: "Honey Dew is a premium professional hair care brand that brings you the goodness of Honey Nutrition",
+      id: "Honey Dew adalah merek perawatan rambut profesional kelas atas yang menghadirkan kebaikan Nutrisi Madu untukmu",
+    },
     accentClass: "bg-brand-honey-dew",
     // Honey Dew gold — sampled from the wordmark art and the showcase banners
     // (both are exactly rgb(224,176,88)).
@@ -49,8 +51,8 @@ const entry: Brand = {
       logoAspect: "1789 / 284",
       logoWidth: "35vw",
       maxWidth: "37vw",
-      tagline: "Perawatan Professional dengan Nutrisi Madu Alami.",
-      ctaText: "Learn more",
+      tagline: { en: "Professional Care with Natural Honey Nutrition.", id: "Perawatan Professional dengan Nutrisi Madu Alami." },
+      ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "8%",
       // The reference sits the whole wordmark/tagline/CTA column in the LOWER left of
@@ -66,15 +68,15 @@ const entry: Brand = {
     bannerBg: "#EFEFEF",
     hero: false,
     products: [
-      { name: "Deep Moist & Shine Shampoo", variant: "For Dry and Dull Hair", image: "/brand/honey-dew/product-lineup/PRODUCTS-01.png" },
+      { name: "Deep Moist & Shine Shampoo", variant: { en: "For Dry and Dull Hair", id: "Untuk Rambut Kering dan Kusam" }, image: "/brand/honey-dew/product-lineup/PRODUCTS-01.png" },
       { name: "Repair Mask", image: "/brand/honey-dew/product-lineup/PRODUCTS-02.png" },
       { name: "Nutriv Serum", image: "/brand/honey-dew/product-lineup/PRODUCTS-03.png" },
       { name: "Restructuring Serum", image: "/brand/honey-dew/product-lineup/PRODUCTS-04.png" },
     ],
     about: [
-      { title: "Nutrisi Alami", image: "/brand/honey-dew/about/1.png" },
-      { title: "Tekstur ringan dan cepat meresap", image: "/brand/honey-dew/about/2.png" },
-      { title: "Perlindungan dari panas alat styling", image: "/brand/honey-dew/about/3.png" },
+      { title: { en: "Natural Nutrition", id: "Nutrisi Alami" }, image: "/brand/honey-dew/about/1.png" },
+      { title: { en: "Lightweight, fast-absorbing texture", id: "Tekstur ringan dan cepat meresap" }, image: "/brand/honey-dew/about/2.png" },
+      { title: { en: "Protection from styling heat", id: "Perlindungan dari panas alat styling" }, image: "/brand/honey-dew/about/3.png" },
     ],
     // Poster-style showcase (same engine as Hair Energy): title graphic, then one
     // banner per product line. The banner art is a finished rounded card with its

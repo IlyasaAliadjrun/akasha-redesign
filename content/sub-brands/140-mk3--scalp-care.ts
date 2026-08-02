@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "scalp-care",
     parent: "mk3",
     name: "Scalp Care",
-    tagline: `Perawatan profesional untuk rambut\nrontok dan berketombe`,
-    ctaText: "Learn more",
+    tagline: { en: `Professional care for\nhair loss and dandruff`, id: `Perawatan profesional untuk rambut\nrontok dan berketombe` },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#3E2120",
     // White-only hero wording → brown banner instead of the reference's light beige
     // (see the note handed to the brand owner).
@@ -29,10 +29,10 @@ const entry: SubBrand = {
     // shorter ones simply centred in their cell.
     cardAspect: "1151 / 1641",
     cards: [
-      { image: "/brand/mk3/scalp-care/showcase/1.png", label: "Scalp Exfoliator Dandruff & Hair Fall" },
-      { image: "/brand/mk3/scalp-care/showcase/2.png", label: "Shampoo Dandruff & Hair Fall" },
-      { image: "/brand/mk3/scalp-care/showcase/3.png", label: "Scalp Serum Hair Fall Treatment" },
-      { image: "/brand/mk3/scalp-care/showcase/4.png", label: "Scalp Serum Dandruff Treatment" },
+      { image: "/brand/mk3/scalp-care/showcase/1.png", label: { en: "Scalp Exfoliator Dandruff & Hair Fall", id: "Scalp Exfoliator Dandruff & Hair Fall" } },
+      { image: "/brand/mk3/scalp-care/showcase/2.png", label: { en: "Shampoo Dandruff & Hair Fall", id: "Shampoo Dandruff & Hair Fall" } },
+      { image: "/brand/mk3/scalp-care/showcase/3.png", label: { en: "Scalp Serum Hair Fall Treatment", id: "Scalp Serum Hair Fall Treatment" } },
+      { image: "/brand/mk3/scalp-care/showcase/4.png", label: { en: "Scalp Serum Dandruff Treatment", id: "Scalp Serum Dandruff Treatment" } },
     ],
   };
 

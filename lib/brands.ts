@@ -1,3 +1,5 @@
+import type { Localized } from "@/lib/locale/paths";
+
 export type DivisionId =
   | "beverage"
   | "beauty"
@@ -87,11 +89,11 @@ export type HeroContent = {
   logo?: string;
   logoAspect?: string; // intrinsic ratio of the logo, e.g. "1576 / 1086"
   logoWidth?: string; // CSS width, e.g. "32vw"
-  tagline?: string;
+  tagline?: Localized<string>;
   // Optional second line under the tagline — a lighter, smaller supporting sentence
   // (the tagline reads as the heading). Honours "\n" for a manual line break.
-  subtitle?: string;
-  ctaText?: string;
+  subtitle?: Localized<string>;
+  ctaText?: Localized<string>;
   ctaHref?: string;
   left?: string; // block left offset (default "5%")
   // Extra left padding applied to the tagline + CTA only (desktop), to line them up
@@ -117,8 +119,8 @@ export type Brand = {
   // has no page of its own, so tiles/slides that carry its artwork link here
   // instead. Falls back to the first sub-brand when unset.
   flagship?: string;
-  tagline: string;
-  description: string;
+  tagline: Localized<string>;
+  description: Localized<string>;
   accentClass: string; // tailwind bg class
   accentHex: string;
   heroImage: string;
@@ -131,20 +133,20 @@ export type Brand = {
   hero: boolean;
   // Heading above the product carousel (default "Explore the lineup."). Wonhae's
   // reference uses "Product.".
-  lineupTitle?: string;
+  lineupTitle?: Localized<string>;
   products?: {
-    name: string;
-    variant?: string;
-    size?: string;
-    price?: string;
+    name: string; // brand/SKU proper noun — not translated
+    variant?: Localized<string>; // e.g. "Gallon"/"Galon" — unit words vary by language
+    size?: Localized<string>; // e.g. "24-pack / box" vs "24 pack / dus"
+    price?: string; // Rupiah price — same in both locales
     image?: string;
     // Per-product size tweak in the lineup (default 1). <1 shrinks a product whose
     // artwork reads larger than its siblings (e.g. less transparent margin).
     imageScale?: number;
   }[];
-  features?: { title: string; body: string; image: string }[];
-  reasons?: { icon: string; title: string; body: string }[];
-  about?: { image: string; title: string }[];
+  features?: { title: Localized<string>; body: Localized<string>; image: string }[];
+  reasons?: { icon: string; title: Localized<string>; body: Localized<string> }[];
+  about?: { image: string; title: Localized<string> }[];
   // Poster-style showcase: a title graphic (brand/{slug}/showcase/title) with layered
   // parallax variant banners (brand/{slug}/showcase/{n}-{1,2}) overlapping its bottom edge.
   // `heroAspect` = hero's intrinsic ratio (CSS aspect-ratio; defaults to square).
@@ -170,40 +172,43 @@ export type Brand = {
 
 export const DIVISIONS: {
   id: DivisionId;
-  name: string;
-  tagline: string;
+  name: Localized<string>;
+  tagline: Localized<string>;
   brandCount: number;
   accentHex: string;
   image: string;
 }[] = [
   {
     id: "beverage",
-    name: "Mineral Water",
-    tagline: "Purity you can taste",
+    name: { en: "Mineral Water", id: "Air Mineral" },
+    tagline: { en: "Purity you can taste", id: "Kemurnian yang terasa" },
     brandCount: 2,
     accentHex: "#0066CC",
     image: "/home/division-cards/beverage.jpg",
   },
   {
     id: "beauty",
-    name: "Beauty & Personal Care",
-    tagline: "Confidence, bottled",
+    name: { en: "Beauty & Personal Care", id: "Kecantikan & Perawatan Diri" },
+    tagline: { en: "Confidence, bottled", id: "Rasa percaya diri, dalam sebotol" },
     brandCount: 6,
     accentHex: "#C9956B",
     image: "/home/division-cards/beauty.png",
   },
   {
     id: "mens",
-    name: "Men's Care",
-    tagline: "Groomed, every day",
+    name: { en: "Men's Care", id: "Perawatan Pria" },
+    tagline: { en: "Groomed, every day", id: "Tampil rapi, setiap hari" },
     brandCount: 1,
     accentHex: "#5B6B7F",
     image: "/home/hero-carousel/barber-daily.jpg",
   },
   {
     id: "food",
-    name: "Food and Beverage",
-    tagline: "Flavors that bring people together",
+    name: { en: "Food and Beverage", id: "Makanan dan Minuman" },
+    tagline: {
+      en: "Flavors that bring people together",
+      id: "Rasa yang mempersatukan",
+    },
     brandCount: 4,
     accentHex: "#E85D2C",
     image:

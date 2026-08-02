@@ -6,8 +6,8 @@ const entry: SubBrand = {
     parent: "honey-dew",
     name: "Repair Mask",
     // Copy taken verbatim from the line's own reference banner.
-    tagline: `Masker perawatan rambut intensif untuk perawatan\nmingguan bagi rambut yang kering & rusak`,
-    ctaText: "Learn more",
+    tagline: { en: `Intensive hair care mask for\nweekly treatment of dry & damaged hair`, id: `Masker perawatan rambut intensif untuk perawatan\nmingguan bagi rambut yang kering & rusak` },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#E0B058",
     // Same honey-brown banner as the other Honey Dew lines — see the note in
     // 070-honey-dew--shampoo.ts.

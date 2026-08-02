@@ -5,8 +5,8 @@ const entry: SubBrand = {
     slug: "young-and-bright",
     parent: "inoskin",
     name: "Young & Bright",
-    tagline: `Kulit cerah glowing\nmenyamarkan garis halus.`,
-    ctaText: "Learn more",
+    tagline: { en: `Bright, glowing skin\nthat visibly reduces fine lines.`, id: `Kulit cerah glowing\nmenyamarkan garis halus.` },
+    ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#897321",
     // SubBrandHero always paints its wording white, so the banner has to stay dark
     // enough to carry it — the brand gold, not the off-white of the brand hero.
@@ -37,11 +37,11 @@ const entry: SubBrand = {
     // inside their box rather than being scaled down and narrowed.
     cardAspect: "2304 / 3281",
     cards: [
-      { image: "/brand/inoskin/young-and-bright/showcase/1.png", label: "Young and Bright Toner" },
-      { image: "/brand/inoskin/young-and-bright/showcase/2.png", label: "Young and Bright Serum" },
-      { image: "/brand/inoskin/young-and-bright/showcase/3.png", label: "Young and Bright Moisturizer" },
-      { image: "/brand/inoskin/young-and-bright/showcase/4.png", label: "Collagen Firming Mask" },
-      { image: "/brand/inoskin/young-and-bright/showcase/5.png", label: "Triple Power Cleanser" },
+      { image: "/brand/inoskin/young-and-bright/showcase/1.png", label: { en: "Young and Bright Toner", id: "Young and Bright Toner" } },
+      { image: "/brand/inoskin/young-and-bright/showcase/2.png", label: { en: "Young and Bright Serum", id: "Young and Bright Serum" } },
+      { image: "/brand/inoskin/young-and-bright/showcase/3.png", label: { en: "Young and Bright Moisturizer", id: "Young and Bright Moisturizer" } },
+      { image: "/brand/inoskin/young-and-bright/showcase/4.png", label: { en: "Collagen Firming Mask", id: "Masker Pengencang Collagen" } },
+      { image: "/brand/inoskin/young-and-bright/showcase/5.png", label: { en: "Triple Power Cleanser", id: "Pembersih Wajah Triple Power" } },
     ],
   };
 
