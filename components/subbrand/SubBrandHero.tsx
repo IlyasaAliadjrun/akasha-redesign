@@ -255,10 +255,10 @@ export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
           {/* Wordmark and wording are two INDEPENDENT positioned blocks. Set the gap
               between them freely by changing each block's own `top` (they no longer
               share a column, so nothing forces a fixed spacing). */}
-          <div className="absolute left-[9%] lg:left-[18%] top-[17%] z-20">
+          <div className="absolute left-[9%] lg:left-[15%] top-[17%] z-20">
             {wordmark}
           </div>
-          <div className="absolute left-[9%] lg:left-[18%] top-[45%] z-20 max-w-[50%]">
+          <div className="absolute left-[9%] lg:left-[15%] top-[45%] z-20 max-w-[50%]">
             {wording(false)}
           </div>
         </>

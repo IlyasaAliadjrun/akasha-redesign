@@ -24,21 +24,21 @@ const entry: Brand = {
     // half its natural pixel width so nothing renders above its own resolution at DPR 2.
     heroLayers: [
       // Collagen Firming Mask — tilted, top of the cluster, enters from the TOP (3rd).
-      { src: "/brand/inoskin/hero/2.png", depth: 30, enterFrom: "top", enterDelay: 0.35, width: "min(34.3vw, 43.1vh)", maxWidth: "1219px", aspectRatio: "2438 / 2701", left: "57.1%", top: "-6%",
-        mobile: { left: "32.2%", top: "18.1%", width: "min(44vw, 22vh)" } },
+      { src: "/brand/inoskin/hero/2.png", depth: 30, enterFrom: "top", enterDelay: 0.2, width: "min(34.3vw, 65vh)", maxWidth: "1300px", aspectRatio: "2438 / 2701", left: "60%", top: "0%",
+        mobile: { left: "25%", top: "15%", width: "min(52vw, 100vh)" } },
       // Triple Power Cleanser — right of the cluster, enters from the RIGHT (2nd).
-      { src: "/brand/inoskin/hero/3.png", depth: 48, enterFrom: "right", enterDelay: 0.2, width: "min(36.6vw, 45.9vh)", maxWidth: "873px", aspectRatio: "1746 / 3103", left: "61.7%", top: "16.5%",
-        mobile: { left: "38.2%", top: "29.7%", width: "min(47vw, 24vh)" } },
+      { src: "/brand/inoskin/hero/3.png", depth: 20, enterFrom: "right", enterDelay: 0.35, width: "min(36.6vw, 45vh)", maxWidth: "873px", aspectRatio: "1746 / 3103", left: "70%", top: "20%",
+        mobile: { left: "40%", top: "28%", width: "min(48vw, 22vh)" } },
       // Young and Bright Toner — front/left of the cluster, enters from the LEFT (1st).
-      { src: "/brand/inoskin/hero/1.png", depth: 66, enterFrom: "left", enterDelay: 0, width: "min(39.6vw, 49.8vh)", maxWidth: "872px", aspectRatio: "1745 / 3103", left: "43.2%", top: "7.3%",
-        mobile: { left: "14.3%", top: "25%", width: "min(51vw, 26vh)" } },
+      { src: "/brand/inoskin/hero/1.png", depth: 66, enterFrom: "left", enterDelay: 0, width: "min(39.6vw, 45vh)", maxWidth: "872px", aspectRatio: "1745 / 3103", left: "55%", top: "15%",
+        mobile: { left: "22%", top: "31%", width: "min(52vw, 22vh)" } },
     ],
     heroContent: {
       logo: "/brand/inoskin/hero/wordmark.png",
       logoAspect: "1553 / 549",
       // Capped at 760px = half the wordmark's natural 1553px, so it stays sharp at DPR 2
       // on screens wider than ~2300px.
-      logoWidth: "min(33vw, 760px)",
+      logoWidth: "min(20vw, 760px)",
       maxWidth: "40vw",
       tagline: { en: "Skincare with 3rd GEN BIOCOMPATIBLE COLLAGEN", id: "Perawatan Kulit dengan 3rd GEN BIOKOMPATIBEL COLLAGEN" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
@@ -46,9 +46,9 @@ const entry: Brand = {
       left: "8%",
       offsetY: "8vh",
       // Off-white banner → dark text, and the navbar paints itself dark over it.
-      theme: "dark",
+      theme: "accent-light",
       delay: 0.55,
-      mobile: { logoWidth: "62vw" },
+      mobile: { logoWidth: "30vw" },
     },
     bannerBg: "#F2F1EF",
     hero: false,
