@@ -112,13 +112,26 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
   });
   const layers = brand.heroLayers;
   const content = brand.heroContent;
-  const darkText = content?.theme === "dark";
+  const theme = content?.theme ?? "light";
+  const darkText = theme === "dark";
+  const accentText = theme === "accent-dark" || theme === "accent-light";
+  // Banner-brightness assumption — drives the navbar via `data-theme` below,
+  // independent of which text colour is actually painted.
+  const bannerLight = darkText || theme === "accent-light";
+  const accentHex = brand.accentHex;
 
-  const taglineColor = darkText ? "text-ink" : "text-white";
-  const subtitleColor = darkText ? "text-ink/70" : "text-white/80";
+  const taglineColor = darkText ? "text-ink" : accentText ? "" : "text-white";
+  const taglineStyle = accentText ? { color: accentHex } : undefined;
+  const subtitleColor = darkText ? "text-ink/70" : accentText ? "" : "text-white/80";
+  const subtitleStyle = accentText ? { color: `${accentHex}CC` } : undefined;
   const ctaClass = darkText
     ? "border-ink/40 text-ink hover:bg-ink hover:text-white"
+    : accentText
+    ? "border-[var(--hero-accent)] hover:bg-[var(--hero-accent)] hover:text-white"
     : "border-white/70 text-white hover:bg-white hover:text-ink";
+  const ctaStyle = accentText
+    ? ({ color: accentHex, "--hero-accent": accentHex } as React.CSSProperties)
+    : undefined;
 
   return (
     <section
@@ -126,7 +139,7 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
       // Tell the navbar how to paint itself over this hero. `heroContent.theme:"dark"`
       // means DARK TEXT — i.e. a LIGHT banner (Vica/Wonhae yellow) — so the navbar
       // needs its dark treatment; otherwise the banner is dark and the navbar goes white.
-      data-theme={darkText ? "light" : "dark"}
+      data-theme={bannerLight ? "light" : "dark"}
       className="relative w-full overflow-hidden h-[100svh] min-h-[480px] md:min-h-[560px]"
       style={{ backgroundColor: brand.bannerBg ?? brand.accentHex }}
     >
@@ -185,12 +198,12 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
             {(content.tagline || content.subtitle || content.ctaText) && (
               <div className="flex flex-col" style={{ paddingLeft: content.bodyIndent }}>
                 {content.tagline && (
-                  <p className={`font-display mt-3 sm:mt-5 font-semibold leading-tight text-[clamp(15px,2vw,30px)] ${taglineColor}`}>
+                  <p className={`font-display mt-3 sm:mt-5 font-semibold leading-tight text-[clamp(15px,2vw,30px)] ${taglineColor}`} style={taglineStyle}>
                     {content.tagline}
                   </p>
                 )}
                 {content.subtitle && (
-                  <p className={`font-display mt-2 sm:mt-3 font-normal leading-snug whitespace-pre-line text-[clamp(13px,1.25vw,19px)] ${subtitleColor}`}>
+                  <p className={`font-display mt-2 sm:mt-3 font-normal leading-snug whitespace-pre-line text-[clamp(13px,1.25vw,19px)] ${subtitleColor}`} style={subtitleStyle}>
                     {content.subtitle}
                   </p>
                 )}
@@ -198,6 +211,7 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
                   <a
                     href={content.ctaHref ?? "#"}
                     className={`font-display pointer-events-auto mt-5 sm:mt-7 inline-block w-fit rounded-full border px-6 sm:px-7 py-2 sm:py-2.5 text-sm font-medium transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.97] ${ctaClass}`}
+                    style={ctaStyle}
                   >
                     {content.ctaText}
                   </a>
@@ -228,12 +242,12 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
           )}
           <div className="self-start flex flex-col">
             {content.tagline && (
-              <p className={`font-display font-semibold leading-tight text-[clamp(18px,5.5vw,26px)] ${taglineColor}`}>
+              <p className={`font-display font-semibold leading-tight text-[clamp(18px,5.5vw,26px)] ${taglineColor}`} style={taglineStyle}>
                 {content.tagline}
               </p>
             )}
             {content.subtitle && (
-              <p className={`font-display mt-2 font-normal leading-snug whitespace-pre-line text-[clamp(12px,3.6vw,16px)] ${subtitleColor}`}>
+              <p className={`font-display mt-2 font-normal leading-snug whitespace-pre-line text-[clamp(12px,3.6vw,16px)] ${subtitleColor}`} style={subtitleStyle}>
                 {content.subtitle}
               </p>
             )}
@@ -241,6 +255,7 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
               <a
                 href={content.ctaHref ?? "#"}
                 className={`font-display pointer-events-auto mt-4 inline-block w-fit rounded-full border px-6 py-2 text-sm font-medium transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.97] ${ctaClass}`}
+                style={ctaStyle}
               >
                 {content.ctaText}
               </a>

@@ -35,6 +35,10 @@ export type SubBrand = {
   ctaHref?: string; // hero button target (default "#showcase")
   accentHex: string; // banner colour (usually inherits the parent brand)
   bannerBg?: string; // solid colour behind the hero while it loads
+  // Hero text colour (name/tagline/CTA) + banner-brightness assumption (the
+  // latter also drives the navbar). Same convention as Brand.heroContent.theme —
+  // see the comment there for what each value assumes about the banner.
+  theme?: "light" | "dark" | "accent-dark" | "accent-light";
   // Layered/parallax hero products — same shape as a brand hero. Empty in the
   // skeleton (a placeholder banner shows); fill with layers pointing at
   // /brand/{parent}/{slug}/hero/… to switch the real parallax banner on. Each

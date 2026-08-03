@@ -103,7 +103,16 @@ export type HeroContent = {
   bodyIndent?: string;
   maxWidth?: string; // block max width (omit to let the tagline run wider than the logo)
   offsetY?: string; // vertical nudge from centre, e.g. "10vh" moves the block down
-  theme?: "light" | "dark"; // text colour (default "light" = white)
+  // Text colour + banner-brightness assumption (the latter also drives the navbar
+  // via `data-theme`, see BrandHero):
+  //   "light"       → white text.  Assumes a DARK banner → navbar renders white.
+  //   "dark"        → text-ink (#0A0A0A). Assumes a LIGHT banner → navbar renders dark.
+  //   "accent-dark" → text = brand's own `accentHex`. Assumes a DARK banner → navbar white.
+  //   "accent-light"→ text = brand's own `accentHex`. Assumes a LIGHT banner → navbar dark.
+  // Pick the accent-* variant that matches the actual banner, not the text colour —
+  // the accent colour itself doesn't tell you whether the banner behind it is dark
+  // or light, so the wrong pick makes the navbar invisible against its own banner.
+  theme?: "light" | "dark" | "accent-dark" | "accent-light";
   delay?: number; // entrance delay in seconds
   // On mobile (<768px) the layout switches to: wordmark top-centre, tagline + CTA
   // bottom-left. Only the logo size differs per brand, set here.

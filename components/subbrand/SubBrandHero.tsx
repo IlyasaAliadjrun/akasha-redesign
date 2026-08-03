@@ -130,6 +130,27 @@ export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
   const products = sub.heroLayers ?? [];
   const hasProducts = products.length > 0;
 
+  const theme = sub.theme ?? "light";
+  const darkText = theme === "dark";
+  const accentText = theme === "accent-dark" || theme === "accent-light";
+  // Banner-brightness assumption — drives the navbar via `data-theme` below,
+  // independent of which text colour is actually painted.
+  const bannerLight = darkText || theme === "accent-light";
+  const accentHex = sub.accentHex;
+
+  const nameColor = darkText ? "text-ink" : accentText ? "" : "text-white";
+  const nameStyle = accentText ? { color: accentHex } : undefined;
+  const taglineColor = darkText ? "text-ink/90" : accentText ? "" : "text-white/90";
+  const taglineStyle = accentText ? { color: `${accentHex}E6` } : undefined;
+  const ctaClass = darkText
+    ? "border-ink/40 text-ink hover:bg-ink hover:text-white"
+    : accentText
+    ? "border-[var(--hero-accent)] hover:bg-[var(--hero-accent)] hover:text-white"
+    : "border-white/70 text-white hover:bg-white hover:text-ink";
+  const ctaStyle = accentText
+    ? ({ color: accentHex, "--hero-accent": accentHex } as React.CSSProperties)
+    : undefined;
+
   const scrollDown = (e?: { preventDefault: () => void }) => {
     e?.preventDefault();
     window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
@@ -161,11 +182,11 @@ export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
       transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={centered ? "flex flex-col items-center text-center" : "max-w-xl"}
     >
-      <h1 className="font-display uppercase text-white font-semibold tracking-tightish leading-[1.05] text-[25px] sm:text-[35px] lg:text-[50px]">
+      <h1 className={`font-display uppercase font-semibold tracking-tightish leading-[1.05] text-[25px] sm:text-[35px] lg:text-[50px] ${nameColor}`} style={nameStyle}>
         {sub.name}
       </h1>
       {sub.tagline && (
-        <p className="font-display mt-4 text-white/90 font-semibold text-[12px] lg:text-[16px] leading-snug max-w-lg whitespace-pre-line">
+        <p className={`font-display mt-4 font-semibold text-[12px] lg:text-[16px] leading-snug max-w-lg whitespace-pre-line ${taglineColor}`} style={taglineStyle}>
           {sub.tagline}
         </p>
       )}
@@ -173,7 +194,8 @@ export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
         <a
           href="#next"
           onClick={scrollDown}
-          className="font-display mt-6 inline-block rounded-full border border-white/70 px-7 py-2.5 text-sm font-semibold text-white transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:bg-white hover:text-ink active:scale-[0.97]"
+          className={`font-display mt-6 inline-block rounded-full border px-7 py-2.5 text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.97] ${ctaClass}`}
+          style={ctaStyle}
         >
           {sub.ctaText}
         </a>
@@ -184,7 +206,7 @@ export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
   return (
     <section
       ref={ref}
-      data-theme="dark"
+      data-theme={bannerLight ? "light" : "dark"}
       className="relative w-full overflow-hidden h-[100svh] min-h-[520px] md:min-h-[560px]"
       style={{ backgroundColor: sub.bannerBg ?? sub.accentHex }}
     >

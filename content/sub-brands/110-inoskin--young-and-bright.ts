@@ -8,9 +8,10 @@ const entry: SubBrand = {
     tagline: { en: `Bright, glowing skin\nthat visibly reduces fine lines.`, id: `Kulit cerah glowing\nmenyamarkan garis halus.` },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#897321",
-    // SubBrandHero always paints its wording white, so the banner has to stay dark
-    // enough to carry it — the brand gold, not the off-white of the brand hero.
-    bannerBg: "#897321",
+    // Banner is the brand's near-white (#F2F1EF, same as the brand hero) — "-light"
+    // tells the navbar to render dark chrome here instead of assuming a dark banner.
+    theme: "accent-light",
+    bannerBg: "#F2F1EF",
     heroWordmark: "/brand/inoskin/hero/wordmark.png",
     heroWordmarkAspect: "1553 / 549",
     // Products render back-to-front: the moisturizer tube sits behind at the top
