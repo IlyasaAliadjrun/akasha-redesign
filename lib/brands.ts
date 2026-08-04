@@ -115,8 +115,18 @@ export type HeroContent = {
   theme?: "light" | "dark" | "accent-dark" | "accent-light";
   delay?: number; // entrance delay in seconds
   // On mobile (<768px) the layout switches to: wordmark top-centre, tagline + CTA
-  // bottom-left. Only the logo size differs per brand, set here.
-  mobile?: { logoWidth?: string };
+  // bottom-left. Size differs per brand, set here. `logo`/`logoAspect`/`tagline`/
+  // `ctaText`/`ctaHref` are optional — only set them when mobile needs something
+  // *different* from desktop (e.g. a stacked lockup, or shorter copy that fits a
+  // narrower column); omitted, each falls back to its desktop value above.
+  mobile?: {
+    logoWidth?: string;
+    logo?: string;
+    logoAspect?: string;
+    tagline?: Localized<string>;
+    ctaText?: Localized<string>;
+    ctaHref?: string;
+  };
 };
 
 export type Brand = {

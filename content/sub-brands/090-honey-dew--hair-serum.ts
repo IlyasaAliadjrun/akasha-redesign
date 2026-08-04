@@ -25,7 +25,7 @@ const entry: SubBrand = {
       // diagonal stack, so its height cannot also be matched.
       // `left` is pushed past the reference's own x so the (wider) stand-in cluster
       // still clears the tagline's right edge instead of sitting on top of it.
-      { src: "/brand/honey-dew/showcase/2-1.png", enterFrom: "right", enterDelay: 0.2, depth: 40, width: "min(57.5vw, 69vh)", aspectRatio: "2399 / 2689", left: "48%", top: "2%",
+      { src: "/brand/honey-dew/showcase/2-1.png", enterFrom: "right", enterDelay: 0.2, depth: 40, width: "min(57.5vw, 69vh, 1200px)", aspectRatio: "2399 / 2689", left: "48%", top: "2%",
         mobile: { left: "-3%", top: "-27%", width: "133%" } },
     ],
     showcaseTitle: "/brand/honey-dew/hair-serum/showcase/title.png",

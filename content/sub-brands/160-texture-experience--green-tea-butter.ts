@@ -21,7 +21,7 @@ const entry: SubBrand = {
     // canvas), so the layer box is much larger than the pair looks.
     heroLayers: [
       { src: "/brand/texture-experience/green-tea-butter/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
-        width: "min(46vw, 94vh)", aspectRatio: "3463 / 3991", left: "38.7%", top: "-4.3%",
+        width: "min(46vw, 94vh, 1732px)", aspectRatio: "3463 / 3991", left: "38.7%", top: "-4.3%",
         mobile: { left: "-3.6%", top: "-9.5%", width: "101%" } },
     ],
     showcaseTitle: "/brand/texture-experience/green-tea-butter/showcase/title.png",

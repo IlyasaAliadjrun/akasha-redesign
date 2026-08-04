@@ -33,15 +33,15 @@ const entry: Brand = {
     heroLayers: [
       // Anti Resistant+ jar — back, highest and left of the pair, enters from the LEFT.
       { src: "/brand/rebonding-system/hero/2.png", depth: 36, enterFrom: "left", enterDelay: 0,
-        width: "min(26.5vw, 33.5vh)", aspectRatio: "2004 / 1965", left: "50.3%", top: "9.6%",
+        width: "min(26.5vw, 33.5vh)", maxWidth: "1002px", aspectRatio: "2004 / 1965", left: "50.3%", top: "9.6%",
         mobile: { left: "1%", top: "24%", width: "min(40vw, 26vh)" } },
       // Super Gold+ jar — right of the pair and slightly lower, enters from the RIGHT (3rd).
       { src: "/brand/rebonding-system/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4,
-        width: "min(28vw, 35.5vh)", aspectRatio: "2132 / 2100", left: "62%", top: "21.4%",
+        width: "min(28vw, 35.5vh)", maxWidth: "1066px", aspectRatio: "2132 / 2100", left: "62%", top: "21.4%",
         mobile: { left: "47%", top: "30%", width: "min(42vw, 27vh)" } },
       // Milky Neutralizer+ bottle — front, tilted across the pair, drops in from the TOP (2nd).
       { src: "/brand/rebonding-system/hero/1.png", depth: 72, enterFrom: "top", enterDelay: 0.2,
-        width: "min(41vw, 52vh)", aspectRatio: "2724 / 3019", left: "42.5%", top: "31%",
+        width: "min(41vw, 52vh)", maxWidth: "1362px", aspectRatio: "2724 / 3019", left: "42.5%", top: "31%",
         mobile: { left: "19%", top: "37%", width: "min(58vw, 38vh)" } },
     ],
     heroContent: {

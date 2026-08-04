@@ -19,8 +19,8 @@ const entry: Brand = {
     // the product cluster (composited from hero/1–4) on the right. Hair Energy pattern.
     heroLayers: [
       { src: "/brand/128/hero/cluster.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
-        width: "min(52vw, 700px)", aspectRatio: "3493 / 2130", right: "1%", top: "20%",
-        mobile: { width: "min(96vw, 440px)", left: "2%", top: "34%" } },
+        width: "min(52vw, 65vh, 700px)", aspectRatio: "3493 / 2130", right: "1%", top: "20%",
+        mobile: { width: "min(96vw, 41vh, 440px)", left: "2%", top: "34%" } },
     ],
     heroContent: {
       logo: "/brand/128/hero/wordmark.png",

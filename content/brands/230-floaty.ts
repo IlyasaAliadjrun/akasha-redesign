@@ -34,9 +34,9 @@ const entry: Brand = {
         // the wordmark on shorter/narrower desktops. The calc keeps the layer's own
         // centre pinned at 45% of the hero (half its height = width × 1021/1795 / 2),
         // so it stays level with the wordmark from 768px all the way up.
-        width: "min(56vw, 880px)", aspectRatio: "1795 / 1021", right: "4%",
-        top: "calc(45% - min(56vw, 880px) * 0.2844)",
-        mobile: { width: "min(98vw, 420px)", left: "1%", top: "45%" } },
+        width: "min(56vw, 81vh, 880px)", aspectRatio: "1795 / 1021", right: "4%",
+        top: "calc(45% - min(56vw, 81vh, 880px) * 0.2844)",
+        mobile: { width: "min(98vw, 39vh, 420px)", left: "1%", top: "45%" } },
     ],
     // Hero WITHOUT wording: the wordmark art already carries the tagline ("Snack tidak
     // seharusnya serius, mereka seharusnya menyenangkan!"), so no separate HTML

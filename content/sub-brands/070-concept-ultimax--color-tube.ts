@@ -19,7 +19,7 @@ const entry: SubBrand = {
     // The artwork fills 66 % × 76 % of its canvas, so the layer box is sized well
     // past the visible product to land it at the reference's optical size.
     heroLayers: [
-      { src: "/brand/concept-ultimax/color-tube/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 44, width: "min(30vw, 52vh)", aspectRatio: "2658 / 3762", left: "56%", top: "14%",
+      { src: "/brand/concept-ultimax/color-tube/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 44, width: "min(30vw, 52vh, 1329px)", aspectRatio: "2658 / 3762", left: "56%", top: "14%",
         mobile: { left: "6%", top: "-6%", width: "88%" } },
     ],
     showcaseTitle: "/brand/concept-ultimax/color-tube/showcase/title.png",

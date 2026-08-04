@@ -33,15 +33,15 @@ const entry: Brand = {
     heroLayers: [
       // Deep Moist & Shine Shampoo — back, highest, enters from the TOP (1st).
       // Visible bottle ≈ 15.5 vw wide, spanning 14 %–43 % of the banner height.
-      { src: "/brand/honey-dew/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0, width: "min(19vw, 23vh)", aspectRatio: "1672 / 2451", left: "54.5%", top: "11.5%",
+      { src: "/brand/honey-dew/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0, width: "min(19vw, 23vh)", maxWidth: "836px", aspectRatio: "1672 / 2451", left: "54.5%", top: "11.5%",
         mobile: { left: "30%", top: "20%", width: "min(42vw, 24vh)" } },
       // Repair Mask — in front of the bottle and a touch larger than it (the
       // reference sizes the tube at ~1.15× the bottle); visible tube ≈ 17.5 vw,
       // spanning 24 %–58 % of the banner height.
-      { src: "/brand/honey-dew/hero/3.png", depth: 66, enterFrom: "right", enterDelay: 0.3, width: "min(39.7vw, 48vh)", aspectRatio: "3058 / 3865", left: "53.8%", top: "10.2%",
+      { src: "/brand/honey-dew/hero/3.png", depth: 66, enterFrom: "right", enterDelay: 0.3, width: "min(39.7vw, 48vh)", maxWidth: "1529px", aspectRatio: "3058 / 3865", left: "53.8%", top: "10.2%",
         mobile: { left: "26%", top: "18%", width: "min(80vw, 46vh)" } },
       // Nutriv Serum — front left, smallest, enters from the LEFT (2nd).
-      { src: "/brand/honey-dew/hero/1.png", depth: 54, enterFrom: "left", enterDelay: 0.15, width: "min(27vw, 32vh)", aspectRatio: "2278 / 2569", left: "39%", top: "44%",
+      { src: "/brand/honey-dew/hero/1.png", depth: 54, enterFrom: "left", enterDelay: 0.15, width: "min(27vw, 32vh)", maxWidth: "1139px", aspectRatio: "2278 / 2569", left: "39%", top: "44%",
         mobile: { left: "-6%", top: "40%", width: "min(60vw, 34vh)" } },
     ],
     // The wordmark is a plain "HONEY DEW" lockup with no tagline baked in, so the

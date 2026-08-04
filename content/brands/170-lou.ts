@@ -31,15 +31,15 @@ const entry: Brand = {
     // both edges plus an aspect-ratio height would over-constrain the box.
     heroLayers: [
       // Rest Easy tube — back of the cluster, highest and smallest (50 mL).
-      { src: "/brand/lou/hero/2.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(26vw, 32vh)", aspectRatio: "2160 / 3840", right: "27%", bottom: "31%",
+      { src: "/brand/lou/hero/2.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(26vw, 32vh)", maxWidth: "1080px", aspectRatio: "2160 / 3840", right: "27%", bottom: "31%",
         mobile: { left: "0%", top: "29%", right: "auto", bottom: "auto", width: "min(44vw, 32vh)" } },
       // Grow More spray — right edge, level with the tube (100 mL).
-      { src: "/brand/lou/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(34vw, 42vh)", aspectRatio: "2160 / 3109", right: "4%", bottom: "23%",
+      { src: "/brand/lou/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(34vw, 42vh)", maxWidth: "1080px", aspectRatio: "2160 / 3109", right: "4%", bottom: "23%",
         mobile: { left: "51%", top: "30%", right: "auto", bottom: "auto", width: "min(61vw, 45vh)" } },
       // Don't Cry pump — front/centre, sits lower and largest (250 mL). On mobile the
       // trio drops into the band between the top-centre wordmark and the bottom-left
       // tagline block, so nothing collides with the HTML overlay.
-      { src: "/brand/lou/hero/1.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(38vw, 46vh)", aspectRatio: "2160 / 3311", right: "26%", bottom: "5%",
+      { src: "/brand/lou/hero/1.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(38vw, 46vh)", maxWidth: "1080px", aspectRatio: "2160 / 3311", right: "26%", bottom: "5%",
         mobile: { left: "9%", top: "28%", right: "auto", bottom: "auto", width: "min(72vw, 52vh)" } },
     ],
     heroContent: {

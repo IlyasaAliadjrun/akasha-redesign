@@ -27,15 +27,15 @@ const entry: Brand = {
     heroLayers: [
       // Acne Care Oil-Control Face Wash — back, upper middle, drops in from the top.
       { src: "/brand/barber-daily/hero/2.png", depth: 34, enterFrom: "top", enterDelay: 0.2,
-        width: "min(20vw, 32vh)", aspectRatio: "1531 / 2722", left: "60.5%", top: "5.4%",
+        width: "min(20vw, 32vh)", maxWidth: "766px", aspectRatio: "1531 / 2722", left: "60.5%", top: "5.4%",
         mobile: { left: "47%", top: "20%", width: "min(34vw, 22vh)" } },
       // Ultra Sensitive Face Wash — right, enters from the right.
       { src: "/brand/barber-daily/hero/3.png", depth: 52, enterFrom: "right", enterDelay: 0.4,
-        width: "min(38vw, 61vh)", aspectRatio: "3945 / 3946", left: "64.7%", top: "12.8%",
+        width: "min(38vw, 61vh)", maxWidth: "1973px", aspectRatio: "3945 / 3946", left: "64.7%", top: "12.8%",
         mobile: { left: "42%", top: "41%", width: "min(56vw, 36vh)" } },
       // Bright Radiance Face Wash — front, largest, enters from the left (1st).
       { src: "/brand/barber-daily/hero/1.png", depth: 70, enterFrom: "left", enterDelay: 0,
-        width: "min(31vw, 50vh)", aspectRatio: "2161 / 3691", left: "45.3%", top: "24.9%",
+        width: "min(31vw, 50vh)", maxWidth: "1081px", aspectRatio: "2161 / 3691", left: "45.3%", top: "24.9%",
         mobile: { left: "22.5%", top: "33%", width: "min(46vw, 30vh)" } },
     ],
     heroContent: {

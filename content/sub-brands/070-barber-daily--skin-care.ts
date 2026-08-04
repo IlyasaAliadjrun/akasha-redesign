@@ -20,13 +20,13 @@ const entry: SubBrand = {
     // canvas), so each layer box is much wider than the bottle looks.
     heroLayers: [
       { src: "/brand/barber-daily/skin-care/hero/2.png", enterFrom: "right", enterDelay: 0.35, depth: 34,
-        width: "min(37vw, 60vh)", aspectRatio: "3545 / 3546", left: "64.6%", top: "4.3%",
+        width: "min(37vw, 60vh, 1773px)", aspectRatio: "3545 / 3546", left: "64.6%", top: "4.3%",
         mobile: { right: "0%", top: "0%", width: "58%" } },
       { src: "/brand/barber-daily/skin-care/hero/3.png", enterFrom: "right", enterDelay: 0.5, depth: 46,
-        width: "min(38vw, 61vh)", aspectRatio: "4248 / 4247", left: "67%", top: "35.4%",
+        width: "min(38vw, 61vh, 2124px)", aspectRatio: "4248 / 4247", left: "67%", top: "35.4%",
         mobile: { right: "2%", bottom: "2%", width: "62%" } },
       { src: "/brand/barber-daily/skin-care/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 62,
-        width: "min(34vw, 55vh)", aspectRatio: "2451 / 3838", left: "53.3%", top: "23%",
+        width: "min(34vw, 55vh, 1226px)", aspectRatio: "2451 / 3838", left: "53.3%", top: "23%",
         mobile: { left: "2%", top: "12%", width: "66%" } },
     ],
     showcaseTitle: "/brand/barber-daily/skin-care/showcase/title.png",

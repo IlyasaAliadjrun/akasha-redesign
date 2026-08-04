@@ -28,7 +28,7 @@ const entry: Brand = {
       // 44.7vw of box => 40vw of visible pack, landing it exactly where the
       // reference puts it (x 939-1708, y 178-935 of a 1920x1084 banner).
       { src: "/brand/omoide/hero/1.png", depth: 60, enterFrom: "right", enterDelay: 0.25,
-        width: "min(44.7vw, 79.5vh)", aspectRatio: "1789 / 1771", left: "46.2%", top: "11.7%",
+        width: "min(44.7vw, 79.5vh)", maxWidth: "895px", aspectRatio: "1789 / 1771", left: "46.2%", top: "11.7%",
         mobile: { left: "6%", top: "27.5%", width: "min(86vw, 45vh)" } },
     ],
     heroContent: {

@@ -24,9 +24,9 @@ const entry: Brand = {
     // margins, so the layer `width` is much larger than the visible product —
     // the vh term keeps them inside the banner on short/wide screens.
     heroLayers: [
-      { src: "/brand/asters/hero/2.png", depth: 30, enterFrom: "left", enterDelay: 0.15, width: "min(52vw, 63vh)", aspectRatio: "2869 / 4903", left: "31%", top: "-3%",
+      { src: "/brand/asters/hero/2.png", depth: 30, enterFrom: "left", enterDelay: 0.15, width: "min(52vw, 63vh)", maxWidth: "1435px", aspectRatio: "2869 / 4903", left: "31%", top: "-3%",
         mobile: { left: "4%", top: "20%", width: "min(70vw, 42vh)" } },
-      { src: "/brand/asters/hero/1.png", depth: 52, enterFrom: "right", enterDelay: 0.35, width: "min(32vw, 38vh)", aspectRatio: "1590 / 3064", left: "59%", top: "14%",
+      { src: "/brand/asters/hero/1.png", depth: 52, enterFrom: "right", enterDelay: 0.35, width: "min(32vw, 38vh)", maxWidth: "795px", aspectRatio: "1590 / 3064", left: "59%", top: "14%",
         mobile: { left: "48%", top: "30%", width: "min(44vw, 26vh)" } },
     ],
     heroContent: {

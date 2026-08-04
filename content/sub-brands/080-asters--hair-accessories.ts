@@ -12,7 +12,7 @@ const entry: SubBrand = {
     heroWordmark: "/brand/asters/hero/wordmark.png",
     heroWordmarkAspect: "1513 / 740",
     heroLayers: [
-      { src: "/brand/asters/hair-accessories/hero/1.png", enterFrom: "right", enterDelay: 0.3, depth: 44, width: "min(30vw, 350px)", aspectRatio: "1844 / 2746", left: "58%", top: "12%",
+      { src: "/brand/asters/hair-accessories/hero/1.png", enterFrom: "right", enterDelay: 0.3, depth: 44, width: "min(30vw, 32vh, 350px)", aspectRatio: "1844 / 2746", left: "58%", top: "12%",
         mobile: { left: "16%", top: "2%", width: "68%" } },
     ],
     showcaseTitle: "/brand/asters/hair-accessories/showcase/title.png",

@@ -28,15 +28,15 @@ const entry: Brand = {
     heroLayers: [
       // Scalp Exfoliator — back, left of the cluster and highest, enters from the LEFT.
       { src: "/brand/mk3/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0,
-        width: "min(17vw, 31vh)", aspectRatio: "878 / 1719", left: "42.6%", top: "12.8%",
+        width: "min(17vw, 31vh)", maxWidth: "439px", aspectRatio: "878 / 1719", left: "42.6%", top: "12.8%",
         mobile: { left: "0%", top: "26%", width: "min(33vw, 21vh)" } },
       // Scalp Serum pair — right, enters from the RIGHT (3rd).
       { src: "/brand/mk3/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4,
-        width: "min(22vw, 40vh)", aspectRatio: "1187 / 2063", left: "69.1%", top: "16.8%",
+        width: "min(22vw, 40vh)", maxWidth: "594px", aspectRatio: "1187 / 2063", left: "69.1%", top: "16.8%",
         mobile: { left: "45%", top: "25.7%", width: "min(42vw, 26vh)" } },
       // Shampoo — front/centre, the tallest piece, drops in from the TOP (2nd).
       { src: "/brand/mk3/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2,
-        width: "min(20.5vw, 37vh)", aspectRatio: "1008 / 1885", left: "56.2%", top: "15.6%",
+        width: "min(20.5vw, 37vh)", maxWidth: "504px", aspectRatio: "1008 / 1885", left: "56.2%", top: "15.6%",
         mobile: { left: "21%", top: "24.5%", width: "min(39vw, 24vh)" } },
     ],
     heroContent: {

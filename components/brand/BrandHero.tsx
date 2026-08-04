@@ -233,17 +233,17 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
           {content.logo ? (
             <div
               className="self-center relative"
-              style={{ width: content.mobile?.logoWidth ?? "60vw", aspectRatio: content.logoAspect }}
+              style={{ width: content.mobile?.logoWidth ?? "60vw", aspectRatio: content.mobile?.logoAspect ?? content.logoAspect }}
             >
-              <Image src={content.logo} alt={`${brand.name} logo`} fill sizes="70vw" className="object-contain" />
+              <Image src={content.mobile?.logo ?? content.logo} alt={`${brand.name} logo`} fill sizes="70vw" className="object-contain" />
             </div>
           ) : (
             <span />
           )}
           <div className="self-start flex flex-col">
-            {content.tagline && (
+            {(content.mobile?.tagline ?? content.tagline) && (
               <p className={`font-display font-semibold leading-tight text-[clamp(18px,5.5vw,26px)] ${taglineColor}`} style={taglineStyle}>
-                {content.tagline}
+                {content.mobile?.tagline ?? content.tagline}
               </p>
             )}
             {content.subtitle && (
@@ -251,13 +251,13 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
                 {content.subtitle}
               </p>
             )}
-            {content.ctaText && (
+            {(content.mobile?.ctaText ?? content.ctaText) && (
               <a
-                href={content.ctaHref ?? "#"}
+                href={content.mobile?.ctaHref ?? content.ctaHref ?? "#"}
                 className={`font-display pointer-events-auto mt-4 inline-block w-fit rounded-full border px-6 py-2 text-sm font-medium transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.97] ${ctaClass}`}
                 style={ctaStyle}
               >
-                {content.ctaText}
+                {content.mobile?.ctaText ?? content.ctaText}
               </a>
             )}
           </div>

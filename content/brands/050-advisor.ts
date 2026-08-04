@@ -26,13 +26,13 @@ const entry: Brand = {
     // bottles read at a comparable *visual* size (they are NOT the same number).
     heroLayers: [
       // Hair Recovery Vitamax — back row, left of the cluster, enters from the LEFT (1st).
-      { src: "/brand/advisor/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(18vw, 31vh)", aspectRatio: "1560 / 2402", left: "48.5%", top: "30%",
+      { src: "/brand/advisor/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(18vw, 31vh)", maxWidth: "780px", aspectRatio: "1560 / 2402", left: "48.5%", top: "30%",
         mobile: { left: "4%", top: "37%", width: "min(40vw, 26vh)" } },
       // Hair Mask Repair — back row, right of the cluster, enters from the RIGHT (3rd).
-      { src: "/brand/advisor/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(21vw, 37vh)", aspectRatio: "1814 / 2527", left: "72%", top: "33%",
+      { src: "/brand/advisor/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(21vw, 37vh)", maxWidth: "907px", aspectRatio: "1814 / 2527", left: "72%", top: "33%",
         mobile: { left: "48%", top: "33%", width: "min(50vw, 30vh)" } },
       // Dual Defense Shampoo — front/centre, sits slightly lower, enters from the TOP (2nd).
-      { src: "/brand/advisor/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(31vw, 55vh)", aspectRatio: "2812 / 3502", left: "54%", top: "21%",
+      { src: "/brand/advisor/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(31vw, 55vh)", maxWidth: "1406px", aspectRatio: "2812 / 3502", left: "54%", top: "21%",
         mobile: { left: "10%", top: "27.5%", width: "min(78vw, 38vh)" } },
     ],
     // The wordmark carries no tagline of its own (unlike VICA/Wonhae), so the hero

@@ -22,7 +22,7 @@ const entry: SubBrand = {
     // so the layer box is larger than the cluster looks.
     heroLayers: [
       { src: "/brand/mk3/damage-repair/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
-        width: "min(44vw, 78vh)", aspectRatio: "3380 / 3034", left: "51.5%", top: "17.6%",
+        width: "min(44vw, 78vh, 1690px)", aspectRatio: "3380 / 3034", left: "51.5%", top: "17.6%",
         mobile: { left: "2%", top: "2%", width: "96%" } },
     ],
     showcaseTitle: "/brand/mk3/damage-repair/showcase/title.png",

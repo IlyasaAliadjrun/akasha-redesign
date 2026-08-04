@@ -14,7 +14,7 @@ const entry: SubBrand = {
     // Single product: the razor, standing tall on the right half of the banner.
     heroLayers: [
       { src: "/brand/barber-daily/tools/hero/1.png", enterFrom: "right", enterDelay: 0.3, depth: 44,
-        width: "min(40.8vw, 65vh)", aspectRatio: "3219 / 4496", left: "51%", top: "3.9%",
+        width: "min(40.8vw, 65vh, 1610px)", aspectRatio: "3219 / 4496", left: "51%", top: "3.9%",
         mobile: { left: "19%", top: "8%", width: "62%" } },
     ],
     // The title graphic carries the whole feature block (razor + the four claims), the

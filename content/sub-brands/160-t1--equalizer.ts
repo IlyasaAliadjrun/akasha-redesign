@@ -15,7 +15,7 @@ const entry: SubBrand = {
     // canvas starting 20% down, so the layer box is much larger than the cluster looks.
     heroLayers: [
       { src: "/brand/t1/equalizer/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
-        width: "min(36vw, 58vh)", aspectRatio: "3526 / 4774", left: "50%", top: "6%",
+        width: "min(36vw, 58vh, 1763px)", aspectRatio: "3526 / 4774", left: "50%", top: "6%",
         mobile: { left: "11%", top: "-7%", width: "82%" } },
     ],
     showcaseTitle: "/brand/t1/equalizer/showcase/title.png",

@@ -27,10 +27,10 @@ const entry: Brand = {
     // exactly as in the reference.
     heroLayers: [
       // Activator — behind, right, enters from the right.
-      { src: "/brand/concept-ultimax/hero/2.png", depth: 40, enterFrom: "right", enterDelay: 0.35, width: "min(34vw, 59vh)", aspectRatio: "1054 / 1492", left: "51%", top: "16%",
+      { src: "/brand/concept-ultimax/hero/2.png", depth: 40, enterFrom: "right", enterDelay: 0.35, width: "min(34vw, 59vh)", maxWidth: "527px", aspectRatio: "1054 / 1492", left: "51%", top: "16%",
         mobile: { left: "40%", top: "26%", width: "min(58vw, 38vh)" } },
       // Color Tube — in front, left of the Activator, enters from the left.
-      { src: "/brand/concept-ultimax/hero/1.png", depth: 58, enterFrom: "left", enterDelay: 0.15, width: "min(32vw, 56vh)", aspectRatio: "1692 / 2538", left: "44%", top: "9%",
+      { src: "/brand/concept-ultimax/hero/1.png", depth: 58, enterFrom: "left", enterDelay: 0.15, width: "min(32vw, 56vh)", maxWidth: "846px", aspectRatio: "1692 / 2538", left: "44%", top: "9%",
         mobile: { left: "2%", top: "30%", width: "min(56vw, 36vh)" } },
     ],
     heroContent: {

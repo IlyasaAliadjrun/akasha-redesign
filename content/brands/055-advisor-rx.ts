@@ -32,13 +32,13 @@ const entry: Brand = {
     // (250 mL shampoo > 100 mL mask > 40 mL serum) and on a shared baseline.
     heroLayers: [
       // Strong Hair Shampoo (250 mL) — largest, left of the cluster, enters from the LEFT (1st).
-      { src: "/brand/advisor-rx/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(41vw, 72vh)", aspectRatio: "1 / 1", left: "39%", top: "15%",
+      { src: "/brand/advisor-rx/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(41vw, 72vh)", maxWidth: "1944px", aspectRatio: "1 / 1", left: "39%", top: "15%",
         mobile: { left: "-8.5%", top: "25%", width: "min(84vw, 42vh)" } },
       // Strong Hair Boosting Mask (100 mL) — middle, enters from the TOP (2nd).
-      { src: "/brand/advisor-rx/hero/2.png", depth: 54, enterFrom: "top", enterDelay: 0.2, width: "min(30vw, 53vh)", aspectRatio: "1 / 1", left: "56.5%", top: "30%",
+      { src: "/brand/advisor-rx/hero/2.png", depth: 54, enterFrom: "top", enterDelay: 0.2, width: "min(30vw, 53vh)", maxWidth: "1493px", aspectRatio: "1 / 1", left: "56.5%", top: "30%",
         mobile: { left: "29.5%", top: "35%", width: "min(60vw, 30vh)" } },
       // Strong Hair Scalp Serum (40 mL) — smallest, front/right, enters from the RIGHT (3rd).
-      { src: "/brand/advisor-rx/hero/3.png", depth: 72, enterFrom: "right", enterDelay: 0.4, width: "min(13vw, 23vh)", aspectRatio: "1491 / 2058", left: "75.5%", top: "47%",
+      { src: "/brand/advisor-rx/hero/3.png", depth: 72, enterFrom: "right", enterDelay: 0.4, width: "min(13vw, 23vh)", maxWidth: "746px", aspectRatio: "1491 / 2058", left: "75.5%", top: "47%",
         mobile: { left: "68%", top: "43.5%", width: "min(26vw, 13vh)" } },
     ],
     // The wordmark is a plain lockup with no tagline baked in (unlike VICA/Wonhae),

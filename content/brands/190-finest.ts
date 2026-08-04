@@ -29,11 +29,11 @@ const entry: Brand = {
       // (768×1024), where a tighter vw would shrink the tubes into the top third.
       // Soft Mint — behind, higher and further right.
       { src: "/brand/finest/hero/2.png", depth: 34, enterFrom: "right", enterDelay: 0.3,
-        width: "min(50vw, 73vh)", aspectRatio: "3176 / 4735", left: "51%", top: "-9%",
+        width: "min(50vw, 73vh)", maxWidth: "1588px", aspectRatio: "3176 / 4735", left: "51%", top: "-9%",
         mobile: { width: "min(56vw, 37vh)", left: "27%", top: "20%" } },
       // Light Lemon — front, slightly lower and overlapping the Soft Mint tube.
       { src: "/brand/finest/hero/1.png", depth: 56, enterFrom: "bottom", enterDelay: 0.15,
-        width: "min(46vw, 68vh)", aspectRatio: "3026 / 4424", left: "48%", top: "1%",
+        width: "min(46vw, 68vh)", maxWidth: "1513px", aspectRatio: "3026 / 4424", left: "48%", top: "1%",
         mobile: { width: "min(52vw, 34vh)", left: "12%", top: "26%" } },
     ],
     heroContent: {

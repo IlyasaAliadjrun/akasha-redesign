@@ -24,7 +24,7 @@ const entry: SubBrand = {
     // canvas), so the layer box is much larger than the cluster looks.
     heroLayers: [
       { src: "/brand/texture-experience/strawberry-yoghurt/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
-        width: "min(47vw, 96vh)", aspectRatio: "3443 / 3941", left: "36.9%", top: "-5.5%",
+        width: "min(47vw, 96vh, 1722px)", aspectRatio: "3443 / 3941", left: "36.9%", top: "-5.5%",
         mobile: { left: "-8.5%", top: "-11%", width: "105%" } },
     ],
     showcaseTitle: "/brand/texture-experience/strawberry-yoghurt/showcase/title.png",
