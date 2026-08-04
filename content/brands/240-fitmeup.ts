@@ -23,9 +23,8 @@ const entry: Brand = {
       // 1639×2295), rendered as a *sized* layer for both viewports.
       // DESKTOP: anchored right, capped by height so it never outgrows a short viewport.
       // MOBILE: centred under the wordmark (the 14% left offset centres a 72vw box).
-      { src: "/brand/fitmeup/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
-        width: "min(34vw, 50vh)", aspectRatio: "1639 / 2295", right: "8%", top: "14%",
-        mobile: { width: "min(72vw, 45vh)", left: "14%", top: "35%" } },
+      { src: "/brand/fitmeup/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3, width: "min(40vw, 55vh)", maxWidth: "820px", aspectRatio: "1639 / 2295", right: "15%", top: "15%",
+        mobile: { width: "min(72vw, 45vh)", left: "15%", top: "30%" } },
     ],
     // The wordmark image already includes the "Sleep Better, Live Better" tagline, so
     // there is no separate HTML tagline/subtitle/CTA — logo-only hero (see
@@ -33,19 +32,19 @@ const entry: Brand = {
     heroContent: {
       logo: "/brand/fitmeup/hero/wordmark.png",
       logoAspect: "11084 / 4839",
-      logoWidth: "30vw",
+      logoWidth: "26vw",
       left: "9%",
       theme: "light",
       delay: 0.5,
-      mobile: { logoWidth: "66vw" },
+      mobile: { logoWidth: "50vw" },
     },
     bannerBg: "#B8336D", // Fitmeup magenta
     hero: false,
     products: [
-      // ⚠️ public/brand/fitmeup/product-lineup/ does not exist yet, so this SKU renders
-      // with ProductLineup's built-in empty stage. Drop a 1200×1200 transparent PNG in
-      // that folder and add `image: "/brand/fitmeup/product-lineup/relax-160ml.png"`.
-      { name: "Relax", size: { en: "160 mL", id: "160 mL" } },
+      // The packshot is a tight, edge-to-edge crop of the tall bottle, so it fills the
+      // square frame's full height at rest. `imageScale` shrinks it enough that the
+      // hover zoom (scale-110) doesn't push the cap/base past the frame and clip.
+      { name: "Relax", size: { en: "160 mL", id: "160 mL" }, image: "/brand/fitmeup/product-lineup/Packshot_Botol Relax_2025_REV.png", imageScale: 0.85 },
     ],
     about: [
       { title: { en: "Triple Active Formula", id: "Triple Active Formula" }, image: "/brand/fitmeup/about/1.png" },

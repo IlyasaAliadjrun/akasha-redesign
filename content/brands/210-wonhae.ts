@@ -16,9 +16,10 @@ const entry: Brand = {
     // Hero — yellow banner (bannerBg) with the WONHAE lockup on the left and the
     // product cluster on the right. Same pattern as the Hair Energy hero.
     heroLayers: [
-      { src: "/brand/wonhae/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
-        width: "min(46vw, 620px)", aspectRatio: "1949 / 1828", right: "3%", top: "14%",
-        mobile: { width: "min(90vw, 410px)", left: "5%", top: "33%" } },
+      // Width clamped against vh (not a px cap) so the pack scales with viewport
+      // height too — a short/zoomed viewport can't blow it past the banner edge.
+      { src: "/brand/wonhae/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3, width: "min(46vw, 110vh)", maxWidth: "975px", aspectRatio: "1949 / 1828", right: "5%", top: "0%",
+        mobile: { width: "min(100vw, 60vh)", left: "0%", top: "20%" } },
     ],
     // The wordmark image already includes the "IT'S ALL YOU WANT" heading + subtitle
     // (per the updated asset / reference), so no separate HTML tagline is drawn — just
@@ -26,11 +27,18 @@ const entry: Brand = {
     heroContent: {
       logo: "/brand/wonhae/hero/wordmark.png",
       logoAspect: "1000 / 579",
-      logoWidth: "26vw",
+      logoWidth: "min(30vw, 760px)",
       left: "9%",
+      offsetY: "3.5vh",
       theme: "dark",
       delay: 0.5,
-      mobile: { logoWidth: "62vw" },
+      mobile: { 
+        logoWidth: "40vw", 
+        logo: "/brand/wonhae/hero/wordmark-mobile.png", 
+        tagline: { en: "IT'S ALL YOU WANT.", id: "Semua Keinginan Ada di Wonhae." },
+        ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
+        ctaHref: "#about",
+      },
     },
     bannerBg: "#FFDD58", // Wonhae yellow
     hero: true,
@@ -95,13 +103,13 @@ const entry: Brand = {
       productAlign: "center",
       variants: [
         // READY TO EAT — cluster centred
-        { bg: "/brand/wonhae/showcase/1-2.png", product: "/brand/wonhae/showcase/1-1.png", bgAspect: "1121 / 505", productAspect: "722 / 502", productHeight: "112%" },
+        { bg: "/brand/wonhae/showcase/1-2.png", product: "/brand/wonhae/showcase/1-1.png", bgAspect: "1121 / 505", productAspect: "722 / 502", productHeight: "100%" },
         // READY TO DRINK — cluster centred
-        { bg: "/brand/wonhae/showcase/2-2.png", product: "/brand/wonhae/showcase/2-1.png", bgAspect: "1121 / 505", productAspect: "722 / 502", productHeight: "104%" },
+        { bg: "/brand/wonhae/showcase/2-2.png", product: "/brand/wonhae/showcase/2-1.png", bgAspect: "1121 / 505", productAspect: "722 / 502", productHeight: "100%" },
         // CONFECTIONERY — wording left, cluster right
-        { bg: "/brand/wonhae/showcase/3-2.png", product: "/brand/wonhae/showcase/3-1.png", bgAspect: "1121 / 505", productAspect: "722 / 502", productHeight: "110%", productShiftX: "26%" },
+        { bg: "/brand/wonhae/showcase/3-2.png", product: "/brand/wonhae/showcase/3-1.png", bgAspect: "1121 / 505", productAspect: "722 / 502", productHeight: "100%"},
         // SNACKS — cluster left, wording right
-        { bg: "/brand/wonhae/showcase/4-2.png", product: "/brand/wonhae/showcase/4-1.png", bgAspect: "1121 / 505", productAspect: "722 / 502", productHeight: "112%", productShiftX: "-25%" },
+        { bg: "/brand/wonhae/showcase/4-2.png", product: "/brand/wonhae/showcase/4-1.png", bgAspect: "1121 / 505", productAspect: "722 / 502", productHeight: "100%", productShiftX: "-30%" },
       ],
     },
     reasons: [
