@@ -4,7 +4,7 @@ const entry: Brand = {
     slug: "nestle-pure-life",
     name: "Nestlé Pure Life",
     division: "beverage",
-    tagline: { en: "Purity in every drop", id: "Kemurnian di setiap tetes" },
+    tagline: { en: "Not Cold Still Fresh", id: "Gak Dingin Tetep Seger" },
     description: {
       en: "Neutral-pH mineral water processed through Nestlé's strict 12-stage purity standard",
       id: "Air mineral pH netral yang diproses ketat dengan 12 tahap kemurnian kualitas Nestlé",
@@ -12,23 +12,20 @@ const entry: Brand = {
     accentClass: "bg-brand-npl",
     accentHex: "#0077B6",
     heroImage: "/brand/nestle-pure-life/hero/background.jpg",
-    // Layered parallax banner — same scheme as Hair Energy, but here the three
-    // assets are pre-composed full-bleed layers on one shared 4267×2464 canvas, so
-    // they line up pixel-perfect at scroll-top (parallax offset = 0) and only drift
-    // apart as the hero scrolls away. Order = stacking (last = front).
+    // Layered parallax banner — same scheme as Hair Energy. Order = stacking
+    // (last = front).
     heroLayers: [
       // background.jpg — full-bleed gradient backdrop (image, not a flat colour).
       // `cover` so it always fills the hero; it's a smooth gradient, so any crop is
       // invisible. Slowest parallax drift, settles in first.
       { src: "/brand/nestle-pure-life/hero/background.jpg", depth: 20, enterDelay: 0 },
-      // produk-1.png — the bottles. DESKTOP: full landscape canvas shown `contain`,
-      // nudged right via `position`. MOBILE: swap to a tight bottles crop
-      // (produk-bottles.png) rendered as a *sized & positioned* layer (Hair-Energy
-      // style) so the product stays prominent and centred on a tall phone screen.
-      // `aspectRatio` is the mobile crop's ratio (only used by the sized mobile path).
-      { src: "/brand/nestle-pure-life/hero/1.png", depth: 70, fit: "contain", position: "72% 50%", enterFrom: "right", enterDelay: 0.4,
-        aspectRatio: "1084 / 1304",
-        mobile: { src: "/brand/nestle-pure-life/hero/1-mobile.png", width: "min(70vw, 46vh)", left: "20%", top: "25%" } },
+      // 1.png — the bottles, a tight ~1:1 crop (1588×1599). Sized & positioned
+      // (Hair-Energy style) rather than full-bleed, so it can be scaled down and
+      // anchored toward the right edge instead of filling the whole hero height.
+      // No separate mobile crop — same asset renders on phones too.
+      { src: "/brand/nestle-pure-life/hero/1.png", depth: 70, enterFrom: "right", enterDelay: 0.4,
+        width: "min(40vw, 100vh)", aspectRatio: "1588 / 1599", right: "7%", top: "10%",
+        mobile: { width: "min(100vw, 150vh)", left: "0%", top: "20%" } },
     ],
     // Wordmark is an HTML overlay (same pattern as Hair Energy): the enlarged
     // wordmark logo with a tagline + CTA button beneath it. `wordmark-lockup.png` is
@@ -38,14 +35,14 @@ const entry: Brand = {
       logo: "/brand/nestle-pure-life/hero/wordmark.png",
       logoAspect: "1430 / 297",
       logoWidth: "34vw",
-      tagline: { en: "Purity in every drop", id: "Kemurnian di setiap tetes" },
+      tagline: { en: "Not Cold Still Fresh", id: "Gak Dingin Tetep Seger" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
       bodyIndent: "0.85vw", // aligns tagline/CTA with the wordmark's visible letters
       theme: "light",
       delay: 0.5,
-      mobile: { logoWidth: "72vw" },
+      mobile: { logoWidth: "60vw" },
     },
     bannerBg: "#E6097E",
     hero: true,
