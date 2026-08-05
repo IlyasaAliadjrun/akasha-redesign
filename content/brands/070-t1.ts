@@ -35,14 +35,14 @@ const entry: Brand = {
       // The mobile widths are capped by BOTH vw and vh: the mobile hero stacks
       // wordmark (top) → products → tagline + CTA (bottom), so a purely vw-based cap
       // grows the cluster into the tagline on a wide-but-short phone/tablet (640×800).
-      { src: "/brand/t1/hero/2.png", depth: 30, enterFrom: "top", enterDelay: 0.2, width: "min(26vw, 42vh)", maxWidth: "944px", aspectRatio: "1887 / 3032", left: "53%", top: "0%",
-        mobile: { left: "24%", top: "16%", width: "min(40vw, 28vh)" } },
+      { src: "/brand/t1/hero/2.png", depth: 30, enterFrom: "top", enterDelay: 0.2, width: "min(18vw, 34vh)", maxWidth: "944px", aspectRatio: "1887 / 3032", left: "66%", top: "6%",
+        mobile: { left: "30%", top: "21%", width: "min(43vw, 31vh)" } },
       // Micellar Conditioner — green, left of the cluster, enters from the LEFT.
-      { src: "/brand/t1/hero/1.png", depth: 45, enterFrom: "left", enterDelay: 0, width: "min(34vw, 54vh)", maxWidth: "970px", aspectRatio: "1939 / 3058", left: "33%", top: "2%",
-        mobile: { left: "-8%", top: "18%", width: "min(50vw, 34vh)" } },
+      { src: "/brand/t1/hero/1.png", depth: 45, enterFrom: "left", enterDelay: 0, width: "min(24vw, 41vh)", maxWidth: "970px", aspectRatio: "1939 / 3058", left: "57%", top: "21%",
+        mobile: { left: "8%", top: "28%", width: "min(50vw, 34vh)" } },
       // Equalizer Shampoo — terracotta, front/right and sitting lower.
-      { src: "/brand/t1/hero/3.png", depth: 60, enterFrom: "right", enterDelay: 0.4, width: "min(34vw, 54vh)", maxWidth: "890px", aspectRatio: "1780 / 2978", left: "63%", top: "11%",
-        mobile: { left: "45%", top: "23%", width: "min(50vw, 34vh)" } },
+      { src: "/brand/t1/hero/3.png", depth: 60, enterFrom: "right", enterDelay: 0.4, width: "min(21vw, 41vh)", maxWidth: "890px", aspectRatio: "1780 / 2978", left: "71%", top: "28%",
+        mobile: { left: "40%", top: "35%", width: "min(50vw, 34vh)" } },
     ],
     heroContent: {
       logo: "/brand/t1/hero/wordmark.png",

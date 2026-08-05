@@ -13,10 +13,10 @@ const entry: SubBrand = {
     heroWordmarkAspect: "767 / 529",
     // 1.png = botol depan (masuk dari kiri), 2.png = botol belakang (masuk dari kanan).
     heroLayers: [
-      { src: "/brand/hair-energy/shampoo/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "180px", aspectRatio: "1313 / 2345", left: "65%", top: "13%",
-        mobile: { right: "14%", top: "1%", width: "38%" } },
-      { src: "/brand/hair-energy/shampoo/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "240px", aspectRatio: "1646 / 2786", left: "52%", top: "16%",
-        mobile: { left: "13%", bottom: "12%", width: "50%" } },
+      { src: "/brand/hair-energy/shampoo/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "210px", aspectRatio: "1313 / 2345", left: "73%", top: "17%",
+        mobile: { right: "-16%", top: "-62%", width: "102%" } },
+      { src: "/brand/hair-energy/shampoo/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "270px", aspectRatio: "1646 / 2786", left: "62%", top: "23%",
+        mobile: { left: "-18%", bottom: "-53%", width: "117%" } },
     ],
     // showcase/1.png = gambar title (produk + manfaat); tidak ada featured lebar.
     showcaseTitle: "/brand/hair-energy/shampoo/showcase/1.png",

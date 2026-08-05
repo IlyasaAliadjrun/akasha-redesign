@@ -27,11 +27,11 @@ const entry: Brand = {
     // exactly as in the reference.
     heroLayers: [
       // Activator — behind, right, enters from the right.
-      { src: "/brand/concept-ultimax/hero/2.png", depth: 40, enterFrom: "right", enterDelay: 0.35, width: "min(34vw, 59vh)", maxWidth: "527px", aspectRatio: "1054 / 1492", left: "51%", top: "16%",
-        mobile: { left: "40%", top: "26%", width: "min(58vw, 38vh)" } },
+      { src: "/brand/concept-ultimax/hero/2.png", depth: 40, enterFrom: "right", enterDelay: 0.35, width: "min(26vw, 51vh)", maxWidth: "527px", aspectRatio: "1054 / 1492", left: "63.8%", top: "17.4%",
+        mobile: { left: "26%", top: "28%", width: "min(60vw, 40vh)" } },
       // Color Tube — in front, left of the Activator, enters from the left.
-      { src: "/brand/concept-ultimax/hero/1.png", depth: 58, enterFrom: "left", enterDelay: 0.15, width: "min(32vw, 56vh)", maxWidth: "846px", aspectRatio: "1692 / 2538", left: "44%", top: "9%",
-        mobile: { left: "2%", top: "30%", width: "min(56vw, 36vh)" } },
+      { src: "/brand/concept-ultimax/hero/1.png", depth: 58, enterFrom: "left", enterDelay: 0.15, width: "min(34vw, 58vh)", maxWidth: "846px", aspectRatio: "1692 / 2538", left: "57.8%", top: "10%",
+        mobile: { left: "10%", top: "23%", width: "min(70vw, 52vh)" } },
     ],
     heroContent: {
       logo: "/brand/concept-ultimax/hero/wordmark.png",
@@ -40,8 +40,8 @@ const entry: Brand = {
       // `maxWidth`: the logo <div> carries its own explicit width and overflows the
       // capped text column. `maxWidth` therefore only governs the tagline, keeping it
       // on the reference's two lines ("Pewarna Rambut Permanen" / "Vegan Vibrant").
-      logoWidth: "44vw",
-      maxWidth: "32vw",
+      logoWidth: "42vw",
+      maxWidth: "30vw",
       tagline: { en: "Permanent Vegan Vibrant Hair Color", id: "Pewarna Rambut Permanen Vegan Vibrant" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",

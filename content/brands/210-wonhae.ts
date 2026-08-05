@@ -16,10 +16,9 @@ const entry: Brand = {
     // Hero — yellow banner (bannerBg) with the WONHAE lockup on the left and the
     // product cluster on the right. Same pattern as the Hair Energy hero.
     heroLayers: [
-      // Width clamped against vh (not a px cap) so the pack scales with viewport
-      // height too — a short/zoomed viewport can't blow it past the banner edge.
-      { src: "/brand/wonhae/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3, width: "min(46vw, 110vh)", maxWidth: "975px", aspectRatio: "1949 / 1828", right: "5%", top: "0%",
-        mobile: { width: "min(100vw, 60vh)", left: "0%", top: "20%" } },
+      { src: "/brand/wonhae/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
+        width: "min(60vw, 634px)", aspectRatio: "1949 / 1828", right: "4.5%", top: "8.5%",
+        mobile: { width: "min(90vw, 410px)", left: "5%", top: "33%" } },
     ],
     // The wordmark image already includes the "IT'S ALL YOU WANT" heading + subtitle
     // (per the updated asset / reference), so no separate HTML tagline is drawn — just

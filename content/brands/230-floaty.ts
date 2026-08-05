@@ -34,9 +34,9 @@ const entry: Brand = {
         // the wordmark on shorter/narrower desktops. The calc keeps the layer's own
         // centre pinned at 45% of the hero (half its height = width × 1021/1795 / 2),
         // so it stays level with the wordmark from 768px all the way up.
-        width: "min(56vw, 81vh, 880px)", aspectRatio: "1795 / 1021", right: "4%",
-        top: "calc(45% - min(56vw, 81vh, 880px) * 0.2844)",
-        mobile: { width: "min(98vw, 39vh, 420px)", left: "1%", top: "45%" } },
+        width: "min(48vw, 864px)", aspectRatio: "1795 / 1021", right: "0%",
+        top: "calc(52% - min(48vw, 864px) * 0.2844)",
+        mobile: { width: "min(98vw, 420px)", left: "1%", top: "45%" } },
     ],
     // Hero WITHOUT wording: the wordmark art already carries the tagline ("Snack tidak
     // seharusnya serius, mereka seharusnya menyenangkan!"), so no separate HTML
@@ -47,13 +47,14 @@ const entry: Brand = {
     heroContent: {
       logo: "/brand/floaty/hero/wordmark.png",
       logoAspect: "1057 / 465",
-      logoWidth: "33vw",
+      logoWidth: "30vw",
       maxWidth: "528px",
       left: "8%",
+      offsetY: "1.8vh",
       // No offsetY: the reference's wordmark block sits on the banner's vertical
       // centre, level with the pack cluster, which is BrandHero's default.
       delay: 0.5,
-      mobile: { logoWidth: "82vw" },
+      mobile: { logoWidth: "70vw" },
     },
     bannerBg: "#5A9CD2", // Floaty blue — the same blue as the showcase cards
     // Heading above the carousel — the reference's "Our Product." (default is

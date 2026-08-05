@@ -18,8 +18,8 @@ const entry: SubBrand = {
     // canvas), so the layer box is much larger than the pair looks.
     heroLayers: [
       { src: "/brand/mk3/color-revive/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
-        width: "min(38vw, 68vh, 1630px)", aspectRatio: "3259 / 3957", left: "48.8%", top: "8.7%",
-        mobile: { left: "10%", top: "-1%", width: "76%" } },
+        width: "min(45vw, 75vh, 1630px)", aspectRatio: "3259 / 3957", left: "57%", top: "6.7%",
+        mobile: { left: "-70%", top: "-100%", width: "240%" } },
     ],
     showcaseTitle: "/brand/mk3/color-revive/showcase/title.png",
     showcaseTitleAspect: "4249 / 3333",

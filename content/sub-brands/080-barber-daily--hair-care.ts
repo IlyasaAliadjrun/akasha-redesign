@@ -15,12 +15,12 @@ const entry: SubBrand = {
     // hair tonic (2) stands to its right and enters from the right. Both PNGs have
     // wide transparent margins, so the layer boxes are far wider than the bottles.
     heroLayers: [
-      { src: "/brand/barber-daily/hair-care/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 40,
-        width: "min(36vw, 58vh, 1946px)", aspectRatio: "3891 / 5524", left: "45.4%", top: "19.1%",
-        mobile: { left: "0%", top: "16%", width: "56%" } },
       { src: "/brand/barber-daily/hair-care/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 58,
-        width: "min(25.5vw, 41vh, 1277px)", aspectRatio: "2554 / 3615", left: "69.1%", top: "17%",
-        mobile: { right: "2%", top: "6%", width: "44%" } },
+        width: "min(46vw, 52vh)", aspectRatio: "2554 / 3615", left: "65.8%", top: "10%",
+        mobile: { right: "-23%", top: "-40%", width: "115%" } },
+      { src: "/brand/barber-daily/hair-care/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 40,
+        width: "min(51vw, 73vh)", aspectRatio: "3891 / 5524", left: "52%", top: "16%",
+        mobile: { left: "-30%", top: "-32%", width: "145%" } },
     ],
     showcaseTitle: "/brand/barber-daily/hair-care/showcase/title.png",
     showcaseTitleAspect: "5138 / 3538",

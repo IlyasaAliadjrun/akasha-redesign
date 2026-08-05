@@ -26,20 +26,20 @@ const entry: Brand = {
     // short window; every layer carries a `mobile` override (guide §4.1).
     heroLayers: [
       // Professional Shampoo — back, upright, enters from the TOP.
-      { src: "/brand/salon-daily/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0.1, width: "min(21vw, 42vh)", maxWidth: "1069px", aspectRatio: "2138 / 2708", left: "63%", top: "8%",
-        mobile: { left: "48%", top: "20%", width: "min(40vw, 26vh)" } },
+      { src: "/brand/salon-daily/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0.1, width: "min(21vw, 42vh)", maxWidth: "1069px", aspectRatio: "2138 / 2708", left: "63.8%", top: "10.5%",
+        mobile: { left: "30%", top: "22%", width: "min(50vw, 36vh)" } },
       // Professional Conditioner — front left of the cluster, enters from the LEFT.
-      { src: "/brand/salon-daily/hero/1.png", depth: 60, enterFrom: "left", enterDelay: 0.3, width: "min(28vw, 54vh)", maxWidth: "1356px", aspectRatio: "2712 / 3246", left: "44%", top: "20%",
-        mobile: { left: "4%", top: "26%", width: "min(56vw, 34vh)" } },
+      { src: "/brand/salon-daily/hero/1.png", depth: 60, enterFrom: "left", enterDelay: 0.3, width: "min(28vw, 54vh)", maxWidth: "1356px", aspectRatio: "2712 / 3246", left: "54.8%", top: "23.5%",
+        mobile: { left: "6.3%", top: "30%", width: "min(66vw, 44vh)" } },
       // Professional Hair Tonic — front right, sits lower, enters from the RIGHT.
-      { src: "/brand/salon-daily/hero/3.png", depth: 78, enterFrom: "right", enterDelay: 0.5, width: "min(24vw, 46vh)", maxWidth: "1439px", aspectRatio: "2877 / 3118", left: "70%", top: "30%",
-        mobile: { left: "52%", top: "40%", width: "min(42vw, 28vh)" } },
+      { src: "/brand/salon-daily/hero/3.png", depth: 78, enterFrom: "right", enterDelay: 0.5, width: "min(40vw, 62vh)", maxWidth: "1439px", aspectRatio: "2877 / 3118", left: "61.9%", top: "34.5%",
+        mobile: { left: "25.8%", top: "38%", width: "min(70vw, 56vh)" } },
     ],
     heroContent: {
       logo: "/brand/salon-daily/hero/wordmark.png",
       logoAspect: "1386 / 294",
-      logoWidth: "24vw",
-      maxWidth: "34vw",
+      logoWidth: "22vw",
+      maxWidth: "32vw",
       tagline: { en: "Professional Salon-Style Care at Home, Every Day.", id: "Perawatan ala Salon Profesional di Rumah Setiap Hari." },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
@@ -48,7 +48,7 @@ const entry: Brand = {
       // Cream banner → dark text (and the navbar paints itself dark over it).
       theme: "dark",
       delay: 0.6,
-      mobile: { logoWidth: "56vw" },
+      mobile: { logoWidth: "48.5vw" },
     },
     bannerBg: "#F3E9DD",
     hero: false,

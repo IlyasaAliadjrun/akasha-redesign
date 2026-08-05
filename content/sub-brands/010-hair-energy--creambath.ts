@@ -19,8 +19,10 @@ const entry: SubBrand = {
     // (The section is `overflow-hidden`, so on very narrow desktop widths the jar is
     // simply clipped rather than triggering a horizontal scrollbar.)
     heroLayers: [
-      { src: "/brand/hair-energy/creambath/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "350px", aspectRatio: "2139 / 2345", left: "60%", top: "25%" },
-      { src: "/brand/hair-energy/creambath/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "275px", aspectRatio: "1646 / 2786", left: "48%", top: "10%" },
+      { src: "/brand/hair-energy/creambath/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "370px", aspectRatio: "2139 / 2345", left: "67%", top: "18%",
+        mobile: { right: "-14%", top: "-24%", width: "100%" } },
+      { src: "/brand/hair-energy/creambath/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "295px", aspectRatio: "1646 / 2786", left: "58%", top: "20%",
+        mobile: { right: "18%", top: "-30%", width: "90%" } },
     ],
     showcaseTitle: "/brand/hair-energy/creambath/showcase/title.png",
     showcaseTitleAspect: "4871 / 3832",

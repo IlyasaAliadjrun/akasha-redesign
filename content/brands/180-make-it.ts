@@ -30,22 +30,22 @@ const entry: Brand = {
     // off the top edge. Every offset already subtracts the transparent margin baked
     // into its PNG (measured from the alpha channel).
     heroLayers: [
-      // Mango Glacé — back, centre of the cluster, enters from the TOP (2nd).
-      { src: "/brand/makeit/hero/2.png", depth: 34, enterFrom: "top", enterDelay: 0.2, width: "min(48vw, 53vh)", maxWidth: "989px", aspectRatio: "1977 / 3514", left: "53%", bottom: "19.8%",
-        mobile: { left: "11.8%", bottom: "29.5%", width: "min(76vw, 34vh)" } },
       // Essence Sanctuary — front-left, tilted, enters from the LEFT (1st).
-      { src: "/brand/makeit/hero/1.png", depth: 56, enterFrom: "left", enterDelay: 0, width: "min(52vw, 61vh)", maxWidth: "1274px", aspectRatio: "2547 / 3799", left: "43%", bottom: "3.5%",
-        mobile: { left: "-11%", bottom: "20.3%", width: "min(85vw, 38vh)" } },
+      { src: "/brand/makeit/hero/1.png", depth: 56, enterFrom: "left", enterDelay: 0, width: "min(40vw, 49vh)", aspectRatio: "2547 / 3799", left: "56.5%", bottom: "1%",
+        mobile: { left: "6.2%", bottom: "27.2%", width: "min(72vw, 27vh)" } },
+      // Mango Glacé — back, centre of the cluster, enters from the TOP (2nd).
+      { src: "/brand/makeit/hero/2.png", depth: 34, enterFrom: "top", enterDelay: 0.2, width: "min(37vw, 42vh)", aspectRatio: "1977 / 3514", left: "64%", bottom: "27%",
+        mobile: { left: "25%", bottom: "42%", width: "min(63vw, 23vh)" } },
       // Keep in Touch — front-right, tilted, enters from the RIGHT (3rd).
-      { src: "/brand/makeit/hero/3.png", depth: 72, enterFrom: "right", enterDelay: 0.4, width: "min(48vw, 58vh)", maxWidth: "1180px", aspectRatio: "2359 / 3713", left: "62%", bottom: "2.7%",
-        mobile: { left: "32.5%", bottom: "19.1%", width: "min(82vw, 36.5vh)" } },
+      { src: "/brand/makeit/hero/3.png", depth: 72, enterFrom: "right", enterDelay: 0.4, width: "min(37vw, 47vh)", aspectRatio: "2359 / 3713", left: "68.9%", bottom: "8%",
+        mobile: { left: "37.7%", bottom: "31.7%", width: "min(69vw, 25.5vh)" } },
     ],
     heroContent: {
       logo: "/brand/makeit/hero/wordmark.png",
       // The wordmark PNG is cropped tight to the glyphs, so no bodyIndent is needed.
       logoAspect: "1499 / 446",
-      logoWidth: "27vw",
-      maxWidth: "30vw",
+      logoWidth: "25vw",
+      maxWidth: "28vw",
       tagline: { en: "For Those Who Are Proactive and Bold, Together With Make It", id: "Untuk Mereka yang Proaktif dan Berani Bertindak Bersama Make It" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
@@ -53,7 +53,7 @@ const entry: Brand = {
       offsetY: "6vh",
       theme: "light",
       delay: 0.6,
-      mobile: { logoWidth: "58vw" },
+      mobile: { logoWidth: "53vw" },
     },
     bannerBg: "#7D2628",
     hero: false,

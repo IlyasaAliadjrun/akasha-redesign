@@ -18,8 +18,8 @@ const entry: SubBrand = {
     // the visible cluster.
     heroLayers: [
       { src: "/brand/mk3/scalp-care/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
-        width: "min(32vw, 57vh, 1170px)", aspectRatio: "2340 / 2860", left: "56.6%", top: "15.7%",
-        mobile: { left: "14%", top: "0%", width: "74%" } },
+        width: "min(35vw, 60vh, 1170px)", aspectRatio: "2340 / 2860", left: "59.6%", top: "15.7%",
+        mobile: { left: "-45%", top: "-70%", width: "190%" } },
     ],
     showcaseTitle: "/brand/mk3/scalp-care/showcase/title.png",
     showcaseTitleAspect: "4107 / 3321",

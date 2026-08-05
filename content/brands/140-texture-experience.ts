@@ -34,18 +34,18 @@ const entry: Brand = {
       // Strawberry Yoghurt Creambath — left of the cluster and highest, enters from
       // the LEFT (1st).
       { src: "/brand/texture-experience/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0,
-        width: "min(46vw, 61vh)", maxWidth: "1373px", aspectRatio: "2745 / 3233", left: "36%", top: "1.4%",
-        mobile: { left: "-12%", top: "28%", width: "min(71vw, 33vh)" } },
-      // Smooth-Bright Body Essence — right of the cluster and a step lower, enters from
-      // the RIGHT (3rd).
-      { src: "/brand/texture-experience/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4,
-        width: "min(39vw, 52vh)", maxWidth: "1261px", aspectRatio: "2522 / 3302", left: "59%", top: "12.2%",
-        mobile: { left: "41%", top: "31%", width: "min(61vw, 28vh)" } },
+        width: "min(46vw, 61vh)", maxWidth: "1373px", aspectRatio: "2745 / 3233", left: "52%", top: "7.4%",
+        mobile: { left: "2%", top: "28%", width: "min(67vw, 33vh)" } },
       // Berry Smoothie Hair Perfume — front/centre, sits lowest, drops in from the
       // TOP (2nd).
       { src: "/brand/texture-experience/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2,
-        width: "min(33vw, 45vh)", maxWidth: "979px", aspectRatio: "1958 / 2604", left: "49.9%", top: "14.7%",
-        mobile: { left: "18.5%", top: "35%", width: "min(53vw, 24.5vh)" } },
+        width: "min(33vw, 45vh)", maxWidth: "979px", aspectRatio: "1958 / 2604", left: "63.2%", top: "20.7%",
+        mobile: { left: "27.5%", top: "37%", width: "min(49vw, 20.5vh)" } },
+      // Smooth-Bright Body Essence — right of the cluster and a step lower, enters from
+      // the RIGHT (3rd).
+      { src: "/brand/texture-experience/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4,
+        width: "min(39vw, 52vh)", maxWidth: "1261px", aspectRatio: "2522 / 3302", left: "68%", top: "28.2%",
+        mobile: { left: "36%", top: "40%", width: "min(57vw, 24vh)" } },
     ],
     heroContent: {
       logo: "/brand/texture-experience/hero/wordmark.png",
@@ -53,18 +53,18 @@ const entry: Brand = {
       // The wordmark art is only 502 px wide, so the width is capped at its natural
       // size: it never renders upscaled at DPR 1 on any viewport (see the asset note
       // handed to the brand owner about DPR 2).
-      logoWidth: "min(28vw, 500px)",
-      maxWidth: "min(30vw, 520px)",
+      logoWidth: "min(22vw, 500px)",
+      maxWidth: "min(24vw, 520px)",
       // Reference wording — two lines, no full stop.
       tagline: { en: "Professional Multisensory Indulgence Experience", id: "Pengalaman Multisensori Profesional yang Memanjakan" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
-      left: "7%",
+      left: "8%",
       offsetY: "6vh",
       // Light banner → dark text (and the navbar paints its dark treatment).
       theme: "dark",
       delay: 0.6,
-      mobile: { logoWidth: "58vw" },
+      mobile: { logoWidth: "39vw" },
     },
     bannerBg: "#EAE3DA",
     hero: false,

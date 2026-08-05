@@ -24,19 +24,20 @@ const entry: Brand = {
       // DESKTOP: anchored right, vertically centred. MOBILE: centred between the
       // wordmark (top) and the tagline block (bottom). No parallax (depth 0).
       { src: "/brand/vica/hero/1.png", depth: 0, enterFrom: "right", enterDelay: 0.3,
-        width: "min(32vw, 43vh, 460px)", aspectRatio: "2785 / 3778", right: "9%", top: "17%",
-        mobile: { width: "min(58vw, 34vh)", left: "21%", top: "42%" } },
+        width: "min(32vw, 365px)", aspectRatio: "2785 / 3778", right: "12%", top: "17.5%",
+        mobile: { width: "min(62.5vw, 38.5vh)", left: "19%", top: "42%" } },
     ],
     // Wordmark image already includes the "Tutup Kuning, Paling Bening" tagline, so no
     // separate HTML tagline/CTA (the reference hero has none either).
     heroContent: {
       logo: "/brand/vica/hero/wordmark.png",
       logoAspect: "550 / 595",
-      logoWidth: "22vw",
+      logoWidth: "21vw",
       left: "10%",
+      offsetY: "1.8vh",
       theme: "dark",
       delay: 0.5,
-      mobile: { logoWidth: "46vw" },
+      mobile: { logoWidth: "37vw" },
     },
     bannerBg: "#ECE700", // Vica yellow
     hero: false,

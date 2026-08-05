@@ -23,8 +23,9 @@ const entry: Brand = {
       // 1639×2295), rendered as a *sized* layer for both viewports.
       // DESKTOP: anchored right, capped by height so it never outgrows a short viewport.
       // MOBILE: centred under the wordmark (the 14% left offset centres a 72vw box).
-      { src: "/brand/fitmeup/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3, width: "min(40vw, 55vh)", maxWidth: "820px", aspectRatio: "1639 / 2295", right: "15%", top: "15%",
-        mobile: { width: "min(72vw, 45vh)", left: "15%", top: "30%" } },
+      { src: "/brand/fitmeup/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
+        width: "min(36vw, 52vh)", aspectRatio: "1639 / 2295", right: "10%", top: "17.5%",
+        mobile: { width: "min(70vw, 43vh)", left: "17.5%", top: "35%" } },
     ],
     // The wordmark image already includes the "Sleep Better, Live Better" tagline, so
     // there is no separate HTML tagline/subtitle/CTA — logo-only hero (see
@@ -32,11 +33,11 @@ const entry: Brand = {
     heroContent: {
       logo: "/brand/fitmeup/hero/wordmark.png",
       logoAspect: "11084 / 4839",
-      logoWidth: "26vw",
-      left: "9%",
+      logoWidth: "30vw",
+      left: "7.4%",
       theme: "light",
       delay: 0.5,
-      mobile: { logoWidth: "50vw" },
+      mobile: { logoWidth: "60vw" },
     },
     bannerBg: "#B8336D", // Fitmeup magenta
     hero: false,

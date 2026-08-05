@@ -25,15 +25,15 @@ const entry: Brand = {
     heroContent: {
       logo: "/brand/128/hero/wordmark.png",
       logoAspect: "2160 / 1415",
-      logoWidth: "22vw",
-      maxWidth: "40vw",
+      logoWidth: "16vw",
+      maxWidth: "36vw",
       tagline: { en: "Beauty Secrets\nfrom the Ocean Floor", id: "Rahasia Kecantikan\ndari Dasar Samudera" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
       // white text on the coral banner (theme omitted = white)
       delay: 0.5,
-      mobile: { logoWidth: "50vw" },
+      mobile: { logoWidth: "35vw" },
     },
     bannerBg: "#FBA084", // 128 coral
     hero: true,

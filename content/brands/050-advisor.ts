@@ -25,15 +25,17 @@ const entry: Brand = {
     // transparent padding, so the widths below are tuned per asset to make the three
     // bottles read at a comparable *visual* size (they are NOT the same number).
     heroLayers: [
-      // Hair Recovery Vitamax — back row, left of the cluster, enters from the LEFT (1st).
-      { src: "/brand/advisor/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(18vw, 31vh)", maxWidth: "780px", aspectRatio: "1560 / 2402", left: "48.5%", top: "30%",
-        mobile: { left: "4%", top: "37%", width: "min(40vw, 26vh)" } },
-      // Hair Mask Repair — back row, right of the cluster, enters from the RIGHT (3rd).
-      { src: "/brand/advisor/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(21vw, 37vh)", maxWidth: "907px", aspectRatio: "1814 / 2527", left: "72%", top: "33%",
-        mobile: { left: "48%", top: "33%", width: "min(50vw, 30vh)" } },
+      { src: "/brand/advisor/hero/3.png", depth: 32, enterFrom: "top", enterDelay: 0.1, width: "min(24vw, 43vh)", aspectRatio: "1814 / 2527", left: "63%", top: "7%",
+        mobile: { left: "35%", top: "27%", width: "min(58vw, 32vh)" } },
       // Dual Defense Shampoo — front/centre, sits slightly lower, enters from the TOP (2nd).
-      { src: "/brand/advisor/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(31vw, 55vh)", maxWidth: "1406px", aspectRatio: "2812 / 3502", left: "54%", top: "21%",
-        mobile: { left: "10%", top: "27.5%", width: "min(78vw, 38vh)" } },
+      { src: "/brand/advisor/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(41vw, 65vh)", aspectRatio: "2812 / 3502", left: "56%", top: "5%",
+        mobile: { left: "4%", top: "20.5%", width: "min(78vw, 38vh)" } },
+      // Hair Recovery Vitamax — back row, left of the cluster, enters from the LEFT (1st).
+      { src: "/brand/advisor/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(23vw, 36vh)", aspectRatio: "1560 / 2402", left: "57.7%", top: "39%",
+        mobile: { left: "11.5%", top: "43%", width: "min(40vw, 26vh)" } },
+      // Hair Mask Repair — back row, right of the cluster, enters from the RIGHT (3rd).
+      { src: "/brand/advisor/hero/4.png", depth: 27, enterFrom: "right", enterDelay: 0.4, width: "min(23vw, 36vh)", aspectRatio: "1814 / 2527", left: "60.8%", top: "23%",
+        mobile: { left: "40%", top: "33%", width: "min(40vw, 20vh)" } },
     ],
     // The wordmark carries no tagline of its own (unlike VICA/Wonhae), so the hero
     // keeps the full Hair Energy overlay: wordmark + tagline + subtitle + CTA. Copy is
@@ -53,7 +55,7 @@ const entry: Brand = {
       // Light clinical banner → dark text, and the navbar paints its dark treatment.
       theme: "dark",
       delay: 0.6,
-      mobile: { logoWidth: "62vw" },
+      mobile: { logoWidth: "52vw" },
     },
     // Clinical off-white — the exact card grey used across Advisor's own showcase art.
     bannerBg: "#F4F4F4",

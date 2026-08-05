@@ -25,25 +25,25 @@ const entry: Brand = {
       // All three products share one (natural) size. produk-1 & produk-3 sit level;
       // produk-2 (front) sits slightly lower, with only a small overlap between them.
       // Creambath — left, enters from the LEFT (1st).
-      { src: "/brand/hair-energy/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(28vw, 56vh)", maxWidth: "1344px", aspectRatio: "2687 / 3660", left: "44%", top: "7%",
-        mobile: { left: "5%", top: "25%", width: "min(54vw, 42vh)" } },
+      { src: "/brand/hair-energy/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(25vw, 53vh)", maxWidth: "1344px", aspectRatio: "2687 / 3660", left: "54%", top: "10%",
+        mobile: { left: "2%", top: "25%", width: "min(57vw, 42vh)" } },
       // Scentsations — right, level with creambath, enters from the RIGHT (3rd).
-      { src: "/brand/hair-energy/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(28vw, 56vh)", maxWidth: "1344px", aspectRatio: "2687 / 3660", left: "64%", top: "4%",
-        mobile: { left: "45%", top: "23%", width: "min(54vw, 42vh)" } },
+      { src: "/brand/hair-energy/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(25vw, 53vh)", maxWidth: "1344px", aspectRatio: "2687 / 3660", left: "72%", top: "7%",
+        mobile: { left: "42%", top: "23%", width: "min(57vw, 42vh)" } },
       // Shampoo — front/centre, slightly lower, enters from the TOP (2nd).
-      { src: "/brand/hair-energy/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(28vw, 56vh)", maxWidth: "1344px", aspectRatio: "2687 / 3660", left: "54%", top: "19%",
-        mobile: { left: "25%", top: "33%", width: "min(54vw, 42vh)" } },
+      { src: "/brand/hair-energy/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(25vw, 53vh)", maxWidth: "1344px", aspectRatio: "2687 / 3660", left: "63%", top: "22%",
+        mobile: { left: "22%", top: "33%", width: "min(57vw, 42vh)" } },
     ],
     heroContent: {
       logo: "/brand/hair-energy/hero/wordmark.png",
       logoAspect: "1576 / 1086",
-      logoWidth: "18vw",
-      maxWidth: "26vw",
+      logoWidth: "16.5vw",
+      maxWidth: "24.5vw",
       tagline: { en: "Soft, Fragrant Hair Every Day.", id: "Rambut Lembut & Wangi Setiap Hari." },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
-      left: "21%",
-      offsetY: "8vh",
+      left: "10%",
+      offsetY: "6vh",
       theme: "light",
       delay: 0.6,
       mobile: { logoWidth: "26vw" },

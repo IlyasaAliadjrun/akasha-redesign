@@ -24,25 +24,25 @@ const entry: Brand = {
     // margins, so the layer `width` is much larger than the visible product —
     // the vh term keeps them inside the banner on short/wide screens.
     heroLayers: [
-      { src: "/brand/asters/hero/2.png", depth: 30, enterFrom: "left", enterDelay: 0.15, width: "min(52vw, 63vh)", maxWidth: "1435px", aspectRatio: "2869 / 4903", left: "31%", top: "-3%",
+      { src: "/brand/asters/hero/1.png", depth: 52, enterFrom: "right", enterDelay: 0.35, width: "min(28vw, 34vh)", aspectRatio: "1590 / 3064", left: "72%", top: "26%",
+        mobile: { left: "43.5%", top: "34%", width: "min(40vw, 22vh)" } },
+      { src: "/brand/asters/hero/2.png", depth: 30, enterFrom: "left", enterDelay: 0.15, width: "min(50vw, 61vh)", aspectRatio: "2869 / 4903", left: "56%", top: "-1.5%",
         mobile: { left: "4%", top: "20%", width: "min(70vw, 42vh)" } },
-      { src: "/brand/asters/hero/1.png", depth: 52, enterFrom: "right", enterDelay: 0.35, width: "min(32vw, 38vh)", maxWidth: "795px", aspectRatio: "1590 / 3064", left: "59%", top: "14%",
-        mobile: { left: "48%", top: "30%", width: "min(44vw, 26vh)" } },
     ],
     heroContent: {
       logo: "/brand/asters/hero/wordmark.png",
       logoAspect: "1513 / 740",
-      logoWidth: "32vw",
-      maxWidth: "34vw",
+      logoWidth: "21vw",
+      maxWidth: "23vw",
       tagline: { en: "Beauty tools with the best performance, for everyone", id: "Alat kecantikan dengan performa terbaik, untuk semua" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
-      offsetY: "12vh",
+      offsetY: "6.4vh",
       // Warm off-white banner → dark copy (and the navbar paints itself dark).
       theme: "dark",
       delay: 0.6,
-      mobile: { logoWidth: "60vw" },
+      mobile: { logoWidth: "39vw" },
     },
     bannerBg: "#F1EEEA",
     hero: false,

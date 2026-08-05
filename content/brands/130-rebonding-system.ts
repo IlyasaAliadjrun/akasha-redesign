@@ -33,32 +33,32 @@ const entry: Brand = {
     heroLayers: [
       // Anti Resistant+ jar — back, highest and left of the pair, enters from the LEFT.
       { src: "/brand/rebonding-system/hero/2.png", depth: 36, enterFrom: "left", enterDelay: 0,
-        width: "min(26.5vw, 33.5vh)", maxWidth: "1002px", aspectRatio: "2004 / 1965", left: "50.3%", top: "9.6%",
-        mobile: { left: "1%", top: "24%", width: "min(40vw, 26vh)" } },
+        width: "min(28.5vw, 35.5vh)", maxWidth: "1002px", aspectRatio: "2004 / 1965", left: "63.3%", top: "13.2%",
+        mobile: { left: "24%", top: "26.5%", width: "min(42vw, 28vh)" } },
       // Super Gold+ jar — right of the pair and slightly lower, enters from the RIGHT (3rd).
       { src: "/brand/rebonding-system/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4,
-        width: "min(28vw, 35.5vh)", maxWidth: "1066px", aspectRatio: "2132 / 2100", left: "62%", top: "21.4%",
-        mobile: { left: "47%", top: "30%", width: "min(42vw, 27vh)" } },
+        width: "min(20vw, 47.5vh)", maxWidth: "1066px", aspectRatio: "2132 / 2100", left: "69%", top: "33.4%",
+        mobile: { left: "39%", top: "38%", width: "min(44vw, 29vh)" } },
       // Milky Neutralizer+ bottle — front, tilted across the pair, drops in from the TOP (2nd).
       { src: "/brand/rebonding-system/hero/1.png", depth: 72, enterFrom: "top", enterDelay: 0.2,
-        width: "min(41vw, 52vh)", maxWidth: "1362px", aspectRatio: "2724 / 3019", left: "42.5%", top: "31%",
-        mobile: { left: "19%", top: "37%", width: "min(58vw, 38vh)" } },
+        width: "min(43vw, 54vh)", maxWidth: "1362px", aspectRatio: "2724 / 3019", left: "57.5%", top: "34%",
+        mobile: { left: "11%", top: "39%", width: "min(60vw, 40vh)" } },
     ],
     heroContent: {
       logo: "/brand/rebonding-system/hero/wordmark.png",
       logoAspect: "1796 / 451",
-      logoWidth: "38vw",
-      maxWidth: "40vw",
+      logoWidth: "30vw",
+      maxWidth: "32vw",
       // Reference wording — set uppercase, as drawn.
       tagline: { en: "PIONEER OF HAIR STRAIGHTENING IN INDONESIA", id: "PIONIR PELURUSAN RAMBUT DI INDONESIA" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
-      left: "7%",
-      offsetY: "15vh",
+      left: "8%",
+      offsetY: "6vh",
       // Light banner → dark text (and the navbar paints its dark treatment).
       theme: "dark",
       delay: 0.6,
-      mobile: { logoWidth: "68vw" },
+      mobile: { logoWidth: "53vw" },
     },
     bannerBg: "#F2EFE9",
     hero: false,

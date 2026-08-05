@@ -21,8 +21,8 @@ const entry: SubBrand = {
     // only ~48% × 64% of the canvas), so the layer box is far larger than the pair looks.
     heroLayers: [
       { src: "/brand/texture-experience/vanilla-milk/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
-        width: "min(57vw, 112vh, 1984px)", aspectRatio: "3967 / 4372", left: "38.8%", top: "-7.1%",
-        mobile: { left: "-5.2%", top: "-13%", width: "126%" } },
+        width: "min(43vw, 98vh, 1984px)", aspectRatio: "3967 / 4372", left: "56%", top: "3%",
+        mobile: { left: "-60%", top: "-85%", width: "240%" } },
     ],
     showcaseTitle: "/brand/texture-experience/vanilla-milk/showcase/title.png",
     showcaseTitleAspect: "3605 / 3233",

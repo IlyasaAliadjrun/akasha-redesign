@@ -27,22 +27,22 @@ const entry: Brand = {
     heroLayers: [
       // Acne Care Oil-Control Face Wash — back, upper middle, drops in from the top.
       { src: "/brand/barber-daily/hero/2.png", depth: 34, enterFrom: "top", enterDelay: 0.2,
-        width: "min(20vw, 32vh)", maxWidth: "766px", aspectRatio: "1531 / 2722", left: "60.5%", top: "5.4%",
-        mobile: { left: "47%", top: "20%", width: "min(34vw, 22vh)" } },
+        width: "min(20vw, 32vh)", aspectRatio: "1531 / 2722", left: "71%", top: "4%",
+        mobile: { left: "40%", top: "25%", width: "min(40vw, 28vh)" } },
       // Ultra Sensitive Face Wash — right, enters from the right.
       { src: "/brand/barber-daily/hero/3.png", depth: 52, enterFrom: "right", enterDelay: 0.4,
-        width: "min(38vw, 61vh)", maxWidth: "1973px", aspectRatio: "3945 / 3946", left: "64.7%", top: "12.8%",
-        mobile: { left: "42%", top: "41%", width: "min(56vw, 36vh)" } },
+        width: "min(55vw, 80vh)", aspectRatio: "3945 / 3946", left: "62%", top: "23%",
+        mobile: { left: "23%", top: "39%", width: "min(85vw, 65vh)" } },
       // Bright Radiance Face Wash — front, largest, enters from the left (1st).
       { src: "/brand/barber-daily/hero/1.png", depth: 70, enterFrom: "left", enterDelay: 0,
-        width: "min(31vw, 50vh)", maxWidth: "1081px", aspectRatio: "2161 / 3691", left: "45.3%", top: "24.9%",
-        mobile: { left: "22.5%", top: "33%", width: "min(46vw, 30vh)" } },
+        width: "min(30vw, 49vh)", aspectRatio: "2161 / 3691", left: "59.3%", top: "23%",
+        mobile: { left: "15.5%", top: "36.5%", width: "min(52vw, 36vh)" } },
     ],
     heroContent: {
       logo: "/brand/barber-daily/hero/wordmark.png",
       logoAspect: "1553 / 1060",
-      logoWidth: "24vw",
-      maxWidth: "34vw",
+      logoWidth: "21vw",
+      maxWidth: "32vw",
       tagline: { en: "The Best Care, Formulated for Men.", id: "Perawatan Terbaik, Diformulasikan untuk Pria." },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",

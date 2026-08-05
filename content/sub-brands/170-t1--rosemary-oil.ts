@@ -17,8 +17,8 @@ const entry: SubBrand = {
     // that dead space back off the top of the banner.
     heroLayers: [
       { src: "/brand/t1/rosemary-oil/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
-        width: "min(34vw, 54vh, 1559px)", aspectRatio: "3118 / 5494", left: "50%", top: "-13%",
-        mobile: { left: "15%", top: "-37%", width: "78%" } },
+        width: "min(58vw, 74vh, 1559px)", aspectRatio: "3118 / 5494", left: "57%", top: "-35%",
+        mobile: { left: "-64.5%", top: "-195%", width: "240%" } },
     ],
     showcaseTitle: "/brand/t1/rosemary-oil/showcase/title.png",
     showcaseTitleAspect: "4428 / 4061",

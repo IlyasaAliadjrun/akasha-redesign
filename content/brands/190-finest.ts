@@ -29,18 +29,18 @@ const entry: Brand = {
       // (768×1024), where a tighter vw would shrink the tubes into the top third.
       // Soft Mint — behind, higher and further right.
       { src: "/brand/finest/hero/2.png", depth: 34, enterFrom: "right", enterDelay: 0.3,
-        width: "min(50vw, 73vh)", maxWidth: "1588px", aspectRatio: "3176 / 4735", left: "51%", top: "-9%",
-        mobile: { width: "min(56vw, 37vh)", left: "27%", top: "20%" } },
+        width: "min(50vw, 73vh)", aspectRatio: "3176 / 4735", left: "55%", top: "-7%",
+        mobile: { width: "min(82vw, 40vh)", left: "12%", top: "15%" } },
       // Light Lemon — front, slightly lower and overlapping the Soft Mint tube.
       { src: "/brand/finest/hero/1.png", depth: 56, enterFrom: "bottom", enterDelay: 0.15,
-        width: "min(46vw, 68vh)", maxWidth: "1513px", aspectRatio: "3026 / 4424", left: "48%", top: "1%",
-        mobile: { width: "min(52vw, 34vh)", left: "12%", top: "26%" } },
+        width: "min(46vw, 68vh)", aspectRatio: "3026 / 4424", left: "52%", top: "4.5%",
+        mobile: { width: "min(78vw, 37vh)", left: "3%", top: "21%" } },
     ],
     heroContent: {
       logo: "/brand/finest/hero/wordmark.png",
       logoAspect: "1394 / 325",
-      logoWidth: "25vw",
-      maxWidth: "27vw",
+      logoWidth: "23vw",
+      maxWidth: "26vw",
       tagline: { en: "Remineralizing, Naturally Whitening & Oral Microbiome-Friendly", id: "Remineralisasi, Pemutih Alami & Ramah Mikrobioma Oral" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
@@ -49,7 +49,7 @@ const entry: Brand = {
       // Light banner → ink copy (and the navbar takes its dark treatment).
       theme: "dark",
       delay: 0.55,
-      mobile: { logoWidth: "54vw" },
+      mobile: { logoWidth: "48vw" },
     },
     bannerBg: "#FCF6F5", // blush off-white, matching the reference hero
     hero: false,

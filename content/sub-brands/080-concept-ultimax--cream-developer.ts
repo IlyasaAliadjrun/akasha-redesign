@@ -16,8 +16,8 @@ const entry: SubBrand = {
     // The delivered hero PNG is an almost-square canvas with generous margin — the
     // two bottles fill only 50 % × 69 % of it — hence the wide layer box.
     heroLayers: [
-      { src: "/brand/concept-ultimax/cream-developer/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 44, width: "min(38vw, 62vh, 1973px)", aspectRatio: "3945 / 4041", left: "50%", top: "18%",
-        mobile: { left: "0%", top: "0%", width: "100%" } },
+      { src: "/brand/concept-ultimax/cream-developer/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 44, width: "min(57vw, 81vh, 1973px)", aspectRatio: "3945 / 4041", left: "55%", top: "8%",
+        mobile: { left: "-85%", top: "-95%", width: "270%" } },
     ],
     showcaseTitle: "/brand/concept-ultimax/cream-developer/showcase/title.png",
     showcaseTitleAspect: "4423 / 3479",

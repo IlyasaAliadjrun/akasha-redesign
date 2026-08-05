@@ -28,8 +28,8 @@ const entry: Brand = {
       // 44.7vw of box => 40vw of visible pack, landing it exactly where the
       // reference puts it (x 939-1708, y 178-935 of a 1920x1084 banner).
       { src: "/brand/omoide/hero/1.png", depth: 60, enterFrom: "right", enterDelay: 0.25,
-        width: "min(44.7vw, 79.5vh)", maxWidth: "895px", aspectRatio: "1789 / 1771", left: "46.2%", top: "11.7%",
-        mobile: { left: "6%", top: "27.5%", width: "min(86vw, 45vh)" } },
+        width: "min(36.7vw, 71.5vh)", aspectRatio: "1789 / 1771", left: "57%", top: "13.7%",
+        mobile: { left: "11%", top: "32%", width: "min(78vw, 37vh)" } },
     ],
     heroContent: {
       logo: "/brand/omoide/hero/wordmark.png",
@@ -38,12 +38,12 @@ const entry: Brand = {
       maxWidth: "30vw",
       tagline: { en: "Taste of Japan", id: "Cita Rasa Jepang" },
       subtitle: { en: "inspired by authentic Japanese culinary tradition", id: "terinspirasi dari tradisi kuliner Jepang asli" },
-      left: "13.7%",
-      offsetY: "-8.1vh",
+      left: "10.8%",
+      offsetY: "1.8vh",
       // Light cream banner => dark type, and the navbar paints itself to match.
       theme: "dark",
       delay: 0.55,
-      mobile: { logoWidth: "56vw" },
+      mobile: { logoWidth: "48vw" },
     },
     bannerBg: "#F5DEC6",
     hero: false,

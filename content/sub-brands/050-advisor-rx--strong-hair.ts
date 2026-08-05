@@ -24,18 +24,18 @@ const entry: SubBrand = {
     // is given for EVERY layer because the component's two built-in defaults only
     // cover a two-product hero.
     heroLayers: [
-      // 1 — Shampoo (250 mL), tallest, enters from the left.
-      { src: "/brand/advisor-rx/strong-hair/hero/1.png", enterFrom: "left", enterDelay: 0, depth: 36, width: "min(32vw, 52vh, 1944px)", aspectRatio: "1 / 1", left: "47%", top: "34%",
-        mobile: { left: "-25%", top: "11%", width: "80%" } },
       // 2 — Boosting Mask (100 mL).
-      { src: "/brand/advisor-rx/strong-hair/hero/2.png", enterFrom: "top", enterDelay: 0.15, depth: 48, width: "min(19vw, 30vh, 1493px)", aspectRatio: "1 / 1", left: "65%", top: "52%",
-        mobile: { left: "20%", top: "40%", width: "46%" } },
+      { src: "/brand/advisor-rx/strong-hair/hero/2.png", enterFrom: "top", enterDelay: 0.15, depth: 48, width: "min(50vw, 61vh, 1493px)", aspectRatio: "1 / 1", left: "59%", top: "9%",
+        mobile: { left: "-30%", top: "-55%", width: "170%" } },
+      // 1 — Shampoo (250 mL), tallest, enters from the left.
+      { src: "/brand/advisor-rx/strong-hair/hero/1.png", enterFrom: "left", enterDelay: 0, depth: 36, width: "min(53vw, 73vh, 1944px)", aspectRatio: "1 / 1", left: "49%", top: "15.5%",
+        mobile: { left: "-58.5%", top: "-60%", width: "190%" } },
       // 3 — Hair Tonic (100 mL).
-      { src: "/brand/advisor-rx/strong-hair/hero/3.png", enterFrom: "top", enterDelay: 0.3, depth: 60, width: "min(31.5vw, 50vh, 1711px)", aspectRatio: "1 / 1", left: "68.5%", top: "38%",
-        mobile: { left: "28%", top: "16%", width: "79%" } },
+      { src: "/brand/advisor-rx/strong-hair/hero/3.png", enterFrom: "top", enterDelay: 0.3, depth: 60, width: "min(52.5vw, 71vh, 1711px)", aspectRatio: "1 / 1", left: "64.5%", top: "12.5%",
+        mobile: { left: "-17%", top: "-50%", width: "170%" } },
       // 4 — Scalp Serum (40 mL), smallest, enters from the right.
-      { src: "/brand/advisor-rx/strong-hair/hero/4.png", enterFrom: "right", enterDelay: 0.45, depth: 72, width: "min(9.3vw, 15vh, 746px)", aspectRatio: "1491 / 2058", left: "88.5%", top: "59%",
-        mobile: { left: "80%", top: "50%", width: "22%" } },
+      { src: "/brand/advisor-rx/strong-hair/hero/4.png", enterFrom: "right", enterDelay: 0.45, depth: 72, width: "min(27.3vw, 33vh, 746px)", aspectRatio: "1491 / 2058", left: "68%", top: "42%",
+        mobile: { left: "14.5%", top: "0%", width: "85%" } },
     ],
     showcaseTitle: "/brand/advisor-rx/strong-hair/showcase/title.png",
     showcaseTitleAspect: "4722 / 3817",

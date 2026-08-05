@@ -13,10 +13,10 @@ const entry: SubBrand = {
     heroWordmarkAspect: "767 / 529",
     // 1.png = spray depan (masuk dari kiri), 2.png = spray belakang (masuk dari kanan).
     heroLayers: [
-      { src: "/brand/hair-energy/scentsations/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "260px", aspectRatio: "2139 / 2753", left: "57%", top: "14%",
-        mobile: { right: "16%", top: "3%", width: "52%" } },
-      { src: "/brand/hair-energy/scentsations/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "250px", aspectRatio: "2054 / 3538", left: "50%", top: "12%",
-        mobile: { left: "16%", bottom: "15%", width: "49%" } },
+      { src: "/brand/hair-energy/scentsations/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "285px", aspectRatio: "2139 / 2753", left: "68%", top: "19%",
+        mobile: { right: "-33%", top: "-55%", width: "143%" } },
+      { src: "/brand/hair-energy/scentsations/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "290px", aspectRatio: "2054 / 3538", left: "62%", top: "18%",
+        mobile: { left: "-26%", bottom: "-65%", width: "140%" } },
     ],
     // showcase/1.png = gambar title (produk + manfaat); tidak ada featured lebar.
     showcaseTitle: "/brand/hair-energy/scentsations/showcase/1.png",
