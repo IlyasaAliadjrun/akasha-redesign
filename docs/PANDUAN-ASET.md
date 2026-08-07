@@ -317,6 +317,7 @@ Aset ditaruh **bersarang di dalam folder brand induk**:
 | Showcase — kartu | `brand/{brand}/{sub}/showcase/` | 1 gambar per varian. **Gambar SUDAH termasuk background + border kartunya** — developer hanya menempatkan gambar, tidak menambah bingkai/latar apa pun. | contain | **tidak** (gambar utuh) |
 
 - **Rasio kartu:** semua kartu di satu halaman **rasionya sama** (biar grid rapi) — beri tahu developer rasio title, kartu grid, dan kartu featured (full-width) supaya diset di `lib/subBrands.ts` (`showcaseTitleAspect`, `cardAspect`, `featuredAspect`) dan tidak ada ruang kosong.
+- **Bleaching Powder:** `showcase/title.png` memakai rasio **4661×2442 (1.909:1)** dan kartu featured `showcase/1.png` memakai rasio **5365×2434 (2.204:1)**. Keduanya ditampilkan utuh dengan `object-contain` pada desktop dan mobile; jangan memasukkan aset landscape ini ke slot portrait karena akan menghasilkan ruang kosong berlebih.
 - **Skeleton:** selama folder masih kosong, tiap slot gambar tampil sebagai **kotak placeholder polos** (abu muda, tanpa bingkai) — jadi halaman sudah tampil sebagai wireframe. Begitu aset dimasukkan & path diisi di [lib/subBrands.ts](../lib/subBrands.ts), gambar asli langsung menggantikannya.
 - **Teks** (tagline hero, tombol) diisi di `lib/subBrands.ts`; sisanya (judul, nama varian) sudah menyatu di dalam gambar showcase.
 - Contoh folder: `brand/hair-energy/creambath/hero/`, `brand/hair-energy/creambath/showcase/`.

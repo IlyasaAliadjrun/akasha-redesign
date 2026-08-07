@@ -45,6 +45,8 @@ Nama brand di folder pakai slug juga: `hair-energy/`, `nestle-pure-life/`.
 | Showcase — gambar utama | `brand/{slug}/showcase/title.png` | **bebas** (cth 1.37:1) | 5219×3799 | CONTAIN | png |
 | Showcase varian — latar `{n}-2` | `brand/{slug}/showcase/` | **2.128:1** | 5010×2354 | COVER | jpg/png |
 | Showcase varian — produk `{n}-1` | `brand/{slug}/showcase/` | **~3:4** | 2687×3660 | — | **PNG** |
+| Bleaching Powder — title | `brand/concept-ultimax/bleaching-powder/showcase/title.png` | **1.909:1** | 4661×2442 | CONTAIN | png |
+| Bleaching Powder — featured | `brand/concept-ultimax/bleaching-powder/showcase/1.png` | **2.204:1** | 5365×2434 | CONTAIN | png |
 
 \* Banner brand: **COVER & full screen di desktop MAUPUN HP**. Di HP (potret) sisi kiri-kanan terpotong banyak → taruh semua branding/subjek **benar-benar di tengah**. (`bannerBg` kini hanya warna latar saat loading.)
 

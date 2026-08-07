@@ -22,6 +22,8 @@ const entry: SubBrand = {
     // Profesional Vegan" block (jar + three check points) and the shade cards have no
     // matching asset, so `showcaseTitle` stays unset (the component's own placeholder
     // marks the gap) and the grid is empty. Reported to the design team.
+    showcaseTitle: "/brand/concept-ultimax/bleaching-powder/showcase/title.png",
+    showcaseTitleAspect: "4661 / 2442",
     featured: { image: "/brand/concept-ultimax/bleaching-powder/showcase/1.png", label: { en: "Bleaching Powder — a fast, safe bleaching solution for hair", id: "Bleaching Powder — solusi bleaching cepat dan aman untuk rambut" } },
     featuredAspect: "5365 / 2434",
     cards: [],

@@ -91,7 +91,7 @@ const entry: Brand = {
     //     { title: "Hydrolized Keratin", image: "/brand/hydroprisma/about/2.png" },
     //   ],
     showcase: {
-      hero: "/brand/hydroprisma/showcase/Website_Asset 39.png",
+      hero: "/brand/hydroprisma/showcase/title.png",
       heroAspect: "4864 / 3860",
       // These banners are FINISHED cards: the strength word and the bottom caption are
       // baked into the background. So the frame takes the art's own ratio instead of the
