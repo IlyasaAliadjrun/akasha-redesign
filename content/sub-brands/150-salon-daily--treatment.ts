@@ -18,7 +18,7 @@ const entry: SubBrand = {
     // One finished 3-product cluster (shampoo, conditioner, hair tonic). Sized with
     // min(vw, vh) so it never outgrows a short window; centred in the right half.
     heroLayers: [
-      { src: "/brand/salon-daily/treatment/hero/1.png", enterFrom: "right", enterDelay: 0.3, depth: 50, width: "min(50vw, 70vh, 1855px)", aspectRatio: "3709 / 4550", left: "57%", top: "12%",
+      { src: "/brand/salon-daily/treatment/hero/1.png", enterFrom: "right", enterDelay: 0.3, depth: 50, width: "min(50vw, 70vh)", aspectRatio: "3709 / 4550", left: "57%", top: "12%",
         mobile: { left: "-67%", top: "-100%", width: "245%" } },
     ],
     showcaseTitle: "/brand/salon-daily/treatment/showcase/title.png",

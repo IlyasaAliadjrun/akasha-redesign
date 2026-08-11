@@ -14,14 +14,15 @@ const entry: SubBrand = {
     // Products render back-to-front. Jar (2.png) sits behind, upper-right, enters
     // from the right; tube (1.png) sits in front, centre, enters from the left and
     // fades in first (per the filename order).
-    // Widths are a FIXED px (no vw term): the products keep exactly this size on
-    // every desktop width — they never shrink or grow when the window is resized.
+    // Widths are min(vw, vh, px): they scale with the viewport (so browser zoom
+    // can't change their rendered size) but stay capped at their designed px size
+    // once the window is comfortably above the mobile breakpoint.
     // (The section is `overflow-hidden`, so on very narrow desktop widths the jar is
     // simply clipped rather than triggering a horizontal scrollbar.)
     heroLayers: [
-      { src: "/brand/hair-energy/creambath/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "370px", aspectRatio: "2139 / 2345", left: "67%", top: "18%",
+      { src: "/brand/hair-energy/creambath/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "min(36.1vw, 48.2vh)", aspectRatio: "2139 / 2345", left: "67%", top: "18%",
         mobile: { right: "-14%", top: "-24%", width: "100%" } },
-      { src: "/brand/hair-energy/creambath/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "295px", aspectRatio: "1646 / 2786", left: "58%", top: "20%",
+      { src: "/brand/hair-energy/creambath/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "min(28.8vw, 38.4vh)", aspectRatio: "1646 / 2786", left: "58%", top: "20%",
         mobile: { right: "18%", top: "-30%", width: "90%" } },
     ],
     showcaseTitle: "/brand/hair-energy/creambath/showcase/title.png",

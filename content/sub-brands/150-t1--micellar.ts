@@ -21,7 +21,7 @@ const entry: SubBrand = {
     // `mobile` values are % of the SubBrandHero mobile cluster box.
     heroLayers: [
       { src: "/brand/t1/micellar/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
-        width: "min(58vw, 70vh, 1747px)", aspectRatio: "3493 / 4751", left: "57%", top: "0%",
+        width: "min(58vw, 70vh)", aspectRatio: "3493 / 4751", left: "57%", top: "0%",
         mobile: { left: "-65%", top: "-115%", width: "230%" } },
     ],
     showcaseTitle: "/brand/t1/micellar/showcase/title.png",

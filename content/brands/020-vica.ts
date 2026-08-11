@@ -24,7 +24,7 @@ const entry: Brand = {
       // DESKTOP: anchored right, vertically centred. MOBILE: centred between the
       // wordmark (top) and the tagline block (bottom). No parallax (depth 0).
       { src: "/brand/vica/hero/1.png", depth: 0, enterFrom: "right", enterDelay: 0.3,
-        width: "min(32vw, 365px)", aspectRatio: "2785 / 3778", right: "12%", top: "17.5%",
+        width: "min(32vw, 50vh)", aspectRatio: "2785 / 3778", right: "12%", top: "17.5%",
         mobile: { width: "min(62.5vw, 38.5vh)", left: "19%", top: "42%" } },
     ],
     // Wordmark image already includes the "Tutup Kuning, Paling Bening" tagline, so no

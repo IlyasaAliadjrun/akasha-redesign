@@ -161,7 +161,7 @@ export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
       initial={reduce ? false : { opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className="relative w-[102px] md:w-[120px]"
+      className="relative w-[27vw] md:w-[15.6vw]"
       style={{
         aspectRatio: sub.heroWordmarkAspect ?? "767 / 529",
         transform: `scale(${zoom})`,

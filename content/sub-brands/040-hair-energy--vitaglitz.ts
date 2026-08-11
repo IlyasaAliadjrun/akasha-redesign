@@ -12,10 +12,12 @@ const entry: SubBrand = {
     heroWordmark: "/brand/hair-energy/vitaglitz/hero/wordmark.png",
     heroWordmarkAspect: "767 / 529",
     // 1.png = sachet depan (masuk dari kiri), 2.png = sachet belakang (masuk dari kanan).
+    // Widths are min(vw, vh, px): scale with viewport (zoom-independent), capped at
+    // their designed px size once the window is above the mobile breakpoint.
     heroLayers: [
-      { src: "/brand/hair-energy/vitaglitz/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "305px", aspectRatio: "2139 / 2345", left: "68%", top: "16%",
+      { src: "/brand/hair-energy/vitaglitz/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "min(29.8vw, 39.7vh)", aspectRatio: "2139 / 2345", left: "68%", top: "16%",
         mobile: { right: "-28%", top: "-42%", width: "130%" } },
-      { src: "/brand/hair-energy/vitaglitz/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "295px", aspectRatio: "2054 / 2786", left: "60%", top: "30%",
+      { src: "/brand/hair-energy/vitaglitz/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "min(28.8vw, 38.4vh)", aspectRatio: "2054 / 2786", left: "60%", top: "30%",
         mobile: { left: "-25%", bottom: "-40%", width: "130%" } },
     ],
     // showcase/1.png = title, showcase/2.png = featured lebar, 3–4 = kartu.

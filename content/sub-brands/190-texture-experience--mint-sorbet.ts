@@ -21,7 +21,7 @@ const entry: SubBrand = {
     // canvas), so the layer box is larger than the pair looks.
     heroLayers: [
       { src: "/brand/texture-experience/mint-sorbet/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
-        width: "min(43vw, 83vh, 1886px)", aspectRatio: "3772 / 3748", left: "52%", top: "12%",
+        width: "min(43vw, 83vh)", aspectRatio: "3772 / 3748", left: "52%", top: "12%",
         mobile: { left: "-74%", top: "-75%", width: "240%" } },
     ],
     showcaseTitle: "/brand/texture-experience/mint-sorbet/showcase/title.png",
