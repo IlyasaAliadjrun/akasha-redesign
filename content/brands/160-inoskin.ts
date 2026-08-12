@@ -44,7 +44,7 @@ const entry: Brand = {
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
-      offsetY: "8vh",
+      offsetY: "5vh",
       // Off-white banner → dark text, and the navbar paints itself dark over it.
       theme: "accent-light",
       delay: 0.55,

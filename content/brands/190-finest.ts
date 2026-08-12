@@ -45,7 +45,7 @@ const entry: Brand = {
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
-      offsetY: "6vh",
+      offsetY: "5vh",
       // Light banner → ink copy (and the navbar takes its dark treatment).
       theme: "dark",
       delay: 0.55,

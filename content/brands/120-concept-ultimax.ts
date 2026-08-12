@@ -46,7 +46,7 @@ const entry: Brand = {
       tagline: { en: "Permanent Vegan Vibrant Hair Color", id: "Pewarna Rambut Permanen Vegan Vibrant" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
-      offsetY: "10vh",
+      offsetY: "5vh",
       // Pale banner → dark type (and the navbar paints itself for a light backdrop).
       theme: "dark",
       delay: 0.6,

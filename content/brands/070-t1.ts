@@ -53,7 +53,7 @@ const entry: Brand = {
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "8%",
-      offsetY: "8vh",
+      offsetY: "5vh",
       // The banner is a light pistachio, so the wording — and the navbar that reads
       // this flag — take their DARK treatment. It also keeps the CTA pill in the same
       // brown family as the wordmark art, like the reference.

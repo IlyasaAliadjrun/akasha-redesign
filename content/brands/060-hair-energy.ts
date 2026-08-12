@@ -43,7 +43,7 @@ const entry: Brand = {
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "10%",
-      offsetY: "6vh",
+      offsetY: "5vh",
       theme: "light",
       delay: 0.6,
       mobile: { logoWidth: "26vw" },

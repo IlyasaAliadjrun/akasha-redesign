@@ -58,7 +58,7 @@ const entry: Brand = {
       // The reference sits the whole wordmark/tagline/CTA column in the LOWER left of
       // the banner (its CTA bottom lands at ~82 % of the banner height), not on the
       // vertical centre the component defaults to.
-      offsetY: "6vh",
+      offsetY: "5vh",
       // Light grey banner → dark text, and the navbar paints its dark treatment.
       theme: "dark",
       delay: 0.6,
