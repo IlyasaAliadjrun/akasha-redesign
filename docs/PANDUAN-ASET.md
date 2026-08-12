@@ -184,6 +184,7 @@ Banner hero bisa dirakit dari **beberapa layer terpisah** yang dianimasikan send
 - **Wordmark/logo:** **PNG transparan** (sparkle + logo). Nama file: `wordmark.png` (Hair Energy: 1576×1086).
 - **Latar:** cukup **1 warna solid** (`bannerBg` di `lib/brands.ts`) — tidak perlu file. Kalau memang butuh gambar latar (seperti Nestlé Pure Life), namanya `background.jpg`.
 - **Versi HP:** kalau satu layer perlu aset khusus HP (mis. crop produk yang lebih rapat), namanya `{n}-mobile.png`. Contoh: `nestle-pure-life/hero/1-mobile.png` menggantikan `1.png` di layar <768px.
+- **Advisor RX:** hero memakai empat layer produk: `1.png`, `2.png`, dan `3.png` berkanvas **1:1**, lalu `4.png` (serum) **1491×2058**. Semuanya CONTAIN; komposisi desktop berjajar di kanan dan diatur ulang secara khusus pada mobile.
 
 **Animasi masuk** (diatur per layer via `enterFrom`): **`left` / `right` / `top` / `bottom`** (atau kosong = fade saja). Contoh Hair Energy: produk-1 dari kiri, produk-2 dari atas, produk-3 dari kanan, wordmark fade. Urutan waktu diatur `enterDelay`; kecepatan parallax saat scroll diatur `depth`.
 
@@ -229,6 +230,7 @@ Tiap banner varian = **2 layer terpisah** yang dianimasikan sendiri-sendiri (par
 - **Skala relatif:** kalau semua SKU digambar pada **satu kanvas ukuran sama** (cth NPL: semua `-1` di kanvas 1809×2015), ukuran botol antar-banner otomatis proporsional (330 mL kecil → galon besar). Jaga tiap botol di posisi yang konsisten dalam kanvas.
 - **Produk** boleh **menjorok keluar** (lebih tinggi dari banner) — beri ruang transparan, jangan dipotong mepet.
 - Developer menautkan tiap banner sebagai `{ bg: "{n}-2.png", product: "{n}-1.png", bgAspect, productAspect, productHeight }`. Rasio & tinggi produk diisi per aset. Arah masuk kiri/kanan otomatis dari urutan.
+- **Make It:** latar `1-2` memakai **4810×2261**, sedangkan `2-2` dan `3-2` memakai **4810×2260**. Ketiganya ditampilkan dengan rasio asli dan tanpa parallax latar agar seluruh tulisan di tepi kartu tetap terlihat pada desktop maupun HP.
 - Contoh: `brand/hair-energy/showcase/1-1.png` + `1-2.png` (mode center), `brand/nestle-pure-life/showcase/1-1.png` … `4-*` (mode sides).
 - Catatan: **opsional & reusable** — brand lain cukup sediakan `{n}-1`/`{n}-2` dengan rasio sama di `brand/{slug}/showcase/`.
 
@@ -317,6 +319,7 @@ Aset ditaruh **bersarang di dalam folder brand induk**:
 | Showcase — kartu | `brand/{brand}/{sub}/showcase/` | 1 gambar per varian. **Gambar SUDAH termasuk background + border kartunya** — developer hanya menempatkan gambar, tidak menambah bingkai/latar apa pun. | contain | **tidak** (gambar utuh) |
 
 - **Rasio kartu:** semua kartu di satu halaman **rasionya sama** (biar grid rapi) — beri tahu developer rasio title, kartu grid, dan kartu featured (full-width) supaya diset di `lib/subBrands.ts` (`showcaseTitleAspect`, `cardAspect`, `featuredAspect`) dan tidak ada ruang kosong.
+- **Inoskin Young & Bright:** area kartu yang terlihat memakai rasio **2304×2987**. Margin kanvas transparan pada `1.png`, `2.png`, dan `5.png` dipotong saat render dengan COVER + posisi tepi; artwork kartunya tetap utuh dan jarak grid konsisten di desktop maupun HP.
 - **Bleaching Powder:** `showcase/title.png` memakai rasio **4661×2442 (1.909:1)** dan kartu featured `showcase/1.png` memakai rasio **5365×2434 (2.204:1)**. Keduanya ditampilkan utuh dengan `object-contain` pada desktop dan mobile; jangan memasukkan aset landscape ini ke slot portrait karena akan menghasilkan ruang kosong berlebih.
 - **Skeleton:** selama folder masih kosong, tiap slot gambar tampil sebagai **kotak placeholder polos** (abu muda, tanpa bingkai) — jadi halaman sudah tampil sebagai wireframe. Begitu aset dimasukkan & path diisi di [lib/subBrands.ts](../lib/subBrands.ts), gambar asli langsung menggantikannya.
 - **Teks** (tagline hero, tombol) diisi di `lib/subBrands.ts`; sisanya (judul, nama varian) sudah menyatu di dalam gambar showcase.

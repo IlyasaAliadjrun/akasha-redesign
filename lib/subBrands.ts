@@ -24,6 +24,8 @@ export type SubBrandCard = {
   image?: string; // complete card graphic (product + background + border baked in)
   href?: string; // optional link (defaults to the shop link)
   label?: Localized<string>; // alt text / internal identifier
+  imageFit?: "contain" | "cover"; // cover may trim transparent canvas padding
+  imagePosition?: string; // CSS object-position used with imageFit (default "center")
 };
 
 export type SubBrand = {

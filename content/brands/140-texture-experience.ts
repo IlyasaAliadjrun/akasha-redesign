@@ -138,27 +138,27 @@ const entry: Brand = {
       variants: [
         // STRAWBERRY YOGHURT — creambath tube + Berry Smoothie hair perfume
         { bg: "/brand/texture-experience/showcase/1-2.png", product: "/brand/texture-experience/showcase/1-1.png",
-          bgAspect: "4810 / 2260", productAspect: "2289 / 2711", productHeight: "133%",
+          bgAspect: "4810 / 2260", productAspect: "2289 / 2711", productHeight: "125.5%",
           productShiftX: "5.6%", productShiftY: "3.1%",
           href: "/brands/texture-experience/strawberry-yoghurt" },
         // GREEN TEA BUTTER — creambath tube + Tea Blossom hair perfume
         { bg: "/brand/texture-experience/showcase/2-2.png", product: "/brand/texture-experience/showcase/2-1.png",
-          bgAspect: "4810 / 2260", productAspect: "2636 / 2794", productHeight: "132%",
+          bgAspect: "4810 / 2260", productAspect: "2636 / 2794", productHeight: "124.5%",
           productShiftX: "-2.6%", productShiftY: "-3.8%",
           href: "/brands/texture-experience/green-tea-butter" },
         // BLACK CHOCOLATE — creambath tube + Choco Hazelnut hair perfume
         { bg: "/brand/texture-experience/showcase/3-2.png", product: "/brand/texture-experience/showcase/3-1.png",
-          bgAspect: "4810 / 2260", productAspect: "2242 / 2664", productHeight: "133%",
+          bgAspect: "4810 / 2260", productAspect: "2242 / 2664", productHeight: "125%",
           productShiftX: "-6.7%", productShiftY: "-6.7%",
           href: "/brands/texture-experience/black-chocolate" },
         // VANILLA MILK — creambath tube + Vanilla Souffle hair perfume
         { bg: "/brand/texture-experience/showcase/4-2.png", product: "/brand/texture-experience/showcase/4-1.png",
-          bgAspect: "4810 / 2260", productAspect: "2860 / 3084", productHeight: "157%",
+          bgAspect: "4810 / 2260", productAspect: "2860 / 3084", productHeight: "147%",
           productShiftX: "8.1%", productShiftY: "2.3%",
           href: "/brands/texture-experience/vanilla-milk" },
         // MINT SORBET — creambath tube + Mint Mocktail hair perfume
         { bg: "/brand/texture-experience/showcase/5-2.png", product: "/brand/texture-experience/showcase/5-1.png",
-          bgAspect: "4810 / 2260", productAspect: "2526 / 2359", productHeight: "132%",
+          bgAspect: "4810 / 2260", productAspect: "2526 / 2359", productHeight: "124.5%",
           productShiftX: "-10.5%", productShiftY: "0.3%",
           href: "/brands/texture-experience/mint-sorbet" },
       ],

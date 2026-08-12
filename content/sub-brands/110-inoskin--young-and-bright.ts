@@ -22,27 +22,27 @@ const entry: SubBrand = {
     // the lg breakpoint; the third `px` term on the serum caps it at half its natural
     // 1471px width so it stays sharp at DPR 2 on very wide screens.
     heroLayers: [
-      { src: "/brand/inoskin/young-and-bright/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 34, width: "min(31vw, 60vh, 1196px)", aspectRatio: "2391 / 4018", left: "63%", top: "6%",
+      { src: "/brand/inoskin/young-and-bright/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 34, width: "min(27vw, 56vh, 1196px)", aspectRatio: "2391 / 4018", left: "62%", top: "11%",
         mobile: { left: "46.5%", top: "-5.6%", width: "60%" } },
-      { src: "/brand/inoskin/young-and-bright/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 48, width: "min(30vw, 60vh, 1133px)", aspectRatio: "2265 / 3199", left: "54%", top: "10%",
+      { src: "/brand/inoskin/young-and-bright/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 48, width: "min(26vw, 56vh, 1133px)", aspectRatio: "2265 / 3199", left: "54.5%", top: "15%",
         mobile: { left: "2.3%", top: "-6%", width: "58%" } },
-      { src: "/brand/inoskin/young-and-bright/hero/3.png", enterFrom: "right", enterDelay: 0.6, depth: 62, width: "min(22.5vw, 40vh, 735px)", aspectRatio: "1471 / 2306", left: "73%", top: "30%",
+      { src: "/brand/inoskin/young-and-bright/hero/3.png", enterFrom: "right", enterDelay: 0.6, depth: 62, width: "min(18.5vw, 36vh, 735px)", aspectRatio: "1471 / 2306", left: "72.5%", top: "35%",
         mobile: { left: "35.6%", top: "22.8%", width: "46%" } },
     ],
     showcaseTitle: "/brand/inoskin/young-and-bright/showcase/title.png",
     showcaseTitleAspect: "4834 / 3846",
     // No `featured` slot: every card asset in this folder is a portrait SKU card —
     // there is no landscape hero card, and the reference doesn't show one either.
-    // `cardAspect` follows the TALLEST card (1.png, 2304×3281) so all five keep an
-    // identical column width under `object-contain`; the shorter cards simply centre
-    // inside their box rather than being scaled down and narrowed.
-    cardAspect: "2304 / 3281",
+    // The visible card canvas is consistently 2304×2987. Files 1, 2 and 5 carry extra
+    // transparent canvas padding on different edges, so cover + edge anchoring trims
+    // only that padding and keeps every visible card aligned with equal grid gaps.
+    cardAspect: "2304 / 2987",
     cards: [
-      { image: "/brand/inoskin/young-and-bright/showcase/1.png", label: { en: "Young and Bright Toner", id: "Young and Bright Toner" } },
-      { image: "/brand/inoskin/young-and-bright/showcase/2.png", label: { en: "Young and Bright Serum", id: "Young and Bright Serum" } },
-      { image: "/brand/inoskin/young-and-bright/showcase/3.png", label: { en: "Young and Bright Moisturizer", id: "Young and Bright Moisturizer" } },
-      { image: "/brand/inoskin/young-and-bright/showcase/4.png", label: { en: "Collagen Firming Mask", id: "Masker Pengencang Collagen" } },
-      { image: "/brand/inoskin/young-and-bright/showcase/5.png", label: { en: "Triple Power Cleanser", id: "Pembersih Wajah Triple Power" } },
+      { image: "/brand/inoskin/young-and-bright/showcase/1.png", imageFit: "cover", imagePosition: "bottom", label: { en: "Young and Bright Toner", id: "Young and Bright Toner" } },
+      { image: "/brand/inoskin/young-and-bright/showcase/2.png", imageFit: "cover", imagePosition: "top", label: { en: "Young and Bright Serum", id: "Young and Bright Serum" } },
+      { image: "/brand/inoskin/young-and-bright/showcase/3.png", imageFit: "cover", label: { en: "Young and Bright Moisturizer", id: "Young and Bright Moisturizer" } },
+      { image: "/brand/inoskin/young-and-bright/showcase/4.png", imageFit: "cover", label: { en: "Collagen Firming Mask", id: "Masker Pengencang Collagen" } },
+      { image: "/brand/inoskin/young-and-bright/showcase/5.png", imageFit: "cover", imagePosition: "bottom", label: { en: "Triple Power Cleanser", id: "Pembersih Wajah Triple Power" } },
     ],
   };
 

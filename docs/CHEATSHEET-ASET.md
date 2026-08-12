@@ -62,6 +62,12 @@ Nama brand di folder pakai slug juga: `hair-energy/`, `nestle-pure-life/`.
 
 **Showcase varian = parallax berlapis:** tiap banner terdiri 2 file → `{n}-2` (latar+teks) & `{n}-1` (produk PNG, masuk dari kiri/kanan ke tengah). n = urutan banner (1,2,3…).
 
+**Advisor RX hero:** `1.png`–`3.png` = kanvas 1:1; `4.png` = serum 1491×2058. Keempatnya CONTAIN dengan posisi desktop/mobile tersendiri.
+
+**Inoskin Young & Bright showcase:** rasio visual kartu **2304×2987**; `1.png`, `2.png`, dan `5.png` memakai COVER terarah untuk membuang margin transparan bawaan agar semua card rata dan gap konsisten.
+
+**Make It:** gunakan rasio asli latar (`1-2`: **4810×2261**; `2-2`/`3-2`: **4810×2260**) dan tampilkan tanpa parallax latar supaya tulisan di tepi tidak terpotong di desktop maupun HP.
+
 ## 🖼️ Hero halaman (About · Investor · Governance · Contact · Careers)
 
 Full screen, COVER, **2 aset per halaman**. Teks (judul + subjudul) ditaruh **HTML di atas foto**, jadi fotonya **jangan ada teks**.

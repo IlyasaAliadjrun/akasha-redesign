@@ -7,8 +7,8 @@ const entry: SubBrand = {
     name: "Rosemary Oil",
     tagline: { en: "Anti hair-fall, thickens, and smooths\nhair instantly.", id: "Anti-rontok, lebatkan, dan haluskan\nrambut secara instan." },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
-    accentHex: "#683B27", // Rosemary Oil brown, sampled from the line's banner art
-    bannerBg: "#683B27",
+    accentHex: "#784b37", // Rosemary Oil brown, sampled from the line's banner art
+    bannerBg: "#784b37",
     heroWordmark: "/brand/t1/rosemary-oil/hero/wordmark.png",
     heroWordmarkAspect: "1424 / 556",
     // One composed cluster (protein cream + scalp & hair oil). This canvas is by far

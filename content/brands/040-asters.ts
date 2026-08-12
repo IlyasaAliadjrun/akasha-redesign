@@ -74,8 +74,8 @@ const entry: Brand = {
         // 1-1.png carries a 14.7% transparent top margin, so the box is lifted
         // (`productShiftY`) to sit the tools optically centred and keep their handles
         // clear of the caption baked into the bottom 85–94% of the banner art.
-        { bg: "/brand/asters/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/asters/showcase/1-1.png", productAspect: "2148 / 2363", productHeight: "87%", productShiftX: "10%", productShiftY: "-9%", href: "/brands/asters/styling-tools" },
-        { bg: "/brand/asters/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/asters/showcase/2-1.png", productAspect: "2828 / 2058", productHeight: "90%", href: "/brands/asters/hair-accessories" },
+        { bg: "/brand/asters/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/asters/showcase/1-1.png", productAspect: "2148 / 2363", productHeight: "110%", productShiftX: "10%", productShiftY: "-9%", href: "/brands/asters/styling-tools" },
+        { bg: "/brand/asters/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/asters/showcase/2-1.png", productAspect: "2828 / 2058", productHeight: "112%", href: "/brands/asters/hair-accessories" },
       ],
     },
   };

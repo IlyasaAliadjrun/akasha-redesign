@@ -22,8 +22,15 @@ function Slot({
 }) {
   const { t } = useLocale();
   const inner = card.image ? (
-    <div className="relative w-full" style={{ aspectRatio: aspect }}>
-      <Image src={card.image} alt={card.label ?? ""} fill sizes={sizes} className="object-contain" />
+    <div className="relative w-full overflow-hidden" style={{ aspectRatio: aspect }}>
+      <Image
+        src={card.image}
+        alt={card.label ?? ""}
+        fill
+        sizes={sizes}
+        className={card.imageFit === "cover" ? "object-cover" : "object-contain"}
+        style={card.imagePosition ? { objectPosition: card.imagePosition } : undefined}
+      />
     </div>
   ) : (
     <div

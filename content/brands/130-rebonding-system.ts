@@ -97,16 +97,16 @@ const entry: Brand = {
       variants: [
         // SUPER GOLD — SG+ jar (tight render, 78% fill)
         { bg: "/brand/rebonding-system/showcase/1-2.png", product: "/brand/rebonding-system/showcase/1-1.png",
-          bgAspect: "4810 / 2261", productAspect: "2132 / 2100", productHeight: "57%", productShiftY: "-20%" },
+          bgAspect: "4810 / 2261", productAspect: "2132 / 2100", productHeight: "85%", productShiftY: "-5%" },
         // GOLD EDITION — GE+ jar (padded render, 63% fill → taller box for the same jar)
         { bg: "/brand/rebonding-system/showcase/2-2.png", product: "/brand/rebonding-system/showcase/2-1.png",
-          bgAspect: "4810 / 2260", productAspect: "1922 / 2045", productHeight: "75%", productShiftY: "-20%" },
+          bgAspect: "4810 / 2260", productAspect: "1922 / 2045", productHeight: "95%", productShiftY: "-9%" },
         // ANTI RESISTANT — AR+ jar (tight render)
         { bg: "/brand/rebonding-system/showcase/3-2.png", product: "/brand/rebonding-system/showcase/3-1.png",
-          bgAspect: "4810 / 2260", productAspect: "2004 / 1965", productHeight: "57%", productShiftY: "-20%" },
+          bgAspect: "4810 / 2260", productAspect: "2004 / 1965", productHeight: "85%", productShiftY: "-10%" },
         // EXTREMELY DAMAGED — ED+ jar (padded render)
         { bg: "/brand/rebonding-system/showcase/4-2.png", product: "/brand/rebonding-system/showcase/4-1.png",
-          bgAspect: "4810 / 2261", productAspect: "1922 / 2045", productHeight: "75%", productShiftY: "-20%" },
+          bgAspect: "4810 / 2261", productAspect: "1922 / 2045", productHeight: "95%", productShiftY: "-10%" },
       ],
     },
   };

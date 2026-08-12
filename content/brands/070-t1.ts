@@ -109,20 +109,20 @@ const entry: Brand = {
       variants: [
         // Micellar — shampoo + conditioner (canvas padding: 23% top / 11% bottom).
         { bg: "/brand/t1/showcase/1-2.png", product: "/brand/t1/showcase/1-1.png",
-          bgAspect: "4810 / 2261", productAspect: "3144 / 3214", productHeight: "184%", productShiftY: "-6%",
+          bgAspect: "4810 / 2261", productAspect: "3144 / 3214", productHeight: "145%", productShiftY: "-6%",
           href: "/brands/t1/micellar" },
         // Equalizer — shampoo + conditioner (23% / 11%).
         { bg: "/brand/t1/showcase/2-2.png", product: "/brand/t1/showcase/2-1.png",
-          bgAspect: "4810 / 2261", productAspect: "3057 / 3178", productHeight: "185%", productShiftY: "-6%",
+          bgAspect: "4810 / 2261", productAspect: "3057 / 3178", productHeight: "145%", productShiftY: "-6%",
           href: "/brands/t1/equalizer" },
         // Rosemary Oil — protein cream + scalp & hair oil (45% / 13%: the pair sits in
         // the lower half of its canvas, hence the much bigger box and shift).
         { bg: "/brand/t1/showcase/3-2.png", product: "/brand/t1/showcase/3-1.png",
-          bgAspect: "4810 / 2260", productAspect: "4174 / 4068", productHeight: "265%", productShiftY: "-16%",
+          bgAspect: "4810 / 2260", productAspect: "4174 / 4068", productHeight: "215%", productShiftY: "-16%",
           href: "/brands/t1/rosemary-oil" },
         // Indigo Blue — body wash + mask + lotion (22% / 17%).
         { bg: "/brand/t1/showcase/4-2.png", product: "/brand/t1/showcase/4-1.png",
-          bgAspect: "4810 / 2260", productAspect: "3759 / 3072", productHeight: "188%", productShiftY: "-3%",
+          bgAspect: "4810 / 2260", productAspect: "3759 / 3072", productHeight: "155%", productShiftY: "-3%",
           href: "/brands/t1/indigo-blue" },
       ],
     },

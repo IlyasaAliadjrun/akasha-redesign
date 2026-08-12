@@ -42,10 +42,10 @@ const entry: Brand = {
       // on the reference's two lines ("Pewarna Rambut Permanen" / "Vegan Vibrant").
       logoWidth: "42vw",
       maxWidth: "30vw",
+      left: "5%",
       tagline: { en: "Permanent Vegan Vibrant Hair Color", id: "Pewarna Rambut Permanen Vegan Vibrant" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
-      left: "5%",
       offsetY: "10vh",
       // Pale banner → dark type (and the navbar paints itself for a light backdrop).
       theme: "dark",
