@@ -21,7 +21,7 @@ const entry: SubBrand = {
       // so the canvas is only slightly larger than the bottle itself. `width` is the
       // CANVAS width: 29.5vw lands the visible bottle at the reference's ≈24 vw,
       // spanning 21 %–66 % of the banner height on the right.
-      { src: "/brand/honey-dew/shampoo/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 40, width: "min(40.5vw, 47vh, 836px)", aspectRatio: "1672 / 2451", left: "63%", top: "17%",
+      { src: "/brand/honey-dew/shampoo/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 40, width: "min(40.5vw, 47vh)", aspectRatio: "1672 / 2451", left: "63%", top: "17%",
         mobile: { left: "-30%", top: "-75%", width: "160%" } },
     ],
     showcaseTitle: "/brand/honey-dew/shampoo/showcase/title.png",

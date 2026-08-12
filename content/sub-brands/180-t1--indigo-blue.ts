@@ -16,7 +16,7 @@ const entry: SubBrand = {
     // vertical offset smaller than its siblings'.
     heroLayers: [
       { src: "/brand/t1/indigo-blue/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
-        width: "min(59vw, 79vh, 1671px)", aspectRatio: "3342 / 4716", left: "55%", top: "-12%",
+        width: "min(59vw, 79vh)", aspectRatio: "3342 / 4716", left: "55%", top: "-12%",
         mobile: { left: "-63.5%", top: "-125%", width: "230%" } },
     ],
     showcaseTitle: "/brand/t1/indigo-blue/showcase/title.png",

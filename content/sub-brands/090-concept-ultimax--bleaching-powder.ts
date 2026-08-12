@@ -14,7 +14,7 @@ const entry: SubBrand = {
     heroWordmark: "/brand/concept-ultimax/bleaching-powder/hero/wordmark.png",
     heroWordmarkAspect: "2339 / 473",
     heroLayers: [
-      { src: "/brand/concept-ultimax/bleaching-powder/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 44, width: "min(34vw, 58vh, 1320px)", aspectRatio: "2639 / 3297", left: "62%", top: "16%",
+      { src: "/brand/concept-ultimax/bleaching-powder/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 44, width: "min(34vw, 58vh)", aspectRatio: "2639 / 3297", left: "62%", top: "16%",
         mobile: { left: "-50%", top: "-75%", width: "200%" } },
     ],
     // NOTE: no title graphic was delivered for this line — bleaching-powder/showcase/

@@ -22,13 +22,13 @@ const entry: SubBrand = {
     // because the component's two built-in defaults only cover a two-product hero.
     heroLayers: [
       // 3 — Scalp Serum (40 mL), smallest, enters from the right.
-      { src: "/brand/advisor-rx/grey-hair/hero/3.png", enterFrom: "right", enterDelay: 0.4, depth: 72, width: "min(35vw, 48vh, 1195px)", aspectRatio: "1 / 1", left: "68.2%", top: "20%",
+      { src: "/brand/advisor-rx/grey-hair/hero/3.png", enterFrom: "right", enterDelay: 0.4, depth: 72, width: "min(35vw, 48vh)", aspectRatio: "1 / 1", left: "68.2%", top: "20%",
         mobile: { left: "-24.6%", top: "-60%", width: "185%" } },
       // 2 — Boosting Mask (100 mL).
-      { src: "/brand/advisor-rx/grey-hair/hero/2.png", enterFrom: "top", enterDelay: 0.2, depth: 54, width: "min(45vw, 61vh, 1521px)", aspectRatio: "1 / 1", left: "60.4%", top: "34%",
+      { src: "/brand/advisor-rx/grey-hair/hero/2.png", enterFrom: "top", enterDelay: 0.2, depth: 54, width: "min(45vw, 61vh)", aspectRatio: "1 / 1", left: "60.4%", top: "34%",
         mobile: { left: "-47%", top: "-37%", width: "200%" } },
       // 1 — Shampoo (250 mL), tallest, enters from the left.
-      { src: "/brand/advisor-rx/grey-hair/hero/1.png", enterFrom: "left", enterDelay: 0, depth: 36, width: "min(45vw, 68vh, 1517px)", aspectRatio: "1 / 1", left: "51%", top: "11.5%",
+      { src: "/brand/advisor-rx/grey-hair/hero/1.png", enterFrom: "left", enterDelay: 0, depth: 36, width: "min(45vw, 68vh)", aspectRatio: "1 / 1", left: "51%", top: "11.5%",
         mobile: { left: "-65%", top: "-70%", width: "200%" } },
       
     ],

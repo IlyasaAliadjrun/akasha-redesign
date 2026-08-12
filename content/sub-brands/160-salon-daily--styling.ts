@@ -15,7 +15,7 @@ const entry: SubBrand = {
     heroWordmarkAspect: "1386 / 294",
     // One finished 3-product cluster (keratin hair spray, styling gel, hair spray).
     heroLayers: [
-      { src: "/brand/salon-daily/styling/hero/1.png", enterFrom: "right", enterDelay: 0.3, depth: 50, width: "min(58vw, 78vh, 2126px)", aspectRatio: "4252 / 4823", left: "53%", top: "10%",
+      { src: "/brand/salon-daily/styling/hero/1.png", enterFrom: "right", enterDelay: 0.3, depth: 50, width: "min(58vw, 78vh)", aspectRatio: "4252 / 4823", left: "53%", top: "10%",
         mobile: { left: "-80%", top: "-93%", width: "250%" } },
     ],
     showcaseTitle: "/brand/salon-daily/styling/showcase/title.png",
