@@ -8,9 +8,9 @@ const entry: SubBrand = {
     tagline: { en: `Professional care for\nhair loss and dandruff`, id: `Perawatan profesional untuk rambut\nrontok dan berketombe` },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#3E2120",
-    // White-only hero wording → brown banner instead of the reference's light beige
-    // (see the note handed to the brand owner).
-    bannerBg: "#3E2120",
+    // Light MK3 banner: dark hero copy, controls, and navbar keep sufficient contrast.
+    theme: "dark",
+    bannerBg: "#E7E3E0",
     heroWordmark: "/brand/mk3/scalp-care/hero/wordmark.png",
     heroWordmarkAspect: "1519 / 631",
     // One composed cluster (exfoliator + shampoo + both scalp serums) → a single layer.

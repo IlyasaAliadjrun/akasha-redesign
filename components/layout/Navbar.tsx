@@ -54,11 +54,18 @@ const startsOnDark = (path: string) => {
   return p === "/" || p.startsWith("/brands/");
 };
 
+// MK3 line pages keep their brown navbar while the light hero is underneath.
+// At the showcase, the navbar returns to its standard section-based treatment.
+const isMk3SubBrand = (path: string) =>
+  /^\/brands\/mk3\/(damage-repair|color-revive|scalp-care)\/?$/.test(
+    stripLocale(path)
+  );
+
 export default function Navbar() {
   const pathname = usePathname() || "/";
   const { asset, href, t } = useLocale();
   const [overTheme, setOverTheme] = useState<Theme>(() =>
-    startsOnDark(pathname) ? "dark" : null
+    isMk3SubBrand(pathname) ? "light" : startsOnDark(pathname) ? "dark" : null
   );
   const [menuOpen, setMenuOpen] = useState(false);
   const [brandsHover, setBrandsHover] = useState(false);
@@ -84,7 +91,9 @@ export default function Navbar() {
   useEffect(() => {
     // Reset to the route's known starting state when pathname changes — avoids
     // carrying a stale theme across route transitions before the first sample.
-    setOverTheme(startsOnDark(pathname) ? "dark" : null);
+    setOverTheme(
+      isMk3SubBrand(pathname) ? "light" : startsOnDark(pathname) ? "dark" : null
+    );
     const sample = () => {
       const probeY = 32; // just inside the navbar top region
       const themed = document.querySelectorAll<HTMLElement>("[data-theme]");
@@ -120,18 +129,21 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [pathname]);
 
-  // Background is solid white only over body sections (no theme) or when a menu
-  // is open. Over the hero — dark OR light slide — the bar stays transparent.
-  // Content (text + logo) goes dark whenever it isn't over a dark section.
+  // Body sections and open menus use the standard solid white bar. The three MK3
+  // line heroes use their brown brand bar; all other themed heroes stay transparent.
+  // Content (text + logo) goes dark whenever it isn't over a dark treatment.
   const forcedOpen = menuOpen || brandsHover || mobileOpen;
-  const navSolid = forcedOpen || overTheme === null;
-  const darkContent = navSolid || overTheme === "light";
+  const mk3HeroNav = isMk3SubBrand(pathname) && overTheme === "light" && !forcedOpen;
+  const navSolid = forcedOpen || overTheme === null || mk3HeroNav;
+  const darkContent = !mk3HeroNav && (navSolid || overTheme === "light");
 
   return (
     <>
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-[background-color,color,border-color,backdrop-filter] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-          navSolid
+          mk3HeroNav
+            ? "bg-[#3E2120] border-b border-[#3E2120]"
+            : navSolid
             ? "bg-white/85 backdrop-blur-xl border-b border-black/5"
             : "bg-transparent border-b border-transparent"
         } ${darkContent ? "text-ink" : "text-white"}`}
