@@ -22,9 +22,9 @@ const entry: SubBrand = {
     // the lg breakpoint; the third `px` term on the serum caps it at half its natural
     // 1471px width so it stays sharp at DPR 2 on very wide screens.
     heroLayers: [
-      { src: "/brand/inoskin/young-and-bright/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 34, width: "min(31vw, 60vh)", aspectRatio: "2391 / 4018", left: "63%", top: "6%",
+      { src: "/brand/inoskin/young-and-bright/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 34, width: "min(29vw, 58vh)", aspectRatio: "2391 / 4018", left: "63%", top: "8.5%",
         mobile: { left: "46.5%", top: "-5.6%", width: "60%" } },
-      { src: "/brand/inoskin/young-and-bright/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 48, width: "min(30vw, 60vh)", aspectRatio: "2265 / 3199", left: "54%", top: "10%",
+      { src: "/brand/inoskin/young-and-bright/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 48, width: "min(28vw, 58vh)", aspectRatio: "2265 / 3199", left: "55%", top: "11%",
         mobile: { left: "2.3%", top: "-6%", width: "58%" } },
       { src: "/brand/inoskin/young-and-bright/hero/3.png", enterFrom: "right", enterDelay: 0.6, depth: 62, width: "min(22.5vw, 40vh, 735px)", aspectRatio: "1471 / 2306", left: "73%", top: "30%",
         mobile: { left: "35.6%", top: "22.8%", width: "46%" } },

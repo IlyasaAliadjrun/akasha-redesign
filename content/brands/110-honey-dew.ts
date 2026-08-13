@@ -33,7 +33,7 @@ const entry: Brand = {
     heroLayers: [
       // Deep Moist & Shine Shampoo — back, highest, enters from the TOP (1st).
       // Visible bottle ≈ 15.5 vw wide, spanning 14 %–43 % of the banner height.
-      { src: "/brand/honey-dew/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0, width: "min(40vw, 42vh)", maxWidth: "836px", aspectRatio: "1672 / 2451", left: "63.5%", top: "10.5%",
+      { src: "/brand/honey-dew/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0, width: "min(28.5vw, 40.5vh)", maxWidth: "836px", aspectRatio: "1672 / 2451", left: "63%", top: "12%",
         mobile: { left: "26%", top: "25%", width: "min(42vw, 24vh)" } },
       // Repair Mask — in front of the bottle and a touch larger than it (the
       // reference sizes the tube at ~1.15× the bottle); visible tube ≈ 17.5 vw,
