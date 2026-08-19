@@ -22,7 +22,16 @@ type ValueEntry = {
 
 type PersonEntry = {
   name: string; // proper noun, not localized
-  role: Localized<string>;
+  role?: Localized<string>;
+};
+
+type OrganizationGroupEntry = {
+  label: Localized<string>;
+  people: PersonEntry[];
+};
+
+type OrganizationRowEntry = {
+  groups: [OrganizationGroupEntry, OrganizationGroupEntry];
 };
 
 type FacilityEntry = {
@@ -231,7 +240,7 @@ export const ABOUT_PAGE = {
       role: { en: "President Commissioner", id: "Komisaris Utama" },
     },
     {
-      name: "Nana Puspa Dewi",
+      name: "Rudy Hidayat",
       role: { en: "Commissioner", id: "Komisaris" },
     },
     {
@@ -242,14 +251,90 @@ export const ABOUT_PAGE = {
 
   directors: [
     {
-      name: "Wihardjo Hadiseputro",
-      role: { en: "President Director", id: "Direktur Utama" },
+      name: "Fany Soegiarto",
+      role: { en: "President Director", id: "Presiden Direktur" },
     },
     {
-      name: "Fany Soegiarto",
+      name: "Hagi Yufantra",
       role: { en: "Director", id: "Direktur" },
     },
   ] satisfies PersonEntry[],
+
+  organizationRows: [
+    {
+      groups: [
+        {
+          label: {
+            en: "Audit Committee · Komite Audit",
+            id: "Komite Audit · Audit Committee",
+          },
+          people: [
+            {
+              name: "Julianto",
+              role: { en: "Chairman", id: "Ketua" },
+            },
+            {
+              name: "Zulbahri",
+              role: { en: "Member", id: "Anggota" },
+            },
+            {
+              name: "Hastuti",
+              role: { en: "Member", id: "Anggota" },
+            },
+          ],
+        },
+        {
+          label: {
+            en: "Internal Audit · Audit Internal",
+            id: "Audit Internal · Internal Audit",
+          },
+          people: [{ name: "Wendi Jaya Wardana" }],
+        },
+      ],
+    },
+    {
+      groups: [
+        {
+          label: {
+            en: "Corporate Secretary · Sekretaris Perusahaan",
+            id: "Sekretaris Perusahaan · Corporate Secretary",
+          },
+          people: [{ name: "Aprianti Kartika" }],
+        },
+        {
+          label: {
+            en: "Production · Produksi",
+            id: "Produksi · Production",
+          },
+          people: [
+            { name: "Ependi" },
+            { name: "Budi Santoso" },
+            { name: "Anjar R. Martadiputra" },
+            { name: "Yulizar B. Riyanto" },
+            { name: "Rinaldi" },
+          ],
+        },
+      ],
+    },
+    {
+      groups: [
+        {
+          label: {
+            en: "Commercial · Komersial",
+            id: "Komersial · Commercial",
+          },
+          people: [{ name: "Hagi Yufantra" }],
+        },
+        {
+          label: {
+            en: "Operations · Operasional",
+            id: "Operasional · Operations",
+          },
+          people: [{ name: "Fany Soegiarto" }],
+        },
+      ],
+    },
+  ] satisfies OrganizationRowEntry[],
 
   governanceNote: {
     // Split around the inline link to the Governance page; the link label

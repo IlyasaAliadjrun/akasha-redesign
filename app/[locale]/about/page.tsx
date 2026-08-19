@@ -203,6 +203,53 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
             </div>
           </div>
 
+          {ABOUT_PAGE.organizationRows.map((row, rowIndex) => (
+            <div
+              key={rowIndex}
+              className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16"
+            >
+              {row.groups.map((group, groupIndex) => (
+                <div key={group.label.en}>
+                  <div className="mb-6 text-[10px] font-bold uppercase tracking-[0.25em] text-ink/50">
+                    {t(group.label)}
+                  </div>
+                  <div className="space-y-5">
+                    {group.people.map((person) => (
+                      <div
+                        key={person.name}
+                        className="flex items-center gap-5 rounded-2xl bg-[#FAFAFA] p-5 lg:p-6"
+                      >
+                        <div
+                          className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-lg font-extrabold lg:h-16 lg:w-16 ${
+                            groupIndex === 0
+                              ? "bg-accent-beverage/15 text-accent-beverage"
+                              : "bg-ink text-white"
+                          }`}
+                        >
+                          {person.name
+                            .split(" ")
+                            .map((word) => word[0])
+                            .slice(0, 2)
+                            .join("")}
+                        </div>
+                        <div className="min-w-0">
+                          <div className="text-lg font-extrabold tracking-tightish lg:text-xl">
+                            {person.name}
+                          </div>
+                          {"role" in person && person.role && (
+                            <div className="text-sm text-ink/55">
+                              {t(person.role)}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+
           <div className="mt-12 text-sm text-ink/50 max-w-3xl">
             {t(ABOUT_PAGE.governanceNote.textBefore)}
             <Link href={href("/governance")} className="underline hover:text-ink">
