@@ -83,9 +83,9 @@ const entry: Brand = {
       bannerAspect: "4810 / 2261",
       variants: [
         { bg: "/brand/finest/showcase/1-2.png", product: "/brand/finest/showcase/1-1.png",
-          bgAspect: "4810 / 2261", productAspect: "3660 / 3648", productHeight: "180%",
-          productShiftX: "-24%", productShiftY: "-4%",
-          mobile: { productHeight: "168%", productShiftX: "-24%", productShiftY: "-4%" } },
+          bgAspect: "4810 / 2261", productAspect: "3660 / 3648", productHeight: "155%",
+          productShiftX: "0%", productShiftY: "-6%",
+          mobile: { productHeight: "160%", productShiftX: "1%", productShiftY: "-6%" } },
       ],
     },
   };

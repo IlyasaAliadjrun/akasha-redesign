@@ -30,6 +30,7 @@ const entry: Brand = {
       tagline: { en: "Beauty Secrets\nfrom the Ocean Floor", id: "Rahasia Kecantikan\ndari Dasar Samudera" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
+      offsetY: "2vh",
       left: "9%",
       // white text on the coral banner (theme omitted = white)
       delay: 0.5,

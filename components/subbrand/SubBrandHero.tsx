@@ -175,12 +175,12 @@ export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
     <div className="w-[150px] h-[70px] rounded-xl border-2 border-dashed border-white/40 flex items-center justify-center text-white/70 text-[10px] uppercase tracking-[0.2em] font-semibold">{t(BRAND.subBrandHero.wordmark)}</div>
   );
 
-  const wording = (centered: boolean) => (
+  const wording = (
     <motion.div
       initial={reduce ? false : { opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className={centered ? "flex flex-col items-center text-center" : "max-w-xl"}
+      className="flex max-w-xl flex-col items-start text-left"
     >
       <h1 className={`font-display uppercase font-semibold tracking-tightish leading-[1.05] text-[25px] sm:text-[35px] lg:text-[50px] ${nameColor}`} style={nameStyle}>
         {sub.name}
@@ -235,7 +235,7 @@ export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
 
           {/* Wording — posisi di top-[..], lebar blok di w-[..] */}
           <div className="absolute left-1/2 -translate-x-1/2 top-[70%] z-20 w-[86%]">
-            {wording(true)}
+            {wording}
           </div>
         </>
       ) : (
@@ -259,7 +259,7 @@ export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
             {wordmark}
           </div>
           <div className="absolute left-[9%] lg:left-[15%] top-[45%] z-20 max-w-[50%]">
-            {wording(false)}
+            {wording}
           </div>
         </>
       )}
