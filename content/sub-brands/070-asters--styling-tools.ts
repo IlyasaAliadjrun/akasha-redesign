@@ -19,7 +19,7 @@ const entry: SubBrand = {
     heroWordmarkAspect: "1513 / 740",
     heroLayers: [
       { src: "/brand/asters/styling-tools/hero/1.png", enterFrom: "right", enterDelay: 0.3, depth: 44, width: "30vw", aspectRatio: "2062 / 2658", left: "58.6%", top: "7.5%",
-        mobile: { left: "-57.5%", top: "-103%", width: "215%" } },
+        mobile: { left: "3%", top: "-27%", width: "90%" } },
     ],
     showcaseTitle: "/brand/asters/styling-tools/showcase/title.png",
     showcaseTitleAspect: "3090 / 3357",

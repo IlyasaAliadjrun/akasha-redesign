@@ -18,7 +18,7 @@ const entry: SubBrand = {
     heroLayers: [
       { src: "/brand/t1/rosemary-oil/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(58vw, 74vh)", aspectRatio: "3118 / 5494", left: "57%", top: "-35%",
-        mobile: { left: "-64.5%", top: "-195%", width: "240%" } },
+        mobile: { left: "-5%", top: "-103%", width: "120%" } },
     ],
     showcaseTitle: "/brand/t1/rosemary-oil/showcase/title.png",
     showcaseTitleAspect: "4428 / 4061",

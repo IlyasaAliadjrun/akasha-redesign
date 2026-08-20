@@ -20,7 +20,7 @@ const entry: Brand = {
     heroLayers: [
       { src: "/brand/128/hero/cluster.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
         width: "min(76vw, 89vh)", aspectRatio: "3493 / 2130", right: "4%", top: "25%",
-        mobile: { width: "min(96vw, 41vh)", left: "2%", top: "34%" } },
+        mobile: { width: "min(96vw, 41vh)", left: "10%", top: "34%" } },
     ],
     heroContent: {
       logo: "/brand/128/hero/wordmark.png",

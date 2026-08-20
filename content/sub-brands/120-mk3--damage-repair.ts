@@ -22,7 +22,7 @@ const entry: SubBrand = {
     heroLayers: [
       { src: "/brand/mk3/damage-repair/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(57vw, 91vh)", aspectRatio: "3380 / 3034", left: "52.5%", top: "14.8%",
-        mobile: { left: "-68%", top: "-63%", width: "240%" } },
+        mobile: { left: "-6%", top: "-7%", width: "110%" } },
     ],
     showcaseTitle: "/brand/mk3/damage-repair/showcase/title.png",
     showcaseTitleAspect: "4153 / 3401",

@@ -18,7 +18,7 @@ const entry: Brand = {
     heroLayers: [
       { src: "/brand/wonhae/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
         width: "min(60vw, 100vh)", aspectRatio: "1949 / 1828", right: "5%", top: "5%",
-        mobile: { width: "90vw", left: "5%", top: "33%" } },
+        mobile: { width: "95vw", left: "2%", top: "23%" } },
     ],
     // The wordmark image already includes the "IT'S ALL YOU WANT" heading + subtitle
     // (per the updated asset / reference), so no separate HTML tagline is drawn — just

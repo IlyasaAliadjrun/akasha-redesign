@@ -35,17 +35,17 @@ const entry: Brand = {
       // the LEFT (1st).
       { src: "/brand/texture-experience/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0,
         width: "min(48vw, 63vh)", maxWidth: "1373px", aspectRatio: "2745 / 3233", left: "52%", top: "8.4%",
-        mobile: { left: "2%", top: "28%", width: "min(67vw, 33vh)" } },
+        mobile: { left: "-4%", top: "20%", width: "min(72vw, 38vh)" } },
       // Berry Smoothie Hair Perfume — front/centre, sits lowest, drops in from the
       // TOP (2nd).
       { src: "/brand/texture-experience/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2,
         width: "min(35vw, 47vh)", maxWidth: "979px", aspectRatio: "1958 / 2604", left: "63.2%", top: "21.7%",
-        mobile: { left: "27.5%", top: "37%", width: "min(49vw, 20.5vh)" } },
+        mobile: { left: "24.5%", top: "29%", width: "min(54vw, 25.5vh)" } },
       // Smooth-Bright Body Essence — right of the cluster and a step lower, enters from
       // the RIGHT (3rd).
       { src: "/brand/texture-experience/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4,
         width: "min(41vw, 54vh)", maxWidth: "1261px", aspectRatio: "2522 / 3302", left: "68%", top: "29.2%",
-        mobile: { left: "36%", top: "40%", width: "min(57vw, 24vh)" } },
+        mobile: { left: "35%", top: "32%", width: "min(62vw, 29vh)" } },
     ],
     heroContent: {
       logo: "/brand/texture-experience/hero/wordmark.png",

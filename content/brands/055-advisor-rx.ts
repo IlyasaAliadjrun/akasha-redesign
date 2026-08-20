@@ -33,16 +33,16 @@ const entry: Brand = {
     heroLayers: [
       // Strong Hair Boosting Mask (100 mL) — middle, enters from the TOP (1st).
       { src: "/brand/advisor-rx/hero/2.png", depth: 54, enterFrom: "top", enterDelay: 0.2, width: "min(40vw, 63vh)", maxWidth: "1493px", aspectRatio: "1 / 1", left: "59.6%", top: "8%",
-        mobile: { left: "29.5%", top: "35%", width: "min(60vw, 30vh)" } },
+        mobile: { left: "19.5%", top: "19.5%", width: "min(63vw, 33vh)" } },
       // Strong Hair Shampoo (250 mL) — largest, left of the cluster, enters from the LEFT (2nd).
       { src: "/brand/advisor-rx/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(51vw, 82vh)", maxWidth: "1944px", aspectRatio: "1 / 1", left: "47%", top: "11.7%",
-        mobile: { left: "-8.5%", top: "25%", width: "min(84vw, 42vh)" } },
+        mobile: { left: "-8.5%", top: "20%", width: "min(87vw, 45vh)" } },
       // Strong Hair Scalp Serum (40 mL) — smallest, front/right, enters from the RIGHT (4th).
       { src: "/brand/advisor-rx/hero/4.png", depth: 84, enterFrom: "right", enterDelay: 0.6, width: "min(20vw, 30vh)", maxWidth: "746px", aspectRatio: "1491 / 2058", left: "69%", top: "49.2%",
-        mobile: { left: "68%", top: "43.5%", width: "min(26vw, 13vh)" } },
+        mobile: { left: "38%", top: "42.5%", width: "min(29vw, 16vh)" } },
       // Strong Hair Tonic (100 mL) — between the mask and serum, enters from the RIGHT (3rd).
       { src: "/brand/advisor-rx/hero/3.png", depth: 72, enterFrom: "right", enterDelay: 0.4, width: "min(40vw, 74vh)", maxWidth: "1711px", aspectRatio: "1 / 1", left: "63.6%", top: "17%",
-        mobile: { left: "35%", top: "33%", width: "min(72vw, 34vh)" } },
+        mobile: { left: "27%", top: "24.5%", width: "min(75vw, 37vh)" } },
     ],
     // The wordmark is a plain lockup with no tagline baked in (unlike VICA/Wonhae),
     // so this hero keeps the full Hair Energy overlay: wordmark + tagline + subtitle
@@ -62,7 +62,7 @@ const entry: Brand = {
       // Light clinical banner → dark text, and the navbar paints its dark treatment.
       theme: "dark",
       delay: 0.6,
-      mobile: { logoWidth: "68vw" },
+      mobile: { logoWidth: "50vw" },
     },
     // Clinical off-white — the same card grey the Advisor family uses across its art,
     // so the white Strong Hair bottles keep their edge instead of disappearing.

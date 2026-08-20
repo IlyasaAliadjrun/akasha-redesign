@@ -19,7 +19,7 @@ const entry: SubBrand = {
     heroLayers: [
       { src: "/brand/mk3/color-revive/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(45vw, 75vh)", aspectRatio: "3259 / 3957", left: "57%", top: "6.7%",
-        mobile: { left: "-70%", top: "-100%", width: "240%" } },
+        mobile: { left: "-8%", top: "-26%", width: "110%" } },
     ],
     showcaseTitle: "/brand/mk3/color-revive/showcase/title.png",
     showcaseTitleAspect: "4249 / 3333",

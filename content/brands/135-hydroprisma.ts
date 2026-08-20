@@ -33,13 +33,13 @@ const entry: Brand = {
     heroLayers: [
       // Step 1 Straightening Cream pouch — right, slightly lower, enters from the RIGHT (3rd).
       { src: "/brand/hydroprisma/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(53vw, 64vh)", maxWidth: "1037px", aspectRatio: "2073 / 2074", left: "68%", top: "17.7%",
-        mobile: { left: "39%", top: "33%", width: "min(52vw, 40vh)" } },
+        mobile: { left: "35%", top: "30%", width: "min(60vw, 48vh)" } },
       // Step 2 Milky Neutralizer — back, centre, enters from the TOP (1st).
       { src: "/brand/hydroprisma/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0, width: "min(54vw, 65vh)", maxWidth: "1302px", aspectRatio: "1 / 1", left: "57.5%", top: "16.5%",
-        mobile: { left: "22%", top: "32%", width: "min(54vw, 42vh)" } },
+        mobile: { left: "18%", top: "29%", width: "min(62vw, 50vh)" } },
       // Step 1 Straightening Cream jar — front, lowest, enters from the LEFT (2nd).
       { src: "/brand/hydroprisma/hero/1.png", depth: 72, enterFrom: "left", enterDelay: 0.2, width: "min(54vw, 63vh)", maxWidth: "1192px", aspectRatio: "1 / 1", left: "48%", top: "34%",
-        mobile: { left: "7%", top: "40%", width: "min(50vw, 40vh)" } },
+        mobile: { left: "0.5%", top: "38.7%", width: "min(58vw, 48vh)" } },
     ],
     heroContent: {
       logo: "/brand/hydroprisma/hero/wordmark.png",

@@ -27,13 +27,13 @@ const entry: Brand = {
     heroLayers: [
       // Dual Defense Shampoo — front/centre, sits slightly lower, enters from the TOP (2nd).
       { src: "/brand/advisor/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(41vw, 65vh)", aspectRatio: "2812 / 3502", left: "56%", top: "5%",
-        mobile: { left: "4%", top: "20.5%", width: "min(78vw, 38vh)" } },
+        mobile: { left: "4%", top: "18.5%", width: "min(75vw, 35vh)" } },
       // Hair Recovery Vitamax — back row, left of the cluster, enters from the LEFT (1st).
       { src: "/brand/advisor/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(23vw, 36vh)", aspectRatio: "1560 / 2402", left: "57.7%", top: "39%",
-        mobile: { left: "11.5%", top: "43%", width: "min(40vw, 26vh)" } },
+        mobile: { left: "11.5%", top: "41%", width: "min(37vw, 23vh)" } },
       // Hair Mask Repair — back row, right of the cluster, enters from the RIGHT (3rd).
       { src: "/brand/advisor/hero/3.png", depth: 32, enterFrom: "top", enterDelay: 0.1, width: "min(24vw, 43vh)", aspectRatio: "1814 / 2527", left: "69.5%", top: "30%",
-        mobile: { left: "35%", top: "27%", width: "min(58vw, 32vh)" } },
+        mobile: { left: "33%", top: "25%", width: "min(55vw, 29vh)" } },
     ],
     // The wordmark carries no tagline of its own (unlike VICA/Wonhae), so the hero
     // keeps the full Hair Energy overlay: wordmark + tagline + subtitle + CTA. Copy is

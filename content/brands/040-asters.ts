@@ -25,9 +25,9 @@ const entry: Brand = {
     // the vh term keeps them inside the banner on short/wide screens.
     heroLayers: [
       { src: "/brand/asters/hero/1.png", depth: 52, enterFrom: "right", enterDelay: 0.35, width: "min(28vw, 34vh)", aspectRatio: "1590 / 3064", left: "72%", top: "26%",
-        mobile: { left: "43.5%", top: "34%", width: "min(40vw, 22vh)" } },
+        mobile: { left: "44.5%", top: "29%", width: "min(37vw, 19vh)" } },
       { src: "/brand/asters/hero/2.png", depth: 30, enterFrom: "left", enterDelay: 0.15, width: "min(50vw, 61vh)", aspectRatio: "2869 / 4903", left: "56%", top: "-1.5%",
-        mobile: { left: "4%", top: "20%", width: "min(70vw, 42vh)" } },
+        mobile: { left: "5%", top: "15%", width: "min(67vw, 39vh)" } },
     ],
     heroContent: {
       logo: "/brand/asters/hero/wordmark.png",
@@ -42,7 +42,7 @@ const entry: Brand = {
       // Warm off-white banner → dark copy (and the navbar paints itself dark).
       theme: "dark",
       delay: 0.6,
-      mobile: { logoWidth: "39vw" },
+      mobile: { logoWidth: "37vw" },
     },
     bannerBg: "#F1EEEA",
     hero: false,

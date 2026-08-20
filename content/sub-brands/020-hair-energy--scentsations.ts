@@ -16,9 +16,9 @@ const entry: SubBrand = {
     // their designed px size once the window is above the mobile breakpoint.
     heroLayers: [
       { src: "/brand/hair-energy/scentsations/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "min(27.8vw, 37.1vh)", aspectRatio: "2139 / 2753", left: "68%", top: "19%",
-        mobile: { right: "-33%", top: "-55%", width: "143%" } },
+        mobile: { right: "8.5%", top: "-6%", width: "62%" } },
       { src: "/brand/hair-energy/scentsations/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "min(28.3vw, 37.8vh)", aspectRatio: "2054 / 3538", left: "62%", top: "18%",
-        mobile: { left: "-26%", bottom: "-65%", width: "140%" } },
+        mobile: { left: "15%", bottom: "8%", width: "55%" } },
     ],
     // showcase/1.png = gambar title (produk + manfaat); tidak ada featured lebar.
     showcaseTitle: "/brand/hair-energy/scentsations/showcase/1.png",

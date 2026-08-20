@@ -85,13 +85,13 @@ const entry: Brand = {
       variants: [
         // Fragrance Enhancing Primer — Essence Sanctuary
         { bg: "/brand/makeit/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/makeit/showcase/1-1.png", productAspect: "2547 / 3799", productHeight: "155%", productShiftX: "-11%", productShiftY: "-1.5%",
-          mobile: { productHeight: "168%", productShiftX: "-9%" } },
+          mobile: { productHeight: "158%", productShiftX: "-9%", productShiftY: "-1%" } },
         // Extrait d'Intense Parfum — Mango Glacé
         { bg: "/brand/makeit/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/makeit/showcase/2-1.png", productAspect: "1977 / 3514", productHeight: "150%", productShiftX: "-6%", productShiftY: "-4%",
-          mobile: { productHeight: "160%", productShiftX: "-5%" } },
+          mobile: { productHeight: "150%", productShiftX: "-5%", productShiftY: "-4.5%" } },
         // Extrait de Parfum — Keep in Touch
         { bg: "/brand/makeit/showcase/3-2.png", bgAspect: "4810 / 2260", product: "/brand/makeit/showcase/3-1.png", productAspect: "2359 / 3713", productHeight: "155%", productShiftX: "-8%",
-          mobile: { productHeight: "164%", productShiftX: "-7%" } },
+          mobile: { productHeight: "154%", productShiftX: "-7%", productShiftY: "-1%" } },
       ],
     },
   };

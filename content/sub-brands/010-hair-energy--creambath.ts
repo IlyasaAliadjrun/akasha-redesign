@@ -21,9 +21,9 @@ const entry: SubBrand = {
     // simply clipped rather than triggering a horizontal scrollbar.)
     heroLayers: [
       { src: "/brand/hair-energy/creambath/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "min(36.1vw, 48.2vh)", aspectRatio: "2139 / 2345", left: "67%", top: "18%",
-        mobile: { right: "-14%", top: "-24%", width: "100%" } },
+        mobile: { right: "5%", top: "-1%", width: "65%" } },
       { src: "/brand/hair-energy/creambath/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "min(28.8vw, 38.4vh)", aspectRatio: "1646 / 2786", left: "58%", top: "20%",
-        mobile: { right: "18%", top: "-30%", width: "90%" } },
+        mobile: { right: "38%", top: "-8%", width: "60%" } },
     ],
     showcaseTitle: "/brand/hair-energy/creambath/showcase/title.png",
     showcaseTitleAspect: "4871 / 3832",

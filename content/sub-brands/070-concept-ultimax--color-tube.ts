@@ -20,7 +20,7 @@ const entry: SubBrand = {
     // past the visible product to land it at the reference's optical size.
     heroLayers: [
       { src: "/brand/concept-ultimax/color-tube/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 44, width: "min(32vw, 54vh)", aspectRatio: "2658 / 3762", left: "62%", top: "16%",
-        mobile: { left: "-38%", top: "-80%", width: "180%" } },
+        mobile: { left: "5%", top: "-25%", width: "90%" } },
     ],
     showcaseTitle: "/brand/concept-ultimax/color-tube/showcase/title.png",
     showcaseTitleAspect: "4103 / 4454",
