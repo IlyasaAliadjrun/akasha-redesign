@@ -17,7 +17,7 @@ const entry: SubBrand = {
     // two bottles fill only 50 % × 69 % of it — hence the wide layer box.
     heroLayers: [
       { src: "/brand/concept-ultimax/cream-developer/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 44, width: "min(57vw, 81vh)", aspectRatio: "3945 / 4041", left: "55%", top: "8%",
-        mobile: { left: "-85%", top: "-95%", width: "270%" } },
+        mobile: { left: "-15%", top: "-30%", width: "125%" } },
     ],
     showcaseTitle: "/brand/concept-ultimax/cream-developer/showcase/title.png",
     showcaseTitleAspect: "4423 / 3479",

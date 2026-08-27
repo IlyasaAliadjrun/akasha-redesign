@@ -22,7 +22,7 @@ const entry: SubBrand = {
     heroLayers: [
       { src: "/brand/t1/micellar/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(58vw, 70vh)", aspectRatio: "3493 / 4751", left: "57%", top: "0%",
-        mobile: { left: "-65%", top: "-115%", width: "230%" } },
+        mobile: { left: "-5%", top: "-43%", width: "110%" } },
     ],
     showcaseTitle: "/brand/t1/micellar/showcase/title.png",
     showcaseTitleAspect: "3992 / 3243",

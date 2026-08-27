@@ -32,15 +32,15 @@ const entry: Brand = {
     heroLayers: [
       // Rest Easy tube — back of the cluster, highest and smallest (50 mL).
       { src: "/brand/lou/hero/2.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(26vw, 32vh)", aspectRatio: "2160 / 3840", right: "20%", bottom: "27%",
-        mobile: { left: "38%", top: "31%", right: "auto", bottom: "auto", width: "min(32vw, 32vh)" } },
+        mobile: { left: "38%", top: "31%", right: "auto", bottom: "auto", width: "min(30vw, 30vh)" } },
       // Grow More spray — right edge, level with the tube (100 mL).
       { src: "/brand/lou/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(34vw, 42vh)", aspectRatio: "2160 / 3109", right: "9.5%", bottom: "16%",
-        mobile: { left: "48%", top: "30%", right: "auto", bottom: "auto", width: "min(49vw, 45vh)" } },
+        mobile: { left: "47%", top: "30%", right: "auto", bottom: "auto", width: "min(47vw, 43vh)" } },
       // Don't Cry pump — front/centre, sits lower and largest (250 mL). On mobile the
       // trio drops into the band between the top-centre wordmark and the bottom-left
       // tagline block, so nothing collides with the HTML overlay.
       { src: "/brand/lou/hero/1.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(38vw, 46vh)", aspectRatio: "2160 / 3311", right: "25%", bottom: "8%",
-        mobile: { left: "2%", top: "28%", right: "auto", bottom: "auto", width: "min(62vw, 52vh)" } },
+        mobile: { left: "4%", top: "27.5%", right: "auto", bottom: "auto", width: "min(60vw, 50vh)" } },
     ],
     heroContent: {
       logo: "/brand/lou/hero/wordmark.png",
@@ -58,7 +58,7 @@ const entry: Brand = {
       // dark instead of white.
       theme: "dark",
       delay: 0.6,
-      mobile: { logoWidth: "47vw" },
+      mobile: { logoWidth: "42vw" },
     },
     bannerBg: "#E2F6F7", // pale aqua wash, the light centre of the LOU banner art
     hero: false,

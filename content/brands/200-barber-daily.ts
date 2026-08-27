@@ -28,15 +28,15 @@ const entry: Brand = {
       // Acne Care Oil-Control Face Wash — back, upper middle, drops in from the top.
       { src: "/brand/barber-daily/hero/2.png", depth: 34, enterFrom: "top", enterDelay: 0.2,
         width: "min(20vw, 32vh)", aspectRatio: "1531 / 2722", left: "71%", top: "4%",
-        mobile: { left: "40%", top: "25%", width: "min(40vw, 28vh)" } },
+        mobile: { left: "39%", top: "20%", width: "min(40vw, 28vh)" } },
       // Ultra Sensitive Face Wash — right, enters from the right.
       { src: "/brand/barber-daily/hero/3.png", depth: 52, enterFrom: "right", enterDelay: 0.4,
         width: "min(55vw, 80vh)", aspectRatio: "3945 / 3946", left: "62%", top: "23%",
-        mobile: { left: "23%", top: "39%", width: "min(85vw, 65vh)" } },
+        mobile: { left: "22%", top: "34%", width: "min(85vw, 65vh)" } },
       // Bright Radiance Face Wash — front, largest, enters from the left (1st).
       { src: "/brand/barber-daily/hero/1.png", depth: 70, enterFrom: "left", enterDelay: 0,
         width: "min(30vw, 49vh)", aspectRatio: "2161 / 3691", left: "59.3%", top: "23%",
-        mobile: { left: "15.5%", top: "36.5%", width: "min(52vw, 36vh)" } },
+        mobile: { left: "14.5%", top: "31.5%", width: "min(52vw, 36vh)" } },
     ],
     heroContent: {
       logo: "/brand/barber-daily/hero/wordmark.png",
@@ -50,7 +50,7 @@ const entry: Brand = {
       offsetY: "2vh",
       // white text on the dark brown banner (theme omitted = light/white)
       delay: 0.6,
-      mobile: { logoWidth: "44vw" },
+      mobile: { logoWidth: "30vw" },
     },
     bannerBg: "#6B3F1D",
     hero: false,
@@ -103,19 +103,23 @@ const entry: Brand = {
         // SKIN CARE — Acne Care Oil-Control Face Wash
         { bg: "/brand/barber-daily/showcase/1-2.png", product: "/brand/barber-daily/showcase/1-1.png",
           bgAspect: "4810 / 2260", productAspect: "1531 / 2722", productHeight: "142%",
-          productShiftX: "-2%", productShiftY: "-4%", href: "/brands/barber-daily/skin-care" },
+          productShiftX: "-2%", productShiftY: "-4%", href: "/brands/barber-daily/skin-care",
+          mobile: { productHeight: "110%", productShiftX: "0%", productShiftY: "-4%" } },
         // HAIR CARE — Dandruff & Oil-Control Shampoo
         { bg: "/brand/barber-daily/showcase/2-2.png", product: "/brand/barber-daily/showcase/2-1.png",
           bgAspect: "4810 / 2260", productAspect: "3891 / 5524", productHeight: "190%",
-          productShiftX: "2%", productShiftY: "10%", href: "/brands/barber-daily/hair-care" },
+          productShiftX: "2%", productShiftY: "10%", href: "/brands/barber-daily/hair-care",
+          mobile: { productHeight: "160%", productShiftX: "0%", productShiftY: "10%" } },
         // BODY CARE — Antiperspirant Deodorant
         { bg: "/brand/barber-daily/showcase/3-2.png", product: "/brand/barber-daily/showcase/3-1.png",
           bgAspect: "4810 / 2260", productAspect: "2647 / 2646", productHeight: "126%",
-          productShiftX: "4%", href: "/brands/barber-daily/body-care" },
+          productShiftX: "4%", href: "/brands/barber-daily/body-care",
+          mobile: { productHeight: "110%", productShiftX: "0%", productShiftY: "-1%" } },
         // TOOLS — razor, nudged left so it lands over the "O" of the baked wording
         { bg: "/brand/barber-daily/showcase/4-2.png", product: "/brand/barber-daily/showcase/4-1.png",
           bgAspect: "4810 / 2260", productAspect: "2045 / 2753", productHeight: "145%",
-          productShiftX: "-20%", href: "/brands/barber-daily/tools" },
+          productShiftX: "-20%", href: "/brands/barber-daily/tools",
+        mobile: { productHeight: "120%", productShiftX: "0%", productShiftY: "-4%" } },
       ],
     },
   };

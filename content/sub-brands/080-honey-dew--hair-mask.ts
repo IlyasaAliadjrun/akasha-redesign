@@ -20,7 +20,7 @@ const entry: SubBrand = {
       // above the banner top) to land the tube at the reference's size and position:
       // ≈27 vw wide, spanning 19 %–74 % of the banner height.
       { src: "/brand/honey-dew/hair-mask/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 40, width: "min(62.5vw, 75vh)", aspectRatio: "3058 / 3865", left: "53%", top: "-2.5%",
-        mobile: { left: "-9%", top: "-43%", width: "141%" } },
+        mobile: { left: "12%", top: "-43%", width: "70%" } },
     ],
     showcaseTitle: "/brand/honey-dew/hair-mask/showcase/title.png",
     showcaseTitleAspect: "4950 / 5828",

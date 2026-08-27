@@ -25,9 +25,9 @@ const entry: Brand = {
     // the vh term keeps them inside the banner on short/wide screens.
     heroLayers: [
       { src: "/brand/asters/hero/1.png", depth: 52, enterFrom: "right", enterDelay: 0.35, width: "min(28vw, 34vh)", aspectRatio: "1590 / 3064", left: "72%", top: "26%",
-        mobile: { left: "43.5%", top: "34%", width: "min(40vw, 22vh)" } },
+        mobile: { left: "44.5%", top: "29%", width: "min(37vw, 19vh)" } },
       { src: "/brand/asters/hero/2.png", depth: 30, enterFrom: "left", enterDelay: 0.15, width: "min(50vw, 61vh)", aspectRatio: "2869 / 4903", left: "56%", top: "-1.5%",
-        mobile: { left: "4%", top: "20%", width: "min(70vw, 42vh)" } },
+        mobile: { left: "5%", top: "15%", width: "min(67vw, 39vh)" } },
     ],
     heroContent: {
       logo: "/brand/asters/hero/wordmark.png",
@@ -42,7 +42,7 @@ const entry: Brand = {
       // Warm off-white banner → dark copy (and the navbar paints itself dark).
       theme: "dark",
       delay: 0.6,
-      mobile: { logoWidth: "39vw" },
+      mobile: { logoWidth: "37vw" },
     },
     bannerBg: "#F1EEEA",
     hero: false,
@@ -74,8 +74,8 @@ const entry: Brand = {
         // 1-1.png carries a 14.7% transparent top margin, so the box is lifted
         // (`productShiftY`) to sit the tools optically centred and keep their handles
         // clear of the caption baked into the bottom 85–94% of the banner art.
-        { bg: "/brand/asters/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/asters/showcase/1-1.png", productAspect: "2148 / 2363", productHeight: "87%", productShiftX: "10%", productShiftY: "-9%", href: "/brands/asters/styling-tools" },
-        { bg: "/brand/asters/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/asters/showcase/2-1.png", productAspect: "2828 / 2058", productHeight: "90%", href: "/brands/asters/hair-accessories" },
+        { bg: "/brand/asters/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/asters/showcase/1-1.png", productAspect: "2148 / 2363", productHeight: "110%", productShiftX: "10%", productShiftY: "-9%", href: "/brands/asters/styling-tools" },
+        { bg: "/brand/asters/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/asters/showcase/2-1.png", productAspect: "2828 / 2058", productHeight: "112%", href: "/brands/asters/hair-accessories" },
       ],
     },
   };

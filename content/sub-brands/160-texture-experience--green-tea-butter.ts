@@ -22,7 +22,7 @@ const entry: SubBrand = {
     heroLayers: [
       { src: "/brand/texture-experience/green-tea-butter/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(36vw, 85vh)", aspectRatio: "3463 / 3991", left: "55%", top: "5.5%",
-        mobile: { left: "-63.5%", top: "-90%", width: "230%" } },
+        mobile: { left: "-6%", top: "-26%", width: "106%" } },
     ],
     showcaseTitle: "/brand/texture-experience/green-tea-butter/showcase/title.png",
     showcaseTitleAspect: "4134 / 3233",

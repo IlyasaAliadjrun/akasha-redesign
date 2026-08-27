@@ -26,16 +26,16 @@ const entry: SubBrand = {
     heroLayers: [
       // 2 — Boosting Mask (100 mL).
       { src: "/brand/advisor-rx/strong-hair/hero/2.png", enterFrom: "top", enterDelay: 0.15, depth: 48, width: "min(50vw, 61vh)", aspectRatio: "1 / 1", left: "59%", top: "9%",
-        mobile: { left: "-30%", top: "-55%", width: "170%" } },
+        mobile: { left: "12%", top: "-23%", width: "85%" } },
       // 1 — Shampoo (250 mL), tallest, enters from the left.
       { src: "/brand/advisor-rx/strong-hair/hero/1.png", enterFrom: "left", enterDelay: 0, depth: 36, width: "min(53vw, 73vh)", aspectRatio: "1 / 1", left: "49%", top: "15.5%",
-        mobile: { left: "-58.5%", top: "-60%", width: "190%" } },
+        mobile: { left: "-20%", top: "-12%", width: "105%" } },
       // 3 — Hair Tonic (100 mL).
       { src: "/brand/advisor-rx/strong-hair/hero/3.png", enterFrom: "top", enterDelay: 0.3, depth: 60, width: "min(52.5vw, 71vh)", aspectRatio: "1 / 1", left: "64.5%", top: "12.5%",
-        mobile: { left: "-17%", top: "-50%", width: "170%" } },
+        mobile: { left: "29%", top: "-5%", width: "85%" } },
       // 4 — Scalp Serum (40 mL), smallest, enters from the right.
       { src: "/brand/advisor-rx/strong-hair/hero/4.png", enterFrom: "right", enterDelay: 0.45, depth: 72, width: "min(27.3vw, 33vh)", aspectRatio: "1491 / 2058", left: "68%", top: "42%",
-        mobile: { left: "14.5%", top: "0%", width: "85%" } },
+        mobile: { left: "40%", top: "33%", width: "40%" } },
     ],
     showcaseTitle: "/brand/advisor-rx/strong-hair/showcase/title.png",
     showcaseTitleAspect: "4722 / 3817",

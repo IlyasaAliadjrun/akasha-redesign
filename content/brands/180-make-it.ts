@@ -50,7 +50,7 @@ const entry: Brand = {
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
-      offsetY: "6vh",
+      offsetY: "5vh",
       theme: "light",
       delay: 0.6,
       mobile: { logoWidth: "53vw" },
@@ -72,25 +72,26 @@ const entry: Brand = {
       { title: { en: "A Unique Scent", id: "Aroma Yang Unik" }, image: "/brand/makeit/about/3.png" },
     ],
     // Showcase — the "#1 Primer Parfum" poster, then the three range banners.
-    // The banner art is a designed card (4810×2261, rounded corners baked in), so
-    // `bannerAspect` keeps it uncropped; each `bgAspect` is a touch taller than the
-    // frame so the scroll parallax drifts inside the overflow instead of exposing an
-    // empty strip. There are no sub-brand pages, so the banners carry no `href`.
+    // The banner art is a finished card with wording close to every edge. The frame
+    // and each background use the asset's exact ratio, while background parallax is
+    // disabled so no copy is cropped during scroll. There are no sub-brand pages, so
+    // the banners carry no `href`.
     showcase: {
       hero: "/brand/makeit/showcase/title.png",
       heroAspect: "4325 / 4280",
       productAlign: "center",
       bannerAspect: "4810 / 2261",
+      parallax: false,
       variants: [
         // Fragrance Enhancing Primer — Essence Sanctuary
-        { bg: "/brand/makeit/showcase/1-2.png", bgAspect: "4810 / 2440", product: "/brand/makeit/showcase/1-1.png", productAspect: "2547 / 3799", productHeight: "180%", productShiftX: "-11%", productShiftY: "-1.5%",
-          mobile: { productHeight: "168%", productShiftX: "-9%" } },
+        { bg: "/brand/makeit/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/makeit/showcase/1-1.png", productAspect: "2547 / 3799", productHeight: "155%", productShiftX: "-11%", productShiftY: "-1.5%",
+          mobile: { productHeight: "158%", productShiftX: "-9%", productShiftY: "-1%" } },
         // Extrait d'Intense Parfum — Mango Glacé
-        { bg: "/brand/makeit/showcase/2-2.png", bgAspect: "4810 / 2440", product: "/brand/makeit/showcase/2-1.png", productAspect: "1977 / 3514", productHeight: "172%", productShiftX: "-6%", productShiftY: "-4%",
-          mobile: { productHeight: "160%", productShiftX: "-5%" } },
+        { bg: "/brand/makeit/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/makeit/showcase/2-1.png", productAspect: "1977 / 3514", productHeight: "150%", productShiftX: "-6%", productShiftY: "-4%",
+          mobile: { productHeight: "150%", productShiftX: "-5%", productShiftY: "-4.5%" } },
         // Extrait de Parfum — Keep in Touch
-        { bg: "/brand/makeit/showcase/3-2.png", bgAspect: "4810 / 2440", product: "/brand/makeit/showcase/3-1.png", productAspect: "2359 / 3713", productHeight: "176%", productShiftX: "-8%",
-          mobile: { productHeight: "164%", productShiftX: "-7%" } },
+        { bg: "/brand/makeit/showcase/3-2.png", bgAspect: "4810 / 2260", product: "/brand/makeit/showcase/3-1.png", productAspect: "2359 / 3713", productHeight: "155%", productShiftX: "-8%",
+          mobile: { productHeight: "154%", productShiftX: "-7%", productShiftY: "-1%" } },
       ],
     },
   };

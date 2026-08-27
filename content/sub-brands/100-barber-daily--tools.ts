@@ -15,7 +15,7 @@ const entry: SubBrand = {
     heroLayers: [
       { src: "/brand/barber-daily/tools/hero/1.png", enterFrom: "right", enterDelay: 0.3, depth: 44,
         width: "min(40.8vw, 65vh)", aspectRatio: "3219 / 4496", left: "59%", top: "4.9%",
-        mobile: { left: "-17%", top: "-49%", width: "140%" } },
+        mobile: { left: "7%", top: "-19%", width: "90%" } },
     ],
     // The title graphic carries the whole feature block (razor + the four claims), the
     // only showcase asset shipped for this line — no variant cards exist yet.

@@ -28,10 +28,10 @@ const entry: Brand = {
     heroLayers: [
       // Activator — behind, right, enters from the right.
       { src: "/brand/concept-ultimax/hero/2.png", depth: 40, enterFrom: "right", enterDelay: 0.35, width: "min(26vw, 51vh)", maxWidth: "527px", aspectRatio: "1054 / 1492", left: "63.8%", top: "17.4%",
-        mobile: { left: "26%", top: "28%", width: "min(60vw, 40vh)" } },
+        mobile: { left: "26%", top: "23%", width: "min(60vw, 40vh)" } },
       // Color Tube — in front, left of the Activator, enters from the left.
       { src: "/brand/concept-ultimax/hero/1.png", depth: 58, enterFrom: "left", enterDelay: 0.15, width: "min(34vw, 58vh)", maxWidth: "846px", aspectRatio: "1692 / 2538", left: "57.8%", top: "10%",
-        mobile: { left: "10%", top: "23%", width: "min(70vw, 52vh)" } },
+        mobile: { left: "10%", top: "18%", width: "min(70vw, 52vh)" } },
     ],
     heroContent: {
       logo: "/brand/concept-ultimax/hero/wordmark.png",
@@ -42,11 +42,11 @@ const entry: Brand = {
       // on the reference's two lines ("Pewarna Rambut Permanen" / "Vegan Vibrant").
       logoWidth: "42vw",
       maxWidth: "30vw",
+      left: "5%",
       tagline: { en: "Permanent Vegan Vibrant Hair Color", id: "Pewarna Rambut Permanen Vegan Vibrant" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
-      left: "5%",
-      offsetY: "10vh",
+      offsetY: "5vh",
       // Pale banner → dark type (and the navbar paints itself for a light backdrop).
       theme: "dark",
       delay: 0.6,

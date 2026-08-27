@@ -17,7 +17,7 @@ const entry: SubBrand = {
     heroLayers: [
       { src: "/brand/t1/indigo-blue/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(59vw, 79vh)", aspectRatio: "3342 / 4716", left: "55%", top: "-12%",
-        mobile: { left: "-63.5%", top: "-125%", width: "230%" } },
+        mobile: { left: "-6%", top: "-48.5%", width: "110%" } },
     ],
     showcaseTitle: "/brand/t1/indigo-blue/showcase/title.png",
     showcaseTitleAspect: "4698 / 4224",

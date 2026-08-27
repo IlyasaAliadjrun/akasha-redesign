@@ -22,7 +22,7 @@ const entry: SubBrand = {
     heroLayers: [
       { src: "/brand/texture-experience/vanilla-milk/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(43vw, 98vh)", aspectRatio: "3967 / 4372", left: "56%", top: "3%",
-        mobile: { left: "-60%", top: "-85%", width: "240%" } },
+        mobile: { left: "-5%", top: "-29%", width: "128%" } },
     ],
     showcaseTitle: "/brand/texture-experience/vanilla-milk/showcase/title.png",
     showcaseTitleAspect: "3605 / 3233",

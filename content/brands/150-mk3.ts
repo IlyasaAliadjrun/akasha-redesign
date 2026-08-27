@@ -29,15 +29,15 @@ const entry: Brand = {
       // Scalp Exfoliator — back, left of the cluster and highest, enters from the LEFT.
       { src: "/brand/mk3/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0,
         width: "min(17vw, 31vh)", maxWidth: "439px", aspectRatio: "878 / 1719", left: "54.8%", top: "12.8%",
-        mobile: { left: "17 %", top: "30%", width: "min(26vw, 14vh)" } },
+        mobile: { left: "13%", top: "30%", width: "min(30vw, 18vh)" } },
       // Scalp Serum pair — right, enters from the RIGHT (3rd).
       { src: "/brand/mk3/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4,
         width: "min(22vw, 40vh)", maxWidth: "594px", aspectRatio: "1187 / 2063", left: "73.1%", top: "16.8%",
-        mobile: { left: "47%", top: "36.5%", width: "min(35vw, 19vh)" } },
+        mobile: { left: "52%", top: "31.2%", width: "min(35vw, 19vh)" } },
       // Shampoo — front/centre, the tallest piece, drops in from the TOP (2nd).
       { src: "/brand/mk3/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2,
         width: "min(20.5vw, 37vh)", maxWidth: "504px", aspectRatio: "1008 / 1885", left: "63.2%", top: "15.6%",
-        mobile: { left: "28%", top: "35.5%", width: "min(32vw, 17vh)" } },
+        mobile: { left: "30%", top: "28.5%", width: "min(37vw, 22vh)" } },
     ],
     heroContent: {
       logo: "/brand/mk3/hero/wordmark.png",
@@ -49,11 +49,11 @@ const entry: Brand = {
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "7%",
-      offsetY: "7vh",
+      offsetY: "5vh",
       // Light banner → dark text (and the navbar paints its dark treatment).
       theme: "dark",
       delay: 0.6,
-      mobile: { logoWidth: "52vw" },
+      mobile: { logoWidth: "40vw" },
     },
     bannerBg: "#E7E3E0",
     hero: false,

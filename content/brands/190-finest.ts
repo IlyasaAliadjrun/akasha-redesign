@@ -30,11 +30,11 @@ const entry: Brand = {
       // Soft Mint — behind, higher and further right.
       { src: "/brand/finest/hero/2.png", depth: 34, enterFrom: "right", enterDelay: 0.3,
         width: "min(50vw, 73vh)", aspectRatio: "3176 / 4735", left: "55%", top: "-7%",
-        mobile: { width: "min(82vw, 40vh)", left: "12%", top: "15%" } },
+        mobile: { width: "min(82vw, 40vh)", left: "12%", top: "11.5%" } },
       // Light Lemon — front, slightly lower and overlapping the Soft Mint tube.
       { src: "/brand/finest/hero/1.png", depth: 56, enterFrom: "bottom", enterDelay: 0.15,
         width: "min(46vw, 68vh)", aspectRatio: "3026 / 4424", left: "52%", top: "4.5%",
-        mobile: { width: "min(78vw, 37vh)", left: "3%", top: "21%" } },
+        mobile: { width: "min(78vw, 37vh)", left: "3%", top: "17.5%" } },
     ],
     heroContent: {
       logo: "/brand/finest/hero/wordmark.png",
@@ -45,7 +45,7 @@ const entry: Brand = {
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
-      offsetY: "6vh",
+      offsetY: "5vh",
       // Light banner → ink copy (and the navbar takes its dark treatment).
       theme: "dark",
       delay: 0.55,
@@ -83,9 +83,9 @@ const entry: Brand = {
       bannerAspect: "4810 / 2261",
       variants: [
         { bg: "/brand/finest/showcase/1-2.png", product: "/brand/finest/showcase/1-1.png",
-          bgAspect: "4810 / 2261", productAspect: "3660 / 3648", productHeight: "180%",
-          productShiftX: "-24%", productShiftY: "-4%",
-          mobile: { productHeight: "168%", productShiftX: "-24%", productShiftY: "-4%" } },
+          bgAspect: "4810 / 2261", productAspect: "3660 / 3648", productHeight: "155%",
+          productShiftX: "0%", productShiftY: "-6%",
+          mobile: { productHeight: "160%", productShiftX: "1%", productShiftY: "-6%" } },
       ],
     },
   };

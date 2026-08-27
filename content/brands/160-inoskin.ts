@@ -24,14 +24,14 @@ const entry: Brand = {
     // half its natural pixel width so nothing renders above its own resolution at DPR 2.
     heroLayers: [
       // Collagen Firming Mask — tilted, top of the cluster, enters from the TOP (3rd).
-      { src: "/brand/inoskin/hero/2.png", depth: 30, enterFrom: "top", enterDelay: 0.2, width: "min(34.3vw, 65vh)", maxWidth: "1300px", aspectRatio: "2438 / 2701", left: "60%", top: "0%",
-        mobile: { left: "25%", top: "15%", width: "min(52vw, 100vh)" } },
+      { src: "/brand/inoskin/hero/2.png", depth: 30, enterFrom: "top", enterDelay: 0.2, width: "min(29.3vw, 60vh)", maxWidth: "1300px", aspectRatio: "2438 / 2701", left: "61.5%", top: "5%",
+        mobile: { left: "23%", top: "15%", width: "min(52vw, 100vh)" } },
       // Triple Power Cleanser — right of the cluster, enters from the RIGHT (2nd).
-      { src: "/brand/inoskin/hero/3.png", depth: 20, enterFrom: "right", enterDelay: 0.35, width: "min(36.6vw, 45vh)", maxWidth: "873px", aspectRatio: "1746 / 3103", left: "70%", top: "20%",
-        mobile: { left: "40%", top: "28%", width: "min(48vw, 22vh)" } },
+      { src: "/brand/inoskin/hero/3.png", depth: 20, enterFrom: "right", enterDelay: 0.35, width: "min(31.6vw, 40vh)", maxWidth: "873px", aspectRatio: "1746 / 3103", left: "71.5%", top: "25%",
+        mobile: { left: "38%", top: "28%", width: "min(48vw, 22vh)" } },
       // Young and Bright Toner — front/left of the cluster, enters from the LEFT (1st).
-      { src: "/brand/inoskin/hero/1.png", depth: 66, enterFrom: "left", enterDelay: 0, width: "min(39.6vw, 45vh)", maxWidth: "872px", aspectRatio: "1745 / 3103", left: "55%", top: "15%",
-        mobile: { left: "22%", top: "31%", width: "min(52vw, 22vh)" } },
+      { src: "/brand/inoskin/hero/1.png", depth: 66, enterFrom: "left", enterDelay: 0, width: "min(34.6vw, 40vh)", maxWidth: "872px", aspectRatio: "1745 / 3103", left: "56.5%", top: "20%",
+        mobile: { left: "20%", top: "31%", width: "min(52vw, 22vh)" } },
     ],
     heroContent: {
       logo: "/brand/inoskin/hero/wordmark.png",
@@ -44,7 +44,7 @@ const entry: Brand = {
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
-      offsetY: "8vh",
+      offsetY: "5vh",
       // Off-white banner → dark text, and the navbar paints itself dark over it.
       theme: "accent-light",
       delay: 0.55,

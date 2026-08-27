@@ -8,9 +8,9 @@ const entry: SubBrand = {
     tagline: { en: `Restores color and\nhair health`, id: `Mengembalikan warna dan\nkesehatan rambut` },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#3E2120",
-    // White-only hero wording → brown banner instead of the reference's light beige
-    // (see the note handed to the brand owner).
-    bannerBg: "#3E2120",
+    // Light MK3 banner: dark hero copy, controls, and navbar keep sufficient contrast.
+    theme: "dark",
+    bannerBg: "#E7E3E0",
     heroWordmark: "/brand/mk3/color-revive/hero/wordmark.png",
     heroWordmarkAspect: "1519 / 631",
     // One composed cluster (purple-treatment shampoo + conditioner) → a single layer.
@@ -19,7 +19,7 @@ const entry: SubBrand = {
     heroLayers: [
       { src: "/brand/mk3/color-revive/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(45vw, 75vh)", aspectRatio: "3259 / 3957", left: "57%", top: "6.7%",
-        mobile: { left: "-70%", top: "-100%", width: "240%" } },
+        mobile: { left: "-8%", top: "-26%", width: "110%" } },
     ],
     showcaseTitle: "/brand/mk3/color-revive/showcase/title.png",
     showcaseTitleAspect: "4249 / 3333",

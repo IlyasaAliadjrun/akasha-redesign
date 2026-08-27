@@ -33,16 +33,16 @@ const entry: Brand = {
     heroLayers: [
       // Anti Resistant+ jar — back, highest and left of the pair, enters from the LEFT.
       { src: "/brand/rebonding-system/hero/2.png", depth: 36, enterFrom: "left", enterDelay: 0,
-        width: "min(28.5vw, 35.5vh)", maxWidth: "1002px", aspectRatio: "2004 / 1965", left: "63.3%", top: "13.2%",
-        mobile: { left: "24%", top: "26.5%", width: "min(42vw, 28vh)" } },
+        width: "min(28.5vw, 35.5vh)", maxWidth: "1002px", aspectRatio: "2004 / 1965", left: "63.3%", top: "14.2%",
+        mobile: { left: "24%", top: "24.5%", width: "min(42vw, 28vh)" } },
       // Super Gold+ jar — right of the pair and slightly lower, enters from the RIGHT (3rd).
       { src: "/brand/rebonding-system/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4,
-        width: "min(20vw, 47.5vh)", maxWidth: "1066px", aspectRatio: "2132 / 2100", left: "69%", top: "33.4%",
-        mobile: { left: "39%", top: "38%", width: "min(44vw, 29vh)" } },
+        width: "min(20vw, 47.5vh)", maxWidth: "1066px", aspectRatio: "2132 / 2100", left: "69%", top: "34.4%",
+        mobile: { left: "39%", top: "36%", width: "min(44vw, 29vh)" } },
       // Milky Neutralizer+ bottle — front, tilted across the pair, drops in from the TOP (2nd).
       { src: "/brand/rebonding-system/hero/1.png", depth: 72, enterFrom: "top", enterDelay: 0.2,
-        width: "min(43vw, 54vh)", maxWidth: "1362px", aspectRatio: "2724 / 3019", left: "57.5%", top: "34%",
-        mobile: { left: "11%", top: "39%", width: "min(60vw, 40vh)" } },
+        width: "min(43vw, 54vh)", maxWidth: "1362px", aspectRatio: "2724 / 3019", left: "57.5%", top: "35%",
+        mobile: { left: "11%", top: "37%", width: "min(60vw, 40vh)" } },
     ],
     heroContent: {
       logo: "/brand/rebonding-system/hero/wordmark.png",
@@ -97,16 +97,16 @@ const entry: Brand = {
       variants: [
         // SUPER GOLD — SG+ jar (tight render, 78% fill)
         { bg: "/brand/rebonding-system/showcase/1-2.png", product: "/brand/rebonding-system/showcase/1-1.png",
-          bgAspect: "4810 / 2261", productAspect: "2132 / 2100", productHeight: "57%", productShiftY: "-20%" },
+          bgAspect: "4810 / 2261", productAspect: "2132 / 2100", productHeight: "82%", productShiftX: "-3%", productShiftY: "-1%" },
         // GOLD EDITION — GE+ jar (padded render, 63% fill → taller box for the same jar)
         { bg: "/brand/rebonding-system/showcase/2-2.png", product: "/brand/rebonding-system/showcase/2-1.png",
-          bgAspect: "4810 / 2260", productAspect: "1922 / 2045", productHeight: "75%", productShiftY: "-20%" },
+          bgAspect: "4810 / 2260", productAspect: "1922 / 2045", productHeight: "68%", productShiftY: "-18%" },
         // ANTI RESISTANT — AR+ jar (tight render)
         { bg: "/brand/rebonding-system/showcase/3-2.png", product: "/brand/rebonding-system/showcase/3-1.png",
-          bgAspect: "4810 / 2260", productAspect: "2004 / 1965", productHeight: "57%", productShiftY: "-20%" },
+          bgAspect: "4810 / 2260", productAspect: "2004 / 1965", productHeight: "85%", productShiftY: "-12%" },
         // EXTREMELY DAMAGED — ED+ jar (padded render)
         { bg: "/brand/rebonding-system/showcase/4-2.png", product: "/brand/rebonding-system/showcase/4-1.png",
-          bgAspect: "4810 / 2261", productAspect: "1922 / 2045", productHeight: "75%", productShiftY: "-20%" },
+          bgAspect: "4810 / 2261", productAspect: "1922 / 2045", productHeight: "72%", productShiftX: "-2%", productShiftY: "-11%" },
       ],
     },
   };

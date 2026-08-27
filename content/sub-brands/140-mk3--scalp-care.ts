@@ -8,9 +8,9 @@ const entry: SubBrand = {
     tagline: { en: `Professional care for\nhair loss and dandruff`, id: `Perawatan profesional untuk rambut\nrontok dan berketombe` },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#3E2120",
-    // White-only hero wording → brown banner instead of the reference's light beige
-    // (see the note handed to the brand owner).
-    bannerBg: "#3E2120",
+    // Light MK3 banner: dark hero copy, controls, and navbar keep sufficient contrast.
+    theme: "dark",
+    bannerBg: "#E7E3E0",
     heroWordmark: "/brand/mk3/scalp-care/hero/wordmark.png",
     heroWordmarkAspect: "1519 / 631",
     // One composed cluster (exfoliator + shampoo + both scalp serums) → a single layer.
@@ -19,7 +19,7 @@ const entry: SubBrand = {
     heroLayers: [
       { src: "/brand/mk3/scalp-care/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(35vw, 60vh)", aspectRatio: "2340 / 2860", left: "59.6%", top: "15.7%",
-        mobile: { left: "-45%", top: "-70%", width: "190%" } },
+        mobile: { left: "5%", top: "-12%", width: "85%" } },
     ],
     showcaseTitle: "/brand/mk3/scalp-care/showcase/title.png",
     showcaseTitleAspect: "4107 / 3321",

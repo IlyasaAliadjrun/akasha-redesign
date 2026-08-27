@@ -36,13 +36,13 @@ const entry: Brand = {
       // wordmark (top) → products → tagline + CTA (bottom), so a purely vw-based cap
       // grows the cluster into the tagline on a wide-but-short phone/tablet (640×800).
       { src: "/brand/t1/hero/2.png", depth: 30, enterFrom: "top", enterDelay: 0.2, width: "min(18vw, 34vh)", maxWidth: "944px", aspectRatio: "1887 / 3032", left: "66%", top: "6%",
-        mobile: { left: "30%", top: "21%", width: "min(43vw, 31vh)" } },
+        mobile: { left: "32%", top: "17%", width: "min(39vw, 27vh)" } },
       // Micellar Conditioner — green, left of the cluster, enters from the LEFT.
       { src: "/brand/t1/hero/1.png", depth: 45, enterFrom: "left", enterDelay: 0, width: "min(24vw, 41vh)", maxWidth: "970px", aspectRatio: "1939 / 3058", left: "57%", top: "21%",
-        mobile: { left: "8%", top: "28%", width: "min(50vw, 34vh)" } },
+        mobile: { left: "10%", top: "24%", width: "min(46vw, 30vh)" } },
       // Equalizer Shampoo — terracotta, front/right and sitting lower.
       { src: "/brand/t1/hero/3.png", depth: 60, enterFrom: "right", enterDelay: 0.4, width: "min(21vw, 41vh)", maxWidth: "890px", aspectRatio: "1780 / 2978", left: "71%", top: "28%",
-        mobile: { left: "40%", top: "35%", width: "min(50vw, 34vh)" } },
+        mobile: { left: "42%", top: "31%", width: "min(46vw, 30vh)" } },
     ],
     heroContent: {
       logo: "/brand/t1/hero/wordmark.png",
@@ -53,13 +53,13 @@ const entry: Brand = {
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "8%",
-      offsetY: "8vh",
+      offsetY: "5vh",
       // The banner is a light pistachio, so the wording — and the navbar that reads
       // this flag — take their DARK treatment. It also keeps the CTA pill in the same
       // brown family as the wordmark art, like the reference.
       theme: "dark",
       delay: 0.6,
-      mobile: { logoWidth: "46vw" },
+      mobile: { logoWidth: "40vw" },
     },
     // T1 pistachio — the same green the brand's own product cards are printed on.
     bannerBg: "#C4CB89",
@@ -109,20 +109,20 @@ const entry: Brand = {
       variants: [
         // Micellar — shampoo + conditioner (canvas padding: 23% top / 11% bottom).
         { bg: "/brand/t1/showcase/1-2.png", product: "/brand/t1/showcase/1-1.png",
-          bgAspect: "4810 / 2261", productAspect: "3144 / 3214", productHeight: "184%", productShiftY: "-6%",
+          bgAspect: "4810 / 2261", productAspect: "3144 / 3214", productHeight: "140%", productShiftY: "-6%",
           href: "/brands/t1/micellar" },
         // Equalizer — shampoo + conditioner (23% / 11%).
         { bg: "/brand/t1/showcase/2-2.png", product: "/brand/t1/showcase/2-1.png",
-          bgAspect: "4810 / 2261", productAspect: "3057 / 3178", productHeight: "185%", productShiftY: "-6%",
+          bgAspect: "4810 / 2261", productAspect: "3057 / 3178", productHeight: "140%", productShiftY: "-6%",
           href: "/brands/t1/equalizer" },
         // Rosemary Oil — protein cream + scalp & hair oil (45% / 13%: the pair sits in
         // the lower half of its canvas, hence the much bigger box and shift).
         { bg: "/brand/t1/showcase/3-2.png", product: "/brand/t1/showcase/3-1.png",
-          bgAspect: "4810 / 2260", productAspect: "4174 / 4068", productHeight: "265%", productShiftY: "-16%",
+          bgAspect: "4810 / 2260", productAspect: "4174 / 4068", productHeight: "185%", productShiftY: "-16%",
           href: "/brands/t1/rosemary-oil" },
         // Indigo Blue — body wash + mask + lotion (22% / 17%).
         { bg: "/brand/t1/showcase/4-2.png", product: "/brand/t1/showcase/4-1.png",
-          bgAspect: "4810 / 2260", productAspect: "3759 / 3072", productHeight: "188%", productShiftY: "-3%",
+          bgAspect: "4810 / 2260", productAspect: "3759 / 3072", productHeight: "140%", productShiftY: "-3%",
           href: "/brands/t1/indigo-blue" },
       ],
     },

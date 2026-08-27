@@ -27,13 +27,13 @@ const entry: Brand = {
     heroLayers: [
       // Professional Shampoo — back, upright, enters from the TOP.
       { src: "/brand/salon-daily/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0.1, width: "min(21vw, 42vh)", maxWidth: "1069px", aspectRatio: "2138 / 2708", left: "63.8%", top: "10.5%",
-        mobile: { left: "30%", top: "22%", width: "min(50vw, 36vh)" } },
+        mobile: { left: "29%", top: "18%", width: "min(50vw, 36vh)" } },
       // Professional Conditioner — front left of the cluster, enters from the LEFT.
       { src: "/brand/salon-daily/hero/1.png", depth: 60, enterFrom: "left", enterDelay: 0.3, width: "min(28vw, 54vh)", maxWidth: "1356px", aspectRatio: "2712 / 3246", left: "54.8%", top: "23.5%",
-        mobile: { left: "6.3%", top: "30%", width: "min(66vw, 44vh)" } },
+        mobile: { left: "5.3%", top: "26%", width: "min(66vw, 44vh)" } },
       // Professional Hair Tonic — front right, sits lower, enters from the RIGHT.
       { src: "/brand/salon-daily/hero/3.png", depth: 78, enterFrom: "right", enterDelay: 0.5, width: "min(40vw, 62vh)", maxWidth: "1439px", aspectRatio: "2877 / 3118", left: "61.9%", top: "34.5%",
-        mobile: { left: "25.8%", top: "38%", width: "min(70vw, 56vh)" } },
+        mobile: { left: "24.8%", top: "34%", width: "min(70vw, 56vh)" } },
     ],
     heroContent: {
       logo: "/brand/salon-daily/hero/wordmark.png",

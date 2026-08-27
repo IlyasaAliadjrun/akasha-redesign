@@ -25,17 +25,15 @@ const entry: Brand = {
     // transparent padding, so the widths below are tuned per asset to make the three
     // bottles read at a comparable *visual* size (they are NOT the same number).
     heroLayers: [
-      { src: "/brand/advisor/hero/3.png", depth: 32, enterFrom: "top", enterDelay: 0.1, width: "min(24vw, 43vh)", aspectRatio: "1814 / 2527", left: "63%", top: "7%",
-        mobile: { left: "35%", top: "27%", width: "min(58vw, 32vh)" } },
       // Dual Defense Shampoo — front/centre, sits slightly lower, enters from the TOP (2nd).
       { src: "/brand/advisor/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(41vw, 65vh)", aspectRatio: "2812 / 3502", left: "56%", top: "5%",
-        mobile: { left: "4%", top: "20.5%", width: "min(78vw, 38vh)" } },
+        mobile: { left: "4%", top: "18.5%", width: "min(75vw, 35vh)" } },
       // Hair Recovery Vitamax — back row, left of the cluster, enters from the LEFT (1st).
       { src: "/brand/advisor/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(23vw, 36vh)", aspectRatio: "1560 / 2402", left: "57.7%", top: "39%",
-        mobile: { left: "11.5%", top: "43%", width: "min(40vw, 26vh)" } },
+        mobile: { left: "11.5%", top: "41%", width: "min(37vw, 23vh)" } },
       // Hair Mask Repair — back row, right of the cluster, enters from the RIGHT (3rd).
-      { src: "/brand/advisor/hero/4.png", depth: 27, enterFrom: "right", enterDelay: 0.4, width: "min(23vw, 36vh)", aspectRatio: "1814 / 2527", left: "60.8%", top: "23%",
-        mobile: { left: "40%", top: "33%", width: "min(40vw, 20vh)" } },
+      { src: "/brand/advisor/hero/3.png", depth: 32, enterFrom: "top", enterDelay: 0.1, width: "min(24vw, 43vh)", aspectRatio: "1814 / 2527", left: "69.5%", top: "30%",
+        mobile: { left: "33%", top: "25%", width: "min(55vw, 29vh)" } },
     ],
     // The wordmark carries no tagline of its own (unlike VICA/Wonhae), so the hero
     // keeps the full Hair Energy overlay: wordmark + tagline + subtitle + CTA. Copy is
@@ -97,15 +95,15 @@ const entry: Brand = {
         // banner — the Hair Energy proportion. All values are %, so the composition
         // scales identically on mobile; no per-viewport override is needed.
         // CLINICAL SHAMPOO — Dual Defense Shampoo
-        { bg: "/brand/advisor/showcase/1-2.png", product: "/brand/advisor/showcase/1-1.png", bgAspect: "4810 / 2260", productAspect: "1 / 1", productHeight: "150%" },
+        { bg: "/brand/advisor/showcase/1-2.png", product: "/brand/advisor/showcase/1-1.png", bgAspect: "4810 / 2260", productAspect: "1 / 1", productHeight: "125%", productShiftY: "-3%", },
         // HAIR MASK — Hair Mask Repair
-        { bg: "/brand/advisor/showcase/2-2.png", product: "/brand/advisor/showcase/2-1.png", bgAspect: "4810 / 2261", productAspect: "1 / 1", productHeight: "177%" },
+        { bg: "/brand/advisor/showcase/2-2.png", product: "/brand/advisor/showcase/2-1.png", bgAspect: "4810 / 2261", productAspect: "1 / 1", productHeight: "154%" },
         // HAIR TONIC — Hair & Scalp Tonic
-        { bg: "/brand/advisor/showcase/3-2.png", product: "/brand/advisor/showcase/3-1.png", bgAspect: "4810 / 2260", productAspect: "2652 / 3400", productHeight: "180%" },
+        { bg: "/brand/advisor/showcase/3-2.png", product: "/brand/advisor/showcase/3-1.png", bgAspect: "4810 / 2260", productAspect: "2652 / 3400", productHeight: "150%", productShiftY: "5%", },
         // VITAMAX — Hair Recovery Vitamax
-        { bg: "/brand/advisor/showcase/4-2.png", product: "/brand/advisor/showcase/4-1.png", bgAspect: "4810 / 2260", productAspect: "1 / 1", productHeight: "158%" },
+        { bg: "/brand/advisor/showcase/4-2.png", product: "/brand/advisor/showcase/4-1.png", bgAspect: "4810 / 2260", productAspect: "1 / 1", productHeight: "140%", productShiftY: "2%", },
         // KERATIN SPRAY — Hair Protection Keratin Spray
-        { bg: "/brand/advisor/showcase/5-2.png", product: "/brand/advisor/showcase/5-1.png", bgAspect: "4810 / 2260", productAspect: "1 / 1", productHeight: "152%" },
+        { bg: "/brand/advisor/showcase/5-2.png", product: "/brand/advisor/showcase/5-1.png", bgAspect: "4810 / 2260", productAspect: "1 / 1", productHeight: "132%", productShiftY: "3.5%", },
       ],
     },
   };

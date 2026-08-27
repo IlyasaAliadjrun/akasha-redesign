@@ -16,9 +16,9 @@ const entry: SubBrand = {
     // their designed px size once the window is above the mobile breakpoint.
     heroLayers: [
       { src: "/brand/hair-energy/vitaglitz/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "min(29.8vw, 39.7vh)", aspectRatio: "2139 / 2345", left: "68%", top: "16%",
-        mobile: { right: "-28%", top: "-42%", width: "130%" } },
+        mobile: { right: "8.5%", top: "-8%", width: "60%" } },
       { src: "/brand/hair-energy/vitaglitz/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "min(28.8vw, 38.4vh)", aspectRatio: "2054 / 2786", left: "60%", top: "30%",
-        mobile: { left: "-25%", bottom: "-40%", width: "130%" } },
+        mobile: { left: "8.5%", bottom: "9%", width: "60%" } },
     ],
     // showcase/1.png = title, showcase/2.png = featured lebar, 3–4 = kartu.
     showcaseTitle: "/brand/hair-energy/vitaglitz/showcase/1.png",

@@ -8,10 +8,9 @@ const entry: SubBrand = {
     tagline: { en: `Intensive Repair for\nDry, Brittle, and Over-Processed Hair`, id: `Perbaikan Intensif untuk Rambut\nKering, Rapuh, dan Over-Processed` },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#3E2120",
-    // SubBrandHero renders its wording in white only, so the banner keeps the MK3
-    // brown rather than the reference's light beige (see the note handed to the
-    // brand owner). Same treatment as Barber Daily / Honey Dew.
-    bannerBg: "#3E2120",
+    // Light MK3 banner: dark hero copy, controls, and navbar keep sufficient contrast.
+    theme: "dark",
+    bannerBg: "#E7E3E0",
     heroWordmark: "/brand/mk3/damage-repair/hero/wordmark.png",
     heroWordmarkAspect: "1519 / 631",
     // The folder ships ONE composed cluster (shampoo + conditioner + hair mask +
@@ -22,8 +21,8 @@ const entry: SubBrand = {
     // so the layer box is larger than the cluster looks.
     heroLayers: [
       { src: "/brand/mk3/damage-repair/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
-        width: "min(50vw, 84vh)", aspectRatio: "3380 / 3034", left: "55.5%", top: "17.6%",
-        mobile: { left: "-68%", top: "-63%", width: "240%" } },
+        width: "min(57vw, 91vh)", aspectRatio: "3380 / 3034", left: "52.5%", top: "14.8%",
+        mobile: { left: "-6%", top: "-7%", width: "110%" } },
     ],
     showcaseTitle: "/brand/mk3/damage-repair/showcase/title.png",
     showcaseTitleAspect: "4153 / 3401",

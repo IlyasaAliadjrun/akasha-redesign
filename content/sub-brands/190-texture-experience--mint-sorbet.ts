@@ -22,7 +22,7 @@ const entry: SubBrand = {
     heroLayers: [
       { src: "/brand/texture-experience/mint-sorbet/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(43vw, 83vh)", aspectRatio: "3772 / 3748", left: "52%", top: "12%",
-        mobile: { left: "-74%", top: "-75%", width: "240%" } },
+        mobile: { left: "-17%", top: "-15%", width: "115%" } },
     ],
     showcaseTitle: "/brand/texture-experience/mint-sorbet/showcase/title.png",
     showcaseTitleAspect: "3332 / 3233",

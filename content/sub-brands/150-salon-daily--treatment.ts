@@ -19,7 +19,7 @@ const entry: SubBrand = {
     // min(vw, vh) so it never outgrows a short window; centred in the right half.
     heroLayers: [
       { src: "/brand/salon-daily/treatment/hero/1.png", enterFrom: "right", enterDelay: 0.3, depth: 50, width: "min(50vw, 70vh)", aspectRatio: "3709 / 4550", left: "57%", top: "12%",
-        mobile: { left: "-67%", top: "-100%", width: "245%" } },
+        mobile: { left: "-10%", top: "-32%", width: "120%" } },
     ],
     showcaseTitle: "/brand/salon-daily/treatment/showcase/title.png",
     showcaseTitleAspect: "4870 / 3607",

@@ -22,7 +22,7 @@ const entry: SubBrand = {
     heroLayers: [
       { src: "/brand/texture-experience/black-chocolate/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(33vw, 85vh)", aspectRatio: "3040 / 3778", left: "55.5%", top: "4%",
-        mobile: { left: "-4.5%", top: "-13.9%", width: "95%" } },
+        mobile: { left: "-5.5%", top: "-29%", width: "98%" } },
     ],
     showcaseTitle: "/brand/texture-experience/black-chocolate/showcase/title.png",
     showcaseTitleAspect: "3870 / 3233",

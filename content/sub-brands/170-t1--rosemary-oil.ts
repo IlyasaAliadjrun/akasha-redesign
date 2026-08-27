@@ -7,8 +7,8 @@ const entry: SubBrand = {
     name: "Rosemary Oil",
     tagline: { en: "Anti hair-fall, thickens, and smooths\nhair instantly.", id: "Anti-rontok, lebatkan, dan haluskan\nrambut secara instan." },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
-    accentHex: "#683B27", // Rosemary Oil brown, sampled from the line's banner art
-    bannerBg: "#683B27",
+    accentHex: "#784b37", // Rosemary Oil brown, sampled from the line's banner art
+    bannerBg: "#784b37",
     heroWordmark: "/brand/t1/rosemary-oil/hero/wordmark.png",
     heroWordmarkAspect: "1424 / 556",
     // One composed cluster (protein cream + scalp & hair oil). This canvas is by far
@@ -18,7 +18,7 @@ const entry: SubBrand = {
     heroLayers: [
       { src: "/brand/t1/rosemary-oil/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(58vw, 74vh)", aspectRatio: "3118 / 5494", left: "57%", top: "-35%",
-        mobile: { left: "-64.5%", top: "-195%", width: "240%" } },
+        mobile: { left: "-5%", top: "-103%", width: "120%" } },
     ],
     showcaseTitle: "/brand/t1/rosemary-oil/showcase/title.png",
     showcaseTitleAspect: "4428 / 4061",

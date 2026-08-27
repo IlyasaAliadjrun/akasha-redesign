@@ -33,16 +33,16 @@ const entry: Brand = {
     heroLayers: [
       // Deep Moist & Shine Shampoo — back, highest, enters from the TOP (1st).
       // Visible bottle ≈ 15.5 vw wide, spanning 14 %–43 % of the banner height.
-      { src: "/brand/honey-dew/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0, width: "min(30vw, 34vh)", maxWidth: "836px", aspectRatio: "1672 / 2451", left: "65.5%", top: "16.5%",
-        mobile: { left: "26%", top: "25%", width: "min(42vw, 24vh)" } },
+      { src: "/brand/honey-dew/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0, width: "min(28.5vw, 40.5vh)", maxWidth: "836px", aspectRatio: "1672 / 2451", left: "63%", top: "12%",
+        mobile: { left: "26%", top: "21%", width: "min(42vw, 24vh)" } },
       // Repair Mask — in front of the bottle and a touch larger than it (the
       // reference sizes the tube at ~1.15× the bottle); visible tube ≈ 17.5 vw,
       // spanning 24 %–58 % of the banner height.
-      { src: "/brand/honey-dew/hero/3.png", depth: 66, enterFrom: "right", enterDelay: 0.3, width: "min(45.7vw, 54vh)", maxWidth: "1529px", aspectRatio: "3058 / 3865", left: "66.2%", top: "27.2%",
-        mobile: { left: "26%", top: "30%", width: "min(75vw, 41vh)" } },
+      { src: "/brand/honey-dew/hero/3.png", depth: 66, enterFrom: "right", enterDelay: 0.3, width: "min(56.7vw, 63vh)", maxWidth: "1529px", aspectRatio: "3058 / 3865", left: "66.2%", top: "24.2%",
+        mobile: { left: "26%", top: "26%", width: "min(75vw, 41vh)" } },
       // Nutriv Serum — front left, smallest, enters from the LEFT (2nd).
-      { src: "/brand/honey-dew/hero/1.png", depth: 54, enterFrom: "left", enterDelay: 0.15, width: "min(40vw, 45vh)", maxWidth: "1139px", aspectRatio: "2278 / 2569", left: "57.5%", top: "38%",
-        mobile: { left: "3%", top: "35%", width: "min(60vw, 34vh)" } },
+      { src: "/brand/honey-dew/hero/1.png", depth: 54, enterFrom: "left", enterDelay: 0.15, width: "min(46.5vw, 50vh)", maxWidth: "1139px", aspectRatio: "2278 / 2569", left: "55%", top: "39.6%",
+        mobile: { left: "3%", top: "31%", width: "min(60vw, 34vh)" } },
     ],
     // The wordmark is a plain "HONEY DEW" lockup with no tagline baked in, so the
     // hero keeps the full Hair Energy overlay: wordmark + tagline + CTA.
@@ -58,7 +58,7 @@ const entry: Brand = {
       // The reference sits the whole wordmark/tagline/CTA column in the LOWER left of
       // the banner (its CTA bottom lands at ~82 % of the banner height), not on the
       // vertical centre the component defaults to.
-      offsetY: "6vh",
+      offsetY: "5vh",
       // Light grey banner → dark text, and the navbar paints its dark treatment.
       theme: "dark",
       delay: 0.6,
@@ -95,7 +95,7 @@ const entry: Brand = {
         // PNG's own transparent top/bottom margin (7.2 % / 4.0 % here).
         { bg: "/brand/honey-dew/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/honey-dew/showcase/1-1.png", productAspect: "1672 / 2451", productHeight: "106%", productShiftX: "12%", mobile: { productHeight: "102%" }, href: "/brands/honey-dew/shampoo" },
         // Two-tube cluster: 20.6 % top / 17.5 % bottom margin → 134 % is the ceiling.
-        { bg: "/brand/honey-dew/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/honey-dew/showcase/2-1.png", productAspect: "2399 / 2689", productHeight: "134%", mobile: { productHeight: "128%" }, href: "/brands/honey-dew/hair-serum" },
+        { bg: "/brand/honey-dew/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/honey-dew/showcase/2-1.png", productAspect: "2399 / 2689", productHeight: "134%", productShiftY: "-2.5%", mobile: { productHeight: "128%" }, href: "/brands/honey-dew/hair-serum" },
       ],
     },
   };

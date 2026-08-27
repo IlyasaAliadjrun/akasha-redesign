@@ -26,13 +26,13 @@ const entry: Brand = {
       // produk-2 (front) sits slightly lower, with only a small overlap between them.
       // Creambath — left, enters from the LEFT (1st).
       { src: "/brand/hair-energy/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(25vw, 53vh)", maxWidth: "1344px", aspectRatio: "2687 / 3660", left: "54%", top: "10%",
-        mobile: { left: "2%", top: "25%", width: "min(57vw, 42vh)" } },
+        mobile: { left: "2%", top: "22.5%", width: "min(57vw, 42vh)" } },
       // Scentsations — right, level with creambath, enters from the RIGHT (3rd).
       { src: "/brand/hair-energy/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(25vw, 53vh)", maxWidth: "1344px", aspectRatio: "2687 / 3660", left: "72%", top: "7%",
-        mobile: { left: "42%", top: "23%", width: "min(57vw, 42vh)" } },
+        mobile: { left: "42%", top: "20.5%", width: "min(57vw, 42vh)" } },
       // Shampoo — front/centre, slightly lower, enters from the TOP (2nd).
       { src: "/brand/hair-energy/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(25vw, 53vh)", maxWidth: "1344px", aspectRatio: "2687 / 3660", left: "63%", top: "22%",
-        mobile: { left: "22%", top: "33%", width: "min(57vw, 42vh)" } },
+        mobile: { left: "22%", top: "30.5%", width: "min(57vw, 42vh)" } },
     ],
     heroContent: {
       logo: "/brand/hair-energy/hero/wordmark.png",
@@ -43,7 +43,7 @@ const entry: Brand = {
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "10%",
-      offsetY: "6vh",
+      offsetY: "5vh",
       theme: "light",
       delay: 0.6,
       mobile: { logoWidth: "26vw" },
