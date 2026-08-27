@@ -4,7 +4,7 @@ const entry: Brand = {
     slug: "nestle-pure-life",
     name: "Nestlé Pure Life",
     division: "beverage",
-    tagline: { en: "Not Cold Still Fresh", id: "Gak Dingin Tetep Seger" },
+    tagline: { en: "Fresh, Even Without the Cold", id: "Gak Dingin Tetep Seger" },
     description: {
       en: "Neutral-pH mineral water processed through Nestlé's strict 12-stage purity standard",
       id: "Air mineral pH netral yang diproses ketat dengan 12 tahap kemurnian kualitas Nestlé",
@@ -35,7 +35,7 @@ const entry: Brand = {
       logo: "/brand/nestle-pure-life/hero/wordmark.png",
       logoAspect: "1430 / 297",
       logoWidth: "34vw",
-      tagline: { en: "Not Cold Still Fresh", id: "Gak Dingin Tetep Seger" },
+      tagline: { en: "Fresh, Even Without the Cold", id: "Gak Dingin Tetep Seger" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
