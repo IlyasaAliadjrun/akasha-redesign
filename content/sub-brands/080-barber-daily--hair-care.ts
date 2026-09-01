@@ -16,10 +16,10 @@ const entry: SubBrand = {
     // wide transparent margins, so the layer boxes are far wider than the bottles.
     heroLayers: [
       { src: "/brand/barber-daily/hair-care/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 58,
-        width: "min(46vw, 52vh)", aspectRatio: "2554 / 3615", left: "65.8%", top: "10%",
+        width: "min(49vw, 55vh)", aspectRatio: "2554 / 3615", left: "66.5%", top: "10%",
         mobile: { right: "0%", top: "-12%", width: "70%" } },
       { src: "/brand/barber-daily/hair-care/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 40,
-        width: "min(51vw, 73vh)", aspectRatio: "3891 / 5524", left: "52%", top: "16%",
+        width: "min(55vw, 77vh)", aspectRatio: "3891 / 5524", left: "52%", top: "16%",
         mobile: { left: "-8%", top: "-5%", width: "100%" } },
     ],
     showcaseTitle: "/brand/barber-daily/hair-care/showcase/title.png",

@@ -24,7 +24,7 @@ const entry: Brand = {
       // DESKTOP: anchored right, capped by height so it never outgrows a short viewport.
       // MOBILE: centred under the wordmark (the 14% left offset centres a 72vw box).
       { src: "/brand/fitmeup/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
-        width: "min(36vw, 52vh)", aspectRatio: "1639 / 2295", right: "10%", top: "17.5%",
+        width: "min(40vw, 56vh)", aspectRatio: "1639 / 2295", right: "10%", top: "15.5%",
         mobile: { width: "min(70vw, 43vh)", left: "17.5%", top: "35%" } },
     ],
     // The wordmark image already includes the "Sleep Better, Live Better" tagline, so

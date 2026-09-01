@@ -26,7 +26,7 @@ const entry: Brand = {
     heroContent: {
       logo: "/brand/wonhae/hero/wordmark.png",
       logoAspect: "1000 / 579",
-      logoWidth: "min(30vw, 760px)",
+      logoWidth: "min(34vw, 760px)",
       left: "9%",
       offsetY: "3.5vh",
       theme: "dark",
