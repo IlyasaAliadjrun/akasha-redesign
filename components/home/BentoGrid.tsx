@@ -40,25 +40,32 @@ const bentoImage: Record<string, string> = {
   "barber-daily": "/home/brand-grid/barber-daily.jpg",
   wonhae: "/home/brand-grid/wonhae.jpg",
   "makarizo-professional": "/home/brand-grid/makarizo-professional.jpg",
+  fitmeup: "/home/brand-grid/fitmeup.png",
+  floaty: "/home/brand-grid/floaty.png",
 };
 
-// Object-position per banner. NPL's source places its subjects centered, but
-// HE/Make It/BD banners put the subject on the right side of the artwork — so
-// those need `object-right` (regardless of tile width) to keep the subject in
-// frame. Anything else falls back to a column-width rule: narrow (1/3) tiles
-// also pull right so banners with off-center subjects don't get cropped.
+// Object-position per banner. Every source photo is shot with the person
+// looking down at camera, head near the top edge and body running to the
+// bottom edge — so any vertical crop must come off the bottom (feet), never
+// the top (face). All entries pin `top`; horizontal follows where the
+// subject sits in each source photo (HE/Make It/BD put them on the right;
+// NPL/Wonhae/Makarizo keep them roughly centered-to-right already).
 const bentoObjectPosition: Record<string, string> = {
-  "nestle-pure-life": "object-center",
-  "hair-energy": "object-right",
-  "make-it": "object-right",
-  "barber-daily": "object-right",
+  "nestle-pure-life": "object-top",
+  "hair-energy": "object-right-top",
+  "make-it": "object-right-top",
+  "barber-daily": "object-right-top",
+  wonhae: "object-top",
+  "makarizo-professional": "object-top",
+  fitmeup: "object-center",
+  floaty: "object-center",
 };
 
 const objectPositionFor = (slug: string, layoutClass: string) =>
   bentoObjectPosition[slug] ??
   (layoutClass.includes("md:col-span-3") || layoutClass.includes("md:col-span-4")
-    ? "object-right"
-    : "object-center");
+    ? "object-right-top"
+    : "object-top");
 
 // Solid color tiles for brands without an image — matched to artboard.
 const solidColor: Record<string, string> = {
