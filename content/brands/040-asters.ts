@@ -8,7 +8,7 @@ const entry: Brand = {
     parent: "makarizo",
     tagline: { en: "Beauty tools with the best performance, for everyone.", id: "Alat kecantikan dengan performa terbaik, untuk semua." },
     description: {
-      en: "Salon-quality hairstyles every day, right at home. Achieve stunning hair with the premium collection from Makarizo Asters. Equipped with smart heat-protection technology, create long-lasting styles while keeping your hair healthy with ease.",
+      en: "Experience salon-perfect hair every day at home. Makarizo Asters' premium collection of styling tools features smart heat protection technology, empowering you to create stunning, long-lasting looks while effortlessly keeping your hair healthy.",
       id: "Gaya rambut ala salon setiap hari dari rumah. Wujudkan rambut memukau dengan koleksi premium dari Makarizo Asters. Dilengkapi teknologi pelindung panas pintar, ciptakan gaya tahan lama sekaligus jaga kesehatan rambut Anda dengan mudah.",
     },
     accentClass: "bg-brand-asters",
@@ -34,7 +34,7 @@ const entry: Brand = {
       logoAspect: "1513 / 740",
       logoWidth: "21vw",
       maxWidth: "23vw",
-      tagline: { en: "Beauty tools with the best performance, for everyone", id: "Alat kecantikan dengan performa terbaik, untuk semua" },
+      tagline: { en: "High-Performance Beauty Tools, made accessible.", id: "Alat kecantikan dengan performa terbaik, untuk semua" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
@@ -65,6 +65,7 @@ const entry: Brand = {
     showcase: {
       hero: "/brand/asters/showcase/title.png",
       heroAspect: "4591 / 3142",
+      heroOffsetY: "-40px",
       heroMaxWidth: "min(100%, 53rem)",
       // The banner art is a finished card (rounded corners + caption baked in), so
       // the frame takes the art's own ratio instead of the 5:2 default — a cover

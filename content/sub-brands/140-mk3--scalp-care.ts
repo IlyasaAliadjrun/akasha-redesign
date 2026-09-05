@@ -23,6 +23,7 @@ const entry: SubBrand = {
     ],
     showcaseTitle: "/brand/mk3/scalp-care/showcase/title.png",
     showcaseTitleAspect: "4107 / 3321",
+    showcaseTitleOffsetY: "110px",
     // These four card graphics carry different amounts of baked-in vertical margin
     // (2302×2986 … 2302×3282). `cardAspect` takes the TALLEST of them so every card is
     // contained by width — all four then render at the same column width, with the

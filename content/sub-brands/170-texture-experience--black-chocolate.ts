@@ -5,7 +5,7 @@ const entry: SubBrand = {
     slug: "black-chocolate",
     parent: "texture-experience",
     name: "Black Chocolate",
-    tagline: { en: "Care with Dark Chocolate Extract\nfor Dry & Damaged Hair.", id: "Perawatan dengan Ekstrak Dark Chocolate\nuntuk Rambut Kering & Rusak." },
+    tagline: { en: "Hair care enriched with Dark Chocolate Extract for dry and damaged hair.", id: "Perawatan dengan Ekstrak Dark Chocolate\nuntuk Rambut Kering & Rusak." },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // The reference paints EVERY sub-brand hero in the same light beige with dark
     // wording. SubBrandHero renders its wording in white only, so the banner takes that
@@ -13,7 +13,8 @@ const entry: SubBrand = {
     // still letting the taupe wordmark read against it (2.1:1) — a single neutral for
     // all five variants, exactly as the reference does. See the note to the brand owner.
     accentHex: "#423A31",
-    bannerBg: "#423A31",
+    bannerBg: "#eee8e0",
+    theme: "accent-light",
     heroWordmark: "/brand/texture-experience/black-chocolate/hero/wordmark.png",
     heroWordmarkAspect: "502 / 214",
     // One composed cluster (creambath tube + Choco Hazelnut hair perfume) → a single
@@ -29,6 +30,7 @@ const entry: SubBrand = {
     // The creambath line-up ships as a landscape card, so it takes the full-width slot.
     featured: { image: "/brand/texture-experience/black-chocolate/showcase/3.png", label: { en: "Creambath Black Chocolate — sachet, tube & jar", id: "Creambath Black Chocolate — sachet, tube & jar" } },
     featuredAspect: "4695 / 2222",
+    featuredPosition: "middle",
     cardAspect: "2302 / 2986",
     cards: [
       { image: "/brand/texture-experience/black-chocolate/showcase/1.png", label: { en: "Shampoo Black Chocolate", id: "Shampoo Black Chocolate" } },

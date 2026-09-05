@@ -8,12 +8,13 @@ const entry: SubBrand = {
     // Copy taken verbatim from the line's own reference banner.
     tagline: { en: `Intensive Repair for\nDry, Brittle, and Over-Processed Hair`, id: `Perbaikan Intensif untuk Rambut\nKering, Rapuh, dan Over-Processed` },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
-    accentHex: "#E0B058",
+    accentHex: "#64402D",
     // SubBrandHero always paints its wording white, so the banner takes the brand's
     // own honey-brown (sampled from the showcase title art, rgb(100,64,45)) instead
     // of the reference's light grey — gold wordmark and white copy both stay legible
     // on it. See the handover note about adding a `theme` switch to SubBrandHero.
-    bannerBg: "#64402D",
+    bannerBg: "#EFEFEF",
+    theme: "accent-light",
     heroWordmark: "/brand/honey-dew/shampoo/hero/wordmark.png",
     heroWordmarkAspect: "1789 / 284",
     heroLayers: [

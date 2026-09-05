@@ -5,7 +5,7 @@ const entry: SubBrand = {
     slug: "green-tea-butter",
     parent: "texture-experience",
     name: "Green Tea Butter",
-    tagline: { en: "Care with Green Tea Fragrance and\nL-Theanine Extract for Hair Loss", id: "Perawatan dengan Wangi Teh Hijau dan\nEkstrak L-Theanine untuk Rambut Rontok" },
+    tagline: { en: "Hair care enriched with Green Tea & L-Theanine Extract \nfor hair prone to hair fall", id: "Perawatan dengan Wangi Teh Hijau dan\nEkstrak L-Theanine untuk Rambut Rontok" },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // The reference paints EVERY sub-brand hero in the same light beige with dark
     // wording. SubBrandHero renders its wording in white only, so the banner takes that
@@ -13,7 +13,8 @@ const entry: SubBrand = {
     // still letting the taupe wordmark read against it (2.1:1) — a single neutral for
     // all five variants, exactly as the reference does. See the note to the brand owner.
     accentHex: "#423A31",
-    bannerBg: "#423A31",
+    bannerBg: "#eee8e0",
+    theme: "accent-light",
     heroWordmark: "/brand/texture-experience/green-tea-butter/hero/wordmark.png",
     heroWordmarkAspect: "502 / 214",
     // One composed cluster (creambath tube + Tea Blossom hair perfume) → a single

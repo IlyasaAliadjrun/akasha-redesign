@@ -7,10 +7,11 @@ const entry: SubBrand = {
     name: "Bleaching Powder",
     tagline: { en: `A fast, safe bleaching solution that makes\nhair better able to absorb new color pigments.`, id: `Solusi bleaching cepat dan aman yang membuat\nrambut lebih mudah menyerap pigment warna baru.` },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
-    accentHex: "#E34686",
+    accentHex: "#3E2120",
     // See color-tube: SubBrandHero's wording is always white, so the banner uses the
     // palette's deep brown (rgb(62,33,32)) rather than the reference's pale sage.
-    bannerBg: "#3E2120",
+    bannerBg: "#E6EAE4",
+    theme: "accent-light",
     heroWordmark: "/brand/concept-ultimax/bleaching-powder/hero/wordmark.png",
     heroWordmarkAspect: "2339 / 473",
     heroLayers: [

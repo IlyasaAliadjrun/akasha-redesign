@@ -5,7 +5,8 @@ const entry: SubBrand = {
     slug: "strawberry-yoghurt",
     parent: "texture-experience",
     name: "Strawberry Yoghurt",
-    tagline: { en: "Care with a Fresh and Sweet Fragrance\nfor Smooth & Shiny Hair", id: "Perawatan dengan Wangi Segar dan Manis\nuntuk Rambut Halus & Berkilau" },
+    tagline: { en: "Hair care infused with fresh, sweet fragrance of strawberries and yoghurt for soft, shiny hair", 
+      id: "Perawatan dengan Wangi Segar dan Manis\nuntuk Rambut Halus & Berkilau" },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // The reference paints EVERY sub-brand hero in the same light beige with dark
     // wording. SubBrandHero renders its wording in white only, so the banner takes that
@@ -13,7 +14,8 @@ const entry: SubBrand = {
     // still letting the taupe wordmark read against it (2.1:1) — a single neutral for
     // all five variants, exactly as the reference does. See the note to the brand owner.
     accentHex: "#423A31",
-    bannerBg: "#423A31",
+    bannerBg: "#eee8e0",
+    theme: "accent-light",
     heroWordmark: "/brand/texture-experience/strawberry-yoghurt/hero/wordmark.png",
     heroWordmarkAspect: "502 / 214",
     // The folder ships ONE composed cluster (creambath tube + Berry Smoothie hair
@@ -32,6 +34,7 @@ const entry: SubBrand = {
     // The creambath line-up ships as a landscape card, so it takes the full-width slot.
     featured: { image: "/brand/texture-experience/strawberry-yoghurt/showcase/3.png", label: { en: "Creambath Strawberry Yoghurt — sachet, tube & jar", id: "Creambath Strawberry Yoghurt — sachet, tube & jar" } },
     featuredAspect: "4695 / 2222",
+    featuredPosition: "middle",
     cardAspect: "2302 / 2986",
     cards: [
       { image: "/brand/texture-experience/strawberry-yoghurt/showcase/1.png", label: { en: "Shampoo Strawberry Yoghurt", id: "Shampoo Strawberry Yoghurt" } },

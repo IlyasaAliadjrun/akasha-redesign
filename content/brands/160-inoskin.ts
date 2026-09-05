@@ -9,7 +9,7 @@ const entry: Brand = {
     // BrandIntro appends its own period, so none here; no ". " inside so it stays
     // one headline block.
     description:
-      { en: "Inoskin combines clinically proven effectiveness with daily skincare to reveal naturally healthy, radiant skin", id: "Inoskin menggabungkan efektivitas yang terbukti secara klinis dengan perawatan kulit harian untuk menghadirkan kulit yang sehat dan bercahaya secara alami" },
+      { en: "Inoskin combines clinically proven efficacy with everyday skincare to reveal naturally healthy, radiant skin", id: "Inoskin menggabungkan efektivitas yang terbukti secara klinis dengan perawatan kulit harian untuk menghadirkan kulit yang sehat dan bercahaya secara alami" },
     accentClass: "bg-brand-inoskin",
     // The INOSKIN wordmark gold, sampled from hero/wordmark.png — also the colour of
     // every heading baked into the showcase art.
@@ -40,7 +40,7 @@ const entry: Brand = {
       // on screens wider than ~2300px.
       logoWidth: "min(20vw, 760px)",
       maxWidth: "40vw",
-      tagline: { en: "Skincare with 3rd GEN BIOCOMPATIBLE COLLAGEN", id: "Perawatan Kulit dengan 3rd GEN BIOKOMPATIBEL COLLAGEN" },
+      tagline: { en: "Skincare with 3rd Generation Biocompatible Collagen", id: "Perawatan Kulit dengan 3rd GEN BIOKOMPATIBEL COLLAGEN" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
@@ -67,7 +67,7 @@ const entry: Brand = {
     ],
     about: [
       { title: { en: "Korean Formula Technology", id: "Teknologi Formula Korea" }, image: "/brand/inoskin/about/1.png" },
-      { title: { en: "Skincare for a Younger-Looking Complexion", id: "Perawatan Kulit Tampak Lebih Muda" }, image: "/brand/inoskin/about/2.png" },
+      { title: { en: "Younger-Looking Complexion", id: "Perawatan Kulit Tampak Lebih Muda" }, image: "/brand/inoskin/about/2.png" },
       { title: { en: "Pure Collagen, Natural Radiance", id: "Kolagen Murni, Pancaran Alami" }, image: "/brand/inoskin/about/3.png" },
     ],
     // Showcase — the #GlassSkinEssentials poster, then the single YOUNG & BRIGHT
@@ -80,6 +80,7 @@ const entry: Brand = {
       heroAspect: "4830 / 4669",
       productAlign: "center",
       bannerAspect: "4811 / 2261",
+      heroOffsetY: "80px",
       variants: [
         { bg: "/brand/inoskin/showcase/1-4.png", bgAspect: "4811 / 2261", product: "/brand/inoskin/showcase/1-cluster.png", productAspect: "4811 / 2261", productHeight: "100%", href: "/brands/inoskin/young-and-bright" },
       ],

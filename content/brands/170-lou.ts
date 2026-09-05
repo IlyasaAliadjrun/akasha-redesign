@@ -9,7 +9,7 @@ const entry: Brand = {
     // Becomes the BrandIntro headline (the component appends its own period, and a
     // ". " inside would split it into a second, lighter line — so keep one sentence).
     description:
-      { en: "Trusted 0+ care to accompany your little one's First Steps of Care", id: "Perawatan 0+ terpercaya untuk menemani Langkah Awal Perawatan si Kecil" },
+      { en: "Trusted 0+ Baby Care for Every Little One’s First Skin Journey", id: "Perawatan 0+ terpercaya untuk menemani Langkah Awal Perawatan si Kecil" },
     accentClass: "bg-brand-lou",
     // LOU aqua — the wordmark's planet + the showcase headline are #93D2DA; this is a
     // half-step deeper so white text on the BrandCTA band still separates from it.
@@ -49,7 +49,8 @@ const entry: Brand = {
       // Caps the block so the tagline breaks after "Awal", matching the reference's
       // two-line heading instead of running under the product cluster.
       maxWidth: "24.4vw",
-      tagline: { en: "Accompanying Your Little One's First Steps of Care", id: "Menemani Langkah Awal Perawatan Buah Hati" },
+      taglineColor: "#8179D8",
+      tagline: { en: "For Every Little One’s First Skin Journey", id: "Menemani Langkah Awal Perawatan Buah Hati" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "8%",
@@ -68,9 +69,9 @@ const entry: Brand = {
       { name: "Don't Cry", variant: { en: "Moisturizing Hair and Body Wash", id: "Sabun Rambut dan Tubuh Pelembap" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/lou/product-lineup/dont-cry-moisturizing-hair-and-body-wash-250ml.png" },
     ],
     about: [
-      { title: { en: "Microbiome Balance Technology", id: "Teknologi Keseimbangan Mikrobioma" }, image: "/brand/lou/about/1.png" },
-      { title: { en: "Gentle Formulation", id: "Formula Lembut" }, image: "/brand/lou/about/2.png" },
-      { title: { en: "Safe for Babies 0+", id: "Aman untuk Bayi 0+" }, image: "/brand/lou/about/3.png" },
+      { title: { en: "Microbiome balance Technology", id: "Microbiome balance Technology" }, image: "/brand/lou/about/1.png" },
+      { title: { en: "Gentle Formulation", id: "Gentle Formulation" }, image: "/brand/lou/about/2.png" },
+      { title: { en: "Safe for Newborns", id: "Aman untuk Bayi 0+" }, image: "/brand/lou/about/3.png" },
     ],
     // Showcase — title poster then the three product banners. Each bg ({n}-2) is a
     // designed card with its wording and rounded corners baked in, so `bannerAspect`
@@ -81,6 +82,7 @@ const entry: Brand = {
       heroAspect: "2160 / 1345",
       productAlign: "center",
       bannerAspect: "2160 / 1015",
+      heroOffsetY: "-40px",
       variants: [
         // REST EASY — the tube's opaque box sits high-left inside its canvas (22%/12%
         // side margins, 4%/22% top/bottom), so shiftX/shiftY re-centre it on the banner.

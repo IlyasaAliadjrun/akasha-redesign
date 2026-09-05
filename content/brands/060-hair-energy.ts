@@ -8,8 +8,8 @@ const entry: Brand = {
     parent: "makarizo",
     tagline: { en: "Salon-quality care, at home.", id: "Perawatan kualitas salon, di rumah." },
     description: {
-      en: "Complete hair care from Makarizo Hair Energy — for hair loss, dryness, and oiliness.",
-      id: "Perawatan rambut lengkap dari Makarizo Hair Energy — untuk rambut rontok, kering, hingga berminyak.",
+      en: "Stay active, stay confident, with soft, fresh-smelling hair every day only with Makarizo Hair Energy!",
+      id: "Makin aktif, makin pede, dengan rambut lembut & wangi setiap hari bersama Makarizo Hair Energy!",
     },
     accentClass: "bg-brand-he",
     // Hair Energy's visual identity is orange (matches its banner / bannerBg),
@@ -39,7 +39,7 @@ const entry: Brand = {
       logoAspect: "1576 / 1086",
       logoWidth: "16.5vw",
       maxWidth: "24.5vw",
-      tagline: { en: "Soft, Fragrant Hair Every Day.", id: "Rambut Lembut & Wangi Setiap Hari." },
+      tagline: { en: "Smooth Hair . Fresh Scent. Every Day", id: "Rambut Lembut . Wangi Segar . Setiap Hari" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "10%",
@@ -82,7 +82,7 @@ const entry: Brand = {
     ],
     about: [
       { title: { en: "Hair Care with Keratin", id: "Perawatan Rambut dengan Keratin" }, image: "/brand/hair-energy/about/1.png" },
-      { title: { en: "pH Balanced Formula", id: "Formula pH Balance" }, image: "/brand/hair-energy/about/2.png" },
+      { title: { en: "Long Lasting Fragrance", id: "Keharuman Tahan Lama" }, image: "/brand/hair-energy/about/2.png" },
       { title: { en: "Natural Extract", id: "Ekstrak Alami" }, image: "/brand/hair-energy/about/3.png" },
     ],
     showcase: {
@@ -92,8 +92,8 @@ const entry: Brand = {
       variants: [
         { bg: "/brand/hair-energy/showcase/1-2.png", product: "/brand/hair-energy/showcase/1-1.png", href: "/brands/hair-energy/shampoo" },
         { bg: "/brand/hair-energy/showcase/2-2.png", product: "/brand/hair-energy/showcase/2-1.png", href: "/brands/hair-energy/creambath" },
-        { bg: "/brand/hair-energy/showcase/3-2.png", product: "/brand/hair-energy/showcase/3-1.png", href: "/brands/hair-energy/scentsations" },
         { bg: "/brand/hair-energy/showcase/4-2.png", product: "/brand/hair-energy/showcase/4-1.png", productAspect: "1470 / 2073", productHeight: "75%", href: "/brands/hair-energy/vitaglitz" },
+        { bg: "/brand/hair-energy/showcase/3-2.png", product: "/brand/hair-energy/showcase/3-1.png", href: "/brands/hair-energy/scentsations" },
       ],
     },
     features: [

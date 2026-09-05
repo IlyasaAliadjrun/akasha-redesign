@@ -6,7 +6,12 @@ const entry: Brand = {
     name: "Salon Daily",
     division: "beauty",
     parent: "makarizo-professional",
+    ctaHeadline: {
+      en: "Your Hair Care Routine With Salon-Quality Formula.",
+      id: "Rutinitas perawatan rambutmu dengan formula kualitas salon."
+    },
     tagline: { en: "Your hair care routine with a salon-quality formula.", id: "Rutinitas perawatan rambutmu dengan formula kualitas salon." },
+    hideCtaTagline: true,
     description: {
       en: "Professional salon-quality hair care every day at home. Keeps hair healthy and easy to style all day long.",
       id: "Perawatan rambut berkualitas salon profesional setiap hari di rumah. Membuat rambut sehat dan mudah ditata sepanjang hari.",

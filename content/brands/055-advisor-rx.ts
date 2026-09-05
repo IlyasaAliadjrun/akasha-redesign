@@ -7,12 +7,12 @@ const entry: Brand = {
     name: "Advisor RX",
     division: "beauty",
     parent: "makarizo",
-    tagline: { en: "A new era of clinical hair solutions, dermatologically tested.", id: "Era baru solusi rambut klinis, teruji secara dermatologi." },
+    tagline: { en: "Advisor RX offers clinically inspired hair care solutions. Every formula is dermatologist-tested and formulated with potent dosage.", id: " Advisor RX menghadirkan solusi berstandar klinis untuk rambut. Setiap formula telah teruji secara dermatologis dengan dosis berkhasiat." },
     // BrandIntro renders the first sentence as the big headline and the rest as a
     // lighter sub-line, so the split at ". " is deliberate.
     description: {
-      en: "Advisor RX brings clinical-grade hair care. Regenaxil™ for hair loss, Melanolix™ for gray hair.",
-      id: "Advisor RX menghadirkan perawatan rambut berstandar klinis. Regenaxil™ untuk rambut rontok, Melanolix™ untuk uban.",
+      en: "Advisor RX offers clinically inspired hair care solutions. Every formula is dermatologist-tested and formulated with potent dosage.",
+      id: "Advisor RX menghadirkan solusi berstandar klinis untuk rambut. Setiap formula telah teruji secara dermatologis dengan dosis berkhasiat.",
     },
     accentClass: "bg-brand-advisor-rx",
     // Advisor orange — sampled from the wordmark's check mark and the showcase title
@@ -53,8 +53,8 @@ const entry: Brand = {
       logoAspect: "1887 / 486",
       logoWidth: "24vw",
       maxWidth: "34vw",
-      tagline: { en: "A New Era of Clinical Hair Solutions.", id: "Era Baru Solusi Rambut Klinis." },
-      subtitle: { en: "#ScalpAndHairExpert — dermatologically tested.", id: "#ScalpAndHairExpert — teruji secara dermatologi." },
+      tagline: { en: "Advisor RX offers clinically inspired hair care solutions. Every formula is dermatologist-tested and formulated with potent dosage.", id: "Advisor RX menghadirkan solusi berstandar klinis untuk rambut. Setiap formula telah teruji secara dermatologis dengan dosis berkhasiat." },
+      // subtitle: { en: "#ScalpAndHairExpert — dermatologically tested.", id: "#ScalpAndHairExpert — teruji secara dermatologi." },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
@@ -82,9 +82,9 @@ const entry: Brand = {
       { name: "Grey Hair 3 Steps Regimen", variant: { en: "Complete Package", id: "Paket Lengkap" }, image: "/brand/advisor-rx/product-lineup/advisor-15.png" },
     ],
     about: [
-      { title: { en: "Dermatologically Tested", id: "Teruji Secara Dermatologi" }, image: "/brand/advisor-rx/about/1.png" },
-      { title: { en: "Clinically Dosed Active Ingredients", id: "Bahan Aktif Berdosis Klinis" }, image: "/brand/advisor-rx/about/2.png" },
-      { title: { en: "Strong Hair, Natural Color Preserved", id: "Rambut Kuat & Warna Alaminya Terjaga" }, image: "/brand/advisor-rx/about/3.png" },
+      { title: { en: "Dermatologically Tested", id: "Teruji Secara Dermatologis" }, image: "/brand/advisor-rx/about/1.png" },
+      { title: { en: "Formulated with Selected Ingredients", id: "Formula dengan Bahan Pilihan" }, image: "/brand/advisor-rx/about/2.png" },
+      { title: { en: "Clinical Hair Solutions", id: "Solusi Rambut Klinis" }, image: "/brand/advisor-rx/about/3.png" },
     ],
     // Poster-style showcase (same engine as Hair Energy): the title graphic, then one
     // banner per line — each linking through to its sub-brand page.
@@ -106,10 +106,10 @@ const entry: Brand = {
         // composition scales identically on mobile; no per-viewport override needed.
         // STRONG HAIR — 4-step regimen (cluster 5423×3139 → 2.127 / 1.728 ≈ 123 %)
         { bg: "/brand/advisor-rx/showcase/1-2.png", product: "/brand/advisor-rx/showcase/1-1.png", bgAspect: "4810 / 2261", 
-          productAspect: "5423 / 3139", productHeight: "123%", productShiftY: "10%", href: "/brands/advisor-rx/strong-hair" },
+          productAspect: "5423 / 3139", productHeight: "123%", productShiftY: "4%", productShiftX: "-10%", href: "/brands/advisor-rx/strong-hair" },
         // GREY HAIR — 3-step regimen (cluster 5592×2330 → 2.128 / 2.400 ≈ 89 %)
         { bg: "/brand/advisor-rx/showcase/2-2.png", product: "/brand/advisor-rx/showcase/2-1.png", bgAspect: "4810 / 2260", 
-          productAspect: "5592 / 2330", productHeight: "89%", productShiftY: "2%", href: "/brands/advisor-rx/grey-hair" },
+          productAspect: "5592 / 2330", productHeight: "89%", productShiftY: "-5%", href: "/brands/advisor-rx/grey-hair" },
       ],
     },
   };

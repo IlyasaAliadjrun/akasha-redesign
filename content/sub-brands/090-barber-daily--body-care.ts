@@ -5,7 +5,7 @@ const entry: SubBrand = {
     slug: "body-care",
     parent: "barber-daily",
     name: "Body Care",
-    tagline: { en: "Eliminates sweat & body odor.", id: "Hilangkan keringat & bau badan." },
+    tagline: { en: "Effectively eliminates sweat and \nbody odor.", id: "Hilangkan keringat & bau badan." },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#6B3F1D",
     bannerBg: "#6B3F1D",
@@ -25,6 +25,8 @@ const entry: SubBrand = {
     // `showcase/` sub-folder — paths follow the files as delivered.
     showcaseTitle: "/brand/barber-daily/body-care/title.png",
     showcaseTitleAspect: "5028 / 2908",
+    showcaseTitleOffsetY: "40px",
+    showcaseTitleOffsetX: "-60px",
     cardAspect: "2302 / 2987",
     cards: [
       { image: "/brand/barber-daily/body-care/1.png", label: { en: "Antiperspirant", id: "Antiperspirant" } },

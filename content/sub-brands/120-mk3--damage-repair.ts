@@ -10,7 +10,7 @@ const entry: SubBrand = {
     accentHex: "#3E2120",
     // Light MK3 banner: dark hero copy, controls, and navbar keep sufficient contrast.
     theme: "dark",
-    bannerBg: "#E7E3E0",
+    bannerBg: "#e5e0df",
     heroWordmark: "/brand/mk3/damage-repair/hero/wordmark.png",
     heroWordmarkAspect: "1519 / 631",
     // The folder ships ONE composed cluster (shampoo + conditioner + hair mask +
@@ -26,9 +26,11 @@ const entry: SubBrand = {
     ],
     showcaseTitle: "/brand/mk3/damage-repair/showcase/title.png",
     showcaseTitleAspect: "4153 / 3401",
+    showcaseTitleOffsetY: "70px",
     // The leave-in mask ships as a landscape card, so it takes the full-width slot.
     featured: { image: "/brand/mk3/damage-repair/showcase/5.png", label: { en: "Leave-In Hair Mask — a no-rinse hair mask", id: "Leave-In Hair Mask — masker rambut tanpa bilas" } },
     featuredAspect: "4811 / 2261",
+    featuredPosition: "bottom",
     cardAspect: "1151 / 1493",
     cards: [
       { image: "/brand/mk3/damage-repair/showcase/1.png", label: { en: "Shampoo Damage Repair", id: "Shampoo Damage Repair" } },

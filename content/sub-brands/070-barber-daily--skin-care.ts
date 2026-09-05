@@ -5,7 +5,7 @@ const entry: SubBrand = {
     slug: "skin-care",
     parent: "barber-daily",
     name: "Skincare",
-    tagline: { en: "Helps care for your facial skin every day.", id: "Bantu merawat kulit wajah setiap hari." },
+    tagline: { en: "Provides daily nourishment and \ncare for healthier complexion.", id: "Bantu merawat kulit wajah \nsetiap hari." },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#6B3F1D",
     bannerBg: "#6B3F1D",
@@ -31,6 +31,8 @@ const entry: SubBrand = {
     ],
     showcaseTitle: "/brand/barber-daily/skin-care/showcase/title.png",
     showcaseTitleAspect: "5711 / 4937",
+    showcaseTitleOffsetY: "100px",
+    showcaseTitleOffsetX: "-130px",
     cardAspect: "2302 / 2987",
     cards: [
       { image: "/brand/barber-daily/skin-care/showcase/1.png", label: { en: "Face Wash", id: "Sabun Cuci Muka" } },

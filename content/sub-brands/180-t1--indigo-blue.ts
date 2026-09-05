@@ -5,10 +5,11 @@ const entry: SubBrand = {
     slug: "indigo-blue",
     parent: "t1",
     name: "Indigo Blue",
-    tagline: { en: "Evens out skin tone.", id: "Meratakan warna kulit." },
+    tagline: { en: "Color correcting skin tone.", id: "Meratakan warna kulit." },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
-    accentHex: "#6786B8", // Indigo Blue, sampled from the line's banner art
-    bannerBg: "#6786B8",
+    accentHex: "#5C3427", // Indigo Blue, sampled from the line's banner art
+    bannerBg: "#B0B783",
+    theme: "accent-light",
     heroWordmark: "/brand/t1/indigo-blue/hero/wordmark.png",
     heroWordmarkAspect: "1424 / 556",
     // One composed cluster (body wash + body mask + body lotion). It is the widest of
@@ -21,6 +22,7 @@ const entry: SubBrand = {
     ],
     showcaseTitle: "/brand/t1/indigo-blue/showcase/title.png",
     showcaseTitleAspect: "4698 / 4224",
+    showcaseTitleOffsetY: "95px",
     cardAspect: "2302 / 2987",
     cards: [
       { image: "/brand/t1/indigo-blue/showcase/1.png", label: { en: "Indigo Blue Bright Body Wash", id: "Indigo Blue Bright Body Wash" } },

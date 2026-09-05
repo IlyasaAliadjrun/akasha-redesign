@@ -5,10 +5,11 @@ const entry: SubBrand = {
     slug: "equalizer",
     parent: "t1",
     name: "Equalizer",
-    tagline: { en: "Soothes sensitive scalp\nand dry hair.", id: "Menenangkan kulit kepala sensitif\ndan rambut kering." },
+    tagline: { en: "Soothes sensitive scalp\nand dry hair.", id: "Merawat kulit kepala sensitif \ndan rambut kering rontok." },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
-    accentHex: "#B15F45", // Equalizer terracotta, sampled from the line's banner art
-    bannerBg: "#B15F45",
+    accentHex: "#5C3427", // Equalizer terracotta, sampled from the line's banner art
+    bannerBg: "#B0B783",
+    theme: "accent-light",
     heroWordmark: "/brand/t1/equalizer/hero/wordmark.png",
     heroWordmarkAspect: "1424 / 556",
     // One composed cluster (shampoo + conditioner). The bottles fill 54% × 71% of the
@@ -20,6 +21,7 @@ const entry: SubBrand = {
     ],
     showcaseTitle: "/brand/t1/equalizer/showcase/title.png",
     showcaseTitleAspect: "4343 / 4027",
+    showcaseTitleOffsetY: "123px",
     // Both card PNGs carry ~12% transparent padding above the card artwork, so the slot
     // ratio is the CANVAS ratio (not the 2302×2987 card itself) — that keeps the two
     // cards the same size and aligned instead of letterboxing them.

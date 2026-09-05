@@ -11,7 +11,7 @@ const entry: Brand = {
     // BrandIntro splits on ". ": sentence 1 becomes the bold headline, the rest the
     // lighter continuation. Copy taken from the reference's "About Finest" block.
     description:
-      { en: "Extra Gentle Protection, free from fluoride and SLS. Safe for all ages, including pregnant women. Enriched with Nano Hydroxyapatite and certified by BPOM and Halal, working at its best to strengthen sensitive teeth without irritation.", id: "Perlindungan Ekstra Lembut, bebas fluoride dan SLS. Aman digunakan oleh semua usia, termasuk ibu hamil. Diperkaya Nano Hydroxyapatite serta bersertifikasi BPOM dan Halal, bekerja maksimal memperkuat gigi sensitif tanpa iritasi." },
+      { en: "Extra gentle protection, zero fluoride and SLS. Safe for all ages and expecting mothers. Powered by Nano Hydroxyapatite with official BPOM & Halal certifications, it maximizes sensitive teeth strengthening without irritation.", id: "Perlindungan Ekstra Lembut, bebas fluoride dan SLS. Aman digunakan oleh semua usia, termasuk ibu hamil. Diperkaya Nano Hydroxyapatite serta bersertifikasi BPOM dan Halal, bekerja maksimal memperkuat gigi sensitif tanpa iritasi." },
     accentClass: "bg-brand-finest",
     accentHex: "#F5595C", // Finest coral — sampled from the wordmark / showcase art
     // No standalone 3:4 brand-card art in the folder; the About tooth visual is
@@ -51,7 +51,7 @@ const entry: Brand = {
       delay: 0.55,
       mobile: { logoWidth: "48vw" },
     },
-    bannerBg: "#FCF6F5", // blush off-white, matching the reference hero
+    bannerBg: "#ffffff", // blush off-white, matching the reference hero
     hero: false,
     products: [
       { name: "Toothpaste", variant: { en: "Soft Mint", id: "Soft Mint" }, size: { en: "90 g", id: "90 g" }, image: "/brand/finest/product-lineup/toothpaste-soft-mint-90g.png" },
@@ -81,6 +81,7 @@ const entry: Brand = {
       productAlign: "center",
       parallax: false,
       bannerAspect: "4810 / 2261",
+      heroOffsetY: "-30px",
       variants: [
         { bg: "/brand/finest/showcase/1-2.png", product: "/brand/finest/showcase/1-1.png",
           bgAspect: "4810 / 2261", productAspect: "3660 / 3648", productHeight: "155%",

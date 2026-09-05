@@ -9,11 +9,12 @@ const entry: Brand = {
     // Shown under the CTA headline ("Rasakan Rebonding System sekarang.") — the
     // reference's closing line.
     tagline:
-      { en: "Achieve your dream straight hair with maximum protection and moisture.", id: "Wujudkan rambut lurus impian dengan perlindungan dan kelembapan maksimal." },
+{ en: "Achieve your dream straight hair with maximum protection and moisture.", id: "Wujudkan rambut lurus impian dengan perlindungan dan kelembapan maksimal." },
     // BrandIntro headline. One block (no ". " inside) so it renders as a single
     // extrabold paragraph, matching the reference.
     description:
-      { en: "A combination of Hydrolyzed Collagen and Hydrolyzed Milk Protein helps straighten, strengthen, and maintain hair moisture so it stays healthy and smooth", id: "Kombinasi Hydrolyzed Collagen dan Hydrolyzed Milk Protein membantu meluruskan, menguatkan, dan menjaga kelembapan rambut agar tetap sehat dan halus" },
+      { en: "A nourishing blend of Hydrolyzed Collagen and Hydrolyzed Milk Protein to helps smooth, strengthen, and deeply hydrate hair, leaving it healthy, silky, and beautifully sleek", 
+        id: "Kombinasi Hydrolyzed Collagen dan Hydrolyzed Milk Protein membantu meluruskan, menguatkan, dan menjaga kelembapan rambut agar tetap sehat dan halus" },
     accentClass: "bg-brand-rebonding",
     // Rebonding System slate — sampled from the wordmark art (rgb 84,86,90). Drives
     // the About eyebrow, the lineup wash + Learn more/Buy buttons and the CTA block.
@@ -50,7 +51,7 @@ const entry: Brand = {
       logoWidth: "30vw",
       maxWidth: "32vw",
       // Reference wording — set uppercase, as drawn.
-      tagline: { en: "PIONEER OF HAIR STRAIGHTENING IN INDONESIA", id: "PIONIR PELURUSAN RAMBUT DI INDONESIA" },
+      tagline: { en: "Indonesia’s Original Professional Salon Hair Straightening Expert", id: "Pionir Pelurusan Rambut Profesional Salon Di Indonesia" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "8%",

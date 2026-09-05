@@ -5,12 +5,17 @@ const entry: Brand = {
     slug: "make-it",
     name: "Make It",
     division: "beauty",
-    tagline: { en: "Lets Make It Happen.", id: "Ayo, Make It Terjadi." },
+    ctaHeadline: {
+      en: "Lets Make It Happen.",
+      id: "Untuk yang Berani Make It Happen.",
+    },
+    tagline: { en: "For Proactive Individuals Who Dare To Make It Happen.", id: "Untuk yang Berani Make It Happen." },
+    hideCtaTagline: true,
     // BrandIntro renders the first sentence bold and anything after ". " in a light
     // grey block. The reference shows one uninterrupted bold statement, so the two
     // clauses are joined with an em dash (the component appends the full stop).
     description:
-      { en: "Make It is here for those who dare to break boundaries and stand out — bold enough to make Make It real", id: "Make It hadir untuk kamu yang berani mendobrak batas dan tampil beda — berani jadikan Make It nyata" },
+      { en: "Make It is designed for those who dare to push boundaries and stand out. Dare to Make It Happen!", id: "Make It hadir untuk kamu yang berani mendobrak batas dan tampil beda. Beranikan jadikan Make It nyata!" },
     accentClass: "bg-brand-makeit",
     // Make It's identity is the deep maroon of its banners (sampled from
     // showcase/1-2.png). Drives the intro eyebrow, lineup buttons and the closing CTA.
@@ -46,7 +51,7 @@ const entry: Brand = {
       logoAspect: "1499 / 446",
       logoWidth: "25vw",
       maxWidth: "28vw",
-      tagline: { en: "For Those Who Are Proactive and Bold, Together With Make It", id: "Untuk Mereka yang Proaktif dan Berani Bertindak Bersama Make It" },
+      tagline: { en: "For Proactive Individuals Who Dare To Make It Happen", id: "Untuk yang Berani Make It Happen" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
@@ -79,6 +84,7 @@ const entry: Brand = {
     showcase: {
       hero: "/brand/makeit/showcase/title.png",
       heroAspect: "4325 / 4280",
+      heroOffsetY: "180px",
       productAlign: "center",
       bannerAspect: "4810 / 2261",
       parallax: false,

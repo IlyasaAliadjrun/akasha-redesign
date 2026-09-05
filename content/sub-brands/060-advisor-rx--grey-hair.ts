@@ -4,13 +4,14 @@ import type { SubBrand } from "@/lib/subBrands";
 const entry: SubBrand = {
     slug: "grey-hair",
     parent: "advisor-rx",
-    name: "Grey Hair Expert Care",
+    name: "Grey Hair",
     // Copy taken verbatim from the line's own showcase banner art.
-    tagline: { en: "Helps reduce grey hair,\nand restores natural hair color.", id: "Membantu mengurangi rambut uban,\ndan menghitamkan rambut." },
+    tagline: { en: "Helps reduce gray hair, repigments \nhair & restores natural hair color", id: "Membantu mengurangi rambut uban,\ndan menghitamkan rambut." },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // Grey Hair rose — sampled from the line's banner and card art (rgb(247,162,154)).
     accentHex: "#F7A29A",
-    bannerBg: "#F7A29A",
+    bannerBg: "#F4F4F4",
+    theme: "accent-light",
     // No wordmark was delivered inside grey-hair/hero/, so the hero carries the
     // parent brand's own Advisor RX lockup (still inside this brand's asset folder).
     heroWordmark: "/brand/advisor-rx/hero/wordmark.png",
@@ -34,6 +35,7 @@ const entry: SubBrand = {
     ],
     showcaseTitle: "/brand/advisor-rx/grey-hair/showcase/title.png",
     showcaseTitleAspect: "4713 / 3163",
+    showcaseTitleOffsetY: "-40px",
     // No wide featured card in this delivery — the three cards run in the 2-column
     // grid. Card art ratios vary by <1.5 %, so one box ratio holds them all.
     cardAspect: "2303 / 3026",

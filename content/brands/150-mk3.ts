@@ -7,15 +7,18 @@ const entry: Brand = {
     division: "beauty",
     parent: "makarizo-professional",
     // Shown under the CTA headline ("Rasakan MK3 sekarang.").
+    ctaHeadline: { en: "Indulge in Elevated Hair Care with MK3", id: "Tingkatkan Ritual Perawatan Rambut Anda Bersama MK3" },
+    ctaHeadlineColor: "#3E2120",
     tagline: { en: "Professional salon performance.", id: "Performa salon profesional." },
+    hideCtaTagline: true,
     // BrandIntro headline. One block (no ". " inside) so it renders as a single
     // extrabold paragraph, matching the reference.
     description:
-      { en: "Intensive hair care for every hair need, formulated with quality ingredients and the latest technology", id: "Perawatan rambut intensif untuk setiap kebutuhan rambut, diformulasikan dengan bahan berkualitas dan teknologi terkini" },
+      { en: "MK3 offers intensive hair care solutions formulated with premium ingredients and advanced technology for your hair", id: "Perawatan rambut intensif untuk setiap kebutuhan rambut, diformulasikan dengan bahan berkualitas dan teknologi terkini" },
     accentClass: "bg-brand-mk3",
     // MK3 brown — sampled from the wordmark art (#3E2120). Drives the About eyebrow,
     // the lineup wash + Learn more/Buy buttons and the CTA block.
-    accentHex: "#3E2120",
+    accentHex: "#E5E0DF",
     // No standalone 3:4 brand card art — CrossSell reads this; the hero renders from
     // `heroLayers`. The About molecule photo is abstract enough to crop to 3:4.
     heroImage: "/brand/mk3/about/2.png",
@@ -45,7 +48,7 @@ const entry: Brand = {
       logoWidth: "21vw",
       maxWidth: "32vw",
       // Reference wording — two lines, no full stop.
-      tagline: { en: "The Luxury of Professional Hair Care from Indonesia", id: "Kemewahan Perawatan Rambut Profesional dari Indonesia" },
+      tagline: { en: "Indonesia Ultimate Luxury Professional Hair Care", id: "Kemewahan Perawatan Rambut Profesional dari Indonesia" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "7%",
@@ -76,7 +79,7 @@ const entry: Brand = {
       { name: "Scalp Serum", variant: { en: "Dandruff Treatment", id: "Dandruff Treatment" }, size: { en: "20 mL", id: "20 mL" }, image: "/brand/mk3/product-lineup/MK3 3D SCALP SERUM BIRU 1.png", imageScale: 1.04 },
     ],
     about: [
-      { title: { en: "Pure Formula", id: "Formula Murni" }, image: "/brand/mk3/about/1.png" },
+      { title: { en: "Clean Formulation", id: "Formula Murni" }, image: "/brand/mk3/about/1.png" },
       { title: { en: "Vegan-Based Keratin Technology", id: "Teknologi Keratin Berbasis Vegan" }, image: "/brand/mk3/about/2.png" },
     ],
     // Showcase — the "Perawatan Mewah untuk Rambutmu" poster, then the three range

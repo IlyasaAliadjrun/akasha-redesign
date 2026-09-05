@@ -25,6 +25,7 @@ const entry: SubBrand = {
     showcaseTitleAspect: "4870 / 3607",
     featured: { image: "/brand/salon-daily/treatment/showcase/5.png", label: { en: "Salon Daily Professional Hair Tonic — treats hair loss & promotes baby hair growth", id: "Salon Daily Professional Hair Tonic — mengatasi rontok & menumbuhkan baby hair" } },
     featuredAspect: "4658 / 2401",
+    featuredPosition: "bottom",
     cardAspect: "2302 / 2986",
     cards: [
       { image: "/brand/salon-daily/treatment/showcase/1.png", label: { en: "Salon Daily Professional Shampoo — cleanses hair & scalp", id: "Salon Daily Profesional Shampoo — membersihkan rambut & kulit kepala" } },

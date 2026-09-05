@@ -5,7 +5,7 @@ const entry: SubBrand = {
     slug: "tools",
     parent: "barber-daily",
     name: "Tools",
-    tagline: { en: `Enjoy a shaving experience that's\nSmoother, Faster, and More Effective.`, id: `Nikmati pengalaman mencukur yang\nLebih Halus, Cepat, dan Maksimal.` },
+    tagline: { en: `Enjoy a smoother, faster, and \nultimate shaving experience.`, id: `Nikmati pengalaman mencukur yang\nLebih Halus, Cepat, dan Maksimal.` },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#6B3F1D",
     bannerBg: "#6B3F1D",

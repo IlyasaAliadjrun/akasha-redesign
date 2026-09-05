@@ -8,16 +8,20 @@ const entry: Brand = {
     // HydroPrisma is the Makarizo Professional rebonding technology line — same
     // family as Rebonding System / Concept Ultimax, so it hangs off the same umbrella.
     parent: "makarizo-professional",
+    ctaHeadline: { en: "Start Creating Your Look with Hydroprisma", id: "Kreasikan Rambut Anda dengan Hydroprisma" },
+    ctaHeadlineColor: "#5F2168",
     tagline: { en: "Unlimited creations, unstoppable shine.", id: "Kreasi tak terbatas, kilau kuat tanpa batas." },
+    hideCtaTagline: true,
     // Single sentence on purpose: BrandIntro renders the first sentence as the big
     // statement and everything after ". " as the light grey second line. The
     // reference carries only this one statement.
     description:
-      { en: "Specially formulated to deliver healthy, smooth hair straightening and texturizing, free from strong odor", id: "Diformulasikan khusus untuk menghasilkan pelurusan dan pembentukan tekstur rambut yang sehat, lembut, serta bebas aroma menyengat" },
+      { en: "Specially formulated to achieve healthy, soft hair straightening and texturizing, free from strong odors", 
+        id: "Teknologi permanent styling generasi terbaru. Rambut tampak lebih sehat, kuat, lembut dan berkilau" },
     accentClass: "bg-brand-hydroprisma",
     // HydroPrisma purple — sampled from the wordmark art and the showcase headings
     // (rgb(95,33,104) on hero/wordmark.png, rgb(98,31,102) on the MILD banner).
-    accentHex: "#5F2168",
+    accentHex: "#eae7ee",
     // No dedicated 3:4 brand-card art was delivered, so CrossSell reuses the hero's
     // Step 2 bottle: a tall portrait cut-out that survives the card's 3:4 cover crop
     // intact (visible art sits at 32–69 % of the square canvas).

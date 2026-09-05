@@ -12,7 +12,8 @@ const entry: SubBrand = {
     // must be a deep tone. This is the brand taupe darkened to the point where BOTH
     // halves of the wordmark still read — the near-black "MAKARIZO" and the taupe
     // "asters" — since the line has no light wordmark variant of its own.
-    bannerBg: "#6E4E40",
+    bannerBg: "#F1EEEA",
+    theme: "accent-light",
     // No wordmark art of its own — the line shares the Makarizo Asters wordmark
     // that its own showcase title graphic also carries.
     heroWordmark: "/brand/asters/hero/wordmark.png",

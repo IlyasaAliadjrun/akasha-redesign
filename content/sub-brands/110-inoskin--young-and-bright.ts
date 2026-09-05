@@ -5,7 +5,7 @@ const entry: SubBrand = {
     slug: "young-and-bright",
     parent: "inoskin",
     name: "Young & Bright",
-    tagline: { en: `Bright, glowing skin\nthat visibly reduces fine lines.`, id: `Kulit cerah glowing\nmenyamarkan garis halus.` },
+    tagline: { en: `Brighter, Glowing Skin & Reduced Fine Lines.`, id: `Kulit cerah glowing, menyamarkan garis halus.` },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#897321",
     // Banner is the brand's near-white (#F2F1EF, same as the brand hero) — "-light"

@@ -5,7 +5,7 @@ const entry: SubBrand = {
     slug: "mint-sorbet",
     parent: "texture-experience",
     name: "Mint Sorbet",
-    tagline: { en: "Care with a Refreshing Mint Sorbet\nSensation for Dandruff-Prone Scalp.", id: "Perawatan dengan Sensasi Mint Sorbet\nSegar untuk Kulit Kepala Berketombe." },
+    tagline: { en: "Hair care with the refreshing sensation \nof Mint Sorbet for dandruff-prone scalps.", id: "Perawatan dengan Sensasi Mint Sorbet\nSegar untuk Kulit Kepala Berketombe." },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // The reference paints EVERY sub-brand hero in the same light beige with dark
     // wording. SubBrandHero renders its wording in white only, so the banner takes that
@@ -13,7 +13,8 @@ const entry: SubBrand = {
     // still letting the taupe wordmark read against it (2.1:1) — a single neutral for
     // all five variants, exactly as the reference does. See the note to the brand owner.
     accentHex: "#423A31",
-    bannerBg: "#423A31",
+    bannerBg: "#eee8e0",
+    theme: "accent-light",
     heroWordmark: "/brand/texture-experience/mint-sorbet/hero/wordmark.png",
     heroWordmarkAspect: "502 / 214",
     // One composed cluster (Mint Mocktail hair perfume + creambath tube) → a single

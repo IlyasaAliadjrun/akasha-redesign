@@ -10,8 +10,9 @@ const entry: SubBrand = {
     // SubBrandHero renders its wording in white only, so the banner takes the DEEP
     // olive off the Micellar bottle label rather than the pale pistachio of the card
     // art (white on that pale green is unreadable). Same treatment as MK3 / Honey Dew.
-    accentHex: "#6A7848",
-    bannerBg: "#6A7848",
+    accentHex: "#5C3427",
+    bannerBg: "#B0B783",
+    theme: "accent-light",
     heroWordmark: "/brand/t1/micellar/hero/wordmark.png",
     heroWordmarkAspect: "1424 / 556",
     // The folder ships ONE composed cluster (shampoo + conditioner), so the hero is a
@@ -27,6 +28,7 @@ const entry: SubBrand = {
     showcaseTitle: "/brand/t1/micellar/showcase/title.png",
     showcaseTitleAspect: "3992 / 3243",
     cardAspect: "2302 / 2987",
+    showcaseTitleOffsetY: "32px",
     cards: [
       { image: "/brand/t1/micellar/showcase/1.png", label: { en: "Micellar Shampoo — for sensitive & oily scalp", id: "Micellar Shampoo — kulit kepala sensitif & berminyak" } },
       { image: "/brand/t1/micellar/showcase/2.png", label: { en: "Micellar Conditioner — for sensitive & oily hair", id: "Micellar Conditioner — rambut sensitif & berminyak" } },

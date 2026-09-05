@@ -23,6 +23,7 @@ const entry: SubBrand = {
     ],
     showcaseTitle: "/brand/mk3/color-revive/showcase/title.png",
     showcaseTitleAspect: "4249 / 3333",
+    showcaseTitleOffsetY: "70px",
     cardAspect: "1151 / 1493",
     // Grid order follows the reference, not the filenames: the Color Revive shampoo
     // (2.png) leads, the Purple Treatment shampoo (1.png) follows.

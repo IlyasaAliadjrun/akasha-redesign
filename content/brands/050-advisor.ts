@@ -8,7 +8,7 @@ const entry: Brand = {
     parent: "makarizo",
     tagline: { en: "Clinically Tested Solutions for All Scalp and Hair Problems", id: "Solusi Teruji Klinis untuk Semua Masalah Kulit Kepala dan Rambut" },
     description: {
-      en: "Advisor brings clinical-grade hair care solutions. Every formula is developed by pharmacists with effective, clinically dosed ingredients.",
+      en: "Advisor provides clinically inspired solutions for every scalp and hair concern. Every formula is developed by pharmacists with potent dosage.",
       id: "Advisor menghadirkan solusi berstandar klinis untuk rambut. Setiap formula dikembangkan oleh apoteker dengan dosis yang berkhasiat.",
     },
     accentClass: "bg-brand-advisor",
@@ -44,8 +44,8 @@ const entry: Brand = {
       logoAspect: "1825 / 623",
       logoWidth: "24vw",
       maxWidth: "34vw",
-      tagline: { en: "Hair Care Technology.", id: "Teknologi Perawatan Rambut." },
-      subtitle: { en: "#ScalpAndHairExpert — formulated by pharmacists.", id: "#ScalpAndHairExpert — diformulasikan oleh apoteker." },
+      tagline: { en: "Clinically Proven Solutions for All Scalp & Hair Problems.", id: "Solusi Teruji Klinis untuk Semua Masalah Kulit Kepala & Rambut" },
+      // subtitle: { en: "#ScalpAndHairExpert — formulated by pharmacists.", id: "#ScalpAndHairExpert — diformulasikan oleh apoteker." },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "9%",
@@ -99,7 +99,7 @@ const entry: Brand = {
         // HAIR MASK — Hair Mask Repair
         { bg: "/brand/advisor/showcase/2-2.png", product: "/brand/advisor/showcase/2-1.png", bgAspect: "4810 / 2261", productAspect: "1 / 1", productHeight: "154%" },
         // HAIR TONIC — Hair & Scalp Tonic
-        { bg: "/brand/advisor/showcase/3-2.png", product: "/brand/advisor/showcase/3-1.png", bgAspect: "4810 / 2260", productAspect: "2652 / 3400", productHeight: "150%", productShiftY: "5%", },
+        { bg: "/brand/advisor/showcase/3-2.png", product: "/brand/advisor/showcase/3-1.png", bgAspect: "4810 / 2260", productAspect: "2652 / 3400", productHeight: "150%", productShiftY: "5%", productShiftX: "-13.5%",},
         // VITAMAX — Hair Recovery Vitamax
         { bg: "/brand/advisor/showcase/4-2.png", product: "/brand/advisor/showcase/4-1.png", bgAspect: "4810 / 2260", productAspect: "1 / 1", productHeight: "140%", productShiftY: "2%", },
         // KERATIN SPRAY — Hair Protection Keratin Spray

@@ -6,7 +6,10 @@ const entry: Brand = {
     name: "Concept Ultimax",
     division: "beauty",
     parent: "makarizo-professional",
+    ctaHeadline: { en: "Transform Your Hair with Concept Ultimax", id: "Transformasi Rambut Anda dengan Concept Ultimax" },
+    ctaHeadlineColor: "#3E2120",
     tagline: { en: "Permanent Vegan Vibrant hair color.", id: "Pewarna rambut permanen Vegan Vibrant." },
+    hideCtaTagline: true,
     // Single sentence on purpose: BrandIntro renders the first sentence as the big
     // statement and everything after ". " as the light grey second line. The
     // reference has only the one statement, so there is nothing after it.
@@ -15,7 +18,7 @@ const entry: Brand = {
     accentClass: "bg-brand-ultimax",
     // Concept Ultimax pink — the magenta the reference uses for headings, the
     // check icons and the wordmark (sampled rgb(227,70,134) across the showcase art).
-    accentHex: "#E34686",
+    accentHex: "#E6EAE4",
     // No dedicated 3:4 brand-card art was delivered, so CrossSell reuses the brand's
     // own 3:4 About photo (1534×2046) instead of a generic stock image.
     heroImage: "/brand/concept-ultimax/about/1.png",
@@ -47,6 +50,7 @@ const entry: Brand = {
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       offsetY: "5vh",
+      logoOffsetX: "-58px",
       // Pale banner → dark type (and the navbar paints itself for a light backdrop).
       theme: "dark",
       delay: 0.6,

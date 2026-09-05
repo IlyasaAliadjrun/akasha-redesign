@@ -8,10 +8,11 @@ const entry: SubBrand = {
     // Copy taken verbatim from the line's own reference banner.
     tagline: { en: `Hair serum that moisturizes and\nadds shine, with honey extract to revitalize hair`, id: `Serum rambut yang melembapkan rambut dan\nmemberi kilau, serta ekstrak madu untuk revitalisasi rambut` },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
-    accentHex: "#E0B058",
+    accentHex: "#64402D",
     // Same honey-brown banner as the other Honey Dew lines — see the note in
     // 070-honey-dew--shampoo.ts.
-    bannerBg: "#64402D",
+    bannerBg: "#EFEFEF",
+    theme: "accent-light",
     heroWordmark: "/brand/honey-dew/hair-serum/hero/wordmark.png",
     heroWordmarkAspect: "1789 / 284",
     heroLayers: [

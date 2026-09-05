@@ -5,10 +5,11 @@ const entry: SubBrand = {
     slug: "rosemary-oil",
     parent: "t1",
     name: "Rosemary Oil",
-    tagline: { en: "Anti hair-fall, thickens, and smooths\nhair instantly.", id: "Anti-rontok, lebatkan, dan haluskan\nrambut secara instan." },
+    tagline: { en: "Promotes hair growth and prevents hair fall \nwhile instantly smoothing away frizz.", id: "Anti-rontok, lebatkan, dan haluskan\nrambut secara instan." },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
-    accentHex: "#784b37", // Rosemary Oil brown, sampled from the line's banner art
-    bannerBg: "#784b37",
+    accentHex: "#5C3427", // Rosemary Oil brown, sampled from the line's banner art
+    bannerBg: "#B0B783",
+    theme: "accent-light",
     heroWordmark: "/brand/t1/rosemary-oil/hero/wordmark.png",
     heroWordmarkAspect: "1424 / 556",
     // One composed cluster (protein cream + scalp & hair oil). This canvas is by far

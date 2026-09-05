@@ -4,13 +4,14 @@ import type { SubBrand } from "@/lib/subBrands";
 const entry: SubBrand = {
     slug: "strong-hair",
     parent: "advisor-rx",
-    name: "Strong Hair Expert Care",
+    name: "Strong Hair",
     // Copy taken verbatim from the line's own showcase banner art.
-    tagline: { en: "Helps reduce hair loss,\npremature balding, and promotes hair growth.", id: "Membantu mengurangi rambut rontok,\nkebotakan dini, dan menumbuhkan rambut." },
+    tagline: { en: "Help reduce hair loss, combat early hair \nthinning, and promote hair growt.", id: "Membantu mengurangi rambut rontok,\nkebotakan dini, dan menumbuhkan rambut." },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // Strong Hair green — sampled from the line's banner and card art (rgb(0,149,97)).
     accentHex: "#009561",
-    bannerBg: "#009561",
+    bannerBg: "#F4F4F4",
+    theme: "accent-light",
     // No wordmark was delivered inside strong-hair/hero/, so the hero carries the
     // parent brand's own Advisor RX lockup (still inside this brand's asset folder).
     heroWordmark: "/brand/advisor-rx/hero/wordmark.png",

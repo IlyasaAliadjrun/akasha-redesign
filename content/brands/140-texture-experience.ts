@@ -7,17 +7,21 @@ const entry: Brand = {
     division: "beauty",
     parent: "makarizo-professional",
     // Shown under the CTA headline ("Rasakan Texture Experience sekarang.").
+    ctaHeadline: { en: "Experience Multi Sensory Hair Care with Texture Experience", id: "Experience Multi Sensory Hair Care with Texture Experience" },
+    ctaHeadlineColor: "#3E2120",
     tagline: { en: "Multisensory hair care.", id: "Perawatan rambut multisensori." },
+    hideCtaTagline: true,
     // BrandIntro headline. One block (no ". " inside) so it renders as a single
     // extrabold paragraph, exactly like the reference.
     description:
-      { en: "Indulge in a multi-sensory experience with a soothing, naturally inspired fragrance", id: "Nikmati pengalaman multisensori dengan aroma yang menenangkan dan terinspirasi dari alam" },
+      { en: "Indulge in a multi-sensory experience with a soothing, naturally inspired fragrance", 
+        id: "Manjakan diri dengan pengalaman multi- sensorial dengan wangi natural yang menenangkan" },
     accentClass: "bg-brand-texture",
     // Warm taupe sampled from the "texture experience" wordmark art (#686058).
     // Drives the About eyebrow, the lineup wash + Learn more/Buy buttons and the CTA
     // block. The reference paints those blocks in the light beige below, but BrandCTA
     // renders white-on-accent text, so the accent takes the wordmark's own colour.
-    accentHex: "#686058",
+    accentHex: "#EEE8E0",
     // No standalone 3:4 brand card art — CrossSell reads this; the hero renders from
     // `heroLayers`. The About hair photo is already a 3:4 portrait (1534×2046).
     heroImage: "/brand/texture-experience/about/2.png",
@@ -56,7 +60,8 @@ const entry: Brand = {
       logoWidth: "min(22vw, 500px)",
       maxWidth: "min(24vw, 520px)",
       // Reference wording — two lines, no full stop.
-      tagline: { en: "Professional Multisensory Indulgence Experience", id: "Pengalaman Multisensori Profesional yang Memanjakan" },
+      tagline: { en: "Professional Multisensory Indulgence Experience", 
+        id: "Perawatan Profesional Multi-Sensori yang Memanjakan Setiap Indera" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "8%",

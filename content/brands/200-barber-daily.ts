@@ -5,12 +5,17 @@ const entry: Brand = {
     slug: "barber-daily",
     name: "Barber Daily",
     division: "mens",
-    // Shown under the CTA headline ("Rasakan Barber Daily sekarang.").
-    tagline: { en: "On Your Way to Handsome & Fresh.", id: "Menuju Ganteng & Wangi." },
+    // Shown under the CTA headline ("Menuju Ganteng & Wangi bersama Barber Daily.").
+    tagline: { en: "Step Up Your Grooming Game with Barber Daily.", id: "Menuju Ganteng & Wangi bersama Barber Daily." },
+    hideCtaTagline: true,
     // Becomes the BrandIntro headline (it appends its own period, so none here;
     // no ". " inside so it stays one block).
+    ctaHeadline: {
+    en: "Step Up Your Grooming Game with Barber Daily.",
+    id: "Menuju Ganteng & Wangi bersama Barber Daily.",
+  },
     description:
-      { en: "The best men's grooming solution, ready to help you find self-care products made especially for Indonesian men", id: "Solusi perawatan pria terbaik yang siap nemenin kalian buat nemuin produk perawatan diri khusus untuk pria Indonesia" },
+      { en: "The ultimate men's grooming solution, dedicated to helping you discover the perfect personal care routine tailored specifically for Indonesian men", id: "Solusi perawatan pria terbaik yang siap nemenin kalian buat nemuin produk perawatan diri khusus untuk pria Indonesia" },
     accentClass: "bg-brand-bd",
     // Barber Daily brown — sampled from the showcase banner art (#673A17–#6F4524).
     // Drives Learn more / Buy, the About eyebrow, the product wash and the CTA block.
@@ -43,7 +48,7 @@ const entry: Brand = {
       logoAspect: "1553 / 1060",
       logoWidth: "21vw",
       maxWidth: "32vw",
-      tagline: { en: "The Best Care, Formulated for Men.", id: "Perawatan Terbaik, Diformulasikan untuk Pria." },
+      tagline: { en: "Smooth Hair . Fresh Scent . Every Day", id: "Rambut Lembut . Wangi Segar . Setiap Hari" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "8%",
@@ -97,27 +102,28 @@ const entry: Brand = {
     showcase: {
       hero: "/brand/barber-daily/showcase/title.png",
       heroAspect: "5427 / 4242",
+      heroOffsetY: "60px",
       productAlign: "center",
       bannerAspect: "4810 / 2260",
       variants: [
         // SKIN CARE — Acne Care Oil-Control Face Wash
         { bg: "/brand/barber-daily/showcase/1-2.png", product: "/brand/barber-daily/showcase/1-1.png",
-          bgAspect: "4810 / 2260", productAspect: "1531 / 2722", productHeight: "142%",
+          bgAspect: "4810 / 2260", productAspect: "1531 / 2722", productHeight: "97%",
           productShiftX: "-2%", productShiftY: "-4%", href: "/brands/barber-daily/skin-care",
           mobile: { productHeight: "110%", productShiftX: "0%", productShiftY: "-4%" } },
         // HAIR CARE — Dandruff & Oil-Control Shampoo
         { bg: "/brand/barber-daily/showcase/2-2.png", product: "/brand/barber-daily/showcase/2-1.png",
-          bgAspect: "4810 / 2260", productAspect: "3891 / 5524", productHeight: "190%",
+          bgAspect: "4810 / 2260", productAspect: "3891 / 5524", productHeight: "137%",
           productShiftX: "2%", productShiftY: "10%", href: "/brands/barber-daily/hair-care",
           mobile: { productHeight: "160%", productShiftX: "0%", productShiftY: "10%" } },
         // BODY CARE — Antiperspirant Deodorant
         { bg: "/brand/barber-daily/showcase/3-2.png", product: "/brand/barber-daily/showcase/3-1.png",
-          bgAspect: "4810 / 2260", productAspect: "2647 / 2646", productHeight: "126%",
+          bgAspect: "4810 / 2260", productAspect: "2647 / 2646", productHeight: "91%",
           productShiftX: "4%", href: "/brands/barber-daily/body-care",
           mobile: { productHeight: "110%", productShiftX: "0%", productShiftY: "-1%" } },
         // TOOLS — razor, nudged left so it lands over the "O" of the baked wording
         { bg: "/brand/barber-daily/showcase/4-2.png", product: "/brand/barber-daily/showcase/4-1.png",
-          bgAspect: "4810 / 2260", productAspect: "2045 / 2753", productHeight: "145%",
+          bgAspect: "4810 / 2260", productAspect: "2045 / 2753", productHeight: "103%",
           productShiftX: "-20%", href: "/brands/barber-daily/tools",
         mobile: { productHeight: "120%", productShiftX: "0%", productShiftY: "-4%" } },
       ],

@@ -5,7 +5,7 @@ const entry: SubBrand = {
     slug: "hair-care",
     parent: "barber-daily",
     name: "Hair Care",
-    tagline: { en: `Improves the health\nof hair & scalp.`, id: `Meningkatkan kesehatan\nrambut & kulit kepala.` },
+    tagline: { en: `Promotes optimal hair and scalp \nhealth.`, id: `Meningkatkan kesehatan\nrambut & kulit kepala.` },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#6B3F1D",
     bannerBg: "#6B3F1D",
@@ -28,6 +28,9 @@ const entry: SubBrand = {
     // `featured` slot; the four portrait cards fill the 2-column grid.
     featured: { image: "/brand/barber-daily/hair-care/showcase/5.png", label: { en: "Pomade", id: "Pomade" } },
     featuredAspect: "4687 / 2222",
+    featuredPosition: "bottom",
+    showcaseTitleOffsetY: "36px",
+    showcaseTitleOffsetX: "-85px",
     cardAspect: "2302 / 2987",
     cards: [
       { image: "/brand/barber-daily/hair-care/showcase/1.png", label: { en: "Shampoo", id: "Shampoo" } },

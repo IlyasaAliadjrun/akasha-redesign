@@ -7,12 +7,13 @@ const entry: SubBrand = {
     name: "Color Tube",
     tagline: { en: `Permanent hair color.\nVegan Vibrant.`, id: `Pewarna rambut permanen\nVegan Vibrant.` },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
-    accentHex: "#E34686",
+    accentHex: "#3E2120",
     // SubBrandHero always sets its wording in white, so the pale sage the reference
     // uses cannot carry it. This is the darkest colour in the Concept Ultimax
     // palette — the deep brown every headline in the artwork is set in
     // (rgb(62,33,32)) — which keeps the white wording and the pink wordmark legible.
-    bannerBg: "#3E2120",
+    bannerBg: "#E6EAE4",
+    theme: "accent-light",
     heroWordmark: "/brand/concept-ultimax/color-tube/hero/wordmark.png",
     heroWordmarkAspect: "2339 / 473",
     // One delivered hero asset: the Color Tube and its Activator in a single PNG.
