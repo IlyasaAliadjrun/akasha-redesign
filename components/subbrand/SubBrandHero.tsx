@@ -166,6 +166,7 @@ export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
         aspectRatio: sub.heroWordmarkAspect ?? "767 / 529",
         transform: `scale(${zoom})`,
         transformOrigin: isMobile ? "center" : "left top",
+        top: sub.heroOffsetY,
       }}
     >
       <Image src={sub.heroWordmark} alt={`${sub.name} logo`} fill sizes="220px" className="object-contain" />

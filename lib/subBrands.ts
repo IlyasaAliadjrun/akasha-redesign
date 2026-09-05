@@ -53,11 +53,15 @@ export type SubBrand = {
   // come from `name` / `tagline` / `ctaText`.
   heroWordmark?: string;
   heroWordmarkAspect?: string; // e.g. "767 / 529"
+  heroOffsetY?: string;
   // Showcase = a title graphic + a grid of complete card images.
   showcaseTitle?: string; // title image at the top of the showcase
   showcaseTitleAspect?: string; // intrinsic ratio of the title (default "3 / 2")
+  showcaseTitleOffsetY?: string;
+  showcaseTitleOffsetX?: string;
   featured?: SubBrandCard; // optional full-width card above the grid
   featuredAspect?: string; // ratio of the featured card image (default "12 / 5")
+  featuredPosition?: "top" | "middle" | "bottom";
   cardAspect?: string; // ratio of each grid card image (default "4 / 5")
   cards: SubBrandCard[]; // the variant card grid (2 columns on desktop)
 };

@@ -194,6 +194,7 @@ export default function BrandShowcase({ brand }: { brand: ResolvedBrand }) {
           style={{
             aspectRatio: showcase.heroAspect ?? "1 / 1",
             maxWidth: showcase.heroMaxWidth,
+            top: showcase.heroOffsetY,
           }}
           className="relative w-full max-w-3xl mx-auto"
         >

@@ -121,7 +121,11 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
   const accentHex = brand.accentHex;
 
   const taglineColor = darkText ? "text-ink" : accentText ? "" : "text-white";
-  const taglineStyle = accentText ? { color: accentHex } : undefined;
+  const taglineStyle = content?.taglineColor
+  ? { color: content.taglineColor }
+  : accentText
+    ? { color: accentHex }
+    : undefined;
   const subtitleColor = darkText ? "text-ink/70" : accentText ? "" : "text-white/80";
   const subtitleStyle = accentText ? { color: `${accentHex}CC` } : undefined;
   const ctaClass = darkText
@@ -190,7 +194,9 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
             {content.logo && (
               <div
                 className="relative"
-                style={{ width: content.logoWidth ?? "32vw", aspectRatio: content.logoAspect }}
+                style={{ width: content.logoWidth ?? "32vw", 
+                aspectRatio: content.logoAspect,
+                left: content.logoOffsetX, }}
               >
                 <Image src={content.logo} alt={`${brand.name} logo`} fill sizes="40vw" className="object-contain object-left" />
               </div>

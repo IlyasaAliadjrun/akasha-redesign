@@ -72,7 +72,9 @@ export default function SubBrandShowcase({ sub }: { sub: ResolvedSubBrand }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="mx-auto w-3/4 sm:w-full max-w-xl"
+            className="relative mx-auto w-3/4 sm:w-full max-w-xl"
+            style={{ left: sub.showcaseTitleOffsetX,
+              top: sub.showcaseTitleOffsetY }}
           >
             {sub.showcaseTitle ? (
               <div className="relative w-full" style={{ aspectRatio: titleAspect }}>
@@ -88,7 +90,7 @@ export default function SubBrandShowcase({ sub }: { sub: ResolvedSubBrand }) {
 
           {/* Cards */}
           <div className="space-y-5 sm:space-y-6">
-            {sub.featured && (
+            {sub.featured && sub.featuredPosition !== "middle" && sub.featuredPosition !== "bottom" && (
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -101,17 +103,41 @@ export default function SubBrandShowcase({ sub }: { sub: ResolvedSubBrand }) {
 
             <div className="grid grid-cols-2 gap-3 sm:gap-6">
               {sub.cards.map((card, i) => (
-                <motion.div
-                  key={card.label ?? i}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.55, delay: (i % 2) * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <Slot card={card} aspect={cardAspect} sizes="(min-width:768px) 330px, 44vw" />
-                </motion.div>
+                <div key={card.label ?? i} className="contents">
+                  <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.55, delay: (i % 2) * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Slot card={card} aspect={cardAspect} sizes="(min-width:768px) 330px, 44vw" />
+                  </motion.div>
+
+                  {i === 1 && sub.featured && sub.featuredPosition === "middle" && (
+                    <motion.div
+                      className="col-span-2"
+                      initial={{ opacity: 0, y: 24 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-60px" }}
+                      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <Slot card={sub.featured} aspect={featuredAspect} sizes="(min-width:768px) 672px, 88vw" />
+                    </motion.div>
+                  )}
+                </div>
               ))}
             </div>
+
+            {sub.featured && sub.featuredPosition === "bottom" && (
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <Slot card={sub.featured} aspect={featuredAspect} sizes="(min-width:768px) 672px, 88vw" />
+              </motion.div>
+            )}
           </div>
         </div>
       </div>

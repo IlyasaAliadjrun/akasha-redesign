@@ -89,7 +89,9 @@ export type HeroContent = {
   logo?: string;
   logoAspect?: string; // intrinsic ratio of the logo, e.g. "1576 / 1086"
   logoWidth?: string; // CSS width, e.g. "32vw"
+  logoOffsetX?: string;
   tagline?: Localized<string>;
+  taglineColor?: string;
   // Optional second line under the tagline — a lighter, smaller supporting sentence
   // (the tagline reads as the heading). Honours "\n" for a manual line break.
   subtitle?: Localized<string>;
@@ -139,6 +141,9 @@ export type Brand = {
   // instead. Falls back to the first sub-brand when unset.
   flagship?: string;
   tagline: Localized<string>;
+  ctaHeadline?: Localized<string>;
+  ctaHeadlineColor?: string;
+  hideCtaTagline?: boolean;
   description: Localized<string>;
   accentClass: string; // tailwind bg class
   accentHex: string;
@@ -180,6 +185,7 @@ export type Brand = {
     hero: string;
     heroAspect?: string;
     heroMaxWidth?: string;
+    heroOffsetY?: string;
     productAlign?: "center" | "sides";
     parallax?: boolean;
     // Aspect of each variant banner frame (default "5 / 2"). Set to the bg art's own

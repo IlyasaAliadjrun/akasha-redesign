@@ -12,10 +12,17 @@ export default function BrandCTA({ brand }: { brand: ResolvedBrand }) {
       style={{ backgroundColor: brand.accentHex }}
     >
       <div className="max-w-2xl mx-auto px-6">
-        <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
-          {t(BRAND.cta.before)}{brand.name}{t(BRAND.cta.after)}
+        <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]"
+            style={{ color: brand.ctaHeadlineColor }}
+>
+            {brand.ctaHeadline ??
+              `${t(BRAND.cta.before)}${brand.name}${t(BRAND.cta.after)}`}
         </h2>
-        <p className="mt-4 text-white/80 text-lg">{brand.tagline}</p>
+        {!brand.hideCtaTagline && brand.tagline && (
+          <p className="mt-4 text-white/80 text-lg">
+            {brand.tagline}
+          </p>
+        )}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
             href="https://shop.akasha.co.id"
