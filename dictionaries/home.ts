@@ -12,7 +12,7 @@ export const home = {
   },
   brands: {
     eyebrow: { en: "Our brands", id: "Brand kami" },
-    heading: { en: "Ten brands. One family.", id: "Sepuluh brand. Satu keluarga." },
+    heading: { en: "Many Brands. One Akasha.", id: "Beragam brand. Satu Akasha." },
   },
   common: {
     explore: { en: "Explore", id: "Jelajahi" },
