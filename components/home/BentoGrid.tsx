@@ -44,28 +44,40 @@ const bentoImage: Record<string, string> = {
   floaty: "/home/brand-grid/floaty.png",
 };
 
-// Object-position per banner. Every source photo is shot with the person
-// looking down at camera, head near the top edge and body running to the
-// bottom edge — so any vertical crop must come off the bottom (feet), never
-// the top (face). All entries pin `top`; horizontal follows where the
-// subject sits in each source photo (HE/Make It/BD put them on the right;
-// NPL/Wonhae/Makarizo keep them roughly centered-to-right already).
+// Object-position per banner — plain CSS `"X% Y%"`, so this is the one place
+// to tweak crop framing when a new photo comes in. No Tailwind class lookup
+// needed; edit the numbers directly.
+//   X (horizontal): 0% = show the image's left edge (crop right) · 100% =
+//     show the right edge (crop left) · 50% = centered.
+//   Y (vertical): 0% = show the TOP of the image, cropping from the BOTTOM
+//     · 100% = show the BOTTOM, cropping from the TOP · 50% = centered.
+// Rule of thumb: bias Y toward whichever end of the photo has the LEAST
+// empty margin, so any unavoidable crop eats into the margin that has slack
+// to spare, not the subject itself.
+//   - nestle-pure-life / hair-energy / wonhae / makarizo-professional: the
+//     subject's feet sit right at the bottom edge (~0% margin) while the head
+//     has 5-17% headroom — so Y=100% (bottom-anchored) protects the feet.
+//   - barber-daily / make-it: head (~11%) and feet (~8%) margins are close,
+//     so Y=50% (centered) splits any crop evenly; X=100% since the subject
+//     sits on the right side of the frame.
+//   - fitmeup / floaty: product + person already span nearly the full frame
+//     both ways, so centered on both axes is safest.
 const bentoObjectPosition: Record<string, string> = {
-  "nestle-pure-life": "object-top",
-  "hair-energy": "object-right-top",
-  "make-it": "object-right-top",
-  "barber-daily": "object-right-top",
-  wonhae: "object-top",
-  "makarizo-professional": "object-top",
-  fitmeup: "object-center",
-  floaty: "object-center",
+  "nestle-pure-life": "100% 100%",
+  "hair-energy": "100% 100%",
+  wonhae: "100% 100%",
+  "makarizo-professional": "100% 100%",
+  "barber-daily": "100% 50%",
+  "make-it": "100% 50%",
+  fitmeup: "50% 50%",
+  floaty: "50% 50%",
 };
 
 const objectPositionFor = (slug: string, layoutClass: string) =>
   bentoObjectPosition[slug] ??
   (layoutClass.includes("md:col-span-3") || layoutClass.includes("md:col-span-4")
-    ? "object-right-top"
-    : "object-top");
+    ? "100% 50%"
+    : "50% 100%");
 
 // Solid color tiles for brands without an image — matched to artboard.
 const solidColor: Record<string, string> = {
@@ -124,7 +136,8 @@ export default function BentoGrid() {
                       alt={b.name}
                       fill
                       sizes="(min-width:1280px) 50vw, (min-width:768px) 50vw, 100vw"
-                      className={`object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04] ${objectPositionFor(b.slug, layoutClass)}`}
+                      className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04]"
+                      style={{ objectPosition: objectPositionFor(b.slug, layoutClass) }}
                     />
                   ) : null}
                   <div
