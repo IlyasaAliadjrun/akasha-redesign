@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { ShowcaseVariant as TVariant } from "@/lib/brands";
 import type { ResolvedBrand } from "@/lib/locale/resolve";
 import { useLocale } from "@/lib/locale/LocaleProvider";
@@ -27,7 +27,7 @@ function useIsMobile() {
 // - the product sits centred, overflows the banner top/bottom, slides in from the
 //   left on odd banners (index 0,2,…) or the right on even banners, and drifts
 //   faster than the background on scroll.
-function ShowcaseVariant({
+export function ShowcaseVariant({
   variant,
   index,
   brandName,
@@ -127,6 +127,7 @@ function ShowcaseVariant({
           drifts it on scroll. Anchored per `align` horizontally (centred / entering
           side) and vertically (centred / grounded on the bottom). The outer box sizes
           & drops the product; the inner motion layer carries the entrance + parallax. */}
+      {variant.product && (
       <div className={`absolute inset-0 flex ${alignItems} ${justify} ${sidePad} overflow-hidden rounded-2xl lg:rounded-3xl pointer-events-none`}>
         <div
           className="relative"
@@ -162,6 +163,7 @@ function ShowcaseVariant({
           </motion.div>
         </div>
       </div>
+      )}
     </div>
   );
 }
@@ -194,9 +196,12 @@ export default function BrandShowcase({ brand }: { brand: ResolvedBrand }) {
           style={{
             aspectRatio: showcase.heroAspect ?? "1 / 1",
             maxWidth: showcase.heroMaxWidth,
-            top: showcase.heroOffsetY,
-          }}
-          className="relative w-full max-w-3xl mx-auto"
+            "--showcase-title-mobile-x": showcase.heroMobileOffsetX ?? showcase.heroOffsetX ?? "0px",
+            "--showcase-title-mobile-y": showcase.heroMobileOffsetY ?? showcase.heroOffsetY ?? "0px",
+            "--showcase-title-desktop-x": showcase.heroOffsetX ?? "0px",
+            "--showcase-title-desktop-y": showcase.heroOffsetY ?? "0px",
+          } as CSSProperties}
+          className="relative w-full max-w-3xl mx-auto left-[var(--showcase-title-mobile-x)] top-[var(--showcase-title-mobile-y)] md:left-[var(--showcase-title-desktop-x)] md:top-[var(--showcase-title-desktop-y)]"
         >
           <Image
             src={showcase.hero}

@@ -47,7 +47,8 @@ export type HeroLayer = {
 //             bottom, sliding in from the left (odd banner) or right (even banner).
 export type ShowcaseVariant = {
   bg: string;
-  product: string;
+  // Omit when the background artwork already includes the product composition.
+  product?: string;
   // When set, the whole banner becomes a link — used to send each variant to its
   // sub-brand page (e.g. "/brands/hair-energy/creambath").
   href?: string;
@@ -92,6 +93,12 @@ export type HeroContent = {
   logoOffsetX?: string;
   tagline?: Localized<string>;
   taglineColor?: string;
+  ctaBorderColor?: string;
+  ctaBackgroundColor?: string;
+  ctaTextColor?: string;
+  ctaHoverBorderColor?: string;
+  ctaHoverBackgroundColor?: string;
+  ctaHoverTextColor?: string;
   // Optional second line under the tagline — a lighter, smaller supporting sentence
   // (the tagline reads as the heading). Honours "\n" for a manual line break.
   subtitle?: Localized<string>;
@@ -158,6 +165,8 @@ export type Brand = {
   // Heading above the product carousel (default "Explore the lineup."). Wonhae's
   // reference uses "Product.".
   lineupTitle?: Localized<string>;
+  lineupLearnMoreColor?: string;
+  lineupBuyColor?: string;
   products?: {
     name: string; // brand/SKU proper noun — not translated
     variant?: Localized<string>; // e.g. "Gallon"/"Galon" — unit words vary by language
@@ -185,7 +194,10 @@ export type Brand = {
     hero: string;
     heroAspect?: string;
     heroMaxWidth?: string;
+    heroOffsetX?: string;
     heroOffsetY?: string;
+    heroMobileOffsetX?: string;
+    heroMobileOffsetY?: string;
     productAlign?: "center" | "sides";
     parallax?: boolean;
     // Aspect of each variant banner frame (default "5 / 2"). Set to the bg art's own

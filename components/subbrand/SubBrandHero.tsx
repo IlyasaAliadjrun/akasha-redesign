@@ -9,7 +9,7 @@ import {
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import type { HeroLayer } from "@/lib/brands";
-import type { ResolvedSubBrand } from "@/lib/locale/resolve";
+import type { ResolvedBrand, ResolvedSubBrand, } from "@/lib/locale/resolve";
 import { useLocale } from "@/lib/locale/LocaleProvider";
 import { BRAND } from "@/dictionaries/brand";
 
@@ -119,7 +119,8 @@ function mobilePos(layer: HeroLayer, i: number): React.CSSProperties {
   return MOBILE_POS[i] ?? MOBILE_POS[0];
 }
 
-export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
+  export default function SubBrandHero({ sub, parent, }: { sub: ResolvedSubBrand; parent?: ResolvedBrand;
+}) {
   const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
   const zoom = useZoomScale();
@@ -137,19 +138,40 @@ export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
   // independent of which text colour is actually painted.
   const bannerLight = darkText || theme === "accent-light";
   const accentHex = sub.accentHex;
-
+  const ctaConfig = {
+  ...parent?.heroContent,
+  ...sub.heroContent,
+  };
   const nameColor = darkText ? "text-ink" : accentText ? "" : "text-white";
   const nameStyle = accentText ? { color: accentHex } : undefined;
   const taglineColor = darkText ? "text-ink/90" : accentText ? "" : "text-white/90";
   const taglineStyle = accentText ? { color: `${accentHex}E6` } : undefined;
-  const ctaClass = darkText
+  const hasCustomCta = Boolean(
+    ctaConfig.ctaBorderColor ||
+    ctaConfig.ctaBackgroundColor ||
+    ctaConfig.ctaTextColor,
+  );
+  const ctaClass = hasCustomCta
+    ? "border-[var(--hero-cta-border)] bg-[var(--hero-cta-bg)] text-[var(--hero-cta-text)] hover:border-[var(--hero-cta-hover-border)] hover:bg-[var(--hero-cta-hover-bg)] hover:text-[var(--hero-cta-hover-text)]"
+    : darkText
     ? "border-ink/40 text-ink hover:bg-ink hover:text-white"
     : accentText
     ? "border-[var(--hero-accent)] hover:bg-[var(--hero-accent)] hover:text-white"
     : "border-white/70 text-white hover:bg-white hover:text-ink";
-  const ctaStyle = accentText
-    ? ({ color: accentHex, "--hero-accent": accentHex } as React.CSSProperties)
-    : undefined;
+  const ctaStyle = {
+    ...(accentText && !hasCustomCta
+      ? { color: accentHex, "--hero-accent": accentHex }
+      : {}),
+    "--hero-cta-border": ctaConfig.ctaBorderColor,
+    "--hero-cta-bg": ctaConfig.ctaBackgroundColor,
+    "--hero-cta-text": ctaConfig.ctaTextColor,
+    "--hero-cta-hover-border":
+      ctaConfig.ctaHoverBorderColor ?? ctaConfig.ctaBorderColor,
+    "--hero-cta-hover-bg":
+      ctaConfig.ctaHoverBackgroundColor ?? ctaConfig.ctaBackgroundColor,
+    "--hero-cta-hover-text":
+      ctaConfig.ctaHoverTextColor ?? ctaConfig.ctaTextColor,
+  } as React.CSSProperties;
 
   const scrollDown = (e?: { preventDefault: () => void }) => {
     e?.preventDefault();
@@ -161,8 +183,11 @@ export default function SubBrandHero({ sub }: { sub: ResolvedSubBrand }) {
       initial={reduce ? false : { opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className="relative w-[27vw] md:w-[15.6vw]"
+      className="relative"
       style={{
+        width: isMobile
+        ? sub.heroWordmarkMobileWidth ?? "27vw"
+        : sub.heroWordmarkWidth ?? "15.6vw",
         aspectRatio: sub.heroWordmarkAspect ?? "767 / 529",
         transform: `scale(${zoom})`,
         transformOrigin: isMobile ? "center" : "left top",

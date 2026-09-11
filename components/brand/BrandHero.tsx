@@ -128,14 +128,32 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
     : undefined;
   const subtitleColor = darkText ? "text-ink/70" : accentText ? "" : "text-white/80";
   const subtitleStyle = accentText ? { color: `${accentHex}CC` } : undefined;
-  const ctaClass = darkText
+  const hasCustomCta = Boolean(
+    content?.ctaBorderColor ||
+    content?.ctaBackgroundColor ||
+    content?.ctaTextColor,
+  );
+  const ctaClass = hasCustomCta
+    ? "border-[var(--hero-cta-border)] bg-[var(--hero-cta-bg)] text-[var(--hero-cta-text)] hover:border-[var(--hero-cta-hover-border)] hover:bg-[var(--hero-cta-hover-bg)] hover:text-[var(--hero-cta-hover-text)]"
+    : darkText
     ? "border-ink/40 text-ink hover:bg-ink hover:text-white"
     : accentText
     ? "border-[var(--hero-accent)] hover:bg-[var(--hero-accent)] hover:text-white"
     : "border-white/70 text-white hover:bg-white hover:text-ink";
-  const ctaStyle = accentText
-    ? ({ color: accentHex, "--hero-accent": accentHex } as React.CSSProperties)
-    : undefined;
+  const ctaStyle = {
+    ...(accentText
+      ? { color: accentHex, "--hero-accent": accentHex }
+      : {}),
+    "--hero-cta-border": content?.ctaBorderColor,
+    "--hero-cta-bg": content?.ctaBackgroundColor,
+    "--hero-cta-text": content?.ctaTextColor,
+    "--hero-cta-hover-border":
+      content?.ctaHoverBorderColor ?? content?.ctaBorderColor,
+    "--hero-cta-hover-bg":
+      content?.ctaHoverBackgroundColor ?? content?.ctaBackgroundColor,
+    "--hero-cta-hover-text":
+      content?.ctaHoverTextColor ?? content?.ctaTextColor,
+  } as React.CSSProperties;
 
   return (
     <section

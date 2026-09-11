@@ -195,9 +195,10 @@ export default function ProductLineup({ brand }: { brand: ResolvedBrand }) {
                   href="#story"
                   draggable={false}
                   className="text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.97]"
+                  // Learn more
                   style={{
-                    borderColor: brand.accentHex,
-                    color: brand.accentHex,
+                    borderColor: brand.lineupLearnMoreColor ?? brand.accentHex,
+                    color: brand.lineupLearnMoreColor ?? brand.accentHex,
                   }}
                 >
                   {t(BRAND.common.learnMore)}
@@ -208,7 +209,10 @@ export default function ProductLineup({ brand }: { brand: ResolvedBrand }) {
                   rel="noreferrer"
                   draggable={false}
                   className="text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-white transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] active:scale-[0.97]"
-                  style={{ backgroundColor: brand.accentHex }}
+                  // Buy
+                  style={{
+                    backgroundColor: brand.lineupBuyColor ?? brand.accentHex,
+                  }}
                 >
                   {t(BRAND.common.buy)}
                 </a>

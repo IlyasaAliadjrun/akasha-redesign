@@ -1,4 +1,4 @@
-import type { HeroLayer, HeroContent } from "./brands";
+import type { HeroLayer, HeroContent, ShowcaseVariant } from "./brands";
 import type { Localized } from "@/lib/locale/paths";
 
 // ── Sub-brands (product lines) ────────────────────────────────────────────────
@@ -53,12 +53,23 @@ export type SubBrand = {
   // come from `name` / `tagline` / `ctaText`.
   heroWordmark?: string;
   heroWordmarkAspect?: string; // e.g. "767 / 529"
+  heroWordmarkWidth?: string;
+  heroWordmarkMobileWidth?: string;
   heroOffsetY?: string;
   // Showcase = a title graphic + a grid of complete card images.
   showcaseTitle?: string; // title image at the top of the showcase
   showcaseTitleAspect?: string; // intrinsic ratio of the title (default "3 / 2")
   showcaseTitleOffsetY?: string;
   showcaseTitleOffsetX?: string;
+  showcaseTitleMobileOffsetX?: string;
+  showcaseTitleMobileOffsetY?: string;
+  showcaseTitleSize?: "default" | "wide";
+  showcaseWidth?: "default" | "wide";
+  showcaseSpacing?: "default" | "compact" | "tight" | "flush";
+  showcaseVariants?: ShowcaseVariant[];
+  showcaseBannerAspect?: string;
+  showcaseProductAlign?: "center" | "sides";
+  showcaseParallax?: boolean;
   featured?: SubBrandCard; // optional full-width card above the grid
   featuredAspect?: string; // ratio of the featured card image (default "12 / 5")
   featuredPosition?: "top" | "middle" | "bottom";

@@ -19,7 +19,7 @@ export default function SubBrandTemplate({
   const parent = parentBrand ? resolveBrand(parentBrand, locale) : undefined;
   return (
     <>
-      <SubBrandHero sub={sub} />
+      <SubBrandHero sub={sub} parent={parent} />
       <SubBrandShowcase sub={sub} />
       {parent && <CrossSell current={parent} />}
       {parent && <BrandCTA brand={parent} />}
