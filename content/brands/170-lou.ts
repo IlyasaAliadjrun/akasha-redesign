@@ -83,6 +83,7 @@ const entry: Brand = {
       productAlign: "center",
       bannerAspect: "2160 / 1015",
       heroOffsetY: "-40px",
+      heroMobileOffsetY: "-20px",
       variants: [
         // REST EASY — the tube's opaque box sits high-left inside its canvas (22%/12%
         // side margins, 4%/22% top/bottom), so shiftX/shiftY re-centre it on the banner.

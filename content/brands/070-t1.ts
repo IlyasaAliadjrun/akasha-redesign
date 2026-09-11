@@ -118,7 +118,7 @@ const entry: Brand = {
         // Rosemary Oil — protein cream + scalp & hair oil (45% / 13%: the pair sits in
         // the lower half of its canvas, hence the much bigger box and shift).
         { bg: "/brand/t1/showcase/3-2.png", product: "/brand/t1/showcase/3-1.png",
-          bgAspect: "4810 / 2260", productAspect: "4174 / 4068", productHeight: "185%", productShiftY: "-16%",
+          bgAspect: "4810 / 2260", productAspect: "4174 / 4068", productHeight: "173%", productShiftY: "-17.9%", productShiftX: "5%",
           href: "/brands/t1/rosemary-oil" },
         // Indigo Blue — body wash + mask + lotion (22% / 17%).
         { bg: "/brand/t1/showcase/4-2.png", product: "/brand/t1/showcase/4-1.png",

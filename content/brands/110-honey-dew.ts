@@ -95,11 +95,11 @@ const entry: Brand = {
         // Product heights are tuned so each bottle stays fully inside the banner:
         // the frame clips its product, so the overflow per side must stay under the
         // PNG's own transparent top/bottom margin (7.2 % / 4.0 % here).
-        { bg: "/brand/honey-dew/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/honey-dew/showcase/1-1.png", productAspect: "1672 / 2451", productHeight: "106%", productShiftX: "12%", mobile: { productHeight: "102%" }, href: "/brands/honey-dew/shampoo" },
+        { bg: "/brand/honey-dew/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/honey-dew/showcase/1-1.png", productAspect: "1672 / 2451", productHeight: "106%", productShiftX: "12%", mobile: { productHeight: "96%" }, href: "/brands/honey-dew/shampoo" },
 
-        { bg: "/brand/honey-dew/showcase/3-2.png", bgAspect: "4810 / 2260", product: "/brand/honey-dew/showcase/3-1.png", productAspect: "3058 / 3865", productHeight: "150%", productShiftX: "8%", productShiftY: "-3%", mobile: { productHeight: "122%", productShiftX: "8%", productShiftY: "-5%",}, href: "/brands/honey-dew/hair-mask"},
+        { bg: "/brand/honey-dew/showcase/3-2.png", bgAspect: "4810 / 2260", product: "/brand/honey-dew/showcase/3-1.png", productAspect: "3058 / 3865", productHeight: "150%", productShiftX: "8%", productShiftY: "-3%", mobile: { productHeight: "130%", productShiftX: "8%", productShiftY: "0%",}, href: "/brands/honey-dew/hair-mask"},
         // Two-tube cluster: 20.6 % top / 17.5 % bottom margin → 134 % is the ceiling.
-        { bg: "/brand/honey-dew/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/honey-dew/showcase/2-1.png", productAspect: "2399 / 2689", productHeight: "130%", productShiftY: "-2.5%", mobile: { productHeight: "128%" }, href: "/brands/honey-dew/hair-serum" },
+        { bg: "/brand/honey-dew/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/honey-dew/showcase/2-1.png", productAspect: "2399 / 2689", productHeight: "130%", productShiftY: "-2.5%", mobile: { productHeight: "128%", productShiftX: "8%" }, href: "/brands/honey-dew/hair-serum" },
       ],
     },
   };

@@ -9,7 +9,7 @@ const entry: SubBrand = {
     tagline: { en: "Help reduce hair loss, combat early hair \nthinning, and promote hair growt.", id: "Membantu mengurangi rambut rontok,\nkebotakan dini, dan menumbuhkan rambut." },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // Strong Hair green — sampled from the line's banner and card art (rgb(0,149,97)).
-    accentHex: "#009561",
+    accentHex: "#000000",
     bannerBg: "#F4F4F4",
     theme: "accent-light",
     // No wordmark was delivered inside strong-hair/hero/, so the hero carries the

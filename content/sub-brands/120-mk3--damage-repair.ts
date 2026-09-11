@@ -27,6 +27,8 @@ const entry: SubBrand = {
     showcaseTitle: "/brand/mk3/damage-repair/showcase/title.png",
     showcaseTitleAspect: "4153 / 3401",
     showcaseTitleOffsetY: "70px",
+    showcaseTitleMobileOffsetY: "28px",
+    showcaseTitleMobileOffsetX: "-8px",
     // The leave-in mask ships as a landscape card, so it takes the full-width slot.
     featured: { image: "/brand/mk3/damage-repair/showcase/5.png", label: { en: "Leave-In Hair Mask — a no-rinse hair mask", id: "Leave-In Hair Mask — masker rambut tanpa bilas" } },
     featuredAspect: "4811 / 2261",

@@ -43,8 +43,16 @@ const entry: Brand = {
       theme: "dark",
       delay: 0.6,
       mobile: { logoWidth: "37vw" },
+      ctaBorderColor: "#0A0A0A",
+      ctaBackgroundColor: "transparent",
+      ctaTextColor: "#0A0A0A",
+
+      ctaHoverBorderColor: "#A67E6C",
+      ctaHoverBackgroundColor: "#A67E6C",
+      ctaHoverTextColor: "#FFFFFF",
+
     },
-    bannerBg: "#F1EEEA",
+    bannerBg: "#ffffff",
     hero: false,
     products: [
       // `imageScale` normalises the SKUs against each other: the artwork is cropped
@@ -66,6 +74,7 @@ const entry: Brand = {
       hero: "/brand/asters/showcase/title.png",
       heroAspect: "4591 / 3142",
       heroOffsetY: "-40px",
+      heroMobileOffsetY: "-21px",
       heroMaxWidth: "min(100%, 53rem)",
       // The banner art is a finished card (rounded corners + caption baked in), so
       // the frame takes the art's own ratio instead of the 5:2 default — a cover
@@ -75,8 +84,8 @@ const entry: Brand = {
         // 1-1.png carries a 14.7% transparent top margin, so the box is lifted
         // (`productShiftY`) to sit the tools optically centred and keep their handles
         // clear of the caption baked into the bottom 85–94% of the banner art.
-        { bg: "/brand/asters/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/asters/showcase/1-1.png", productAspect: "2148 / 2363", productHeight: "110%", productShiftX: "10%", productShiftY: "-9%", href: "/brands/asters/styling-tools" },
-        { bg: "/brand/asters/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/asters/showcase/2-1.png", productAspect: "2828 / 2058", productHeight: "112%", href: "/brands/asters/hair-accessories" },
+        { bg: "/brand/asters/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/asters/showcase/1-1.png", productAspect: "2148 / 2363", productHeight: "92%", productShiftX: "8%", productShiftY: "-15%", href: "/brands/asters/styling-tools" },
+        { bg: "/brand/asters/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/asters/showcase/2-1.png", productAspect: "2828 / 2058", productHeight: "85%", productShiftX: "6%", productShiftY: "-2%", href: "/brands/asters/hair-accessories" },
       ],
     },
   };

@@ -22,6 +22,8 @@ const entry: Brand = {
     // block. The reference paints those blocks in the light beige below, but BrandCTA
     // renders white-on-accent text, so the accent takes the wordmark's own colour.
     accentHex: "#EEE8E0",
+    lineupLearnMoreColor: "#6F635A",
+    lineupBuyColor: "#6F635A",
     // No standalone 3:4 brand card art — CrossSell reads this; the hero renders from
     // `heroLayers`. The About hair photo is already a 3:4 portrait (1534×2046).
     heroImage: "/brand/texture-experience/about/2.png",
@@ -140,32 +142,38 @@ const entry: Brand = {
       heroAspect: "4749 / 3163",
       productAlign: "center",
       bannerAspect: "4810 / 2260",
+      heroMobileOffsetY: "-7px",
       variants: [
         // STRAWBERRY YOGHURT — creambath tube + Berry Smoothie hair perfume
         { bg: "/brand/texture-experience/showcase/1-2.png", product: "/brand/texture-experience/showcase/1-1.png",
           bgAspect: "4810 / 2260", productAspect: "2289 / 2711", productHeight: "125.5%",
           productShiftX: "5.6%", productShiftY: "3.1%",
-          href: "/brands/texture-experience/strawberry-yoghurt" },
+          href: "/brands/texture-experience/strawberry-yoghurt",
+          mobile: { productHeight: "112%" } },
         // GREEN TEA BUTTER — creambath tube + Tea Blossom hair perfume
         { bg: "/brand/texture-experience/showcase/2-2.png", product: "/brand/texture-experience/showcase/2-1.png",
           bgAspect: "4810 / 2260", productAspect: "2636 / 2794", productHeight: "124.5%",
           productShiftX: "-2.6%", productShiftY: "-3.8%",
-          href: "/brands/texture-experience/green-tea-butter" },
+          href: "/brands/texture-experience/green-tea-butter",
+          mobile: { productHeight: "110%" } },
         // BLACK CHOCOLATE — creambath tube + Choco Hazelnut hair perfume
         { bg: "/brand/texture-experience/showcase/3-2.png", product: "/brand/texture-experience/showcase/3-1.png",
           bgAspect: "4810 / 2260", productAspect: "2242 / 2664", productHeight: "125%",
           productShiftX: "-6.7%", productShiftY: "-6.7%",
-          href: "/brands/texture-experience/black-chocolate" },
+          href: "/brands/texture-experience/black-chocolate",
+          mobile: { productHeight: "112%" } },
         // VANILLA MILK — creambath tube + Vanilla Souffle hair perfume
         { bg: "/brand/texture-experience/showcase/4-2.png", product: "/brand/texture-experience/showcase/4-1.png",
           bgAspect: "4810 / 2260", productAspect: "2860 / 3084", productHeight: "147%",
           productShiftX: "8.1%", productShiftY: "2.3%",
-          href: "/brands/texture-experience/vanilla-milk" },
+          href: "/brands/texture-experience/vanilla-milk",
+          mobile: { productHeight: "130%" } },
         // MINT SORBET — creambath tube + Mint Mocktail hair perfume
         { bg: "/brand/texture-experience/showcase/5-2.png", product: "/brand/texture-experience/showcase/5-1.png",
           bgAspect: "4810 / 2260", productAspect: "2526 / 2359", productHeight: "124.5%",
           productShiftX: "-10.5%", productShiftY: "0.3%",
-          href: "/brands/texture-experience/mint-sorbet" },
+          href: "/brands/texture-experience/mint-sorbet",
+          mobile: { productHeight: "107%" } },
       ],
     },
   };

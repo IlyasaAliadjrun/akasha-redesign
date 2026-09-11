@@ -21,7 +21,10 @@ const entry: SubBrand = {
     ],
     showcaseTitle: "/brand/t1/equalizer/showcase/title.png",
     showcaseTitleAspect: "4343 / 4027",
-    showcaseTitleOffsetY: "123px",
+    showcaseTitleOffsetY: "122px",
+    showcaseTitleOffsetX: "-35px",
+    showcaseTitleMobileOffsetY: "52px",
+    showcaseTitleMobileOffsetX: "-26px",
     // Both card PNGs carry ~12% transparent padding above the card artwork, so the slot
     // ratio is the CANVAS ratio (not the 2302×2987 card itself) — that keeps the two
     // cards the same size and aligned instead of letterboxing them.

@@ -19,6 +19,8 @@ const entry: Brand = {
     // MK3 brown — sampled from the wordmark art (#3E2120). Drives the About eyebrow,
     // the lineup wash + Learn more/Buy buttons and the CTA block.
     accentHex: "#E5E0DF",
+    lineupLearnMoreColor: "#6F635A",
+    lineupBuyColor: "#6F635A",
     // No standalone 3:4 brand card art — CrossSell reads this; the hero renders from
     // `heroLayers`. The About molecule photo is abstract enough to crop to 3:4.
     heroImage: "/brand/mk3/about/2.png",
@@ -98,7 +100,7 @@ const entry: Brand = {
         { bg: "/brand/mk3/showcase/1-2.png", product: "/brand/mk3/showcase/1-1.png",
           bgAspect: "4810 / 2260", productAspect: "5257 / 3029", productHeight: "127%",
           productShiftY: "3%", href: "/brands/mk3/damage-repair",
-          mobile: { productHeight: "127%", productShiftY: "2%" } },
+          mobile: { productHeight: "127%", productShiftY: "6%" } },
         // COLOR REVIVE — purple treatment shampoo + conditioner, centred over the gap
         { bg: "/brand/mk3/showcase/2-2.png", product: "/brand/mk3/showcase/2-1.png",
           bgAspect: "4810 / 2260", productAspect: "2322 / 2819", productHeight: "120%",
@@ -107,9 +109,9 @@ const entry: Brand = {
         // SCALP CARE — exfoliator, shampoo, both scalp serums. This cluster is drawn at
         // the banner's own ratio, so 100% overlays it 1:1 as the artwork intends.
         { bg: "/brand/mk3/showcase/3-2.png", product: "/brand/mk3/showcase/3-1.png",
-          bgAspect: "4810 / 2260", productAspect: "4445 / 2084", productHeight: "100%",
+          bgAspect: "4810 / 2260", productAspect: "4445 / 2084", productHeight: "100%", productShiftY: "-5%",
           href: "/brands/mk3/scalp-care",
-          mobile: { productHeight: "96%" } },
+          mobile: { productHeight: "96%", productShiftY: "-6%" } },
       ],
     },
   };

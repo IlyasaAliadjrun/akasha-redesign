@@ -29,6 +29,8 @@ const entry: SubBrand = {
     showcaseTitleAspect: "3992 / 3243",
     cardAspect: "2302 / 2987",
     showcaseTitleOffsetY: "32px",
+    showcaseTitleMobileOffsetY: "12px",
+    showcaseTitleMobileOffsetX: "-9px",
     cards: [
       { image: "/brand/t1/micellar/showcase/1.png", label: { en: "Micellar Shampoo — for sensitive & oily scalp", id: "Micellar Shampoo — kulit kepala sensitif & berminyak" } },
       { image: "/brand/t1/micellar/showcase/2.png", label: { en: "Micellar Conditioner — for sensitive & oily hair", id: "Micellar Conditioner — rambut sensitif & berminyak" } },

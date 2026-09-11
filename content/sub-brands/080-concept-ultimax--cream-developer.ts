@@ -23,6 +23,8 @@ const entry: SubBrand = {
     showcaseTitle: "/brand/concept-ultimax/cream-developer/showcase/title.png",
     showcaseTitleAspect: "4423 / 3479",
     showcaseTitleOffsetY: "60px",
+    showcaseTitleMobileOffsetY: "24px",
+    showcaseTitleMobileOffsetX: "-23px",
     // The Activator banner is the one wide card in the set, so it takes the featured
     // slot. (SubBrandShowcase renders `featured` above the grid; the reference sheet
     // shows it below — the section anatomy is fixed, so the position follows the

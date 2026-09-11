@@ -7,8 +7,8 @@ const entry: SubBrand = {
     name: "Hair Accessories",
     tagline: { en: `Elegant hair styling tools, to hold\nand perfect your hairstyle.`, id: `Penata rambut elegan, untuk menjaga\ndan menyempurnakan bentuk rambut.` },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
-    accentHex: "#A67E6C",
-    bannerBg: "#F1EEEA",
+    accentHex: "#000000",
+    bannerBg: "#FFFFFF",
     theme: "accent-light",
     heroWordmark: "/brand/asters/hero/wordmark.png",
     heroWordmarkAspect: "1513 / 740",
@@ -19,6 +19,8 @@ const entry: SubBrand = {
     showcaseTitle: "/brand/asters/hair-accessories/showcase/title.png",
     showcaseTitleAspect: "3556 / 2960",
     showcaseTitleOffsetY: "52px",
+    showcaseTitleMobileOffsetY: "22px",
+    showcaseTitleMobileOffsetX: "-9px",
     // Card 1 is authored a touch taller than the other two; `object-contain` keeps
     // every card at its own ratio inside this box rather than stretching them.
     cardAspect: "2302 / 2986",

@@ -9,7 +9,7 @@ const entry: SubBrand = {
     tagline: { en: "Helps reduce gray hair, repigments \nhair & restores natural hair color", id: "Membantu mengurangi rambut uban,\ndan menghitamkan rambut." },
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     // Grey Hair rose — sampled from the line's banner and card art (rgb(247,162,154)).
-    accentHex: "#F7A29A",
+    accentHex: "#000000",
     bannerBg: "#F4F4F4",
     theme: "accent-light",
     // No wordmark was delivered inside grey-hair/hero/, so the hero carries the

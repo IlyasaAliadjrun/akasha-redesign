@@ -48,7 +48,7 @@ const entry: Brand = {
       logoAspect: "1553 / 1060",
       logoWidth: "21vw",
       maxWidth: "32vw",
-      tagline: { en: "Smooth Hair . Fresh Scent . Every Day", id: "Rambut Lembut . Wangi Segar . Setiap Hari" },
+      tagline: { en: "Advanced Grooming, Engineered for Men", id: "Perawatan Terbaik, Diformulasikan untuk Pria." },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       left: "8%",
@@ -103,6 +103,8 @@ const entry: Brand = {
       hero: "/brand/barber-daily/showcase/title.png",
       heroAspect: "5427 / 4242",
       heroOffsetY: "60px",
+      heroMobileOffsetY: "23px",
+      heroMobileOffsetX: "17px",
       productAlign: "center",
       bannerAspect: "4810 / 2260",
       variants: [

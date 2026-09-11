@@ -31,6 +31,8 @@ const entry: SubBrand = {
     featuredPosition: "bottom",
     showcaseTitleOffsetY: "36px",
     showcaseTitleOffsetX: "-85px",
+    showcaseTitleMobileOffsetX: "-47px",
+    showcaseTitleMobileOffsetY: "15px",
     cardAspect: "2302 / 2987",
     cards: [
       { image: "/brand/barber-daily/hair-care/showcase/1.png", label: { en: "Shampoo", id: "Shampoo" } },

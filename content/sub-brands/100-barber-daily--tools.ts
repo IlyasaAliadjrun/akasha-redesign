@@ -21,6 +21,10 @@ const entry: SubBrand = {
     // only showcase asset shipped for this line — no variant cards exist yet.
     showcaseTitle: "/brand/barber-daily/tools/showcase/title.png",
     showcaseTitleAspect: "5601 / 5406",
+    showcaseTitleSize: "wide",
+    showcaseTitleOffsetX: "-75px",
+    showcaseTitleMobileOffsetX: "-50px",
+    showcaseTitleMobileOffsetY: "30px",
     cardAspect: "2302 / 2987",
     cards: [],
   };

@@ -22,7 +22,10 @@ const entry: SubBrand = {
     ],
     showcaseTitle: "/brand/t1/indigo-blue/showcase/title.png",
     showcaseTitleAspect: "4698 / 4224",
-    showcaseTitleOffsetY: "95px",
+    showcaseTitleOffsetY: "68px",
+    showcaseTitleOffsetX: "-30px",
+    showcaseTitleMobileOffsetY: "39px",
+    showcaseTitleMobileOffsetX: "-22px",
     cardAspect: "2302 / 2987",
     cards: [
       { image: "/brand/t1/indigo-blue/showcase/1.png", label: { en: "Indigo Blue Bright Body Wash", id: "Indigo Blue Bright Body Wash" } },

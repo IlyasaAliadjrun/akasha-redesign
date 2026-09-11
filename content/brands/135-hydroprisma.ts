@@ -97,6 +97,9 @@ const entry: Brand = {
     showcase: {
       hero: "/brand/hydroprisma/showcase/title.png",
       heroAspect: "4864 / 3860",
+      heroOffsetY: "-8px",
+      heroMobileOffsetY: "-8px",
+      heroMobileOffsetX: "11px",
       // These banners are FINISHED cards: the strength word and the bottom caption are
       // baked into the background. So the frame takes the art's own ratio instead of the
       // 5:2 default — at 5:2 an object-cover crop eats ~7 % off the top and bottom and

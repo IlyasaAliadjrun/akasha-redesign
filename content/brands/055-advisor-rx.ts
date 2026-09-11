@@ -37,12 +37,12 @@ const entry: Brand = {
       // Strong Hair Shampoo (250 mL) — largest, left of the cluster, enters from the LEFT (2nd).
       { src: "/brand/advisor-rx/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(51vw, 82vh)", maxWidth: "1944px", aspectRatio: "1 / 1", left: "47%", top: "11.7%",
         mobile: { left: "-8.5%", top: "20%", width: "min(87vw, 45vh)" } },
-      // Strong Hair Scalp Serum (40 mL) — smallest, front/right, enters from the RIGHT (4th).
-      { src: "/brand/advisor-rx/hero/4.png", depth: 84, enterFrom: "right", enterDelay: 0.6, width: "min(20vw, 30vh)", maxWidth: "746px", aspectRatio: "1491 / 2058", left: "69%", top: "49.2%",
-        mobile: { left: "38%", top: "42.5%", width: "min(29vw, 16vh)" } },
       // Strong Hair Tonic (100 mL) — between the mask and serum, enters from the RIGHT (3rd).
       { src: "/brand/advisor-rx/hero/3.png", depth: 72, enterFrom: "right", enterDelay: 0.4, width: "min(40vw, 74vh)", maxWidth: "1711px", aspectRatio: "1 / 1", left: "63.6%", top: "17%",
         mobile: { left: "27%", top: "24.5%", width: "min(75vw, 37vh)" } },
+        // Strong Hair Scalp Serum (40 mL) — smallest, front/right, enters from the RIGHT (4th).
+      { src: "/brand/advisor-rx/hero/4.png", depth: 84, enterFrom: "right", enterDelay: 0.6, width: "min(20vw, 30vh)", maxWidth: "746px", aspectRatio: "1491 / 2058", left: "69%", top: "49.2%",
+        mobile: { left: "38%", top: "42.5%", width: "min(29vw, 16vh)" } },
     ],
     // The wordmark is a plain lockup with no tagline baked in (unlike VICA/Wonhae),
     // so this hero keeps the full Hair Energy overlay: wordmark + tagline + subtitle

@@ -33,6 +33,8 @@ const entry: SubBrand = {
     showcaseTitleAspect: "5711 / 4937",
     showcaseTitleOffsetY: "100px",
     showcaseTitleOffsetX: "-130px",
+    showcaseTitleMobileOffsetX: "-67px",
+    showcaseTitleMobileOffsetY: "45px",
     cardAspect: "2302 / 2987",
     cards: [
       { image: "/brand/barber-daily/skin-care/showcase/1.png", label: { en: "Face Wash", id: "Sabun Cuci Muka" } },

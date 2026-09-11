@@ -17,7 +17,7 @@ const entry: Brand = {
     // product cluster on the right. Same pattern as the Hair Energy hero.
     heroLayers: [
       { src: "/brand/wonhae/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
-        width: "min(60vw, 100vh)", aspectRatio: "1949 / 1828", right: "5%", top: "5%",
+        width: "min(55vw, 95vh)", aspectRatio: "1949 / 1828", right: "3%", top: "7%",
         mobile: { width: "95vw", left: "2%", top: "23%" } },
     ],
     // The wordmark image already includes the "IT'S ALL YOU WANT" heading + subtitle

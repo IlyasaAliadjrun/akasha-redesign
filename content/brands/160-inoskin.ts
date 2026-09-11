@@ -81,6 +81,7 @@ const entry: Brand = {
       productAlign: "center",
       bannerAspect: "4811 / 2261",
       heroOffsetY: "80px",
+      heroMobileOffsetY: "30px",
       variants: [
         { bg: "/brand/inoskin/showcase/1-4.png", bgAspect: "4811 / 2261", product: "/brand/inoskin/showcase/1-cluster.png", productAspect: "4811 / 2261", productHeight: "100%", href: "/brands/inoskin/young-and-bright" },
       ],

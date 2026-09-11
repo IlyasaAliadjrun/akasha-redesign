@@ -26,7 +26,9 @@ const entry: SubBrand = {
     showcaseTitle: "/brand/barber-daily/body-care/title.png",
     showcaseTitleAspect: "5028 / 2908",
     showcaseTitleOffsetY: "40px",
-    showcaseTitleOffsetX: "-60px",
+    showcaseTitleOffsetX: "-55px",
+    showcaseTitleMobileOffsetX: "-30px",
+    showcaseTitleMobileOffsetY: "18px",
     cardAspect: "2302 / 2987",
     cards: [
       { image: "/brand/barber-daily/body-care/1.png", label: { en: "Antiperspirant", id: "Antiperspirant" } },

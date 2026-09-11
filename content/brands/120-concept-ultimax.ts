@@ -19,6 +19,8 @@ const entry: Brand = {
     // Concept Ultimax pink — the magenta the reference uses for headings, the
     // check icons and the wordmark (sampled rgb(227,70,134) across the showcase art).
     accentHex: "#E6EAE4",
+    lineupLearnMoreColor: "#6F635A",
+    lineupBuyColor: "#6F635A",
     // No dedicated 3:4 brand-card art was delivered, so CrossSell reuses the brand's
     // own 3:4 About photo (1534×2046) instead of a generic stock image.
     heroImage: "/brand/concept-ultimax/about/1.png",
@@ -86,6 +88,8 @@ const entry: Brand = {
     showcase: {
       hero: "/brand/concept-ultimax/showcase/title.png",
       heroAspect: "4987 / 2917",
+      heroOffsetY: "-30px",
+      heroMobileOffsetY: "-20px",
       // These banners are FINISHED cards: the heading, the botanical line art and a
       // two-line caption are all baked into the background. So the frame takes the
       // art's own ratio instead of the 5:2 default — at 5:2 an object-cover crop eats
