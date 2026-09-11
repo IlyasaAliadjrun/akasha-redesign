@@ -19,22 +19,22 @@ const entry: Brand = {
     // the product cluster (composited from hero/1–4) on the right. Hair Energy pattern.
     heroLayers: [
       { src: "/brand/128/hero/cluster.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
-        width: "min(76vw, 89vh)", aspectRatio: "3493 / 2130", right: "4%", top: "25%",
-        mobile: { width: "min(96vw, 41vh)", left: "10%", top: "34%" } },
+        width: "min(112vw, 125vh)", aspectRatio: "3493 / 2130", right: "-5%", top: "14%",
+        mobile: { width: "min(130vw, 75vh)", left: "-16%", top: "27%" } },
     ],
     heroContent: {
       logo: "/brand/128/hero/wordmark.png",
       logoAspect: "2160 / 1415",
       logoWidth: "16vw",
       maxWidth: "36vw",
-      tagline: { en: "Beauty Secrets\nfrom the Ocean Floor", id: "Rahasia Kecantikan\ndari Dasar Samudera" },
+      tagline: { en: "Beauty Secrets\nfrom the Deep Ocean", id: "Rahasia Kecantikan\ndari Dasar Samudera" },
       ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
       ctaHref: "#about",
       offsetY: "2vh",
       left: "9%",
       // white text on the coral banner (theme omitted = white)
       delay: 0.5,
-      mobile: { logoWidth: "35vw" },
+      mobile: { logoWidth: "28vw" },
     },
     bannerBg: "#FBA084", // 128 coral
     hero: true,
@@ -62,18 +62,20 @@ const entry: Brand = {
     showcase: {
       hero: "/brand/128/showcase/title.png",
       heroAspect: "2160 / 1348",
+      heroOffsetY: "-40px",
+      heroMobileOffsetY: "-21px",
       heroMaxWidth: "min(92vw, 46rem)",
       productAlign: "center",
       bannerAspect: "2160 / 1015",
       variants: [
         // BRIGHT & RADIANCE — 4 products (wide cluster → sits centred, text peeks at edges)
-        { bg: "/brand/128/showcase/1-5.png", product: "/brand/128/showcase/cluster-1.png", bgAspect: "2160 / 1015", productAspect: "3307 / 2090", productHeight: "88%" },
+        { bg: "/brand/128/showcase/1-5.png", product: "/brand/128/showcase/cluster-1.png", bgAspect: "2160 / 1015", productAspect: "3307 / 2090", productHeight: "103%", productShiftX: "1%", href: "/brands/128/bright-radiance" },
         // INTENSIVE BARRIER CARE — 3 products
-        { bg: "/brand/128/showcase/2-4.png", product: "/brand/128/showcase/cluster-2.png", bgAspect: "2160 / 1015", productAspect: "2661 / 2090", productHeight: "94%" },
+        { bg: "/brand/128/showcase/2-4.png", product: "/brand/128/showcase/cluster-2.png", bgAspect: "2160 / 1015", productAspect: "2661 / 2090", productHeight: "135%", href: "/brands/128/intensive-barrier-care" },
         // PRO ACNE DEFENSE — 2 products, nudged left of the wording
-        { bg: "/brand/128/showcase/3-3.png", product: "/brand/128/showcase/cluster-3.png", bgAspect: "2160 / 1015", productAspect: "1802 / 2090", productHeight: "102%", productShiftX: "-24%" },
+        { bg: "/brand/128/showcase/3-3.png", product: "/brand/128/showcase/cluster-3.png", bgAspect: "2160 / 1015", productAspect: "1802 / 2090", productHeight: "100%", productShiftX: "2%", productShiftY: "2%", href: "/brands/128/acne-pro" },
         // ADVANCED AGE REPAIR — 1 product, slightly left of centre
-        { bg: "/brand/128/showcase/4-2.png", product: "/brand/128/showcase/cluster-4.png", bgAspect: "2160 / 1015", productAspect: "1494 / 2090", productHeight: "102%", productShiftX: "-6%" },
+        { bg: "/brand/128/showcase/4-2.png", product: "/brand/128/showcase/cluster-4.png", bgAspect: "2160 / 1015", productAspect: "1494 / 2090", productHeight: "98%", productShiftX: "2%", href: "/brands/128/advanced-age-repair" },
       ],
     },
   };

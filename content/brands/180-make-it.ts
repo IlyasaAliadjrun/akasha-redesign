@@ -37,13 +37,13 @@ const entry: Brand = {
     heroLayers: [
       // Essence Sanctuary — front-left, tilted, enters from the LEFT (1st).
       { src: "/brand/makeit/hero/1.png", depth: 56, enterFrom: "left", enterDelay: 0, width: "min(40vw, 49vh)", aspectRatio: "2547 / 3799", left: "56.5%", bottom: "1%",
-        mobile: { left: "6.2%", bottom: "27.2%", width: "min(72vw, 27vh)" } },
+        mobile: { left: "6.2%", bottom: "25.2%", width: "min(72vw, 27vh)" } },
       // Mango Glacé — back, centre of the cluster, enters from the TOP (2nd).
       { src: "/brand/makeit/hero/2.png", depth: 34, enterFrom: "top", enterDelay: 0.2, width: "min(37vw, 42vh)", aspectRatio: "1977 / 3514", left: "64%", bottom: "27%",
-        mobile: { left: "25%", bottom: "42%", width: "min(63vw, 23vh)" } },
+        mobile: { left: "25%", bottom: "40%", width: "min(63vw, 23vh)" } },
       // Keep in Touch — front-right, tilted, enters from the RIGHT (3rd).
       { src: "/brand/makeit/hero/3.png", depth: 72, enterFrom: "right", enterDelay: 0.4, width: "min(37vw, 47vh)", aspectRatio: "2359 / 3713", left: "68.9%", bottom: "8%",
-        mobile: { left: "37.7%", bottom: "31.7%", width: "min(69vw, 25.5vh)" } },
+        mobile: { left: "37.7%", bottom: "29.7%", width: "min(69vw, 25.5vh)" } },
     ],
     heroContent: {
       logo: "/brand/makeit/hero/wordmark.png",
@@ -80,24 +80,29 @@ const entry: Brand = {
     // The banner art is a finished card with wording close to every edge. The frame
     // and each background use the asset's exact ratio, while background parallax is
     // disabled so no copy is cropped during scroll. There are no sub-brand pages, so
-    // the banners carry no `href`.
+    // Each linked range banner opens its matching sub-brand page.
     showcase: {
       hero: "/brand/makeit/showcase/title.png",
       heroAspect: "4325 / 4280",
       heroOffsetY: "180px",
+      heroMobileOffsetY: "65px",
+      heroMobileOffsetX: "0px",
       productAlign: "center",
       bannerAspect: "4810 / 2261",
       parallax: false,
       variants: [
         // Fragrance Enhancing Primer — Essence Sanctuary
         { bg: "/brand/makeit/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/makeit/showcase/1-1.png", productAspect: "2547 / 3799", productHeight: "155%", productShiftX: "-11%", productShiftY: "-1.5%",
-          mobile: { productHeight: "158%", productShiftX: "-9%", productShiftY: "-1%" } },
+          mobile: { productHeight: "158%", productShiftX: "-9%", productShiftY: "-1%" },
+          href: "/brands/make-it/makeit-fragrance-enhancing-primer" },
         // Extrait d'Intense Parfum — Mango Glacé
         { bg: "/brand/makeit/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/makeit/showcase/2-1.png", productAspect: "1977 / 3514", productHeight: "150%", productShiftX: "-6%", productShiftY: "-4%",
-          mobile: { productHeight: "150%", productShiftX: "-5%", productShiftY: "-4.5%" } },
+          mobile: { productHeight: "150%", productShiftX: "-5%", productShiftY: "-4.5%" },
+          href: "/brands/make-it/makeit-extrait-dintense" },
         // Extrait de Parfum — Keep in Touch
         { bg: "/brand/makeit/showcase/3-2.png", bgAspect: "4810 / 2260", product: "/brand/makeit/showcase/3-1.png", productAspect: "2359 / 3713", productHeight: "155%", productShiftX: "-8%",
-          mobile: { productHeight: "154%", productShiftX: "-7%", productShiftY: "-1%" } },
+          mobile: { productHeight: "154%", productShiftX: "-7%", productShiftY: "-1%" },
+          href: "/brands/make-it/makeit-extrait-de-parfum" },
       ],
     },
   };

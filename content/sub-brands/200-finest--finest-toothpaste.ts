@@ -1,0 +1,72 @@
+import type { SubBrand } from "@/lib/subBrands";
+
+const entry: SubBrand = {
+  slug: "finest-toothpaste",
+  parent: "finest",
+  name: "Finest Toothpaste",
+  tagline: {
+    en: "Remineralizing, Naturally Whitening & Oral Microbiome-Friendly.",
+    id: "Remineralisasi, Pemutih Alami & Ramah Mikrobioma Oral.",
+  },
+  ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
+  accentHex: "#F5595C",
+  bannerBg: "#FFFFFF",
+  theme: "dark",
+  heroWordmark: "/brand/finest/hero/wordmark.png",
+  heroWordmarkAspect: "1394 / 325",
+  heroWordmarkMobileWidth: "30vw",
+  heroLayers: [
+    {
+      src: "/brand/finest/finest-toothpaste/hero/2.png",
+      enterFrom: "right",
+      enterDelay: 0.3,
+      depth: 34,
+      width: "min(50vw, 73vh)",
+      aspectRatio: "3176 / 4735",
+      left: "55%",
+      top: "-7%",
+      mobile: { left: "5%", top: "-40%", width: "92%" },
+    },
+    {
+      src: "/brand/finest/finest-toothpaste/hero/1.png",
+      enterFrom: "bottom",
+      enterDelay: 0.15,
+      depth: 56,
+      width: "min(46vw, 68vh)",
+      aspectRatio: "3026 / 4424",
+      left: "52%",
+      top: "4.5%",
+      mobile: { left: "-6%", top: "-26%", width: "92%" },
+    },
+  ],
+  showcaseTitle: "/brand/finest/finest-toothpaste/showcase/title.png",
+  showcaseTitleAspect: "4376 / 3898",
+  showcaseBannerAspect: "4810 / 2261",
+  showcaseProductAlign: "center",
+  showcaseParallax: false,
+  showcaseTitleOffsetY: "75px",
+  showcaseTitleMobileOffsetY: "19px",
+  showcaseVariants: [
+    {
+      bg: "/brand/finest/finest-toothpaste/showcase/1-2.png",
+      product: "/brand/finest/finest-toothpaste/showcase/1-1.png",
+      bgAspect: "4810 / 2260",
+      productAspect: "5065 / 4223",
+      productHeight: "150%",
+      productShiftY: "-2%",
+      mobile: { productHeight: "150%", productShiftY: "-2%" },
+    },
+    {
+      bg: "/brand/finest/finest-toothpaste/showcase/2-2.png",
+      product: "/brand/finest/finest-toothpaste/showcase/2-1.png",
+      bgAspect: "4810 / 2261",
+      productAspect: "4416 / 3708",
+      productHeight: "150%",
+      productShiftY: "-2%",
+      mobile: { productHeight: "150%", productShiftY: "-2%" },
+    },
+  ],
+  cards: [],
+};
+
+export default entry;

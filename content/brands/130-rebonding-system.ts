@@ -98,16 +98,20 @@ const entry: Brand = {
       variants: [
         // SUPER GOLD — SG+ jar (tight render, 78% fill)
         { bg: "/brand/rebonding-system/showcase/1-2.png", product: "/brand/rebonding-system/showcase/1-1.png",
-          bgAspect: "4810 / 2261", productAspect: "2132 / 2100", productHeight: "82%", productShiftX: "-3%", productShiftY: "-1%" },
+          bgAspect: "4810 / 2261", productAspect: "2132 / 2100", productHeight: "82%", productShiftX: "-3%", productShiftY: "-1%",
+          href: "/brands/rebonding-system/super-gold" },
         // GOLD EDITION — GE+ jar (padded render, 63% fill → taller box for the same jar)
         { bg: "/brand/rebonding-system/showcase/2-2.png", product: "/brand/rebonding-system/showcase/2-1.png",
-          bgAspect: "4810 / 2260", productAspect: "1922 / 2045", productHeight: "68%", productShiftY: "-18%" },
+          bgAspect: "4810 / 2260", productAspect: "1922 / 2045", productHeight: "68%", productShiftY: "-18%",
+          href: "/brands/rebonding-system/gold-edition" },
         // ANTI RESISTANT — AR+ jar (tight render)
         { bg: "/brand/rebonding-system/showcase/3-2.png", product: "/brand/rebonding-system/showcase/3-1.png",
-          bgAspect: "4810 / 2260", productAspect: "2004 / 1965", productHeight: "85%", productShiftY: "-12%" },
+          bgAspect: "4810 / 2260", productAspect: "2004 / 1965", productHeight: "85%", productShiftY: "-12%",
+          href: "/brands/rebonding-system/anti-resistant" },
         // EXTREMELY DAMAGED — ED+ jar (padded render)
         { bg: "/brand/rebonding-system/showcase/4-2.png", product: "/brand/rebonding-system/showcase/4-1.png",
-          bgAspect: "4810 / 2261", productAspect: "1922 / 2045", productHeight: "72%", productShiftX: "-2%", productShiftY: "-11%" },
+          bgAspect: "4810 / 2261", productAspect: "1922 / 2045", productHeight: "72%", productShiftX: "-2%", productShiftY: "-11%",
+          href: "/brands/rebonding-system/extremely-damaged" },
       ],
     },
   };

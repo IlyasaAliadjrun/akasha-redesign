@@ -50,6 +50,13 @@ const entry: Brand = {
       theme: "dark",
       delay: 0.55,
       mobile: { logoWidth: "48vw" },
+      ctaBorderColor: "#0A0A0A",
+      ctaBackgroundColor: "transparent",
+      ctaTextColor: "#0A0A0A",
+
+      ctaHoverBorderColor: "#F5595C",
+      ctaHoverBackgroundColor: "#F5595C",
+      ctaHoverTextColor: "#FFFFFF",
     },
     bannerBg: "#ffffff", // blush off-white, matching the reference hero
     hero: false,
@@ -82,11 +89,13 @@ const entry: Brand = {
       parallax: false,
       bannerAspect: "4810 / 2261",
       heroOffsetY: "-30px",
+      heroMobileOffsetY: "-15px",
       variants: [
         { bg: "/brand/finest/showcase/1-2.png", product: "/brand/finest/showcase/1-1.png",
           bgAspect: "4810 / 2261", productAspect: "3660 / 3648", productHeight: "155%",
           productShiftX: "0%", productShiftY: "-6%",
-          mobile: { productHeight: "160%", productShiftX: "1%", productShiftY: "-6%" } },
+          mobile: { productHeight: "160%", productShiftX: "1%", productShiftY: "-6%" },
+          href: "/brands/finest/finest-toothpaste" },
       ],
     },
   };
