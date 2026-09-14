@@ -22,6 +22,8 @@ const entry: Brand = {
     // HydroPrisma purple — sampled from the wordmark art and the showcase headings
     // (rgb(95,33,104) on hero/wordmark.png, rgb(98,31,102) on the MILD banner).
     accentHex: "#eae7ee",
+    lineupLearnMoreColor: "#5F2168",
+    lineupBuyColor: "#5F2168",
     // No dedicated 3:4 brand-card art was delivered, so CrossSell reuses the hero's
     // Step 2 bottle: a tall portrait cut-out that survives the card's 3:4 cover crop
     // intact (visible art sits at 32–69 % of the square canvas).
@@ -119,9 +121,12 @@ const entry: Brand = {
       // shift re-centres the visible art — not the canvas — on the clear half. All three
       // land above the caption band (y 91–95 %).
       variants: [
-        { bg: "/brand/hydroprisma/showcase/1-2.png", bgAspect: "4810 / 2260", product: "/brand/hydroprisma/showcase/1-1.png", productAspect: "2462 / 2461", productHeight: "92%", productShiftX: "36%" },
-        { bg: "/brand/hydroprisma/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/hydroprisma/showcase/2-1.png", productAspect: "1697 / 1929", productHeight: "72%", productShiftX: "-84%" },
-        { bg: "/brand/hydroprisma/showcase/3-2.png", bgAspect: "4810 / 2261", product: "/brand/hydroprisma/showcase/3-1.png", productAspect: "3241 / 3240", productHeight: "122%", productShiftX: "32%" },
+        { bg: "/brand/hydroprisma/showcase/1-2.png", bgAspect: "4810 / 2260", product: "/brand/hydroprisma/showcase/1-1.png", productAspect: "2462 / 2461", productHeight: "92%", productShiftX: "36%",
+          href: "/brands/hydroprisma/mild" },
+        { bg: "/brand/hydroprisma/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/hydroprisma/showcase/2-1.png", productAspect: "1697 / 1929", productHeight: "72%", productShiftX: "-84%",
+          href: "/brands/hydroprisma/medium" },
+        { bg: "/brand/hydroprisma/showcase/3-2.png", bgAspect: "4810 / 2261", product: "/brand/hydroprisma/showcase/3-1.png", productAspect: "3241 / 3240", productHeight: "122%", productShiftX: "32%",
+          href: "/brands/hydroprisma/strong" },
       ],
     },
   };

@@ -80,6 +80,15 @@ Nama brand di folder pakai slug juga: `hair-energy/`, `nestle-pure-life/`.
 | Rebonding System Anti Resistant — showcase title | `brand/rebonding-system/anti-resistant/showcase/title.png` | **1.703:1** | 5159×3029 | CONTAIN | png |
 | Rebonding System Extremely Damaged — hero wordmark & product | `brand/rebonding-system/extremely-damaged/hero/wordmark.png`, `1.png` | **3.968:1 / 1.045:1** | 1123×283 / 1921×1839 | CONTAIN | png |
 | Rebonding System Extremely Damaged — showcase title | `brand/rebonding-system/extremely-damaged/showcase/title.png` | **1.703:1** | 5177×3039 | CONTAIN | png |
+| HydroPrisma Mild — hero cluster | `brand/hydroprisma/mild/hero/1.png` | **0.809:1** | 2863×3538 | CONTAIN | png |
+| HydroPrisma Mild — showcase title | `brand/hydroprisma/mild/showcase/title.png` | **1.394:1** | 4192×3008 | CONTAIN | png |
+| HydroPrisma Mild — cards & featured | `brand/hydroprisma/mild/showcase/1.png`, `2.png`, `3.png` | **0.771:1 / 1.341:1** | 2302×2986 / 4687×3494 | CONTAIN | png |
+| HydroPrisma Medium — hero wordmark & cluster | `brand/hydroprisma/medium/hero/wordmark.png`, `1.png` | **4.822:1 / 0.838:1** | 1548×321 / 3541×4225 | CONTAIN | png |
+| HydroPrisma Medium — showcase title | `brand/hydroprisma/medium/showcase/title.png` | **1.156:1** | 4335×3749 | CONTAIN | png |
+| HydroPrisma Medium — cards & featured | `brand/hydroprisma/medium/showcase/1.png`, `2.png`, `3.png` | **0.771:1 / 1.341:1** | 2302×2986 / 4687×3494 | CONTAIN | png |
+| HydroPrisma Strong — hero wordmark & cluster | `brand/hydroprisma/strong/hero/wordmark.png`, `1.png` | **4.822:1 / 0.825:1** | 1548×321 / 3297×3994 | CONTAIN | png |
+| HydroPrisma Strong — showcase title | `brand/hydroprisma/strong/showcase/title.png` | **1.201:1** | 4171×3474 | CONTAIN | png |
+| HydroPrisma Strong — cards & featured | `brand/hydroprisma/strong/showcase/1.png`, `2.png`, `3.png` | **0.771:1 / 1.341:1** | 2302×2986 / 4687×3494 | CONTAIN | png |
 
 \* Banner brand: **COVER & full screen di desktop MAUPUN HP**. Di HP (potret) sisi kiri-kanan terpotong banyak → taruh semua branding/subjek **benar-benar di tengah**. (`bannerBg` kini hanya warna latar saat loading.)
 
