@@ -232,8 +232,7 @@ export const DIVISIONS: {
     },
     brandCount: 4,
     accentHex: "#E85D2C",
-    image:
-      "https://images.unsplash.com/photo-1635363638580-c2809d049eee?q=80&w=1600&auto=format&fit=crop",
+    image: "/home/division-cards/food.jpg",
   },
   {
     id: "beauty",
