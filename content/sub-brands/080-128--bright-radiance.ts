@@ -33,7 +33,7 @@ const entry: SubBrand = {
   showcaseTitleAspect: "4742 / 3703",
   showcaseTitleOffsetY: "51px",
   showcaseTitleOffsetX: "-8px",
-  showcaseTitleMobileOffsetY: "19px",
+  showcaseTitleMobileOffsetY: "21px",
   showcaseTitleMobileOffsetX: "-16px",
   // showcaseSpacing: "tight",
   cardAspect: "2302 / 2986",

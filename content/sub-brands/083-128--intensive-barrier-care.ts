@@ -32,7 +32,7 @@ const entry: SubBrand = {
   showcaseTitle: "/brand/128/intensive-barrier-care/showcase/title.png",
   showcaseTitleAspect: "4649 / 3703",
   showcaseTitleOffsetY: "52px",
-  showcaseTitleMobileOffsetY: "20px",
+  showcaseTitleMobileOffsetY: "22px",
   // showcaseSpacing: "compact",
   featured: {
     image: "/brand/128/intensive-barrier-care/showcase/1.png",

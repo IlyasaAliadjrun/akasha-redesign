@@ -31,8 +31,8 @@ const entry: SubBrand = {
   ],
   showcaseTitle: "/brand/128/acne-pro/showcase/title.png",
   showcaseTitleAspect: "4865 / 3703",
-  showcaseTitleMobileOffsetY: "-5px",
-  showcaseWidth: "default",
+  showcaseTitleOffsetY: "30px",
+  showcaseTitleMobileOffsetY: "4px",
   showcaseVariants: [
     { bg: "/brand/128/acne-pro/showcase/1.png", bgAspect: "4687 / 2233" },
     { bg: "/brand/128/acne-pro/showcase/2.png", bgAspect: "4687 / 2234" },
