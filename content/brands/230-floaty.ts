@@ -92,6 +92,7 @@ const entry: Brand = {
       heroAspect: "2340 / 1444",
       productAlign: "center",
       bannerAspect: "2335 / 1052",
+      heroOffsetY: "30px", // the reference's title sits just above the hero's vertical centre
       // Sizing note: BrandShowcase clips the product to the banner frame, and a 60 g
       // pack fills 83.6% of its own canvas, so 115% is as tall as it can go before the
       // crimped top/bottom would be sliced. That reads a little smaller than the
@@ -99,12 +100,12 @@ const entry: Brand = {
       // fit that still shows the whole pack.
       variants: [
         // SALT & SAVORY — wording left (ends at 53%), Original 60 g to the right.
-        { bg: "/brand/floaty/showcase/1-2.png", product: "/brand/floaty/showcase/1-1.png", bgAspect: "2335 / 1052", productAspect: "1504 / 1047", productHeight: "115%", productShiftX: "30%" },
+        { bg: "/brand/floaty/showcase/1-2.png", product: "/brand/floaty/showcase/1-1.png", bgAspect: "2335 / 1052", productAspect: "1504 / 1047", productHeight: "100%", productShiftX: "33%" },
         // FULL OF MYSTERY — wording right (starts at 50%), Terserah to the left.
-        { bg: "/brand/floaty/showcase/2-2.png", product: "/brand/floaty/showcase/2-1.png", bgAspect: "2335 / 1052", productAspect: "1504 / 1047", productHeight: "115%", productShiftX: "-26%" },
+        { bg: "/brand/floaty/showcase/2-2.png", product: "/brand/floaty/showcase/2-1.png", bgAspect: "2335 / 1052", productAspect: "1504 / 1047", productHeight: "100%", productShiftX: "-35%" },
         // SMALL SIZE · BIG TASTE — wording on both sides, so the 16 g pack is sized to
         // sit inside the 41–58% gap between them, well under the 60 g banners.
-        { bg: "/brand/floaty/showcase/3-2.png", product: "/brand/floaty/showcase/3-1.png", bgAspect: "2335 / 1052", productAspect: "1504 / 1047", productHeight: "79%", productShiftX: "-1%" },
+        { bg: "/brand/floaty/showcase/3-2.png", product: "/brand/floaty/showcase/3-1.png", bgAspect: "2335 / 1052", productAspect: "1504 / 1047", productHeight: "95%", productShiftX: "0%" },
         // COMING SOON — wording is a single line across the top, so the unbranded pack
         // is centred and dropped until its flat bottom meets the card's bottom edge.
         { bg: "/brand/floaty/showcase/4-2.png", product: "/brand/floaty/showcase/4-1.png", bgAspect: "2335 / 1052", productAspect: "1503 / 1047", productHeight: "95%", productShiftY: "15%" },

@@ -223,6 +223,18 @@ export const DIVISIONS: {
     accentHex: "#0066CC",
     image: "/home/division-cards/beverage.jpg",
   },
+    {
+    id: "food",
+    name: { en: "Food and Beverage", id: "Makanan dan Minuman" },
+    tagline: {
+      en: "Flavors that bring people together",
+      id: "Rasa yang mempersatukan",
+    },
+    brandCount: 4,
+    accentHex: "#E85D2C",
+    image:
+      "https://images.unsplash.com/photo-1635363638580-c2809d049eee?q=80&w=1600&auto=format&fit=crop",
+  },
   {
     id: "beauty",
     name: { en: "Beauty & Personal Care", id: "Kecantikan & Perawatan Diri" },
@@ -237,19 +249,7 @@ export const DIVISIONS: {
     tagline: { en: "Groomed, every day", id: "Tampil rapi, setiap hari" },
     brandCount: 1,
     accentHex: "#5B6B7F",
-    image: "/home/hero-carousel/barber-daily.jpg",
-  },
-  {
-    id: "food",
-    name: { en: "Food and Beverage", id: "Makanan dan Minuman" },
-    tagline: {
-      en: "Flavors that bring people together",
-      id: "Rasa yang mempersatukan",
-    },
-    brandCount: 4,
-    accentHex: "#E85D2C",
-    image:
-      "https://images.unsplash.com/photo-1635363638580-c2809d049eee?q=80&w=1600&auto=format&fit=crop",
+    image: "/home/division-cards/mens.png",
   },
 ];
 

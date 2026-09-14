@@ -108,8 +108,8 @@ export default function DivisionCards() {
         ref={railRef}
         className="overflow-x-auto lg:overflow-visible no-scrollbar select-none"
       >
-        <div className="flex lg:grid lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 lg:px-10 snap-x snap-mandatory lg:snap-none max-w-content mx-auto">
-          {DIVISIONS.filter((d) => d.id !== "mens").map((d) => {
+        <div className="flex lg:grid lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 lg:px-10 snap-x snap-mandatory lg:snap-none max-w-content mx-auto">
+          {DIVISIONS.map((d) => {
             const first = brandsByDivision(d.id)[0];
             return (
               <Link
