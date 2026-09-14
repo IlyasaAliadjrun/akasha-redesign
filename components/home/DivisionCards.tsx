@@ -84,7 +84,7 @@ export default function DivisionCards() {
             <span className="block whitespace-nowrap">{t(home.divisions.heading2)}</span>
           </h2>
         </div>
-        <div className="hidden md:flex lg:hidden items-center gap-3 shrink-0">
+        <div className="hidden md:flex items-center gap-3 shrink-0">
           <button
             aria-label={t(home.common.previous)}
             onClick={() => scrollBy(-1)}
@@ -106,9 +106,10 @@ export default function DivisionCards() {
 
       <div
         ref={railRef}
-        className="overflow-x-auto lg:overflow-visible no-scrollbar select-none"
+        className="overflow-x-auto overflow-y-hidden no-scrollbar select-none"
+        style={{ touchAction: "pan-x pan-y" }}
       >
-        <div className="flex lg:grid lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 lg:px-10 snap-x snap-mandatory lg:snap-none max-w-content mx-auto">
+        <div className="flex gap-4 sm:gap-5 lg:gap-6 lineup-inset snap-x snap-mandatory pb-2">
           {DIVISIONS.map((d) => {
             const first = brandsByDivision(d.id)[0];
             return (
@@ -117,14 +118,14 @@ export default function DivisionCards() {
                 data-card
                 href={first ? href(brandHref(first.slug)) : "#"}
                 draggable={false}
-                className="snap-start shrink-0 lg:shrink w-[84vw] sm:w-[58vw] md:w-[42vw] lg:w-auto max-w-[440px] lg:max-w-none aspect-[3/4] h-auto max-h-[720px] min-h-[440px] lg:min-h-0 relative rounded-2xl sm:rounded-3xl overflow-hidden group"
+                className="snap-start shrink-0 w-[84vw] sm:w-[58vw] md:w-[42vw] lg:w-[clamp(240px,19vw,280px)] aspect-[3/4] relative rounded-2xl sm:rounded-3xl overflow-hidden group"
               >
                 <Image
                   src={asset(d.image)}
                   alt={t(d.name)}
                   fill
                   draggable={false}
-                  sizes="(min-width:1280px) 26vw, (min-width:1024px) 30vw, (min-width:768px) 42vw, (min-width:640px) 58vw, 84vw"
+                  sizes="(min-width:1024px) 280px, (min-width:768px) 42vw, (min-width:640px) 58vw, 84vw"
                   className="object-cover transition-transform duration-[1200ms] group-hover:scale-105 pointer-events-none"
                 />
                 <div

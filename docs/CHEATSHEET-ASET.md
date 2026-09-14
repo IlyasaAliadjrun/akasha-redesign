@@ -34,7 +34,7 @@ Nama brand di folder pakai slug juga: `hair-energy/`, `nestle-pure-life/`.
 | Aset | Folder | Rasio | Resolusi | Fit | Format |
 |---|---|:---:|:---:|:---:|:---:|
 | Banner slider beranda | `home/hero-carousel/` | **16:9** | 2560×1440 | COVER | jpg |
-| Kartu divisi beranda | `home/division-cards/` | **3:4** | 1200×1600 | COVER | jpg |
+| Kartu divisi beranda | `home/division-cards/` | **3:4** | 1200×1600 | COVER · rail horizontal | jpg/png |
 | Grid brand — tile besar | `home/brand-grid/` | **2:1** | 1600×800 | COVER | jpg |
 | Grid brand — tile kecil | `home/brand-grid/` | **1:1** | 1080×1080 | COVER | jpg |
 | Banner brand (hero) | `brand/{slug}/hero/` | **16:9** | 2560×1440 | COVER* | jpg/png |
@@ -162,7 +162,6 @@ CONTAIN → latar POLOS 1 warna / PNG TRANSPARAN (biar menyatu).
 
 ## ⚠️ Aset yang masih kurang
 
-- `home/division-cards/mens.jpg` (3:4) — divisi Men's Care belum punya kartu sendiri, sekarang meminjam banner 16:9 `home/hero-carousel/barber-daily.jpg` (rasio tidak pas).
 - Aset **9:16** untuk banner brand di HP — belum ada satu pun.
 
 ## ✅ Checklist

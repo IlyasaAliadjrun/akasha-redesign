@@ -61,7 +61,7 @@ Sejak perapian aset, `public/` disusun mengikuti **halaman** situs, lalu dipecah
 public/
 ├── home/                        ← Beranda
 │   ├── hero-carousel/           banner slider utama      → nestle-pure-life.jpg, hair-energy.jpg, …
-│   ├── division-cards/          kartu divisi             → beverage.jpg, beauty.png
+│   ├── division-cards/          kartu divisi             → beverage.jpg, food.jpg, beauty.png, mens.png
 │   └── brand-grid/              grid "Ten brands…"       → hair-energy.jpg, wonhae.jpg, …
 ├── brand/                       ← Halaman brand — 1 folder per brand, pakai slug
 │   ├── hair-energy/
@@ -104,7 +104,7 @@ public/
 | # | Dipakai di | Folder | Rasio | Resolusi master | Tampilan | Format |
 |---|---|---|---|---|---|---|
 | 1 | **Banner slider** beranda | `home/hero-carousel/` | **16:9** | 2560×1440 | COVER | jpg/webp |
-| 2 | **Kartu divisi** beranda | `home/division-cards/` | **3:4** | 1200×1600 | COVER | jpg/webp |
+| 2 | **Kartu divisi** beranda | `home/division-cards/` | **3:4** | 1200×1600 | COVER · rail horizontal | jpg/webp |
 | 3 | **Grid brand** beranda | `home/brand-grid/` | **2:1** (lebar) / **1:1** (kecil) | 1600×800 / 1080×1080 | COVER | jpg/webp |
 | 4 | **Banner brand** (hero halaman brand) | `brand/{slug}/hero/` | **16:9** | 2560×1440 | COVER (desktop & HP, layar penuh) | jpg/png/webp |
 | 5 | **Foto produk** (Explore the lineup) | `brand/{slug}/product-lineup/` | **1:1** | 1200×1200 | CONTAIN | **PNG transparan** |
@@ -158,8 +158,8 @@ Ini jawaban ringkas "rasio terbaiknya berapa untuk desktop & HP". **Kartu** = ra
 - **Rasio:** 3:4 (potret) — **Resolusi:** 1200×1600 (min 900×1200)
 - **Tampilan:** COVER, bentuk kartu potret. Sama di desktop & HP.
 - **Panduan:** subjek di tengah; bagian bawah kartu tertimpa teks putih (nama divisi) — sisakan ruang.
-- **Nama file = id divisi:** `beverage.jpg`, `beauty.png`, `mens.jpg`, `food.jpg`.
-- ⚠️ **Belum ada:** `mens.jpg`. Divisi Men's Care sekarang meminjam banner 16:9 `home/hero-carousel/barber-daily.jpg` — rasionya tidak pas (harusnya 3:4). Kalau aset 3:4-nya sudah ada, kirim dan beri tahu developer.
+- **Nama file = id divisi:** `beverage.jpg`, `food.jpg`, `beauty.png`, `mens.png`.
+- **Tampilan responsif:** semua kartu tetap 3:4 dan memakai `object-cover`. Desktop dan mobile menggunakan rail horizontal yang dapat digeser; ukuran desktop berada pada rentang 240–280 px, sedangkan mobile memakai kartu lebar dengan sebagian kartu berikutnya terlihat sebagai penanda scroll.
 - Catatan: `makarizo-professional.png` ada di folder ini tapi **tidak dipakai** — sisa dari waktu "Professional" masih jadi divisi sendiri.
 
 #### 3) Grid Brand ("Ten brands. One family.") — `public/home/brand-grid/`
