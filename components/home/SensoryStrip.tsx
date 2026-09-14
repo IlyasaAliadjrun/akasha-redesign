@@ -7,7 +7,7 @@ import { useLocale } from "@/lib/locale/LocaleProvider";
 // (Men's Care is excluded there too, so keep it out here for consistency).
 export default function SensoryStrip() {
   const { asset } = useLocale();
-  const images = DIVISIONS.filter((d) => d.id !== "mens").map((d) => d.image);
+  const images = DIVISIONS.map((d) => d.image);
   const doubled = [...images, ...images];
   return (
     <section className="bg-white py-12 sm:py-16 md:py-20 overflow-hidden">
@@ -22,7 +22,7 @@ export default function SensoryStrip() {
               alt=""
               fill
               sizes="(min-width:1280px) 420px, (min-width:768px) 32vw, 48vw"
-              className="object-cover"
+              className="object-cover object-[50%_25%] md:object-[50%_35%]"
             />
           </div>
         ))}
