@@ -111,39 +111,62 @@ export default function DivisionCards() {
       >
         <div className="flex gap-4 sm:gap-5 lg:gap-6 lineup-inset snap-x snap-mandatory pb-2">
           {DIVISIONS.map((d) => {
-            const first = brandsByDivision(d.id)[0];
+            const brands = brandsByDivision(d.id);
+            const first = brands[0];
             return (
-              <Link
+              <article
                 key={d.id}
                 data-card
-                href={first ? href(brandHref(first.slug)) : "#"}
-                draggable={false}
-                className="snap-start shrink-0 w-[84vw] sm:w-[58vw] md:w-[42vw] lg:w-[clamp(240px,19vw,280px)] aspect-[3/4] relative rounded-2xl sm:rounded-3xl overflow-hidden group"
+                className="snap-start shrink-0 w-[54vw] sm:w-[58vw] md:w-[42vw] lg:w-[clamp(240px,19vw,280px)] aspect-[3/4] relative rounded-2xl sm:rounded-3xl overflow-hidden group"
               >
-                <Image
-                  src={asset(d.image)}
-                  alt={t(d.name)}
-                  fill
+                <Link
+                  href={first ? href(brandHref(first.slug)) : "#"}
+                  aria-label={t(d.name)}
                   draggable={false}
-                  sizes="(min-width:1024px) 280px, (min-width:768px) 42vw, (min-width:640px) 58vw, 84vw"
-                  className="object-cover transition-transform duration-[1200ms] group-hover:scale-105 pointer-events-none"
-                />
+                  className="absolute inset-0 z-0"
+                >
+                  <Image
+                    src={asset(d.image)}
+                    alt={t(d.name)}
+                    fill
+                    draggable={false}
+                    sizes="(min-width:1024px) 280px, (min-width:768px) 42vw, (min-width:640px) 58vw, 54vw"
+                    className="object-cover transition-transform duration-[1200ms] group-hover:scale-105 pointer-events-none"
+                  />
+                </Link>
                 <div
-                  className="absolute inset-0"
+                  className="absolute inset-0 z-10 pointer-events-none"
                   style={{
                     background: `linear-gradient(180deg, ${d.accentHex}22 0%, rgba(0,0,0,0.55) 100%)`,
                   }}
                 />
-                <div className="absolute inset-0 p-5 sm:p-6 md:p-7 lg:p-8 flex flex-col justify-end text-white">
+                <div className="absolute inset-0 z-10 bg-black/0 transition-colors duration-500 group-hover:bg-black/65 group-focus-within:bg-black/25 pointer-events-none" />
+                <div className="absolute inset-x-5 sm:inset-x-6 md:inset-x-7 lg:inset-x-8 top-5 sm:top-6 md:top-7 lg:top-8 z-20 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 transition duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto">
+                  <ul className="divide-y divide-white/40">
+                    {brands.map((brand) => (
+                      <li key={brand.slug}>
+                        <Link
+                          href={href(brandHref(brand.slug))}
+                          draggable={false}
+                          className="pointer-events-auto flex items-center justify-between gap-3 py-2 sm:py-2.5 text-sm sm:text-base font-medium text-white transition-colors hover:text-white/70"
+                        >
+                          <span>{brand.name}</span>
+                          {/* <span aria-hidden>→</span> */}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="absolute inset-0 z-20 p-5 sm:p-6 md:p-7 lg:p-8 flex flex-col justify-end text-white group-hover:text-white/5 group-focus-within:text-white/50 pointer-events-none">
                   <div className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-extrabold tracking-tightish leading-tight">
                     {t(d.name)}
                   </div>
-                  <div className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-white/80">{t(d.tagline)}</div>
+                  <div className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-white/80 group-hover:text-white/5 group-focus-within:text-white/70">{t(d.tagline)}</div>
                   <div className="mt-3 sm:mt-4 md:mt-5 text-xs font-medium opacity-80 group-hover:opacity-100 transition">
                     {t(home.common.explore)} →
                   </div>
                 </div>
-              </Link>
+              </article>
             );
           })}
           <div className="shrink-0 w-4" />

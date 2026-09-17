@@ -160,6 +160,7 @@ Ini jawaban ringkas "rasio terbaiknya berapa untuk desktop & HP". **Kartu** = ra
 - **Panduan:** subjek di tengah; bagian bawah kartu tertimpa teks putih (nama divisi) — sisakan ruang.
 - **Nama file = id divisi:** `beverage.jpg`, `food.jpg`, `beauty.png`, `mens.png`.
 - **Tampilan responsif:** semua kartu tetap 3:4 dan memakai `object-cover`. Desktop dan mobile menggunakan rail horizontal yang dapat digeser; ukuran desktop berada pada rentang 240–280 px, sedangkan mobile memakai kartu lebar dengan sebagian kartu berikutnya terlihat sebagai penanda scroll.
+- **Interaksi hover/focus:** kartu diberi overlay gelap tambahan dan menampilkan daftar brand dalam divisinya; setiap nama brand menjadi link ke halaman brand terkait.
 - Catatan: `makarizo-professional.png` ada di folder ini tapi **tidak dipakai** — sisa dari waktu "Professional" masih jadi divisi sendiri.
 
 #### 3) Grid Brand ("Ten brands. One family.") — `public/home/brand-grid/`

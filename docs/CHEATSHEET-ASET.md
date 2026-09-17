@@ -34,7 +34,7 @@ Nama brand di folder pakai slug juga: `hair-energy/`, `nestle-pure-life/`.
 | Aset | Folder | Rasio | Resolusi | Fit | Format |
 |---|---|:---:|:---:|:---:|:---:|
 | Banner slider beranda | `home/hero-carousel/` | **16:9** | 2560×1440 | COVER | jpg |
-| Kartu divisi beranda | `home/division-cards/` | **3:4** | 1200×1600 | COVER · rail horizontal | jpg/png |
+| Kartu divisi beranda | `home/division-cards/` | **3:4** | 1200×1600 | COVER · rail horizontal · hover list | jpg/png |
 | Grid brand — tile besar | `home/brand-grid/` | **2:1** | 1600×800 | COVER | jpg |
 | Grid brand — tile kecil | `home/brand-grid/` | **1:1** | 1080×1080 | COVER | jpg |
 | Banner brand (hero) | `brand/{slug}/hero/` | **16:9** | 2560×1440 | COVER* | jpg/png |
