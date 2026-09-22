@@ -1,15 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import {
   FINANCIAL_YEARS,
   FINANCIALS,
   RATIOS,
   SHARE_ACTIONS,
+  SHARE_PRICE_DAILY,
+  SHARE_PRICE_DAILY_AS_OF,
+  dailySharePriceSummary,
+  DIVIDEND_HISTORY,
+  ANNUAL_REPORTS,
+  SUSTAINABILITY_REPORTS,
+  FINANCIAL_REPORT_ARCHIVE,
+  SHAREHOLDERS,
+  SHAREHOLDING_AS_OF,
   OUTSTANDING_SHARES,
+  AUTHORIZED_SHARES,
+  SHARE_REGISTRAR,
   INVESTOR_SECTIONS,
 } from "@/lib/investor";
 import { INVESTOR_PAGE } from "@/content/pages/investor";
 import RevenueChart from "@/components/investor/RevenueChart";
+import SharePriceChart from "@/components/investor/SharePriceChart";
 import PageHero from "@/components/page/PageHero";
 import { localizeHref, type Locale, type Localized } from "@/lib/locale/paths";
 
@@ -29,16 +42,35 @@ export default function InvestorPage({ params }: { params: { locale: string } })
   const locale = params.locale as Locale;
   const href = (p: string) => localizeHref(locale, p);
   const t = <T,>(v: Localized<T>) => v[locale];
+  const numberLocale = locale === "id" ? "id-ID" : "en-US";
   const fmt = (n: number) =>
-    n.toLocaleString(locale === "id" ? "id-ID" : "en-US", {
-      maximumFractionDigits: 0,
-    });
+    n.toLocaleString(numberLocale, { maximumFractionDigits: 0 });
+  const months = INVESTOR_PAGE.monthsShort[locale];
+  const daily = dailySharePriceSummary();
+  const asOfLabel = `${SHARE_PRICE_DAILY_AS_OF.day} ${
+    months[SHARE_PRICE_DAILY_AS_OF.month - 1]
+  } ${SHARE_PRICE_DAILY_AS_OF.year}`;
+  const latestYear = FINANCIAL_YEARS[0];
+  const earliestYear = FINANCIAL_YEARS[FINANCIAL_YEARS.length - 1];
   const netSalesLatest = FINANCIALS.netSales[0];
   const netSalesPrev = FINANCIALS.netSales[1];
   const netIncomeLatest = FINANCIALS.netIncome[0];
   const netIncomePrev = FINANCIALS.netIncome[1];
   const revGrowth = ((netSalesLatest - netSalesPrev) / netSalesPrev) * 100;
   const niGrowth = ((netIncomeLatest - netIncomePrev) / netIncomePrev) * 100;
+
+  const archives = [
+    {
+      id: "annual-report",
+      copy: INVESTOR_PAGE.annualReports,
+      items: ANNUAL_REPORTS,
+    },
+    {
+      id: "sustainability-report",
+      copy: INVESTOR_PAGE.sustainabilityReports,
+      items: SUSTAINABILITY_REPORTS,
+    },
+  ];
 
   return (
     <>
@@ -57,19 +89,19 @@ export default function InvestorPage({ params }: { params: { locale: string } })
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {[
             {
-              label: t(INVESTOR_PAGE.metrics.netSales.label),
+              label: `${t(INVESTOR_PAGE.metrics.netSales.label)} ${latestYear}`,
               value: `Rp ${fmt(netSalesLatest / 1000)} M`,
               sub: `${revGrowth >= 0 ? "+" : ""}${revGrowth.toFixed(1)}% YoY`,
               positive: revGrowth >= 0,
             },
             {
-              label: t(INVESTOR_PAGE.metrics.netIncome.label),
+              label: `${t(INVESTOR_PAGE.metrics.netIncome.label)} ${latestYear}`,
               value: `Rp ${fmt(netIncomeLatest / 1000)} M`,
               sub: `${niGrowth >= 0 ? "+" : ""}${niGrowth.toFixed(1)}% YoY`,
               positive: niGrowth >= 0,
             },
             {
-              label: t(INVESTOR_PAGE.metrics.eps.label),
+              label: `${t(INVESTOR_PAGE.metrics.eps.label)} ${latestYear}`,
               value: `Rp ${fmt(FINANCIALS.eps[0])}`,
               sub: t(INVESTOR_PAGE.metrics.eps.sub),
             },
@@ -105,7 +137,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
       </section>
 
       {/* REVENUE CHART */}
-      <section className="py-24 bg-[#FAFAFA]">
+      <section id="financial-highlights" className="scroll-mt-24 py-24 bg-[#FAFAFA]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="flex items-end justify-between gap-6 mb-10">
             <div>
@@ -144,7 +176,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
               {t(INVESTOR_PAGE.table.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
-              {t(INVESTOR_PAGE.table.heading)}
+              {t(INVESTOR_PAGE.table.heading)} {earliestYear}–{latestYear}.
             </h2>
             <p className="mt-3 text-sm text-ink/50">
               {t(INVESTOR_PAGE.table.paragraph)}
@@ -171,6 +203,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
                   { label: t(INVESTOR_PAGE.table.rows.netIncome), values: FINANCIALS.netIncome },
                   { label: t(INVESTOR_PAGE.table.rows.eps), values: FINANCIALS.eps },
                   { label: t(INVESTOR_PAGE.table.rows.totalAssets), values: FINANCIALS.totalAssets },
+                  { label: t(INVESTOR_PAGE.table.rows.totalLiabilities), values: FINANCIALS.totalLiabilities },
                   { label: t(INVESTOR_PAGE.table.rows.totalEquity), values: FINANCIALS.totalEquity },
                   { label: t(INVESTOR_PAGE.table.rows.currentRatio), values: FINANCIALS.currentRatio },
                 ].map(({ label, values }) => (
@@ -218,7 +251,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
       </section>
 
       {/* CHRONOLOGICAL SHARE */}
-      <section className="py-24 bg-ink text-white">
+      <section id="chronological-share" className="scroll-mt-24 py-24 bg-ink text-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="mb-14">
             <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
@@ -253,21 +286,146 @@ export default function InvestorPage({ params }: { params: { locale: string } })
       </section>
 
       {/* STOCK INFO */}
-      <section className="py-24 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
+      <section id="stock-information" className="scroll-mt-24 py-24 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="max-w-2xl">
             <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(INVESTOR_PAGE.stockInfo.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
               {t(INVESTOR_PAGE.stockInfo.heading)}
             </h2>
-            <p className="mt-6 text-ink/65 max-w-lg">
+            <p className="mt-6 text-ink/65">
               {t(INVESTOR_PAGE.stockInfo.paragraph)}
             </p>
           </div>
 
-          <div className="space-y-5">
+          {/* HARGA SAHAM TERKINI */}
+          <div className="mt-14">
+            <div className="flex flex-wrap items-end justify-between gap-6 mb-6">
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
+                  {t(INVESTOR_PAGE.stockInfo.daily.label)}
+                </div>
+                <div className="text-sm text-ink/50">
+                  {t(INVESTOR_PAGE.stockInfo.daily.asOf)} {asOfLabel}
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-8 sm:gap-12">
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
+                    {t(INVESTOR_PAGE.stockInfo.daily.lastClose)}
+                  </div>
+                  <div className="text-3xl lg:text-4xl font-extrabold tracking-tightish">
+                    Rp {fmt(daily.last)}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
+                    {t(INVESTOR_PAGE.stockInfo.daily.periodChange)}
+                  </div>
+                  <div
+                    className={`text-3xl lg:text-4xl font-extrabold tracking-tightish ${
+                      daily.changePercent >= 0
+                        ? "text-accent-wellness"
+                        : "text-accent-food"
+                    }`}
+                  >
+                    {daily.changePercent >= 0 ? "+" : ""}
+                    {daily.changePercent.toFixed(1)}%
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
+                    {t(INVESTOR_PAGE.stockInfo.daily.marketCap)}
+                  </div>
+                  <div className="text-3xl lg:text-4xl font-extrabold tracking-tightish">
+                    Rp{" "}
+                    {(daily.marketCap / 1e12).toLocaleString(numberLocale, {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}{" "}
+                    {t(INVESTOR_PAGE.trillionUnit)}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <SharePriceChart
+              data={SHARE_PRICE_DAILY.map((d) => ({
+                key: `${d.month}-${d.day}`,
+                label: String(d.day),
+                groupLabel: months[d.month - 1],
+                close: d.close,
+              }))}
+              domain={{ min: 30_000, max: 40_000 }}
+              ticks={[30_000, 32_500, 35_000, 37_500, 40_000]}
+              labels={{
+                close: t(INVESTOR_PAGE.stockInfo.daily.chart.close),
+                axis: t(INVESTOR_PAGE.stockInfo.daily.chart.axis),
+                summary: t(INVESTOR_PAGE.stockInfo.daily.chart.summary),
+              }}
+              locale={locale}
+              tickEvery={{ compact: 8, wide: 4 }}
+            />
+
+            <details className="mt-6 group">
+              <summary className="cursor-pointer list-none text-sm font-semibold text-accent-beverage transition-opacity hover:opacity-70">
+                {t(INVESTOR_PAGE.stockInfo.daily.dailyTable)}
+                <span className="ml-2 inline-block transition-transform group-open:rotate-90">
+                  ›
+                </span>
+              </summary>
+              <div className="mt-5 grid grid-cols-2 gap-x-10 sm:grid-cols-3 lg:grid-cols-4">
+                {SHARE_PRICE_DAILY.map((d) => (
+                  <div
+                    key={`${d.month}-${d.day}`}
+                    className="flex items-baseline justify-between gap-4 border-b border-ink/5 py-2 text-sm tabular-nums"
+                  >
+                    <span className="text-ink/55">
+                      {d.day} {months[d.month - 1]}
+                    </span>
+                    <span className="font-semibold">{fmt(d.close)}</span>
+                  </div>
+                ))}
+              </div>
+            </details>
+
+            <p className="mt-6 text-sm text-ink/50">
+              {t(INVESTOR_PAGE.stockInfo.daily.note)}
+            </p>
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-6">
+                {t(INVESTOR_PAGE.stockInfo.shareholders.heading)} ·{" "}
+                {t(SHAREHOLDING_AS_OF)}
+              </div>
+              <div className="space-y-5">
+                {SHAREHOLDERS.map((s, i) => (
+                  <div key={t(s.name)} className="bg-[#FAFAFA] rounded-3xl p-6 lg:p-8">
+                    <div className="flex items-baseline justify-between gap-4 mb-3">
+                      <div className="text-sm font-semibold">{t(s.name)}</div>
+                      <div className="text-2xl lg:text-3xl font-extrabold tracking-tightish tabular-nums">
+                        {s.percent}
+                      </div>
+                    </div>
+                    <div className="h-2 bg-white rounded-full overflow-hidden">
+                      <div
+                        className={`h-full ${i === 0 ? "bg-accent-beverage" : "bg-ink"}`}
+                        style={{ width: `${s.ratio * 100}%` }}
+                      />
+                    </div>
+                    <div className="mt-2 text-xs text-ink/50 tabular-nums">
+                      {s.shares} {t(INVESTOR_PAGE.stockInfo.shareholders.sharesUnit)}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-5">
             {[
               { k: t(INVESTOR_PAGE.stockInfo.rows.ticker.k), v: t(INVESTOR_PAGE.stockInfo.rows.ticker.v) },
               { k: t(INVESTOR_PAGE.stockInfo.rows.exchange.k), v: t(INVESTOR_PAGE.stockInfo.rows.exchange.v) },
@@ -275,21 +433,181 @@ export default function InvestorPage({ params }: { params: { locale: string } })
               { k: t(INVESTOR_PAGE.stockInfo.rows.sector.k), v: t(INVESTOR_PAGE.stockInfo.rows.sector.v) },
               { k: t(INVESTOR_PAGE.stockInfo.rows.parValue.k), v: t(INVESTOR_PAGE.stockInfo.rows.parValue.v) },
               {
+                k: t(INVESTOR_PAGE.stockInfo.rows.authorizedShares.k),
+                v: `${AUTHORIZED_SHARES} ${t(INVESTOR_PAGE.stockInfo.rows.authorizedShares.unit)}`,
+              },
+              {
                 k: t(INVESTOR_PAGE.stockInfo.rows.outstandingShares.k),
                 v: `${OUTSTANDING_SHARES} ${t(INVESTOR_PAGE.stockInfo.rows.outstandingShares.unit)}`,
               },
+              { k: t(INVESTOR_PAGE.stockInfo.rows.registrar.k), v: SHARE_REGISTRAR },
             ].map((r) => (
               <div
                 key={r.k}
-                className="flex items-center justify-between border-b border-ink/10 pb-5"
+                className="flex items-center justify-between gap-6 border-b border-ink/10 pb-5"
               >
                 <div className="text-sm text-ink/50">{r.k}</div>
-                <div className="font-semibold">{r.v}</div>
+                <div className="font-semibold text-right">{r.v}</div>
+              </div>
+            ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DIVIDENDS */}
+      <section id="dividends" className="scroll-mt-24 py-24 bg-[#FAFAFA]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="mb-10 max-w-2xl">
+            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+              {t(INVESTOR_PAGE.dividends.eyebrow)}
+            </div>
+            <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
+              {t(INVESTOR_PAGE.dividends.heading)}
+            </h2>
+            <p className="mt-4 text-ink/60">{t(INVESTOR_PAGE.dividends.paragraph)}</p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-ink/10 text-left text-[11px] uppercase tracking-[0.2em] font-bold text-ink/50">
+                  <th className="py-4 pr-6">{t(INVESTOR_PAGE.dividends.columns.year)}</th>
+                  <th className="py-4 px-4 text-right">{t(INVESTOR_PAGE.dividends.columns.total)}</th>
+                  <th className="py-4 px-4 text-right">{t(INVESTOR_PAGE.dividends.columns.shares)}</th>
+                  <th className="py-4 pl-4 text-right">{t(INVESTOR_PAGE.dividends.columns.perShare)}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {DIVIDEND_HISTORY.map((d) => (
+                  <tr key={d.year} className="border-b border-ink/5">
+                    <td className="py-4 pr-6 font-extrabold tracking-tightish text-lg tabular-nums">
+                      {d.year}
+                    </td>
+                    <td className="py-4 px-4 text-right tabular-nums">{d.total}</td>
+                    <td className="py-4 px-4 text-right tabular-nums">{d.shares}</td>
+                    <td className="py-4 pl-4 text-right tabular-nums font-semibold">
+                      {d.perShare}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* FINANCIAL REPORT ARCHIVE */}
+      <section id="financial-report" className="scroll-mt-24 py-24 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="mb-14 max-w-2xl">
+            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+              {t(INVESTOR_PAGE.financialReports.eyebrow)}
+            </div>
+            <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
+              {t(INVESTOR_PAGE.financialReports.heading)}
+            </h2>
+            <p className="mt-4 text-ink/60">
+              {t(INVESTOR_PAGE.financialReports.paragraph)}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {FINANCIAL_REPORT_ARCHIVE.map((year) => (
+              <div key={year.year} className="bg-[#FAFAFA] rounded-3xl p-7">
+                <div className="text-3xl font-extrabold tracking-tightish tabular-nums mb-5">
+                  {year.year}
+                </div>
+                <div className="space-y-3">
+                  {year.periods.map((p) => (
+                    <div
+                      key={p.file}
+                      className="border-b border-ink/5 pb-3 last:border-0 last:pb-0"
+                    >
+                      <a
+                        href={p.file}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group flex items-center justify-between gap-4"
+                      >
+                        <span className="text-sm text-ink/70 transition-colors group-hover:text-ink">
+                          {t(p.label)}
+                        </span>
+                        <span className="text-xs font-semibold text-accent-beverage shrink-0 transition-opacity duration-300 group-hover:opacity-70">
+                          {t(INVESTOR_PAGE.archiveDownloadLabel)}
+                        </span>
+                      </a>
+                      {p.letter && (
+                        <a
+                          href={p.letter}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-1.5 inline-block text-xs text-ink/40 underline decoration-ink/20 underline-offset-2 transition-colors hover:text-ink/70"
+                        >
+                          {t(INVESTOR_PAGE.financialReports.letterLabel)}
+                        </a>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* ANNUAL & SUSTAINABILITY REPORT ARCHIVE */}
+      {archives.map((archive, index) => (
+        <section
+          key={archive.id}
+          id={archive.id}
+          className={`scroll-mt-24 py-24 ${index % 2 === 0 ? "bg-[#FAFAFA]" : "bg-white"}`}
+        >
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+            <div className="mb-14 max-w-2xl">
+              <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+                {t(archive.copy.eyebrow)}
+              </div>
+              <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
+                {t(archive.copy.heading)}
+              </h2>
+              <p className="mt-4 text-ink/60">{t(archive.copy.paragraph)}</p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              {archive.items.map((item) => (
+                <a
+                  key={item.year}
+                  href={item.file}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`group overflow-hidden rounded-2xl transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.15)] ${
+                    index % 2 === 0 ? "bg-white" : "bg-[#FAFAFA] hover:bg-white"
+                  }`}
+                >
+                  <div className="relative aspect-[16/15] overflow-hidden bg-ink/5">
+                    <Image
+                      src={item.cover}
+                      alt={`${t(archive.copy.eyebrow)} ${item.year}`}
+                      fill
+                      sizes="(min-width: 1024px) 18vw, (min-width: 640px) 30vw, 45vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <div className="text-2xl font-extrabold tracking-tightish tabular-nums">
+                      {item.year}
+                    </div>
+                    <div className="mt-2 text-xs font-semibold text-accent-beverage transition-opacity duration-300 group-hover:opacity-70">
+                      {t(INVESTOR_PAGE.archiveDownloadLabel)}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
 
       {/* RESOURCES GRID */}
       <section className="py-24 bg-[#FAFAFA]">
@@ -307,7 +625,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
             {INVESTOR_SECTIONS.map((s) => (
               <a
                 key={s.id}
-                href="#"
+                href={s.href.startsWith("#") ? s.href : href(s.href)}
                 className="group bg-white rounded-3xl p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.12)]"
               >
                 <div className="text-xl font-extrabold tracking-tightish mb-2">

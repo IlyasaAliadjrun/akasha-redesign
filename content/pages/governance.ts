@@ -18,11 +18,30 @@ export const GOVERNANCE_PAGE: {
     eyebrow: Localized<string>;
     heading: Localized<string>;
     downloadLabel: Localized<string>;
+    viewLabel: Localized<string>;
+  };
+  gms: {
+    eyebrow: Localized<string>;
+    heading: Localized<string>;
+    paragraph: Localized<string>;
+    documentsLabel: Localized<string>;
+  };
+  disclosure: {
+    eyebrow: Localized<string>;
+    heading: Localized<string>;
+    paragraph: Localized<string>;
+  };
+  announcement: {
+    eyebrow: Localized<string>;
+    heading: Localized<string>;
+    paragraph: Localized<string>;
   };
   csr: {
     eyebrow: Localized<string>;
     heading: Localized<string>;
     paragraph: Localized<string>;
+    reportsLabel: Localized<string>;
+    reportRef: Localized<string>;
     cta: Localized<string>;
   };
   investorCta: {
@@ -37,8 +56,8 @@ export const GOVERNANCE_PAGE: {
       id: "Tata Kelola Perusahaan yang Baik — Akasha Wira International",
     },
     description: {
-      en: "Corporate governance of PT Akasha Wira International Tbk — Articles of Association, Board of Directors & Commissioners Charter, CSR, and information disclosure.",
-      id: "Tata kelola perusahaan PT Akasha Wira International Tbk — Anggaran Dasar, Charter Direksi & Komisaris, CSR, dan keterbukaan informasi.",
+      en: "Corporate governance of PT Akasha Wira International Tbk — Articles of Association, Board of Directors & Commissioners Charter, CSR, GMS documents, and information disclosure.",
+      id: "Tata kelola perusahaan PT Akasha Wira International Tbk — Anggaran Dasar, Charter Direksi & Komisaris, CSR, dokumen RUPS, dan keterbukaan informasi.",
     },
   },
   hero: {
@@ -132,6 +151,56 @@ export const GOVERNANCE_PAGE: {
       en: "Download PDF",
       id: "Unduh PDF",
     },
+    viewLabel: {
+      en: "View section",
+      id: "Lihat bagian",
+    },
+  },
+  gms: {
+    eyebrow: {
+      en: "General Meeting of Shareholders",
+      id: "Rapat Umum Pemegang Saham",
+    },
+    heading: {
+      en: "Every meeting, on the record.",
+      id: "Setiap rapat, tercatat.",
+    },
+    paragraph: {
+      en: "Notice, invitation, agenda material, meeting rules, power of attorney, and summary of the minutes — published for every annual and extraordinary meeting since 2015.",
+      id: "Pemberitahuan, panggilan, materi mata acara, tata tertib, surat kuasa, dan ringkasan risalah — dipublikasikan untuk setiap RUPS tahunan dan luar biasa sejak 2015.",
+    },
+    documentsLabel: {
+      en: "documents",
+      id: "dokumen",
+    },
+  },
+  disclosure: {
+    eyebrow: {
+      en: "Disclosure information",
+      id: "Keterbukaan informasi",
+    },
+    heading: {
+      en: "Material information, disclosed.",
+      id: "Informasi material, dibuka.",
+    },
+    paragraph: {
+      en: "Disclosures submitted to the Financial Services Authority and the Indonesia Stock Exchange — corporate actions, changes to the boards, public expose, and feasibility studies.",
+      id: "Keterbukaan yang disampaikan kepada Otoritas Jasa Keuangan dan Bursa Efek Indonesia — aksi korporasi, perubahan susunan pengurus, paparan publik, dan studi kelayakan.",
+    },
+  },
+  announcement: {
+    eyebrow: {
+      en: "Announcement",
+      id: "Pengumuman",
+    },
+    heading: {
+      en: "Official announcements.",
+      id: "Pengumuman resmi.",
+    },
+    paragraph: {
+      en: "Announcements published by the company to shareholders and the public.",
+      id: "Pengumuman yang diterbitkan perusahaan kepada pemegang saham dan publik.",
+    },
   },
   csr: {
     eyebrow: {
@@ -143,12 +212,21 @@ export const GOVERNANCE_PAGE: {
       id: "Tumbuh bersama komunitas.",
     },
     paragraph: {
-      en: "Sustainable contributions to the environment, health, education, and community empowerment around our areas of operation.",
-      id: "Kontribusi berkelanjutan kepada lingkungan, kesehatan, pendidikan, dan pemberdayaan masyarakat di sekitar area operasi kami.",
+      en: "Sustainable contributions to the environment, health, education, and community empowerment around our areas of operation. Each year's programme is reported as a chapter of the Annual Report.",
+      id: "Kontribusi berkelanjutan kepada lingkungan, kesehatan, pendidikan, dan pemberdayaan masyarakat di sekitar area operasi kami. Program tiap tahun dilaporkan sebagai bab dalam Laporan Tahunan.",
+    },
+    reportsLabel: {
+      en: "Where to read it",
+      id: "Tempat membacanya",
+    },
+    // Dirangkai di komponen: "Annual Report 2021 · page 79".
+    reportRef: {
+      en: "page",
+      id: "halaman",
     },
     cta: {
-      en: "Latest CSR Report",
-      id: "Laporan CSR Terbaru",
+      en: "Latest sustainability report",
+      id: "Laporan keberlanjutan terbaru",
     },
   },
   investorCta: {

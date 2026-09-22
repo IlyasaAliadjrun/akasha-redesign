@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/page/PageHero";
 import { localizeHref, type Locale, type Localized } from "@/lib/locale/paths";
 import { ABOUT_PAGE } from "@/content/pages/about";
+import { SHAREHOLDERS, SHAREHOLDING_AS_OF } from "@/lib/investor";
 
 export function generateMetadata({
   params,
@@ -321,39 +322,26 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
           </div>
 
           <div className="space-y-5">
-            <div className="bg-[#FAFAFA] rounded-3xl p-6 lg:p-8">
-              <div className="flex items-baseline justify-between mb-3">
-                <div className="text-sm font-semibold">
-                  {ABOUT_PAGE.ownership.shareholders.primary.name}
+            {SHAREHOLDERS.map((s, i) => (
+              <div key={t(s.name)} className="bg-[#FAFAFA] rounded-3xl p-6 lg:p-8">
+                <div className="flex items-baseline justify-between gap-4 mb-3">
+                  <div className="text-sm font-semibold">{t(s.name)}</div>
+                  <div className="text-2xl lg:text-3xl font-extrabold tracking-tightish tabular-nums">
+                    {s.percent}
+                  </div>
                 </div>
-                <div className="text-2xl lg:text-3xl font-extrabold tracking-tightish tabular-nums">
-                  {ABOUT_PAGE.ownership.shareholders.primary.percent}
+                <div className="h-2 bg-white rounded-full overflow-hidden">
+                  <div
+                    className={`h-full ${i === 0 ? "bg-accent-beverage" : "bg-ink"}`}
+                    style={{ width: `${s.ratio * 100}%` }}
+                  />
                 </div>
-              </div>
-              <div className="h-2 bg-white rounded-full overflow-hidden">
-                <div className="h-full bg-accent-beverage" style={{ width: "91.52%" }} />
-              </div>
-              <div className="mt-2 text-xs text-ink/50 tabular-nums">
-                {t(ABOUT_PAGE.ownership.shareholders.primary.shares)}
-              </div>
-            </div>
-
-            <div className="bg-[#FAFAFA] rounded-3xl p-6 lg:p-8">
-              <div className="flex items-baseline justify-between mb-3">
-                <div className="text-sm font-semibold">
-                  {t(ABOUT_PAGE.ownership.shareholders.public.name)}
-                </div>
-                <div className="text-2xl lg:text-3xl font-extrabold tracking-tightish tabular-nums">
-                  {ABOUT_PAGE.ownership.shareholders.public.percent}
+                <div className="mt-2 text-xs text-ink/50 tabular-nums">
+                  {s.shares} {t(ABOUT_PAGE.ownership.sharesUnit)}
                 </div>
               </div>
-              <div className="h-2 bg-white rounded-full overflow-hidden">
-                <div className="h-full bg-ink" style={{ width: "8.48%" }} />
-              </div>
-              <div className="mt-2 text-xs text-ink/50 tabular-nums">
-                {t(ABOUT_PAGE.ownership.shareholders.public.shares)}
-              </div>
-            </div>
+            ))}
+            <div className="text-xs text-ink/40">{t(SHAREHOLDING_AS_OF)}</div>
           </div>
         </div>
       </section>

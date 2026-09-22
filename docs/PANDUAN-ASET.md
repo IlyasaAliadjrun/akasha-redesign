@@ -77,8 +77,16 @@ public/
 │   └── hero/                    desktop.jpg (16:9) + mobile.jpg (9:16)
 ├── investor/  governance/  contact/  careers/
 │   └── hero/                    idem — desktop.jpg + mobile.jpg
+├── docs/                        ← Dokumen investor & tata kelola (PDF/DOC) + sampulnya
+│   ├── annual-report/           PDF laporan tahunan 2012–2025
+│   │   └── covers/              2012.png … 2025.png   ← satu-satunya gambar di sini
+│   ├── sustainability-report/   PDF laporan keberlanjutan 2021–2025
+│   │   └── covers/              2021.jpg … 2025.png
+│   ├── financial-report/  gms/  disclosure/  announcement/  governance/   ← PDF saja
 └── shared/                      logo-white.png, logo-color.png  (navbar, semua halaman)
 ```
+
+> **`public/docs/` dikecualikan dari dua aturan.** Pertama, tidak ikut pemisahan locale: aset lain digandakan ke `public/en/…` dan `public/id/…`, dokumen dan sampulnya tidak, karena isinya sama persis di kedua bahasa. Kedua, nama berkas PDF **dipertahankan apa adanya dari situs sumber** (huruf besar, angka, ejaan asli) supaya bisa dilacak balik saat arsip diperbarui — bukan slug huruf kecil. Aturan slug tetap berlaku untuk gambarnya, yang dinamai per tahun: `2025.png`.
 
 ### Aturan penamaan
 
@@ -113,6 +121,7 @@ public/
 | 8 | **Showcase – banner varian** (2 layer parallax) | `brand/{slug}/showcase/{n}-1`,`{n}-2` | latar **2.128:1** + produk **3:4** | 5010×2354 / 2687×3660 | latar COVER · produk PNG | jpg/png |
 | 9 | **Hero halaman** (About/Investor/dll) — desktop | `{page}/hero/desktop.jpg` | **16:9** | 2560×1440 | COVER, layar penuh | jpg/webp |
 | 9b | **Hero halaman** — HP | `{page}/hero/mobile.jpg` | **9:16** | 1080×1920 | COVER, layar penuh | jpg/webp |
+| 10 | **Sampul laporan** (tahunan & keberlanjutan) | `docs/{jenis}/covers/{tahun}` | **16:15** (≈1.067) | 1200×1125 | COVER | jpg/png |
 
 > Folder `marquee` berjalan di beranda **memakai ulang** gambar Kartu Divisi (#2) — tidak perlu aset baru.
 
@@ -134,6 +143,7 @@ Ini jawaban ringkas "rasio terbaiknya berapa untuk desktop & HP". **Kartu** = ra
 | Showcase — gambar utama (judul) | bebas (cth 1.37:1) | sama | Rasio diisi di `heroAspect`. |
 | Showcase — banner varian (latar `-2`) | 2.128:1 | 2.128:1 | Layer latar + teks. |
 | Showcase — banner varian (produk `-1`) | ~3:4 (PNG) | ~3:4 | Produk di tengah, menjorok keluar. |
+| **Sampul laporan** | **16:15** — kotak ±251×235 | **16:15** — kotak ±163×153 | Kartu, jadi rasionya sama di kedua viewport. Hanya kotaknya yang mengecil (5 kolom → 2 kolom). |
 
 **Inti:** hanya **banner brand** yang benar-benar butuh aset berbeda untuk HP (9:16). Sisanya 1 aset per rasio sudah cukup.
 
@@ -284,6 +294,28 @@ Yang terpasang sekarang:
 | Careers | `#0C426A` (biru) | gelap | putih |
 
 > Developer: dirender oleh [components/page/PageHero.tsx](../components/page/PageHero.tsx). Prop `tone` = terang/gelap foto (`"light"` → teks ink, `"dark"` → teks putih); nilainya juga dikirim ke `data-theme` yang dibaca `Navbar` untuk membalik warna logo & link. Prop `bg` = warna latar saat loading. Kolom teks di desktop **di-anchor pakai persen** (`ml-[6vw]` + `max-w-[30vw]`), **bukan** container `max-w-[1400px] mx-auto` — sama seperti `BrandHero`, karena ini banner full-bleed: subjek fotonya duduk di ~36% frame di semua lebar layar, sedangkan container yang di-center makin menggeser teks ke kanan di layar >1400px sampai menabrak subjek.
+
+---
+
+#### 10) Sampul Laporan — `public/docs/annual-report/covers/` + `public/docs/sustainability-report/covers/`
+
+Thumbnail sampul yang tampil di kartu arsip **Laporan Tahunan** dan **Laporan Keberlanjutan** di halaman Investor. Satu gambar per tahun, dinamai persis tahunnya: `2025.png`, `2019.jpg`.
+
+| | Nilai |
+|---|---|
+| **Rasio** | **16:15** (≈1.067) — nyaris persegi, sedikit melebar |
+| **Resolusi master** | 1200×1125 (minimum 600×563) |
+| **Tampilan** | COVER |
+| **Kotak tampil** | desktop ±251×235 px · HP ±163×153 px |
+| **Format** | jpg untuk foto, png kalau ada bidang warna rata |
+
+**Kenapa 16:15 dan bukan potret seperti sampul buku?** Aset yang ada memang bukan foto buku, melainkan **artwork sampul full-bleed** — gambar mengisi seluruh bingkai tanpa latar atau bayangan di sekelilingnya. Rasio aslinya 1.066 (2012–2022) dan 1.105 (2023–2025), jadi satu kotak 16:15 menampung keduanya dengan potongan paling banyak ~2% di kiri-kanan.
+
+**Komposisi:** karena COVER, **jangan taruh teks mepet tepi**. Judul laporan dan angka tahun biasanya di kiri-atas atau kiri-bawah — jaga jarak minimal 6% dari tiap sisi supaya tidak terpotong di kotak yang sempit di HP.
+
+**Resolusi itu penting di sini.** Kotaknya kecil (251px), tapi layar retina butuh 2× → minimal 502px sisi lebar. Sampul 2023–2025 hasil unduhan hanya 589×533, pas-pasan; 2012–2022 sudah 1584×1486 dan aman. Kalau tim desain punya file aslinya, kirim ulang yang 1200×1125.
+
+> Developer: dirender di [app/[locale]/investor/page.tsx](../app/%5Blocale%5D/investor/page.tsx) lewat `next/image` `fill` + `sizes="(min-width: 1024px) 18vw, (min-width: 640px) 30vw, 45vw"`, di dalam kotak `aspect-[16/15]`. Path-nya ada di `ANNUAL_REPORTS` / `SUSTAINABILITY_REPORTS` ([lib/investor.ts](../lib/investor.ts)), field `cover`, bersebelahan dengan `file` (PDF-nya). Tidak lewat `localizeAsset` — lihat catatan pengecualian di §2.
 
 ---
 

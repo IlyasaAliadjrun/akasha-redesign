@@ -161,11 +161,19 @@ export const ABOUT_PAGE = {
       },
     },
     {
+      year: "1986",
+      title: { en: "First Bottle", id: "Botol Pertama" },
+      body: {
+        en: "Commercial production of bottled drinking water began.",
+        id: "Produksi komersial air minum dalam kemasan dimulai.",
+      },
+    },
+    {
       year: "1994",
       title: { en: "Listed on the Exchange", id: "Masuk Bursa" },
       body: {
-        en: "IPO of 15 million shares; listed on the Jakarta Stock Exchange on 14 June.",
-        id: "IPO 15 juta lembar saham; tercatat di Bursa Efek Jakarta pada 14 Juni.",
+        en: "IPO of 15 million shares; listed on the Jakarta Stock Exchange on 31 March.",
+        id: "IPO 15 juta lembar saham; tercatat di Bursa Efek Jakarta pada 31 Maret.",
       },
     },
     {
@@ -180,8 +188,16 @@ export const ABOUT_PAGE = {
       year: "2004",
       title: { en: "Global Alliance", id: "Aliansi Global" },
       body: {
-        en: "Water Partners Bottling S.A. (a Nestlé & Coca-Cola joint venture) became the majority shareholder. The name changed to PT AdeS Waters Indonesia, Tbk.",
-        id: "Water Partners Bottling S.A. (JV Nestlé & Coca-Cola) menjadi pemegang saham mayoritas. Nama berubah jadi PT AdeS Waters Indonesia, Tbk.",
+        en: "Waters Partners Bottling S.A. (a Nestlé & Coca-Cola joint venture) became the majority shareholder. The name changed to PT AdeS Waters Indonesia, Tbk, and Nestlé Pure Life was launched.",
+        id: "Waters Partners Bottling S.A. (JV Nestlé & Coca-Cola) menjadi pemegang saham mayoritas. Nama berubah jadi PT AdeS Waters Indonesia, Tbk, dan Nestlé Pure Life diluncurkan.",
+      },
+    },
+    {
+      year: "2007",
+      title: { en: "Vica Royal", id: "Vica Royal" },
+      body: {
+        en: "Launch of Vica Royal gallon products, widening the home-delivery water range.",
+        id: "Peluncuran produk galon Vica Royal, memperluas lini air minum untuk rumah tangga.",
       },
     },
     {
@@ -212,8 +228,8 @@ export const ABOUT_PAGE = {
       year: "2014",
       title: { en: "Soy Beverages", id: "Minuman Kedelai" },
       body: {
-        en: "Launch of a soy beverage line under the Pureal brand.",
-        id: "Peluncuran lini minuman kedelai dengan brand Pureal.",
+        en: "The Sukabumi facility was activated to produce a soy beverage line under the Pureal brand.",
+        id: "Fasilitas Sukabumi diaktifkan untuk memproduksi lini minuman kedelai dengan brand Pureal.",
       },
     },
   ] satisfies TimelineEntry[],
@@ -421,28 +437,9 @@ export const ABOUT_PAGE = {
       en: "Go to Investor Centre",
       id: "Ke Investor Centre",
     },
-    // Rendered as two fixed (not mapped) blocks in the page, each with its own
-    // accent color, so this is an object rather than an array.
-    shareholders: {
-      primary: {
-        // Company name — proper noun, not localized.
-        name: "Waters Partners Bottling S.A.",
-        // Indonesian-formatted percentage/share count, left as-is per prior
-        // project decision — only the trailing unit word is localized.
-        percent: "91,52%",
-        shares: {
-          en: "539.896.713 shares",
-          id: "539.896.713 lembar",
-        },
-      },
-      public: {
-        name: { en: "Public", id: "Publik" } satisfies Localized<string>,
-        percent: "8,48%",
-        shares: {
-          en: "50.000.087 shares",
-          id: "50.000.087 lembar",
-        },
-      },
-    },
+    // The figures themselves live in lib/investor.ts (SHAREHOLDERS) so the
+    // About and Investor pages can never drift apart; only the unit word is
+    // localized here.
+    sharesUnit: { en: "shares", id: "lembar" } satisfies Localized<string>,
   },
 };

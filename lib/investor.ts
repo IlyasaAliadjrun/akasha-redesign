@@ -1,26 +1,27 @@
 // Data resmi dari akashainternational.com (PT Akasha Wira International Tbk, IDX: ADES)
 import type { Localized } from "@/lib/locale/paths";
 
-export const FINANCIAL_YEARS = [2024, 2023, 2022, 2021, 2020] as const;
+export const FINANCIAL_YEARS = [2025, 2024, 2023, 2022, 2021] as const;
 
 // Angka dalam Rp juta, kecuali EPS (Rp)
 export const FINANCIALS = {
-  netSales:        [1_956_431, 1_525_445, 1_290_992,   935_075,   673_364],
-  grossProfit:     [1_006_211,   810_936,   670_752,   499_568,   342_565],
-  operatingIncome: [  629_638,   484_693,   452_537,   328_221,   161_962],
-  netIncome:       [  527_368,   395_798,   364_972,   265_758,   135_789],
-  eps:             [      894,       671,       619,       451,       230], // Rp
-  totalAssets:     [2_696_874, 2_085_182, 1_645_582, 1_304_108,   958_791],
-  totalEquity:     [2_258_501, 1_729_808, 1_334_836,   969_817,   700_508],
-  currentRatio:    [     4.04,      4.12,      3.20,      2.51,      2.97],
+  netSales:         [2_726_974, 1_956_431, 1_525_445, 1_290_992,   935_075],
+  grossProfit:      [1_430_497, 1_006_211,   810_936,   670_752,   499_568],
+  operatingIncome:  [  885_670,   629_638,   484_693,   452_537,   328_221],
+  netIncome:        [  741_580,   527_368,   395_798,   364_972,   265_758],
+  eps:              [    1_257,       894,       671,       619,       451], // Rp
+  totalAssets:      [3_568_781, 2_696_874, 2_085_182, 1_645_582, 1_304_108],
+  totalLiabilities: [  568_078,   438_373,   355_374,   310_746,   334_291],
+  totalEquity:      [3_000_703, 2_258_501, 1_729_808, 1_334_836,   969_817],
+  currentRatio:     [     4.04,      4.04,      4.12,      3.20,      2.51],
 };
 
 export const RATIOS = {
-  roa:             [20, 19, 22, 20, 14], // Net Income / Total Assets (%)
-  roe:             [23, 23, 27, 27, 19], // Net Income / Total Equity (%)
-  grossMargin:     [51, 53, 52, 53, 51],
-  operatingMargin: [32, 32, 35, 35, 24],
-  netMargin:       [27, 26, 28, 28, 20],
+  roa:             [21, 20, 19, 22, 20], // Net Income / Total Assets (%)
+  roe:             [25, 23, 23, 27, 27], // Net Income / Total Equity (%)
+  grossMargin:     [52, 51, 53, 52, 53],
+  operatingMargin: [32, 32, 32, 35, 35],
+  netMargin:       [27, 27, 26, 28, 28],
 };
 
 export const SHARE_ACTIONS: {
@@ -37,7 +38,7 @@ export const SHARE_ACTIONS: {
   },
   {
     date: { en: "31 Mar 1994", id: "31 Mar 1994" },
-    action: { en: "Listing of Founder's Shares", id: "Pencatatan Saham Pendiri" },
+    action: { en: "Listing of Founders Shares", id: "Pencatatan Saham Pendiri" },
     shares: "23.000.000",
     par: "Rp 1.000",
   },
@@ -62,14 +63,1150 @@ export const SHARE_ACTIONS: {
 ];
 
 export const OUTSTANDING_SHARES = "589.896.800";
+export const AUTHORIZED_SHARES = "2.359.587.200";
+export const SHARE_REGISTRAR = "PT Raya Saham Registra";
+
+// Tanggal berlakunya angka permodalan & pemegang saham di bawah ini.
+export const SHAREHOLDING_AS_OF: Localized<string> = {
+  en: "as of 31 December 2025",
+  id: "per 31 Desember 2025",
+};
+
+export const SHAREHOLDERS: {
+  name: Localized<string>;
+  shares: string;
+  percent: string;
+  ratio: number; // lebar bar, 0–1
+}[] = [
+  {
+    name: { en: "Waters Partners Bottling S.A.", id: "Waters Partners Bottling S.A." },
+    shares: "538.896.713",
+    percent: "91,35%",
+    ratio: 0.9135,
+  },
+  {
+    name: { en: "Public", id: "Publik" },
+    shares: "51.000.087",
+    percent: "8,65%",
+    ratio: 0.0865,
+  },
+];
+
+export const OUTSTANDING_SHARES_COUNT = 589_896_800;
+
+// Harga penutupan harian, disalin dari grafik ApexCharts di halaman Stock
+// Information. Sumbernya menuliskan deret ini inline di HTML dan memperbaruinya
+// secara manual — jadi ini POTRET, bukan umpan langsung. Perbarui bersama
+// SHARE_PRICE_DAILY_AS_OF setiap kali arsip ditarik ulang.
+export const SHARE_PRICE_DAILY_AS_OF = { year: 2026, month: 9, day: 18 };
+
+export const SHARE_PRICE_DAILY: { month: number; day: number; close: number }[] = [
+  { month: 7, day: 23, close: 35_400 },
+  { month: 7, day: 24, close: 36_275 },
+  { month: 7, day: 27, close: 38_850 },
+  { month: 7, day: 28, close: 38_425 },
+  { month: 7, day: 29, close: 37_800 },
+  { month: 7, day: 30, close: 37_250 },
+  { month: 7, day: 31, close: 34_000 },
+  { month: 8, day: 3, close: 31_000 },
+  { month: 8, day: 4, close: 30_375 },
+  { month: 8, day: 5, close: 33_400 },
+  { month: 8, day: 6, close: 35_000 },
+  { month: 8, day: 7, close: 35_000 },
+  { month: 8, day: 10, close: 33_000 },
+  { month: 8, day: 11, close: 32_850 },
+  { month: 8, day: 12, close: 32_900 },
+  { month: 8, day: 13, close: 32_850 },
+  { month: 8, day: 14, close: 32_900 },
+  { month: 8, day: 18, close: 32_850 },
+  { month: 8, day: 19, close: 32_825 },
+  { month: 8, day: 20, close: 33_000 },
+  { month: 8, day: 21, close: 32_750 },
+  { month: 8, day: 24, close: 32_750 },
+  { month: 8, day: 26, close: 32_600 },
+  { month: 8, day: 27, close: 32_375 },
+  { month: 8, day: 28, close: 32_325 },
+  { month: 8, day: 31, close: 32_300 },
+  { month: 9, day: 1, close: 32_125 },
+  { month: 9, day: 2, close: 31_950 },
+  { month: 9, day: 3, close: 31_850 },
+  { month: 9, day: 4, close: 31_800 },
+  { month: 9, day: 7, close: 31_550 },
+  { month: 9, day: 8, close: 31_500 },
+  { month: 9, day: 9, close: 31_325 },
+  { month: 9, day: 10, close: 31_275 },
+  { month: 9, day: 11, close: 32_000 },
+  { month: 9, day: 14, close: 32_000 },
+  { month: 9, day: 15, close: 32_000 },
+  { month: 9, day: 16, close: 31_975 },
+  { month: 9, day: 17, close: 32_500 },
+  { month: 9, day: 18, close: 32_175 },
+];
+
+export function dailySharePriceSummary() {
+  const first = SHARE_PRICE_DAILY[0];
+  const last = SHARE_PRICE_DAILY[SHARE_PRICE_DAILY.length - 1];
+  const closes = SHARE_PRICE_DAILY.map((d) => d.close);
+  return {
+    last: last.close,
+    first: first.close,
+    changePercent: ((last.close - first.close) / first.close) * 100,
+    high: Math.max(...closes),
+    low: Math.min(...closes),
+    marketCap: last.close * OUTSTANDING_SHARES_COUNT,
+  };
+}
+
+export const DIVIDEND_HISTORY: {
+  year: string;
+  total: string;
+  shares: string;
+  perShare: string;
+}[] = [
+  {
+    year: "1995",
+    total: "Rp 760.000.000",
+    shares: "38.000.000",
+    perShare: "Rp 20",
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Arsip dokumen
+//
+// Setiap `file` menunjuk ke berkas di public/docs/, hasil unduhan dari
+// akashainternational.com. Nama berkas dipertahankan apa adanya dari sumber —
+// jangan dirapikan, karena itulah yang mencocokkannya kembali ke sumber saat
+// arsip diperbarui. Tiga berkas RUPS memakai nama identik di tahun berbeda dan
+// diberi awalan YYYY-MM agar tidak saling menimpa.
+// ---------------------------------------------------------------------------
+
+// `cover` = thumbnail sampul laporan, ~16:15, di-crop `object-cover`.
+const AR = "/docs/annual-report";
+
+export const ANNUAL_REPORTS: { year: string; file: string; cover: string }[] = [
+  {
+    year: "2025",
+    file: `${AR}/Annual-Report-2025.pdf`,
+    cover: `${AR}/covers/2025.png`,
+  },
+  {
+    year: "2024",
+    file: `${AR}/ANNUAL-REPORT-ADES-2024.pdf`,
+    cover: `${AR}/covers/2024.png`,
+  },
+  {
+    year: "2023",
+    file: `${AR}/ANNUAL-REPORT-ADES-2023.pdf`,
+    cover: `${AR}/covers/2023.png`,
+  },
+  {
+    year: "2022",
+    file: `${AR}/ANNUAL-REPORT-ADES-2022.pdf`,
+    cover: `${AR}/covers/2022.png`,
+  },
+  {
+    year: "2021",
+    file: `${AR}/ADES-AR-2021-eReporting_300522_3.pdf`,
+    cover: `${AR}/covers/2021.jpg`,
+  },
+  {
+    year: "2020",
+    file: `${AR}/AR-2020-Akasha-Wira-International-Tbk-Rev-828-06-2021e-reporting.pdf`,
+    cover: `${AR}/covers/2020.jpg`,
+  },
+  {
+    year: "2019",
+    file: `${AR}/Laporan-Tahunan-Akasha-31-Desember-2019-Final.pdf`,
+    cover: `${AR}/covers/2019.jpg`,
+  },
+  {
+    year: "2018",
+    // Nama berkas sumber tertulis "2108"; isinya laporan tahunan 2018.
+    file: `${AR}/ADES-AR-2108-eReporting-300419.pdf`,
+    cover: `${AR}/covers/2018.jpg`,
+  },
+  {
+    year: "2017",
+    file: `${AR}/Annual-Report-2017-AWI.pdf`,
+    cover: `${AR}/covers/2017.png`,
+  },
+  {
+    year: "2016",
+    file: `${AR}/ANNUAL-REPORT-2016-AWI.pdf.pdf`,
+    cover: `${AR}/covers/2016.png`,
+  },
+  {
+    year: "2015",
+    file: `${AR}/ANNUAL-REPORT-2015-AWI.pdf`,
+    cover: `${AR}/covers/2015.png`,
+  },
+  {
+    year: "2014",
+    file: `${AR}/Annual-Report-2014-AWI.pdf`,
+    cover: `${AR}/covers/2014.png`,
+  },
+  {
+    year: "2013",
+    file: `${AR}/AR2013-AWI-FINAL-250414.pdf`,
+    cover: `${AR}/covers/2013.png`,
+  },
+  {
+    year: "2012",
+    file: `${AR}/Annual-Report-2012.pdf`,
+    cover: `${AR}/covers/2012.png`,
+  },
+];
+
+// Sampul 2023 dan 2024 identik — sumber resmi memang memakai gambar yang sama
+// untuk kedua tahun.
+export const SUSTAINABILITY_REPORTS: { year: string; file: string; cover: string }[] = [
+  {
+    year: "2025",
+    file: "/docs/sustainability-report/Sustainability-Report-ADES-2025.pdf",
+    cover: "/docs/sustainability-report/covers/2025.png",
+  },
+  {
+    year: "2024",
+    file: "/docs/sustainability-report/SUSTAINABILITY-REPORT-ADES-2024.pdf",
+    cover: "/docs/sustainability-report/covers/2024.png",
+  },
+  {
+    year: "2023",
+    file: "/docs/sustainability-report/SUSTAINABILITY-REPORT-ADES-2023.pdf",
+    cover: "/docs/sustainability-report/covers/2023.png",
+  },
+  {
+    year: "2022",
+    file: "/docs/sustainability-report/SUSTAINABILITY-REPORT-ADES-2022.pdf",
+    cover: "/docs/sustainability-report/covers/2022.png",
+  },
+  {
+    year: "2021",
+    file: "/docs/sustainability-report/ADES-SR-2021-eReporting.pdf",
+    cover: "/docs/sustainability-report/covers/2021.jpg",
+  },
+];
+
+// `letter` = surat penjelasan OJK atas perubahan jumlah aset lebih dari 20%,
+// diterbitkan mendampingi sebagian laporan.
+export type FinancialPeriod = {
+  label: Localized<string>;
+  file: string;
+  letter?: string;
+};
+
+const FR = "/docs/financial-report";
+
+export const FINANCIAL_REPORT_ARCHIVE: {
+  year: string;
+  periods: FinancialPeriod[];
+}[] = [
+  {
+    year: "2025",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/PT-Akasha-Wira-International-Tbk_December-31-2025-Audited-Financial-Statements_CLIENT-RELEASED.pdf`,
+      },
+      {
+        label: { en: "March", id: "Maret" },
+        file: `${FR}/LAPORAN-KUARTALAN-MARET-2025.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2024",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/Annual-Financial-Report-December-2024.pdf`,
+      },
+      {
+        label: { en: "September", id: "September" },
+        file: `${FR}/LAPORAN-KUARTALAN-SEPTEMBER-2024.pdf`,
+      },
+      {
+        label: { en: "June", id: "Juni" },
+        file: `${FR}/LAPORAN-KUARTALAN-JUNI-2024.pdf`,
+      },
+      {
+        label: { en: "March", id: "Maret" },
+        file: `${FR}/LAPORAN-KUARTALAN-MARET-2024.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2023",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/PT-Akasha-Wira-International-December-31-2023-Audited-Financial-Statements_CLIENT_RELEASED_FINAL_MARCH272024.pdf`,
+        letter: `${FR}/PENJELASAN-OJK_31-DEC-2023.pdf`,
+      },
+      {
+        label: { en: "September", id: "September" },
+        file: `${FR}/AWI-REPORT-SEP-2023_1.pdf`,
+        letter: `${FR}/PENJELASAN-OJK_30-SEP-2023.pdf`,
+      },
+      {
+        label: { en: "June", id: "Juni" },
+        file: `${FR}/AWI-REPORT-JUNE-2023-FINAL.pdf`,
+        letter: `${FR}/PENJELASAN-OJK_30-JUNI-2023.pdf`,
+      },
+      {
+        label: { en: "March", id: "Maret" },
+        file: `${FR}/PT-AKASHA-WIRA-INTERNATIONAL-MAR-2023.pdf`,
+        letter: `${FR}/Penjelasan-OJK-31-Maret-2023.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2022",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/PT-AKASHA-WIRA-INTERNATIONAL-2022-AUDIT-REPORT.pdf`,
+        letter: `${FR}/PENJELASAN-OJK-31-DEC-2022.pdf`,
+      },
+      {
+        label: { en: "September", id: "September" },
+        file: `${FR}/PT-Akasha-Wira-International-Tbk-SEP-2022.pdf`,
+      },
+      {
+        label: { en: "June", id: "Juni" },
+        file: `${FR}/PT-Akasha-Wira-International-JUN-22.pdf`,
+      },
+      {
+        label: { en: "March", id: "Maret" },
+        file: `${FR}/PT-Akasha-Wira-International-MAR-22.pdf`,
+        letter: `${FR}/Penjelasan-OJK-31-Maret-2022.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2021",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/PT-AKASHA-WIRA-INTERNATIONAL-2021-AUDITED-FINANCIAL-STATEMENTS.pdf`,
+        letter: `${FR}/Penjelasan-OJK-31-Des-2021.pdf`,
+      },
+      {
+        label: { en: "September", id: "September" },
+        file: `${FR}/LK-Q3-PT-Akasha-Wira-International-SEP-21.pdf`,
+        letter: `${FR}/Penjelasan-OJK-30-Sep-2021.pdf`,
+      },
+      {
+        label: { en: "June", id: "Juni" },
+        file: `${FR}/LK-PT-Akasha-Wira-International-JUN-21.pdf`,
+      },
+      {
+        label: { en: "March", id: "Maret" },
+        file: `${FR}/PT-Akasha-Wira-International-31-MAR-21.pdf`,
+        letter: `${FR}/Surat-Penjelasan-OJK_Q1-2021.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2020",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/PT-Akasha-Wira-International-Tbk-FINAL-PDF.pdf`,
+        letter: `${FR}/OJK-Explanation_Des-20.pdf`,
+      },
+      {
+        label: { en: "September", id: "September" },
+        file: `${FR}/LK-Q3-2020-PT-Akasha-Wira-International-SEP-20.pdf`,
+        letter: `${FR}/Surat-Penjelasan-OJK_Q3-2020.pdf`,
+      },
+      {
+        label: { en: "June", id: "Juni" },
+        file: `${FR}/PT-Akasha-Wira-International-JUN-20_signed.pdf`,
+        letter: `${FR}/PENJELASAN-OJK_Jun-20.pdf`,
+      },
+      {
+        label: { en: "March", id: "Maret" },
+        file: `${FR}/PT-Akasha-Wira-International-MAR-20-signed.pdf`,
+        letter: `${FR}/PENJELASAN-OJK_Mar20.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2019",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/Audit-Report-AWI-19-270320-FINAL.pdf`,
+        letter: `${FR}/Surat-Penjelasan-LK-Dec-2019.pdf`,
+      },
+      {
+        label: { en: "September", id: "September" },
+        file: `${FR}/PT-Akasha-Wira-International-SEP-19_1.pdf`,
+        letter: `${FR}/Surat-Penjelasan-LK-Sep-2019.pdf`,
+      },
+      {
+        label: { en: "June", id: "Juni" },
+        file: `${FR}/LK-Q2-PT-Akasha-Wira-International-JUN-19_signed.pdf`,
+        letter: `${FR}/Surat-penjelasan-laporan-keuangan-Juli-2019.pdf`,
+      },
+      {
+        label: { en: "March", id: "Maret" },
+        file: `${FR}/LK-Q1-PT-Akasha-Wira-International-MAR-19-dan-hal-ttd.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2018",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/Audit-Report-PT-Akasha-Wira-International-Tbk-31-Dec-2018-Revisi.pdf`,
+        letter: `${FR}/PENJELASAN-PERUBAHAN-20-OJK_31-DEC-2018.pdf`,
+      },
+      {
+        label: { en: "September", id: "September" },
+        file: `${FR}/Laporan-Keuangan-Kuartalan-Quartely-Financial-Report-September-2018.pdf`,
+        letter: `${FR}/Surat-Penjelasan-Perubahan-Jumlah-Aset-Letter-on-Chang-of-Aset-September-2018.pdf`,
+      },
+      {
+        label: { en: "June", id: "Juni" },
+        file: `${FR}/Quarterly-Financial-Report-30-June-2018.pdf`,
+        letter: `${FR}/Letter-on-Change-of-Assets-30-June-2018.pdf`,
+      },
+      {
+        label: { en: "March", id: "Maret" },
+        file: `${FR}/Quarterly-Financial-Report-March-2018.pdf`,
+        letter: `${FR}/Letter-on-Change-of-Assets-March-2018.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2017",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/Annual-Financial-Report-December-2017.pdf`,
+        letter: `${FR}/Penjelasan-Perubahan-Aset-lebih-dari-20-desember.pdf`,
+      },
+      {
+        label: { en: "June", id: "Juni" },
+        file: `${FR}/Quarterly_Report_June_2017.pdf`,
+        letter: `${FR}/Penjelasan-Perubahan-Aset-lebih-dari-20-June-2017.pdf`,
+      },
+      {
+        label: { en: "March", id: "Maret" },
+        file: `${FR}/Quarterly_Report_March_2017.pdf`,
+        letter: `${FR}/Penjelasan-Perubahan-Aset-lebih-dari-20-maret-2017.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2016",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/Annual-Financial-Report-December-2016.pdf`,
+        letter: `${FR}/Surat-Penjelasan-Perubahan-Jumlah-Aset-Lebih-dari-20-PDF.pdf`,
+      },
+      {
+        label: { en: "September", id: "September" },
+        file: `${FR}/Quarterly_Report_Sept_2016.pdf`,
+        letter: `${FR}/Penjelasan-Perubahan-Aset-lebih-dari-20-sept.pdf`,
+      },
+      {
+        label: { en: "June", id: "Juni" },
+        file: `${FR}/Quarterly-Financial-Report-June-2016.pdf`,
+      },
+      {
+        label: { en: "March", id: "Maret" },
+        file: `${FR}/Quarterly-Report-March-2016.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2015",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/Annual-Financial-Report-December-2015.pdf`,
+        letter: `${FR}/Surat-Penjelasan-Perubahan-Jumlah-Aset-Lebih-dari20.pdf`,
+      },
+      {
+        label: {
+          en: "Newspaper publication of the 2015 statements",
+          id: "Bukti iklan koran laporan keuangan 2015",
+        },
+        file: `${FR}/Bukti-Iklan-Koran-LK-2015-di-Ekonomi-Neraca.pdf`,
+      },
+      {
+        label: { en: "September", id: "September" },
+        file: `${FR}/Quarterly-Report-Sept-2015.pdf`,
+      },
+      {
+        label: { en: "June", id: "Juni" },
+        file: `${FR}/Quarterly_Report_June_2015.pdf`,
+      },
+      {
+        label: { en: "March", id: "Maret" },
+        file: `${FR}/Quarterly-Financial-Report-March-2015.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2014",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/Annual-Financial-Report-December-2014.pdf`,
+      },
+      {
+        label: { en: "September", id: "September" },
+        file: `${FR}/Quarterly-Report-Sep-2014.pdf`,
+      },
+      { label: { en: "June", id: "Juni" }, file: `${FR}/Quarterly-Report-June-2014.pdf` },
+      { label: { en: "March", id: "Maret" }, file: `${FR}/Quarterly-Report-March-2014.pdf` },
+    ],
+  },
+  {
+    year: "2013",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/Annual-Financial-Report-December-2013.pdf`,
+      },
+      {
+        label: { en: "September", id: "September" },
+        file: `${FR}/Quarterly-Financial-Report-September-2013.pdf`,
+      },
+      { label: { en: "June", id: "Juni" }, file: `${FR}/Quarterly-Report-jun-2013.pdf` },
+      { label: { en: "March", id: "Maret" }, file: `${FR}/Quarterly-Report-March-2013.pdf` },
+    ],
+  },
+  {
+    year: "2012",
+    periods: [
+      {
+        label: { en: "December (audited)", id: "Desember (audited)" },
+        file: `${FR}/Annual-Financial-Report-December-2012.pdf`,
+      },
+      {
+        label: { en: "September", id: "September" },
+        file: `${FR}/Quarterly-Financial-Report-September-2012.pdf`,
+      },
+      { label: { en: "June", id: "Juni" }, file: `${FR}/Quarterly-Report-june-2012.pdf` },
+      { label: { en: "March", id: "Maret" }, file: `${FR}/Quarterly-Report-March-2012.pdf` },
+    ],
+  },
+];
+
+const GMS = "/docs/gms";
+
+export const GMS_ARCHIVE: {
+  year: string;
+  date: Localized<string>;
+  documents: { label: Localized<string>; file: string }[];
+}[] = [
+  {
+    year: "2026",
+    date: { en: "17 June 2026", id: "17 Juni 2026" },
+    documents: [
+      {
+        label: { en: "Announcement of General Meeting", id: "Pengumuman RUPS" },
+        file: `${GMS}/Pengumuman-RUPS-ADES-2026.pdf`,
+      },
+      {
+        label: { en: "Invitation to the shareholders", id: "Panggilan kepada pemegang saham" },
+        file: `${GMS}/Panggilan-RUPS-26-MEI-2026.pdf`,
+      },
+      {
+        label: { en: "Meeting agenda material", id: "Materi mata acara rapat" },
+        file: `${GMS}/BAHAN-MATA-ACARA-RAPAT-17-JUNI-2026.pdf`,
+      },
+      {
+        label: { en: "Meeting rules for AGMS", id: "Tata tertib RUPST" },
+        file: `${GMS}/TATA-TERTIB-RUPS-17-JUNI-2026.pdf`,
+      },
+      {
+        label: { en: "Power of attorney for individual", id: "Surat kuasa perorangan" },
+        file: `${GMS}/SURAT-KUASA-INDIVIDU-RUPS-17-JUNI-2026.doc`,
+      },
+      {
+        label: { en: "Curriculum vitae — Mr. Hagi Yufantra", id: "Curriculum vitae — Bapak Hagi Yufantra" },
+        file: `${GMS}/CV-Hagi-Yufantra-untuk-Website.pdf`,
+      },
+      {
+        label: { en: "Curriculum vitae — Mr. Rudy Hidayat", id: "Curriculum vitae — Bapak Rudy Hidayat" },
+        file: `${GMS}/CV-Pak-Rudy-untuk-Web-dan-RUPS.pdf`,
+      },
+      {
+        label: { en: "Summary of the General Meeting", id: "Risalah RUPS" },
+        file: `${GMS}/RISALAH-RAPAT-RUPS-17-JUNI-2026.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2025",
+    date: { en: "18 June 2025", id: "18 Juni 2025" },
+    documents: [
+      {
+        label: { en: "Announcement of General Meeting", id: "Pengumuman RUPS" },
+        file: `${GMS}/Pengumuman-Rapat-Umum-Pemegang-Saham-18-Juni-2025.pdf`,
+      },
+      {
+        label: { en: "Invitation to the shareholders", id: "Panggilan kepada pemegang saham" },
+        file: `${GMS}/Panggilan-RUPS-18-Juni-2025.pdf`,
+      },
+      {
+        label: { en: "Meeting agenda material", id: "Materi mata acara rapat" },
+        file: `${GMS}/BAHAN-MATA-ACARA-RUPS-18-JUNI-2025.pdf`,
+      },
+      {
+        label: { en: "Meeting rules for AGMS", id: "Tata tertib RUPST" },
+        file: `${GMS}/TATA-TERTIB-RUPS-18-JUNI-2025.pdf`,
+      },
+      {
+        label: { en: "Power of attorney for individual", id: "Surat kuasa perorangan" },
+        file: `${GMS}/SURAT-KUASA-INDIVIDU-RUPS-18-JUNI-2025.doc`,
+      },
+      {
+        label: { en: "Summary of the General Meeting", id: "Risalah RUPS" },
+        file: `${GMS}/Risalah-RUPS-18-Juni-2025.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2024",
+    date: { en: "12–13 June 2024", id: "12–13 Juni 2024" },
+    documents: [
+      {
+        label: { en: "Announcement of General Meeting", id: "Pengumuman RUPS" },
+        file: `${GMS}/Pengumuman-RUPST-dan-RUPSLB-ADES-2024.pdf`,
+      },
+      {
+        label: { en: "Invitation to the shareholders", id: "Panggilan kepada pemegang saham" },
+        file: `${GMS}/Panggilan-RUPS-12-JUNI-2024.pdf`,
+      },
+      {
+        label: { en: "Meeting agenda material", id: "Materi mata acara rapat" },
+        file: `${GMS}/BAHAN-MATA-ACARA-RUPS-12-JUNI-2024.pdf`,
+      },
+      {
+        label: { en: "Meeting rules for AGMS and EGMS", id: "Tata tertib RUPST dan RUPSLB" },
+        file: `${GMS}/TATA-TERTIB-RUPS-dan-RUPSLB-12-JUNI-2024.pdf`,
+      },
+      {
+        label: { en: "Power of attorney for corporate", id: "Surat kuasa badan hukum" },
+        file: `${GMS}/POWER-ATTORNEY-FOR-INDIVIDUAL-RUPS-2024.doc`,
+      },
+      {
+        label: { en: "Summary of the General Meeting", id: "Risalah RUPS" },
+        file: `${GMS}/Risalah-RUPS-13-Juni-2024.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2023",
+    date: { en: "21 June 2023", id: "21 Juni 2023" },
+    documents: [
+      {
+        label: { en: "Announcement of General Meeting", id: "Pengumuman RUPS" },
+        file: `${GMS}/PENGUMUMAN-RUPS-NOTICE-OF-THE-MEETING-15-MAY-2023.pdf`,
+      },
+      {
+        label: { en: "Invitation to the shareholders", id: "Panggilan kepada pemegang saham" },
+        file: `${GMS}/Panggilan-RUPS-21-JUNI-2023.pdf`,
+      },
+      {
+        label: { en: "Meeting agenda material", id: "Materi mata acara rapat" },
+        file: `${GMS}/BAHAN-MATA-ACARA-RUPS-21-JUNI-2023.pdf`,
+      },
+      {
+        label: { en: "Meeting rules for AGMS and EGMS", id: "Tata tertib RUPST dan RUPSLB" },
+        file: `${GMS}/TATA-TERTIB-RUPS-dan-RUPSLB-21-JUNI-2023.pdf`,
+      },
+      {
+        label: { en: "Power of attorney for corporate", id: "Surat kuasa badan hukum" },
+        file: `${GMS}/2023-05-POWER-ATTORNEY-CORPORATION-TO-BAE.doc`,
+      },
+      {
+        label: { en: "Power of attorney for individual", id: "Surat kuasa perorangan" },
+        file: `${GMS}/2023-05-POWER-ATTORNEY-FOR-INDIVIDUAL.doc`,
+      },
+      {
+        label: { en: "Curriculum vitae — Mr. Julianto", id: "Curriculum vitae — Bapak Julianto" },
+        file: `${GMS}/CV-Bpk-Julianto.pdf`,
+      },
+      {
+        label: { en: "Summary of the General Meeting", id: "Risalah RUPS" },
+        file: `${GMS}/Risalah-RUPS-21-Juni-2023.pdf`,
+      },
+      {
+        label: { en: "Abridged minutes of the meeting", id: "Ringkasan risalah RUPST dan RUPSLB" },
+        file: `${GMS}/Ringkasan-Risalah-RUPST-dan-RUPSLB-21-Juni-2023.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2022",
+    date: { en: "6 July 2022", id: "6 Juli 2022" },
+    documents: [
+      {
+        label: { en: "Announcement of General Meeting", id: "Pengumuman RUPS" },
+        file: `${GMS}/Announcement-of-General-Meeting-of-Shareholders-6-July-2022.pdf`,
+      },
+      {
+        label: { en: "Invitation to the shareholders", id: "Panggilan kepada pemegang saham" },
+        file: `${GMS}/Panggilan-RUPS-Bilingual-6-Juli-2022.pdf`,
+      },
+      {
+        label: { en: "Meeting agenda material", id: "Materi mata acara rapat" },
+        file: `${GMS}/BAHAN-MATA-ACARA-RAPAT-6-JULI-2022.pdf`,
+      },
+      {
+        label: { en: "Meeting rules for AGMS and EGMS", id: "Tata tertib RUPS dan RUPSLB" },
+        file: `${GMS}/Tata-Tertib-RUPS-dan-RUPSLB-2022.pdf`,
+      },
+      {
+        label: { en: "Power of attorney for individual", id: "Surat kuasa perorangan" },
+        file: `${GMS}/2022-06-POWER-ATTORNEY-FOR-INDIVIDUAL.doc`,
+      },
+      {
+        label: { en: "Power of attorney for corporate", id: "Surat kuasa badan hukum" },
+        file: `${GMS}/2022-06-POWER-ATTORNEY-CORPORATION-TO-BAE.doc`,
+      },
+      {
+        label: {
+          en: "Curriculum vitae — Mr. Raimond Bing Lesnussa",
+          id: "Curriculum vitae — Bapak Raimond Bing Lesnussa",
+        },
+        file: `${GMS}/CV-Pak-Bing-2.pdf`,
+      },
+      {
+        label: { en: "Summary of the meeting", id: "Risalah rapat" },
+        file: `${GMS}/Risalah-Rapat-6-Juli-2022.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2021",
+    date: { en: "26–27 August 2021", id: "26–27 Agustus 2021" },
+    documents: [
+      {
+        label: { en: "Announcement of General Meeting", id: "Pengumuman RUPS" },
+        file: `${GMS}/2021-07-Pengumuman-RUPS-Notice-of-the-Meeting-bilingual.pdf`,
+      },
+      {
+        label: { en: "Invitation of the meeting", id: "Panggilan rapat" },
+        file: `${GMS}/INVITATION-OF-THE-MEETING-Bilingual.pdf`,
+      },
+      {
+        label: { en: "Material of the meeting", id: "Materi rapat" },
+        file: `${GMS}/THE-MATERIAL-OF-THE-MEETING-bilingual.pdf`,
+      },
+      {
+        label: { en: "Power of attorney for corporate (BAE)", id: "Surat kuasa badan hukum (BAE)" },
+        file: `${GMS}/POWER-OF-ATTORNEY-CORPORATE-BAE.pdf`,
+      },
+      {
+        label: { en: "Power of attorney for individual (BAE)", id: "Surat kuasa perorangan (BAE)" },
+        file: `${GMS}/POWER-OF-ATTORNEY-INDIVIDUAL-BAE.pdf`,
+      },
+      {
+        label: { en: "Announcement of minutes summary", id: "Pengumuman ringkasan risalah" },
+        file: `${GMS}/RINGKASAN-RISALAH-RUPS-AKASHA-ENG.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2020",
+    date: { en: "5 August 2020", id: "5 Agustus 2020" },
+    documents: [
+      {
+        label: {
+          en: "Announcement to the shareholders (21 July 2020)",
+          id: "Pengumuman kepada pemegang saham (21 Juli 2020)",
+        },
+        file: `${GMS}/2020-07-Pengumuman-RUPS-Notice-of-the-Meeting-bilingual.pdf`,
+      },
+      {
+        label: { en: "Invitation to the shareholders", id: "Panggilan kepada pemegang saham" },
+        file: `${GMS}/PANGGILAN-RAPAT-MEETING-INVITATION-Bilingual-5-AUGUST-2020-rev.pdf`,
+      },
+      {
+        label: { en: "Power of attorney for corporate to BAE", id: "Surat kuasa badan hukum ke BAE" },
+        file: `${GMS}/2020-08-POWER-ATTORNEY-CORPORATION-TO-BAE.doc`,
+      },
+      {
+        label: { en: "Power of attorney for corporate", id: "Surat kuasa badan hukum" },
+        file: `${GMS}/POWER-OF-ATTORNEY-CORPORATE.doc`,
+      },
+      {
+        label: { en: "Power of attorney for individual to BAE", id: "Surat kuasa perorangan ke BAE" },
+        file: `${GMS}/POWER-OF-ATTORNEY-INDIVIDUAL-TO-BAE.doc`,
+      },
+      {
+        label: { en: "Power of attorney for individual", id: "Surat kuasa perorangan" },
+        file: `${GMS}/POWER-OF-ATTORNEY-INDIVIDUAL.doc`,
+      },
+      {
+        label: {
+          en: "Announcement of abridged minutes (27 August 2020)",
+          id: "Pengumuman ringkasan risalah (27 Agustus 2020)",
+        },
+        file: `${GMS}/ANNOUNCEMENT-ABRIDGE-ENGLISH-MINUTES-OF-MEETING-27-AUGUST-2020.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2019",
+    date: { en: "7 & 29 May 2019", id: "7 & 29 Mei 2019" },
+    documents: [
+      {
+        label: { en: "Announcement of AGM and EGM", id: "Pengumuman RUPST dan RUPSLB" },
+        file: `${GMS}/Announcement-of-AGM-adan-EGM-29-May-2019.pdf`,
+      },
+      {
+        label: { en: "Invitation of the meeting (7 May 2019)", id: "Panggilan rapat (7 Mei 2019)" },
+        file: `${GMS}/3b-Invitation-of-The-Meeting-English-7-Mei-2019clean-Clean-2.pdf`,
+      },
+      {
+        label: {
+          en: "Abridged minutes of the meeting (29 May 2019)",
+          id: "Ringkasan risalah rapat (29 Mei 2019)",
+        },
+        file: `${GMS}/PENGUMUMAN-ENGLISH-KORAN-RINGKASAN-RISALAH-RAPAT-29-MEI-2019-Rev-Notaris.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2018",
+    date: { en: "7 June 2018", id: "7 Juni 2018" },
+    documents: [
+      {
+        label: { en: "Notice of the meeting (30 April 2018)", id: "Pemberitahuan rapat (30 April 2018)" },
+        file: `${GMS}/Notice-of-the-Meeting-30-April-2018-PT.-Akasha-Wira-International-English.pdf`,
+      },
+      {
+        label: { en: "Invitation of the meeting (16 May 2018)", id: "Panggilan rapat (16 Mei 2018)" },
+        file: `${GMS}/Invitation-of-The-Meeting-16-May-2018-English.pdf`,
+      },
+      {
+        label: { en: "Invitation to the public expose", id: "Undangan paparan publik" },
+        file: `${GMS}/INVITATION-PUBLIC-EXPOSE-7-JUNE-2018-ENGLISH.pdf`,
+      },
+      {
+        label: { en: "Abridged minutes of the meeting", id: "Ringkasan risalah rapat" },
+        file: `${GMS}/The-Abridge-Minutes-of-Meeting-RUPS-AWI-7-June-2018-English.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2017",
+    date: { en: "20 June 2017", id: "20 Juni 2017" },
+    documents: [
+      {
+        label: { en: "Notice of the meeting (12 May 2017)", id: "Pemberitahuan rapat (12 Mei 2017)" },
+        file: `${GMS}/Notice-of-the-Meeting-12-May-2017-PT-AKASHA-WIRA-INTERNATIONAL-TBK-English1.pdf`,
+      },
+      {
+        label: { en: "Invitation of the meeting (29 May 2017)", id: "Panggilan rapat (29 Mei 2017)" },
+        file: `${GMS}/Invitation-of-The-Meeting-29-May-2017-English.pdf`,
+      },
+      {
+        label: { en: "Abridged minutes of the meeting", id: "Ringkasan risalah rapat" },
+        file: `${GMS}/The-Abridge-Minutes-of-Meeting-RUPS-AWI-20-juni-2017.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2016",
+    date: { en: "16 June & 20 October 2016", id: "16 Juni & 20 Oktober 2016" },
+    documents: [
+      {
+        label: { en: "Notice of the meeting (10 May 2016)", id: "Pemberitahuan rapat (10 Mei 2016)" },
+        file: `${GMS}/Notice-of-the-Meeting-10-May-2016-English.pdf`,
+      },
+      {
+        label: { en: "Invitation of the meeting (25 May 2016)", id: "Panggilan rapat (25 Mei 2016)" },
+        file: `${GMS}/Invitation-of-The-Meeting-25-May-2016-English.pdf`,
+      },
+      {
+        label: {
+          en: "Abridged minutes of the meeting (16 June 2016)",
+          id: "Ringkasan risalah rapat (16 Juni 2016)",
+        },
+        file: `${GMS}/Website-Announcment-The-Abridge-Minutes-of-Meeting-RUPS-AWI-16-Juni-2016-English.pdf`,
+      },
+      {
+        label: {
+          en: "Notice of the meeting (13 September 2016)",
+          id: "Pemberitahuan rapat (13 September 2016)",
+        },
+        file: `${GMS}/Notice-of-the-Meeting-13-Sep-2016-PT-AKASHA-WIRA-INTERNATIONAL-TBK-English.pdf`,
+      },
+      {
+        label: {
+          en: "Invitation of the meeting (28 September 2016)",
+          id: "Panggilan rapat (28 September 2016)",
+        },
+        file: `${GMS}/Invitation-of-The-Meeting-28-September-2016-English.pdf`,
+      },
+      {
+        label: {
+          en: "Abridged minutes of the meeting (20 October 2016)",
+          id: "Ringkasan risalah rapat (20 Oktober 2016)",
+        },
+        file: `${GMS}/The-Abridge-Minutes-of-Meeting-RUPS-AWI-20-October-2016-English-PDF.pdf`,
+      },
+    ],
+  },
+  {
+    year: "2015",
+    date: { en: "1 April & 18 June 2015", id: "1 April & 18 Juni 2015" },
+    documents: [
+      {
+        label: { en: "Notice of the meeting", id: "Pemberitahuan rapat" },
+        file: `${GMS}/Notice-of-the-Meeting-PT-AKASHA-WIRA-INTERNATIONAL-TBK1.pdf`,
+      },
+      {
+        label: { en: "Invitation of the meeting (10 March 2015)", id: "Panggilan rapat (10 Maret 2015)" },
+        file: `${GMS}/Invitation-of-The-Meeting-10-March-2015-English.pdf`,
+      },
+      {
+        label: {
+          en: "Abridged minutes of the EGMS (1 April 2015)",
+          id: "Ringkasan risalah RUPSLB (1 April 2015)",
+        },
+        file: `${GMS}/RINGKASAN-RISALAH-KORAN-RAPAT-PDF-EGSM-1-April-2015Inggris.pdf`,
+      },
+      {
+        label: { en: "Notice of the meeting (12 May 2015)", id: "Pemberitahuan rapat (12 Mei 2015)" },
+        file: `${GMS}/Notice-of-the-Meeting-12-May-2015-PT-AKASHA-WIRA-INTERNATIONAL-TBK-english.pdf`,
+      },
+      {
+        label: { en: "Invitation of the meeting (27 May 2015)", id: "Panggilan rapat (27 Mei 2015)" },
+        file: `${GMS}/Invitation-of-The-Meeting-English-27-Mei-2015-Clean.pdf`,
+      },
+      {
+        label: {
+          en: "Abridged minutes of the meeting (18 June 2015)",
+          id: "Ringkasan risalah rapat (18 Juni 2015)",
+        },
+        file: `${GMS}/Website-Announcment-EnglishThe-Abridge-Minutes-of-Meeting-RUPS-AWI-18-juni-2015-English.pdf`,
+      },
+    ],
+  },
+];
+
+const DISC = "/docs/disclosure";
+
+export const DISCLOSURES: {
+  date: Localized<string>;
+  title: Localized<string>;
+  file: string;
+}[] = [
+  {
+    date: { en: "12 June 2026", id: "12 Juni 2026" },
+    title: {
+      en: "Disclosure of information on the addition of business activities",
+      id: "Keterbukaan informasi atas penambahan kegiatan usaha",
+    },
+    file: `${DISC}/KETERBUKAAN-INFORMASI-PENAMBAHAN-KEGIATAN-USAHA-12-JUNI-2026.pdf`,
+  },
+  {
+    date: { en: "12 June 2026", id: "12 Juni 2026" },
+    title: {
+      en: "Full report — feasibility study of PT Akasha Wira International Tbk",
+      id: "Laporan lengkap — studi kelayakan PT Akasha Wira International Tbk",
+    },
+    file: `${DISC}/FEASIBILITY-STUDY-AKASHA.pdf`,
+  },
+  {
+    date: { en: "8 June 2026", id: "8 Juni 2026" },
+    title: {
+      en: "Disclosure of information on the addition of business activities",
+      id: "Keterbukaan informasi atas penambahan kegiatan usaha",
+    },
+    file: `${DISC}/Keterbukaan-informasi-Penambahan-Kegiatan-Usaha-update-8-Juni-2026.pdf`,
+  },
+  {
+    date: { en: "8 June 2026", id: "8 Juni 2026" },
+    title: {
+      en: "Full report — feasibility study of PT Akasha Wira International Tbk",
+      id: "Laporan lengkap — studi kelayakan PT Akasha Wira International Tbk",
+    },
+    file: `${DISC}/FULL-REPORT-FEASIBILTY-STUDY-AKASHA-UPDATE-8-JUNI-2026.pdf`,
+  },
+  {
+    date: { en: "May 2026", id: "Mei 2026" },
+    title: {
+      en: "Disclosure of information on the addition of business activities",
+      id: "Keterbukaan informasi atas penambahan kegiatan usaha",
+    },
+    file: `${DISC}/Keterbukaan-Informasi-Penambahan-Kegiatan-Usaha.pdf`,
+  },
+  {
+    date: { en: "May 2026", id: "Mei 2026" },
+    title: {
+      en: "Disclosure of information — resignation of President Director Wihardjo Hadiseputro and Commissioner Nana Puspa Dewi",
+      id: "Keterbukaan informasi — pengunduran diri Presiden Direktur Wihardjo Hadiseputro dan Komisaris Nana Puspa Dewi",
+    },
+    file: `${DISC}/Keterbukaan-Informasi-Pengunduran-Diri-Presiden-Direktur-Wihardjo-Hadiseputro-dan-Komisaris-Nana-Puspa-Dewi.pdf`,
+  },
+  {
+    date: { en: "19 June 2025", id: "19 Juni 2025" },
+    title: {
+      en: "Public expose notification",
+      id: "Pemberitahuan paparan publik",
+    },
+    file: `${DISC}/PEMBERITAHUAN-PUBLIC-EXPOSE-19-JUNI-2025.pdf`,
+  },
+  {
+    date: { en: "March 2025", id: "Maret 2025" },
+    title: {
+      en: "Disclosure of information — resignation of Director Raimond Bing Lesnussa",
+      id: "Keterbukaan informasi — pengunduran diri Direktur Raimond Bing Lesnussa",
+    },
+    file: `${DISC}/Keterbukaan-Informasi-Pengunduran-Diri-Direktur-Raimond-Bing-Lesnussa.pdf`,
+  },
+  {
+    date: { en: "13 June 2024", id: "13 Juni 2024" },
+    title: {
+      en: "Public expose notification",
+      id: "Pemberitahuan paparan publik",
+    },
+    file: `${DISC}/PEMBERITAHUAN-PUBLIC-EXPOSE-12-JUNI-2024.pdf`,
+  },
+  {
+    date: { en: "13 June 2023", id: "13 Juni 2023" },
+    title: {
+      en: "Disclosure of information to shareholders",
+      id: "Keterbukaan informasi kepada pemegang saham",
+    },
+    file: `${DISC}/Keterbukaan-Informasi-Revisi.pdf`,
+  },
+  {
+    date: { en: "22 June 2023", id: "22 Juni 2023" },
+    title: {
+      en: "Public expose notification",
+      id: "Pemberitahuan paparan publik",
+    },
+    file: `${DISC}/PEMBERITAHUAN-PUBLIC-EXPOSE-22-JUNI-2023.pdf`,
+  },
+  {
+    date: { en: "15 May 2023", id: "15 Mei 2023" },
+    title: {
+      en: "Disclosure of information to shareholders",
+      id: "Keterbukaan informasi kepada pemegang saham",
+    },
+    file: `${DISC}/Keterbukaan-Informasi-Penambahan-Kegiatan-Usaha-1.pdf`,
+  },
+  {
+    date: { en: "May 2023", id: "Mei 2023" },
+    title: {
+      en: "Disclosure of information — resignation of Independent Commissioner Ms. Miscellia Dotulong",
+      id: "Keterbukaan informasi — pengunduran diri Komisaris Independen Ibu Miscellia Dotulong",
+    },
+    file: `${DISC}/Pengunduran-Diri-Komisaris-Independen.pdf`,
+  },
+  {
+    date: { en: "May 2022", id: "Mei 2022" },
+    title: {
+      en: "Disclosure of information — resignation of Commissioner Mr. Danny Yuwono",
+      id: "Keterbukaan informasi — pengunduran diri Komisaris Bapak Danny Yuwono",
+    },
+    file: `${DISC}/Disclosure-of-Information-Resignation-Member-of-Commissioners-Mr-Danny-Yuwono.pdf`,
+  },
+  {
+    date: { en: "2021", id: "2021" },
+    title: {
+      en: "Public expose notification",
+      id: "Pemberitahuan paparan publik",
+    },
+    file: `${DISC}/PUBLIC-EXPOSE-NOTIFICATION-2021.pdf`,
+  },
+  {
+    date: { en: "21 July 2020", id: "21 Juli 2020" },
+    title: {
+      en: "Circular to shareholders",
+      id: "Surat edaran kepada pemegang saham",
+    },
+    file: `${DISC}/CIRCULAR-TO-THE-SHAREHOLDERS-SURAT-EDARAN-PEMEGANG-SAHAM.pdf`,
+  },
+  {
+    date: { en: "20 April 2018", id: "20 April 2018" },
+    title: {
+      en: "Disclosure on the resignation of Mr. Ari Wisnubroto as Director",
+      id: "Keterbukaan informasi atas pengunduran diri Bapak Ari Wisnubroto sebagai Direktur",
+    },
+    file: `${DISC}/Disclosure-on-Resignation-of-Mr-Ari-Wisnubroto.pdf`,
+  },
+  {
+    date: { en: "6 June 2016", id: "6 Juni 2016" },
+    title: {
+      en: "Disclosure on share price volatility",
+      id: "Keterbukaan informasi atas volatilitas harga saham",
+    },
+    file: `${DISC}/Disclosure-Shares-Volatility-6-June-2016-English.pdf`,
+  },
+];
+
+export const ANNOUNCEMENTS: { title: Localized<string>; file: string }[] = [
+  {
+    title: {
+      en: "Announcement on the change of Corporate Secretary of PT Akasha Wira International Tbk",
+      id: "Pengumuman perubahan Sekretaris Perusahaan PT Akasha Wira International Tbk",
+    },
+    file: "/docs/announcement/PENGUMUMAN-PERGANTIAN-SEKRETARIS-PERUSAHAAN-PT-AKASHA-WIRA-INTERNATIONAL-TBK.pdf",
+  },
+  {
+    title: {
+      en: "Announcement on the change of the Audit Committee of PT Akasha Wira International Tbk",
+      id: "Pengumuman perubahan Komite Audit PT Akasha Wira International Tbk",
+    },
+    file: "/docs/announcement/Pemberitahuan-Pergantian-Komite-Audit.pdf",
+  },
+];
+
+// CSR tidak punya dokumen sendiri — tiap tahun dilaporkan sebagai bab di dalam
+// Laporan Tahunan, jadi `file` menunjuk ke laporan tahunan yang bersangkutan
+// dan `page` ke halaman rujukannya.
+export const CSR_REPORTS: { year: string; page: string; file: string }[] = [
+  {
+    year: "2021",
+    page: "79",
+    file: "/docs/annual-report/ADES-AR-2021-eReporting_300522_3.pdf",
+  },
+  {
+    year: "2020",
+    page: "81",
+    file: "/docs/annual-report/AR-2020-Akasha-Wira-International-Tbk-Rev-828-06-2021e-reporting.pdf",
+  },
+  {
+    year: "2019",
+    page: "78",
+    file: "/docs/annual-report/Laporan-Tahunan-Akasha-31-Desember-2019-Final.pdf",
+  },
+  {
+    year: "2018",
+    page: "60",
+    file: "/docs/annual-report/ADES-AR-2108-eReporting-300419.pdf",
+  },
+  { year: "2017", page: "64", file: "/docs/annual-report/Annual-Report-2017-AWI.pdf" },
+  { year: "2016", page: "60", file: "/docs/annual-report/ANNUAL-REPORT-2016-AWI.pdf.pdf" },
+];
 
 export const INVESTOR_SECTIONS: {
   id: string;
+  href: string;
   title: Localized<string>;
   desc: Localized<string>;
 }[] = [
   {
     id: "financial-highlights",
+    href: "#financial-highlights",
     title: { en: "Financial Highlights", id: "Ikhtisar Keuangan" },
     desc: {
       en: "Summary of financial performance over the last five years.",
@@ -78,30 +1215,34 @@ export const INVESTOR_SECTIONS: {
   },
   {
     id: "financial-report",
+    href: "#financial-report",
     title: { en: "Financial Report", id: "Laporan Keuangan" },
     desc: {
-      en: "Audited and quarterly interim financial statements.",
-      id: "Laporan keuangan audited dan interim per kuartal.",
+      en: "Audited and quarterly interim financial statements, 2012–2025.",
+      id: "Laporan keuangan audited dan interim per kuartal, 2012–2025.",
     },
   },
   {
     id: "annual-report",
+    href: "#annual-report",
     title: { en: "Annual Report", id: "Laporan Tahunan" },
     desc: {
-      en: "Full annual report with strategic review.",
-      id: "Laporan tahunan lengkap dengan tinjauan strategis.",
+      en: "Full annual report with strategic review, 2012–2025.",
+      id: "Laporan tahunan lengkap dengan tinjauan strategis, 2012–2025.",
     },
   },
   {
-    id: "share-price",
-    title: { en: "Share Price", id: "Harga Saham" },
+    id: "sustainability-report",
+    href: "#sustainability-report",
+    title: { en: "Sustainability Report", id: "Laporan Keberlanjutan" },
     desc: {
-      en: "Real-time movement of ADES share price.",
-      id: "Pergerakan harga saham ADES secara real-time.",
+      en: "Annual sustainability reporting since 2021.",
+      id: "Pelaporan keberlanjutan tahunan sejak 2021.",
     },
   },
   {
     id: "chronological-share",
+    href: "#chronological-share",
     title: { en: "Chronological Share", id: "Kronologi Saham" },
     desc: {
       en: "History of corporate actions since the 1994 IPO.",
@@ -110,22 +1251,34 @@ export const INVESTOR_SECTIONS: {
   },
   {
     id: "stock-information",
+    href: "#stock-information",
     title: { en: "Stock Information", id: "Informasi Saham" },
     desc: {
-      en: "Shareholder structure and capitalization.",
-      id: "Struktur pemegang saham dan permodalan.",
+      en: "Daily share price, shareholder structure, and capitalization.",
+      id: "Harga saham harian, struktur pemegang saham, dan permodalan.",
+    },
+  },
+  {
+    id: "dividends",
+    href: "#dividends",
+    title: { en: "Dividends", id: "Dividen" },
+    desc: {
+      en: "Recorded history of dividend distribution.",
+      id: "Riwayat pembagian dividen yang tercatat.",
     },
   },
   {
     id: "gms",
+    href: "/governance#gms",
     title: { en: "General Meeting", id: "Rapat Umum" },
     desc: {
-      en: "Notices, materials, and results of the annual GMS.",
-      id: "Panggilan, materi, dan hasil RUPS tahunan.",
+      en: "Notices, materials, and results of the GMS, 2015–2026.",
+      id: "Panggilan, materi, dan hasil RUPS, 2015–2026.",
     },
   },
   {
     id: "disclosure",
+    href: "/governance#disclosure",
     title: { en: "Disclosure", id: "Keterbukaan Informasi" },
     desc: {
       en: "Information disclosure in accordance with POJK regulations.",
@@ -136,39 +1289,57 @@ export const INVESTOR_SECTIONS: {
 
 export const GOVERNANCE_PILLARS: {
   id: string;
+  href: string;
   title: Localized<string>;
   desc: Localized<string>;
+  note?: Localized<string>;
   icon: string;
 }[] = [
   {
     id: "article-of-association",
+    href: "/docs/governance/Akta-19-tgl-080715-Perubahan-AD-Restatement-AHU-AH-01-03-0953311-dan-0953310.pdf",
     title: { en: "Article of Association", id: "Anggaran Dasar" },
     desc: {
       en: "Article of Association — the foundational legal document governing the company's structure, rights, and obligations.",
       id: "Anggaran Dasar — dokumen legal fondasi yang mengatur struktur, hak, dan kewajiban perusahaan.",
     },
+    note: {
+      en: "Deed No. 19 · AHU-AH-01-03-0953311 & 0953310 · 7 August 2015",
+      id: "Akta No. 19 · AHU-AH-01-03-0953311 & 0953310 · 7 Agustus 2015",
+    },
     icon: "📜",
   },
   {
     id: "bod-boc-charter",
+    href: "/docs/governance/BOARD-OF-DIRECTORS-COMMUNICATION-POLICY-ING-Pdf.pdf",
     title: { en: "BOD & BOC Charter", id: "Direksi & Komisaris Charter" },
     desc: {
       en: "Governance guidelines for the Board of Directors and Board of Commissioners in carrying out their oversight functions.",
       id: "Pedoman tata kelola untuk Dewan Direksi dan Dewan Komisaris dalam menjalankan fungsi pengawasan.",
     },
+    note: {
+      en: "Shareholders, Investors and Stakeholders Communication Policy",
+      id: "Kebijakan Komunikasi dengan Pemegang Saham, Investor, dan Pemangku Kepentingan",
+    },
     icon: "⚖️",
   },
   {
     id: "csr",
+    href: "#csr",
     title: { en: "Corporate Social Responsibility", id: "Tanggung Jawab Sosial Perusahaan" },
     desc: {
       en: "Social responsibility programs and sustained contribution to community and environment.",
       id: "Program tanggung jawab sosial dan kontribusi berkelanjutan terhadap komunitas serta lingkungan.",
     },
+    note: {
+      en: "Reported as a chapter within each year's Annual Report",
+      id: "Dilaporkan sebagai bab di dalam Laporan Tahunan tiap tahun",
+    },
     icon: "🌱",
   },
   {
     id: "announcement",
+    href: "#announcement",
     title: { en: "Announcement", id: "Pengumuman" },
     desc: {
       en: "Official company announcements to the public and shareholders.",
@@ -178,6 +1349,7 @@ export const GOVERNANCE_PILLARS: {
   },
   {
     id: "disclosure",
+    href: "#disclosure",
     title: { en: "Disclosure Information", id: "Keterbukaan Informasi" },
     desc: {
       en: "Material information disclosure per OJK and Indonesia Stock Exchange regulations.",
@@ -187,6 +1359,7 @@ export const GOVERNANCE_PILLARS: {
   },
   {
     id: "gms",
+    href: "#gms",
     title: { en: "General Meeting of Shareholders", id: "Rapat Umum Pemegang Saham" },
     desc: {
       en: "Procedures and documentation for the annual and extraordinary General Meeting of Shareholders (GMS).",

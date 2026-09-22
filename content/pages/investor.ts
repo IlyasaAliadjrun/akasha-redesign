@@ -1,5 +1,11 @@
 import type { Localized } from "@/lib/locale/paths";
 
+type DocArchiveCopy = {
+  eyebrow: Localized<string>;
+  heading: Localized<string>;
+  paragraph: Localized<string>;
+};
+
 export const INVESTOR_PAGE: {
   meta: { title: Localized<string>; description: Localized<string> };
   hero: { title: Localized<string>; subtitle: Localized<string> };
@@ -17,6 +23,8 @@ export const INVESTOR_PAGE: {
   };
   table: {
     eyebrow: Localized<string>;
+    // Rentang tahun ditempelkan di komponen dari FINANCIAL_YEARS, bukan
+    // ditulis ulang di sini, supaya tidak ikut basi saat data diperbarui.
     heading: Localized<string>;
     paragraph: Localized<string>;
     metricHeader: Localized<string>;
@@ -27,6 +35,7 @@ export const INVESTOR_PAGE: {
       netIncome: Localized<string>;
       eps: Localized<string>;
       totalAssets: Localized<string>;
+      totalLiabilities: Localized<string>;
       totalEquity: Localized<string>;
       currentRatio: Localized<string>;
     };
@@ -39,6 +48,10 @@ export const INVESTOR_PAGE: {
     };
     avgLabel: Localized<string>;
   };
+  // Nama bulan ditulis manual, bukan lewat Intl, supaya render server dan
+  // klien tidak bisa berbeda kalau ICU di runtime berbeda.
+  monthsShort: Localized<string[]>;
+  trillionUnit: Localized<string>;
   chronological: {
     eyebrow: Localized<string>;
     heading: Localized<string>;
@@ -56,9 +69,44 @@ export const INVESTOR_PAGE: {
       ipoDate: { k: Localized<string>; v: Localized<string> };
       sector: { k: Localized<string>; v: Localized<string> };
       parValue: { k: Localized<string>; v: Localized<string> };
+      authorizedShares: { k: Localized<string>; unit: Localized<string> };
       outstandingShares: { k: Localized<string>; unit: Localized<string> };
+      registrar: { k: Localized<string> };
+    };
+    shareholders: {
+      heading: Localized<string>;
+      sharesUnit: Localized<string>;
+    };
+    daily: {
+      label: Localized<string>;
+      lastClose: Localized<string>;
+      periodChange: Localized<string>;
+      marketCap: Localized<string>;
+      asOf: Localized<string>;
+      chart: {
+        close: Localized<string>;
+        axis: Localized<string>;
+        summary: Localized<string>;
+      };
+      dailyTable: Localized<string>;
+      note: Localized<string>;
     };
   };
+  dividends: {
+    eyebrow: Localized<string>;
+    heading: Localized<string>;
+    paragraph: Localized<string>;
+    columns: {
+      year: Localized<string>;
+      total: Localized<string>;
+      shares: Localized<string>;
+      perShare: Localized<string>;
+    };
+  };
+  annualReports: DocArchiveCopy;
+  financialReports: DocArchiveCopy & { letterLabel: Localized<string> };
+  sustainabilityReports: DocArchiveCopy;
+  archiveDownloadLabel: Localized<string>;
   resources: {
     eyebrow: Localized<string>;
     heading: Localized<string>;
@@ -93,13 +141,13 @@ export const INVESTOR_PAGE: {
   },
   metrics: {
     netSales: {
-      label: { en: "Net Sales 2024", id: "Penjualan Bersih 2024" },
+      label: { en: "Net Sales", id: "Penjualan Bersih" },
     },
     netIncome: {
-      label: { en: "Net Income 2024", id: "Laba Bersih 2024" },
+      label: { en: "Net Income", id: "Laba Bersih" },
     },
     eps: {
-      label: { en: "EPS 2024", id: "EPS 2024" },
+      label: { en: "EPS", id: "EPS" },
       sub: { en: "per share", id: "per lembar saham" },
     },
     outstandingShares: {
@@ -119,8 +167,8 @@ export const INVESTOR_PAGE: {
   table: {
     eyebrow: { en: "Consolidated figures", id: "Angka konsolidasian" },
     heading: {
-      en: "Financial statements, 2020–2024.",
-      id: "Laporan keuangan, 2020–2024.",
+      en: "Financial statements,",
+      id: "Laporan keuangan,",
     },
     paragraph: {
       en: "Figures in Rp million except EPS (Rp) and ratios (%).",
@@ -134,6 +182,7 @@ export const INVESTOR_PAGE: {
       netIncome: { en: "Net Income", id: "Laba Bersih" },
       eps: { en: "EPS (Rp)", id: "EPS (Rp)" },
       totalAssets: { en: "Total Assets", id: "Total Aset" },
+      totalLiabilities: { en: "Total Liabilities", id: "Total Liabilitas" },
       totalEquity: { en: "Total Equity", id: "Total Ekuitas" },
       currentRatio: { en: "Current Ratio", id: "Rasio Lancar" },
     },
@@ -146,6 +195,11 @@ export const INVESTOR_PAGE: {
     },
     avgLabel: { en: "5Y avg:", id: "Rata-rata 5T:" },
   },
+  monthsShort: {
+    en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    id: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
+  },
+  trillionUnit: { en: "trillion", id: "triliun" },
   chronological: {
     eyebrow: { en: "Chronological share", id: "Kronologi saham" },
     heading: {
@@ -190,12 +244,90 @@ export const INVESTOR_PAGE: {
         k: { en: "Par Value", id: "Nilai Nominal" },
         v: { en: "Rp 1,000 per share", id: "Rp 1.000 per lembar" },
       },
-      outstandingShares: {
-        k: { en: "Outstanding Shares", id: "Outstanding Shares" },
+      authorizedShares: {
+        k: { en: "Authorized Capital", id: "Modal Dasar" },
         unit: { en: "shares", id: "lembar" },
+      },
+      outstandingShares: {
+        k: { en: "Issued & Fully Paid", id: "Modal Ditempatkan & Disetor" },
+        unit: { en: "shares", id: "lembar" },
+      },
+      registrar: {
+        k: { en: "Share Registrar", id: "Biro Administrasi Efek" },
+      },
+    },
+    shareholders: {
+      heading: { en: "Shareholding structure", id: "Struktur pemegang saham" },
+      sharesUnit: { en: "shares", id: "lembar" },
+    },
+    daily: {
+      label: { en: "ADES on the exchange", id: "ADES di lantai bursa" },
+      lastClose: { en: "Last close", id: "Penutupan terakhir" },
+      periodChange: { en: "Over the period", id: "Sepanjang periode" },
+      marketCap: { en: "Market capitalisation", id: "Kapitalisasi pasar" },
+      asOf: {
+        en: "Daily closing prices through",
+        id: "Harga penutupan harian hingga",
+      },
+      chart: {
+        close: { en: "Closing price", id: "Harga penutupan" },
+        axis: { en: "Rp per share", id: "Rp per lembar saham" },
+        summary: {
+          en: "Daily ADES closing price from 23 July to 18 September 2026, ranging from Rp 30,375 to Rp 38,850 and ending at Rp 32,175. Full figures in the table below.",
+          id: "Harga penutupan harian ADES dari 23 Juli sampai 18 September 2026, bergerak antara Rp 30.375 dan Rp 38.850 dan ditutup di Rp 32.175. Angka lengkapnya ada di tabel di bawah.",
+        },
+      },
+      dailyTable: { en: "Daily figures", id: "Angka harian" },
+      note: {
+        en: "The official source publishes this series as a fixed list on the page rather than a live feed, so it is a snapshot that has to be refreshed by hand.",
+        id: "Sumber resmi menerbitkan deret ini sebagai daftar tetap di halamannya, bukan umpan langsung — jadi ini potret yang harus diperbarui manual.",
       },
     },
   },
+  dividends: {
+    eyebrow: { en: "Dividends", id: "Dividen" },
+    heading: { en: "Dividend history.", id: "Riwayat dividen." },
+    paragraph: {
+      en: "Distribution recorded on the company's dividend page. Subsequent years are covered in the annual reports.",
+      id: "Pembagian yang tercatat pada halaman dividen perusahaan. Tahun-tahun berikutnya diuraikan di laporan tahunan.",
+    },
+    columns: {
+      year: { en: "Year", id: "Tahun" },
+      total: { en: "Total dividend", id: "Total dividen" },
+      shares: { en: "Shares", id: "Jumlah saham" },
+      perShare: { en: "Per share", id: "Per lembar" },
+    },
+  },
+  annualReports: {
+    eyebrow: { en: "Annual report", id: "Laporan tahunan" },
+    heading: { en: "Annual reports.", id: "Laporan tahunan." },
+    paragraph: {
+      en: "Management review, financial performance, governance, and social responsibility — one volume per financial year.",
+      id: "Tinjauan manajemen, kinerja keuangan, tata kelola, dan tanggung jawab sosial — satu jilid per tahun buku.",
+    },
+  },
+  financialReports: {
+    eyebrow: { en: "Financial report", id: "Laporan keuangan" },
+    heading: { en: "Financial statements.", id: "Laporan keuangan." },
+    paragraph: {
+      en: "Audited year-end statements and interim statements for each quarter, back to the 2012 financial year.",
+      id: "Laporan audited akhir tahun dan laporan interim tiap kuartal, hingga tahun buku 2012.",
+    },
+    // Surat penjelasan OJK atas perubahan jumlah aset lebih dari 20%.
+    letterLabel: {
+      en: "Letter on change of assets",
+      id: "Surat penjelasan OJK",
+    },
+  },
+  sustainabilityReports: {
+    eyebrow: { en: "Sustainability report", id: "Laporan keberlanjutan" },
+    heading: { en: "Sustainability reports.", id: "Laporan keberlanjutan." },
+    paragraph: {
+      en: "Annual reporting on environmental, social, and governance performance, published since the 2021 financial year.",
+      id: "Pelaporan tahunan atas kinerja lingkungan, sosial, dan tata kelola, terbit sejak tahun buku 2021.",
+    },
+  },
+  archiveDownloadLabel: { en: "Download PDF", id: "Unduh PDF" },
   resources: {
     eyebrow: { en: "Resources", id: "Sumber daya" },
     heading: {

@@ -23,8 +23,13 @@ public/
 │                                (gambar kartu SUDAH termasuk background & border)
 ├── about/ investor/ governance/ contact/ careers/   ← Halaman lain
 │   └── hero/                    desktop.jpg + mobile.jpg
+├── docs/                        ← Dokumen investor & tata kelola (PDF/DOC)
+│   ├── annual-report/covers/    sampul laporan tahunan   → 2012.png … 2025.png
+│   └── sustainability-report/covers/   sampul lap. keberlanjutan → 2021.jpg … 2025.png
 └── shared/                      logo navbar (dipakai semua halaman)
 ```
+
+**`public/docs/` tidak ikut aturan locale.** Semua aset lain hidup di `public/en/…` dan `public/id/…`; dokumen dan sampulnya tidak, karena isinya identik di kedua bahasa. Nama berkas PDF juga **dipertahankan apa adanya dari situs sumber** (huruf besar, angka, dsb.) supaya bisa dilacak balik saat arsip diperbarui — ini pengecualian dari aturan huruf-kecil di bawah. Yang mengikuti aturan hanyalah sampulnya, yang dinamai per tahun: `2025.png`.
 
 **Aturan nama file:** semua **huruf kecil + tanda hubung** (slug). `BARBER-DAILY.jpg` → `barber-daily.jpg`.
 Nama brand di folder pakai slug juga: `hair-energy/`, `nestle-pure-life/`.
@@ -40,6 +45,7 @@ Nama brand di folder pakai slug juga: `hair-energy/`, `nestle-pure-life/`.
 | Banner brand (hero) | `brand/{slug}/hero/` | **16:9** | 2560×1440 | COVER* | jpg/png |
 | **Hero halaman — desktop** | `{page}/hero/desktop.jpg` | **16:9** | 2560×1440 | COVER | jpg |
 | **Hero halaman — HP** | `{page}/hero/mobile.jpg` | **9:16** | 1080×1920 | COVER | jpg |
+| **Sampul laporan** (tahunan & keberlanjutan) | `docs/{annual-report\|sustainability-report}/covers/{tahun}` | **16:15** (≈1.067) | 1200×1125 | COVER | jpg/png |
 | Foto produk (lineup) | `brand/{slug}/product-lineup/` | **1:1** | 1200×1200 | CONTAIN | **PNG** |
 | 3 kartu "About" | `brand/{slug}/about/` | **3:4** | 1200×1600 | COVER | jpg |
 | Showcase — gambar utama | `brand/{slug}/showcase/title.png` | **bebas** (cth 1.37:1) | 5219×3799 | CONTAIN | png |
@@ -144,6 +150,7 @@ DESKTOP 16:9                     HP 9:16
 | Main banner beranda | 16:9 | 16:9 strip (center) |
 | **Hero halaman** | **16:9** | **9:16** (aset mobile terpisah) ✅ sudah ada |
 | **Banner brand (hero)** | **16:9** | **9:16** (aset mobile terpisah) ⚠️ belum ada |
+| **Sampul laporan** | **16:15** (kotak ±251×235) | **16:15** (kotak ±163×153) | sama |
 | Semua kartu (divisi, brand grid, produk, About, showcase) | sama seperti tabel atas | **sama** |
 
 → Hanya **hero halaman** & **banner brand** yang butuh aset HP terpisah (9:16). Sisanya 1 aset cukup.
@@ -163,6 +170,8 @@ CONTAIN → latar POLOS 1 warna / PNG TRANSPARAN (biar menyatu).
 ## ⚠️ Aset yang masih kurang
 
 - Aset **9:16** untuk banner brand di HP — belum ada satu pun.
+- **Sampul laporan 2023–2025** hanya tersedia 589×533 (unduhan dari situs lama). Masih cukup untuk kotak 251px, tapi di bawah spesifikasi master 1200×1125 — minta file resolusi tinggi kalau ada. Sampul 2012–2022 sudah 1584×1486 / 1536×1441.
+- **Sampul Laporan Keberlanjutan 2023 dan 2024 identik** — situs sumber memang memakai gambar yang sama untuk kedua tahun. Ganti kalau sampul 2024 yang sebenarnya tersedia.
 
 ## ✅ Checklist
 
