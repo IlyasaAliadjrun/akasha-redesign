@@ -22,7 +22,7 @@ const entry: Brand = {
     accentHex: "#7D2628",
     // No standalone 3:4 brand card art — reuse the 16:9 home banner. Only CrossSell
     // reads this; the hero itself renders from `heroLayers`.
-    heroImage: "/home/hero-carousel/make-it.jpg",
+    heroImage: "/media/home/hero-carousel/make-it.jpg",
     // Layered parallax banner on the flat maroon `bannerBg`: three bottles clustered
     // on the right half, the (upright) Mango Glacé sitting highest and furthest back,
     // with the two tilted bottles overlapping it from either side.
@@ -36,17 +36,17 @@ const entry: Brand = {
     // into its PNG (measured from the alpha channel).
     heroLayers: [
       // Essence Sanctuary — front-left, tilted, enters from the LEFT (1st).
-      { src: "/brand/makeit/hero/1.png", depth: 56, enterFrom: "left", enterDelay: 0, width: "min(40vw, 49vh)", aspectRatio: "2547 / 3799", left: "56.5%", bottom: "1%",
+      { src: "/media/brands/make-it/hero/1.png", depth: 56, enterFrom: "left", enterDelay: 0, width: "min(40vw, 49vh)", aspectRatio: "2547 / 3799", left: "56.5%", bottom: "1%",
         mobile: { left: "6.2%", bottom: "25.2%", width: "min(72vw, 27vh)" } },
       // Mango Glacé — back, centre of the cluster, enters from the TOP (2nd).
-      { src: "/brand/makeit/hero/2.png", depth: 34, enterFrom: "top", enterDelay: 0.2, width: "min(37vw, 42vh)", aspectRatio: "1977 / 3514", left: "64%", bottom: "27%",
+      { src: "/media/brands/make-it/hero/2.png", depth: 34, enterFrom: "top", enterDelay: 0.2, width: "min(37vw, 42vh)", aspectRatio: "1977 / 3514", left: "64%", bottom: "27%",
         mobile: { left: "25%", bottom: "40%", width: "min(63vw, 23vh)" } },
       // Keep in Touch — front-right, tilted, enters from the RIGHT (3rd).
-      { src: "/brand/makeit/hero/3.png", depth: 72, enterFrom: "right", enterDelay: 0.4, width: "min(37vw, 47vh)", aspectRatio: "2359 / 3713", left: "68.9%", bottom: "8%",
+      { src: "/media/brands/make-it/hero/3.png", depth: 72, enterFrom: "right", enterDelay: 0.4, width: "min(37vw, 47vh)", aspectRatio: "2359 / 3713", left: "68.9%", bottom: "8%",
         mobile: { left: "37.7%", bottom: "29.7%", width: "min(69vw, 25.5vh)" } },
     ],
     heroContent: {
-      logo: "/brand/makeit/hero/wordmark.png",
+      logo: "/media/brands/make-it/hero/wordmark.png",
       // The wordmark PNG is cropped tight to the glyphs, so no bodyIndent is needed.
       logoAspect: "1499 / 446",
       logoWidth: "25vw",
@@ -63,18 +63,18 @@ const entry: Brand = {
     bannerBg: "#7D2628",
     hero: false,
     products: [
-      { name: "Essence Sanctuary", variant: { en: "Fragrance Enhancing Primer", id: "Primer Peningkat Aroma" }, image: "/brand/makeit/product-lineup/essence-sanctuary.png" },
-      { name: "Mango Glacé", variant: { en: "Extrait d'Intense Parfum", id: "Extrait d'Intense Parfum" }, image: "/brand/makeit/product-lineup/mango-glace.png" },
-      { name: "Bold Venture", variant: { en: "Parfum", id: "Parfum" }, image: "/brand/makeit/product-lineup/bold-venture.png" },
-      { name: "Keep in Touch", variant: { en: "Parfum", id: "Parfum" }, image: "/brand/makeit/product-lineup/keep-in-touch.png" },
-      { name: "Dream Chaser", variant: { en: "Parfum", id: "Parfum" }, image: "/brand/makeit/product-lineup/dream-chaser.png" },
-      { name: "Weekday Hustle", variant: { en: "Parfum", id: "Parfum" }, image: "/brand/makeit/product-lineup/weekday-hustle.png" },
-      { name: "Social Butterfly", variant: { en: "Parfum", id: "Parfum" }, image: "/brand/makeit/product-lineup/social-butterfly.png" },
+      { name: "Essence Sanctuary", variant: { en: "Fragrance Enhancing Primer", id: "Primer Peningkat Aroma" }, image: "/media/brands/make-it/product-lineup/essence-sanctuary.png" },
+      { name: "Mango Glacé", variant: { en: "Extrait d'Intense Parfum", id: "Extrait d'Intense Parfum" }, image: "/media/brands/make-it/product-lineup/mango-glace.png" },
+      { name: "Bold Venture", variant: { en: "Parfum", id: "Parfum" }, image: "/media/brands/make-it/product-lineup/bold-venture.png" },
+      { name: "Keep in Touch", variant: { en: "Parfum", id: "Parfum" }, image: "/media/brands/make-it/product-lineup/keep-in-touch.png" },
+      { name: "Dream Chaser", variant: { en: "Parfum", id: "Parfum" }, image: "/media/brands/make-it/product-lineup/dream-chaser.png" },
+      { name: "Weekday Hustle", variant: { en: "Parfum", id: "Parfum" }, image: "/media/brands/make-it/product-lineup/weekday-hustle.png" },
+      { name: "Social Butterfly", variant: { en: "Parfum", id: "Parfum" }, image: "/media/brands/make-it/product-lineup/social-butterfly.png" },
     ],
     about: [
-      { title: { en: "30%–50% Perfume Concentrate", id: "30%–50% Konsentrat Parfum" }, image: "/brand/makeit/about/1.png" },
-      { title: { en: "Lasts Up to 12 Hours", id: "Tahan Hingga 12 Jam" }, image: "/brand/makeit/about/2.png" },
-      { title: { en: "A Unique Scent", id: "Aroma Yang Unik" }, image: "/brand/makeit/about/3.png" },
+      { title: { en: "30%–50% Perfume Concentrate", id: "30%–50% Konsentrat Parfum" }, image: "/media/brands/make-it/about/1.png" },
+      { title: { en: "Lasts Up to 12 Hours", id: "Tahan Hingga 12 Jam" }, image: "/media/brands/make-it/about/2.png" },
+      { title: { en: "A Unique Scent", id: "Aroma Yang Unik" }, image: "/media/brands/make-it/about/3.png" },
     ],
     // Showcase — the "#1 Primer Parfum" poster, then the three range banners.
     // The banner art is a finished card with wording close to every edge. The frame
@@ -82,7 +82,7 @@ const entry: Brand = {
     // disabled so no copy is cropped during scroll. There are no sub-brand pages, so
     // Each linked range banner opens its matching sub-brand page.
     showcase: {
-      hero: "/brand/makeit/showcase/title.png",
+      hero: { en: "/media/brands/make-it/showcase/title.en.png", id: "/media/brands/make-it/showcase/title.id.png" },
       heroAspect: "4325 / 4280",
       heroOffsetY: "180px",
       heroMobileOffsetY: "65px",
@@ -92,15 +92,15 @@ const entry: Brand = {
       parallax: false,
       variants: [
         // Fragrance Enhancing Primer — Essence Sanctuary
-        { bg: "/brand/makeit/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/makeit/showcase/1-1.png", productAspect: "2547 / 3799", productHeight: "155%", productShiftX: "-11%", productShiftY: "-1.5%",
+        { bg: { en: "/media/brands/make-it/showcase/1-2.en.png", id: "/media/brands/make-it/showcase/1-2.id.png" }, bgAspect: "4810 / 2261", product: "/media/brands/make-it/showcase/1-1.png", productAspect: "2547 / 3799", productHeight: "155%", productShiftX: "-11%", productShiftY: "-1.5%",
           mobile: { productHeight: "158%", productShiftX: "-9%", productShiftY: "-1%" },
           href: "/brands/make-it/makeit-fragrance-enhancing-primer" },
         // Extrait d'Intense Parfum — Mango Glacé
-        { bg: "/brand/makeit/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/makeit/showcase/2-1.png", productAspect: "1977 / 3514", productHeight: "150%", productShiftX: "-6%", productShiftY: "-4%",
+        { bg: { en: "/media/brands/make-it/showcase/2-2.en.png", id: "/media/brands/make-it/showcase/2-2.id.png" }, bgAspect: "4810 / 2260", product: "/media/brands/make-it/showcase/2-1.png", productAspect: "1977 / 3514", productHeight: "150%", productShiftX: "-6%", productShiftY: "-4%",
           mobile: { productHeight: "150%", productShiftX: "-5%", productShiftY: "-4.5%" },
           href: "/brands/make-it/makeit-extrait-dintense" },
         // Extrait de Parfum — Keep in Touch
-        { bg: "/brand/makeit/showcase/3-2.png", bgAspect: "4810 / 2260", product: "/brand/makeit/showcase/3-1.png", productAspect: "2359 / 3713", productHeight: "155%", productShiftX: "-8%",
+        { bg: { en: "/media/brands/make-it/showcase/3-2.en.png", id: "/media/brands/make-it/showcase/3-2.id.png" }, bgAspect: "4810 / 2260", product: "/media/brands/make-it/showcase/3-1.png", productAspect: "2359 / 3713", productHeight: "155%", productShiftX: "-8%",
           mobile: { productHeight: "154%", productShiftX: "-7%", productShiftY: "-1%" },
           href: "/brands/make-it/makeit-extrait-de-parfum" },
       ],

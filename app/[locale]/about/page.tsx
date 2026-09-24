@@ -26,8 +26,8 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
     <>
       {/* HERO */}
       <PageHero
-        desktop="/about/hero/desktop.jpg"
-        mobile="/about/hero/mobile.jpg"
+        desktop="/media/pages/about/hero/desktop.jpg"
+        mobile="/media/pages/about/hero/mobile.jpg"
         title={t(ABOUT_PAGE.hero.title)}
         subtitle={t(ABOUT_PAGE.hero.subtitle)}
         tone="light"

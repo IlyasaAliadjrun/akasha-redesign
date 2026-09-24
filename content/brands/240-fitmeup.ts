@@ -15,7 +15,7 @@ const entry: Brand = {
     accentHex: "#B8336D", // Fitmeup magenta — sampled from the showcase banner + about art
     // No standalone brand-card art yet — reuse the 3:4 about photo, which already
     // matches the CrossSell tile ratio. The hero itself renders from `heroLayers`.
-    heroImage: "/brand/fitmeup/about/3.jpeg",
+    heroImage: "/media/brands/fitmeup/about/3.jpg",
     // Hero — magenta banner (bannerBg) with the fitmeup lockup on the left and the
     // two-bottle cluster on the right. Same pattern as the Hair Energy hero.
     heroLayers: [
@@ -23,7 +23,7 @@ const entry: Brand = {
       // 1639×2295), rendered as a *sized* layer for both viewports.
       // DESKTOP: anchored right, capped by height so it never outgrows a short viewport.
       // MOBILE: centred under the wordmark (the 14% left offset centres a 72vw box).
-      { src: "/brand/fitmeup/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
+      { src: "/media/brands/fitmeup/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
         width: "min(40vw, 56vh)", aspectRatio: "1639 / 2295", right: "10%", top: "15.5%",
         mobile: { width: "min(70vw, 43vh)", left: "17.5%", top: "35%" } },
     ],
@@ -31,7 +31,7 @@ const entry: Brand = {
     // there is no separate HTML tagline/subtitle/CTA — logo-only hero (see
     // docs/BRAND_PAGE_GUIDE.md §C). Light theme = white text on the dark magenta banner.
     heroContent: {
-      logo: "/brand/fitmeup/hero/wordmark.png",
+      logo: "/media/brands/fitmeup/hero/wordmark.png",
       logoAspect: "11084 / 4839",
       logoWidth: "30vw",
       left: "7.4%",
@@ -45,26 +45,26 @@ const entry: Brand = {
       // The packshot is a tight, edge-to-edge crop of the tall bottle, so it fills the
       // square frame's full height at rest. `imageScale` shrinks it enough that the
       // hover zoom (scale-110) doesn't push the cap/base past the frame and clip.
-      { name: "Relax", size: { en: "160 mL", id: "160 mL" }, image: "/brand/fitmeup/product-lineup/Packshot_Botol Relax_2025_REV.png", imageScale: 0.85 },
+      { name: "Relax", size: { en: "160 mL", id: "160 mL" }, image: "/media/brands/fitmeup/product-lineup/packshot-botol-relax-2025-rev.png", imageScale: 0.85 },
     ],
     about: [
-      { title: { en: "Triple Active Formula", id: "Triple Active Formula" }, image: "/brand/fitmeup/about/1.png" },
-      { title: { en: "Deeper Sleep Every Night", id: "Tidur Lebih Nyenyak Setiap Malam" }, image: "/brand/fitmeup/about/2.png" },
-      { title: { en: "Relaxation in One Bottle", id: "Relaksasi dalam Satu Botol" }, image: "/brand/fitmeup/about/3.jpeg" },
+      { title: { en: "Triple Active Formula", id: "Triple Active Formula" }, image: "/media/brands/fitmeup/about/1.png" },
+      { title: { en: "Deeper Sleep Every Night", id: "Tidur Lebih Nyenyak Setiap Malam" }, image: "/media/brands/fitmeup/about/2.png" },
+      { title: { en: "Relaxation in One Bottle", id: "Relaksasi dalam Satu Botol" }, image: "/media/brands/fitmeup/about/3.jpg" },
     ],
     // Showcase — title poster ("Triple Active Formula") then the FOR BETTER SLEEP
     // banner. The bg is a designed card with its wording baked in and rounded corners,
     // so `bannerAspect` matches the art's own ratio (nothing gets cover-cropped) and the
     // bottle sits centred over it, Hair Energy style.
     showcase: {
-      hero: "/brand/fitmeup/showcase/title.png",
+      hero: { en: "/media/brands/fitmeup/showcase/title.en.png", id: "/media/brands/fitmeup/showcase/title.id.png" },
       heroAspect: "5209 / 3179",
       productAlign: "center",
       bannerAspect: "4495 / 1934",
       variants: [
         // 126% keeps the cap just inside the banner's top edge and the base just above
         // the bottom one — the splash then reads between "BETTER" and "SLEEP".
-        { bg: "/brand/fitmeup/showcase/1-2.png", product: "/brand/fitmeup/showcase/1-1.png",
+        { bg: { en: "/media/brands/fitmeup/showcase/1-2.en.png", id: "/media/brands/fitmeup/showcase/1-2.id.png" }, product: "/media/brands/fitmeup/showcase/1-1.png",
           bgAspect: "4495 / 1934", productAspect: "1231 / 1925", productHeight: "126%" },
       ],
     },

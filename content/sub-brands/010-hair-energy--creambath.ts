@@ -9,7 +9,7 @@ const entry: SubBrand = {
     ctaText: { en: "Learn more", id: "Pelajari lebih lanjut" },
     accentHex: "#F36C21",
     bannerBg: "#F36C21",
-    heroWordmark: "/brand/hair-energy/creambath/hero/wordmark.png",
+    heroWordmark: "/media/brands/hair-energy/lines/creambath/hero/wordmark.png",
     heroWordmarkAspect: "767 / 529",
     // Products render back-to-front. Jar (2.png) sits behind, upper-right, enters
     // from the right; tube (1.png) sits in front, centre, enters from the left and
@@ -20,21 +20,21 @@ const entry: SubBrand = {
     // (The section is `overflow-hidden`, so on very narrow desktop widths the jar is
     // simply clipped rather than triggering a horizontal scrollbar.)
     heroLayers: [
-      { src: "/brand/hair-energy/creambath/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "min(36.1vw, 48.2vh)", aspectRatio: "2139 / 2345", left: "67%", top: "18%",
+      { src: "/media/brands/hair-energy/lines/creambath/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 40, width: "min(36.1vw, 48.2vh)", aspectRatio: "2139 / 2345", left: "67%", top: "18%",
         mobile: { right: "5%", top: "-1%", width: "65%" } },
-      { src: "/brand/hair-energy/creambath/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "min(28.8vw, 38.4vh)", aspectRatio: "1646 / 2786", left: "58%", top: "20%",
+      { src: "/media/brands/hair-energy/lines/creambath/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 60, width: "min(28.8vw, 38.4vh)", aspectRatio: "1646 / 2786", left: "58%", top: "20%",
         mobile: { right: "38%", top: "-8%", width: "60%" } },
     ],
-    showcaseTitle: "/brand/hair-energy/creambath/showcase/title.png",
+    showcaseTitle: { en: "/media/brands/hair-energy/lines/creambath/showcase/title.en.png", id: "/media/brands/hair-energy/lines/creambath/showcase/title.id.png" },
     showcaseTitleAspect: "4871 / 3832",
-    featured: { image: "/brand/hair-energy/creambath/showcase/1.png", label: { en: "Fibertherapy Creambath — signature variant", id: "Fibertherapy Creambath — varian unggulan" } },
+    featured: { image: { en: "/media/brands/hair-energy/lines/creambath/showcase/1.en.png", id: "/media/brands/hair-energy/lines/creambath/showcase/1.id.png" }, label: { en: "Fibertherapy Creambath — signature variant", id: "Fibertherapy Creambath — varian unggulan" } },
     featuredAspect: "4868 / 2326",
     cardAspect: "2397 / 3110",
     cards: [
-      { image: "/brand/hair-energy/creambath/showcase/2.png", label: { en: "Fibertherapy Creambath variant 1", id: "Fibertherapy Creambath varian 1" } },
-      { image: "/brand/hair-energy/creambath/showcase/3.png", label: { en: "Fibertherapy Creambath variant 2", id: "Fibertherapy Creambath varian 2" } },
-      { image: "/brand/hair-energy/creambath/showcase/4.png", label: { en: "Fibertherapy Creambath variant 3", id: "Fibertherapy Creambath varian 3" } },
-      { image: "/brand/hair-energy/creambath/showcase/5.png", label: { en: "Fibertherapy Creambath variant 4", id: "Fibertherapy Creambath varian 4" } },
+      { image: { en: "/media/brands/hair-energy/lines/creambath/showcase/2.en.png", id: "/media/brands/hair-energy/lines/creambath/showcase/2.id.png" }, label: { en: "Fibertherapy Creambath variant 1", id: "Fibertherapy Creambath varian 1" } },
+      { image: { en: "/media/brands/hair-energy/lines/creambath/showcase/3.en.png", id: "/media/brands/hair-energy/lines/creambath/showcase/3.id.png" }, label: { en: "Fibertherapy Creambath variant 2", id: "Fibertherapy Creambath varian 2" } },
+      { image: { en: "/media/brands/hair-energy/lines/creambath/showcase/4.en.png", id: "/media/brands/hair-energy/lines/creambath/showcase/4.id.png" }, label: { en: "Fibertherapy Creambath variant 3", id: "Fibertherapy Creambath varian 3" } },
+      { image: { en: "/media/brands/hair-energy/lines/creambath/showcase/5.en.png", id: "/media/brands/hair-energy/lines/creambath/showcase/5.id.png" }, label: { en: "Fibertherapy Creambath variant 4", id: "Fibertherapy Creambath varian 4" } },
     ],
   };
 

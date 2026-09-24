@@ -22,7 +22,7 @@ const entry: Brand = {
     // No /home/hero-carousel/honey-dew.jpg exists, and CrossSell is the only reader
     // of `heroImage`; the About hair photo is already portrait, so it stands in
     // (same convention as Advisor / Fitmeup).
-    heroImage: "/brand/honey-dew/about/3.png",
+    heroImage: { en: "/media/brands/honey-dew/about/3.en.png", id: "/media/brands/honey-dew/about/3.id.png" },
     // Layered parallax banner on the reference's light grey stage: the pump bottle
     // sits back and highest, the Repair Mask tube overlaps it in front and hangs
     // lower, and the small Nutriv Serum tube tucks in front on the left, below both.
@@ -35,21 +35,21 @@ const entry: Brand = {
     heroLayers: [
       // Deep Moist & Shine Shampoo — back, highest, enters from the TOP (1st).
       // Visible bottle ≈ 15.5 vw wide, spanning 14 %–43 % of the banner height.
-      { src: "/brand/honey-dew/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0, width: "min(28.5vw, 40.5vh)", maxWidth: "836px", aspectRatio: "1672 / 2451", left: "63%", top: "12%",
+      { src: "/media/brands/honey-dew/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0, width: "min(28.5vw, 40.5vh)", maxWidth: "836px", aspectRatio: "1672 / 2451", left: "63%", top: "12%",
         mobile: { left: "26%", top: "21%", width: "min(42vw, 24vh)" } },
       // Repair Mask — in front of the bottle and a touch larger than it (the
       // reference sizes the tube at ~1.15× the bottle); visible tube ≈ 17.5 vw,
       // spanning 24 %–58 % of the banner height.
-      { src: "/brand/honey-dew/hero/3.png", depth: 66, enterFrom: "right", enterDelay: 0.3, width: "min(56.7vw, 63vh)", maxWidth: "1529px", aspectRatio: "3058 / 3865", left: "66.2%", top: "24.2%",
+      { src: "/media/brands/honey-dew/hero/3.png", depth: 66, enterFrom: "right", enterDelay: 0.3, width: "min(56.7vw, 63vh)", maxWidth: "1529px", aspectRatio: "3058 / 3865", left: "66.2%", top: "24.2%",
         mobile: { left: "26%", top: "26%", width: "min(75vw, 41vh)" } },
       // Nutriv Serum — front left, smallest, enters from the LEFT (2nd).
-      { src: "/brand/honey-dew/hero/1.png", depth: 54, enterFrom: "left", enterDelay: 0.15, width: "min(46.5vw, 50vh)", maxWidth: "1139px", aspectRatio: "2278 / 2569", left: "55%", top: "39.6%",
+      { src: "/media/brands/honey-dew/hero/1.png", depth: 54, enterFrom: "left", enterDelay: 0.15, width: "min(46.5vw, 50vh)", maxWidth: "1139px", aspectRatio: "2278 / 2569", left: "55%", top: "39.6%",
         mobile: { left: "3%", top: "31%", width: "min(60vw, 34vh)" } },
     ],
     // The wordmark is a plain "HONEY DEW" lockup with no tagline baked in, so the
     // hero keeps the full Hair Energy overlay: wordmark + tagline + CTA.
     heroContent: {
-      logo: "/brand/honey-dew/hero/wordmark.png",
+      logo: "/media/brands/honey-dew/hero/wordmark.png",
       logoAspect: "1789 / 284",
       logoWidth: "31vw",
       maxWidth: "33vw",
@@ -70,15 +70,15 @@ const entry: Brand = {
     bannerBg: "#EFEFEF",
     hero: false,
     products: [
-      { name: "Deep Moist & Shine Shampoo", variant: { en: "For Dry and Dull Hair", id: "Untuk Rambut Kering dan Kusam" }, image: "/brand/honey-dew/product-lineup/PRODUCTS-01.png" },
-      { name: "Repair Mask", image: "/brand/honey-dew/product-lineup/PRODUCTS-02.png" },
-      { name: "Nutriv Serum", image: "/brand/honey-dew/product-lineup/PRODUCTS-03.png" },
-      { name: "Restructuring Serum", image: "/brand/honey-dew/product-lineup/PRODUCTS-04.png" },
+      { name: "Deep Moist & Shine Shampoo", variant: { en: "For Dry and Dull Hair", id: "Untuk Rambut Kering dan Kusam" }, image: "/media/brands/honey-dew/product-lineup/products-01.png" },
+      { name: "Repair Mask", image: "/media/brands/honey-dew/product-lineup/products-02.png" },
+      { name: "Nutriv Serum", image: "/media/brands/honey-dew/product-lineup/products-03.png" },
+      { name: "Restructuring Serum", image: "/media/brands/honey-dew/product-lineup/products-04.png" },
     ],
     about: [
-      { title: { en: "Natural Nutrition", id: "Nutrisi Alami" }, image: "/brand/honey-dew/about/1.png" },
-      { title: { en: "Lightweight, fast-absorbing texture", id: "Tekstur ringan dan cepat meresap" }, image: "/brand/honey-dew/about/2.png" },
-      { title: { en: "Protection from styling heat", id: "Perlindungan dari panas alat styling" }, image: "/brand/honey-dew/about/3.png" },
+      { title: { en: "Natural Nutrition", id: "Nutrisi Alami" }, image: "/media/brands/honey-dew/about/1.png" },
+      { title: { en: "Lightweight, fast-absorbing texture", id: "Tekstur ringan dan cepat meresap" }, image: "/media/brands/honey-dew/about/2.png" },
+      { title: { en: "Protection from styling heat", id: "Perlindungan dari panas alat styling" }, image: { en: "/media/brands/honey-dew/about/3.en.png", id: "/media/brands/honey-dew/about/3.id.png" } },
     ],
     // Poster-style showcase (same engine as Hair Energy): title graphic, then one
     // banner per product line. The banner art is a finished rounded card with its
@@ -88,18 +88,18 @@ const entry: Brand = {
     // The reference also shows a HAIR MASK banner; its 3-1/3-2 pair is missing, so
     // the Repair Mask line has no entry point here yet.
     showcase: {
-      hero: "/brand/honey-dew/showcase/title.png",
+      hero: { en: "/media/brands/honey-dew/showcase/title.en.png", id: "/media/brands/honey-dew/showcase/title.id.png" },
       heroAspect: "5044 / 3648",
       bannerAspect: "4810 / 2261",
       variants: [
         // Product heights are tuned so each bottle stays fully inside the banner:
         // the frame clips its product, so the overflow per side must stay under the
         // PNG's own transparent top/bottom margin (7.2 % / 4.0 % here).
-        { bg: "/brand/honey-dew/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/honey-dew/showcase/1-1.png", productAspect: "1672 / 2451", productHeight: "106%", productShiftX: "12%", mobile: { productHeight: "96%" }, href: "/brands/honey-dew/shampoo" },
+        { bg: { en: "/media/brands/honey-dew/showcase/1-2.en.png", id: "/media/brands/honey-dew/showcase/1-2.id.png" }, bgAspect: "4810 / 2261", product: "/media/brands/honey-dew/showcase/1-1.png", productAspect: "1672 / 2451", productHeight: "106%", productShiftX: "12%", mobile: { productHeight: "96%" }, href: "/brands/honey-dew/shampoo" },
 
-        { bg: "/brand/honey-dew/showcase/3-2.png", bgAspect: "4810 / 2260", product: "/brand/honey-dew/showcase/3-1.png", productAspect: "3058 / 3865", productHeight: "150%", productShiftX: "8%", productShiftY: "-3%", mobile: { productHeight: "130%", productShiftX: "8%", productShiftY: "0%",}, href: "/brands/honey-dew/hair-mask"},
+        { bg: { en: "/media/brands/honey-dew/showcase/3-2.en.png", id: "/media/brands/honey-dew/showcase/3-2.id.png" }, bgAspect: "4810 / 2260", product: "/media/brands/honey-dew/showcase/3-1.png", productAspect: "3058 / 3865", productHeight: "150%", productShiftX: "8%", productShiftY: "-3%", mobile: { productHeight: "130%", productShiftX: "8%", productShiftY: "0%",}, href: "/brands/honey-dew/hair-mask"},
         // Two-tube cluster: 20.6 % top / 17.5 % bottom margin → 134 % is the ceiling.
-        { bg: "/brand/honey-dew/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/honey-dew/showcase/2-1.png", productAspect: "2399 / 2689", productHeight: "130%", productShiftY: "-2.5%", mobile: { productHeight: "128%", productShiftX: "8%" }, href: "/brands/honey-dew/hair-serum" },
+        { bg: { en: "/media/brands/honey-dew/showcase/2-2.en.png", id: "/media/brands/honey-dew/showcase/2-2.id.png" }, bgAspect: "4810 / 2260", product: "/media/brands/honey-dew/showcase/2-1.png", productAspect: "2399 / 2689", productHeight: "130%", productShiftY: "-2.5%", mobile: { productHeight: "128%", productShiftX: "8%" }, href: "/brands/honey-dew/hair-serum" },
       ],
     },
   };

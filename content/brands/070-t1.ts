@@ -20,7 +20,7 @@ const entry: Brand = {
     accentHex: "#94A85E",
     // No standalone 3:4 brand card art — reuse the 3:4 about photo, which already
     // matches the CrossSell tile ratio. The hero itself renders from `heroLayers`.
-    heroImage: "/brand/t1/about/3.png",
+    heroImage: "/media/brands/t1/about/3.png",
     // Layered parallax banner: the three hero SKUs staggered to the right of the
     // wording, mirroring the reference. Positions/sizes are vw/vh so the whole
     // composition scales as one; each layer carries its own `mobile` block because the
@@ -35,17 +35,17 @@ const entry: Brand = {
       // The mobile widths are capped by BOTH vw and vh: the mobile hero stacks
       // wordmark (top) → products → tagline + CTA (bottom), so a purely vw-based cap
       // grows the cluster into the tagline on a wide-but-short phone/tablet (640×800).
-      { src: "/brand/t1/hero/2.png", depth: 30, enterFrom: "top", enterDelay: 0.2, width: "min(18vw, 34vh)", maxWidth: "944px", aspectRatio: "1887 / 3032", left: "66%", top: "6%",
+      { src: "/media/brands/t1/hero/2.png", depth: 30, enterFrom: "top", enterDelay: 0.2, width: "min(18vw, 34vh)", maxWidth: "944px", aspectRatio: "1887 / 3032", left: "66%", top: "6%",
         mobile: { left: "32%", top: "17%", width: "min(39vw, 27vh)" } },
       // Micellar Conditioner — green, left of the cluster, enters from the LEFT.
-      { src: "/brand/t1/hero/1.png", depth: 45, enterFrom: "left", enterDelay: 0, width: "min(24vw, 41vh)", maxWidth: "970px", aspectRatio: "1939 / 3058", left: "57%", top: "21%",
+      { src: "/media/brands/t1/hero/1.png", depth: 45, enterFrom: "left", enterDelay: 0, width: "min(24vw, 41vh)", maxWidth: "970px", aspectRatio: "1939 / 3058", left: "57%", top: "21%",
         mobile: { left: "10%", top: "24%", width: "min(46vw, 30vh)" } },
       // Equalizer Shampoo — terracotta, front/right and sitting lower.
-      { src: "/brand/t1/hero/3.png", depth: 60, enterFrom: "right", enterDelay: 0.4, width: "min(21vw, 41vh)", maxWidth: "890px", aspectRatio: "1780 / 2978", left: "71%", top: "28%",
+      { src: "/media/brands/t1/hero/3.png", depth: 60, enterFrom: "right", enterDelay: 0.4, width: "min(21vw, 41vh)", maxWidth: "890px", aspectRatio: "1780 / 2978", left: "71%", top: "28%",
         mobile: { left: "42%", top: "31%", width: "min(46vw, 30vh)" } },
     ],
     heroContent: {
-      logo: "/brand/t1/hero/wordmark.png",
+      logo: "/media/brands/t1/hero/wordmark.png",
       logoAspect: "1424 / 556",
       logoWidth: "23vw",
       maxWidth: "32vw",
@@ -70,16 +70,16 @@ const entry: Brand = {
       // "with Rosemary Oil" belongs to `name`, not `variant`, on the two oils: their
       // ProductLineup React key is `name-variant`, so two SKUs that differ only by size
       // would collide. With `variant` unset the key falls back to the array index.
-      { name: "Scalp & Hair Oil with Rosemary Oil", size: { en: "40 mL", id: "40 mL" }, image: "/brand/t1/product-lineup/scalp-hair-oil-rosemary-40ml.png" },
-      { name: "Scalp & Hair Oil with Rosemary Oil", size: { en: "100 mL", id: "100 mL" }, image: "/brand/t1/product-lineup/scalp-hair-oil-rosemary-100ml.png" },
-      { name: "Micellar Shampoo", variant: { en: "Sensitive–Oily Scalp", id: "Kulit Kepala Sensitif–Berminyak" }, image: "/brand/t1/product-lineup/micellar-shampoo.png" },
-      { name: "Micellar Conditioner", variant: { en: "Sensitive–Oily Hair", id: "Rambut Sensitif–Berminyak" }, image: "/brand/t1/product-lineup/micellar-conditioner.png" },
-      { name: "Equalizer Shampoo", variant: { en: "Sensitive to Dry Scalp", id: "Kulit Kepala Sensitif hingga Kering" }, image: "/brand/t1/product-lineup/equalizer-shampoo.png" },
-      { name: "Equalizer Conditioner", variant: { en: "Sensitive to Dry Hair", id: "Rambut Sensitif hingga Kering" }, image: "/brand/t1/product-lineup/equalizer-conditioner.png" },
-      { name: "Protein Cream", variant: { en: "with Rosemary Oil", id: "dengan Minyak Rosemary" }, size: { en: "50 mL", id: "50 mL" }, image: "/brand/t1/product-lineup/protein-cream-rosemary-oil-50ml.png" },
-      { name: "Indigo Blue Bright Body Wash", image: "/brand/t1/product-lineup/indigo-blue-bright-body-wash.png" },
-      { name: "Indigo Blue Bright Body Lotion", image: "/brand/t1/product-lineup/indigo-blue-bright-body-lotion.png" },
-      { name: "Indigo Blue Bright Body Mask", image: "/brand/t1/product-lineup/indigo-blue-bright-body-mask.png" },
+      { name: "Scalp & Hair Oil with Rosemary Oil", size: { en: "40 mL", id: "40 mL" }, image: "/media/brands/t1/product-lineup/scalp-hair-oil-rosemary-40ml.png" },
+      { name: "Scalp & Hair Oil with Rosemary Oil", size: { en: "100 mL", id: "100 mL" }, image: "/media/brands/t1/product-lineup/scalp-hair-oil-rosemary-100ml.png" },
+      { name: "Micellar Shampoo", variant: { en: "Sensitive–Oily Scalp", id: "Kulit Kepala Sensitif–Berminyak" }, image: "/media/brands/t1/product-lineup/micellar-shampoo.png" },
+      { name: "Micellar Conditioner", variant: { en: "Sensitive–Oily Hair", id: "Rambut Sensitif–Berminyak" }, image: "/media/brands/t1/product-lineup/micellar-conditioner.png" },
+      { name: "Equalizer Shampoo", variant: { en: "Sensitive to Dry Scalp", id: "Kulit Kepala Sensitif hingga Kering" }, image: "/media/brands/t1/product-lineup/equalizer-shampoo.png" },
+      { name: "Equalizer Conditioner", variant: { en: "Sensitive to Dry Hair", id: "Rambut Sensitif hingga Kering" }, image: "/media/brands/t1/product-lineup/equalizer-conditioner.png" },
+      { name: "Protein Cream", variant: { en: "with Rosemary Oil", id: "dengan Minyak Rosemary" }, size: { en: "50 mL", id: "50 mL" }, image: "/media/brands/t1/product-lineup/protein-cream-rosemary-oil-50ml.png" },
+      { name: "Indigo Blue Bright Body Wash", image: "/media/brands/t1/product-lineup/indigo-blue-bright-body-wash.png" },
+      { name: "Indigo Blue Bright Body Lotion", image: "/media/brands/t1/product-lineup/indigo-blue-bright-body-lotion.png" },
+      { name: "Indigo Blue Bright Body Mask", image: "/media/brands/t1/product-lineup/indigo-blue-bright-body-mask.png" },
     ],
     reasons: [
       { icon: "🌿", title: { en: "For sensitive scalps", id: "Untuk kulit kepala sensitif" }, body: { en: "A gentle formula that cares for, heals, and protects the scalp every day.", id: "Formula lembut yang merawat, menyembuhkan, dan melindungi kulit kepala setiap hari." } },
@@ -88,16 +88,16 @@ const entry: Brand = {
       { icon: "💸", title: { en: "Premium, at an affordable price", id: "Premium, harga terjangkau" }, body: { en: "Salon-grade care you can use every day.", id: "Perawatan kelas salon yang bisa dipakai setiap hari." } },
     ],
     about: [
-      { title: { en: "Rosemary Hair Care", id: "Perawatan Rambut Rosemary" }, image: "/brand/t1/about/1.png" },
-      { title: { en: "Technology & Natural Formula", id: "Formula Teknologi & Alami" }, image: "/brand/t1/about/2.png" },
-      { title: { en: "For All Hair Types", id: "Untuk Semua Tipe Rambut" }, image: "/brand/t1/about/3.png" },
+      { title: { en: "Rosemary Hair Care", id: "Perawatan Rambut Rosemary" }, image: "/media/brands/t1/about/1.png" },
+      { title: { en: "Technology & Natural Formula", id: "Formula Teknologi & Alami" }, image: "/media/brands/t1/about/2.png" },
+      { title: { en: "For All Hair Types", id: "Untuk Semua Tipe Rambut" }, image: "/media/brands/t1/about/3.png" },
     ],
     // Poster showcase: the "#Sensitive Scalp Expert" title art, then the four line
     // banners. Each bg is a designed card with its wording and rounded corners baked
     // in, so `bannerAspect` matches the art's own ratio (nothing is cover-cropped) and
     // the products sit centred over it, Hair Energy style.
     showcase: {
-      hero: "/brand/t1/showcase/title.png",
+      hero: { en: "/media/brands/t1/showcase/title.en.png", id: "/media/brands/t1/showcase/title.id.png" },
       heroAspect: "4591 / 3142",
       productAlign: "center",
       bannerAspect: "4810 / 2261",
@@ -108,20 +108,20 @@ const entry: Brand = {
       // its top and bottom edges by the same amount.
       variants: [
         // Micellar — shampoo + conditioner (canvas padding: 23% top / 11% bottom).
-        { bg: "/brand/t1/showcase/1-2.png", product: "/brand/t1/showcase/1-1.png",
+        { bg: { en: "/media/brands/t1/showcase/1-2.en.png", id: "/media/brands/t1/showcase/1-2.id.png" }, product: "/media/brands/t1/showcase/1-1.png",
           bgAspect: "4810 / 2261", productAspect: "3144 / 3214", productHeight: "140%", productShiftY: "-6%",
           href: "/brands/t1/micellar" },
         // Equalizer — shampoo + conditioner (23% / 11%).
-        { bg: "/brand/t1/showcase/2-2.png", product: "/brand/t1/showcase/2-1.png",
+        { bg: { en: "/media/brands/t1/showcase/2-2.en.png", id: "/media/brands/t1/showcase/2-2.id.png" }, product: "/media/brands/t1/showcase/2-1.png",
           bgAspect: "4810 / 2261", productAspect: "3057 / 3178", productHeight: "140%", productShiftY: "-6%",
           href: "/brands/t1/equalizer" },
         // Rosemary Oil — protein cream + scalp & hair oil (45% / 13%: the pair sits in
         // the lower half of its canvas, hence the much bigger box and shift).
-        { bg: "/brand/t1/showcase/3-2.png", product: "/brand/t1/showcase/3-1.png",
+        { bg: { en: "/media/brands/t1/showcase/3-2.en.png", id: "/media/brands/t1/showcase/3-2.id.png" }, product: "/media/brands/t1/showcase/3-1.png",
           bgAspect: "4810 / 2260", productAspect: "4174 / 4068", productHeight: "173%", productShiftY: "-17.9%", productShiftX: "5%",
           href: "/brands/t1/rosemary-oil" },
         // Indigo Blue — body wash + mask + lotion (22% / 17%).
-        { bg: "/brand/t1/showcase/4-2.png", product: "/brand/t1/showcase/4-1.png",
+        { bg: { en: "/media/brands/t1/showcase/4-2.en.png", id: "/media/brands/t1/showcase/4-2.id.png" }, product: "/media/brands/t1/showcase/4-1.png",
           bgAspect: "4810 / 2260", productAspect: "3759 / 3072", productHeight: "140%", productShiftY: "-3%",
           href: "/brands/t1/indigo-blue" },
       ],

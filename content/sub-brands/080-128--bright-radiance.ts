@@ -12,13 +12,13 @@ const entry: SubBrand = {
   accentHex: "#FBA084",
   bannerBg: "#FBA084",
   theme: "light",
-  heroWordmark: "/brand/128/bright-radiance/hero/wordmark.png",
+  heroWordmark: "/media/brands/128/lines/bright-radiance/hero/wordmark.png",
   heroWordmarkAspect: "2160 / 1415",
   heroWordmarkWidth: "13vw",
   heroWordmarkMobileWidth: "23vw",
   heroLayers: [
     {
-      src: "/brand/128/bright-radiance/hero/cluster.png",
+      src: "/media/brands/128/lines/bright-radiance/hero/cluster.png",
       enterFrom: "right",
       enterDelay: 0.3,
       depth: 30,
@@ -29,7 +29,7 @@ const entry: SubBrand = {
       mobile: { left: "-24%", top: "-3%", width: "147%" },
     },
   ],
-  showcaseTitle: "/brand/128/bright-radiance/showcase/title.png",
+  showcaseTitle: { en: "/media/brands/128/lines/bright-radiance/showcase/title.en.png", id: "/media/brands/128/lines/bright-radiance/showcase/title.id.png" },
   showcaseTitleAspect: "4742 / 3703",
   showcaseTitleOffsetY: "51px",
   showcaseTitleOffsetX: "-8px",
@@ -39,19 +39,19 @@ const entry: SubBrand = {
   cardAspect: "2302 / 2986",
   cards: [
     {
-      image: "/brand/128/bright-radiance/showcase/1.png",
+      image: "/media/brands/128/lines/bright-radiance/showcase/1.png",
       label: { en: "Facial Wash Bright & Radiance", id: "Facial Wash Bright & Radiance" },
     },
     {
-      image: "/brand/128/bright-radiance/showcase/2.png",
+      image: "/media/brands/128/lines/bright-radiance/showcase/2.png",
       label: { en: "Toner Bright & Radiance", id: "Toner Bright & Radiance" },
     },
     {
-      image: "/brand/128/bright-radiance/showcase/3.png",
+      image: "/media/brands/128/lines/bright-radiance/showcase/3.png",
       label: { en: "Serum Bright & Radiance", id: "Serum Bright & Radiance" },
     },
     {
-      image: "/brand/128/bright-radiance/showcase/4.png",
+      image: "/media/brands/128/lines/bright-radiance/showcase/4.png",
       label: { en: "Moisturizer Bright & Radiance", id: "Moisturizer Bright & Radiance" },
     },
   ],

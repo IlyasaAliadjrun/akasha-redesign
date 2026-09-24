@@ -16,10 +16,10 @@ const entry: Brand = {
     accentHex: "#C17817",
     // No standalone brand card art — CrossSell wants a 3:4 tile, and the
     // lifestyle shot from `about` is already exactly that ratio.
-    heroImage: "/brand/omoide/about/3.jpg",
+    heroImage: "/media/brands/omoide/about/3.jpg",
     heroLayers: [
       // Warm cream gradient banner (back). Non-sized => full-bleed cover.
-      { src: "/brand/omoide/hero/bg.jpg", depth: 18, enterDelay: 0 },
+      { src: "/media/brands/omoide/hero/bg.jpg", depth: 18, enterDelay: 0 },
       // Tsukune pack pair — enters from the right, sits in the banner's right
       // half. Width is clamped against vh so a short viewport can't blow the
       // pack past the banner's bottom edge.
@@ -27,12 +27,12 @@ const entry: Brand = {
       // on every side, so the box runs wider/higher than the pack you actually see:
       // 44.7vw of box => 40vw of visible pack, landing it exactly where the
       // reference puts it (x 939-1708, y 178-935 of a 1920x1084 banner).
-      { src: "/brand/omoide/hero/1.png", depth: 60, enterFrom: "right", enterDelay: 0.25,
+      { src: "/media/brands/omoide/hero/1.png", depth: 60, enterFrom: "right", enterDelay: 0.25,
         width: "min(36.7vw, 71.5vh)", aspectRatio: "1789 / 1771", left: "57%", top: "13.7%",
         mobile: { left: "11%", top: "32%", width: "min(78vw, 37vh)" } },
     ],
     heroContent: {
-      logo: "/brand/omoide/hero/wordmark.png",
+      logo: "/media/brands/omoide/hero/wordmark.png",
       logoAspect: "1800 / 902",
       logoWidth: "21.6vw",
       maxWidth: "30vw",
@@ -48,7 +48,7 @@ const entry: Brand = {
     bannerBg: "#F5DEC6",
     hero: false,
     products: [
-      { name: "Tsukune", variant: { en: "Original", id: "Original" }, size: { en: "60g", id: "60g" }, image: "/brand/omoide/product-lineup/tsukune.png" },
+      { name: "Tsukune", variant: { en: "Original", id: "Original" }, size: { en: "60g", id: "60g" }, image: "/media/brands/omoide/product-lineup/tsukune.png" },
     ],
     reasons: [
       { icon: "🍢", title: { en: "Chunky & juicy", id: "Tebal & Berisi" }, body: { en: "Japanese-style chicken meatball skewers with a thick, juicy texture.", id: "Sate bakso ayam ala Jepang dengan tekstur tebal dan berisi." } },
@@ -57,12 +57,12 @@ const entry: Brand = {
       { icon: "🏭", title: { en: "Carefully controlled production", id: "Proses produksi terjaga" }, body: { en: "Produced to high quality standards and halal-certified.", id: "Diproduksi dengan standar mutu tinggi dan bersertifikat halal." } },
     ],
     about: [
-      { title: { en: "Authentic Japanese flavor", id: "Cita rasa Jepang asli" }, image: "/brand/omoide/about/1.jpg" },
-      { title: { en: "High-quality production process", id: "Proses produksi yang berkualitas tinggi" }, image: "/brand/omoide/about/2.jpg" },
-      { title: { en: "Japanese cuisine ready to enjoy", id: "Kuliner Jepang yang siap disantap" }, image: "/brand/omoide/about/3.jpg" },
+      { title: { en: "Authentic Japanese flavor", id: "Cita rasa Jepang asli" }, image: "/media/brands/omoide/about/1.jpg" },
+      { title: { en: "High-quality production process", id: "Proses produksi yang berkualitas tinggi" }, image: "/media/brands/omoide/about/2.jpg" },
+      { title: { en: "Japanese cuisine ready to enjoy", id: "Kuliner Jepang yang siap disantap" }, image: "/media/brands/omoide/about/3.jpg" },
     ],
     showcase: {
-      hero: "/brand/omoide/showcase/title.png",
+      hero: { en: "/media/brands/omoide/showcase/title.en.png", id: "/media/brands/omoide/showcase/title.id.png" },
       heroAspect: "2439 / 1244",
       // The variant art is a finished, self-contained card (rounded corners and
       // its own padding baked in), so the frame takes the art's exact ratio and
@@ -71,8 +71,8 @@ const entry: Brand = {
       bannerAspect: "2301 / 1046",
       parallax: false,
       variants: [
-        { bg: "/brand/omoide/showcase/1-2.png", bgAspect: "2301 / 1046",
-          product: "/brand/omoide/showcase/1-1.png", productAspect: "1789 / 1771",
+        { bg: { en: "/media/brands/omoide/showcase/1-2.en.png", id: "/media/brands/omoide/showcase/1-2.id.png" }, bgAspect: "2301 / 1046",
+          product: "/media/brands/omoide/showcase/1-1.png", productAspect: "1789 / 1771",
           // Reference sits the pack in the card's left third, just clear of the
           // "TSUKUNE" lockup baked into the art. As in the hero, these size the
           // BOX — 1-1.png's ~6% transparent margin means the visible pack is
@@ -84,17 +84,17 @@ const entry: Brand = {
       {
         title: { en: "Authentic Japanese flavor", id: "Cita rasa Jepang asli" },
         body: { en: "Japanese-style chicken meatball skewers, made from quality chicken — juicy and ready to enjoy.", id: "Sate bakso ayam ala Jepang, dibuat dari daging ayam berkualitas — juicy dan siap dinikmati." },
-        image: "/brand/omoide/about/1.jpg",
+        image: "/media/brands/omoide/about/1.jpg",
       },
       {
         title: { en: "High-quality production process", id: "Proses produksi yang berkualitas tinggi" },
         body: { en: "Every tsukune is shaped and packed to a quality standard maintained from start to finish.", id: "Setiap tsukune dicetak dan dikemas dengan standar mutu yang terjaga dari awal sampai akhir." },
-        image: "/brand/omoide/about/2.jpg",
+        image: "/media/brands/omoide/about/2.jpg",
       },
       {
         title: { en: "Japanese cuisine ready to enjoy", id: "Kuliner Jepang yang siap disantap" },
         body: { en: "Fully cooked, just warm it up — Japanese deliciousness that's convenient anytime.", id: "Sudah matang, tinggal hangatkan — kelezatan Jepang yang praktis untuk kapan saja." },
-        image: "/brand/omoide/about/3.jpg",
+        image: "/media/brands/omoide/about/3.jpg",
       },
     ],
   };

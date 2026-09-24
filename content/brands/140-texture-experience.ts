@@ -26,7 +26,7 @@ const entry: Brand = {
     lineupBuyColor: "#6F635A",
     // No standalone 3:4 brand card art — CrossSell reads this; the hero renders from
     // `heroLayers`. The About hair photo is already a 3:4 portrait (1534×2046).
-    heroImage: "/brand/texture-experience/about/2.png",
+    heroImage: "/media/brands/texture-experience/about/2.png",
     // Hero — flat beige banner (bannerBg; the folder ships no background plate) with
     // the wordmark + wording on the left and the strawberry trio staggered on the
     // right. Hair Energy pattern. Widths use min(vw, vh) so the cluster scales with the
@@ -39,22 +39,22 @@ const entry: Brand = {
     heroLayers: [
       // Strawberry Yoghurt Creambath — left of the cluster and highest, enters from
       // the LEFT (1st).
-      { src: "/brand/texture-experience/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0,
+      { src: "/media/brands/texture-experience/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0,
         width: "min(48vw, 63vh)", maxWidth: "1373px", aspectRatio: "2745 / 3233", left: "52%", top: "8.4%",
         mobile: { left: "-4%", top: "20%", width: "min(72vw, 38vh)" } },
       // Berry Smoothie Hair Perfume — front/centre, sits lowest, drops in from the
       // TOP (2nd).
-      { src: "/brand/texture-experience/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2,
+      { src: "/media/brands/texture-experience/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2,
         width: "min(35vw, 47vh)", maxWidth: "979px", aspectRatio: "1958 / 2604", left: "63.2%", top: "21.7%",
         mobile: { left: "24.5%", top: "29%", width: "min(54vw, 25.5vh)" } },
       // Smooth-Bright Body Essence — right of the cluster and a step lower, enters from
       // the RIGHT (3rd).
-      { src: "/brand/texture-experience/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4,
+      { src: "/media/brands/texture-experience/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4,
         width: "min(41vw, 54vh)", maxWidth: "1261px", aspectRatio: "2522 / 3302", left: "68%", top: "29.2%",
         mobile: { left: "35%", top: "32%", width: "min(62vw, 29vh)" } },
     ],
     heroContent: {
-      logo: "/brand/texture-experience/hero/wordmark.png",
+      logo: "/media/brands/texture-experience/hero/wordmark.png",
       logoAspect: "502 / 214",
       // The wordmark art is only 502 px wide, so the width is capped at its natural
       // size: it never renders upscaled at DPR 1 on any viewport (see the asset note
@@ -82,48 +82,48 @@ const entry: Brand = {
     // zoom), so none of them needs an `imageScale` correction.
     products: [
       // Strawberry Yoghurt — softening & shine-boosting
-      { name: "Shampoo", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_1.png" },
-      { name: "Conditioner", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_6.png" },
-      { name: "Creambath", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_21.png" },
-      { name: "Creambath", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "200 mL", id: "200 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_16.png" },
-      { name: "Creambath", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "60 mL", id: "60 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_11.png" },
-      { name: "Hair Perfume Berry Smoothie", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_26.png" },
-      { name: "Smooth-Bright Body Essence", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "150 mL", id: "150 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_31.png" },
+      { name: "Shampoo", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "250 mL", id: "250 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-1.png" },
+      { name: "Conditioner", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "250 mL", id: "250 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-6.png" },
+      { name: "Creambath", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-21.png" },
+      { name: "Creambath", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "200 mL", id: "200 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-16.png" },
+      { name: "Creambath", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "60 mL", id: "60 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-11.png" },
+      { name: "Hair Perfume Berry Smoothie", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "100 mL", id: "100 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-26.png" },
+      { name: "Smooth-Bright Body Essence", variant: { en: "Strawberry Yoghurt", id: "Strawberry Yoghurt" }, size: { en: "150 mL", id: "150 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-31.png" },
       // Green Tea Butter — intensive repair
-      { name: "Shampoo", variant: { en: "Green Tea Butter", id: "Green Tea Butter" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_5.png" },
-      { name: "Conditioner", variant: { en: "Green Tea Butter", id: "Green Tea Butter" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_10.png" },
-      { name: "Creambath", variant: { en: "Green Tea Butter", id: "Green Tea Butter" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_25.png" },
-      { name: "Creambath", variant: { en: "Green Tea Butter", id: "Green Tea Butter" }, size: { en: "200 mL", id: "200 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_20.png" },
-      { name: "Creambath", variant: { en: "Green Tea Butter", id: "Green Tea Butter" }, size: { en: "60 mL", id: "60 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_15.png" },
-      { name: "Hair Perfume Tea Blossom", variant: { en: "Green Tea Butter", id: "Green Tea Butter" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_30.png" },
+      { name: "Shampoo", variant: { en: "Green Tea Butter", id: "Green Tea Butter" }, size: { en: "250 mL", id: "250 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-5.png" },
+      { name: "Conditioner", variant: { en: "Green Tea Butter", id: "Green Tea Butter" }, size: { en: "250 mL", id: "250 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-10.png" },
+      { name: "Creambath", variant: { en: "Green Tea Butter", id: "Green Tea Butter" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-25.png" },
+      { name: "Creambath", variant: { en: "Green Tea Butter", id: "Green Tea Butter" }, size: { en: "200 mL", id: "200 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-20.png" },
+      { name: "Creambath", variant: { en: "Green Tea Butter", id: "Green Tea Butter" }, size: { en: "60 mL", id: "60 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-15.png" },
+      { name: "Hair Perfume Tea Blossom", variant: { en: "Green Tea Butter", id: "Green Tea Butter" }, size: { en: "100 mL", id: "100 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-30.png" },
       // Black Chocolate — deeply moisturizing
-      { name: "Shampoo", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_2.png" },
-      { name: "Conditioner", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_7.png" },
-      { name: "Creambath", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_22.png" },
-      { name: "Creambath", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "200 mL", id: "200 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_17.png" },
-      { name: "Creambath", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "60 mL", id: "60 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_12.png" },
-      { name: "Hair Perfume Choco Hazelnut", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_27.png" },
-      { name: "Smooth-Bright Body Essence", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "150 mL", id: "150 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_32.png" },
+      { name: "Shampoo", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "250 mL", id: "250 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-2.png" },
+      { name: "Conditioner", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "250 mL", id: "250 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-7.png" },
+      { name: "Creambath", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-22.png" },
+      { name: "Creambath", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "200 mL", id: "200 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-17.png" },
+      { name: "Creambath", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "60 mL", id: "60 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-12.png" },
+      { name: "Hair Perfume Choco Hazelnut", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "100 mL", id: "100 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-27.png" },
+      { name: "Smooth-Bright Body Essence", variant: { en: "Black Chocolate", id: "Black Chocolate" }, size: { en: "150 mL", id: "150 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-32.png" },
       // Vanilla Milk — intensely nourishing
-      { name: "Shampoo", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_3.png" },
-      { name: "Conditioner", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_8.png" },
-      { name: "Creambath", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_23.png" },
-      { name: "Creambath", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "200 mL", id: "200 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_18.png" },
-      { name: "Creambath", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "60 mL", id: "60 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_13.png" },
-      { name: "Hair Perfume Vanilla Souffle", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_28.png" },
-      { name: "Smooth-Bright Body Essence", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "150 mL", id: "150 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_33.png" },
+      { name: "Shampoo", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "250 mL", id: "250 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-3.png" },
+      { name: "Conditioner", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "250 mL", id: "250 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-8.png" },
+      { name: "Creambath", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-23.png" },
+      { name: "Creambath", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "200 mL", id: "200 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-18.png" },
+      { name: "Creambath", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "60 mL", id: "60 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-13.png" },
+      { name: "Hair Perfume Vanilla Souffle", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "100 mL", id: "100 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-28.png" },
+      { name: "Smooth-Bright Body Essence", variant: { en: "Vanilla Milk", id: "Vanilla Milk" }, size: { en: "150 mL", id: "150 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-33.png" },
       // Mint Sorbet — purifying & refreshing
-      { name: "Shampoo", variant: { en: "Mint Sorbet", id: "Mint Sorbet" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_4.png" },
-      { name: "Conditioner", variant: { en: "Mint Sorbet", id: "Mint Sorbet" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_9.png" },
-      { name: "Creambath", variant: { en: "Mint Sorbet", id: "Mint Sorbet" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_24.png" },
-      { name: "Creambath", variant: { en: "Mint Sorbet", id: "Mint Sorbet" }, size: { en: "200 mL", id: "200 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_19.png" },
-      { name: "Creambath", variant: { en: "Mint Sorbet", id: "Mint Sorbet" }, size: { en: "60 mL", id: "60 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_14.png" },
-      { name: "Hair Perfume Mint Mocktail", variant: { en: "Mint Sorbet", id: "Mint Sorbet" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/texture-experience/product-lineup/Packshot TE_29.png" },
+      { name: "Shampoo", variant: { en: "Mint Sorbet", id: "Mint Sorbet" }, size: { en: "250 mL", id: "250 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-4.png" },
+      { name: "Conditioner", variant: { en: "Mint Sorbet", id: "Mint Sorbet" }, size: { en: "250 mL", id: "250 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-9.png" },
+      { name: "Creambath", variant: { en: "Mint Sorbet", id: "Mint Sorbet" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-24.png" },
+      { name: "Creambath", variant: { en: "Mint Sorbet", id: "Mint Sorbet" }, size: { en: "200 mL", id: "200 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-19.png" },
+      { name: "Creambath", variant: { en: "Mint Sorbet", id: "Mint Sorbet" }, size: { en: "60 mL", id: "60 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-14.png" },
+      { name: "Hair Perfume Mint Mocktail", variant: { en: "Mint Sorbet", id: "Mint Sorbet" }, size: { en: "100 mL", id: "100 mL" }, image: "/media/brands/texture-experience/product-lineup/packshot-te-29.png" },
     ],
     about: [
-      { title: { en: "Natural Ingredients", id: "Bahan-Bahan Alami" }, image: "/brand/texture-experience/about/1.png" },
-      { title: { en: "Fragrance lasts 3–4 days", id: "Wangi 3–4 hari" }, image: "/brand/texture-experience/about/2.png" },
-      { title: { en: "Panthenol & Hydrolized Keratin", id: "Panthenol & Hydrolized Keratin" }, image: "/brand/texture-experience/about/3.png" },
+      { title: { en: "Natural Ingredients", id: "Bahan-Bahan Alami" }, image: "/media/brands/texture-experience/about/1.png" },
+      { title: { en: "Fragrance lasts 3–4 days", id: "Wangi 3–4 hari" }, image: "/media/brands/texture-experience/about/2.png" },
+      { title: { en: "Panthenol & Hydrolized Keratin", id: "Panthenol & Hydrolized Keratin" }, image: "/media/brands/texture-experience/about/3.png" },
     ],
     // Showcase — the "Perawatan Multi-Sensori" poster, then the five scent banners.
     // Each bg ({n}-2) is a designed 4810×2260 card with the variant name split around a
@@ -138,38 +138,38 @@ const entry: Brand = {
     // Everything is a percentage, so the composition holds identically at every width —
     // no mobile override needed.
     showcase: {
-      hero: "/brand/texture-experience/showcase/title.png",
+      hero: { en: "/media/brands/texture-experience/showcase/title.en.png", id: "/media/brands/texture-experience/showcase/title.id.png" },
       heroAspect: "4749 / 3163",
       productAlign: "center",
       bannerAspect: "4810 / 2260",
       heroMobileOffsetY: "-7px",
       variants: [
         // STRAWBERRY YOGHURT — creambath tube + Berry Smoothie hair perfume
-        { bg: "/brand/texture-experience/showcase/1-2.png", product: "/brand/texture-experience/showcase/1-1.png",
+        { bg: { en: "/media/brands/texture-experience/showcase/1-2.en.png", id: "/media/brands/texture-experience/showcase/1-2.id.png" }, product: "/media/brands/texture-experience/showcase/1-1.png",
           bgAspect: "4810 / 2260", productAspect: "2289 / 2711", productHeight: "125.5%",
           productShiftX: "5.6%", productShiftY: "3.1%",
           href: "/brands/texture-experience/strawberry-yoghurt",
           mobile: { productHeight: "112%" } },
         // GREEN TEA BUTTER — creambath tube + Tea Blossom hair perfume
-        { bg: "/brand/texture-experience/showcase/2-2.png", product: "/brand/texture-experience/showcase/2-1.png",
+        { bg: { en: "/media/brands/texture-experience/showcase/2-2.en.png", id: "/media/brands/texture-experience/showcase/2-2.id.png" }, product: "/media/brands/texture-experience/showcase/2-1.png",
           bgAspect: "4810 / 2260", productAspect: "2636 / 2794", productHeight: "124.5%",
           productShiftX: "-2.6%", productShiftY: "-3.8%",
           href: "/brands/texture-experience/green-tea-butter",
           mobile: { productHeight: "110%" } },
         // BLACK CHOCOLATE — creambath tube + Choco Hazelnut hair perfume
-        { bg: "/brand/texture-experience/showcase/3-2.png", product: "/brand/texture-experience/showcase/3-1.png",
+        { bg: { en: "/media/brands/texture-experience/showcase/3-2.en.png", id: "/media/brands/texture-experience/showcase/3-2.id.png" }, product: "/media/brands/texture-experience/showcase/3-1.png",
           bgAspect: "4810 / 2260", productAspect: "2242 / 2664", productHeight: "125%",
           productShiftX: "-6.7%", productShiftY: "-6.7%",
           href: "/brands/texture-experience/black-chocolate",
           mobile: { productHeight: "112%" } },
         // VANILLA MILK — creambath tube + Vanilla Souffle hair perfume
-        { bg: "/brand/texture-experience/showcase/4-2.png", product: "/brand/texture-experience/showcase/4-1.png",
+        { bg: { en: "/media/brands/texture-experience/showcase/4-2.en.png", id: "/media/brands/texture-experience/showcase/4-2.id.png" }, product: "/media/brands/texture-experience/showcase/4-1.png",
           bgAspect: "4810 / 2260", productAspect: "2860 / 3084", productHeight: "147%",
           productShiftX: "8.1%", productShiftY: "2.3%",
           href: "/brands/texture-experience/vanilla-milk",
           mobile: { productHeight: "130%" } },
         // MINT SORBET — creambath tube + Mint Mocktail hair perfume
-        { bg: "/brand/texture-experience/showcase/5-2.png", product: "/brand/texture-experience/showcase/5-1.png",
+        { bg: { en: "/media/brands/texture-experience/showcase/5-2.en.png", id: "/media/brands/texture-experience/showcase/5-2.id.png" }, product: "/media/brands/texture-experience/showcase/5-1.png",
           bgAspect: "4810 / 2260", productAspect: "2526 / 2359", productHeight: "124.5%",
           productShiftX: "-10.5%", productShiftY: "0.3%",
           href: "/brands/texture-experience/mint-sorbet",

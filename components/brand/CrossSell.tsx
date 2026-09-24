@@ -4,10 +4,11 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { pageBrands } from "@/lib/brands";
 import { useLocale } from "@/lib/locale/LocaleProvider";
+import { pickLocalized } from "@/lib/locale/paths";
 import { BRAND } from "@/dictionaries/brand";
 
 export default function CrossSell({ current }: { current: { slug: string } }) {
-  const { asset, href, t } = useLocale();
+  const { asset, href, locale, t } = useLocale();
   // pageBrands() drops umbrella brands — they have no page, so a card linking to
   // one would land on a 404.
   const others = pageBrands()
@@ -66,7 +67,7 @@ export default function CrossSell({ current }: { current: { slug: string } }) {
               className="group relative snap-start shrink-0 md:shrink w-[64vw] xs:w-[58vw] sm:w-[46vw] md:w-auto aspect-[3/4] md:aspect-auto md:h-[420px] rounded-3xl overflow-hidden"
             >
               <Image
-                src={asset(b.heroImage)}
+                src={asset(pickLocalized(b.heroImage, locale))}
                 alt={b.name}
                 fill
                 sizes="(min-width:768px) 33vw, 80vw"

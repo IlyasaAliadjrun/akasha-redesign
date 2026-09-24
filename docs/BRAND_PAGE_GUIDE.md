@@ -20,13 +20,13 @@ Konvensi umum: [AGENTS.md](../AGENTS.md). Ukuran kirim ke tim desain: `docs/UKUR
 
 **Prasyarat: wajib ada file referensi desain.** Tidak ada lampiran → **BERHENTI**, minta user upload dulu. Jangan mengarang desain, jangan mulai dengan asumsi "nanti disusul".
 
-**Folder default sebuah brand** — `public/brand/{slug}/` berisi `hero/` · `product-lineup/` · `showcase/` · `about/`.
+**Folder default sebuah brand** — `public/media/brands/{slug}/` berisi `hero/` · `product-lineup/` · `showcase/` · `about/`.
 
 **Dua sinyal, peran berbeda:**
 
 | Sinyal | Menentukan |
 |---|---|
-| **Folder aset** `public/brand/{slug}/` | **APA yang dibangun.** Hanya keempat folder default → brand page saja. Tiap folder **di luar** keempat itu = **satu sub-brand page**. |
+| **Folder aset** `public/media/brands/{slug}/` | **APA yang dibangun.** Hanya keempat folder default → brand page saja. Tiap folder di dalam **`lines/`** = **satu sub-brand page**. |
 | **Lampiran referensi** | **TAMPILAN** (warna/tipografi/foto/mood). 1 file = brand page saja; >1 file = ada sub-brand page. |
 
 - Konfirmasi silang: jumlah folder ekstra harus cocok dengan jumlah lampiran >1.
@@ -40,7 +40,7 @@ Sub-brand/product-line ada di `/brands/{parent}/{line}`.
 
 **Data wajib:** `division` ∈ `beverage|beauty|mens|food`. `hero: boolean` = ikut carousel homepage (default `false`).
 `accentHex` = warna aksen (inline style). `accentClass` legacy, isi apa saja, **jangan** tambah warna ke `tailwind.config.ts`.
-Path aset selalu `/brand/{slug}/{folder}/...`. Slug & nama file lowercase-dash.
+Path aset selalu `/media/brands/{slug}/{folder}/...` (sub-brand: `/media/brands/{slug}/lines/{line}/{folder}/...`). Slug & nama file lowercase-dash.
 
 ---
 
@@ -128,7 +128,7 @@ Format tabel laporan:
 
 | File | Dimensi asli | Rasio asli | Dibutuhkan (dim/rasio) | Section | Dampak bila dipaksakan |
 |---|---|---|---|---|---|
-| `brand/x/hero/1.png` | 900×1200 | 3:4 | ≥1800×2400 · 3:4 | Hero produk | Blur/pecah di retina |
+| `media/brands/x/hero/1.png` | 900×1200 | 3:4 | ≥1800×2400 · 3:4 | Hero produk | Blur/pecah di retina |
 
 **DILARANG:** upscale melebihi resolusi natural · stretch sampai rasio berubah · mengubah ukuran/struktur section agar aset muat ·
 mengganti dengan aset luar/placeholder · diam saja.
@@ -197,13 +197,13 @@ atau dynamic import bervariabel — keduanya jebol saat build meski normal di de
 
 **Registrasi otomatis — tidak ada file bersama yang perlu diedit.** `BRANDS`/`SUB_BRANDS` di-auto-discover dari
 `content/brands/*.ts` & `content/sub-brands/*.ts`; route, navbar/MegaMenu, Footer, CrossSell, DivisionCards,
-`generateStaticParams` semuanya turunan. Menambah brand = **1 folder aset `public/brand/{slug}/` + 1 file config
+`generateStaticParams` semuanya turunan. Menambah brand = **1 folder aset `public/media/brands/{slug}/` + 1 file config
 `content/brands/{NNN}-{slug}.ts`. Titik.** Prefiks angka (kelipatan 10) hanya mengatur urutan listing.
 
 **HARAM disentuh:** `lib/brands.ts`, `lib/subBrands.ts`, `tailwind.config.ts`, `app/globals.css`, `components/**`,
 `app/brands/**`, dan file config brand lain. **Perlu mengedit file di luar folder/file brand-mu → BERHENTI dan lapor.**
 Satu-satunya kemungkinan pengecualian: `next.config.mjs` `images.remotePatterns` bila brand memuat gambar dari host
-eksternal baru — normalnya tidak perlu, semua aset lokal di `public/brand/...`.
+eksternal baru — normalnya tidak perlu, semua aset lokal di `public/media/brands/...`.
 
 ---
 

@@ -11,19 +11,19 @@ const entry: Brand = {
     },
     accentClass: "bg-brand-npl",
     accentHex: "#0077B6",
-    heroImage: "/brand/nestle-pure-life/hero/background.jpg",
+    heroImage: "/media/brands/nestle-pure-life/hero/background.jpg",
     // Layered parallax banner — same scheme as Hair Energy. Order = stacking
     // (last = front).
     heroLayers: [
       // background.jpg — full-bleed gradient backdrop (image, not a flat colour).
       // `cover` so it always fills the hero; it's a smooth gradient, so any crop is
       // invisible. Slowest parallax drift, settles in first.
-      { src: "/brand/nestle-pure-life/hero/background.jpg", depth: 20, enterDelay: 0 },
+      { src: "/media/brands/nestle-pure-life/hero/background.jpg", depth: 20, enterDelay: 0 },
       // 1.png — the bottles, a tight ~1:1 crop (1588×1599). Sized & positioned
       // (Hair-Energy style) rather than full-bleed, so it can be scaled down and
       // anchored toward the right edge instead of filling the whole hero height.
       // No separate mobile crop — same asset renders on phones too.
-      { src: "/brand/nestle-pure-life/hero/1.png", depth: 70, enterFrom: "right", enterDelay: 0.4,
+      { src: "/media/brands/nestle-pure-life/hero/1.png", depth: 70, enterFrom: "right", enterDelay: 0.4,
         width: "min(40vw, 100vh)", aspectRatio: "1588 / 1599", right: "7%", top: "10%",
         mobile: { width: "min(100vw, 150vh)", left: "0%", top: "20%" } },
     ],
@@ -32,7 +32,7 @@ const entry: Brand = {
     // the tight content crop of the `wordmark-1.png` asset (the "NESTLÉ PURE LIFE"
     // lockup + its drop shadow); the tagline + button below are our own HTML.
     heroContent: {
-      logo: "/brand/nestle-pure-life/hero/wordmark.png",
+      logo: "/media/brands/nestle-pure-life/hero/wordmark.png",
       logoAspect: "1430 / 297",
       logoWidth: "34vw",
       tagline: { en: "Fresh, Even Without the Cold", id: "Gak Dingin Tetep Seger" },
@@ -47,15 +47,15 @@ const entry: Brand = {
     bannerBg: "#E6097E",
     hero: true,
     about: [
-      { title: { en: "From cold-temperature springs (down to 18°C)", id: "Dari Sumber Mata Air Bersuhu Dingin (hingga 18°C)" }, image: "/brand/nestle-pure-life/about/1.png" },
-      { title: { en: "International standard technology", id: "Teknologi Standar Internasional" }, image: "/brand/nestle-pure-life/about/2.png" },
-      { title: { en: "Delivered by a closed fleet", id: "Dikirim dengan Armada Tertutup" }, image: "/brand/nestle-pure-life/about/3.png" },
+      { title: { en: "From cold-temperature springs (down to 18°C)", id: "Dari Sumber Mata Air Bersuhu Dingin (hingga 18°C)" }, image: "/media/brands/nestle-pure-life/about/1.png" },
+      { title: { en: "International standard technology", id: "Teknologi Standar Internasional" }, image: "/media/brands/nestle-pure-life/about/2.png" },
+      { title: { en: "Delivered by a closed fleet", id: "Dikirim dengan Armada Tertutup" }, image: "/media/brands/nestle-pure-life/about/3.png" },
     ],
     products: [
-      { name: "Pure Life", variant: { en: "330 mL", id: "330 mL" }, size: { en: "24-pack / box", id: "24 pack / dus" }, image: "/brand/nestle-pure-life/product-lineup/330ml.jpg" },
-      { name: "Pure Life", variant: { en: "600 mL", id: "600 mL" }, size: { en: "24-pack / box", id: "24 pack / dus" }, image: "/brand/nestle-pure-life/product-lineup/600ml.jpg" },
-      { name: "Pure Life", variant: { en: "1500 mL", id: "1500 mL" }, size: { en: "12-pack / box", id: "12 pack / dus" }, image: "/brand/nestle-pure-life/product-lineup/1500ml.jpg" },
-      { name: "Pure Life", variant: { en: "Gallon", id: "Galon" }, size: { en: "15 L", id: "15 L" }, image: "/brand/nestle-pure-life/product-lineup/galon-15l.jpg" },
+      { name: "Pure Life", variant: { en: "330 mL", id: "330 mL" }, size: { en: "24-pack / box", id: "24 pack / dus" }, image: "/media/brands/nestle-pure-life/product-lineup/330ml.jpg" },
+      { name: "Pure Life", variant: { en: "600 mL", id: "600 mL" }, size: { en: "24-pack / box", id: "24 pack / dus" }, image: "/media/brands/nestle-pure-life/product-lineup/600ml.jpg" },
+      { name: "Pure Life", variant: { en: "1500 mL", id: "1500 mL" }, size: { en: "12-pack / box", id: "12 pack / dus" }, image: "/media/brands/nestle-pure-life/product-lineup/1500ml.jpg" },
+      { name: "Pure Life", variant: { en: "Gallon", id: "Galon" }, size: { en: "15 L", id: "15 L" }, image: "/media/brands/nestle-pure-life/product-lineup/galon-15l.jpg" },
     ],
     reasons: [
       { icon: "💧", title: { en: "12-stage purification", id: "Dimurnikan 12 tahap" }, body: { en: "Every bottle passes through layered filtration before it reaches you.", id: "Setiap botol melewati proses penyaringan berlapis sebelum sampai ke tanganmu." } },
@@ -93,7 +93,7 @@ const entry: Brand = {
     //   - products (`{n}-1`) share one 1809×2015 canvas with each SKU drawn at its
     //     true relative size, so the 330 mL reads small and the 15 L gallon large.
     showcase: {
-      hero: "/brand/nestle-pure-life/showcase/title.png",
+      hero: { en: "/media/brands/nestle-pure-life/showcase/title.en.png", id: "/media/brands/nestle-pure-life/showcase/title.id.png" },
       heroAspect: "1250 / 763",
       // Landscape title poster — sized close to the variant banners below it. min()
       // caps it at ~52rem on desktop and holds it at 92vw on a phone.
@@ -109,12 +109,12 @@ const entry: Brand = {
         // largest because it's much wider.
         // 330 mL & 600 mL: vertically centred. productShiftX nudges the bottle off
         // the wording baked into the banner background (left banner → left, etc.).
-        { bg: "/brand/nestle-pure-life/showcase/1-2.png", product: "/brand/nestle-pure-life/showcase/1-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "125%", productShiftX: "-14%" },
-        { bg: "/brand/nestle-pure-life/showcase/2-2.png", product: "/brand/nestle-pure-life/showcase/2-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "100%", productShiftX: "14%" },
+        { bg: "/media/brands/nestle-pure-life/showcase/1-2.png", product: "/media/brands/nestle-pure-life/showcase/1-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "125%", productShiftX: "-14%" },
+        { bg: "/media/brands/nestle-pure-life/showcase/2-2.png", product: "/media/brands/nestle-pure-life/showcase/2-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "100%", productShiftX: "14%" },
         // 1500 mL & 15 L: grounded on the banner bottom.
         // Their PNGs have ~0 transparent margin below the bottle, so no bottom offset.
-        { bg: "/brand/nestle-pure-life/showcase/3-2.png", product: "/brand/nestle-pure-life/showcase/3-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "96%", groundBottom: true },
-        { bg: "/brand/nestle-pure-life/showcase/4-2.png", product: "/brand/nestle-pure-life/showcase/4-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "92%", groundBottom: true },
+        { bg: "/media/brands/nestle-pure-life/showcase/3-2.png", product: "/media/brands/nestle-pure-life/showcase/3-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "96%", groundBottom: true },
+        { bg: "/media/brands/nestle-pure-life/showcase/4-2.png", product: "/media/brands/nestle-pure-life/showcase/4-1.png", bgAspect: "4591 / 2032", productAspect: "1809 / 2015", productHeight: "92%", groundBottom: true },
       ],
     },
   };

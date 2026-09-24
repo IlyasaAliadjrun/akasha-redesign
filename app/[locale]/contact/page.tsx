@@ -25,8 +25,8 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
     <>
       {/* HERO */}
       <PageHero
-        desktop="/contact/hero/desktop.jpg"
-        mobile="/contact/hero/mobile.jpg"
+        desktop="/media/pages/contact/hero/desktop.jpg"
+        mobile="/media/pages/contact/hero/mobile.jpg"
         title={t(CONTACT_PAGE.hero.title)}
         subtitle={t(CONTACT_PAGE.hero.subtitle)}
         tone="light"

@@ -23,7 +23,7 @@ const entry: Brand = {
     lineupBuyColor: "#6F635A",
     // No dedicated 3:4 brand-card art was delivered, so CrossSell reuses the brand's
     // own 3:4 About photo (1534×2046) instead of a generic stock image.
-    heroImage: "/brand/concept-ultimax/about/1.png",
+    heroImage: "/media/brands/concept-ultimax/about/1.png",
     // Two-product banner: the pink Color Tube in front/left, the Activator tube
     // behind/right. Both are sized with `min(vw, vh)` so the pair scales with the
     // viewport but never outgrows a short window. Widths are tuned so the two
@@ -32,14 +32,14 @@ const entry: Brand = {
     // exactly as in the reference.
     heroLayers: [
       // Activator — behind, right, enters from the right.
-      { src: "/brand/concept-ultimax/hero/2.png", depth: 40, enterFrom: "right", enterDelay: 0.35, width: "min(26vw, 51vh)", maxWidth: "527px", aspectRatio: "1054 / 1492", left: "63.8%", top: "17.4%",
+      { src: "/media/brands/concept-ultimax/hero/2.png", depth: 40, enterFrom: "right", enterDelay: 0.35, width: "min(26vw, 51vh)", maxWidth: "527px", aspectRatio: "1054 / 1492", left: "63.8%", top: "17.4%",
         mobile: { left: "26%", top: "23%", width: "min(60vw, 40vh)" } },
       // Color Tube — in front, left of the Activator, enters from the left.
-      { src: "/brand/concept-ultimax/hero/1.png", depth: 58, enterFrom: "left", enterDelay: 0.15, width: "min(34vw, 58vh)", maxWidth: "846px", aspectRatio: "1692 / 2538", left: "57.8%", top: "10%",
+      { src: "/media/brands/concept-ultimax/hero/1.png", depth: 58, enterFrom: "left", enterDelay: 0.15, width: "min(34vw, 58vh)", maxWidth: "846px", aspectRatio: "1692 / 2538", left: "57.8%", top: "10%",
         mobile: { left: "10%", top: "18%", width: "min(70vw, 52vh)" } },
     ],
     heroContent: {
-      logo: "/brand/concept-ultimax/hero/wordmark.png",
+      logo: "/media/brands/concept-ultimax/hero/wordmark.png",
       logoAspect: "2339 / 473",
       // The wordmark is a very wide lockup (4.95:1), so it is deliberately wider than
       // `maxWidth`: the logo <div> carries its own explicit width and overflows the
@@ -65,28 +65,28 @@ const entry: Brand = {
       // `variant` carries the full spec because the range repeats every developer
       // strength in two pack sizes — name+variant is the card's React key, so it has
       // to stay unique per SKU.
-      { name: "Color Tube", variant: { en: "90 gr", id: "90 gr" }, image: "/brand/concept-ultimax/product-lineup/color-tube-90gr.png" },
-      { name: "Bleaching Powder", variant: { en: "250 gr", id: "250 gr" }, image: "/brand/concept-ultimax/product-lineup/bleaching-powder-250gr.png" },
-      { name: "Bleaching Powder", variant: { en: "500 gr", id: "500 gr" }, image: "/brand/concept-ultimax/product-lineup/bleaching-powder-500gr.png" },
-      { name: "Activator", variant: { en: "135 mL", id: "135 mL" }, image: "/brand/concept-ultimax/product-lineup/activator-135ml.png" },
-      { name: "Cream Developer", variant: { en: "10 Vol · 135 mL", id: "10 Vol · 135 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-135ml-10-vol.png" },
-      { name: "Cream Developer", variant: { en: "20 Vol · 135 mL", id: "20 Vol · 135 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-135ml-20-vol.png" },
-      { name: "Cream Developer", variant: { en: "30 Vol · 135 mL", id: "30 Vol · 135 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-135ml-30-vol.png" },
-      { name: "Cream Developer", variant: { en: "40 Vol · 135 mL", id: "40 Vol · 135 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-135ml-40-vol.png" },
-      { name: "Activator", variant: { en: "1000 mL", id: "1000 mL" }, image: "/brand/concept-ultimax/product-lineup/activator-1000ml.png" },
-      { name: "Cream Developer", variant: { en: "10 Vol · 1000 mL", id: "10 Vol · 1000 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-10-vol.png" },
-      { name: "Cream Developer", variant: { en: "20 Vol · 1000 mL", id: "20 Vol · 1000 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-20-vol.png" },
-      { name: "Cream Developer", variant: { en: "30 Vol · 1000 mL", id: "30 Vol · 1000 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-30-vol.png" },
-      { name: "Cream Developer", variant: { en: "40 Vol · 1000 mL", id: "40 Vol · 1000 mL" }, image: "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-40-vol.png" },
+      { name: "Color Tube", variant: { en: "90 gr", id: "90 gr" }, image: "/media/brands/concept-ultimax/product-lineup/color-tube-90gr.png" },
+      { name: "Bleaching Powder", variant: { en: "250 gr", id: "250 gr" }, image: "/media/brands/concept-ultimax/product-lineup/bleaching-powder-250gr.png" },
+      { name: "Bleaching Powder", variant: { en: "500 gr", id: "500 gr" }, image: "/media/brands/concept-ultimax/product-lineup/bleaching-powder-500gr.png" },
+      { name: "Activator", variant: { en: "135 mL", id: "135 mL" }, image: "/media/brands/concept-ultimax/product-lineup/activator-135ml.png" },
+      { name: "Cream Developer", variant: { en: "10 Vol · 135 mL", id: "10 Vol · 135 mL" }, image: "/media/brands/concept-ultimax/product-lineup/cream-developer-135ml-10-vol.png" },
+      { name: "Cream Developer", variant: { en: "20 Vol · 135 mL", id: "20 Vol · 135 mL" }, image: "/media/brands/concept-ultimax/product-lineup/cream-developer-135ml-20-vol.png" },
+      { name: "Cream Developer", variant: { en: "30 Vol · 135 mL", id: "30 Vol · 135 mL" }, image: "/media/brands/concept-ultimax/product-lineup/cream-developer-135ml-30-vol.png" },
+      { name: "Cream Developer", variant: { en: "40 Vol · 135 mL", id: "40 Vol · 135 mL" }, image: "/media/brands/concept-ultimax/product-lineup/cream-developer-135ml-40-vol.png" },
+      { name: "Activator", variant: { en: "1000 mL", id: "1000 mL" }, image: "/media/brands/concept-ultimax/product-lineup/activator-1000ml.png" },
+      { name: "Cream Developer", variant: { en: "10 Vol · 1000 mL", id: "10 Vol · 1000 mL" }, image: "/media/brands/concept-ultimax/product-lineup/cream-developer-1000ml-10-vol.png" },
+      { name: "Cream Developer", variant: { en: "20 Vol · 1000 mL", id: "20 Vol · 1000 mL" }, image: "/media/brands/concept-ultimax/product-lineup/cream-developer-1000ml-20-vol.png" },
+      { name: "Cream Developer", variant: { en: "30 Vol · 1000 mL", id: "30 Vol · 1000 mL" }, image: "/media/brands/concept-ultimax/product-lineup/cream-developer-1000ml-30-vol.png" },
+      { name: "Cream Developer", variant: { en: "40 Vol · 1000 mL", id: "40 Vol · 1000 mL" }, image: "/media/brands/concept-ultimax/product-lineup/cream-developer-1000ml-40-vol.png" },
     ],
     // Super Foods Biomolekuler — the three actives, in the reference's order.
     about: [
-      { title: { en: "Argan Oil", id: "Argan Oil" }, image: "/brand/concept-ultimax/about/3.png" },
-      { title: { en: "Pomegranate Extract", id: "Ekstrak Pomegranate" }, image: "/brand/concept-ultimax/about/2.png" },
-      { title: { en: "Vegetal Keratin Complex", id: "Vegetal Keratin Complex" }, image: "/brand/concept-ultimax/about/1.png" },
+      { title: { en: "Argan Oil", id: "Argan Oil" }, image: "/media/brands/concept-ultimax/about/3.png" },
+      { title: { en: "Pomegranate Extract", id: "Ekstrak Pomegranate" }, image: "/media/brands/concept-ultimax/about/2.png" },
+      { title: { en: "Vegetal Keratin Complex", id: "Vegetal Keratin Complex" }, image: "/media/brands/concept-ultimax/about/1.png" },
     ],
     showcase: {
-      hero: "/brand/concept-ultimax/showcase/title.png",
+      hero: { en: "/media/brands/concept-ultimax/showcase/title.en.png", id: "/media/brands/concept-ultimax/showcase/title.id.png" },
       heroAspect: "4987 / 2917",
       heroOffsetY: "-30px",
       heroMobileOffsetY: "-20px",
@@ -110,9 +110,9 @@ const entry: Brand = {
       // so the box height is what converts to a given VISIBLE width, and the shift
       // re-centres the visible art — not the canvas — on the corridor.
       variants: [
-        { bg: "/brand/concept-ultimax/showcase/1-2.png", bgAspect: "4810 / 2260", product: "/brand/concept-ultimax/showcase/1-1.png", productAspect: "1982 / 2657", productHeight: "100%", productShiftX: "-5%", href: "/brands/concept-ultimax/color-tube" },
-        { bg: "/brand/concept-ultimax/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/concept-ultimax/showcase/2-1.png", productAspect: "1848 / 2550", productHeight: "114%", productShiftX: "-23%", href: "/brands/concept-ultimax/cream-developer" },
-        { bg: "/brand/concept-ultimax/showcase/3-2.png", bgAspect: "4810 / 2260", product: "/brand/concept-ultimax/showcase/3-1.png", productAspect: "1634 / 2043", productHeight: "80%", productShiftX: "13%", href: "/brands/concept-ultimax/bleaching-powder" },
+        { bg: { en: "/media/brands/concept-ultimax/showcase/1-2.en.png", id: "/media/brands/concept-ultimax/showcase/1-2.id.png" }, bgAspect: "4810 / 2260", product: "/media/brands/concept-ultimax/showcase/1-1.png", productAspect: "1982 / 2657", productHeight: "100%", productShiftX: "-5%", href: "/brands/concept-ultimax/color-tube" },
+        { bg: { en: "/media/brands/concept-ultimax/showcase/2-2.en.png", id: "/media/brands/concept-ultimax/showcase/2-2.id.png" }, bgAspect: "4810 / 2260", product: "/media/brands/concept-ultimax/showcase/2-1.png", productAspect: "1848 / 2550", productHeight: "114%", productShiftX: "-23%", href: "/brands/concept-ultimax/cream-developer" },
+        { bg: { en: "/media/brands/concept-ultimax/showcase/3-2.en.png", id: "/media/brands/concept-ultimax/showcase/3-2.id.png" }, bgAspect: "4810 / 2260", product: "/media/brands/concept-ultimax/showcase/3-1.png", productAspect: "1634 / 2043", productHeight: "80%", productShiftX: "13%", href: "/brands/concept-ultimax/bleaching-powder" },
       ],
     },
   };

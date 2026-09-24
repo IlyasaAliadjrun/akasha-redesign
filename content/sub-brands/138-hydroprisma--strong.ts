@@ -19,13 +19,13 @@ const entry: SubBrand = {
       ctaHoverBackgroundColor: "#5F2168",
       ctaHoverTextColor: "#FFFFFF",
   },
-  heroWordmark: "/brand/hydroprisma/strong/hero/wordmark.png",
+  heroWordmark: "/media/brands/hydroprisma/lines/strong/hero/wordmark.png",
   heroWordmarkAspect: "1548 / 321",
   heroWordmarkWidth: "30vw",
   heroWordmarkMobileWidth: "58vw",
   heroLayers: [
     {
-      src: "/brand/hydroprisma/strong/hero/1.png",
+      src: "/media/brands/hydroprisma/lines/strong/hero/1.png",
       enterFrom: "right",
       enterDelay: 0.25,
       depth: 44,
@@ -36,10 +36,10 @@ const entry: SubBrand = {
       mobile: { left: "-3%", top: "-10%", width: "91%" },
     },
   ],
-  showcaseTitle: "/brand/hydroprisma/strong/showcase/title.png",
+  showcaseTitle: "/media/brands/hydroprisma/lines/strong/showcase/title.png",
   showcaseTitleAspect: "4171 / 3474",
   featured: {
-    image: "/brand/hydroprisma/strong/showcase/3.png",
+    image: "/media/brands/hydroprisma/lines/strong/showcase/3.png",
     label: { en: "Milky Neutralizer", id: "Milky Neutralizer" },
   },
   featuredAspect: "4687 / 3494",
@@ -47,11 +47,11 @@ const entry: SubBrand = {
   cardAspect: "2302 / 2986",
   cards: [
     {
-      image: "/brand/hydroprisma/strong/showcase/1.png",
+      image: "/media/brands/hydroprisma/lines/strong/showcase/1.png",
       label: { en: "Straightening Cream Pouch", id: "Straightening Cream Pouch" },
     },
     {
-      image: "/brand/hydroprisma/strong/showcase/2.png",
+      image: "/media/brands/hydroprisma/lines/strong/showcase/2.png",
       label: { en: "Straightening Cream Pot", id: "Straightening Cream Pot" },
     },
   ],

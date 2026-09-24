@@ -1,0 +1,1838 @@
+{
+  "_readme": "Old -> new public asset paths from the 2026-09 standardization (public/{en,id} + public/docs -> public/media + public/documents). Use it to rebase in-flight work that still references old paths.",
+  "media": {
+    "/about/hero/desktop.jpg": "/media/pages/about/hero/desktop.jpg",
+    "/about/hero/mobile.jpg": "/media/pages/about/hero/mobile.jpg",
+    "/brand/128/about/1.png": "/media/brands/128/about/1.png",
+    "/brand/128/about/2.png": "/media/brands/128/about/2.png",
+    "/brand/128/about/3.png": "/media/brands/128/about/3.png",
+    "/brand/128/acne-pro/hero/1.png": "/media/brands/128/lines/acne-pro/hero/1.png",
+    "/brand/128/acne-pro/hero/wordmark.png": "/media/brands/128/lines/acne-pro/hero/wordmark.png",
+    "/brand/128/acne-pro/showcase/1.png": "/media/brands/128/lines/acne-pro/showcase/1.png",
+    "/brand/128/acne-pro/showcase/2.png": "/media/brands/128/lines/acne-pro/showcase/2.png",
+    "/brand/128/acne-pro/showcase/title.png": {
+      "en": "/media/brands/128/lines/acne-pro/showcase/title.en.png",
+      "id": "/media/brands/128/lines/acne-pro/showcase/title.id.png"
+    },
+    "/brand/128/advanced-age-repair/hero/1.png": "/media/brands/128/lines/advanced-age-repair/hero/1.png",
+    "/brand/128/advanced-age-repair/hero/wordmark.png": "/media/brands/128/lines/advanced-age-repair/hero/wordmark.png",
+    "/brand/128/advanced-age-repair/showcase/title.png": "/media/brands/128/lines/advanced-age-repair/showcase/title.png",
+    "/brand/128/bright-radiance/hero/cluster.png": "/media/brands/128/lines/bright-radiance/hero/cluster.png",
+    "/brand/128/bright-radiance/hero/wordmark.png": "/media/brands/128/lines/bright-radiance/hero/wordmark.png",
+    "/brand/128/bright-radiance/showcase/1.png": "/media/brands/128/lines/bright-radiance/showcase/1.png",
+    "/brand/128/bright-radiance/showcase/2.png": "/media/brands/128/lines/bright-radiance/showcase/2.png",
+    "/brand/128/bright-radiance/showcase/3.png": "/media/brands/128/lines/bright-radiance/showcase/3.png",
+    "/brand/128/bright-radiance/showcase/4.png": "/media/brands/128/lines/bright-radiance/showcase/4.png",
+    "/brand/128/bright-radiance/showcase/title.png": {
+      "en": "/media/brands/128/lines/bright-radiance/showcase/title.en.png",
+      "id": "/media/brands/128/lines/bright-radiance/showcase/title.id.png"
+    },
+    "/brand/128/hero/1.png": "/media/brands/128/hero/1.png",
+    "/brand/128/hero/2.png": "/media/brands/128/hero/2.png",
+    "/brand/128/hero/3.png": "/media/brands/128/hero/3.png",
+    "/brand/128/hero/4.png": "/media/brands/128/hero/4.png",
+    "/brand/128/hero/cluster.png": "/media/brands/128/hero/cluster.png",
+    "/brand/128/hero/wordmark.png": "/media/brands/128/hero/wordmark.png",
+    "/brand/128/intensive-barrier-care/hero/1.png": "/media/brands/128/lines/intensive-barrier-care/hero/1.png",
+    "/brand/128/intensive-barrier-care/hero/wordmark.png": "/media/brands/128/lines/intensive-barrier-care/hero/wordmark.png",
+    "/brand/128/intensive-barrier-care/showcase/1.png": "/media/brands/128/lines/intensive-barrier-care/showcase/1.png",
+    "/brand/128/intensive-barrier-care/showcase/2.png": "/media/brands/128/lines/intensive-barrier-care/showcase/2.png",
+    "/brand/128/intensive-barrier-care/showcase/3.png": "/media/brands/128/lines/intensive-barrier-care/showcase/3.png",
+    "/brand/128/intensive-barrier-care/showcase/title.png": "/media/brands/128/lines/intensive-barrier-care/showcase/title.png",
+    "/brand/128/product-lineup/boost-intensive-barrier-care.png": "/media/brands/128/product-lineup/boost-intensive-barrier-care.png",
+    "/brand/128/product-lineup/facial-wash-bright-radiance.png": "/media/brands/128/product-lineup/facial-wash-bright-radiance.png",
+    "/brand/128/product-lineup/facial-wash-intensive-barrier-care.png": "/media/brands/128/product-lineup/facial-wash-intensive-barrier-care.png",
+    "/brand/128/product-lineup/moisturizer-advanced-age-repair.png": "/media/brands/128/product-lineup/moisturizer-advanced-age-repair.png",
+    "/brand/128/product-lineup/moisturizer-bright-radiance.png": "/media/brands/128/product-lineup/moisturizer-bright-radiance.png",
+    "/brand/128/product-lineup/moisturizer-pro-acne-defense.png": "/media/brands/128/product-lineup/moisturizer-pro-acne-defense.png",
+    "/brand/128/product-lineup/primer-intensive-barrier-care.png": "/media/brands/128/product-lineup/primer-intensive-barrier-care.png",
+    "/brand/128/product-lineup/serum-bright-radiance.png": "/media/brands/128/product-lineup/serum-bright-radiance.png",
+    "/brand/128/product-lineup/toner-bright-radiance.png": "/media/brands/128/product-lineup/toner-bright-radiance.png",
+    "/brand/128/showcase/1-1.png": "/media/brands/128/showcase/1-1.png",
+    "/brand/128/showcase/1-2.png": "/media/brands/128/showcase/1-2.png",
+    "/brand/128/showcase/1-3.png": "/media/brands/128/showcase/1-3.png",
+    "/brand/128/showcase/1-4.png": "/media/brands/128/showcase/1-4.png",
+    "/brand/128/showcase/1-5.png": {
+      "en": "/media/brands/128/showcase/1-5.en.png",
+      "id": "/media/brands/128/showcase/1-5.id.png"
+    },
+    "/brand/128/showcase/2-1.png": "/media/brands/128/showcase/2-1.png",
+    "/brand/128/showcase/2-2.png": "/media/brands/128/showcase/2-2.png",
+    "/brand/128/showcase/2-3.png": "/media/brands/128/showcase/2-3.png",
+    "/brand/128/showcase/2-4.png": {
+      "en": "/media/brands/128/showcase/2-4.en.png",
+      "id": "/media/brands/128/showcase/2-4.id.png"
+    },
+    "/brand/128/showcase/3-1.png": "/media/brands/128/showcase/3-1.png",
+    "/brand/128/showcase/3-2.png": "/media/brands/128/showcase/3-2.png",
+    "/brand/128/showcase/3-3.png": {
+      "en": "/media/brands/128/showcase/3-3.en.png",
+      "id": "/media/brands/128/showcase/3-3.id.png"
+    },
+    "/brand/128/showcase/4-1.png": "/media/brands/128/showcase/4-1.png",
+    "/brand/128/showcase/4-2.png": {
+      "en": "/media/brands/128/showcase/4-2.en.png",
+      "id": "/media/brands/128/showcase/4-2.id.png"
+    },
+    "/brand/128/showcase/cluster-1.png": "/media/brands/128/showcase/cluster-1.png",
+    "/brand/128/showcase/cluster-2.png": "/media/brands/128/showcase/cluster-2.png",
+    "/brand/128/showcase/cluster-3.png": "/media/brands/128/showcase/cluster-3.png",
+    "/brand/128/showcase/cluster-4.png": "/media/brands/128/showcase/cluster-4.png",
+    "/brand/128/showcase/title.png": {
+      "en": "/media/brands/128/showcase/title.en.png",
+      "id": "/media/brands/128/showcase/title.id.png"
+    },
+    "/brand/advisor-rx/about/1.png": "/media/brands/advisor-rx/about/1.png",
+    "/brand/advisor-rx/about/2.png": "/media/brands/advisor-rx/about/2.png",
+    "/brand/advisor-rx/about/3.png": "/media/brands/advisor-rx/about/3.png",
+    "/brand/advisor-rx/grey-hair/hero/1.png": "/media/brands/advisor-rx/lines/grey-hair/hero/1.png",
+    "/brand/advisor-rx/grey-hair/hero/2.png": "/media/brands/advisor-rx/lines/grey-hair/hero/2.png",
+    "/brand/advisor-rx/grey-hair/hero/3.png": "/media/brands/advisor-rx/lines/grey-hair/hero/3.png",
+    "/brand/advisor-rx/grey-hair/showcase/1.png": {
+      "en": "/media/brands/advisor-rx/lines/grey-hair/showcase/1.en.png",
+      "id": "/media/brands/advisor-rx/lines/grey-hair/showcase/1.id.png"
+    },
+    "/brand/advisor-rx/grey-hair/showcase/2.png": {
+      "en": "/media/brands/advisor-rx/lines/grey-hair/showcase/2.en.png",
+      "id": "/media/brands/advisor-rx/lines/grey-hair/showcase/2.id.png"
+    },
+    "/brand/advisor-rx/grey-hair/showcase/3.png": {
+      "en": "/media/brands/advisor-rx/lines/grey-hair/showcase/3.en.png",
+      "id": "/media/brands/advisor-rx/lines/grey-hair/showcase/3.id.png"
+    },
+    "/brand/advisor-rx/grey-hair/showcase/title.png": {
+      "en": "/media/brands/advisor-rx/lines/grey-hair/showcase/title.en.png",
+      "id": "/media/brands/advisor-rx/lines/grey-hair/showcase/title.id.png"
+    },
+    "/brand/advisor-rx/hero/1.png": "/media/brands/advisor-rx/hero/1.png",
+    "/brand/advisor-rx/hero/2.png": "/media/brands/advisor-rx/hero/2.png",
+    "/brand/advisor-rx/hero/3.png": "/media/brands/advisor-rx/hero/3.png",
+    "/brand/advisor-rx/hero/4.png": "/media/brands/advisor-rx/hero/4.png",
+    "/brand/advisor-rx/hero/wordmark.png": "/media/brands/advisor-rx/hero/wordmark.png",
+    "/brand/advisor-rx/product-lineup/advisor-03.png": "/media/brands/advisor-rx/product-lineup/advisor-03.png",
+    "/brand/advisor-rx/product-lineup/advisor-04.png": "/media/brands/advisor-rx/product-lineup/advisor-04.png",
+    "/brand/advisor-rx/product-lineup/advisor-06.png": "/media/brands/advisor-rx/product-lineup/advisor-06.png",
+    "/brand/advisor-rx/product-lineup/advisor-07.png": "/media/brands/advisor-rx/product-lineup/advisor-07.png",
+    "/brand/advisor-rx/product-lineup/advisor-08.png": "/media/brands/advisor-rx/product-lineup/advisor-08.png",
+    "/brand/advisor-rx/product-lineup/advisor-09.png": "/media/brands/advisor-rx/product-lineup/advisor-09.png",
+    "/brand/advisor-rx/product-lineup/advisor-10.png": "/media/brands/advisor-rx/product-lineup/advisor-10.png",
+    "/brand/advisor-rx/product-lineup/advisor-15.png": "/media/brands/advisor-rx/product-lineup/advisor-15.png",
+    "/brand/advisor-rx/product-lineup/advisor-16.png": "/media/brands/advisor-rx/product-lineup/advisor-16.png",
+    "/brand/advisor-rx/showcase/1-1.png": "/media/brands/advisor-rx/showcase/1-1.png",
+    "/brand/advisor-rx/showcase/1-2.png": {
+      "en": "/media/brands/advisor-rx/showcase/1-2.en.png",
+      "id": "/media/brands/advisor-rx/showcase/1-2.id.png"
+    },
+    "/brand/advisor-rx/showcase/2-1.png": "/media/brands/advisor-rx/showcase/2-1.png",
+    "/brand/advisor-rx/showcase/2-2.png": {
+      "en": "/media/brands/advisor-rx/showcase/2-2.en.png",
+      "id": "/media/brands/advisor-rx/showcase/2-2.id.png"
+    },
+    "/brand/advisor-rx/showcase/title.png": {
+      "en": "/media/brands/advisor-rx/showcase/title.en.png",
+      "id": "/media/brands/advisor-rx/showcase/title.id.png"
+    },
+    "/brand/advisor-rx/strong-hair/hero/1.png": "/media/brands/advisor-rx/lines/strong-hair/hero/1.png",
+    "/brand/advisor-rx/strong-hair/hero/2.png": "/media/brands/advisor-rx/lines/strong-hair/hero/2.png",
+    "/brand/advisor-rx/strong-hair/hero/3.png": "/media/brands/advisor-rx/lines/strong-hair/hero/3.png",
+    "/brand/advisor-rx/strong-hair/hero/4.png": "/media/brands/advisor-rx/lines/strong-hair/hero/4.png",
+    "/brand/advisor-rx/strong-hair/showcase/1.png": {
+      "en": "/media/brands/advisor-rx/lines/strong-hair/showcase/1.en.png",
+      "id": "/media/brands/advisor-rx/lines/strong-hair/showcase/1.id.png"
+    },
+    "/brand/advisor-rx/strong-hair/showcase/2.png": {
+      "en": "/media/brands/advisor-rx/lines/strong-hair/showcase/2.en.png",
+      "id": "/media/brands/advisor-rx/lines/strong-hair/showcase/2.id.png"
+    },
+    "/brand/advisor-rx/strong-hair/showcase/3.png": {
+      "en": "/media/brands/advisor-rx/lines/strong-hair/showcase/3.en.png",
+      "id": "/media/brands/advisor-rx/lines/strong-hair/showcase/3.id.png"
+    },
+    "/brand/advisor-rx/strong-hair/showcase/4.png": {
+      "en": "/media/brands/advisor-rx/lines/strong-hair/showcase/4.en.png",
+      "id": "/media/brands/advisor-rx/lines/strong-hair/showcase/4.id.png"
+    },
+    "/brand/advisor-rx/strong-hair/showcase/title.png": {
+      "en": "/media/brands/advisor-rx/lines/strong-hair/showcase/title.en.png",
+      "id": "/media/brands/advisor-rx/lines/strong-hair/showcase/title.id.png"
+    },
+    "/brand/advisor/about/1.png": "/media/brands/advisor/about/1.png",
+    "/brand/advisor/about/2.png": "/media/brands/advisor/about/2.png",
+    "/brand/advisor/about/3.png": "/media/brands/advisor/about/3.png",
+    "/brand/advisor/hero/1.png": "/media/brands/advisor/hero/1.png",
+    "/brand/advisor/hero/2.png": "/media/brands/advisor/hero/2.png",
+    "/brand/advisor/hero/3.png": "/media/brands/advisor/hero/3.png",
+    "/brand/advisor/hero/wordmark.png": "/media/brands/advisor/hero/wordmark.png",
+    "/brand/advisor/product-lineup/advisor-01.png": "/media/brands/advisor/product-lineup/advisor-01.png",
+    "/brand/advisor/product-lineup/advisor-02.png": "/media/brands/advisor/product-lineup/advisor-02.png",
+    "/brand/advisor/product-lineup/advisor-05.png": "/media/brands/advisor/product-lineup/advisor-05.png",
+    "/brand/advisor/product-lineup/advisor-11.png": "/media/brands/advisor/product-lineup/advisor-11.png",
+    "/brand/advisor/product-lineup/advisor-12.png": "/media/brands/advisor/product-lineup/advisor-12.png",
+    "/brand/advisor/product-lineup/advisor-13.png": "/media/brands/advisor/product-lineup/advisor-13.png",
+    "/brand/advisor/product-lineup/advisor-14.png": "/media/brands/advisor/product-lineup/advisor-14.png",
+    "/brand/advisor/showcase/1-1.png": "/media/brands/advisor/showcase/1-1.png",
+    "/brand/advisor/showcase/1-2.png": {
+      "en": "/media/brands/advisor/showcase/1-2.en.png",
+      "id": "/media/brands/advisor/showcase/1-2.id.png"
+    },
+    "/brand/advisor/showcase/2-1.png": "/media/brands/advisor/showcase/2-1.png",
+    "/brand/advisor/showcase/2-2.png": {
+      "en": "/media/brands/advisor/showcase/2-2.en.png",
+      "id": "/media/brands/advisor/showcase/2-2.id.png"
+    },
+    "/brand/advisor/showcase/3-1.png": "/media/brands/advisor/showcase/3-1.png",
+    "/brand/advisor/showcase/3-2.png": {
+      "en": "/media/brands/advisor/showcase/3-2.en.png",
+      "id": "/media/brands/advisor/showcase/3-2.id.png"
+    },
+    "/brand/advisor/showcase/4-1.png": "/media/brands/advisor/showcase/4-1.png",
+    "/brand/advisor/showcase/4-2.png": {
+      "en": "/media/brands/advisor/showcase/4-2.en.png",
+      "id": "/media/brands/advisor/showcase/4-2.id.png"
+    },
+    "/brand/advisor/showcase/5-1.png": "/media/brands/advisor/showcase/5-1.png",
+    "/brand/advisor/showcase/5-2.png": {
+      "en": "/media/brands/advisor/showcase/5-2.en.png",
+      "id": "/media/brands/advisor/showcase/5-2.id.png"
+    },
+    "/brand/advisor/showcase/title.png": {
+      "en": "/media/brands/advisor/showcase/title.en.png",
+      "id": "/media/brands/advisor/showcase/title.id.png"
+    },
+    "/brand/asters/about/1.png": "/media/brands/asters/about/1.png",
+    "/brand/asters/about/2.png": "/media/brands/asters/about/2.png",
+    "/brand/asters/hair-accessories/hero/1.png": "/media/brands/asters/lines/hair-accessories/hero/1.png",
+    "/brand/asters/hair-accessories/showcase/1.png": {
+      "en": "/media/brands/asters/lines/hair-accessories/showcase/1.en.png",
+      "id": "/media/brands/asters/lines/hair-accessories/showcase/1.id.png"
+    },
+    "/brand/asters/hair-accessories/showcase/2.png": {
+      "en": "/media/brands/asters/lines/hair-accessories/showcase/2.en.png",
+      "id": "/media/brands/asters/lines/hair-accessories/showcase/2.id.png"
+    },
+    "/brand/asters/hair-accessories/showcase/3.png": {
+      "en": "/media/brands/asters/lines/hair-accessories/showcase/3.en.png",
+      "id": "/media/brands/asters/lines/hair-accessories/showcase/3.id.png"
+    },
+    "/brand/asters/hair-accessories/showcase/4.png": {
+      "en": "/media/brands/asters/lines/hair-accessories/showcase/4.en.png",
+      "id": "/media/brands/asters/lines/hair-accessories/showcase/4.id.png"
+    },
+    "/brand/asters/hair-accessories/showcase/5.png": {
+      "en": "/media/brands/asters/lines/hair-accessories/showcase/5.en.png",
+      "id": "/media/brands/asters/lines/hair-accessories/showcase/5.id.png"
+    },
+    "/brand/asters/hair-accessories/showcase/title.png": {
+      "en": "/media/brands/asters/lines/hair-accessories/showcase/title.en.png",
+      "id": "/media/brands/asters/lines/hair-accessories/showcase/title.id.png"
+    },
+    "/brand/asters/hero/1.png": "/media/brands/asters/hero/1.png",
+    "/brand/asters/hero/2.png": "/media/brands/asters/hero/2.png",
+    "/brand/asters/hero/wordmark.png": "/media/brands/asters/hero/wordmark.png",
+    "/brand/asters/product-lineup/high-performance-hair-iron.png": "/media/brands/asters/product-lineup/high-performance-hair-iron.png",
+    "/brand/asters/product-lineup/high-speed-hair-dryer.png": "/media/brands/asters/product-lineup/high-speed-hair-dryer.png",
+    "/brand/asters/product-lineup/mova-hair-straightening-brush.png": "/media/brands/asters/product-lineup/mova-hair-straightening-brush.png",
+    "/brand/asters/product-lineup/paddle-detangler-brush.png": "/media/brands/asters/product-lineup/paddle-detangler-brush.png",
+    "/brand/asters/product-lineup/scalp-therapy-massager.png": "/media/brands/asters/product-lineup/scalp-therapy-massager.png",
+    "/brand/asters/product-lineup/vola-volumizing-styler.png": "/media/brands/asters/product-lineup/vola-volumizing-styler.png",
+    "/brand/asters/product-lineup/volumizing-bangs-clip.png": "/media/brands/asters/product-lineup/volumizing-bangs-clip.png",
+    "/brand/asters/showcase/1-1.png": "/media/brands/asters/showcase/1-1.png",
+    "/brand/asters/showcase/1-2.png": {
+      "en": "/media/brands/asters/showcase/1-2.en.png",
+      "id": "/media/brands/asters/showcase/1-2.id.png"
+    },
+    "/brand/asters/showcase/2-1.png": "/media/brands/asters/showcase/2-1.png",
+    "/brand/asters/showcase/2-2.png": {
+      "en": "/media/brands/asters/showcase/2-2.en.png",
+      "id": "/media/brands/asters/showcase/2-2.id.png"
+    },
+    "/brand/asters/showcase/title.png": {
+      "en": "/media/brands/asters/showcase/title.en.png",
+      "id": "/media/brands/asters/showcase/title.id.png"
+    },
+    "/brand/asters/styling-tools/hero/1.png": "/media/brands/asters/lines/styling-tools/hero/1.png",
+    "/brand/asters/styling-tools/showcase/1.png": {
+      "en": "/media/brands/asters/lines/styling-tools/showcase/1.en.png",
+      "id": "/media/brands/asters/lines/styling-tools/showcase/1.id.png"
+    },
+    "/brand/asters/styling-tools/showcase/2.png": {
+      "en": "/media/brands/asters/lines/styling-tools/showcase/2.en.png",
+      "id": "/media/brands/asters/lines/styling-tools/showcase/2.id.png"
+    },
+    "/brand/asters/styling-tools/showcase/3.png": {
+      "en": "/media/brands/asters/lines/styling-tools/showcase/3.en.png",
+      "id": "/media/brands/asters/lines/styling-tools/showcase/3.id.png"
+    },
+    "/brand/asters/styling-tools/showcase/4.png": {
+      "en": "/media/brands/asters/lines/styling-tools/showcase/4.en.png",
+      "id": "/media/brands/asters/lines/styling-tools/showcase/4.id.png"
+    },
+    "/brand/asters/styling-tools/showcase/title.png": {
+      "en": "/media/brands/asters/lines/styling-tools/showcase/title.en.png",
+      "id": "/media/brands/asters/lines/styling-tools/showcase/title.id.png"
+    },
+    "/brand/barber-daily/about/1.png": "/media/brands/barber-daily/about/1.png",
+    "/brand/barber-daily/about/2.png": "/media/brands/barber-daily/about/2.png",
+    "/brand/barber-daily/body-care/1.png": {
+      "en": "/media/brands/barber-daily/lines/body-care/showcase/1.en.png",
+      "id": "/media/brands/barber-daily/lines/body-care/showcase/1.id.png"
+    },
+    "/brand/barber-daily/body-care/2.png": {
+      "en": "/media/brands/barber-daily/lines/body-care/showcase/2.en.png",
+      "id": "/media/brands/barber-daily/lines/body-care/showcase/2.id.png"
+    },
+    "/brand/barber-daily/body-care/hero/1.png": "/media/brands/barber-daily/lines/body-care/hero/1.png",
+    "/brand/barber-daily/body-care/hero/2.png": "/media/brands/barber-daily/lines/body-care/hero/2.png",
+    "/brand/barber-daily/body-care/hero/wordmark.png": "/media/brands/barber-daily/lines/body-care/hero/wordmark.png",
+    "/brand/barber-daily/body-care/title.png": {
+      "en": "/media/brands/barber-daily/lines/body-care/showcase/title.en.png",
+      "id": "/media/brands/barber-daily/lines/body-care/showcase/title.id.png"
+    },
+    "/brand/barber-daily/hair-care/hero/1.png": "/media/brands/barber-daily/lines/hair-care/hero/1.png",
+    "/brand/barber-daily/hair-care/hero/2.png": "/media/brands/barber-daily/lines/hair-care/hero/2.png",
+    "/brand/barber-daily/hair-care/hero/wordmark.png": "/media/brands/barber-daily/lines/hair-care/hero/wordmark.png",
+    "/brand/barber-daily/hair-care/showcase/1.png": {
+      "en": "/media/brands/barber-daily/lines/hair-care/showcase/1.en.png",
+      "id": "/media/brands/barber-daily/lines/hair-care/showcase/1.id.png"
+    },
+    "/brand/barber-daily/hair-care/showcase/2.png": {
+      "en": "/media/brands/barber-daily/lines/hair-care/showcase/2.en.png",
+      "id": "/media/brands/barber-daily/lines/hair-care/showcase/2.id.png"
+    },
+    "/brand/barber-daily/hair-care/showcase/3.png": {
+      "en": "/media/brands/barber-daily/lines/hair-care/showcase/3.en.png",
+      "id": "/media/brands/barber-daily/lines/hair-care/showcase/3.id.png"
+    },
+    "/brand/barber-daily/hair-care/showcase/4.png": {
+      "en": "/media/brands/barber-daily/lines/hair-care/showcase/4.en.png",
+      "id": "/media/brands/barber-daily/lines/hair-care/showcase/4.id.png"
+    },
+    "/brand/barber-daily/hair-care/showcase/5.png": {
+      "en": "/media/brands/barber-daily/lines/hair-care/showcase/5.en.png",
+      "id": "/media/brands/barber-daily/lines/hair-care/showcase/5.id.png"
+    },
+    "/brand/barber-daily/hair-care/showcase/title.png": {
+      "en": "/media/brands/barber-daily/lines/hair-care/showcase/title.en.png",
+      "id": "/media/brands/barber-daily/lines/hair-care/showcase/title.id.png"
+    },
+    "/brand/barber-daily/hero/1.png": "/media/brands/barber-daily/hero/1.png",
+    "/brand/barber-daily/hero/2.png": "/media/brands/barber-daily/hero/2.png",
+    "/brand/barber-daily/hero/3.png": "/media/brands/barber-daily/hero/3.png",
+    "/brand/barber-daily/hero/wordmark.png": "/media/brands/barber-daily/hero/wordmark.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-01.png": "/media/brands/barber-daily/product-lineup/products-01.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-02.png": "/media/brands/barber-daily/product-lineup/products-02.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-03.png": "/media/brands/barber-daily/product-lineup/products-03.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-04.png": "/media/brands/barber-daily/product-lineup/products-04.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-05.png": "/media/brands/barber-daily/product-lineup/products-05.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-06.png": "/media/brands/barber-daily/product-lineup/products-06.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-07.png": "/media/brands/barber-daily/product-lineup/products-07.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-08.png": "/media/brands/barber-daily/product-lineup/products-08.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-09.png": "/media/brands/barber-daily/product-lineup/products-09.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-10.png": "/media/brands/barber-daily/product-lineup/products-10.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-11.png": "/media/brands/barber-daily/product-lineup/products-11.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-12.png": "/media/brands/barber-daily/product-lineup/products-12.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-13.png": "/media/brands/barber-daily/product-lineup/products-13.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-14.png": "/media/brands/barber-daily/product-lineup/products-14.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-15.png": "/media/brands/barber-daily/product-lineup/products-15.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-16.png": "/media/brands/barber-daily/product-lineup/products-16.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-17.png": "/media/brands/barber-daily/product-lineup/products-17.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-18.png": "/media/brands/barber-daily/product-lineup/products-18.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-19.png": "/media/brands/barber-daily/product-lineup/products-19.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-20.png": "/media/brands/barber-daily/product-lineup/products-20.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-21.png": "/media/brands/barber-daily/product-lineup/products-21.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-22.png": "/media/brands/barber-daily/product-lineup/products-22.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-23.png": "/media/brands/barber-daily/product-lineup/products-23.png",
+    "/brand/barber-daily/product-lineup/PRODUCTS-24.png": "/media/brands/barber-daily/product-lineup/products-24.png",
+    "/brand/barber-daily/showcase/1-1.png": "/media/brands/barber-daily/showcase/1-1.png",
+    "/brand/barber-daily/showcase/1-2.png": {
+      "en": "/media/brands/barber-daily/showcase/1-2.en.png",
+      "id": "/media/brands/barber-daily/showcase/1-2.id.png"
+    },
+    "/brand/barber-daily/showcase/2-1.png": "/media/brands/barber-daily/showcase/2-1.png",
+    "/brand/barber-daily/showcase/2-2.png": {
+      "en": "/media/brands/barber-daily/showcase/2-2.en.png",
+      "id": "/media/brands/barber-daily/showcase/2-2.id.png"
+    },
+    "/brand/barber-daily/showcase/3-1.png": "/media/brands/barber-daily/showcase/3-1.png",
+    "/brand/barber-daily/showcase/3-2.png": {
+      "en": "/media/brands/barber-daily/showcase/3-2.en.png",
+      "id": "/media/brands/barber-daily/showcase/3-2.id.png"
+    },
+    "/brand/barber-daily/showcase/4-1.png": "/media/brands/barber-daily/showcase/4-1.png",
+    "/brand/barber-daily/showcase/4-2.png": {
+      "en": "/media/brands/barber-daily/showcase/4-2.en.png",
+      "id": "/media/brands/barber-daily/showcase/4-2.id.png"
+    },
+    "/brand/barber-daily/showcase/title.png": {
+      "en": "/media/brands/barber-daily/showcase/title.en.png",
+      "id": "/media/brands/barber-daily/showcase/title.id.png"
+    },
+    "/brand/barber-daily/skin-care/hero/1.png": "/media/brands/barber-daily/lines/skin-care/hero/1.png",
+    "/brand/barber-daily/skin-care/hero/2.png": "/media/brands/barber-daily/lines/skin-care/hero/2.png",
+    "/brand/barber-daily/skin-care/hero/3.png": "/media/brands/barber-daily/lines/skin-care/hero/3.png",
+    "/brand/barber-daily/skin-care/hero/wordmark.png": "/media/brands/barber-daily/lines/skin-care/hero/wordmark.png",
+    "/brand/barber-daily/skin-care/showcase/1.png": {
+      "en": "/media/brands/barber-daily/lines/skin-care/showcase/1.en.png",
+      "id": "/media/brands/barber-daily/lines/skin-care/showcase/1.id.png"
+    },
+    "/brand/barber-daily/skin-care/showcase/2.png": {
+      "en": "/media/brands/barber-daily/lines/skin-care/showcase/2.en.png",
+      "id": "/media/brands/barber-daily/lines/skin-care/showcase/2.id.png"
+    },
+    "/brand/barber-daily/skin-care/showcase/3.png": {
+      "en": "/media/brands/barber-daily/lines/skin-care/showcase/3.en.png",
+      "id": "/media/brands/barber-daily/lines/skin-care/showcase/3.id.png"
+    },
+    "/brand/barber-daily/skin-care/showcase/4.png": {
+      "en": "/media/brands/barber-daily/lines/skin-care/showcase/4.en.png",
+      "id": "/media/brands/barber-daily/lines/skin-care/showcase/4.id.png"
+    },
+    "/brand/barber-daily/skin-care/showcase/title.png": {
+      "en": "/media/brands/barber-daily/lines/skin-care/showcase/title.en.png",
+      "id": "/media/brands/barber-daily/lines/skin-care/showcase/title.id.png"
+    },
+    "/brand/barber-daily/tools/hero/1.png": "/media/brands/barber-daily/lines/tools/hero/1.png",
+    "/brand/barber-daily/tools/hero/wordmark.png": "/media/brands/barber-daily/lines/tools/hero/wordmark.png",
+    "/brand/barber-daily/tools/showcase/title.png": {
+      "en": "/media/brands/barber-daily/lines/tools/showcase/title.en.png",
+      "id": "/media/brands/barber-daily/lines/tools/showcase/title.id.png"
+    },
+    "/brand/concept-ultimax/about/1.png": "/media/brands/concept-ultimax/about/1.png",
+    "/brand/concept-ultimax/about/2.png": "/media/brands/concept-ultimax/about/2.png",
+    "/brand/concept-ultimax/about/3.png": "/media/brands/concept-ultimax/about/3.png",
+    "/brand/concept-ultimax/bleaching-powder/hero/1.png": "/media/brands/concept-ultimax/lines/bleaching-powder/hero/1.png",
+    "/brand/concept-ultimax/bleaching-powder/hero/wordmark.png": "/media/brands/concept-ultimax/lines/bleaching-powder/hero/wordmark.png",
+    "/brand/concept-ultimax/bleaching-powder/showcase/1.png": {
+      "en": "/media/brands/concept-ultimax/lines/bleaching-powder/showcase/1.en.png",
+      "id": "/media/brands/concept-ultimax/lines/bleaching-powder/showcase/1.id.png"
+    },
+    "/brand/concept-ultimax/bleaching-powder/showcase/title.png": "/media/brands/concept-ultimax/lines/bleaching-powder/showcase/title.png",
+    "/brand/concept-ultimax/color-tube/hero/1.png": "/media/brands/concept-ultimax/lines/color-tube/hero/1.png",
+    "/brand/concept-ultimax/color-tube/hero/wordmark.png": "/media/brands/concept-ultimax/lines/color-tube/hero/wordmark.png",
+    "/brand/concept-ultimax/color-tube/showcase/1.png": "/media/brands/concept-ultimax/lines/color-tube/showcase/1.png",
+    "/brand/concept-ultimax/color-tube/showcase/10.png": "/media/brands/concept-ultimax/lines/color-tube/showcase/10.png",
+    "/brand/concept-ultimax/color-tube/showcase/11.png": "/media/brands/concept-ultimax/lines/color-tube/showcase/11.png",
+    "/brand/concept-ultimax/color-tube/showcase/12.png": "/media/brands/concept-ultimax/lines/color-tube/showcase/12.png",
+    "/brand/concept-ultimax/color-tube/showcase/2.png": "/media/brands/concept-ultimax/lines/color-tube/showcase/2.png",
+    "/brand/concept-ultimax/color-tube/showcase/3.png": "/media/brands/concept-ultimax/lines/color-tube/showcase/3.png",
+    "/brand/concept-ultimax/color-tube/showcase/4.png": "/media/brands/concept-ultimax/lines/color-tube/showcase/4.png",
+    "/brand/concept-ultimax/color-tube/showcase/5.png": "/media/brands/concept-ultimax/lines/color-tube/showcase/5.png",
+    "/brand/concept-ultimax/color-tube/showcase/6.png": "/media/brands/concept-ultimax/lines/color-tube/showcase/6.png",
+    "/brand/concept-ultimax/color-tube/showcase/7.png": "/media/brands/concept-ultimax/lines/color-tube/showcase/7.png",
+    "/brand/concept-ultimax/color-tube/showcase/8.png": "/media/brands/concept-ultimax/lines/color-tube/showcase/8.png",
+    "/brand/concept-ultimax/color-tube/showcase/9.png": "/media/brands/concept-ultimax/lines/color-tube/showcase/9.png",
+    "/brand/concept-ultimax/color-tube/showcase/title.png": {
+      "en": "/media/brands/concept-ultimax/lines/color-tube/showcase/title.en.png",
+      "id": "/media/brands/concept-ultimax/lines/color-tube/showcase/title.id.png"
+    },
+    "/brand/concept-ultimax/cream-developer/hero/1.png": "/media/brands/concept-ultimax/lines/cream-developer/hero/1.png",
+    "/brand/concept-ultimax/cream-developer/hero/wordmark.png": "/media/brands/concept-ultimax/lines/cream-developer/hero/wordmark.png",
+    "/brand/concept-ultimax/cream-developer/showcase/1.png": "/media/brands/concept-ultimax/lines/cream-developer/showcase/1.png",
+    "/brand/concept-ultimax/cream-developer/showcase/2.png": "/media/brands/concept-ultimax/lines/cream-developer/showcase/2.png",
+    "/brand/concept-ultimax/cream-developer/showcase/3.png": "/media/brands/concept-ultimax/lines/cream-developer/showcase/3.png",
+    "/brand/concept-ultimax/cream-developer/showcase/4.png": "/media/brands/concept-ultimax/lines/cream-developer/showcase/4.png",
+    "/brand/concept-ultimax/cream-developer/showcase/5.png": {
+      "en": "/media/brands/concept-ultimax/lines/cream-developer/showcase/5.en.png",
+      "id": "/media/brands/concept-ultimax/lines/cream-developer/showcase/5.id.png"
+    },
+    "/brand/concept-ultimax/cream-developer/showcase/title.png": {
+      "en": "/media/brands/concept-ultimax/lines/cream-developer/showcase/title.en.png",
+      "id": "/media/brands/concept-ultimax/lines/cream-developer/showcase/title.id.png"
+    },
+    "/brand/concept-ultimax/hero/1.png": "/media/brands/concept-ultimax/hero/1.png",
+    "/brand/concept-ultimax/hero/2.png": "/media/brands/concept-ultimax/hero/2.png",
+    "/brand/concept-ultimax/hero/wordmark.png": "/media/brands/concept-ultimax/hero/wordmark.png",
+    "/brand/concept-ultimax/product-lineup/activator-1000ml.png": "/media/brands/concept-ultimax/product-lineup/activator-1000ml.png",
+    "/brand/concept-ultimax/product-lineup/activator-135ml.png": "/media/brands/concept-ultimax/product-lineup/activator-135ml.png",
+    "/brand/concept-ultimax/product-lineup/bleaching-powder-250gr.png": "/media/brands/concept-ultimax/product-lineup/bleaching-powder-250gr.png",
+    "/brand/concept-ultimax/product-lineup/bleaching-powder-500gr.png": "/media/brands/concept-ultimax/product-lineup/bleaching-powder-500gr.png",
+    "/brand/concept-ultimax/product-lineup/color-tube-90gr.png": "/media/brands/concept-ultimax/product-lineup/color-tube-90gr.png",
+    "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-10-vol.png": "/media/brands/concept-ultimax/product-lineup/cream-developer-1000ml-10-vol.png",
+    "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-20-vol.png": "/media/brands/concept-ultimax/product-lineup/cream-developer-1000ml-20-vol.png",
+    "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-30-vol.png": "/media/brands/concept-ultimax/product-lineup/cream-developer-1000ml-30-vol.png",
+    "/brand/concept-ultimax/product-lineup/cream-developer-1000ml-40-vol.png": "/media/brands/concept-ultimax/product-lineup/cream-developer-1000ml-40-vol.png",
+    "/brand/concept-ultimax/product-lineup/cream-developer-135ml-10-vol.png": "/media/brands/concept-ultimax/product-lineup/cream-developer-135ml-10-vol.png",
+    "/brand/concept-ultimax/product-lineup/cream-developer-135ml-20-vol.png": "/media/brands/concept-ultimax/product-lineup/cream-developer-135ml-20-vol.png",
+    "/brand/concept-ultimax/product-lineup/cream-developer-135ml-30-vol.png": "/media/brands/concept-ultimax/product-lineup/cream-developer-135ml-30-vol.png",
+    "/brand/concept-ultimax/product-lineup/cream-developer-135ml-40-vol.png": "/media/brands/concept-ultimax/product-lineup/cream-developer-135ml-40-vol.png",
+    "/brand/concept-ultimax/showcase/1-1.png": "/media/brands/concept-ultimax/showcase/1-1.png",
+    "/brand/concept-ultimax/showcase/1-2.png": {
+      "en": "/media/brands/concept-ultimax/showcase/1-2.en.png",
+      "id": "/media/brands/concept-ultimax/showcase/1-2.id.png"
+    },
+    "/brand/concept-ultimax/showcase/2-1.png": "/media/brands/concept-ultimax/showcase/2-1.png",
+    "/brand/concept-ultimax/showcase/2-2.png": {
+      "en": "/media/brands/concept-ultimax/showcase/2-2.en.png",
+      "id": "/media/brands/concept-ultimax/showcase/2-2.id.png"
+    },
+    "/brand/concept-ultimax/showcase/3-1.png": "/media/brands/concept-ultimax/showcase/3-1.png",
+    "/brand/concept-ultimax/showcase/3-2.png": {
+      "en": "/media/brands/concept-ultimax/showcase/3-2.en.png",
+      "id": "/media/brands/concept-ultimax/showcase/3-2.id.png"
+    },
+    "/brand/concept-ultimax/showcase/title.png": {
+      "en": "/media/brands/concept-ultimax/showcase/title.en.png",
+      "id": "/media/brands/concept-ultimax/showcase/title.id.png"
+    },
+    "/brand/finest/about/1.png": "/media/brands/finest/about/1.png",
+    "/brand/finest/about/2.png": "/media/brands/finest/about/2.png",
+    "/brand/finest/about/3.png": "/media/brands/finest/about/3.png",
+    "/brand/finest/finest-toothpaste/hero/1.png": "/media/brands/finest/lines/finest-toothpaste/hero/1.png",
+    "/brand/finest/finest-toothpaste/hero/2.png": "/media/brands/finest/lines/finest-toothpaste/hero/2.png",
+    "/brand/finest/finest-toothpaste/showcase/1-1.png": "/media/brands/finest/lines/finest-toothpaste/showcase/1-1.png",
+    "/brand/finest/finest-toothpaste/showcase/1-2.png": {
+      "en": "/media/brands/finest/lines/finest-toothpaste/showcase/1-2.en.png",
+      "id": "/media/brands/finest/lines/finest-toothpaste/showcase/1-2.id.png"
+    },
+    "/brand/finest/finest-toothpaste/showcase/2-1.png": "/media/brands/finest/lines/finest-toothpaste/showcase/2-1.png",
+    "/brand/finest/finest-toothpaste/showcase/2-2.png": {
+      "en": "/media/brands/finest/lines/finest-toothpaste/showcase/2-2.en.png",
+      "id": "/media/brands/finest/lines/finest-toothpaste/showcase/2-2.id.png"
+    },
+    "/brand/finest/finest-toothpaste/showcase/title.png": "/media/brands/finest/lines/finest-toothpaste/showcase/title.png",
+    "/brand/finest/hero/1.png": "/media/brands/finest/hero/1.png",
+    "/brand/finest/hero/2.png": "/media/brands/finest/hero/2.png",
+    "/brand/finest/hero/wordmark.png": "/media/brands/finest/hero/wordmark.png",
+    "/brand/finest/product-lineup/toothpaste-light-lemon-90g.png": "/media/brands/finest/product-lineup/toothpaste-light-lemon-90g.png",
+    "/brand/finest/product-lineup/toothpaste-soft-mint-90g.png": "/media/brands/finest/product-lineup/toothpaste-soft-mint-90g.png",
+    "/brand/finest/showcase/1-1.png": "/media/brands/finest/showcase/1-1.png",
+    "/brand/finest/showcase/1-2.png": {
+      "en": "/media/brands/finest/showcase/1-2.en.png",
+      "id": "/media/brands/finest/showcase/1-2.id.png"
+    },
+    "/brand/finest/showcase/title.png": {
+      "en": "/media/brands/finest/showcase/title.en.png",
+      "id": "/media/brands/finest/showcase/title.id.png"
+    },
+    "/brand/fitmeup/about/1.png": "/media/brands/fitmeup/about/1.png",
+    "/brand/fitmeup/about/2.png": "/media/brands/fitmeup/about/2.png",
+    "/brand/fitmeup/about/3.jpeg": "/media/brands/fitmeup/about/3.jpg",
+    "/brand/fitmeup/hero/1.png": "/media/brands/fitmeup/hero/1.png",
+    "/brand/fitmeup/hero/wordmark.png": "/media/brands/fitmeup/hero/wordmark.png",
+    "/brand/fitmeup/product-lineup/Packshot_Botol Relax_2025_REV.png": "/media/brands/fitmeup/product-lineup/packshot-botol-relax-2025-rev.png",
+    "/brand/fitmeup/showcase/1-1.png": "/media/brands/fitmeup/showcase/1-1.png",
+    "/brand/fitmeup/showcase/1-2.png": {
+      "en": "/media/brands/fitmeup/showcase/1-2.en.png",
+      "id": "/media/brands/fitmeup/showcase/1-2.id.png"
+    },
+    "/brand/fitmeup/showcase/title.png": {
+      "en": "/media/brands/fitmeup/showcase/title.en.png",
+      "id": "/media/brands/fitmeup/showcase/title.id.png"
+    },
+    "/brand/floaty/about/1.png": "/media/brands/floaty/about/1.png",
+    "/brand/floaty/about/2.png": "/media/brands/floaty/about/2.png",
+    "/brand/floaty/about/3.png": "/media/brands/floaty/about/3.png",
+    "/brand/floaty/hero/1.png": "/media/brands/floaty/hero/1.png",
+    "/brand/floaty/hero/wordmark.png": "/media/brands/floaty/hero/wordmark.png",
+    "/brand/floaty/product-lineup/original-16g.png": "/media/brands/floaty/product-lineup/original-16g.png",
+    "/brand/floaty/product-lineup/original-60g.png": "/media/brands/floaty/product-lineup/original-60g.png",
+    "/brand/floaty/product-lineup/terserah-60g.png": "/media/brands/floaty/product-lineup/terserah-60g.png",
+    "/brand/floaty/showcase/1-1.png": "/media/brands/floaty/showcase/1-1.png",
+    "/brand/floaty/showcase/1-2.png": "/media/brands/floaty/showcase/1-2.png",
+    "/brand/floaty/showcase/2-1.png": "/media/brands/floaty/showcase/2-1.png",
+    "/brand/floaty/showcase/2-2.png": "/media/brands/floaty/showcase/2-2.png",
+    "/brand/floaty/showcase/3-1.png": "/media/brands/floaty/showcase/3-1.png",
+    "/brand/floaty/showcase/3-2.png": "/media/brands/floaty/showcase/3-2.png",
+    "/brand/floaty/showcase/4-1.png": "/media/brands/floaty/showcase/4-1.png",
+    "/brand/floaty/showcase/4-2.png": "/media/brands/floaty/showcase/4-2.png",
+    "/brand/floaty/showcase/title.png": "/media/brands/floaty/showcase/title.png",
+    "/brand/hair-energy/about/1.png": "/media/brands/hair-energy/about/1.png",
+    "/brand/hair-energy/about/2.png": "/media/brands/hair-energy/about/2.png",
+    "/brand/hair-energy/about/3.png": "/media/brands/hair-energy/about/3.png",
+    "/brand/hair-energy/creambath/hero/1.png": "/media/brands/hair-energy/lines/creambath/hero/1.png",
+    "/brand/hair-energy/creambath/hero/2.png": "/media/brands/hair-energy/lines/creambath/hero/2.png",
+    "/brand/hair-energy/creambath/hero/wordmark.png": "/media/brands/hair-energy/lines/creambath/hero/wordmark.png",
+    "/brand/hair-energy/creambath/showcase/1.png": {
+      "en": "/media/brands/hair-energy/lines/creambath/showcase/1.en.png",
+      "id": "/media/brands/hair-energy/lines/creambath/showcase/1.id.png"
+    },
+    "/brand/hair-energy/creambath/showcase/2.png": {
+      "en": "/media/brands/hair-energy/lines/creambath/showcase/2.en.png",
+      "id": "/media/brands/hair-energy/lines/creambath/showcase/2.id.png"
+    },
+    "/brand/hair-energy/creambath/showcase/3.png": {
+      "en": "/media/brands/hair-energy/lines/creambath/showcase/3.en.png",
+      "id": "/media/brands/hair-energy/lines/creambath/showcase/3.id.png"
+    },
+    "/brand/hair-energy/creambath/showcase/4.png": {
+      "en": "/media/brands/hair-energy/lines/creambath/showcase/4.en.png",
+      "id": "/media/brands/hair-energy/lines/creambath/showcase/4.id.png"
+    },
+    "/brand/hair-energy/creambath/showcase/5.png": {
+      "en": "/media/brands/hair-energy/lines/creambath/showcase/5.en.png",
+      "id": "/media/brands/hair-energy/lines/creambath/showcase/5.id.png"
+    },
+    "/brand/hair-energy/creambath/showcase/title.png": {
+      "en": "/media/brands/hair-energy/lines/creambath/showcase/title.en.png",
+      "id": "/media/brands/hair-energy/lines/creambath/showcase/title.id.png"
+    },
+    "/brand/hair-energy/hero/1.png": "/media/brands/hair-energy/hero/1.png",
+    "/brand/hair-energy/hero/2.png": "/media/brands/hair-energy/hero/2.png",
+    "/brand/hair-energy/hero/3.png": "/media/brands/hair-energy/hero/3.png",
+    "/brand/hair-energy/hero/wordmark.png": "/media/brands/hair-energy/hero/wordmark.png",
+    "/brand/hair-energy/product-lineup/creambath-aloe-melon-500ml.png": "/media/brands/hair-energy/product-lineup/creambath-aloe-melon-500ml.png",
+    "/brand/hair-energy/product-lineup/creambath-ginseng-500ml.png": "/media/brands/hair-energy/product-lineup/creambath-ginseng-500ml.png",
+    "/brand/hair-energy/product-lineup/creambath-kiwi-500ml.png": "/media/brands/hair-energy/product-lineup/creambath-kiwi-500ml.png",
+    "/brand/hair-energy/product-lineup/creambath-olive-500ml.png": "/media/brands/hair-energy/product-lineup/creambath-olive-500ml.png",
+    "/brand/hair-energy/product-lineup/creambath-royal-jelly-500ml.png": "/media/brands/hair-energy/product-lineup/creambath-royal-jelly-500ml.png",
+    "/brand/hair-energy/product-lineup/scentsations-amber-wood-100ml.png": "/media/brands/hair-energy/product-lineup/scentsations-amber-wood-100ml.png",
+    "/brand/hair-energy/product-lineup/scentsations-blue-coast-100ml.png": "/media/brands/hair-energy/product-lineup/scentsations-blue-coast-100ml.png",
+    "/brand/hair-energy/product-lineup/scentsations-cherry-blossoms-100ml.png": "/media/brands/hair-energy/product-lineup/scentsations-cherry-blossoms-100ml.png",
+    "/brand/hair-energy/product-lineup/scentsations-emerald-crush-100ml.png": "/media/brands/hair-energy/product-lineup/scentsations-emerald-crush-100ml.png",
+    "/brand/hair-energy/product-lineup/scentsations-fresh-bouquet-100ml.png": "/media/brands/hair-energy/product-lineup/scentsations-fresh-bouquet-100ml.png",
+    "/brand/hair-energy/product-lineup/scentsations-morning-dew-100ml.png": "/media/brands/hair-energy/product-lineup/scentsations-morning-dew-100ml.png",
+    "/brand/hair-energy/product-lineup/scentsations-ocean-breeze-100ml.png": "/media/brands/hair-energy/product-lineup/scentsations-ocean-breeze-100ml.png",
+    "/brand/hair-energy/product-lineup/scentsations-white-musk-100ml.png": "/media/brands/hair-energy/product-lineup/scentsations-white-musk-100ml.png",
+    "/brand/hair-energy/product-lineup/shampoo-active-menthol-170ml.png": "/media/brands/hair-energy/product-lineup/shampoo-active-menthol-170ml.png",
+    "/brand/hair-energy/product-lineup/shampoo-aloe-melon-170ml.png": "/media/brands/hair-energy/product-lineup/shampoo-aloe-melon-170ml.png",
+    "/brand/hair-energy/product-lineup/shampoo-citrus-tea-170ml.png": "/media/brands/hair-energy/product-lineup/shampoo-citrus-tea-170ml.png",
+    "/brand/hair-energy/product-lineup/shampoo-kiwi-170ml.png": "/media/brands/hair-energy/product-lineup/shampoo-kiwi-170ml.png",
+    "/brand/hair-energy/product-lineup/shampoo-olive-170ml.png": "/media/brands/hair-energy/product-lineup/shampoo-olive-170ml.png",
+    "/brand/hair-energy/product-lineup/shampoo-royal-jelly-170ml.png": "/media/brands/hair-energy/product-lineup/shampoo-royal-jelly-170ml.png",
+    "/brand/hair-energy/product-lineup/vitaglitz-aloe-melon-6x1ml.png": "/media/brands/hair-energy/product-lineup/vitaglitz-aloe-melon-6x1ml.png",
+    "/brand/hair-energy/product-lineup/vitaglitz-kiwi-6x1ml.png": "/media/brands/hair-energy/product-lineup/vitaglitz-kiwi-6x1ml.png",
+    "/brand/hair-energy/product-lineup/vitaglitz-royal-jelly-6x1ml.png": "/media/brands/hair-energy/product-lineup/vitaglitz-royal-jelly-6x1ml.png",
+    "/brand/hair-energy/scentsations/hero/1.png": "/media/brands/hair-energy/lines/scentsations/hero/1.png",
+    "/brand/hair-energy/scentsations/hero/2.png": "/media/brands/hair-energy/lines/scentsations/hero/2.png",
+    "/brand/hair-energy/scentsations/hero/wordmark.png": "/media/brands/hair-energy/lines/scentsations/hero/wordmark.png",
+    "/brand/hair-energy/scentsations/showcase/1.png": {
+      "en": "/media/brands/hair-energy/lines/scentsations/showcase/1.en.png",
+      "id": "/media/brands/hair-energy/lines/scentsations/showcase/1.id.png"
+    },
+    "/brand/hair-energy/scentsations/showcase/2.png": "/media/brands/hair-energy/lines/scentsations/showcase/2.png",
+    "/brand/hair-energy/scentsations/showcase/3.png": "/media/brands/hair-energy/lines/scentsations/showcase/3.png",
+    "/brand/hair-energy/scentsations/showcase/4.png": "/media/brands/hair-energy/lines/scentsations/showcase/4.png",
+    "/brand/hair-energy/scentsations/showcase/5.png": "/media/brands/hair-energy/lines/scentsations/showcase/5.png",
+    "/brand/hair-energy/scentsations/showcase/6.png": "/media/brands/hair-energy/lines/scentsations/showcase/6.png",
+    "/brand/hair-energy/scentsations/showcase/7.png": "/media/brands/hair-energy/lines/scentsations/showcase/7.png",
+    "/brand/hair-energy/scentsations/showcase/8.png": "/media/brands/hair-energy/lines/scentsations/showcase/8.png",
+    "/brand/hair-energy/scentsations/showcase/9.png": "/media/brands/hair-energy/lines/scentsations/showcase/9.png",
+    "/brand/hair-energy/shampoo/hero/1.png": "/media/brands/hair-energy/lines/shampoo/hero/1.png",
+    "/brand/hair-energy/shampoo/hero/2.png": "/media/brands/hair-energy/lines/shampoo/hero/2.png",
+    "/brand/hair-energy/shampoo/hero/wordmark.png": "/media/brands/hair-energy/lines/shampoo/hero/wordmark.png",
+    "/brand/hair-energy/shampoo/showcase/1.png": {
+      "en": "/media/brands/hair-energy/lines/shampoo/showcase/1.en.png",
+      "id": "/media/brands/hair-energy/lines/shampoo/showcase/1.id.png"
+    },
+    "/brand/hair-energy/shampoo/showcase/2.png": {
+      "en": "/media/brands/hair-energy/lines/shampoo/showcase/2.en.png",
+      "id": "/media/brands/hair-energy/lines/shampoo/showcase/2.id.png"
+    },
+    "/brand/hair-energy/shampoo/showcase/3.png": {
+      "en": "/media/brands/hair-energy/lines/shampoo/showcase/3.en.png",
+      "id": "/media/brands/hair-energy/lines/shampoo/showcase/3.id.png"
+    },
+    "/brand/hair-energy/shampoo/showcase/4.png": {
+      "en": "/media/brands/hair-energy/lines/shampoo/showcase/4.en.png",
+      "id": "/media/brands/hair-energy/lines/shampoo/showcase/4.id.png"
+    },
+    "/brand/hair-energy/shampoo/showcase/5.png": {
+      "en": "/media/brands/hair-energy/lines/shampoo/showcase/5.en.png",
+      "id": "/media/brands/hair-energy/lines/shampoo/showcase/5.id.png"
+    },
+    "/brand/hair-energy/shampoo/showcase/6.png": {
+      "en": "/media/brands/hair-energy/lines/shampoo/showcase/6.en.png",
+      "id": "/media/brands/hair-energy/lines/shampoo/showcase/6.id.png"
+    },
+    "/brand/hair-energy/shampoo/showcase/7.png": {
+      "en": "/media/brands/hair-energy/lines/shampoo/showcase/7.en.png",
+      "id": "/media/brands/hair-energy/lines/shampoo/showcase/7.id.png"
+    },
+    "/brand/hair-energy/showcase/1-1.png": "/media/brands/hair-energy/showcase/1-1.png",
+    "/brand/hair-energy/showcase/1-2.png": {
+      "en": "/media/brands/hair-energy/showcase/1-2.en.png",
+      "id": "/media/brands/hair-energy/showcase/1-2.id.png"
+    },
+    "/brand/hair-energy/showcase/2-1.png": "/media/brands/hair-energy/showcase/2-1.png",
+    "/brand/hair-energy/showcase/2-2.png": {
+      "en": "/media/brands/hair-energy/showcase/2-2.en.png",
+      "id": "/media/brands/hair-energy/showcase/2-2.id.png"
+    },
+    "/brand/hair-energy/showcase/3-1.png": "/media/brands/hair-energy/showcase/3-1.png",
+    "/brand/hair-energy/showcase/3-2.png": {
+      "en": "/media/brands/hair-energy/showcase/3-2.en.png",
+      "id": "/media/brands/hair-energy/showcase/3-2.id.png"
+    },
+    "/brand/hair-energy/showcase/4-1.png": "/media/brands/hair-energy/showcase/4-1.png",
+    "/brand/hair-energy/showcase/4-2.png": {
+      "en": "/media/brands/hair-energy/showcase/4-2.en.png",
+      "id": "/media/brands/hair-energy/showcase/4-2.id.png"
+    },
+    "/brand/hair-energy/showcase/title.png": {
+      "en": "/media/brands/hair-energy/showcase/title.en.png",
+      "id": "/media/brands/hair-energy/showcase/title.id.png"
+    },
+    "/brand/hair-energy/vitaglitz/hero/1.png": "/media/brands/hair-energy/lines/vitaglitz/hero/1.png",
+    "/brand/hair-energy/vitaglitz/hero/2.png": "/media/brands/hair-energy/lines/vitaglitz/hero/2.png",
+    "/brand/hair-energy/vitaglitz/hero/wordmark.png": "/media/brands/hair-energy/lines/vitaglitz/hero/wordmark.png",
+    "/brand/hair-energy/vitaglitz/showcase/1.png": {
+      "en": "/media/brands/hair-energy/lines/vitaglitz/showcase/1.en.png",
+      "id": "/media/brands/hair-energy/lines/vitaglitz/showcase/1.id.png"
+    },
+    "/brand/hair-energy/vitaglitz/showcase/2.png": {
+      "en": "/media/brands/hair-energy/lines/vitaglitz/showcase/2.en.png",
+      "id": "/media/brands/hair-energy/lines/vitaglitz/showcase/2.id.png"
+    },
+    "/brand/hair-energy/vitaglitz/showcase/3.png": {
+      "en": "/media/brands/hair-energy/lines/vitaglitz/showcase/3.en.png",
+      "id": "/media/brands/hair-energy/lines/vitaglitz/showcase/3.id.png"
+    },
+    "/brand/hair-energy/vitaglitz/showcase/4.png": {
+      "en": "/media/brands/hair-energy/lines/vitaglitz/showcase/4.en.png",
+      "id": "/media/brands/hair-energy/lines/vitaglitz/showcase/4.id.png"
+    },
+    "/brand/honey-dew/about/1.png": "/media/brands/honey-dew/about/1.png",
+    "/brand/honey-dew/about/2.png": "/media/brands/honey-dew/about/2.png",
+    "/brand/honey-dew/about/3.png": {
+      "en": "/media/brands/honey-dew/about/3.en.png",
+      "id": "/media/brands/honey-dew/about/3.id.png"
+    },
+    "/brand/honey-dew/hair-mask/hero/1.png": "/media/brands/honey-dew/lines/hair-mask/hero/1.png",
+    "/brand/honey-dew/hair-mask/hero/wordmark.png": "/media/brands/honey-dew/lines/hair-mask/hero/wordmark.png",
+    "/brand/honey-dew/hair-mask/showcase/title.png": {
+      "en": "/media/brands/honey-dew/lines/hair-mask/showcase/title.en.png",
+      "id": "/media/brands/honey-dew/lines/hair-mask/showcase/title.id.png"
+    },
+    "/brand/honey-dew/hair-serum/hero/wordmark.png": "/media/brands/honey-dew/lines/hair-serum/hero/wordmark.png",
+    "/brand/honey-dew/hair-serum/showcase/1.png": {
+      "en": "/media/brands/honey-dew/lines/hair-serum/showcase/1.en.png",
+      "id": "/media/brands/honey-dew/lines/hair-serum/showcase/1.id.png"
+    },
+    "/brand/honey-dew/hair-serum/showcase/2.png": {
+      "en": "/media/brands/honey-dew/lines/hair-serum/showcase/2.en.png",
+      "id": "/media/brands/honey-dew/lines/hair-serum/showcase/2.id.png"
+    },
+    "/brand/honey-dew/hair-serum/showcase/title.png": {
+      "en": "/media/brands/honey-dew/lines/hair-serum/showcase/title.en.png",
+      "id": "/media/brands/honey-dew/lines/hair-serum/showcase/title.id.png"
+    },
+    "/brand/honey-dew/hero/1.png": "/media/brands/honey-dew/hero/1.png",
+    "/brand/honey-dew/hero/2.png": "/media/brands/honey-dew/hero/2.png",
+    "/brand/honey-dew/hero/3.png": "/media/brands/honey-dew/hero/3.png",
+    "/brand/honey-dew/hero/wordmark.png": "/media/brands/honey-dew/hero/wordmark.png",
+    "/brand/honey-dew/product-lineup/PRODUCTS-01.png": "/media/brands/honey-dew/product-lineup/products-01.png",
+    "/brand/honey-dew/product-lineup/PRODUCTS-02.png": "/media/brands/honey-dew/product-lineup/products-02.png",
+    "/brand/honey-dew/product-lineup/PRODUCTS-03.png": "/media/brands/honey-dew/product-lineup/products-03.png",
+    "/brand/honey-dew/product-lineup/PRODUCTS-04.png": "/media/brands/honey-dew/product-lineup/products-04.png",
+    "/brand/honey-dew/shampoo/hero/1.png": "/media/brands/honey-dew/lines/shampoo/hero/1.png",
+    "/brand/honey-dew/shampoo/hero/wordmark.png": "/media/brands/honey-dew/lines/shampoo/hero/wordmark.png",
+    "/brand/honey-dew/shampoo/showcase/title.png": {
+      "en": "/media/brands/honey-dew/lines/shampoo/showcase/title.en.png",
+      "id": "/media/brands/honey-dew/lines/shampoo/showcase/title.id.png"
+    },
+    "/brand/honey-dew/showcase/1-1.png": "/media/brands/honey-dew/showcase/1-1.png",
+    "/brand/honey-dew/showcase/1-2.png": {
+      "en": "/media/brands/honey-dew/showcase/1-2.en.png",
+      "id": "/media/brands/honey-dew/showcase/1-2.id.png"
+    },
+    "/brand/honey-dew/showcase/2-1.png": "/media/brands/honey-dew/showcase/2-1.png",
+    "/brand/honey-dew/showcase/2-2.png": {
+      "en": "/media/brands/honey-dew/showcase/2-2.en.png",
+      "id": "/media/brands/honey-dew/showcase/2-2.id.png"
+    },
+    "/brand/honey-dew/showcase/3-1.png": "/media/brands/honey-dew/showcase/3-1.png",
+    "/brand/honey-dew/showcase/3-2.png": {
+      "en": "/media/brands/honey-dew/showcase/3-2.en.png",
+      "id": "/media/brands/honey-dew/showcase/3-2.id.png"
+    },
+    "/brand/honey-dew/showcase/title.png": {
+      "en": "/media/brands/honey-dew/showcase/title.en.png",
+      "id": "/media/brands/honey-dew/showcase/title.id.png"
+    },
+    "/brand/hydroprisma/hero/1.png": "/media/brands/hydroprisma/hero/1.png",
+    "/brand/hydroprisma/hero/2.png": "/media/brands/hydroprisma/hero/2.png",
+    "/brand/hydroprisma/hero/3.png": "/media/brands/hydroprisma/hero/3.png",
+    "/brand/hydroprisma/hero/wordmark.png": "/media/brands/hydroprisma/hero/wordmark.png",
+    "/brand/hydroprisma/medium/hero/1.png": "/media/brands/hydroprisma/lines/medium/hero/1.png",
+    "/brand/hydroprisma/medium/hero/wordmark.png": "/media/brands/hydroprisma/lines/medium/hero/wordmark.png",
+    "/brand/hydroprisma/medium/showcase/1.png": "/media/brands/hydroprisma/lines/medium/showcase/1.png",
+    "/brand/hydroprisma/medium/showcase/2.png": "/media/brands/hydroprisma/lines/medium/showcase/2.png",
+    "/brand/hydroprisma/medium/showcase/3.png": "/media/brands/hydroprisma/lines/medium/showcase/3.png",
+    "/brand/hydroprisma/medium/showcase/title.png": {
+      "en": "/media/brands/hydroprisma/lines/medium/showcase/title.en.png",
+      "id": "/media/brands/hydroprisma/lines/medium/showcase/title.id.png"
+    },
+    "/brand/hydroprisma/mild/hero/1.png": "/media/brands/hydroprisma/lines/mild/hero/1.png",
+    "/brand/hydroprisma/mild/hero/wordmark.png": "/media/brands/hydroprisma/lines/mild/hero/wordmark.png",
+    "/brand/hydroprisma/mild/showcase/1.png": "/media/brands/hydroprisma/lines/mild/showcase/1.png",
+    "/brand/hydroprisma/mild/showcase/2.png": "/media/brands/hydroprisma/lines/mild/showcase/2.png",
+    "/brand/hydroprisma/mild/showcase/3.png": "/media/brands/hydroprisma/lines/mild/showcase/3.png",
+    "/brand/hydroprisma/mild/showcase/title.png": {
+      "en": "/media/brands/hydroprisma/lines/mild/showcase/title.en.png",
+      "id": "/media/brands/hydroprisma/lines/mild/showcase/title.id.png"
+    },
+    "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 1 500mL Jar Image 15102019 Medium.png": "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-step-1-500ml-jar-image-15102019-medium.png",
+    "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 1 500mL Jar Image 15102019 Mild.png": "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-step-1-500ml-jar-image-15102019-mild.png",
+    "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 1 500mL Jar Image 15102019 Strong.png": "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-step-1-500ml-jar-image-15102019-strong.png",
+    "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 2 Bottle Image 15102019 Liquid.png": "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-step-2-bottle-image-15102019-liquid.png",
+    "/brand/hydroprisma/product-lineup/RBS HydroPrisma Straightening Cream 500ml Pouch Imagery 23042019 MEDIUM.png": "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-straightening-cream-500ml-pouch-imagery-23042019-medium.png",
+    "/brand/hydroprisma/product-lineup/RBS HydroPrisma Straightening Cream 500ml Pouch Imagery 23042019 MILD.png": "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-straightening-cream-500ml-pouch-imagery-23042019-mild.png",
+    "/brand/hydroprisma/product-lineup/RBS HydroPrisma Straightening Cream 500ml Pouch Imagery 23042019 STRONG.png": "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-straightening-cream-500ml-pouch-imagery-23042019-strong.png",
+    "/brand/hydroprisma/showcase/1-1.png": "/media/brands/hydroprisma/showcase/1-1.png",
+    "/brand/hydroprisma/showcase/1-2.png": {
+      "en": "/media/brands/hydroprisma/showcase/1-2.en.png",
+      "id": "/media/brands/hydroprisma/showcase/1-2.id.png"
+    },
+    "/brand/hydroprisma/showcase/2-1.png": "/media/brands/hydroprisma/showcase/2-1.png",
+    "/brand/hydroprisma/showcase/2-2.png": {
+      "en": "/media/brands/hydroprisma/showcase/2-2.en.png",
+      "id": "/media/brands/hydroprisma/showcase/2-2.id.png"
+    },
+    "/brand/hydroprisma/showcase/3-1.png": "/media/brands/hydroprisma/showcase/3-1.png",
+    "/brand/hydroprisma/showcase/3-2.png": {
+      "en": "/media/brands/hydroprisma/showcase/3-2.en.png",
+      "id": "/media/brands/hydroprisma/showcase/3-2.id.png"
+    },
+    "/brand/hydroprisma/showcase/Website_Asset 39.png": {
+      "id": "/media/brands/hydroprisma/showcase/website-asset-39.id.png"
+    },
+    "/brand/hydroprisma/showcase/title.png": {
+      "en": "/media/brands/hydroprisma/showcase/title.en.png",
+      "id": "/media/brands/hydroprisma/showcase/title.id.png"
+    },
+    "/brand/hydroprisma/strong/hero/1.png": "/media/brands/hydroprisma/lines/strong/hero/1.png",
+    "/brand/hydroprisma/strong/hero/wordmark.png": "/media/brands/hydroprisma/lines/strong/hero/wordmark.png",
+    "/brand/hydroprisma/strong/showcase/1.png": "/media/brands/hydroprisma/lines/strong/showcase/1.png",
+    "/brand/hydroprisma/strong/showcase/2.png": "/media/brands/hydroprisma/lines/strong/showcase/2.png",
+    "/brand/hydroprisma/strong/showcase/3.png": "/media/brands/hydroprisma/lines/strong/showcase/3.png",
+    "/brand/hydroprisma/strong/showcase/title.png": "/media/brands/hydroprisma/lines/strong/showcase/title.png",
+    "/brand/inoskin/about/1.png": "/media/brands/inoskin/about/1.png",
+    "/brand/inoskin/about/2.png": "/media/brands/inoskin/about/2.png",
+    "/brand/inoskin/about/3.png": "/media/brands/inoskin/about/3.png",
+    "/brand/inoskin/hero/1.png": "/media/brands/inoskin/hero/1.png",
+    "/brand/inoskin/hero/2.png": "/media/brands/inoskin/hero/2.png",
+    "/brand/inoskin/hero/3.png": "/media/brands/inoskin/hero/3.png",
+    "/brand/inoskin/hero/wordmark.png": "/media/brands/inoskin/hero/wordmark.png",
+    "/brand/inoskin/product-lineup/collagen-firming-mask.png": "/media/brands/inoskin/product-lineup/collagen-firming-mask.png",
+    "/brand/inoskin/product-lineup/triple-power-cleanser.png": "/media/brands/inoskin/product-lineup/triple-power-cleanser.png",
+    "/brand/inoskin/product-lineup/young-and-bright-moisturizer.png": "/media/brands/inoskin/product-lineup/young-and-bright-moisturizer.png",
+    "/brand/inoskin/product-lineup/young-and-bright-serum.png": "/media/brands/inoskin/product-lineup/young-and-bright-serum.png",
+    "/brand/inoskin/product-lineup/young-and-bright-toner.png": "/media/brands/inoskin/product-lineup/young-and-bright-toner.png",
+    "/brand/inoskin/showcase/1-1.png": "/media/brands/inoskin/showcase/1-1.png",
+    "/brand/inoskin/showcase/1-2.png": "/media/brands/inoskin/showcase/1-2.png",
+    "/brand/inoskin/showcase/1-3.png": "/media/brands/inoskin/showcase/1-3.png",
+    "/brand/inoskin/showcase/1-4.png": {
+      "en": "/media/brands/inoskin/showcase/1-4.en.png",
+      "id": "/media/brands/inoskin/showcase/1-4.id.png"
+    },
+    "/brand/inoskin/showcase/1-cluster.png": "/media/brands/inoskin/showcase/1-cluster.png",
+    "/brand/inoskin/showcase/title.png": {
+      "en": "/media/brands/inoskin/showcase/title.en.png",
+      "id": "/media/brands/inoskin/showcase/title.id.png"
+    },
+    "/brand/inoskin/young-and-bright/hero/1.png": "/media/brands/inoskin/lines/young-and-bright/hero/1.png",
+    "/brand/inoskin/young-and-bright/hero/2.png": "/media/brands/inoskin/lines/young-and-bright/hero/2.png",
+    "/brand/inoskin/young-and-bright/hero/3.png": "/media/brands/inoskin/lines/young-and-bright/hero/3.png",
+    "/brand/inoskin/young-and-bright/showcase/1.png": {
+      "en": "/media/brands/inoskin/lines/young-and-bright/showcase/1.en.png",
+      "id": "/media/brands/inoskin/lines/young-and-bright/showcase/1.id.png"
+    },
+    "/brand/inoskin/young-and-bright/showcase/2.png": {
+      "en": "/media/brands/inoskin/lines/young-and-bright/showcase/2.en.png",
+      "id": "/media/brands/inoskin/lines/young-and-bright/showcase/2.id.png"
+    },
+    "/brand/inoskin/young-and-bright/showcase/3.png": {
+      "en": "/media/brands/inoskin/lines/young-and-bright/showcase/3.en.png",
+      "id": "/media/brands/inoskin/lines/young-and-bright/showcase/3.id.png"
+    },
+    "/brand/inoskin/young-and-bright/showcase/4.png": {
+      "en": "/media/brands/inoskin/lines/young-and-bright/showcase/4.en.png",
+      "id": "/media/brands/inoskin/lines/young-and-bright/showcase/4.id.png"
+    },
+    "/brand/inoskin/young-and-bright/showcase/5.png": {
+      "en": "/media/brands/inoskin/lines/young-and-bright/showcase/5.en.png",
+      "id": "/media/brands/inoskin/lines/young-and-bright/showcase/5.id.png"
+    },
+    "/brand/inoskin/young-and-bright/showcase/title.png": {
+      "en": "/media/brands/inoskin/lines/young-and-bright/showcase/title.en.png",
+      "id": "/media/brands/inoskin/lines/young-and-bright/showcase/title.id.png"
+    },
+    "/brand/lou/about/1.png": "/media/brands/lou/about/1.png",
+    "/brand/lou/about/2.png": "/media/brands/lou/about/2.png",
+    "/brand/lou/about/3.png": "/media/brands/lou/about/3.png",
+    "/brand/lou/hero/1.png": "/media/brands/lou/hero/1.png",
+    "/brand/lou/hero/2.png": "/media/brands/lou/hero/2.png",
+    "/brand/lou/hero/3.png": "/media/brands/lou/hero/3.png",
+    "/brand/lou/hero/wordmark.png": "/media/brands/lou/hero/wordmark.png",
+    "/brand/lou/product-lineup/dont-cry-moisturizing-hair-and-body-wash-250ml.png": "/media/brands/lou/product-lineup/dont-cry-moisturizing-hair-and-body-wash-250ml.png",
+    "/brand/lou/product-lineup/grow-more-nourishing-hair-lotion-100ml.png": "/media/brands/lou/product-lineup/grow-more-nourishing-hair-lotion-100ml.png",
+    "/brand/lou/product-lineup/rest-easy-gentle-calming-cream-50ml.png": "/media/brands/lou/product-lineup/rest-easy-gentle-calming-cream-50ml.png",
+    "/brand/lou/showcase/1-1.png": "/media/brands/lou/showcase/1-1.png",
+    "/brand/lou/showcase/1-2.png": {
+      "en": "/media/brands/lou/showcase/1-2.en.png",
+      "id": "/media/brands/lou/showcase/1-2.id.png"
+    },
+    "/brand/lou/showcase/2-1.png": "/media/brands/lou/showcase/2-1.png",
+    "/brand/lou/showcase/2-2.png": {
+      "en": "/media/brands/lou/showcase/2-2.en.png",
+      "id": "/media/brands/lou/showcase/2-2.id.png"
+    },
+    "/brand/lou/showcase/3-1.png": "/media/brands/lou/showcase/3-1.png",
+    "/brand/lou/showcase/3-2.png": {
+      "en": "/media/brands/lou/showcase/3-2.en.png",
+      "id": "/media/brands/lou/showcase/3-2.id.png"
+    },
+    "/brand/lou/showcase/title.png": {
+      "en": "/media/brands/lou/showcase/title.en.png",
+      "id": "/media/brands/lou/showcase/title.id.png"
+    },
+    "/brand/makeit/about/1.png": "/media/brands/make-it/about/1.png",
+    "/brand/makeit/about/2.png": "/media/brands/make-it/about/2.png",
+    "/brand/makeit/about/3.png": "/media/brands/make-it/about/3.png",
+    "/brand/makeit/hero/1.png": "/media/brands/make-it/hero/1.png",
+    "/brand/makeit/hero/2.png": "/media/brands/make-it/hero/2.png",
+    "/brand/makeit/hero/3.png": "/media/brands/make-it/hero/3.png",
+    "/brand/makeit/hero/wordmark.png": "/media/brands/make-it/hero/wordmark.png",
+    "/brand/makeit/makeit-extrait-de-parfum/hero/1.png": "/media/brands/make-it/lines/makeit-extrait-de-parfum/hero/1.png",
+    "/brand/makeit/makeit-extrait-de-parfum/hero/2.png": "/media/brands/make-it/lines/makeit-extrait-de-parfum/hero/2.png",
+    "/brand/makeit/makeit-extrait-de-parfum/hero/wordmark.png": "/media/brands/make-it/lines/makeit-extrait-de-parfum/hero/wordmark.png",
+    "/brand/makeit/makeit-extrait-de-parfum/showcase/1.png": "/media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/1.png",
+    "/brand/makeit/makeit-extrait-de-parfum/showcase/2.png": "/media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/2.png",
+    "/brand/makeit/makeit-extrait-de-parfum/showcase/3.png": "/media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/3.png",
+    "/brand/makeit/makeit-extrait-de-parfum/showcase/4.png": "/media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/4.png",
+    "/brand/makeit/makeit-extrait-de-parfum/showcase/5.png": "/media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/5.png",
+    "/brand/makeit/makeit-extrait-de-parfum/showcase/title.png": "/media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/title.png",
+    "/brand/makeit/makeit-extrait-dintense/hero/1.png": "/media/brands/make-it/lines/makeit-extrait-dintense/hero/1.png",
+    "/brand/makeit/makeit-extrait-dintense/hero/wordmark.png": "/media/brands/make-it/lines/makeit-extrait-dintense/hero/wordmark.png",
+    "/brand/makeit/makeit-extrait-dintense/showcase/title.png": {
+      "en": "/media/brands/make-it/lines/makeit-extrait-dintense/showcase/title.en.png",
+      "id": "/media/brands/make-it/lines/makeit-extrait-dintense/showcase/title.id.png"
+    },
+    "/brand/makeit/makeit-fragrance-enhancing-primer/hero/1.png": "/media/brands/make-it/lines/makeit-fragrance-enhancing-primer/hero/1.png",
+    "/brand/makeit/makeit-fragrance-enhancing-primer/hero/wordmark.png": "/media/brands/make-it/lines/makeit-fragrance-enhancing-primer/hero/wordmark.png",
+    "/brand/makeit/makeit-fragrance-enhancing-primer/showcase/title.png": {
+      "en": "/media/brands/make-it/lines/makeit-fragrance-enhancing-primer/showcase/title.en.png",
+      "id": "/media/brands/make-it/lines/makeit-fragrance-enhancing-primer/showcase/title.id.png"
+    },
+    "/brand/makeit/product-lineup/bold-venture.png": "/media/brands/make-it/product-lineup/bold-venture.png",
+    "/brand/makeit/product-lineup/dream-chaser.png": "/media/brands/make-it/product-lineup/dream-chaser.png",
+    "/brand/makeit/product-lineup/essence-sanctuary.png": "/media/brands/make-it/product-lineup/essence-sanctuary.png",
+    "/brand/makeit/product-lineup/keep-in-touch.png": "/media/brands/make-it/product-lineup/keep-in-touch.png",
+    "/brand/makeit/product-lineup/mango-glace.png": "/media/brands/make-it/product-lineup/mango-glace.png",
+    "/brand/makeit/product-lineup/social-butterfly.png": "/media/brands/make-it/product-lineup/social-butterfly.png",
+    "/brand/makeit/product-lineup/weekday-hustle.png": "/media/brands/make-it/product-lineup/weekday-hustle.png",
+    "/brand/makeit/showcase/1-1.png": "/media/brands/make-it/showcase/1-1.png",
+    "/brand/makeit/showcase/1-2.png": {
+      "en": "/media/brands/make-it/showcase/1-2.en.png",
+      "id": "/media/brands/make-it/showcase/1-2.id.png"
+    },
+    "/brand/makeit/showcase/2-1.png": "/media/brands/make-it/showcase/2-1.png",
+    "/brand/makeit/showcase/2-2.png": {
+      "en": "/media/brands/make-it/showcase/2-2.en.png",
+      "id": "/media/brands/make-it/showcase/2-2.id.png"
+    },
+    "/brand/makeit/showcase/3-1.png": "/media/brands/make-it/showcase/3-1.png",
+    "/brand/makeit/showcase/3-2.png": {
+      "en": "/media/brands/make-it/showcase/3-2.en.png",
+      "id": "/media/brands/make-it/showcase/3-2.id.png"
+    },
+    "/brand/makeit/showcase/title.png": {
+      "en": "/media/brands/make-it/showcase/title.en.png",
+      "id": "/media/brands/make-it/showcase/title.id.png"
+    },
+    "/brand/mk3/about/1.png": "/media/brands/mk3/about/1.png",
+    "/brand/mk3/about/2.png": "/media/brands/mk3/about/2.png",
+    "/brand/mk3/color-revive/hero/1.png": "/media/brands/mk3/lines/color-revive/hero/1.png",
+    "/brand/mk3/color-revive/hero/wordmark.png": "/media/brands/mk3/lines/color-revive/hero/wordmark.png",
+    "/brand/mk3/color-revive/showcase/1.png": {
+      "en": "/media/brands/mk3/lines/color-revive/showcase/1.en.png",
+      "id": "/media/brands/mk3/lines/color-revive/showcase/1.id.png"
+    },
+    "/brand/mk3/color-revive/showcase/2.png": {
+      "en": "/media/brands/mk3/lines/color-revive/showcase/2.en.png",
+      "id": "/media/brands/mk3/lines/color-revive/showcase/2.id.png"
+    },
+    "/brand/mk3/color-revive/showcase/3.png": {
+      "en": "/media/brands/mk3/lines/color-revive/showcase/3.en.png",
+      "id": "/media/brands/mk3/lines/color-revive/showcase/3.id.png"
+    },
+    "/brand/mk3/color-revive/showcase/4.png": {
+      "en": "/media/brands/mk3/lines/color-revive/showcase/4.en.png",
+      "id": "/media/brands/mk3/lines/color-revive/showcase/4.id.png"
+    },
+    "/brand/mk3/color-revive/showcase/5.png": {
+      "en": "/media/brands/mk3/lines/color-revive/showcase/5.en.png",
+      "id": "/media/brands/mk3/lines/color-revive/showcase/5.id.png"
+    },
+    "/brand/mk3/color-revive/showcase/6.png": {
+      "en": "/media/brands/mk3/lines/color-revive/showcase/6.en.png",
+      "id": "/media/brands/mk3/lines/color-revive/showcase/6.id.png"
+    },
+    "/brand/mk3/color-revive/showcase/title.png": "/media/brands/mk3/lines/color-revive/showcase/title.png",
+    "/brand/mk3/damage-repair/hero/1.png": "/media/brands/mk3/lines/damage-repair/hero/1.png",
+    "/brand/mk3/damage-repair/hero/wordmark.png": "/media/brands/mk3/lines/damage-repair/hero/wordmark.png",
+    "/brand/mk3/damage-repair/showcase/1.png": {
+      "en": "/media/brands/mk3/lines/damage-repair/showcase/1.en.png",
+      "id": "/media/brands/mk3/lines/damage-repair/showcase/1.id.png"
+    },
+    "/brand/mk3/damage-repair/showcase/2.png": {
+      "en": "/media/brands/mk3/lines/damage-repair/showcase/2.en.png",
+      "id": "/media/brands/mk3/lines/damage-repair/showcase/2.id.png"
+    },
+    "/brand/mk3/damage-repair/showcase/3.png": {
+      "en": "/media/brands/mk3/lines/damage-repair/showcase/3.en.png",
+      "id": "/media/brands/mk3/lines/damage-repair/showcase/3.id.png"
+    },
+    "/brand/mk3/damage-repair/showcase/4.png": {
+      "en": "/media/brands/mk3/lines/damage-repair/showcase/4.en.png",
+      "id": "/media/brands/mk3/lines/damage-repair/showcase/4.id.png"
+    },
+    "/brand/mk3/damage-repair/showcase/5.png": {
+      "en": "/media/brands/mk3/lines/damage-repair/showcase/5.en.png",
+      "id": "/media/brands/mk3/lines/damage-repair/showcase/5.id.png"
+    },
+    "/brand/mk3/damage-repair/showcase/title.png": "/media/brands/mk3/lines/damage-repair/showcase/title.png",
+    "/brand/mk3/hero/1.png": "/media/brands/mk3/hero/1.png",
+    "/brand/mk3/hero/2.png": "/media/brands/mk3/hero/2.png",
+    "/brand/mk3/hero/3.png": "/media/brands/mk3/hero/3.png",
+    "/brand/mk3/hero/wordmark.png": "/media/brands/mk3/hero/wordmark.png",
+    "/brand/mk3/product-lineup/MK3 3D CONDI REPAIR REVIVE 1.png": "/media/brands/mk3/product-lineup/mk3-3d-condi-repair-revive-1.png",
+    "/brand/mk3/product-lineup/MK3 3D HAIR MASK 1.png": "/media/brands/mk3/product-lineup/mk3-3d-hair-mask-1.png",
+    "/brand/mk3/product-lineup/MK3 3D SCALP EXFO IJO BIRU 1.png": "/media/brands/mk3/product-lineup/mk3-3d-scalp-exfo-ijo-biru-1.png",
+    "/brand/mk3/product-lineup/MK3 3D SCALP SERUM BIRU 1.png": "/media/brands/mk3/product-lineup/mk3-3d-scalp-serum-biru-1.png",
+    "/brand/mk3/product-lineup/MK3 3D SCALP SERUM IJO 1.png": "/media/brands/mk3/product-lineup/mk3-3d-scalp-serum-ijo-1.png",
+    "/brand/mk3/product-lineup/MK3 3D SERUM 2.png": "/media/brands/mk3/product-lineup/mk3-3d-serum-2.png",
+    "/brand/mk3/product-lineup/MK3 3D SHAMPOO BIRU IJO 1.png": "/media/brands/mk3/product-lineup/mk3-3d-shampoo-biru-ijo-1.png",
+    "/brand/mk3/product-lineup/MK3 3D SHAMPOO COLOR REVIVE 1.png": "/media/brands/mk3/product-lineup/mk3-3d-shampoo-color-revive-1.png",
+    "/brand/mk3/product-lineup/MK3 3D SHAMPOO DAMAGE REPAIR 1.png": "/media/brands/mk3/product-lineup/mk3-3d-shampoo-damage-repair-1.png",
+    "/brand/mk3/product-lineup/MK3 3D SHAMPOO PURPLE 1.png": "/media/brands/mk3/product-lineup/mk3-3d-shampoo-purple-1.png",
+    "/brand/mk3/product-lineup/MK3 Leave in Hair Mask.png": "/media/brands/mk3/product-lineup/mk3-leave-in-hair-mask.png",
+    "/brand/mk3/scalp-care/hero/1.png": "/media/brands/mk3/lines/scalp-care/hero/1.png",
+    "/brand/mk3/scalp-care/hero/wordmark.png": "/media/brands/mk3/lines/scalp-care/hero/wordmark.png",
+    "/brand/mk3/scalp-care/showcase/1.png": {
+      "en": "/media/brands/mk3/lines/scalp-care/showcase/1.en.png",
+      "id": "/media/brands/mk3/lines/scalp-care/showcase/1.id.png"
+    },
+    "/brand/mk3/scalp-care/showcase/2.png": {
+      "en": "/media/brands/mk3/lines/scalp-care/showcase/2.en.png",
+      "id": "/media/brands/mk3/lines/scalp-care/showcase/2.id.png"
+    },
+    "/brand/mk3/scalp-care/showcase/3.png": {
+      "en": "/media/brands/mk3/lines/scalp-care/showcase/3.en.png",
+      "id": "/media/brands/mk3/lines/scalp-care/showcase/3.id.png"
+    },
+    "/brand/mk3/scalp-care/showcase/4.png": {
+      "en": "/media/brands/mk3/lines/scalp-care/showcase/4.en.png",
+      "id": "/media/brands/mk3/lines/scalp-care/showcase/4.id.png"
+    },
+    "/brand/mk3/scalp-care/showcase/title.png": "/media/brands/mk3/lines/scalp-care/showcase/title.png",
+    "/brand/mk3/showcase/1-1.png": "/media/brands/mk3/showcase/1-1.png",
+    "/brand/mk3/showcase/1-2.png": {
+      "en": "/media/brands/mk3/showcase/1-2.en.png",
+      "id": "/media/brands/mk3/showcase/1-2.id.png"
+    },
+    "/brand/mk3/showcase/2-1.png": "/media/brands/mk3/showcase/2-1.png",
+    "/brand/mk3/showcase/2-2.png": {
+      "en": "/media/brands/mk3/showcase/2-2.en.png",
+      "id": "/media/brands/mk3/showcase/2-2.id.png"
+    },
+    "/brand/mk3/showcase/3-1.png": "/media/brands/mk3/showcase/3-1.png",
+    "/brand/mk3/showcase/3-2.png": {
+      "en": "/media/brands/mk3/showcase/3-2.en.png",
+      "id": "/media/brands/mk3/showcase/3-2.id.png"
+    },
+    "/brand/mk3/showcase/title.png": {
+      "en": "/media/brands/mk3/showcase/title.en.png",
+      "id": "/media/brands/mk3/showcase/title.id.png"
+    },
+    "/brand/nestle-pure-life/about/1.png": "/media/brands/nestle-pure-life/about/1.png",
+    "/brand/nestle-pure-life/about/2.png": "/media/brands/nestle-pure-life/about/2.png",
+    "/brand/nestle-pure-life/about/3.png": "/media/brands/nestle-pure-life/about/3.png",
+    "/brand/nestle-pure-life/hero/1.png": "/media/brands/nestle-pure-life/hero/1.png",
+    "/brand/nestle-pure-life/hero/background.jpg": "/media/brands/nestle-pure-life/hero/background.jpg",
+    "/brand/nestle-pure-life/hero/wordmark.png": "/media/brands/nestle-pure-life/hero/wordmark.png",
+    "/brand/nestle-pure-life/product-lineup/1500ml.jpg": "/media/brands/nestle-pure-life/product-lineup/1500ml.jpg",
+    "/brand/nestle-pure-life/product-lineup/330ml.jpg": "/media/brands/nestle-pure-life/product-lineup/330ml.jpg",
+    "/brand/nestle-pure-life/product-lineup/600ml.jpg": "/media/brands/nestle-pure-life/product-lineup/600ml.jpg",
+    "/brand/nestle-pure-life/product-lineup/galon-15l.jpg": "/media/brands/nestle-pure-life/product-lineup/galon-15l.jpg",
+    "/brand/nestle-pure-life/showcase/1-1.png": "/media/brands/nestle-pure-life/showcase/1-1.png",
+    "/brand/nestle-pure-life/showcase/1-2.png": "/media/brands/nestle-pure-life/showcase/1-2.png",
+    "/brand/nestle-pure-life/showcase/2-1.png": "/media/brands/nestle-pure-life/showcase/2-1.png",
+    "/brand/nestle-pure-life/showcase/2-2.png": "/media/brands/nestle-pure-life/showcase/2-2.png",
+    "/brand/nestle-pure-life/showcase/3-1.png": "/media/brands/nestle-pure-life/showcase/3-1.png",
+    "/brand/nestle-pure-life/showcase/3-2.png": "/media/brands/nestle-pure-life/showcase/3-2.png",
+    "/brand/nestle-pure-life/showcase/4-1.png": "/media/brands/nestle-pure-life/showcase/4-1.png",
+    "/brand/nestle-pure-life/showcase/4-2.png": "/media/brands/nestle-pure-life/showcase/4-2.png",
+    "/brand/nestle-pure-life/showcase/title.png": {
+      "en": "/media/brands/nestle-pure-life/showcase/title.en.png",
+      "id": "/media/brands/nestle-pure-life/showcase/title.id.png"
+    },
+    "/brand/omoide/about/1.jpg": "/media/brands/omoide/about/1.jpg",
+    "/brand/omoide/about/2.jpg": "/media/brands/omoide/about/2.jpg",
+    "/brand/omoide/about/3.jpg": "/media/brands/omoide/about/3.jpg",
+    "/brand/omoide/hero/1.png": "/media/brands/omoide/hero/1.png",
+    "/brand/omoide/hero/bg.jpg": "/media/brands/omoide/hero/bg.jpg",
+    "/brand/omoide/hero/wordmark.png": "/media/brands/omoide/hero/wordmark.png",
+    "/brand/omoide/product-lineup/tsukune.png": "/media/brands/omoide/product-lineup/tsukune.png",
+    "/brand/omoide/showcase/1-1.png": "/media/brands/omoide/showcase/1-1.png",
+    "/brand/omoide/showcase/1-2.png": {
+      "en": "/media/brands/omoide/showcase/1-2.en.png",
+      "id": "/media/brands/omoide/showcase/1-2.id.png"
+    },
+    "/brand/omoide/showcase/title.png": {
+      "en": "/media/brands/omoide/showcase/title.en.png",
+      "id": "/media/brands/omoide/showcase/title.id.png"
+    },
+    "/brand/rebonding-system/about/1.png": "/media/brands/rebonding-system/about/1.png",
+    "/brand/rebonding-system/about/2.png": "/media/brands/rebonding-system/about/2.png",
+    "/brand/rebonding-system/about/3.png": "/media/brands/rebonding-system/about/3.png",
+    "/brand/rebonding-system/anti-resistant/hero/1.png": "/media/brands/rebonding-system/lines/anti-resistant/hero/1.png",
+    "/brand/rebonding-system/anti-resistant/hero/wordmark.png": "/media/brands/rebonding-system/lines/anti-resistant/hero/wordmark.png",
+    "/brand/rebonding-system/anti-resistant/showcase/title.png": "/media/brands/rebonding-system/lines/anti-resistant/showcase/title.png",
+    "/brand/rebonding-system/extremely-damaged/hero/1.png": "/media/brands/rebonding-system/lines/extremely-damaged/hero/1.png",
+    "/brand/rebonding-system/extremely-damaged/hero/wordmark.png": "/media/brands/rebonding-system/lines/extremely-damaged/hero/wordmark.png",
+    "/brand/rebonding-system/extremely-damaged/showcase/title.png": {
+      "en": "/media/brands/rebonding-system/lines/extremely-damaged/showcase/title.en.png",
+      "id": "/media/brands/rebonding-system/lines/extremely-damaged/showcase/title.id.png"
+    },
+    "/brand/rebonding-system/gold-edition/hero/1.png": "/media/brands/rebonding-system/lines/gold-edition/hero/1.png",
+    "/brand/rebonding-system/gold-edition/hero/wordmark.png": "/media/brands/rebonding-system/lines/gold-edition/hero/wordmark.png",
+    "/brand/rebonding-system/gold-edition/showcase/title.png": {
+      "en": "/media/brands/rebonding-system/lines/gold-edition/showcase/title.en.png",
+      "id": "/media/brands/rebonding-system/lines/gold-edition/showcase/title.id.png"
+    },
+    "/brand/rebonding-system/hero/1.png": "/media/brands/rebonding-system/hero/1.png",
+    "/brand/rebonding-system/hero/2.png": "/media/brands/rebonding-system/hero/2.png",
+    "/brand/rebonding-system/hero/3.png": "/media/brands/rebonding-system/hero/3.png",
+    "/brand/rebonding-system/hero/wordmark.png": "/media/brands/rebonding-system/hero/wordmark.png",
+    "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 AR.png": "/media/brands/rebonding-system/product-lineup/rbs-new-step-1-500ml-jar-imagery-20241111-ar.png",
+    "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 ED.png": "/media/brands/rebonding-system/product-lineup/rbs-new-step-1-500ml-jar-imagery-20241111-ed.png",
+    "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 GE.png": "/media/brands/rebonding-system/product-lineup/rbs-new-step-1-500ml-jar-imagery-20241111-ge.png",
+    "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 SG.png": "/media/brands/rebonding-system/product-lineup/rbs-new-step-1-500ml-jar-imagery-20241111-sg.png",
+    "/brand/rebonding-system/product-lineup/RBS New Step 2 500mL Bottle Imagery 20241111 (3).png": "/media/brands/rebonding-system/product-lineup/rbs-new-step-2-500ml-bottle-imagery-20241111-3.png",
+    "/brand/rebonding-system/showcase/1-1.png": "/media/brands/rebonding-system/showcase/1-1.png",
+    "/brand/rebonding-system/showcase/1-2.png": {
+      "en": "/media/brands/rebonding-system/showcase/1-2.en.png",
+      "id": "/media/brands/rebonding-system/showcase/1-2.id.png"
+    },
+    "/brand/rebonding-system/showcase/2-1.png": "/media/brands/rebonding-system/showcase/2-1.png",
+    "/brand/rebonding-system/showcase/2-2.png": {
+      "en": "/media/brands/rebonding-system/showcase/2-2.en.png",
+      "id": "/media/brands/rebonding-system/showcase/2-2.id.png"
+    },
+    "/brand/rebonding-system/showcase/3-1.png": "/media/brands/rebonding-system/showcase/3-1.png",
+    "/brand/rebonding-system/showcase/3-2.png": {
+      "en": "/media/brands/rebonding-system/showcase/3-2.en.png",
+      "id": "/media/brands/rebonding-system/showcase/3-2.id.png"
+    },
+    "/brand/rebonding-system/showcase/4-1.png": "/media/brands/rebonding-system/showcase/4-1.png",
+    "/brand/rebonding-system/showcase/4-2.png": {
+      "en": "/media/brands/rebonding-system/showcase/4-2.en.png",
+      "id": "/media/brands/rebonding-system/showcase/4-2.id.png"
+    },
+    "/brand/rebonding-system/showcase/title.png": {
+      "en": "/media/brands/rebonding-system/showcase/title.en.png",
+      "id": "/media/brands/rebonding-system/showcase/title.id.png"
+    },
+    "/brand/rebonding-system/super-gold/hero/1.png": "/media/brands/rebonding-system/lines/super-gold/hero/1.png",
+    "/brand/rebonding-system/super-gold/hero/wordmark.png": "/media/brands/rebonding-system/lines/super-gold/hero/wordmark.png",
+    "/brand/rebonding-system/super-gold/showcase/title.png": {
+      "en": "/media/brands/rebonding-system/lines/super-gold/showcase/title.en.png",
+      "id": "/media/brands/rebonding-system/lines/super-gold/showcase/title.id.png"
+    },
+    "/brand/salon-daily/about/1.png": "/media/brands/salon-daily/about/1.png",
+    "/brand/salon-daily/about/2.png": "/media/brands/salon-daily/about/2.png",
+    "/brand/salon-daily/about/3.png": "/media/brands/salon-daily/about/3.png",
+    "/brand/salon-daily/hero/1.png": "/media/brands/salon-daily/hero/1.png",
+    "/brand/salon-daily/hero/2.png": "/media/brands/salon-daily/hero/2.png",
+    "/brand/salon-daily/hero/3.png": "/media/brands/salon-daily/hero/3.png",
+    "/brand/salon-daily/hero/wordmark.png": "/media/brands/salon-daily/hero/wordmark.png",
+    "/brand/salon-daily/product-lineup/conditioner.png": "/media/brands/salon-daily/product-lineup/conditioner.png",
+    "/brand/salon-daily/product-lineup/creambath-200.png": "/media/brands/salon-daily/product-lineup/creambath-200.png",
+    "/brand/salon-daily/product-lineup/creambath-500.png": "/media/brands/salon-daily/product-lineup/creambath-500.png",
+    "/brand/salon-daily/product-lineup/hair-mask-200.png": "/media/brands/salon-daily/product-lineup/hair-mask-200.png",
+    "/brand/salon-daily/product-lineup/hair-mask-500.png": "/media/brands/salon-daily/product-lineup/hair-mask-500.png",
+    "/brand/salon-daily/product-lineup/hair-spray-extra-strong-hold.png": "/media/brands/salon-daily/product-lineup/hair-spray-extra-strong-hold.png",
+    "/brand/salon-daily/product-lineup/hair-spray-rock-solid-hold.png": "/media/brands/salon-daily/product-lineup/hair-spray-rock-solid-hold.png",
+    "/brand/salon-daily/product-lineup/hair-spray-strong-hold.png": "/media/brands/salon-daily/product-lineup/hair-spray-strong-hold.png",
+    "/brand/salon-daily/product-lineup/hair-tonic.png": "/media/brands/salon-daily/product-lineup/hair-tonic.png",
+    "/brand/salon-daily/product-lineup/keratin-hair-spray-non-aerosol.png": "/media/brands/salon-daily/product-lineup/keratin-hair-spray-non-aerosol.png",
+    "/brand/salon-daily/product-lineup/shampoo.png": "/media/brands/salon-daily/product-lineup/shampoo.png",
+    "/brand/salon-daily/product-lineup/styling-gel.png": "/media/brands/salon-daily/product-lineup/styling-gel.png",
+    "/brand/salon-daily/product-lineup/texturizing-mousse.png": "/media/brands/salon-daily/product-lineup/texturizing-mousse.png",
+    "/brand/salon-daily/showcase/1-1.png": "/media/brands/salon-daily/showcase/1-1.png",
+    "/brand/salon-daily/showcase/1-2.png": {
+      "en": "/media/brands/salon-daily/showcase/1-2.en.png",
+      "id": "/media/brands/salon-daily/showcase/1-2.id.png"
+    },
+    "/brand/salon-daily/showcase/2-1.png": "/media/brands/salon-daily/showcase/2-1.png",
+    "/brand/salon-daily/showcase/2-2.png": {
+      "en": "/media/brands/salon-daily/showcase/2-2.en.png",
+      "id": "/media/brands/salon-daily/showcase/2-2.id.png"
+    },
+    "/brand/salon-daily/showcase/title.png": "/media/brands/salon-daily/showcase/title.png",
+    "/brand/salon-daily/styling/hero/1.png": "/media/brands/salon-daily/lines/styling/hero/1.png",
+    "/brand/salon-daily/styling/hero/wordmark.png": "/media/brands/salon-daily/lines/styling/hero/wordmark.png",
+    "/brand/salon-daily/styling/showcase/1.png": {
+      "en": "/media/brands/salon-daily/lines/styling/showcase/1.en.png",
+      "id": "/media/brands/salon-daily/lines/styling/showcase/1.id.png"
+    },
+    "/brand/salon-daily/styling/showcase/2.png": {
+      "en": "/media/brands/salon-daily/lines/styling/showcase/2.en.png",
+      "id": "/media/brands/salon-daily/lines/styling/showcase/2.id.png"
+    },
+    "/brand/salon-daily/styling/showcase/3.png": {
+      "en": "/media/brands/salon-daily/lines/styling/showcase/3.en.png",
+      "id": "/media/brands/salon-daily/lines/styling/showcase/3.id.png"
+    },
+    "/brand/salon-daily/styling/showcase/4.png": {
+      "en": "/media/brands/salon-daily/lines/styling/showcase/4.en.png",
+      "id": "/media/brands/salon-daily/lines/styling/showcase/4.id.png"
+    },
+    "/brand/salon-daily/styling/showcase/5.png": {
+      "en": "/media/brands/salon-daily/lines/styling/showcase/5.en.png",
+      "id": "/media/brands/salon-daily/lines/styling/showcase/5.id.png"
+    },
+    "/brand/salon-daily/styling/showcase/title.png": {
+      "en": "/media/brands/salon-daily/lines/styling/showcase/title.en.png",
+      "id": "/media/brands/salon-daily/lines/styling/showcase/title.id.png"
+    },
+    "/brand/salon-daily/treatment/hero/1.png": "/media/brands/salon-daily/lines/treatment/hero/1.png",
+    "/brand/salon-daily/treatment/hero/wordmark.png": "/media/brands/salon-daily/lines/treatment/hero/wordmark.png",
+    "/brand/salon-daily/treatment/showcase/1.png": {
+      "en": "/media/brands/salon-daily/lines/treatment/showcase/1.en.png",
+      "id": "/media/brands/salon-daily/lines/treatment/showcase/1.id.png"
+    },
+    "/brand/salon-daily/treatment/showcase/2.png": {
+      "en": "/media/brands/salon-daily/lines/treatment/showcase/2.en.png",
+      "id": "/media/brands/salon-daily/lines/treatment/showcase/2.id.png"
+    },
+    "/brand/salon-daily/treatment/showcase/3.png": {
+      "en": "/media/brands/salon-daily/lines/treatment/showcase/3.en.png",
+      "id": "/media/brands/salon-daily/lines/treatment/showcase/3.id.png"
+    },
+    "/brand/salon-daily/treatment/showcase/4.png": {
+      "en": "/media/brands/salon-daily/lines/treatment/showcase/4.en.png",
+      "id": "/media/brands/salon-daily/lines/treatment/showcase/4.id.png"
+    },
+    "/brand/salon-daily/treatment/showcase/5.png": {
+      "en": "/media/brands/salon-daily/lines/treatment/showcase/5.en.png",
+      "id": "/media/brands/salon-daily/lines/treatment/showcase/5.id.png"
+    },
+    "/brand/salon-daily/treatment/showcase/title.png": {
+      "en": "/media/brands/salon-daily/lines/treatment/showcase/title.en.png",
+      "id": "/media/brands/salon-daily/lines/treatment/showcase/title.id.png"
+    },
+    "/brand/t1/about/1.png": "/media/brands/t1/about/1.png",
+    "/brand/t1/about/2.png": "/media/brands/t1/about/2.png",
+    "/brand/t1/about/3.png": "/media/brands/t1/about/3.png",
+    "/brand/t1/equalizer/hero/1.png": "/media/brands/t1/lines/equalizer/hero/1.png",
+    "/brand/t1/equalizer/hero/wordmark.png": "/media/brands/t1/lines/equalizer/hero/wordmark.png",
+    "/brand/t1/equalizer/showcase/1.png": "/media/brands/t1/lines/equalizer/showcase/1.png",
+    "/brand/t1/equalizer/showcase/2.png": "/media/brands/t1/lines/equalizer/showcase/2.png",
+    "/brand/t1/equalizer/showcase/title.png": {
+      "en": "/media/brands/t1/lines/equalizer/showcase/title.en.png",
+      "id": "/media/brands/t1/lines/equalizer/showcase/title.id.png"
+    },
+    "/brand/t1/hero/1.png": "/media/brands/t1/hero/1.png",
+    "/brand/t1/hero/2.png": "/media/brands/t1/hero/2.png",
+    "/brand/t1/hero/3.png": "/media/brands/t1/hero/3.png",
+    "/brand/t1/hero/wordmark.png": "/media/brands/t1/hero/wordmark.png",
+    "/brand/t1/indigo-blue/hero/1.png": "/media/brands/t1/lines/indigo-blue/hero/1.png",
+    "/brand/t1/indigo-blue/hero/wordmark.png": "/media/brands/t1/lines/indigo-blue/hero/wordmark.png",
+    "/brand/t1/indigo-blue/showcase/1.png": {
+      "en": "/media/brands/t1/lines/indigo-blue/showcase/1.en.png",
+      "id": "/media/brands/t1/lines/indigo-blue/showcase/1.id.png"
+    },
+    "/brand/t1/indigo-blue/showcase/2.png": {
+      "en": "/media/brands/t1/lines/indigo-blue/showcase/2.en.png",
+      "id": "/media/brands/t1/lines/indigo-blue/showcase/2.id.png"
+    },
+    "/brand/t1/indigo-blue/showcase/3.png": {
+      "en": "/media/brands/t1/lines/indigo-blue/showcase/3.en.png",
+      "id": "/media/brands/t1/lines/indigo-blue/showcase/3.id.png"
+    },
+    "/brand/t1/indigo-blue/showcase/title.png": {
+      "en": "/media/brands/t1/lines/indigo-blue/showcase/title.en.png",
+      "id": "/media/brands/t1/lines/indigo-blue/showcase/title.id.png"
+    },
+    "/brand/t1/micellar/hero/1.png": "/media/brands/t1/lines/micellar/hero/1.png",
+    "/brand/t1/micellar/hero/wordmark.png": "/media/brands/t1/lines/micellar/hero/wordmark.png",
+    "/brand/t1/micellar/showcase/1.png": "/media/brands/t1/lines/micellar/showcase/1.png",
+    "/brand/t1/micellar/showcase/2.png": "/media/brands/t1/lines/micellar/showcase/2.png",
+    "/brand/t1/micellar/showcase/title.png": {
+      "en": "/media/brands/t1/lines/micellar/showcase/title.en.png",
+      "id": "/media/brands/t1/lines/micellar/showcase/title.id.png"
+    },
+    "/brand/t1/product-lineup/equalizer-conditioner.png": "/media/brands/t1/product-lineup/equalizer-conditioner.png",
+    "/brand/t1/product-lineup/equalizer-shampoo.png": "/media/brands/t1/product-lineup/equalizer-shampoo.png",
+    "/brand/t1/product-lineup/indigo-blue-bright-body-lotion.png": "/media/brands/t1/product-lineup/indigo-blue-bright-body-lotion.png",
+    "/brand/t1/product-lineup/indigo-blue-bright-body-mask.png": "/media/brands/t1/product-lineup/indigo-blue-bright-body-mask.png",
+    "/brand/t1/product-lineup/indigo-blue-bright-body-wash.png": "/media/brands/t1/product-lineup/indigo-blue-bright-body-wash.png",
+    "/brand/t1/product-lineup/micellar-conditioner.png": "/media/brands/t1/product-lineup/micellar-conditioner.png",
+    "/brand/t1/product-lineup/micellar-shampoo.png": "/media/brands/t1/product-lineup/micellar-shampoo.png",
+    "/brand/t1/product-lineup/protein-cream-rosemary-oil-50ml.png": "/media/brands/t1/product-lineup/protein-cream-rosemary-oil-50ml.png",
+    "/brand/t1/product-lineup/scalp-hair-oil-rosemary-100ml.png": "/media/brands/t1/product-lineup/scalp-hair-oil-rosemary-100ml.png",
+    "/brand/t1/product-lineup/scalp-hair-oil-rosemary-40ml.png": "/media/brands/t1/product-lineup/scalp-hair-oil-rosemary-40ml.png",
+    "/brand/t1/rosemary-oil/hero/1.png": "/media/brands/t1/lines/rosemary-oil/hero/1.png",
+    "/brand/t1/rosemary-oil/hero/wordmark.png": "/media/brands/t1/lines/rosemary-oil/hero/wordmark.png",
+    "/brand/t1/rosemary-oil/showcase/1.png": {
+      "en": "/media/brands/t1/lines/rosemary-oil/showcase/1.en.png",
+      "id": "/media/brands/t1/lines/rosemary-oil/showcase/1.id.png"
+    },
+    "/brand/t1/rosemary-oil/showcase/2.png": {
+      "en": "/media/brands/t1/lines/rosemary-oil/showcase/2.en.png",
+      "id": "/media/brands/t1/lines/rosemary-oil/showcase/2.id.png"
+    },
+    "/brand/t1/rosemary-oil/showcase/title.png": {
+      "en": "/media/brands/t1/lines/rosemary-oil/showcase/title.en.png",
+      "id": "/media/brands/t1/lines/rosemary-oil/showcase/title.id.png"
+    },
+    "/brand/t1/showcase/1-1.png": "/media/brands/t1/showcase/1-1.png",
+    "/brand/t1/showcase/1-2.png": {
+      "en": "/media/brands/t1/showcase/1-2.en.png",
+      "id": "/media/brands/t1/showcase/1-2.id.png"
+    },
+    "/brand/t1/showcase/2-1.png": "/media/brands/t1/showcase/2-1.png",
+    "/brand/t1/showcase/2-2.png": {
+      "en": "/media/brands/t1/showcase/2-2.en.png",
+      "id": "/media/brands/t1/showcase/2-2.id.png"
+    },
+    "/brand/t1/showcase/3-1.png": "/media/brands/t1/showcase/3-1.png",
+    "/brand/t1/showcase/3-2.png": {
+      "en": "/media/brands/t1/showcase/3-2.en.png",
+      "id": "/media/brands/t1/showcase/3-2.id.png"
+    },
+    "/brand/t1/showcase/4-1.png": "/media/brands/t1/showcase/4-1.png",
+    "/brand/t1/showcase/4-2.png": {
+      "en": "/media/brands/t1/showcase/4-2.en.png",
+      "id": "/media/brands/t1/showcase/4-2.id.png"
+    },
+    "/brand/t1/showcase/title.png": {
+      "en": "/media/brands/t1/showcase/title.en.png",
+      "id": "/media/brands/t1/showcase/title.id.png"
+    },
+    "/brand/texture-experience/about/1.png": "/media/brands/texture-experience/about/1.png",
+    "/brand/texture-experience/about/2.png": "/media/brands/texture-experience/about/2.png",
+    "/brand/texture-experience/about/3.png": "/media/brands/texture-experience/about/3.png",
+    "/brand/texture-experience/black-chocolate/hero/1.png": "/media/brands/texture-experience/lines/black-chocolate/hero/1.png",
+    "/brand/texture-experience/black-chocolate/hero/wordmark.png": "/media/brands/texture-experience/lines/black-chocolate/hero/wordmark.png",
+    "/brand/texture-experience/black-chocolate/showcase/1.png": {
+      "en": "/media/brands/texture-experience/lines/black-chocolate/showcase/1.en.png",
+      "id": "/media/brands/texture-experience/lines/black-chocolate/showcase/1.id.png"
+    },
+    "/brand/texture-experience/black-chocolate/showcase/2.png": {
+      "en": "/media/brands/texture-experience/lines/black-chocolate/showcase/2.en.png",
+      "id": "/media/brands/texture-experience/lines/black-chocolate/showcase/2.id.png"
+    },
+    "/brand/texture-experience/black-chocolate/showcase/3.png": {
+      "en": "/media/brands/texture-experience/lines/black-chocolate/showcase/3.en.png",
+      "id": "/media/brands/texture-experience/lines/black-chocolate/showcase/3.id.png"
+    },
+    "/brand/texture-experience/black-chocolate/showcase/4.png": {
+      "en": "/media/brands/texture-experience/lines/black-chocolate/showcase/4.en.png",
+      "id": "/media/brands/texture-experience/lines/black-chocolate/showcase/4.id.png"
+    },
+    "/brand/texture-experience/black-chocolate/showcase/5.png": {
+      "en": "/media/brands/texture-experience/lines/black-chocolate/showcase/5.en.png",
+      "id": "/media/brands/texture-experience/lines/black-chocolate/showcase/5.id.png"
+    },
+    "/brand/texture-experience/black-chocolate/showcase/title.png": "/media/brands/texture-experience/lines/black-chocolate/showcase/title.png",
+    "/brand/texture-experience/green-tea-butter/hero/1.png": "/media/brands/texture-experience/lines/green-tea-butter/hero/1.png",
+    "/brand/texture-experience/green-tea-butter/hero/wordmark.png": "/media/brands/texture-experience/lines/green-tea-butter/hero/wordmark.png",
+    "/brand/texture-experience/green-tea-butter/showcase/1.png": {
+      "en": "/media/brands/texture-experience/lines/green-tea-butter/showcase/1.en.png",
+      "id": "/media/brands/texture-experience/lines/green-tea-butter/showcase/1.id.png"
+    },
+    "/brand/texture-experience/green-tea-butter/showcase/2.png": {
+      "en": "/media/brands/texture-experience/lines/green-tea-butter/showcase/2.en.png",
+      "id": "/media/brands/texture-experience/lines/green-tea-butter/showcase/2.id.png"
+    },
+    "/brand/texture-experience/green-tea-butter/showcase/3.png": {
+      "en": "/media/brands/texture-experience/lines/green-tea-butter/showcase/3.en.png",
+      "id": "/media/brands/texture-experience/lines/green-tea-butter/showcase/3.id.png"
+    },
+    "/brand/texture-experience/green-tea-butter/showcase/4.png": {
+      "en": "/media/brands/texture-experience/lines/green-tea-butter/showcase/4.en.png",
+      "id": "/media/brands/texture-experience/lines/green-tea-butter/showcase/4.id.png"
+    },
+    "/brand/texture-experience/green-tea-butter/showcase/title.png": "/media/brands/texture-experience/lines/green-tea-butter/showcase/title.png",
+    "/brand/texture-experience/hero/1.png": "/media/brands/texture-experience/hero/1.png",
+    "/brand/texture-experience/hero/2.png": "/media/brands/texture-experience/hero/2.png",
+    "/brand/texture-experience/hero/3.png": "/media/brands/texture-experience/hero/3.png",
+    "/brand/texture-experience/hero/wordmark.png": "/media/brands/texture-experience/hero/wordmark.png",
+    "/brand/texture-experience/mint-sorbet/hero/1.png": "/media/brands/texture-experience/lines/mint-sorbet/hero/1.png",
+    "/brand/texture-experience/mint-sorbet/hero/wordmark.png": "/media/brands/texture-experience/lines/mint-sorbet/hero/wordmark.png",
+    "/brand/texture-experience/mint-sorbet/showcase/1.png": {
+      "en": "/media/brands/texture-experience/lines/mint-sorbet/showcase/1.en.png",
+      "id": "/media/brands/texture-experience/lines/mint-sorbet/showcase/1.id.png"
+    },
+    "/brand/texture-experience/mint-sorbet/showcase/2.png": {
+      "en": "/media/brands/texture-experience/lines/mint-sorbet/showcase/2.en.png",
+      "id": "/media/brands/texture-experience/lines/mint-sorbet/showcase/2.id.png"
+    },
+    "/brand/texture-experience/mint-sorbet/showcase/3.png": {
+      "en": "/media/brands/texture-experience/lines/mint-sorbet/showcase/3.en.png",
+      "id": "/media/brands/texture-experience/lines/mint-sorbet/showcase/3.id.png"
+    },
+    "/brand/texture-experience/mint-sorbet/showcase/4.png": {
+      "en": "/media/brands/texture-experience/lines/mint-sorbet/showcase/4.en.png",
+      "id": "/media/brands/texture-experience/lines/mint-sorbet/showcase/4.id.png"
+    },
+    "/brand/texture-experience/mint-sorbet/showcase/title.png": "/media/brands/texture-experience/lines/mint-sorbet/showcase/title.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_1.png": "/media/brands/texture-experience/product-lineup/packshot-te-1.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_10.png": "/media/brands/texture-experience/product-lineup/packshot-te-10.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_11.png": "/media/brands/texture-experience/product-lineup/packshot-te-11.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_12.png": "/media/brands/texture-experience/product-lineup/packshot-te-12.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_13.png": "/media/brands/texture-experience/product-lineup/packshot-te-13.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_14.png": "/media/brands/texture-experience/product-lineup/packshot-te-14.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_15.png": "/media/brands/texture-experience/product-lineup/packshot-te-15.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_16.png": "/media/brands/texture-experience/product-lineup/packshot-te-16.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_17.png": "/media/brands/texture-experience/product-lineup/packshot-te-17.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_18.png": "/media/brands/texture-experience/product-lineup/packshot-te-18.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_19.png": "/media/brands/texture-experience/product-lineup/packshot-te-19.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_2.png": "/media/brands/texture-experience/product-lineup/packshot-te-2.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_20.png": "/media/brands/texture-experience/product-lineup/packshot-te-20.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_21.png": "/media/brands/texture-experience/product-lineup/packshot-te-21.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_22.png": "/media/brands/texture-experience/product-lineup/packshot-te-22.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_23.png": "/media/brands/texture-experience/product-lineup/packshot-te-23.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_24.png": "/media/brands/texture-experience/product-lineup/packshot-te-24.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_25.png": "/media/brands/texture-experience/product-lineup/packshot-te-25.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_26.png": "/media/brands/texture-experience/product-lineup/packshot-te-26.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_27.png": "/media/brands/texture-experience/product-lineup/packshot-te-27.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_28.png": "/media/brands/texture-experience/product-lineup/packshot-te-28.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_29.png": "/media/brands/texture-experience/product-lineup/packshot-te-29.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_3.png": "/media/brands/texture-experience/product-lineup/packshot-te-3.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_30.png": "/media/brands/texture-experience/product-lineup/packshot-te-30.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_31.png": "/media/brands/texture-experience/product-lineup/packshot-te-31.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_32.png": "/media/brands/texture-experience/product-lineup/packshot-te-32.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_33.png": "/media/brands/texture-experience/product-lineup/packshot-te-33.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_4.png": "/media/brands/texture-experience/product-lineup/packshot-te-4.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_5.png": "/media/brands/texture-experience/product-lineup/packshot-te-5.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_6.png": "/media/brands/texture-experience/product-lineup/packshot-te-6.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_7.png": "/media/brands/texture-experience/product-lineup/packshot-te-7.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_8.png": "/media/brands/texture-experience/product-lineup/packshot-te-8.png",
+    "/brand/texture-experience/product-lineup/Packshot TE_9.png": "/media/brands/texture-experience/product-lineup/packshot-te-9.png",
+    "/brand/texture-experience/showcase/1-1.png": "/media/brands/texture-experience/showcase/1-1.png",
+    "/brand/texture-experience/showcase/1-2.png": {
+      "en": "/media/brands/texture-experience/showcase/1-2.en.png",
+      "id": "/media/brands/texture-experience/showcase/1-2.id.png"
+    },
+    "/brand/texture-experience/showcase/2-1.png": "/media/brands/texture-experience/showcase/2-1.png",
+    "/brand/texture-experience/showcase/2-2.png": {
+      "en": "/media/brands/texture-experience/showcase/2-2.en.png",
+      "id": "/media/brands/texture-experience/showcase/2-2.id.png"
+    },
+    "/brand/texture-experience/showcase/3-1.png": "/media/brands/texture-experience/showcase/3-1.png",
+    "/brand/texture-experience/showcase/3-2.png": {
+      "en": "/media/brands/texture-experience/showcase/3-2.en.png",
+      "id": "/media/brands/texture-experience/showcase/3-2.id.png"
+    },
+    "/brand/texture-experience/showcase/4-1.png": "/media/brands/texture-experience/showcase/4-1.png",
+    "/brand/texture-experience/showcase/4-2.png": {
+      "en": "/media/brands/texture-experience/showcase/4-2.en.png",
+      "id": "/media/brands/texture-experience/showcase/4-2.id.png"
+    },
+    "/brand/texture-experience/showcase/5-1.png": "/media/brands/texture-experience/showcase/5-1.png",
+    "/brand/texture-experience/showcase/5-2.png": {
+      "en": "/media/brands/texture-experience/showcase/5-2.en.png",
+      "id": "/media/brands/texture-experience/showcase/5-2.id.png"
+    },
+    "/brand/texture-experience/showcase/title.png": {
+      "en": "/media/brands/texture-experience/showcase/title.en.png",
+      "id": "/media/brands/texture-experience/showcase/title.id.png"
+    },
+    "/brand/texture-experience/strawberry-yoghurt/hero/1.png": "/media/brands/texture-experience/lines/strawberry-yoghurt/hero/1.png",
+    "/brand/texture-experience/strawberry-yoghurt/hero/wordmark.png": "/media/brands/texture-experience/lines/strawberry-yoghurt/hero/wordmark.png",
+    "/brand/texture-experience/strawberry-yoghurt/showcase/1.png": {
+      "en": "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/1.en.png",
+      "id": "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/1.id.png"
+    },
+    "/brand/texture-experience/strawberry-yoghurt/showcase/2.png": {
+      "en": "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/2.en.png",
+      "id": "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/2.id.png"
+    },
+    "/brand/texture-experience/strawberry-yoghurt/showcase/3.png": {
+      "en": "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/3.en.png",
+      "id": "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/3.id.png"
+    },
+    "/brand/texture-experience/strawberry-yoghurt/showcase/4.png": {
+      "en": "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/4.en.png",
+      "id": "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/4.id.png"
+    },
+    "/brand/texture-experience/strawberry-yoghurt/showcase/5.png": {
+      "en": "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/5.en.png",
+      "id": "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/5.id.png"
+    },
+    "/brand/texture-experience/strawberry-yoghurt/showcase/title.png": "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/title.png",
+    "/brand/texture-experience/vanilla-milk/hero/1.png": "/media/brands/texture-experience/lines/vanilla-milk/hero/1.png",
+    "/brand/texture-experience/vanilla-milk/hero/wordmark.png": "/media/brands/texture-experience/lines/vanilla-milk/hero/wordmark.png",
+    "/brand/texture-experience/vanilla-milk/showcase/1.png": {
+      "en": "/media/brands/texture-experience/lines/vanilla-milk/showcase/1.en.png",
+      "id": "/media/brands/texture-experience/lines/vanilla-milk/showcase/1.id.png"
+    },
+    "/brand/texture-experience/vanilla-milk/showcase/2.png": {
+      "en": "/media/brands/texture-experience/lines/vanilla-milk/showcase/2.en.png",
+      "id": "/media/brands/texture-experience/lines/vanilla-milk/showcase/2.id.png"
+    },
+    "/brand/texture-experience/vanilla-milk/showcase/3.png": {
+      "en": "/media/brands/texture-experience/lines/vanilla-milk/showcase/3.en.png",
+      "id": "/media/brands/texture-experience/lines/vanilla-milk/showcase/3.id.png"
+    },
+    "/brand/texture-experience/vanilla-milk/showcase/4.png": {
+      "en": "/media/brands/texture-experience/lines/vanilla-milk/showcase/4.en.png",
+      "id": "/media/brands/texture-experience/lines/vanilla-milk/showcase/4.id.png"
+    },
+    "/brand/texture-experience/vanilla-milk/showcase/5.png": {
+      "en": "/media/brands/texture-experience/lines/vanilla-milk/showcase/5.en.png",
+      "id": "/media/brands/texture-experience/lines/vanilla-milk/showcase/5.id.png"
+    },
+    "/brand/texture-experience/vanilla-milk/showcase/title.png": "/media/brands/texture-experience/lines/vanilla-milk/showcase/title.png",
+    "/brand/vica/about/1.png": "/media/brands/vica/about/1.png",
+    "/brand/vica/about/2.png": "/media/brands/vica/about/2.png",
+    "/brand/vica/about/3.png": "/media/brands/vica/about/3.png",
+    "/brand/vica/hero/1.png": "/media/brands/vica/hero/1.png",
+    "/brand/vica/hero/wordmark.png": "/media/brands/vica/hero/wordmark.png",
+    "/brand/vica/product-lineup/vica-1010ml.png": "/media/brands/vica/product-lineup/vica-1010ml.png",
+    "/brand/vica/product-lineup/vica-1500ml.png": "/media/brands/vica/product-lineup/vica-1500ml.png",
+    "/brand/vica/product-lineup/vica-220ml.png": "/media/brands/vica/product-lineup/vica-220ml.png",
+    "/brand/vica/product-lineup/vica-330ml.png": "/media/brands/vica/product-lineup/vica-330ml.png",
+    "/brand/vica/product-lineup/vica-600ml.png": "/media/brands/vica/product-lineup/vica-600ml.png",
+    "/brand/vica/showcase/1-1.png": "/media/brands/vica/showcase/1-1.png",
+    "/brand/vica/showcase/1-2.png": "/media/brands/vica/showcase/1-2.png",
+    "/brand/vica/showcase/2-1.png": "/media/brands/vica/showcase/2-1.png",
+    "/brand/vica/showcase/2-2.png": "/media/brands/vica/showcase/2-2.png",
+    "/brand/vica/showcase/3-1.png": "/media/brands/vica/showcase/3-1.png",
+    "/brand/vica/showcase/3-2.png": "/media/brands/vica/showcase/3-2.png",
+    "/brand/vica/showcase/4-1.png": "/media/brands/vica/showcase/4-1.png",
+    "/brand/vica/showcase/4-2.png": "/media/brands/vica/showcase/4-2.png",
+    "/brand/vica/showcase/5-1.png": "/media/brands/vica/showcase/5-1.png",
+    "/brand/vica/showcase/5-2.png": "/media/brands/vica/showcase/5-2.png",
+    "/brand/vica/showcase/title.png": {
+      "en": "/media/brands/vica/showcase/title.en.png",
+      "id": "/media/brands/vica/showcase/title.id.png"
+    },
+    "/brand/wonhae/about/1.png": "/media/brands/wonhae/about/1.png",
+    "/brand/wonhae/about/2.png": "/media/brands/wonhae/about/2.png",
+    "/brand/wonhae/about/3.png": "/media/brands/wonhae/about/3.png",
+    "/brand/wonhae/hero/1.png": "/media/brands/wonhae/hero/1.png",
+    "/brand/wonhae/hero/wordmark-mobile.png": "/media/brands/wonhae/hero/wordmark-mobile.png",
+    "/brand/wonhae/hero/wordmark.png": {
+      "en": "/media/brands/wonhae/hero/wordmark.en.png",
+      "id": "/media/brands/wonhae/hero/wordmark.id.png"
+    },
+    "/brand/wonhae/product-lineup/banana-bites-12gr.png": "/media/brands/wonhae/product-lineup/banana-bites-12gr.png",
+    "/brand/wonhae/product-lineup/banana-bites-16g.png": "/media/brands/wonhae/product-lineup/banana-bites-16g.png",
+    "/brand/wonhae/product-lineup/banana-bites-choc.png": "/media/brands/wonhae/product-lineup/banana-bites-choc.png",
+    "/brand/wonhae/product-lineup/banana-bites-choco-60gr.png": "/media/brands/wonhae/product-lineup/banana-bites-choco-60gr.png",
+    "/brand/wonhae/product-lineup/banana-bites-mockupfinal-12g.png": "/media/brands/wonhae/product-lineup/banana-bites-mockupfinal-12g.png",
+    "/brand/wonhae/product-lineup/banana-bites-ori-60gr-2.png": "/media/brands/wonhae/product-lineup/banana-bites-ori-60gr-2.png",
+    "/brand/wonhae/product-lineup/banana-bites-ori-60gr.png": "/media/brands/wonhae/product-lineup/banana-bites-ori-60gr.png",
+    "/brand/wonhae/product-lineup/banana-milk-choco.png": "/media/brands/wonhae/product-lineup/banana-milk-choco.png",
+    "/brand/wonhae/product-lineup/banana-milk-creamy.png": "/media/brands/wonhae/product-lineup/banana-milk-creamy.png",
+    "/brand/wonhae/product-lineup/banana-milk-ori.png": "/media/brands/wonhae/product-lineup/banana-milk-ori.png",
+    "/brand/wonhae/product-lineup/banana-milk-strawberry.png": "/media/brands/wonhae/product-lineup/banana-milk-strawberry.png",
+    "/brand/wonhae/product-lineup/beef-seaweed-120gr.png": "/media/brands/wonhae/product-lineup/beef-seaweed-120gr.png",
+    "/brand/wonhae/product-lineup/black-fried-ramyun-125g-front.png": "/media/brands/wonhae/product-lineup/black-fried-ramyun-125g-front.png",
+    "/brand/wonhae/product-lineup/cheese-ramyun-120gr.png": "/media/brands/wonhae/product-lineup/cheese-ramyun-120gr.png",
+    "/brand/wonhae/product-lineup/cheese-ramyun-90g.png": "/media/brands/wonhae/product-lineup/cheese-ramyun-90g.png",
+    "/brand/wonhae/product-lineup/cheese-ramyun-with-spicy-sauce.png": "/media/brands/wonhae/product-lineup/cheese-ramyun-with-spicy-sauce.png",
+    "/brand/wonhae/product-lineup/cheesecake-milk-250ml.png": "/media/brands/wonhae/product-lineup/cheesecake-milk-250ml.png",
+    "/brand/wonhae/product-lineup/choco-gummy-32g.png": "/media/brands/wonhae/product-lineup/choco-gummy-32g.png",
+    "/brand/wonhae/product-lineup/choco-gummy-35-gr.png": "/media/brands/wonhae/product-lineup/choco-gummy-35-gr.png",
+    "/brand/wonhae/product-lineup/churros-original.png": "/media/brands/wonhae/product-lineup/churros-original.png",
+    "/brand/wonhae/product-lineup/churros-peanut-butter.png": "/media/brands/wonhae/product-lineup/churros-peanut-butter.png",
+    "/brand/wonhae/product-lineup/churros-snack-peanut-butter-60gr.png": "/media/brands/wonhae/product-lineup/churros-snack-peanut-butter-60gr.png",
+    "/brand/wonhae/product-lineup/diy-cafe-front-blue-lemonade-180ml.png": "/media/brands/wonhae/product-lineup/diy-cafe-front-blue-lemonade-180ml.png",
+    "/brand/wonhae/product-lineup/diy-cafe-front-peach-lemonade-180ml.png": "/media/brands/wonhae/product-lineup/diy-cafe-front-peach-lemonade-180ml.png",
+    "/brand/wonhae/product-lineup/diy-cafe-front-pineapple-lemonade-180ml.png": "/media/brands/wonhae/product-lineup/diy-cafe-front-pineapple-lemonade-180ml.png",
+    "/brand/wonhae/product-lineup/fried-corn-cheese-ramyun-120gr.png": "/media/brands/wonhae/product-lineup/fried-corn-cheese-ramyun-120gr.png",
+    "/brand/wonhae/product-lineup/fried-rose-ramyun-120gr.png": "/media/brands/wonhae/product-lineup/fried-rose-ramyun-120gr.png",
+    "/brand/wonhae/product-lineup/fried-rose-ramyun-97g.png": "/media/brands/wonhae/product-lineup/fried-rose-ramyun-97g.png",
+    "/brand/wonhae/product-lineup/matcha-berry-bites-mockup.png": "/media/brands/wonhae/product-lineup/matcha-berry-bites-mockup.png",
+    "/brand/wonhae/product-lineup/melon-milk-180ml-alfamart.png": "/media/brands/wonhae/product-lineup/melon-milk-180ml-alfamart.png",
+    "/brand/wonhae/product-lineup/melon-milk-180ml-alfamidi.png": "/media/brands/wonhae/product-lineup/melon-milk-180ml-alfamidi.png",
+    "/brand/wonhae/product-lineup/nori-crispy.png": "/media/brands/wonhae/product-lineup/nori-crispy.png",
+    "/brand/wonhae/product-lineup/pistachio-choco-bites-30g.png": "/media/brands/wonhae/product-lineup/pistachio-choco-bites-30g.png",
+    "/brand/wonhae/product-lineup/potato-snack.png": "/media/brands/wonhae/product-lineup/potato-snack.png",
+    "/brand/wonhae/product-lineup/potatosnack-spicy-korean-60gr.png": "/media/brands/wonhae/product-lineup/potatosnack-spicy-korean-60gr.png",
+    "/brand/wonhae/product-lineup/rose-ramyun-with-spicy-sauce.png": "/media/brands/wonhae/product-lineup/rose-ramyun-with-spicy-sauce.png",
+    "/brand/wonhae/product-lineup/spicy-rapokki-155g.png": "/media/brands/wonhae/product-lineup/spicy-rapokki-155g.png",
+    "/brand/wonhae/product-lineup/strawberry-cheesecake-30g.png": "/media/brands/wonhae/product-lineup/strawberry-cheesecake-30g.png",
+    "/brand/wonhae/product-lineup/topokki-carbonara-80g.png": "/media/brands/wonhae/product-lineup/topokki-carbonara-80g.png",
+    "/brand/wonhae/product-lineup/topokki-kids-baby-shark-80g.png": "/media/brands/wonhae/product-lineup/topokki-kids-baby-shark-80g.png",
+    "/brand/wonhae/product-lineup/topokki-kids-carbo-new-80g.png": "/media/brands/wonhae/product-lineup/topokki-kids-carbo-new-80g.png",
+    "/brand/wonhae/product-lineup/topokki-snack-cheese-buldak-80g.png": "/media/brands/wonhae/product-lineup/topokki-snack-cheese-buldak-80g.png",
+    "/brand/wonhae/product-lineup/topokki-snack-cheese-truffle-mayo-80gr.png": "/media/brands/wonhae/product-lineup/topokki-snack-cheese-truffle-mayo-80gr.png",
+    "/brand/wonhae/product-lineup/topokki-snack-creamy-rose-12g.png": "/media/brands/wonhae/product-lineup/topokki-snack-creamy-rose-12g.png",
+    "/brand/wonhae/product-lineup/topokki-snack-creamy-rose-16g.png": "/media/brands/wonhae/product-lineup/topokki-snack-creamy-rose-16g.png",
+    "/brand/wonhae/product-lineup/topokki-snack-creamy-rose-16gr.png": "/media/brands/wonhae/product-lineup/topokki-snack-creamy-rose-16gr.png",
+    "/brand/wonhae/product-lineup/topokki-snack-rose-80-gr.png": "/media/brands/wonhae/product-lineup/topokki-snack-rose-80-gr.png",
+    "/brand/wonhae/product-lineup/topokki-snack-spicy-sweet-16gr.png": "/media/brands/wonhae/product-lineup/topokki-snack-spicy-sweet-16gr.png",
+    "/brand/wonhae/product-lineup/topokki-snack-spicy-sweet-80-gr.png": "/media/brands/wonhae/product-lineup/topokki-snack-spicy-sweet-80-gr.png",
+    "/brand/wonhae/product-lineup/topokki-snack-ss-80-gr.png": "/media/brands/wonhae/product-lineup/topokki-snack-ss-80-gr.png",
+    "/brand/wonhae/product-lineup/topokkisnack-16gr-sweetspicy-mockup.png": "/media/brands/wonhae/product-lineup/topokkisnack-16gr-sweetspicy-mockup.png",
+    "/brand/wonhae/product-lineup/topokkisnack-mockup-16g-creamy-rose.png": "/media/brands/wonhae/product-lineup/topokkisnack-mockup-16g-creamy-rose.png",
+    "/brand/wonhae/product-lineup/watermelon-milk-180ml.png": "/media/brands/wonhae/product-lineup/watermelon-milk-180ml.png",
+    "/brand/wonhae/product-lineup/yogurt-gummy-48gr.png": "/media/brands/wonhae/product-lineup/yogurt-gummy-48gr.png",
+    "/brand/wonhae/showcase/1-1.png": "/media/brands/wonhae/showcase/1-1.png",
+    "/brand/wonhae/showcase/1-2.png": {
+      "en": "/media/brands/wonhae/showcase/1-2.en.png",
+      "id": "/media/brands/wonhae/showcase/1-2.id.png"
+    },
+    "/brand/wonhae/showcase/2-1.png": "/media/brands/wonhae/showcase/2-1.png",
+    "/brand/wonhae/showcase/2-2.png": {
+      "en": "/media/brands/wonhae/showcase/2-2.en.png",
+      "id": "/media/brands/wonhae/showcase/2-2.id.png"
+    },
+    "/brand/wonhae/showcase/3-1.png": "/media/brands/wonhae/showcase/3-1.png",
+    "/brand/wonhae/showcase/3-2.png": {
+      "en": "/media/brands/wonhae/showcase/3-2.en.png",
+      "id": "/media/brands/wonhae/showcase/3-2.id.png"
+    },
+    "/brand/wonhae/showcase/4-1.png": "/media/brands/wonhae/showcase/4-1.png",
+    "/brand/wonhae/showcase/4-2.png": {
+      "en": "/media/brands/wonhae/showcase/4-2.en.png",
+      "id": "/media/brands/wonhae/showcase/4-2.id.png"
+    },
+    "/brand/wonhae/showcase/title.png": {
+      "en": "/media/brands/wonhae/showcase/title.en.png",
+      "id": "/media/brands/wonhae/showcase/title.id.png"
+    },
+    "/careers/hero/desktop.jpg": "/media/pages/careers/hero/desktop.jpg",
+    "/careers/hero/mobile.jpg": "/media/pages/careers/hero/mobile.jpg",
+    "/contact/hero/desktop.jpg": "/media/pages/contact/hero/desktop.jpg",
+    "/contact/hero/mobile.jpg": "/media/pages/contact/hero/mobile.jpg",
+    "/governance/hero/desktop.jpg": "/media/pages/governance/hero/desktop.jpg",
+    "/governance/hero/mobile.jpg": "/media/pages/governance/hero/mobile.jpg",
+    "/home/brand-grid/barber-daily.jpg": "/media/home/brand-grid/barber-daily.jpg",
+    "/home/brand-grid/fitmeup.png": "/media/home/brand-grid/fitmeup.png",
+    "/home/brand-grid/floaty.png": "/media/home/brand-grid/floaty.png",
+    "/home/brand-grid/hair-energy.jpg": "/media/home/brand-grid/hair-energy.jpg",
+    "/home/brand-grid/makarizo-professional.jpg": "/media/home/brand-grid/makarizo-professional.jpg",
+    "/home/brand-grid/make-it.jpg": "/media/home/brand-grid/make-it.jpg",
+    "/home/brand-grid/nestle-pure-life.jpg": "/media/home/brand-grid/nestle-pure-life.jpg",
+    "/home/brand-grid/wonhae.jpg": "/media/home/brand-grid/wonhae.jpg",
+    "/home/division-cards/beauty.png": "/media/home/division-cards/beauty.png",
+    "/home/division-cards/beverage.jpg": "/media/home/division-cards/beverage.jpg",
+    "/home/division-cards/food.jpg": "/media/home/division-cards/food.jpg",
+    "/home/division-cards/makarizo-professional.png": "/media/home/division-cards/makarizo-professional.png",
+    "/home/division-cards/mens.png": "/media/home/division-cards/mens.png",
+    "/home/hero-carousel/barber-daily.jpg": "/media/home/hero-carousel/barber-daily.jpg",
+    "/home/hero-carousel/hair-energy.jpg": "/media/home/hero-carousel/hair-energy.jpg",
+    "/home/hero-carousel/makarizo-professional.jpg": "/media/home/hero-carousel/makarizo-professional.jpg",
+    "/home/hero-carousel/make-it.jpg": "/media/home/hero-carousel/make-it.jpg",
+    "/home/hero-carousel/nestle-pure-life.jpg": "/media/home/hero-carousel/nestle-pure-life.jpg",
+    "/home/hero-carousel/wonhae.jpg": "/media/home/hero-carousel/wonhae.jpg",
+    "/investor/hero/desktop.jpg": "/media/pages/investor/hero/desktop.jpg",
+    "/investor/hero/mobile.jpg": "/media/pages/investor/hero/mobile.jpg",
+    "/shared/logo-color-old.png": "/media/shared/logo-color-old.png",
+    "/shared/logo-color.png": "/media/shared/logo-color.png",
+    "/shared/logo-white-old.png": "/media/shared/logo-white-old.png",
+    "/shared/logo-white.png": "/media/shared/logo-white.png"
+  },
+  "documents": {
+    "/docs/annual-report/Annual-Report-2025.pdf": "/documents/annual-report/2025.pdf",
+    "/docs/annual-report/covers/2025.png": "/media/reports/annual-report/2025.png",
+    "/docs/annual-report/ANNUAL-REPORT-ADES-2024.pdf": "/documents/annual-report/2024.pdf",
+    "/docs/annual-report/covers/2024.png": "/media/reports/annual-report/2024.png",
+    "/docs/annual-report/ANNUAL-REPORT-ADES-2023.pdf": "/documents/annual-report/2023.pdf",
+    "/docs/annual-report/covers/2023.png": "/media/reports/annual-report/2023.png",
+    "/docs/annual-report/ANNUAL-REPORT-ADES-2022.pdf": "/documents/annual-report/2022.pdf",
+    "/docs/annual-report/covers/2022.png": "/media/reports/annual-report/2022.png",
+    "/docs/annual-report/ADES-AR-2021-eReporting_300522_3.pdf": "/documents/annual-report/2021.pdf",
+    "/docs/annual-report/covers/2021.jpg": "/media/reports/annual-report/2021.jpg",
+    "/docs/annual-report/AR-2020-Akasha-Wira-International-Tbk-Rev-828-06-2021e-reporting.pdf": "/documents/annual-report/2020.pdf",
+    "/docs/annual-report/covers/2020.jpg": "/media/reports/annual-report/2020.jpg",
+    "/docs/annual-report/Laporan-Tahunan-Akasha-31-Desember-2019-Final.pdf": "/documents/annual-report/2019.pdf",
+    "/docs/annual-report/covers/2019.jpg": "/media/reports/annual-report/2019.jpg",
+    "/docs/annual-report/ADES-AR-2108-eReporting-300419.pdf": "/documents/annual-report/2018.pdf",
+    "/docs/annual-report/covers/2018.jpg": "/media/reports/annual-report/2018.jpg",
+    "/docs/annual-report/Annual-Report-2017-AWI.pdf": "/documents/annual-report/2017.pdf",
+    "/docs/annual-report/covers/2017.png": "/media/reports/annual-report/2017.png",
+    "/docs/annual-report/ANNUAL-REPORT-2016-AWI.pdf.pdf": "/documents/annual-report/2016.pdf",
+    "/docs/annual-report/covers/2016.png": "/media/reports/annual-report/2016.png",
+    "/docs/annual-report/ANNUAL-REPORT-2015-AWI.pdf": "/documents/annual-report/2015.pdf",
+    "/docs/annual-report/covers/2015.png": "/media/reports/annual-report/2015.png",
+    "/docs/annual-report/Annual-Report-2014-AWI.pdf": "/documents/annual-report/2014.pdf",
+    "/docs/annual-report/covers/2014.png": "/media/reports/annual-report/2014.png",
+    "/docs/annual-report/AR2013-AWI-FINAL-250414.pdf": "/documents/annual-report/2013.pdf",
+    "/docs/annual-report/covers/2013.png": "/media/reports/annual-report/2013.png",
+    "/docs/annual-report/Annual-Report-2012.pdf": "/documents/annual-report/2012.pdf",
+    "/docs/annual-report/covers/2012.png": "/media/reports/annual-report/2012.png",
+    "/docs/sustainability-report/Sustainability-Report-ADES-2025.pdf": "/documents/sustainability-report/2025.pdf",
+    "/docs/sustainability-report/covers/2025.png": "/media/reports/sustainability-report/2025.png",
+    "/docs/sustainability-report/SUSTAINABILITY-REPORT-ADES-2024.pdf": "/documents/sustainability-report/2024.pdf",
+    "/docs/sustainability-report/covers/2024.png": "/media/reports/sustainability-report/2024.png",
+    "/docs/sustainability-report/SUSTAINABILITY-REPORT-ADES-2023.pdf": "/documents/sustainability-report/2023.pdf",
+    "/docs/sustainability-report/covers/2023.png": "/media/reports/sustainability-report/2023.png",
+    "/docs/sustainability-report/SUSTAINABILITY-REPORT-ADES-2022.pdf": "/documents/sustainability-report/2022.pdf",
+    "/docs/sustainability-report/covers/2022.png": "/media/reports/sustainability-report/2022.png",
+    "/docs/sustainability-report/ADES-SR-2021-eReporting.pdf": "/documents/sustainability-report/2021.pdf",
+    "/docs/sustainability-report/covers/2021.jpg": "/media/reports/sustainability-report/2021.jpg",
+    "/docs/financial-report/PT-Akasha-Wira-International-Tbk_December-31-2025-Audited-Financial-Statements_CLIENT-RELEASED.pdf": "/documents/financial-report/2025/fy.pdf",
+    "/docs/financial-report/LAPORAN-KUARTALAN-MARET-2025.pdf": "/documents/financial-report/2025/q1.pdf",
+    "/docs/financial-report/Annual-Financial-Report-December-2024.pdf": "/documents/financial-report/2024/fy.pdf",
+    "/docs/financial-report/LAPORAN-KUARTALAN-SEPTEMBER-2024.pdf": "/documents/financial-report/2024/q3.pdf",
+    "/docs/financial-report/LAPORAN-KUARTALAN-JUNI-2024.pdf": "/documents/financial-report/2024/q2.pdf",
+    "/docs/financial-report/LAPORAN-KUARTALAN-MARET-2024.pdf": "/documents/financial-report/2024/q1.pdf",
+    "/docs/financial-report/PT-Akasha-Wira-International-December-31-2023-Audited-Financial-Statements_CLIENT_RELEASED_FINAL_MARCH272024.pdf": "/documents/financial-report/2023/fy.pdf",
+    "/docs/financial-report/PENJELASAN-OJK_31-DEC-2023.pdf": "/documents/financial-report/2023/fy-ojk-letter.pdf",
+    "/docs/financial-report/AWI-REPORT-SEP-2023_1.pdf": "/documents/financial-report/2023/q3.pdf",
+    "/docs/financial-report/PENJELASAN-OJK_30-SEP-2023.pdf": "/documents/financial-report/2023/q3-ojk-letter.pdf",
+    "/docs/financial-report/AWI-REPORT-JUNE-2023-FINAL.pdf": "/documents/financial-report/2023/q2.pdf",
+    "/docs/financial-report/PENJELASAN-OJK_30-JUNI-2023.pdf": "/documents/financial-report/2023/q2-ojk-letter.pdf",
+    "/docs/financial-report/PT-AKASHA-WIRA-INTERNATIONAL-MAR-2023.pdf": "/documents/financial-report/2023/q1.pdf",
+    "/docs/financial-report/Penjelasan-OJK-31-Maret-2023.pdf": "/documents/financial-report/2023/q1-ojk-letter.pdf",
+    "/docs/financial-report/PT-AKASHA-WIRA-INTERNATIONAL-2022-AUDIT-REPORT.pdf": "/documents/financial-report/2022/fy.pdf",
+    "/docs/financial-report/PENJELASAN-OJK-31-DEC-2022.pdf": "/documents/financial-report/2022/fy-ojk-letter.pdf",
+    "/docs/financial-report/PT-Akasha-Wira-International-Tbk-SEP-2022.pdf": "/documents/financial-report/2022/q3.pdf",
+    "/docs/financial-report/PT-Akasha-Wira-International-JUN-22.pdf": "/documents/financial-report/2022/q2.pdf",
+    "/docs/financial-report/PT-Akasha-Wira-International-MAR-22.pdf": "/documents/financial-report/2022/q1.pdf",
+    "/docs/financial-report/Penjelasan-OJK-31-Maret-2022.pdf": "/documents/financial-report/2022/q1-ojk-letter.pdf",
+    "/docs/financial-report/PT-AKASHA-WIRA-INTERNATIONAL-2021-AUDITED-FINANCIAL-STATEMENTS.pdf": "/documents/financial-report/2021/fy.pdf",
+    "/docs/financial-report/Penjelasan-OJK-31-Des-2021.pdf": "/documents/financial-report/2021/fy-ojk-letter.pdf",
+    "/docs/financial-report/LK-Q3-PT-Akasha-Wira-International-SEP-21.pdf": "/documents/financial-report/2021/q3.pdf",
+    "/docs/financial-report/Penjelasan-OJK-30-Sep-2021.pdf": "/documents/financial-report/2021/q3-ojk-letter.pdf",
+    "/docs/financial-report/LK-PT-Akasha-Wira-International-JUN-21.pdf": "/documents/financial-report/2021/q2.pdf",
+    "/docs/financial-report/PT-Akasha-Wira-International-31-MAR-21.pdf": "/documents/financial-report/2021/q1.pdf",
+    "/docs/financial-report/Surat-Penjelasan-OJK_Q1-2021.pdf": "/documents/financial-report/2021/q1-ojk-letter.pdf",
+    "/docs/financial-report/PT-Akasha-Wira-International-Tbk-FINAL-PDF.pdf": "/documents/financial-report/2020/fy.pdf",
+    "/docs/financial-report/OJK-Explanation_Des-20.pdf": "/documents/financial-report/2020/fy-ojk-letter.pdf",
+    "/docs/financial-report/LK-Q3-2020-PT-Akasha-Wira-International-SEP-20.pdf": "/documents/financial-report/2020/q3.pdf",
+    "/docs/financial-report/Surat-Penjelasan-OJK_Q3-2020.pdf": "/documents/financial-report/2020/q3-ojk-letter.pdf",
+    "/docs/financial-report/PT-Akasha-Wira-International-JUN-20_signed.pdf": "/documents/financial-report/2020/q2.pdf",
+    "/docs/financial-report/PENJELASAN-OJK_Jun-20.pdf": "/documents/financial-report/2020/q2-ojk-letter.pdf",
+    "/docs/financial-report/PT-Akasha-Wira-International-MAR-20-signed.pdf": "/documents/financial-report/2020/q1.pdf",
+    "/docs/financial-report/PENJELASAN-OJK_Mar20.pdf": "/documents/financial-report/2020/q1-ojk-letter.pdf",
+    "/docs/financial-report/Audit-Report-AWI-19-270320-FINAL.pdf": "/documents/financial-report/2019/fy.pdf",
+    "/docs/financial-report/Surat-Penjelasan-LK-Dec-2019.pdf": "/documents/financial-report/2019/fy-ojk-letter.pdf",
+    "/docs/financial-report/PT-Akasha-Wira-International-SEP-19_1.pdf": "/documents/financial-report/2019/q3.pdf",
+    "/docs/financial-report/Surat-Penjelasan-LK-Sep-2019.pdf": "/documents/financial-report/2019/q3-ojk-letter.pdf",
+    "/docs/financial-report/LK-Q2-PT-Akasha-Wira-International-JUN-19_signed.pdf": "/documents/financial-report/2019/q2.pdf",
+    "/docs/financial-report/Surat-penjelasan-laporan-keuangan-Juli-2019.pdf": "/documents/financial-report/2019/q2-ojk-letter.pdf",
+    "/docs/financial-report/LK-Q1-PT-Akasha-Wira-International-MAR-19-dan-hal-ttd.pdf": "/documents/financial-report/2019/q1.pdf",
+    "/docs/financial-report/Audit-Report-PT-Akasha-Wira-International-Tbk-31-Dec-2018-Revisi.pdf": "/documents/financial-report/2018/fy.pdf",
+    "/docs/financial-report/PENJELASAN-PERUBAHAN-20-OJK_31-DEC-2018.pdf": "/documents/financial-report/2018/fy-ojk-letter.pdf",
+    "/docs/financial-report/Laporan-Keuangan-Kuartalan-Quartely-Financial-Report-September-2018.pdf": "/documents/financial-report/2018/q3.pdf",
+    "/docs/financial-report/Surat-Penjelasan-Perubahan-Jumlah-Aset-Letter-on-Chang-of-Aset-September-2018.pdf": "/documents/financial-report/2018/q3-ojk-letter.pdf",
+    "/docs/financial-report/Quarterly-Financial-Report-30-June-2018.pdf": "/documents/financial-report/2018/q2.pdf",
+    "/docs/financial-report/Letter-on-Change-of-Assets-30-June-2018.pdf": "/documents/financial-report/2018/q2-ojk-letter.pdf",
+    "/docs/financial-report/Quarterly-Financial-Report-March-2018.pdf": "/documents/financial-report/2018/q1.pdf",
+    "/docs/financial-report/Letter-on-Change-of-Assets-March-2018.pdf": "/documents/financial-report/2018/q1-ojk-letter.pdf",
+    "/docs/financial-report/Annual-Financial-Report-December-2017.pdf": "/documents/financial-report/2017/fy.pdf",
+    "/docs/financial-report/Penjelasan-Perubahan-Aset-lebih-dari-20-desember.pdf": "/documents/financial-report/2017/fy-ojk-letter.pdf",
+    "/docs/financial-report/Quarterly_Report_June_2017.pdf": "/documents/financial-report/2017/q2.pdf",
+    "/docs/financial-report/Penjelasan-Perubahan-Aset-lebih-dari-20-June-2017.pdf": "/documents/financial-report/2017/q2-ojk-letter.pdf",
+    "/docs/financial-report/Quarterly_Report_March_2017.pdf": "/documents/financial-report/2017/q1.pdf",
+    "/docs/financial-report/Penjelasan-Perubahan-Aset-lebih-dari-20-maret-2017.pdf": "/documents/financial-report/2017/q1-ojk-letter.pdf",
+    "/docs/financial-report/Annual-Financial-Report-December-2016.pdf": "/documents/financial-report/2016/fy.pdf",
+    "/docs/financial-report/Surat-Penjelasan-Perubahan-Jumlah-Aset-Lebih-dari-20-PDF.pdf": "/documents/financial-report/2016/fy-ojk-letter.pdf",
+    "/docs/financial-report/Quarterly_Report_Sept_2016.pdf": "/documents/financial-report/2016/q3.pdf",
+    "/docs/financial-report/Penjelasan-Perubahan-Aset-lebih-dari-20-sept.pdf": "/documents/financial-report/2016/q3-ojk-letter.pdf",
+    "/docs/financial-report/Quarterly-Financial-Report-June-2016.pdf": "/documents/financial-report/2016/q2.pdf",
+    "/docs/financial-report/Quarterly-Report-March-2016.pdf": "/documents/financial-report/2016/q1.pdf",
+    "/docs/financial-report/Annual-Financial-Report-December-2015.pdf": "/documents/financial-report/2015/fy.pdf",
+    "/docs/financial-report/Surat-Penjelasan-Perubahan-Jumlah-Aset-Lebih-dari20.pdf": "/documents/financial-report/2015/fy-ojk-letter.pdf",
+    "/docs/financial-report/Bukti-Iklan-Koran-LK-2015-di-Ekonomi-Neraca.pdf": "/documents/financial-report/2015/fy-newspaper-publication.pdf",
+    "/docs/financial-report/Quarterly-Report-Sept-2015.pdf": "/documents/financial-report/2015/q3.pdf",
+    "/docs/financial-report/Quarterly_Report_June_2015.pdf": "/documents/financial-report/2015/q2.pdf",
+    "/docs/financial-report/Quarterly-Financial-Report-March-2015.pdf": "/documents/financial-report/2015/q1.pdf",
+    "/docs/financial-report/Annual-Financial-Report-December-2014.pdf": "/documents/financial-report/2014/fy.pdf",
+    "/docs/financial-report/Quarterly-Report-Sep-2014.pdf": "/documents/financial-report/2014/q3.pdf",
+    "/docs/financial-report/Quarterly-Report-June-2014.pdf": "/documents/financial-report/2014/q2.pdf",
+    "/docs/financial-report/Quarterly-Report-March-2014.pdf": "/documents/financial-report/2014/q1.pdf",
+    "/docs/financial-report/Annual-Financial-Report-December-2013.pdf": "/documents/financial-report/2013/fy.pdf",
+    "/docs/financial-report/Quarterly-Financial-Report-September-2013.pdf": "/documents/financial-report/2013/q3.pdf",
+    "/docs/financial-report/Quarterly-Report-jun-2013.pdf": "/documents/financial-report/2013/q2.pdf",
+    "/docs/financial-report/Quarterly-Report-March-2013.pdf": "/documents/financial-report/2013/q1.pdf",
+    "/docs/financial-report/Annual-Financial-Report-December-2012.pdf": "/documents/financial-report/2012/fy.pdf",
+    "/docs/financial-report/Quarterly-Financial-Report-September-2012.pdf": "/documents/financial-report/2012/q3.pdf",
+    "/docs/financial-report/Quarterly-Report-june-2012.pdf": "/documents/financial-report/2012/q2.pdf",
+    "/docs/financial-report/Quarterly-Report-March-2012.pdf": "/documents/financial-report/2012/q1.pdf",
+    "/docs/gms/Pengumuman-RUPS-ADES-2026.pdf": "/documents/gms/2026/announcement-of-general-meeting.pdf",
+    "/docs/gms/Panggilan-RUPS-26-MEI-2026.pdf": "/documents/gms/2026/invitation-to-the-shareholders.pdf",
+    "/docs/gms/BAHAN-MATA-ACARA-RAPAT-17-JUNI-2026.pdf": "/documents/gms/2026/meeting-agenda-material.pdf",
+    "/docs/gms/TATA-TERTIB-RUPS-17-JUNI-2026.pdf": "/documents/gms/2026/meeting-rules-for-agms.pdf",
+    "/docs/gms/SURAT-KUASA-INDIVIDU-RUPS-17-JUNI-2026.doc": "/documents/gms/2026/power-of-attorney-for-individual.doc",
+    "/docs/gms/CV-Hagi-Yufantra-untuk-Website.pdf": "/documents/gms/2026/curriculum-vitae-mr-hagi-yufantra.pdf",
+    "/docs/gms/CV-Pak-Rudy-untuk-Web-dan-RUPS.pdf": "/documents/gms/2026/curriculum-vitae-mr-rudy-hidayat.pdf",
+    "/docs/gms/RISALAH-RAPAT-RUPS-17-JUNI-2026.pdf": "/documents/gms/2026/summary-of-the-general-meeting.pdf",
+    "/docs/gms/Pengumuman-Rapat-Umum-Pemegang-Saham-18-Juni-2025.pdf": "/documents/gms/2025/announcement-of-general-meeting.pdf",
+    "/docs/gms/Panggilan-RUPS-18-Juni-2025.pdf": "/documents/gms/2025/invitation-to-the-shareholders.pdf",
+    "/docs/gms/BAHAN-MATA-ACARA-RUPS-18-JUNI-2025.pdf": "/documents/gms/2025/meeting-agenda-material.pdf",
+    "/docs/gms/TATA-TERTIB-RUPS-18-JUNI-2025.pdf": "/documents/gms/2025/meeting-rules-for-agms.pdf",
+    "/docs/gms/SURAT-KUASA-INDIVIDU-RUPS-18-JUNI-2025.doc": "/documents/gms/2025/power-of-attorney-for-individual.doc",
+    "/docs/gms/Risalah-RUPS-18-Juni-2025.pdf": "/documents/gms/2025/summary-of-the-general-meeting.pdf",
+    "/docs/gms/Pengumuman-RUPST-dan-RUPSLB-ADES-2024.pdf": "/documents/gms/2024/announcement-of-general-meeting.pdf",
+    "/docs/gms/Panggilan-RUPS-12-JUNI-2024.pdf": "/documents/gms/2024/invitation-to-the-shareholders.pdf",
+    "/docs/gms/BAHAN-MATA-ACARA-RUPS-12-JUNI-2024.pdf": "/documents/gms/2024/meeting-agenda-material.pdf",
+    "/docs/gms/TATA-TERTIB-RUPS-dan-RUPSLB-12-JUNI-2024.pdf": "/documents/gms/2024/meeting-rules-for-agms-and-egms.pdf",
+    "/docs/gms/POWER-ATTORNEY-FOR-INDIVIDUAL-RUPS-2024.doc": "/documents/gms/2024/power-of-attorney-for-corporate.doc",
+    "/docs/gms/Risalah-RUPS-13-Juni-2024.pdf": "/documents/gms/2024/summary-of-the-general-meeting.pdf",
+    "/docs/gms/PENGUMUMAN-RUPS-NOTICE-OF-THE-MEETING-15-MAY-2023.pdf": "/documents/gms/2023/announcement-of-general-meeting.pdf",
+    "/docs/gms/Panggilan-RUPS-21-JUNI-2023.pdf": "/documents/gms/2023/invitation-to-the-shareholders.pdf",
+    "/docs/gms/BAHAN-MATA-ACARA-RUPS-21-JUNI-2023.pdf": "/documents/gms/2023/meeting-agenda-material.pdf",
+    "/docs/gms/TATA-TERTIB-RUPS-dan-RUPSLB-21-JUNI-2023.pdf": "/documents/gms/2023/meeting-rules-for-agms-and-egms.pdf",
+    "/docs/gms/2023-05-POWER-ATTORNEY-CORPORATION-TO-BAE.doc": "/documents/gms/2023/power-of-attorney-for-corporate.doc",
+    "/docs/gms/2023-05-POWER-ATTORNEY-FOR-INDIVIDUAL.doc": "/documents/gms/2023/power-of-attorney-for-individual.doc",
+    "/docs/gms/CV-Bpk-Julianto.pdf": "/documents/gms/2023/curriculum-vitae-mr-julianto.pdf",
+    "/docs/gms/Risalah-RUPS-21-Juni-2023.pdf": "/documents/gms/2023/summary-of-the-general-meeting.pdf",
+    "/docs/gms/Ringkasan-Risalah-RUPST-dan-RUPSLB-21-Juni-2023.pdf": "/documents/gms/2023/abridged-minutes-of-the-meeting.pdf",
+    "/docs/gms/Announcement-of-General-Meeting-of-Shareholders-6-July-2022.pdf": "/documents/gms/2022/announcement-of-general-meeting.pdf",
+    "/docs/gms/Panggilan-RUPS-Bilingual-6-Juli-2022.pdf": "/documents/gms/2022/invitation-to-the-shareholders.pdf",
+    "/docs/gms/BAHAN-MATA-ACARA-RAPAT-6-JULI-2022.pdf": "/documents/gms/2022/meeting-agenda-material.pdf",
+    "/docs/gms/Tata-Tertib-RUPS-dan-RUPSLB-2022.pdf": "/documents/gms/2022/meeting-rules-for-agms-and-egms.pdf",
+    "/docs/gms/2022-06-POWER-ATTORNEY-FOR-INDIVIDUAL.doc": "/documents/gms/2022/power-of-attorney-for-individual.doc",
+    "/docs/gms/2022-06-POWER-ATTORNEY-CORPORATION-TO-BAE.doc": "/documents/gms/2022/power-of-attorney-for-corporate.doc",
+    "/docs/gms/CV-Pak-Bing-2.pdf": "/documents/gms/2022/curriculum-vitae-mr-raimond-bing-lesnussa.pdf",
+    "/docs/gms/Risalah-Rapat-6-Juli-2022.pdf": "/documents/gms/2022/summary-of-the-meeting.pdf",
+    "/docs/gms/2021-07-Pengumuman-RUPS-Notice-of-the-Meeting-bilingual.pdf": "/documents/gms/2021/announcement-of-general-meeting.pdf",
+    "/docs/gms/INVITATION-OF-THE-MEETING-Bilingual.pdf": "/documents/gms/2021/invitation-of-the-meeting.pdf",
+    "/docs/gms/THE-MATERIAL-OF-THE-MEETING-bilingual.pdf": "/documents/gms/2021/material-of-the-meeting.pdf",
+    "/docs/gms/POWER-OF-ATTORNEY-CORPORATE-BAE.pdf": "/documents/gms/2021/power-of-attorney-for-corporate-bae.pdf",
+    "/docs/gms/POWER-OF-ATTORNEY-INDIVIDUAL-BAE.pdf": "/documents/gms/2021/power-of-attorney-for-individual-bae.pdf",
+    "/docs/gms/RINGKASAN-RISALAH-RUPS-AKASHA-ENG.pdf": "/documents/gms/2021/announcement-of-minutes-summary.pdf",
+    "/docs/gms/2020-07-Pengumuman-RUPS-Notice-of-the-Meeting-bilingual.pdf": "/documents/gms/2020/announcement-to-the-shareholders-21-july-2020.pdf",
+    "/docs/gms/PANGGILAN-RAPAT-MEETING-INVITATION-Bilingual-5-AUGUST-2020-rev.pdf": "/documents/gms/2020/invitation-to-the-shareholders.pdf",
+    "/docs/gms/2020-08-POWER-ATTORNEY-CORPORATION-TO-BAE.doc": "/documents/gms/2020/power-of-attorney-for-corporate-to-bae.doc",
+    "/docs/gms/POWER-OF-ATTORNEY-CORPORATE.doc": "/documents/gms/2020/power-of-attorney-for-corporate.doc",
+    "/docs/gms/POWER-OF-ATTORNEY-INDIVIDUAL-TO-BAE.doc": "/documents/gms/2020/power-of-attorney-for-individual-to-bae.doc",
+    "/docs/gms/POWER-OF-ATTORNEY-INDIVIDUAL.doc": "/documents/gms/2020/power-of-attorney-for-individual.doc",
+    "/docs/gms/ANNOUNCEMENT-ABRIDGE-ENGLISH-MINUTES-OF-MEETING-27-AUGUST-2020.pdf": "/documents/gms/2020/announcement-of-abridged-minutes-27-august-2020.pdf",
+    "/docs/gms/Announcement-of-AGM-adan-EGM-29-May-2019.pdf": "/documents/gms/2019/announcement-of-agm-and-egm.pdf",
+    "/docs/gms/3b-Invitation-of-The-Meeting-English-7-Mei-2019clean-Clean-2.pdf": "/documents/gms/2019/invitation-of-the-meeting-7-may-2019.pdf",
+    "/docs/gms/PENGUMUMAN-ENGLISH-KORAN-RINGKASAN-RISALAH-RAPAT-29-MEI-2019-Rev-Notaris.pdf": "/documents/gms/2019/abridged-minutes-of-the-meeting-29-may-2019.pdf",
+    "/docs/gms/Notice-of-the-Meeting-30-April-2018-PT.-Akasha-Wira-International-English.pdf": "/documents/gms/2018/notice-of-the-meeting-30-april-2018.pdf",
+    "/docs/gms/Invitation-of-The-Meeting-16-May-2018-English.pdf": "/documents/gms/2018/invitation-of-the-meeting-16-may-2018.pdf",
+    "/docs/gms/INVITATION-PUBLIC-EXPOSE-7-JUNE-2018-ENGLISH.pdf": "/documents/gms/2018/invitation-to-the-public-expose.pdf",
+    "/docs/gms/The-Abridge-Minutes-of-Meeting-RUPS-AWI-7-June-2018-English.pdf": "/documents/gms/2018/abridged-minutes-of-the-meeting.pdf",
+    "/docs/gms/Notice-of-the-Meeting-12-May-2017-PT-AKASHA-WIRA-INTERNATIONAL-TBK-English1.pdf": "/documents/gms/2017/notice-of-the-meeting-12-may-2017.pdf",
+    "/docs/gms/Invitation-of-The-Meeting-29-May-2017-English.pdf": "/documents/gms/2017/invitation-of-the-meeting-29-may-2017.pdf",
+    "/docs/gms/The-Abridge-Minutes-of-Meeting-RUPS-AWI-20-juni-2017.pdf": "/documents/gms/2017/abridged-minutes-of-the-meeting.pdf",
+    "/docs/gms/Notice-of-the-Meeting-10-May-2016-English.pdf": "/documents/gms/2016/notice-of-the-meeting-10-may-2016.pdf",
+    "/docs/gms/Invitation-of-The-Meeting-25-May-2016-English.pdf": "/documents/gms/2016/invitation-of-the-meeting-25-may-2016.pdf",
+    "/docs/gms/Website-Announcment-The-Abridge-Minutes-of-Meeting-RUPS-AWI-16-Juni-2016-English.pdf": "/documents/gms/2016/abridged-minutes-of-the-meeting-16-june-2016.pdf",
+    "/docs/gms/Notice-of-the-Meeting-13-Sep-2016-PT-AKASHA-WIRA-INTERNATIONAL-TBK-English.pdf": "/documents/gms/2016/notice-of-the-meeting-13-september-2016.pdf",
+    "/docs/gms/Invitation-of-The-Meeting-28-September-2016-English.pdf": "/documents/gms/2016/invitation-of-the-meeting-28-september-2016.pdf",
+    "/docs/gms/The-Abridge-Minutes-of-Meeting-RUPS-AWI-20-October-2016-English-PDF.pdf": "/documents/gms/2016/abridged-minutes-of-the-meeting-20-october-2016.pdf",
+    "/docs/gms/Notice-of-the-Meeting-PT-AKASHA-WIRA-INTERNATIONAL-TBK1.pdf": "/documents/gms/2015/notice-of-the-meeting.pdf",
+    "/docs/gms/Invitation-of-The-Meeting-10-March-2015-English.pdf": "/documents/gms/2015/invitation-of-the-meeting-10-march-2015.pdf",
+    "/docs/gms/RINGKASAN-RISALAH-KORAN-RAPAT-PDF-EGSM-1-April-2015Inggris.pdf": "/documents/gms/2015/abridged-minutes-of-the-egms-1-april-2015.pdf",
+    "/docs/gms/Notice-of-the-Meeting-12-May-2015-PT-AKASHA-WIRA-INTERNATIONAL-TBK-english.pdf": "/documents/gms/2015/notice-of-the-meeting-12-may-2015.pdf",
+    "/docs/gms/Invitation-of-The-Meeting-English-27-Mei-2015-Clean.pdf": "/documents/gms/2015/invitation-of-the-meeting-27-may-2015.pdf",
+    "/docs/gms/Website-Announcment-EnglishThe-Abridge-Minutes-of-Meeting-RUPS-AWI-18-juni-2015-English.pdf": "/documents/gms/2015/abridged-minutes-of-the-meeting-18-june-2015.pdf",
+    "/docs/disclosure/KETERBUKAAN-INFORMASI-PENAMBAHAN-KEGIATAN-USAHA-12-JUNI-2026.pdf": "/documents/disclosure/2026-06-12-addition-of-business-activities.pdf",
+    "/docs/disclosure/FEASIBILITY-STUDY-AKASHA.pdf": "/documents/disclosure/2026-06-12-full-report-feasibility-study.pdf",
+    "/docs/disclosure/Keterbukaan-informasi-Penambahan-Kegiatan-Usaha-update-8-Juni-2026.pdf": "/documents/disclosure/2026-06-08-addition-of-business-activities.pdf",
+    "/docs/disclosure/FULL-REPORT-FEASIBILTY-STUDY-AKASHA-UPDATE-8-JUNI-2026.pdf": "/documents/disclosure/2026-06-08-full-report-feasibility-study.pdf",
+    "/docs/disclosure/Keterbukaan-Informasi-Penambahan-Kegiatan-Usaha.pdf": "/documents/disclosure/2026-05-addition-of-business-activities.pdf",
+    "/docs/disclosure/Keterbukaan-Informasi-Pengunduran-Diri-Presiden-Direktur-Wihardjo-Hadiseputro-dan-Komisaris-Nana-Puspa-Dewi.pdf": "/documents/disclosure/2026-05-resignation-of-president-director-wihardjo-hadiseputro-and-commissioner-nana-puspa-dewi.pdf",
+    "/docs/disclosure/PEMBERITAHUAN-PUBLIC-EXPOSE-19-JUNI-2025.pdf": "/documents/disclosure/2025-06-19-public-expose-notification.pdf",
+    "/docs/disclosure/Keterbukaan-Informasi-Pengunduran-Diri-Direktur-Raimond-Bing-Lesnussa.pdf": "/documents/disclosure/2025-03-resignation-of-director-raimond-bing-lesnussa.pdf",
+    "/docs/disclosure/PEMBERITAHUAN-PUBLIC-EXPOSE-12-JUNI-2024.pdf": "/documents/disclosure/2024-06-13-public-expose-notification.pdf",
+    "/docs/disclosure/Keterbukaan-Informasi-Revisi.pdf": "/documents/disclosure/2023-06-13-information-to-shareholders.pdf",
+    "/docs/disclosure/PEMBERITAHUAN-PUBLIC-EXPOSE-22-JUNI-2023.pdf": "/documents/disclosure/2023-06-22-public-expose-notification.pdf",
+    "/docs/disclosure/Keterbukaan-Informasi-Penambahan-Kegiatan-Usaha-1.pdf": "/documents/disclosure/2023-05-15-information-to-shareholders.pdf",
+    "/docs/disclosure/Pengunduran-Diri-Komisaris-Independen.pdf": "/documents/disclosure/2023-05-resignation-of-independent-commissioner-ms-miscellia-dotulong.pdf",
+    "/docs/disclosure/Disclosure-of-Information-Resignation-Member-of-Commissioners-Mr-Danny-Yuwono.pdf": "/documents/disclosure/2022-05-resignation-of-commissioner-mr-danny-yuwono.pdf",
+    "/docs/disclosure/PUBLIC-EXPOSE-NOTIFICATION-2021.pdf": "/documents/disclosure/2021-public-expose-notification.pdf",
+    "/docs/disclosure/CIRCULAR-TO-THE-SHAREHOLDERS-SURAT-EDARAN-PEMEGANG-SAHAM.pdf": "/documents/disclosure/2020-07-21-circular-to-shareholders.pdf",
+    "/docs/disclosure/Disclosure-on-Resignation-of-Mr-Ari-Wisnubroto.pdf": "/documents/disclosure/2018-04-20-resignation-of-mr-ari-wisnubroto-as-director.pdf",
+    "/docs/disclosure/Disclosure-Shares-Volatility-6-June-2016-English.pdf": "/documents/disclosure/2016-06-06-share-price-volatility.pdf",
+    "/docs/announcement/PENGUMUMAN-PERGANTIAN-SEKRETARIS-PERUSAHAAN-PT-AKASHA-WIRA-INTERNATIONAL-TBK.pdf": "/documents/announcement/change-of-corporate-secretary.pdf",
+    "/docs/announcement/Pemberitahuan-Pergantian-Komite-Audit.pdf": "/documents/announcement/change-of-audit-committee.pdf",
+    "/docs/governance/Akta-19-tgl-080715-Perubahan-AD-Restatement-AHU-AH-01-03-0953311-dan-0953310.pdf": "/documents/governance/articles-of-association.pdf",
+    "/docs/governance/BOARD-OF-DIRECTORS-COMMUNICATION-POLICY-ING-Pdf.pdf": "/documents/governance/communication-policy.pdf"
+  }
+}

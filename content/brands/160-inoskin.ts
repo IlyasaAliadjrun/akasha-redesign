@@ -16,7 +16,7 @@ const entry: Brand = {
     accentHex: "#897321",
     // No standalone 3:4 brand card art yet. Only CrossSell reads this; about/2.png is
     // a real brand asset that is already exactly 3:4 (1534×2046).
-    heroImage: "/brand/inoskin/about/2.png",
+    heroImage: "/media/brands/inoskin/about/2.png",
     // Hero — flat off-white banner (bannerBg) with the wordmark + wording on the left
     // and the three-product cluster on the right, same pattern as Hair Energy. Widths
     // are `min(vw, vh)` so the cluster scales with the shorter axis and keeps its
@@ -24,17 +24,17 @@ const entry: Brand = {
     // half its natural pixel width so nothing renders above its own resolution at DPR 2.
     heroLayers: [
       // Collagen Firming Mask — tilted, top of the cluster, enters from the TOP (3rd).
-      { src: "/brand/inoskin/hero/2.png", depth: 30, enterFrom: "top", enterDelay: 0.2, width: "min(29.3vw, 60vh)", maxWidth: "1300px", aspectRatio: "2438 / 2701", left: "61.5%", top: "5%",
+      { src: "/media/brands/inoskin/hero/2.png", depth: 30, enterFrom: "top", enterDelay: 0.2, width: "min(29.3vw, 60vh)", maxWidth: "1300px", aspectRatio: "2438 / 2701", left: "61.5%", top: "5%",
         mobile: { left: "23%", top: "15%", width: "min(52vw, 100vh)" } },
       // Triple Power Cleanser — right of the cluster, enters from the RIGHT (2nd).
-      { src: "/brand/inoskin/hero/3.png", depth: 20, enterFrom: "right", enterDelay: 0.35, width: "min(31.6vw, 40vh)", maxWidth: "873px", aspectRatio: "1746 / 3103", left: "71.5%", top: "25%",
+      { src: "/media/brands/inoskin/hero/3.png", depth: 20, enterFrom: "right", enterDelay: 0.35, width: "min(31.6vw, 40vh)", maxWidth: "873px", aspectRatio: "1746 / 3103", left: "71.5%", top: "25%",
         mobile: { left: "38%", top: "28%", width: "min(48vw, 22vh)" } },
       // Young and Bright Toner — front/left of the cluster, enters from the LEFT (1st).
-      { src: "/brand/inoskin/hero/1.png", depth: 66, enterFrom: "left", enterDelay: 0, width: "min(34.6vw, 40vh)", maxWidth: "872px", aspectRatio: "1745 / 3103", left: "56.5%", top: "20%",
+      { src: "/media/brands/inoskin/hero/1.png", depth: 66, enterFrom: "left", enterDelay: 0, width: "min(34.6vw, 40vh)", maxWidth: "872px", aspectRatio: "1745 / 3103", left: "56.5%", top: "20%",
         mobile: { left: "20%", top: "31%", width: "min(52vw, 22vh)" } },
     ],
     heroContent: {
-      logo: "/brand/inoskin/hero/wordmark.png",
+      logo: "/media/brands/inoskin/hero/wordmark.png",
       logoAspect: "1553 / 549",
       // Capped at 760px = half the wordmark's natural 1553px, so it stays sharp at DPR 2
       // on screens wider than ~2300px.
@@ -53,11 +53,11 @@ const entry: Brand = {
     bannerBg: "#F2F1EF",
     hero: false,
     products: [
-      { name: "Triple Power Cleanser", image: "/brand/inoskin/product-lineup/triple-power-cleanser.png" },
-      { name: "Young and Bright Toner", image: "/brand/inoskin/product-lineup/young-and-bright-toner.png" },
-      { name: "Collagen Firming Mask", image: "/brand/inoskin/product-lineup/collagen-firming-mask.png" },
-      { name: "Young and Bright Serum", image: "/brand/inoskin/product-lineup/young-and-bright-serum.png" },
-      { name: "Young and Bright Moisturizer", image: "/brand/inoskin/product-lineup/young-and-bright-moisturizer.png" },
+      { name: "Triple Power Cleanser", image: "/media/brands/inoskin/product-lineup/triple-power-cleanser.png" },
+      { name: "Young and Bright Toner", image: "/media/brands/inoskin/product-lineup/young-and-bright-toner.png" },
+      { name: "Collagen Firming Mask", image: "/media/brands/inoskin/product-lineup/collagen-firming-mask.png" },
+      { name: "Young and Bright Serum", image: "/media/brands/inoskin/product-lineup/young-and-bright-serum.png" },
+      { name: "Young and Bright Moisturizer", image: "/media/brands/inoskin/product-lineup/young-and-bright-moisturizer.png" },
     ],
     reasons: [
       { icon: "🧬", title: { en: "3rd generation collagen", id: "Kolagen generasi ke-3" }, body: { en: "100% biocompatible with human skin, making it easier to absorb.", id: "Biokompatibel 100% dengan kulit manusia, jadi lebih mudah diterima." } },
@@ -66,9 +66,9 @@ const entry: Brand = {
       { icon: "🌿", title: { en: "Safe for sensitive skin", id: "Aman untuk kulit sensitif" }, body: { en: "Dermatologically tested, 0% alcohol, 0% fragrance.", id: "Dermatologically tested, 0% alkohol, 0% pewangi." } },
     ],
     about: [
-      { title: { en: "Korean Formula Technology", id: "Teknologi Formula Korea" }, image: "/brand/inoskin/about/1.png" },
-      { title: { en: "Younger-Looking Complexion", id: "Perawatan Kulit Tampak Lebih Muda" }, image: "/brand/inoskin/about/2.png" },
-      { title: { en: "Pure Collagen, Natural Radiance", id: "Kolagen Murni, Pancaran Alami" }, image: "/brand/inoskin/about/3.png" },
+      { title: { en: "Korean Formula Technology", id: "Teknologi Formula Korea" }, image: "/media/brands/inoskin/about/1.png" },
+      { title: { en: "Younger-Looking Complexion", id: "Perawatan Kulit Tampak Lebih Muda" }, image: "/media/brands/inoskin/about/2.png" },
+      { title: { en: "Pure Collagen, Natural Radiance", id: "Kolagen Murni, Pancaran Alami" }, image: "/media/brands/inoskin/about/3.png" },
     ],
     // Showcase — the #GlassSkinEssentials poster, then the single YOUNG & BRIGHT
     // banner that links to the sub-brand page. `bannerAspect` = the bg art's own ratio
@@ -76,14 +76,14 @@ const entry: Brand = {
     // product layer shares that exact ratio at 100% height, so it overlays the banner
     // 1:1 at every breakpoint — no `mobile` override needed.
     showcase: {
-      hero: "/brand/inoskin/showcase/title.png",
+      hero: { en: "/media/brands/inoskin/showcase/title.en.png", id: "/media/brands/inoskin/showcase/title.id.png" },
       heroAspect: "4830 / 4669",
       productAlign: "center",
       bannerAspect: "4811 / 2261",
       heroOffsetY: "80px",
       heroMobileOffsetY: "30px",
       variants: [
-        { bg: "/brand/inoskin/showcase/1-4.png", bgAspect: "4811 / 2261", product: "/brand/inoskin/showcase/1-cluster.png", productAspect: "4811 / 2261", productHeight: "100%", href: "/brands/inoskin/young-and-bright" },
+        { bg: { en: "/media/brands/inoskin/showcase/1-4.en.png", id: "/media/brands/inoskin/showcase/1-4.id.png" }, bgAspect: "4811 / 2261", product: "/media/brands/inoskin/showcase/1-cluster.png", productAspect: "4811 / 2261", productHeight: "100%", href: "/brands/inoskin/young-and-bright" },
       ],
     },
   };

@@ -18,12 +18,12 @@ const entry: Brand = {
     // Hero — coral banner (bannerBg) with the "128" wordmark + tagline on the left and
     // the product cluster (composited from hero/1–4) on the right. Hair Energy pattern.
     heroLayers: [
-      { src: "/brand/128/hero/cluster.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
+      { src: "/media/brands/128/hero/cluster.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
         width: "min(112vw, 125vh)", aspectRatio: "3493 / 2130", right: "-5%", top: "14%",
         mobile: { width: "min(130vw, 75vh)", left: "-16%", top: "27%" } },
     ],
     heroContent: {
-      logo: "/brand/128/hero/wordmark.png",
+      logo: "/media/brands/128/hero/wordmark.png",
       logoAspect: "2160 / 1415",
       logoWidth: "16vw",
       maxWidth: "36vw",
@@ -40,27 +40,27 @@ const entry: Brand = {
     hero: true,
     // Full skincare line-up (9 SKU across the four ranges).
     products: [
-      { name: "Facial Wash", variant: { en: "Bright & Radiance", id: "Bright & Radiance" }, image: "/brand/128/product-lineup/facial-wash-bright-radiance.png" },
-      { name: "Toner", variant: { en: "Bright & Radiance", id: "Bright & Radiance" }, image: "/brand/128/product-lineup/toner-bright-radiance.png" },
-      { name: "Serum", variant: { en: "Bright & Radiance", id: "Bright & Radiance" }, image: "/brand/128/product-lineup/serum-bright-radiance.png" },
-      { name: "Moisturizer", variant: { en: "Bright & Radiance", id: "Bright & Radiance" }, image: "/brand/128/product-lineup/moisturizer-bright-radiance.png" },
-      { name: "Facial Wash", variant: { en: "Intensive Barrier Care", id: "Intensive Barrier Care" }, image: "/brand/128/product-lineup/facial-wash-intensive-barrier-care.png" },
-      { name: "Primer", variant: { en: "Intensive Barrier Care", id: "Intensive Barrier Care" }, image: "/brand/128/product-lineup/primer-intensive-barrier-care.png" },
-      { name: "Boost", variant: { en: "Intensive Barrier Care", id: "Intensive Barrier Care" }, image: "/brand/128/product-lineup/boost-intensive-barrier-care.png" },
-      { name: "Moisturizer", variant: { en: "Pro Acne Defense", id: "Pro Acne Defense" }, image: "/brand/128/product-lineup/moisturizer-pro-acne-defense.png" },
-      { name: "Moisturizer", variant: { en: "Advanced Age Repair", id: "Advanced Age Repair" }, image: "/brand/128/product-lineup/moisturizer-advanced-age-repair.png" },
+      { name: "Facial Wash", variant: { en: "Bright & Radiance", id: "Bright & Radiance" }, image: "/media/brands/128/product-lineup/facial-wash-bright-radiance.png" },
+      { name: "Toner", variant: { en: "Bright & Radiance", id: "Bright & Radiance" }, image: "/media/brands/128/product-lineup/toner-bright-radiance.png" },
+      { name: "Serum", variant: { en: "Bright & Radiance", id: "Bright & Radiance" }, image: "/media/brands/128/product-lineup/serum-bright-radiance.png" },
+      { name: "Moisturizer", variant: { en: "Bright & Radiance", id: "Bright & Radiance" }, image: "/media/brands/128/product-lineup/moisturizer-bright-radiance.png" },
+      { name: "Facial Wash", variant: { en: "Intensive Barrier Care", id: "Intensive Barrier Care" }, image: "/media/brands/128/product-lineup/facial-wash-intensive-barrier-care.png" },
+      { name: "Primer", variant: { en: "Intensive Barrier Care", id: "Intensive Barrier Care" }, image: "/media/brands/128/product-lineup/primer-intensive-barrier-care.png" },
+      { name: "Boost", variant: { en: "Intensive Barrier Care", id: "Intensive Barrier Care" }, image: "/media/brands/128/product-lineup/boost-intensive-barrier-care.png" },
+      { name: "Moisturizer", variant: { en: "Pro Acne Defense", id: "Pro Acne Defense" }, image: "/media/brands/128/product-lineup/moisturizer-pro-acne-defense.png" },
+      { name: "Moisturizer", variant: { en: "Advanced Age Repair", id: "Advanced Age Repair" }, image: "/media/brands/128/product-lineup/moisturizer-advanced-age-repair.png" },
     ],
     about: [
-      { title: { en: "Enriched with Saccharina Japonica", id: "Diperkaya Saccharina Japonica" }, image: "/brand/128/about/1.png" },
-      { title: { en: "Moisturizes Skin", id: "Melembapkan Kulit" }, image: "/brand/128/about/2.png" },
-      { title: { en: "Stronger Skin Barrier", id: "Skin Barrier Lebih Kuat" }, image: "/brand/128/about/3.png" },
+      { title: { en: "Enriched with Saccharina Japonica", id: "Diperkaya Saccharina Japonica" }, image: "/media/brands/128/about/1.png" },
+      { title: { en: "Moisturizes Skin", id: "Melembapkan Kulit" }, image: "/media/brands/128/about/2.png" },
+      { title: { en: "Stronger Skin Barrier", id: "Skin Barrier Lebih Kuat" }, image: "/media/brands/128/about/3.png" },
     ],
     // Showcase — title poster then four range banners. Each bg ({n}-last) is a designed
     // coral/nude/green/purple text card (2160×1015), and the product cluster ({cluster-n},
     // composited from that range's product PNGs) sits centred over it. bannerAspect keeps
     // the designed card uncropped.
     showcase: {
-      hero: "/brand/128/showcase/title.png",
+      hero: { en: "/media/brands/128/showcase/title.en.png", id: "/media/brands/128/showcase/title.id.png" },
       heroAspect: "2160 / 1348",
       heroOffsetY: "-40px",
       heroMobileOffsetY: "-21px",
@@ -69,13 +69,13 @@ const entry: Brand = {
       bannerAspect: "2160 / 1015",
       variants: [
         // BRIGHT & RADIANCE — 4 products (wide cluster → sits centred, text peeks at edges)
-        { bg: "/brand/128/showcase/1-5.png", product: "/brand/128/showcase/cluster-1.png", bgAspect: "2160 / 1015", productAspect: "3307 / 2090", productHeight: "103%", productShiftX: "1%", href: "/brands/128/bright-radiance" },
+        { bg: { en: "/media/brands/128/showcase/1-5.en.png", id: "/media/brands/128/showcase/1-5.id.png" }, product: "/media/brands/128/showcase/cluster-1.png", bgAspect: "2160 / 1015", productAspect: "3307 / 2090", productHeight: "103%", productShiftX: "1%", href: "/brands/128/bright-radiance" },
         // INTENSIVE BARRIER CARE — 3 products
-        { bg: "/brand/128/showcase/2-4.png", product: "/brand/128/showcase/cluster-2.png", bgAspect: "2160 / 1015", productAspect: "2661 / 2090", productHeight: "135%", href: "/brands/128/intensive-barrier-care" },
+        { bg: { en: "/media/brands/128/showcase/2-4.en.png", id: "/media/brands/128/showcase/2-4.id.png" }, product: "/media/brands/128/showcase/cluster-2.png", bgAspect: "2160 / 1015", productAspect: "2661 / 2090", productHeight: "135%", href: "/brands/128/intensive-barrier-care" },
         // PRO ACNE DEFENSE — 2 products, nudged left of the wording
-        { bg: "/brand/128/showcase/3-3.png", product: "/brand/128/showcase/cluster-3.png", bgAspect: "2160 / 1015", productAspect: "1802 / 2090", productHeight: "100%", productShiftX: "2%", productShiftY: "2%", href: "/brands/128/acne-pro" },
+        { bg: { en: "/media/brands/128/showcase/3-3.en.png", id: "/media/brands/128/showcase/3-3.id.png" }, product: "/media/brands/128/showcase/cluster-3.png", bgAspect: "2160 / 1015", productAspect: "1802 / 2090", productHeight: "100%", productShiftX: "2%", productShiftY: "2%", href: "/brands/128/acne-pro" },
         // ADVANCED AGE REPAIR — 1 product, slightly left of centre
-        { bg: "/brand/128/showcase/4-2.png", product: "/brand/128/showcase/cluster-4.png", bgAspect: "2160 / 1015", productAspect: "1494 / 2090", productHeight: "98%", productShiftX: "2%", href: "/brands/128/advanced-age-repair" },
+        { bg: { en: "/media/brands/128/showcase/4-2.en.png", id: "/media/brands/128/showcase/4-2.id.png" }, product: "/media/brands/128/showcase/cluster-4.png", bgAspect: "2160 / 1015", productAspect: "1494 / 2090", productHeight: "98%", productShiftX: "2%", href: "/brands/128/advanced-age-repair" },
       ],
     },
   };

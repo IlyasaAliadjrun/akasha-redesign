@@ -24,24 +24,24 @@ const entry: Brand = {
     accentHex: "#3C3836",
     // No standalone 3:4 brand card art — CrossSell is the only reader, and it crops
     // to 3:4 with object-cover, so the about photo (subject centred) is the safe pick.
-    heroImage: "/brand/salon-daily/about/1.png",
+    heroImage: "/media/brands/salon-daily/about/1.png",
     // Layered parallax banner: shampoo stands at the back, the conditioner tube sits
     // in front on the left of the cluster, the hair tonic closes it on the right.
     // Sizes are min(vw, vh) so the whole cluster scales as one and never outgrows a
     // short window; every layer carries a `mobile` override (guide §4.1).
     heroLayers: [
       // Professional Shampoo — back, upright, enters from the TOP.
-      { src: "/brand/salon-daily/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0.1, width: "min(21vw, 42vh)", maxWidth: "1069px", aspectRatio: "2138 / 2708", left: "63.8%", top: "10.5%",
+      { src: "/media/brands/salon-daily/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0.1, width: "min(21vw, 42vh)", maxWidth: "1069px", aspectRatio: "2138 / 2708", left: "63.8%", top: "10.5%",
         mobile: { left: "29%", top: "18%", width: "min(50vw, 36vh)" } },
       // Professional Conditioner — front left of the cluster, enters from the LEFT.
-      { src: "/brand/salon-daily/hero/1.png", depth: 60, enterFrom: "left", enterDelay: 0.3, width: "min(28vw, 54vh)", maxWidth: "1356px", aspectRatio: "2712 / 3246", left: "54.8%", top: "23.5%",
+      { src: "/media/brands/salon-daily/hero/1.png", depth: 60, enterFrom: "left", enterDelay: 0.3, width: "min(28vw, 54vh)", maxWidth: "1356px", aspectRatio: "2712 / 3246", left: "54.8%", top: "23.5%",
         mobile: { left: "5.3%", top: "26%", width: "min(66vw, 44vh)" } },
       // Professional Hair Tonic — front right, sits lower, enters from the RIGHT.
-      { src: "/brand/salon-daily/hero/3.png", depth: 78, enterFrom: "right", enterDelay: 0.5, width: "min(40vw, 62vh)", maxWidth: "1439px", aspectRatio: "2877 / 3118", left: "61.9%", top: "34.5%",
+      { src: "/media/brands/salon-daily/hero/3.png", depth: 78, enterFrom: "right", enterDelay: 0.5, width: "min(40vw, 62vh)", maxWidth: "1439px", aspectRatio: "2877 / 3118", left: "61.9%", top: "34.5%",
         mobile: { left: "24.8%", top: "34%", width: "min(70vw, 56vh)" } },
     ],
     heroContent: {
-      logo: "/brand/salon-daily/hero/wordmark.png",
+      logo: "/media/brands/salon-daily/hero/wordmark.png",
       logoAspect: "1386 / 294",
       logoWidth: "22vw",
       maxWidth: "32vw",
@@ -58,27 +58,27 @@ const entry: Brand = {
     bannerBg: "#F3E9DD",
     hero: false,
     products: [
-      { name: "Professional Shampoo", size: { en: "200 mL", id: "200 mL" }, image: "/brand/salon-daily/product-lineup/shampoo.png" },
-      { name: "Professional Hair Mask", size: { en: "500 g", id: "500 g" }, image: "/brand/salon-daily/product-lineup/hair-mask-500.png" },
-      { name: "Professional Hair Mask", size: { en: "200 g", id: "200 g" }, image: "/brand/salon-daily/product-lineup/hair-mask-200.png" },
-      { name: "Professional Creambath", size: { en: "500 g", id: "500 g" }, image: "/brand/salon-daily/product-lineup/creambath-500.png" },
-      { name: "Professional Creambath", size: { en: "200 g", id: "200 g" }, image: "/brand/salon-daily/product-lineup/creambath-200.png" },
-      { name: "Professional Conditioner", size: { en: "200 mL", id: "200 mL" }, image: "/brand/salon-daily/product-lineup/conditioner.png" },
-      { name: "Professional Hair Tonic", size: { en: "200 mL", id: "200 mL" }, image: "/brand/salon-daily/product-lineup/hair-tonic.png" },
-      { name: "Professional Keratin Hair Spray", variant: { en: "Non Aerosol", id: "Non Aerosol" }, size: { en: "200 mL", id: "200 mL" }, image: "/brand/salon-daily/product-lineup/keratin-hair-spray-non-aerosol.png" },
-      { name: "Styling Gel", variant: { en: "Wet Look", id: "Wet Look" }, image: "/brand/salon-daily/product-lineup/styling-gel.png" },
-      { name: "Hair Spray", variant: { en: "Strong Hold", id: "Daya Tahan Kuat" }, image: "/brand/salon-daily/product-lineup/hair-spray-strong-hold.png" },
-      { name: "Hair Spray", variant: { en: "Extra Strong Hold", id: "Daya Tahan Ekstra Kuat" }, image: "/brand/salon-daily/product-lineup/hair-spray-extra-strong-hold.png" },
-      { name: "Hair Spray", variant: { en: "Rock Solid Hold", id: "Daya Tahan Sekokoh Batu" }, image: "/brand/salon-daily/product-lineup/hair-spray-rock-solid-hold.png" },
-      { name: "Texturizing Mousse", variant: { en: "Volumizing Strong Hold", id: "Volume & Daya Tahan Kuat" }, image: "/brand/salon-daily/product-lineup/texturizing-mousse.png" },
+      { name: "Professional Shampoo", size: { en: "200 mL", id: "200 mL" }, image: "/media/brands/salon-daily/product-lineup/shampoo.png" },
+      { name: "Professional Hair Mask", size: { en: "500 g", id: "500 g" }, image: "/media/brands/salon-daily/product-lineup/hair-mask-500.png" },
+      { name: "Professional Hair Mask", size: { en: "200 g", id: "200 g" }, image: "/media/brands/salon-daily/product-lineup/hair-mask-200.png" },
+      { name: "Professional Creambath", size: { en: "500 g", id: "500 g" }, image: "/media/brands/salon-daily/product-lineup/creambath-500.png" },
+      { name: "Professional Creambath", size: { en: "200 g", id: "200 g" }, image: "/media/brands/salon-daily/product-lineup/creambath-200.png" },
+      { name: "Professional Conditioner", size: { en: "200 mL", id: "200 mL" }, image: "/media/brands/salon-daily/product-lineup/conditioner.png" },
+      { name: "Professional Hair Tonic", size: { en: "200 mL", id: "200 mL" }, image: "/media/brands/salon-daily/product-lineup/hair-tonic.png" },
+      { name: "Professional Keratin Hair Spray", variant: { en: "Non Aerosol", id: "Non Aerosol" }, size: { en: "200 mL", id: "200 mL" }, image: "/media/brands/salon-daily/product-lineup/keratin-hair-spray-non-aerosol.png" },
+      { name: "Styling Gel", variant: { en: "Wet Look", id: "Wet Look" }, image: "/media/brands/salon-daily/product-lineup/styling-gel.png" },
+      { name: "Hair Spray", variant: { en: "Strong Hold", id: "Daya Tahan Kuat" }, image: "/media/brands/salon-daily/product-lineup/hair-spray-strong-hold.png" },
+      { name: "Hair Spray", variant: { en: "Extra Strong Hold", id: "Daya Tahan Ekstra Kuat" }, image: "/media/brands/salon-daily/product-lineup/hair-spray-extra-strong-hold.png" },
+      { name: "Hair Spray", variant: { en: "Rock Solid Hold", id: "Daya Tahan Sekokoh Batu" }, image: "/media/brands/salon-daily/product-lineup/hair-spray-rock-solid-hold.png" },
+      { name: "Texturizing Mousse", variant: { en: "Volumizing Strong Hold", id: "Volume & Daya Tahan Kuat" }, image: "/media/brands/salon-daily/product-lineup/texturizing-mousse.png" },
     ],
     about: [
-      { title: { en: "For All Hair Types", id: "Untuk Semua Jenis Rambut" }, image: "/brand/salon-daily/about/1.png" },
-      { title: { en: "Keratin Collagen Pro-Vit B5", id: "Keratin Collagen Pro-Vit B5" }, image: "/brand/salon-daily/about/2.png" },
-      { title: { en: "Professional Hair Care", id: "Perawatan Rambut Profesional" }, image: "/brand/salon-daily/about/3.png" },
+      { title: { en: "For All Hair Types", id: "Untuk Semua Jenis Rambut" }, image: "/media/brands/salon-daily/about/1.png" },
+      { title: { en: "Keratin Collagen Pro-Vit B5", id: "Keratin Collagen Pro-Vit B5" }, image: "/media/brands/salon-daily/about/2.png" },
+      { title: { en: "Professional Hair Care", id: "Perawatan Rambut Profesional" }, image: "/media/brands/salon-daily/about/3.png" },
     ],
     showcase: {
-      hero: "/brand/salon-daily/showcase/title.png",
+      hero: "/media/brands/salon-daily/showcase/title.png",
       heroAspect: "4793 / 4140",
       // The two variant banners are finished cards (flat cream/tan with baked-in
       // rounded corners and typography), so the frame takes the art's own ratio
@@ -86,9 +86,9 @@ const entry: Brand = {
       bannerAspect: "4811 / 2261",
       variants: [
         {
-          bg: "/brand/salon-daily/showcase/1-2.png",
+          bg: { en: "/media/brands/salon-daily/showcase/1-2.en.png", id: "/media/brands/salon-daily/showcase/1-2.id.png" },
           bgAspect: "4811 / 2261",
-          product: "/brand/salon-daily/showcase/1-1.png",
+          product: "/media/brands/salon-daily/showcase/1-1.png",
           // Wide 3-product cluster with ~15% transparent margin top & bottom: at 130%
           // of the banner height the bottles themselves land just inside the frame,
           // overlapping the word "TREATMENT" exactly like the reference.
@@ -97,9 +97,9 @@ const entry: Brand = {
           href: "/brands/salon-daily/treatment",
         },
         {
-          bg: "/brand/salon-daily/showcase/2-2.png",
+          bg: { en: "/media/brands/salon-daily/showcase/2-2.en.png", id: "/media/brands/salon-daily/showcase/2-2.id.png" },
           bgAspect: "4811 / 2260",
-          product: "/brand/salon-daily/showcase/2-1.png",
+          product: "/media/brands/salon-daily/showcase/2-1.png",
           productAspect: "4645 / 3112",
           productHeight: "130%",
           href: "/brands/salon-daily/styling",

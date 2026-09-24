@@ -23,7 +23,7 @@ Yang menentukan sering kali **HP, bukan desktop** — karena layar HP modern pun
 
 # BAGIAN 1 — HALAMAN BRAND
 
-## § 1. Hero — `brand/{slug}/hero/`
+## § 1. Hero — `media/brands/{slug}/hero/`
 
 | File | Rasio | **KIRIM** | Format | Maks |
 |---|:---:|:---:|:---:|:---:|
@@ -46,7 +46,7 @@ Yang menentukan sering kali **HP, bukan desktop** — karena layar HP modern pun
 
 ---
 
-## § 2. Product Lineup — `brand/{slug}/product-lineup/`
+## § 2. Product Lineup — `media/brands/{slug}/product-lineup/`
 
 | Rasio | **KIRIM** | Format | Maks |
 |:---:|:---:|:---:|:---:|
@@ -60,7 +60,7 @@ Yang menentukan sering kali **HP, bukan desktop** — karena layar HP modern pun
 
 ---
 
-## § 3. About — `brand/{slug}/about/`
+## § 3. About — `media/brands/{slug}/about/`
 
 | Rasio | **KIRIM** | Format | Maks |
 |:---:|:---:|:---:|:---:|
@@ -70,7 +70,7 @@ Ketiga file **wajib 900 × 1200 persis**. Sisakan bagian bawah 30% bebas subjek 
 
 ---
 
-## § 4. Showcase — `brand/{slug}/showcase/`
+## § 4. Showcase — `media/brands/{slug}/showcase/`
 
 | File | Rasio | **KIRIM** | Format | Maks |
 |---|:---:|:---:|:---:|:---:|
@@ -124,7 +124,7 @@ Kanvas **2160 × 900**, tapi yang selalu terlihat hanya **2160 × 864 bagian ten
 
 # BAGIAN 2 — HALAMAN SUB-BRAND
 
-`brand/{slug}/{line}/` — contoh: Creambath, Shampoo, Scentsations, Vitaglitz.
+`media/brands/{slug}/lines/{line}/` — contoh: Creambath, Shampoo, Scentsations, Vitaglitz.
 
 ## § 6. Hero sub-brand — `{line}/hero/`
 

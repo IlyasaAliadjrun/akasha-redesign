@@ -12,7 +12,7 @@ const entry: SubBrand = {
     // tells the navbar to render dark chrome here instead of assuming a dark banner.
     theme: "accent-light",
     bannerBg: "#F2F1EF",
-    heroWordmark: "/brand/inoskin/hero/wordmark.png",
+    heroWordmark: "/media/brands/inoskin/hero/wordmark.png",
     heroWordmarkAspect: "1553 / 549",
     // Products render back-to-front: the moisturizer tube sits behind at the top
     // right, the toner behind-left, and the serum in front and lower — the same
@@ -22,14 +22,14 @@ const entry: SubBrand = {
     // the lg breakpoint; the third `px` term on the serum caps it at half its natural
     // 1471px width so it stays sharp at DPR 2 on very wide screens.
     heroLayers: [
-      { src: "/brand/inoskin/young-and-bright/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 34, width: "min(29vw, 58vh)", aspectRatio: "2391 / 4018", left: "63%", top: "8.5%",
+      { src: "/media/brands/inoskin/lines/young-and-bright/hero/2.png", enterFrom: "right", enterDelay: 0.4, depth: 34, width: "min(29vw, 58vh)", aspectRatio: "2391 / 4018", left: "63%", top: "8.5%",
         mobile: { left: "14.5%", top: "-22.6%", width: "74%" } },
-      { src: "/brand/inoskin/young-and-bright/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 48, width: "min(28vw, 58vh)", aspectRatio: "2265 / 3199", left: "55%", top: "11%",
+      { src: "/media/brands/inoskin/lines/young-and-bright/hero/1.png", enterFrom: "left", enterDelay: 0.2, depth: 48, width: "min(28vw, 58vh)", aspectRatio: "2265 / 3199", left: "55%", top: "11%",
         mobile: { left: "2.3%", top: "-8%", width: "72%" } },
-      { src: "/brand/inoskin/young-and-bright/hero/3.png", enterFrom: "right", enterDelay: 0.6, depth: 62, width: "min(22.5vw, 40vh, 735px)", aspectRatio: "1471 / 2306", left: "73%", top: "30%",
+      { src: "/media/brands/inoskin/lines/young-and-bright/hero/3.png", enterFrom: "right", enterDelay: 0.6, depth: 62, width: "min(22.5vw, 40vh, 735px)", aspectRatio: "1471 / 2306", left: "73%", top: "30%",
         mobile: { left: "41.6%", top: "24.8%", width: "48%" } },
     ],
-    showcaseTitle: "/brand/inoskin/young-and-bright/showcase/title.png",
+    showcaseTitle: { en: "/media/brands/inoskin/lines/young-and-bright/showcase/title.en.png", id: "/media/brands/inoskin/lines/young-and-bright/showcase/title.id.png" },
     showcaseTitleAspect: "4834 / 3846",
     // No `featured` slot: every card asset in this folder is a portrait SKU card —
     // there is no landscape hero card, and the reference doesn't show one either.
@@ -38,11 +38,11 @@ const entry: SubBrand = {
     // only that padding and keeps every visible card aligned with equal grid gaps.
     cardAspect: "2304 / 2987",
     cards: [
-      { image: "/brand/inoskin/young-and-bright/showcase/1.png", imageFit: "cover", imagePosition: "bottom", label: { en: "Young and Bright Toner", id: "Young and Bright Toner" } },
-      { image: "/brand/inoskin/young-and-bright/showcase/2.png", imageFit: "cover", imagePosition: "top", label: { en: "Young and Bright Serum", id: "Young and Bright Serum" } },
-      { image: "/brand/inoskin/young-and-bright/showcase/3.png", imageFit: "cover", label: { en: "Young and Bright Moisturizer", id: "Young and Bright Moisturizer" } },
-      { image: "/brand/inoskin/young-and-bright/showcase/4.png", imageFit: "cover", label: { en: "Collagen Firming Mask", id: "Masker Pengencang Collagen" } },
-      { image: "/brand/inoskin/young-and-bright/showcase/5.png", imageFit: "cover", imagePosition: "bottom", label: { en: "Triple Power Cleanser", id: "Pembersih Wajah Triple Power" } },
+      { image: { en: "/media/brands/inoskin/lines/young-and-bright/showcase/1.en.png", id: "/media/brands/inoskin/lines/young-and-bright/showcase/1.id.png" }, imageFit: "cover", imagePosition: "bottom", label: { en: "Young and Bright Toner", id: "Young and Bright Toner" } },
+      { image: { en: "/media/brands/inoskin/lines/young-and-bright/showcase/2.en.png", id: "/media/brands/inoskin/lines/young-and-bright/showcase/2.id.png" }, imageFit: "cover", imagePosition: "top", label: { en: "Young and Bright Serum", id: "Young and Bright Serum" } },
+      { image: { en: "/media/brands/inoskin/lines/young-and-bright/showcase/3.en.png", id: "/media/brands/inoskin/lines/young-and-bright/showcase/3.id.png" }, imageFit: "cover", label: { en: "Young and Bright Moisturizer", id: "Young and Bright Moisturizer" } },
+      { image: { en: "/media/brands/inoskin/lines/young-and-bright/showcase/4.en.png", id: "/media/brands/inoskin/lines/young-and-bright/showcase/4.id.png" }, imageFit: "cover", label: { en: "Collagen Firming Mask", id: "Masker Pengencang Collagen" } },
+      { image: { en: "/media/brands/inoskin/lines/young-and-bright/showcase/5.en.png", id: "/media/brands/inoskin/lines/young-and-bright/showcase/5.id.png" }, imageFit: "cover", imagePosition: "bottom", label: { en: "Triple Power Cleanser", id: "Pembersih Wajah Triple Power" } },
     ],
   };
 

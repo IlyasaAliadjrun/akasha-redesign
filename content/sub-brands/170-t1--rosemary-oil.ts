@@ -10,23 +10,23 @@ const entry: SubBrand = {
     accentHex: "#5C3427", // Rosemary Oil brown, sampled from the line's banner art
     bannerBg: "#B0B783",
     theme: "accent-light",
-    heroWordmark: "/brand/t1/rosemary-oil/hero/wordmark.png",
+    heroWordmark: "/media/brands/t1/lines/rosemary-oil/hero/wordmark.png",
     heroWordmarkAspect: "1424 / 556",
     // One composed cluster (protein cream + scalp & hair oil). This canvas is by far
     // the emptiest of the four — the pair fills 55% × 52% and sits 41% down — so the
     // layer box is roughly twice the visible cluster and `top` goes negative to pull
     // that dead space back off the top of the banner.
     heroLayers: [
-      { src: "/brand/t1/rosemary-oil/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
+      { src: "/media/brands/t1/lines/rosemary-oil/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(58vw, 74vh)", aspectRatio: "3118 / 5494", left: "57%", top: "-35%",
         mobile: { left: "-5%", top: "-103%", width: "120%" } },
     ],
-    showcaseTitle: "/brand/t1/rosemary-oil/showcase/title.png",
+    showcaseTitle: { en: "/media/brands/t1/lines/rosemary-oil/showcase/title.en.png", id: "/media/brands/t1/lines/rosemary-oil/showcase/title.id.png" },
     showcaseTitleAspect: "4428 / 4061",
     cardAspect: "2302 / 2987",
     cards: [
-      { image: "/brand/t1/rosemary-oil/showcase/1.png", label: { en: "Scalp & Hair Oil with Rosemary Oil", id: "Scalp & Hair Oil dengan Rosemary Oil" } },
-      { image: "/brand/t1/rosemary-oil/showcase/2.png", label: { en: "Protein Cream with Rosemary Oil", id: "Protein Cream dengan Rosemary Oil" } },
+      { image: { en: "/media/brands/t1/lines/rosemary-oil/showcase/1.en.png", id: "/media/brands/t1/lines/rosemary-oil/showcase/1.id.png" }, label: { en: "Scalp & Hair Oil with Rosemary Oil", id: "Scalp & Hair Oil dengan Rosemary Oil" } },
+      { image: { en: "/media/brands/t1/lines/rosemary-oil/showcase/2.en.png", id: "/media/brands/t1/lines/rosemary-oil/showcase/2.id.png" }, label: { en: "Protein Cream with Rosemary Oil", id: "Protein Cream dengan Rosemary Oil" } },
     ],
   };
 

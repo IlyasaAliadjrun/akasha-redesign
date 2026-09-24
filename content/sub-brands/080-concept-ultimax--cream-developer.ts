@@ -12,15 +12,15 @@ const entry: SubBrand = {
     // palette's deep brown (rgb(62,33,32)) rather than the reference's pale sage.
     bannerBg: "#E6EAE4",
     theme: "accent-light",
-    heroWordmark: "/brand/concept-ultimax/cream-developer/hero/wordmark.png",
+    heroWordmark: "/media/brands/concept-ultimax/lines/cream-developer/hero/wordmark.png",
     heroWordmarkAspect: "2339 / 473",
     // The delivered hero PNG is an almost-square canvas with generous margin — the
     // two bottles fill only 50 % × 69 % of it — hence the wide layer box.
     heroLayers: [
-      { src: "/brand/concept-ultimax/cream-developer/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 44, width: "min(57vw, 81vh)", aspectRatio: "3945 / 4041", left: "55%", top: "8%",
+      { src: "/media/brands/concept-ultimax/lines/cream-developer/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 44, width: "min(57vw, 81vh)", aspectRatio: "3945 / 4041", left: "55%", top: "8%",
         mobile: { left: "-15%", top: "-30%", width: "125%" } },
     ],
-    showcaseTitle: "/brand/concept-ultimax/cream-developer/showcase/title.png",
+    showcaseTitle: { en: "/media/brands/concept-ultimax/lines/cream-developer/showcase/title.en.png", id: "/media/brands/concept-ultimax/lines/cream-developer/showcase/title.id.png" },
     showcaseTitleAspect: "4423 / 3479",
     showcaseTitleOffsetY: "60px",
     showcaseTitleMobileOffsetY: "24px",
@@ -29,15 +29,15 @@ const entry: SubBrand = {
     // slot. (SubBrandShowcase renders `featured` above the grid; the reference sheet
     // shows it below — the section anatomy is fixed, so the position follows the
     // component.)
-    featured: { image: "/brand/concept-ultimax/cream-developer/showcase/5.png", label: { en: "Activator — activator cream for maximum color absorption", id: "Activator — krim aktivator untuk penyerapan warna yang lebih maksimal" } },
+    featured: { image: { en: "/media/brands/concept-ultimax/lines/cream-developer/showcase/5.en.png", id: "/media/brands/concept-ultimax/lines/cream-developer/showcase/5.id.png" }, label: { en: "Activator — activator cream for maximum color absorption", id: "Activator — krim aktivator untuk penyerapan warna yang lebih maksimal" } },
     featuredAspect: "4845 / 2436",
     featuredPosition: "bottom",
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/concept-ultimax/cream-developer/showcase/1.png", label: { en: "Cream Developer 10 Vol", id: "Cream Developer 10 Vol" } },
-      { image: "/brand/concept-ultimax/cream-developer/showcase/2.png", label: { en: "Cream Developer 20 Vol", id: "Cream Developer 20 Vol" } },
-      { image: "/brand/concept-ultimax/cream-developer/showcase/3.png", label: { en: "Cream Developer 30 Vol", id: "Cream Developer 30 Vol" } },
-      { image: "/brand/concept-ultimax/cream-developer/showcase/4.png", label: { en: "Cream Developer 40 Vol", id: "Cream Developer 40 Vol" } },
+      { image: "/media/brands/concept-ultimax/lines/cream-developer/showcase/1.png", label: { en: "Cream Developer 10 Vol", id: "Cream Developer 10 Vol" } },
+      { image: "/media/brands/concept-ultimax/lines/cream-developer/showcase/2.png", label: { en: "Cream Developer 20 Vol", id: "Cream Developer 20 Vol" } },
+      { image: "/media/brands/concept-ultimax/lines/cream-developer/showcase/3.png", label: { en: "Cream Developer 30 Vol", id: "Cream Developer 30 Vol" } },
+      { image: "/media/brands/concept-ultimax/lines/cream-developer/showcase/4.png", label: { en: "Cream Developer 40 Vol", id: "Cream Developer 40 Vol" } },
     ],
   };
 

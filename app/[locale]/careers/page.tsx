@@ -23,8 +23,8 @@ export default function CareersPage({ params }: { params: { locale: string } }) 
     <>
       {/* HERO */}
       <PageHero
-        desktop="/careers/hero/desktop.jpg"
-        mobile="/careers/hero/mobile.jpg"
+        desktop="/media/pages/careers/hero/desktop.jpg"
+        mobile="/media/pages/careers/hero/mobile.jpg"
         title={t(CAREERS_PAGE.hero.title)}
         subtitle={t(CAREERS_PAGE.hero.subtitle)}
         tone="dark"

@@ -17,20 +17,20 @@ const entry: Brand = {
     accentHex: "#A67E6C",
     // No standalone 3:4 brand card art — CrossSell (the only reader) crops this
     // 1.10:1 About photo; the motor sits dead centre so it survives the crop.
-    heroImage: "/brand/asters/about/1.png",
+    heroImage: "/media/brands/asters/about/1.png",
     // Two styling tools on a warm off-white banner, mirroring the reference: the
     // "G" dryer sits lower and further left, the round-barrel dryer overlaps it
     // from the right and slightly higher. Both PNGs carry wide transparent
     // margins, so the layer `width` is much larger than the visible product —
     // the vh term keeps them inside the banner on short/wide screens.
     heroLayers: [
-      { src: "/brand/asters/hero/1.png", depth: 52, enterFrom: "right", enterDelay: 0.35, width: "min(28vw, 34vh)", aspectRatio: "1590 / 3064", left: "72%", top: "26%",
+      { src: "/media/brands/asters/hero/1.png", depth: 52, enterFrom: "right", enterDelay: 0.35, width: "min(28vw, 34vh)", aspectRatio: "1590 / 3064", left: "72%", top: "26%",
         mobile: { left: "44.5%", top: "29%", width: "min(37vw, 19vh)" } },
-      { src: "/brand/asters/hero/2.png", depth: 30, enterFrom: "left", enterDelay: 0.15, width: "min(50vw, 61vh)", aspectRatio: "2869 / 4903", left: "56%", top: "-1.5%",
+      { src: "/media/brands/asters/hero/2.png", depth: 30, enterFrom: "left", enterDelay: 0.15, width: "min(50vw, 61vh)", aspectRatio: "2869 / 4903", left: "56%", top: "-1.5%",
         mobile: { left: "5%", top: "15%", width: "min(67vw, 39vh)" } },
     ],
     heroContent: {
-      logo: "/brand/asters/hero/wordmark.png",
+      logo: "/media/brands/asters/hero/wordmark.png",
       logoAspect: "1513 / 740",
       logoWidth: "21vw",
       maxWidth: "23vw",
@@ -58,20 +58,20 @@ const entry: Brand = {
       // `imageScale` normalises the SKUs against each other: the artwork is cropped
       // tight per product, so a small accessory (massager, bangs clip) would
       // otherwise render as tall as a hair dryer inside the square stage.
-      { name: "VOLA", variant: { en: "Volumizing Styler", id: "Penata Rambut Bervolume" }, image: "/brand/asters/product-lineup/vola-volumizing-styler.png" },
-      { name: "MOVA", variant: { en: "Hair Straightening Brush", id: "Sikat Pelurus Rambut" }, image: "/brand/asters/product-lineup/mova-hair-straightening-brush.png" },
-      { name: "High Speed Hair Dryer", image: "/brand/asters/product-lineup/high-speed-hair-dryer.png" },
-      { name: "High Performance Hair Iron", image: "/brand/asters/product-lineup/high-performance-hair-iron.png" },
-      { name: "Scalp Therapy Massager", image: "/brand/asters/product-lineup/scalp-therapy-massager.png", imageScale: 0.55 },
-      { name: "Paddle Detangler Brush", image: "/brand/asters/product-lineup/paddle-detangler-brush.png" },
-      { name: "Volumizing Bangs Clip", image: "/brand/asters/product-lineup/volumizing-bangs-clip.png", imageScale: 0.68 },
+      { name: "VOLA", variant: { en: "Volumizing Styler", id: "Penata Rambut Bervolume" }, image: "/media/brands/asters/product-lineup/vola-volumizing-styler.png" },
+      { name: "MOVA", variant: { en: "Hair Straightening Brush", id: "Sikat Pelurus Rambut" }, image: "/media/brands/asters/product-lineup/mova-hair-straightening-brush.png" },
+      { name: "High Speed Hair Dryer", image: "/media/brands/asters/product-lineup/high-speed-hair-dryer.png" },
+      { name: "High Performance Hair Iron", image: "/media/brands/asters/product-lineup/high-performance-hair-iron.png" },
+      { name: "Scalp Therapy Massager", image: "/media/brands/asters/product-lineup/scalp-therapy-massager.png", imageScale: 0.55 },
+      { name: "Paddle Detangler Brush", image: "/media/brands/asters/product-lineup/paddle-detangler-brush.png" },
+      { name: "Volumizing Bangs Clip", image: "/media/brands/asters/product-lineup/volumizing-bangs-clip.png", imageScale: 0.68 },
     ],
     about: [
-      { title: { en: "Advanced Technology", id: "Teknologi Canggih" }, image: "/brand/asters/about/1.png" },
-      { title: { en: "Gentle on Hair", id: "Lembut di Rambut" }, image: "/brand/asters/about/2.png" },
+      { title: { en: "Advanced Technology", id: "Teknologi Canggih" }, image: "/media/brands/asters/about/1.png" },
+      { title: { en: "Gentle on Hair", id: "Lembut di Rambut" }, image: "/media/brands/asters/about/2.png" },
     ],
     showcase: {
-      hero: "/brand/asters/showcase/title.png",
+      hero: { en: "/media/brands/asters/showcase/title.en.png", id: "/media/brands/asters/showcase/title.id.png" },
       heroAspect: "4591 / 3142",
       heroOffsetY: "-40px",
       heroMobileOffsetY: "-21px",
@@ -84,8 +84,8 @@ const entry: Brand = {
         // 1-1.png carries a 14.7% transparent top margin, so the box is lifted
         // (`productShiftY`) to sit the tools optically centred and keep their handles
         // clear of the caption baked into the bottom 85–94% of the banner art.
-        { bg: "/brand/asters/showcase/1-2.png", bgAspect: "4810 / 2261", product: "/brand/asters/showcase/1-1.png", productAspect: "2148 / 2363", productHeight: "92%", productShiftX: "8%", productShiftY: "-15%", href: "/brands/asters/styling-tools" },
-        { bg: "/brand/asters/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/asters/showcase/2-1.png", productAspect: "2828 / 2058", productHeight: "85%", productShiftX: "6%", productShiftY: "-2%", href: "/brands/asters/hair-accessories" },
+        { bg: { en: "/media/brands/asters/showcase/1-2.en.png", id: "/media/brands/asters/showcase/1-2.id.png" }, bgAspect: "4810 / 2261", product: "/media/brands/asters/showcase/1-1.png", productAspect: "2148 / 2363", productHeight: "92%", productShiftX: "8%", productShiftY: "-15%", href: "/brands/asters/styling-tools" },
+        { bg: { en: "/media/brands/asters/showcase/2-2.en.png", id: "/media/brands/asters/showcase/2-2.id.png" }, bgAspect: "4810 / 2260", product: "/media/brands/asters/showcase/2-1.png", productAspect: "2828 / 2058", productHeight: "85%", productShiftX: "6%", productShiftY: "-2%", href: "/brands/asters/hair-accessories" },
       ],
     },
   };

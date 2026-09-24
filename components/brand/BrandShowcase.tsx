@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { ShowcaseVariant as TVariant } from "@/lib/brands";
-import type { ResolvedBrand } from "@/lib/locale/resolve";
+import type { Resolved, ResolvedBrand } from "@/lib/locale/resolve";
 import { useLocale } from "@/lib/locale/LocaleProvider";
 import { BRAND } from "@/dictionaries/brand";
 
@@ -35,7 +35,7 @@ export function ShowcaseVariant({
   parallax,
   frameAspect,
 }: {
-  variant: TVariant;
+  variant: Resolved<TVariant>;
   index: number;
   brandName: string;
   // Aspect of the banner frame itself (default "5 / 2"). Set it to the bg art's own

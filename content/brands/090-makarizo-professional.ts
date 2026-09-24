@@ -13,7 +13,7 @@ const entry: Brand = {
     },
     accentClass: "bg-brand-makpro",
     accentHex: "#2C2C2C",
-    heroImage: "/home/hero-carousel/makarizo-professional.jpg",
+    heroImage: "/media/home/hero-carousel/makarizo-professional.jpg",
     hero: true,
     products: [
       { name: "Concept Ultimax SF3", variant: { en: "Coloring System", id: "Sistem Pewarnaan" }, size: { en: "Professional Use", id: "Untuk Penggunaan Profesional" } },

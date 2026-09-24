@@ -14,12 +14,27 @@ export type Localized<T = string> = { en: T; id: T };
 export const isLocale = (value: string): value is Locale =>
   (locales as readonly string[]).includes(value);
 
+// An asset field that is either one file shared by both languages, or one file
+// per language — used only where the artwork has text baked into the image.
+// Language-specific files carry a `.en` / `.id` suffix before the extension.
+export type LocalizedAsset = string | Localized<string>;
+
+export const pickLocalized = (value: LocalizedAsset, locale: Locale): string =>
+  typeof value === "string" ? value : value[locale];
+
+// public/media and public/documents hold locale-agnostic files: one copy serves
+// both languages, so these paths must never get a locale segment. They are also
+// the only roots that later move to object storage, so they stay prefix-free.
+const SHARED_ROOTS = ["/media/", "/documents/"];
+const isShared = (path: string) => SHARED_ROOTS.some((root) => path.startsWith(root));
+
 // Prefixes a local (`/`-leading) path with the locale segment. External URLs
-// (Unsplash placeholders still referenced by a few content fields) pass through
-// untouched, since they never lived under a locale-specific public/ folder.
+// (Unsplash placeholders still referenced by a few content fields) and shared
+// asset roots pass through untouched.
 export function localizeAsset(locale: Locale, path: string): string {
   if (/^https?:\/\//.test(path)) return path;
   if (!path.startsWith("/")) return path;
+  if (isShared(path)) return path;
   return `/${locale}${path}`;
 }
 
@@ -29,6 +44,7 @@ export function localizeHref(locale: Locale, path: string): string {
   if (/^https?:\/\//.test(path)) return path;
   if (path.startsWith("#")) return path;
   if (!path.startsWith("/")) return path;
+  if (isShared(path)) return path;
   return `/${locale}${path}`;
 }
 

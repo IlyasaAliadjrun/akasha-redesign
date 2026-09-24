@@ -76,8 +76,8 @@ export default function InvestorPage({ params }: { params: { locale: string } })
     <>
       {/* HERO */}
       <PageHero
-        desktop="/investor/hero/desktop.jpg"
-        mobile="/investor/hero/mobile.jpg"
+        desktop="/media/pages/investor/hero/desktop.jpg"
+        mobile="/media/pages/investor/hero/mobile.jpg"
         title={t(INVESTOR_PAGE.hero.title)}
         subtitle={t(INVESTOR_PAGE.hero.subtitle)}
         tone="dark"

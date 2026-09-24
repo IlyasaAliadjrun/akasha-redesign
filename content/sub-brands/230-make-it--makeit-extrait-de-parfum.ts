@@ -12,12 +12,12 @@ const entry: SubBrand = {
   accentHex: "#7D2628",
   bannerBg: "#7D2628",
   theme: "light",
-  heroWordmark: "/brand/makeit/makeit-extrait-de-parfum/hero/wordmark.png",
+  heroWordmark: "/media/brands/make-it/lines/makeit-extrait-de-parfum/hero/wordmark.png",
   heroWordmarkAspect: "1121 / 334",
   heroWordmarkMobileWidth: "35vw",
   heroLayers: [
     {
-      src: "/brand/makeit/makeit-extrait-de-parfum/hero/1.png",
+      src: "/media/brands/make-it/lines/makeit-extrait-de-parfum/hero/1.png",
       enterFrom: "left",
       enterDelay: 0.15,
       depth: 42,
@@ -28,7 +28,7 @@ const entry: SubBrand = {
       mobile: { left: "-12%", top: "-42%", width: "90%" },
     },
     {
-      src: "/brand/makeit/makeit-extrait-de-parfum/hero/2.png",
+      src: "/media/brands/make-it/lines/makeit-extrait-de-parfum/hero/2.png",
       enterFrom: "right",
       enterDelay: 0.3,
       depth: 58,
@@ -39,12 +39,12 @@ const entry: SubBrand = {
       mobile: { right: "-9%", top: "-10%", width: "90%" },
     },
   ],
-  showcaseTitle: "/brand/makeit/makeit-extrait-de-parfum/showcase/title.png",
+  showcaseTitle: "/media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/title.png",
   showcaseTitleAspect: "4867 / 4912",
   showcaseTitleMobileOffsetX: "-15px",
   // showcaseSpacing: "flush",
   featured: {
-    image: "/brand/makeit/makeit-extrait-de-parfum/showcase/3.png",
+    image: "/media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/3.png",
     label: { en: "Bold Venture", id: "Bold Venture" },
   },
   featuredAspect: "4687 / 2956",
@@ -52,19 +52,19 @@ const entry: SubBrand = {
   cardAspect: "2302 / 2986",
   cards: [
     {
-      image: "/brand/makeit/makeit-extrait-de-parfum/showcase/1.png",
+      image: "/media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/1.png",
       label: { en: "Dream Chaser", id: "Dream Chaser" },
     },
     {
-      image: "/brand/makeit/makeit-extrait-de-parfum/showcase/2.png",
+      image: "/media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/2.png",
       label: { en: "Social Butterfly", id: "Social Butterfly" },
     },
     {
-      image: "/brand/makeit/makeit-extrait-de-parfum/showcase/4.png",
+      image: "/media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/4.png",
       label: { en: "Keep in Touch", id: "Keep in Touch" },
     },
     {
-      image: "/brand/makeit/makeit-extrait-de-parfum/showcase/5.png",
+      image: "/media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/5.png",
       label: { en: "Weekday Hustle", id: "Weekday Hustle" },
     },
   ],

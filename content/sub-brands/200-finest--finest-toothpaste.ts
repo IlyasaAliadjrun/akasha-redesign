@@ -12,12 +12,12 @@ const entry: SubBrand = {
   accentHex: "#F5595C",
   bannerBg: "#FFFFFF",
   theme: "dark",
-  heroWordmark: "/brand/finest/hero/wordmark.png",
+  heroWordmark: "/media/brands/finest/hero/wordmark.png",
   heroWordmarkAspect: "1394 / 325",
   heroWordmarkMobileWidth: "30vw",
   heroLayers: [
     {
-      src: "/brand/finest/finest-toothpaste/hero/2.png",
+      src: "/media/brands/finest/lines/finest-toothpaste/hero/2.png",
       enterFrom: "right",
       enterDelay: 0.3,
       depth: 34,
@@ -28,7 +28,7 @@ const entry: SubBrand = {
       mobile: { left: "5%", top: "-40%", width: "92%" },
     },
     {
-      src: "/brand/finest/finest-toothpaste/hero/1.png",
+      src: "/media/brands/finest/lines/finest-toothpaste/hero/1.png",
       enterFrom: "bottom",
       enterDelay: 0.15,
       depth: 56,
@@ -39,7 +39,7 @@ const entry: SubBrand = {
       mobile: { left: "-6%", top: "-26%", width: "92%" },
     },
   ],
-  showcaseTitle: "/brand/finest/finest-toothpaste/showcase/title.png",
+  showcaseTitle: "/media/brands/finest/lines/finest-toothpaste/showcase/title.png",
   showcaseTitleAspect: "4376 / 3898",
   showcaseBannerAspect: "4810 / 2261",
   showcaseProductAlign: "center",
@@ -48,8 +48,8 @@ const entry: SubBrand = {
   showcaseTitleMobileOffsetY: "19px",
   showcaseVariants: [
     {
-      bg: "/brand/finest/finest-toothpaste/showcase/1-2.png",
-      product: "/brand/finest/finest-toothpaste/showcase/1-1.png",
+      bg: { en: "/media/brands/finest/lines/finest-toothpaste/showcase/1-2.en.png", id: "/media/brands/finest/lines/finest-toothpaste/showcase/1-2.id.png" },
+      product: "/media/brands/finest/lines/finest-toothpaste/showcase/1-1.png",
       bgAspect: "4810 / 2260",
       productAspect: "5065 / 4223",
       productHeight: "150%",
@@ -57,8 +57,8 @@ const entry: SubBrand = {
       mobile: { productHeight: "150%", productShiftY: "-2%" },
     },
     {
-      bg: "/brand/finest/finest-toothpaste/showcase/2-2.png",
-      product: "/brand/finest/finest-toothpaste/showcase/2-1.png",
+      bg: { en: "/media/brands/finest/lines/finest-toothpaste/showcase/2-2.en.png", id: "/media/brands/finest/lines/finest-toothpaste/showcase/2-2.id.png" },
+      product: "/media/brands/finest/lines/finest-toothpaste/showcase/2-1.png",
       bgAspect: "4810 / 2261",
       productAspect: "4416 / 3708",
       productHeight: "150%",

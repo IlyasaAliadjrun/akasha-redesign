@@ -15,7 +15,7 @@ const entry: Brand = {
     },
     accentClass: "bg-brand-makarizo",
     accentHex: "#D4447C",
-    heroImage: "/home/hero-carousel/hair-energy.jpg",
+    heroImage: "/media/home/hero-carousel/hair-energy.jpg",
     hero: false,
     reasons: [
       { icon: "💇", title: { en: "Over 40 years of hair expertise", id: "Lebih dari 40 tahun keahlian rambut" }, body: { en: "Hair care innovation that has grown alongside Indonesian women.", id: "Inovasi perawatan rambut yang tumbuh bersama wanita Indonesia." } },

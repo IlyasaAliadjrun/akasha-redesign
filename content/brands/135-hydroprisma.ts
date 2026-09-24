@@ -27,7 +27,7 @@ const entry: Brand = {
     // No dedicated 3:4 brand-card art was delivered, so CrossSell reuses the hero's
     // Step 2 bottle: a tall portrait cut-out that survives the card's 3:4 cover crop
     // intact (visible art sits at 32–69 % of the square canvas).
-    heroImage: "/brand/hydroprisma/hero/2.png",
+    heroImage: "/media/brands/hydroprisma/hero/2.png",
     // Layered parallax banner. Order = stacking (last = front): the Step 2 bottle sits
     // furthest back, the pouch overlaps it from the right, the Step 1 jar sits in front
     // and lower — the arrangement in the reference. Every canvas is square and carries
@@ -38,17 +38,17 @@ const entry: Brand = {
     // short window; positions are % so the composition holds at any width.
     heroLayers: [
       // Step 1 Straightening Cream pouch — right, slightly lower, enters from the RIGHT (3rd).
-      { src: "/brand/hydroprisma/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(53vw, 64vh)", maxWidth: "1037px", aspectRatio: "2073 / 2074", left: "68%", top: "17.7%",
+      { src: "/media/brands/hydroprisma/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4, width: "min(53vw, 64vh)", maxWidth: "1037px", aspectRatio: "2073 / 2074", left: "68%", top: "17.7%",
         mobile: { left: "35%", top: "30%", width: "min(60vw, 48vh)" } },
       // Step 2 Milky Neutralizer — back, centre, enters from the TOP (1st).
-      { src: "/brand/hydroprisma/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0, width: "min(54vw, 65vh)", maxWidth: "1302px", aspectRatio: "1 / 1", left: "57.5%", top: "16.5%",
+      { src: "/media/brands/hydroprisma/hero/2.png", depth: 36, enterFrom: "top", enterDelay: 0, width: "min(54vw, 65vh)", maxWidth: "1302px", aspectRatio: "1 / 1", left: "57.5%", top: "16.5%",
         mobile: { left: "18%", top: "29%", width: "min(62vw, 50vh)" } },
       // Step 1 Straightening Cream jar — front, lowest, enters from the LEFT (2nd).
-      { src: "/brand/hydroprisma/hero/1.png", depth: 72, enterFrom: "left", enterDelay: 0.2, width: "min(54vw, 63vh)", maxWidth: "1192px", aspectRatio: "1 / 1", left: "48%", top: "34%",
+      { src: "/media/brands/hydroprisma/hero/1.png", depth: 72, enterFrom: "left", enterDelay: 0.2, width: "min(54vw, 63vh)", maxWidth: "1192px", aspectRatio: "1 / 1", left: "48%", top: "34%",
         mobile: { left: "0.5%", top: "38.7%", width: "min(58vw, 48vh)" } },
     ],
     heroContent: {
-      logo: "/brand/hydroprisma/hero/wordmark.png",
+      logo: "/media/brands/hydroprisma/hero/wordmark.png",
       logoAspect: "1548 / 321",
       // Very wide lockup (4.82:1) — like Concept Ultimax the logo <div> carries its own
       // width and deliberately overflows the capped text column below it.
@@ -76,28 +76,28 @@ const entry: Brand = {
       // `variant` carries the strength AND the pack format: the same three strengths
       // ship as a jar and as a pouch, and name+variant is the card's React key, so it
       // has to stay unique per SKU.
-      { name: "Straightening Cream", variant: { en: "Mild · Jar", id: "Mild · Jar" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 1 500mL Jar Image 15102019 Mild.png" },
-      { name: "Straightening Cream", variant: { en: "Medium · Jar", id: "Medium · Jar" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 1 500mL Jar Image 15102019 Medium.png" },
-      { name: "Straightening Cream", variant: { en: "Strong · Jar", id: "Strong · Jar" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 1 500mL Jar Image 15102019 Strong.png" },
-      { name: "Liquid Neutralizer", variant: { en: "Step 2", id: "Step 2" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Step 2 Bottle Image 15102019 Liquid.png" },
+      { name: "Straightening Cream", variant: { en: "Mild · Jar", id: "Mild · Jar" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-step-1-500ml-jar-image-15102019-mild.png" },
+      { name: "Straightening Cream", variant: { en: "Medium · Jar", id: "Medium · Jar" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-step-1-500ml-jar-image-15102019-medium.png" },
+      { name: "Straightening Cream", variant: { en: "Strong · Jar", id: "Strong · Jar" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-step-1-500ml-jar-image-15102019-strong.png" },
+      { name: "Liquid Neutralizer", variant: { en: "Step 2", id: "Step 2" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-step-2-bottle-image-15102019-liquid.png" },
       // The pouch artwork sits on a wide 4961×3508 canvas, so `object-contain` fits it
       // by WIDTH inside the square card. The pouch still lands at 219 px tall against
       // the jar's 243 px — close enough that no `imageScale` correction is needed, and
       // scaling it up would make the refill read taller than the jar it refills.
-      { name: "Straightening Cream", variant: { en: "Mild · Pouch", id: "Mild · Pouch" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Straightening Cream 500ml Pouch Imagery 23042019 MILD.png" },
-      { name: "Straightening Cream", variant: { en: "Medium · Pouch", id: "Medium · Pouch" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Straightening Cream 500ml Pouch Imagery 23042019 MEDIUM.png" },
-      { name: "Straightening Cream", variant: { en: "Strong · Pouch", id: "Strong · Pouch" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/hydroprisma/product-lineup/RBS HydroPrisma Straightening Cream 500ml Pouch Imagery 23042019 STRONG.png" },
+      { name: "Straightening Cream", variant: { en: "Mild · Pouch", id: "Mild · Pouch" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-straightening-cream-500ml-pouch-imagery-23042019-mild.png" },
+      { name: "Straightening Cream", variant: { en: "Medium · Pouch", id: "Medium · Pouch" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-straightening-cream-500ml-pouch-imagery-23042019-medium.png" },
+      { name: "Straightening Cream", variant: { en: "Strong · Pouch", id: "Strong · Pouch" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/hydroprisma/product-lineup/rbs-hydroprisma-straightening-cream-500ml-pouch-imagery-23042019-strong.png" },
     ],
-    // NOTE — BrandAbout is intentionally left out for now: public/brand/hydroprisma/about/
+    // NOTE — BrandAbout is intentionally left out for now: public/media/brands/hydroprisma/about/
     // was delivered EMPTY, so there is no artwork for the two cards the reference shows
     // ("Hydrolyzed Kolagen" and "Hydrolized Keratin"). Reported to the design team; drop
     // two 900×1200 (3:4) images into that folder and the section comes back with:
     //   about: [
-    //     { title: "Hydrolyzed Kolagen", image: "/brand/hydroprisma/about/1.png" },
-    //     { title: "Hydrolized Keratin", image: "/brand/hydroprisma/about/2.png" },
+    //     { title: "Hydrolyzed Kolagen", image: "/media/brands/hydroprisma/about/1.png" },
+    //     { title: "Hydrolized Keratin", image: "/media/brands/hydroprisma/about/2.png" },
     //   ],
     showcase: {
-      hero: "/brand/hydroprisma/showcase/title.png",
+      hero: { en: "/media/brands/hydroprisma/showcase/title.en.png", id: "/media/brands/hydroprisma/showcase/title.id.png" },
       heroAspect: "4864 / 3860",
       heroOffsetY: "-8px",
       heroMobileOffsetY: "-8px",
@@ -107,7 +107,7 @@ const entry: Brand = {
       // 5:2 default — at 5:2 an object-cover crop eats ~7 % off the top and bottom and
       // slices the caption.
       bannerAspect: "4810 / 2260",
-      // No sub-brand pages exist for HydroPrisma (public/brand/hydroprisma/ carries only
+      // No sub-brand pages exist for HydroPrisma (public/media/brands/hydroprisma/ carries only
       // the four default folders), so the banners carry no `href`.
       //
       // `productHeight` / `productShiftX` are measured off the art, not guessed. Each
@@ -121,11 +121,11 @@ const entry: Brand = {
       // shift re-centres the visible art — not the canvas — on the clear half. All three
       // land above the caption band (y 91–95 %).
       variants: [
-        { bg: "/brand/hydroprisma/showcase/1-2.png", bgAspect: "4810 / 2260", product: "/brand/hydroprisma/showcase/1-1.png", productAspect: "2462 / 2461", productHeight: "92%", productShiftX: "36%",
+        { bg: { en: "/media/brands/hydroprisma/showcase/1-2.en.png", id: "/media/brands/hydroprisma/showcase/1-2.id.png" }, bgAspect: "4810 / 2260", product: "/media/brands/hydroprisma/showcase/1-1.png", productAspect: "2462 / 2461", productHeight: "92%", productShiftX: "36%",
           href: "/brands/hydroprisma/mild" },
-        { bg: "/brand/hydroprisma/showcase/2-2.png", bgAspect: "4810 / 2260", product: "/brand/hydroprisma/showcase/2-1.png", productAspect: "1697 / 1929", productHeight: "72%", productShiftX: "-84%",
+        { bg: { en: "/media/brands/hydroprisma/showcase/2-2.en.png", id: "/media/brands/hydroprisma/showcase/2-2.id.png" }, bgAspect: "4810 / 2260", product: "/media/brands/hydroprisma/showcase/2-1.png", productAspect: "1697 / 1929", productHeight: "72%", productShiftX: "-84%",
           href: "/brands/hydroprisma/medium" },
-        { bg: "/brand/hydroprisma/showcase/3-2.png", bgAspect: "4810 / 2261", product: "/brand/hydroprisma/showcase/3-1.png", productAspect: "3241 / 3240", productHeight: "122%", productShiftX: "32%",
+        { bg: { en: "/media/brands/hydroprisma/showcase/3-2.en.png", id: "/media/brands/hydroprisma/showcase/3-2.id.png" }, bgAspect: "4810 / 2261", product: "/media/brands/hydroprisma/showcase/3-1.png", productAspect: "3241 / 3240", productHeight: "122%", productShiftX: "32%",
           href: "/brands/hydroprisma/strong" },
       ],
     },

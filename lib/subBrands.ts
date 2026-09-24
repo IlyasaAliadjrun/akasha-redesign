@@ -1,5 +1,5 @@
 import type { HeroLayer, HeroContent, ShowcaseVariant } from "./brands";
-import type { Localized } from "@/lib/locale/paths";
+import type { Localized, LocalizedAsset } from "@/lib/locale/paths";
 
 // ── Sub-brands (product lines) ────────────────────────────────────────────────
 // Terminology (confirmed by the brand owner):
@@ -17,11 +17,11 @@ import type { Localized } from "@/lib/locale/paths";
 // renders a plain placeholder until a real path is filled in, so the page works as
 // a wireframe today. Each showcase card image is COMPLETE — it already includes its
 // own background & border — so no card chrome is drawn around it; the image is
-// placed as-is. Drop assets into public/brand/{parent}/{slug}/{hero,showcase}/ and
+// placed as-is. Drop assets into public/media/brands/{parent}/lines/{slug}/{hero,showcase}/ and
 // set the paths + copy below to finish.
 
 export type SubBrandCard = {
-  image?: string; // complete card graphic (product + background + border baked in)
+  image?: LocalizedAsset; // complete card graphic (product + background + border baked in)
   href?: string; // optional link (defaults to the shop link)
   label?: Localized<string>; // alt text / internal identifier
   imageFit?: "contain" | "cover"; // cover may trim transparent canvas padding
@@ -43,7 +43,7 @@ export type SubBrand = {
   theme?: "light" | "dark" | "accent-dark" | "accent-light";
   // Layered/parallax hero products — same shape as a brand hero. Empty in the
   // skeleton (a placeholder banner shows); fill with layers pointing at
-  // /brand/{parent}/{slug}/hero/… to switch the real parallax banner on. Each
+  // /media/brands/{parent}/lines/{slug}/hero/… to switch the real parallax banner on. Each
   // product's `enterFrom` sets its fade-in direction; array order = stacking
   // (last = front).
   heroLayers?: HeroLayer[];
@@ -57,7 +57,7 @@ export type SubBrand = {
   heroWordmarkMobileWidth?: string;
   heroOffsetY?: string;
   // Showcase = a title graphic + a grid of complete card images.
-  showcaseTitle?: string; // title image at the top of the showcase
+  showcaseTitle?: LocalizedAsset; // title image at the top of the showcase
   showcaseTitleAspect?: string; // intrinsic ratio of the title (default "3 / 2")
   showcaseTitleOffsetY?: string;
   showcaseTitleOffsetX?: string;

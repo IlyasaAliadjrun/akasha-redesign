@@ -17,7 +17,7 @@ const entry: Brand = {
     // No standalone 3:4 brand-card art in the folder; the About tooth visual is
     // already 3:4 and on-brand, so CrossSell reuses it (only CrossSell reads this —
     // the hero itself renders from `heroLayers`).
-    heroImage: "/brand/finest/about/1.png",
+    heroImage: "/media/brands/finest/about/1.png",
     // Hero — near-white blush banner with the coral "Finest" wordmark + tagline + CTA
     // on the left and the two 90 g tubes fanned on the right. Hair Energy pattern.
     // Both PNGs carry a lot of transparent canvas (content fills ~35%×64% of 1.png and
@@ -28,16 +28,16 @@ const entry: Brand = {
       // ~16:9 down); the roomier vw term only takes over on a narrow-but-tall window
       // (768×1024), where a tighter vw would shrink the tubes into the top third.
       // Soft Mint — behind, higher and further right.
-      { src: "/brand/finest/hero/2.png", depth: 34, enterFrom: "right", enterDelay: 0.3,
+      { src: "/media/brands/finest/hero/2.png", depth: 34, enterFrom: "right", enterDelay: 0.3,
         width: "min(50vw, 73vh)", aspectRatio: "3176 / 4735", left: "55%", top: "-7%",
         mobile: { width: "min(82vw, 40vh)", left: "12%", top: "11.5%" } },
       // Light Lemon — front, slightly lower and overlapping the Soft Mint tube.
-      { src: "/brand/finest/hero/1.png", depth: 56, enterFrom: "bottom", enterDelay: 0.15,
+      { src: "/media/brands/finest/hero/1.png", depth: 56, enterFrom: "bottom", enterDelay: 0.15,
         width: "min(46vw, 68vh)", aspectRatio: "3026 / 4424", left: "52%", top: "4.5%",
         mobile: { width: "min(78vw, 37vh)", left: "3%", top: "17.5%" } },
     ],
     heroContent: {
-      logo: "/brand/finest/hero/wordmark.png",
+      logo: "/media/brands/finest/hero/wordmark.png",
       logoAspect: "1394 / 325",
       logoWidth: "23vw",
       maxWidth: "26vw",
@@ -61,8 +61,8 @@ const entry: Brand = {
     bannerBg: "#ffffff", // blush off-white, matching the reference hero
     hero: false,
     products: [
-      { name: "Toothpaste", variant: { en: "Soft Mint", id: "Soft Mint" }, size: { en: "90 g", id: "90 g" }, image: "/brand/finest/product-lineup/toothpaste-soft-mint-90g.png" },
-      { name: "Toothpaste", variant: { en: "Light Lemon", id: "Light Lemon" }, size: { en: "90 g", id: "90 g" }, image: "/brand/finest/product-lineup/toothpaste-light-lemon-90g.png" },
+      { name: "Toothpaste", variant: { en: "Soft Mint", id: "Soft Mint" }, size: { en: "90 g", id: "90 g" }, image: "/media/brands/finest/product-lineup/toothpaste-soft-mint-90g.png" },
+      { name: "Toothpaste", variant: { en: "Light Lemon", id: "Light Lemon" }, size: { en: "90 g", id: "90 g" }, image: "/media/brands/finest/product-lineup/toothpaste-light-lemon-90g.png" },
     ],
     reasons: [
       { icon: "🦷", title: { en: "10% Nano Hydroxyapatite", id: "10% Nano Hydroxyapatite" }, body: { en: "Remineralizes tooth enamel and whitens naturally without abrasion.", id: "Meremineralisasi email gigi dan memutihkan secara alami tanpa abrasi." } },
@@ -71,9 +71,9 @@ const entry: Brand = {
       { icon: "✅", title: { en: "BPOM & Halal", id: "BPOM & Halal" }, body: { en: "Certified, formulated for sensitive teeth without irritation.", id: "Tersertifikasi, diformulasikan untuk gigi sensitif tanpa iritasi." } },
     ],
     about: [
-      { title: { en: "Contains Nano Hydroxyapatite", id: "Mengandung Nano Hydroxyapetite" }, image: "/brand/finest/about/1.png" },
-      { title: { en: "Refreshing Cool Sensation", id: "Sensasi Dingin Menyegarkan" }, image: "/brand/finest/about/2.png" },
-      { title: { en: "Long-Lasting Freshness", id: "Segar Tahan Lama" }, image: "/brand/finest/about/3.png" },
+      { title: { en: "Contains Nano Hydroxyapatite", id: "Mengandung Nano Hydroxyapetite" }, image: "/media/brands/finest/about/1.png" },
+      { title: { en: "Refreshing Cool Sensation", id: "Sensasi Dingin Menyegarkan" }, image: "/media/brands/finest/about/2.png" },
+      { title: { en: "Long-Lasting Freshness", id: "Segar Tahan Lama" }, image: "/media/brands/finest/about/3.png" },
     ],
     // Showcase — the "Pasta Gigi Lembut Premium" poster, then the single TOOTHPASTE
     // banner. The bg is a designed card whose caption sits on its bottom edge, so
@@ -83,7 +83,7 @@ const entry: Brand = {
     // of it, hence productHeight runs far above 100%. productShiftX pulls the cluster
     // onto the left half of the banner, over "TOOTH…", as in the reference.
     showcase: {
-      hero: "/brand/finest/showcase/title.png",
+      hero: { en: "/media/brands/finest/showcase/title.en.png", id: "/media/brands/finest/showcase/title.id.png" },
       heroAspect: "4570 / 3141",
       productAlign: "center",
       parallax: false,
@@ -91,7 +91,7 @@ const entry: Brand = {
       heroOffsetY: "-30px",
       heroMobileOffsetY: "-15px",
       variants: [
-        { bg: "/brand/finest/showcase/1-2.png", product: "/brand/finest/showcase/1-1.png",
+        { bg: { en: "/media/brands/finest/showcase/1-2.en.png", id: "/media/brands/finest/showcase/1-2.id.png" }, product: "/media/brands/finest/showcase/1-1.png",
           bgAspect: "4810 / 2261", productAspect: "3660 / 3648", productHeight: "155%",
           productShiftX: "0%", productShiftY: "-6%",
           mobile: { productHeight: "160%", productShiftX: "1%", productShiftY: "-6%" },

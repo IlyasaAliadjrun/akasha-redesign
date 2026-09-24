@@ -31,8 +31,17 @@ function isolatedTsconfig() {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   distDir,
+  // Self-hosted deploys run `.next/standalone/server.js` (see deploy/SETUP.md).
+  // Vercel ignores this and keeps using its own output.
+  output: "standalone",
   typescript: { tsconfigPath: isolatedTsconfig() },
   images: {
+    // public/ files are served with `max-age=0`, so without this every optimized
+    // image expires after Next's 60 s default and gets re-encoded from its
+    // multi-MB PNG master on the next hit. Masters don't change in place without
+    // a deploy, and deploy/scripts/deploy.sh clears the image cache whenever
+    // public/media changes.
+    minimumCacheTTL: 60 * 60 * 24 * 30,
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "placehold.co" },

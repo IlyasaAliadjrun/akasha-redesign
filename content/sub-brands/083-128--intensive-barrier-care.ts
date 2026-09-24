@@ -12,13 +12,13 @@ const entry: SubBrand = {
   accentHex: "#CFA985",
   bannerBg: "#CFA985",
   theme: "light",
-  heroWordmark: "/brand/128/intensive-barrier-care/hero/wordmark.png",
+  heroWordmark: "/media/brands/128/lines/intensive-barrier-care/hero/wordmark.png",
   heroWordmarkAspect: "2160 / 1415",
   heroWordmarkWidth: "13vw",
   heroWordmarkMobileWidth: "23vw",
   heroLayers: [
     {
-      src: "/brand/128/intensive-barrier-care/hero/1.png",
+      src: "/media/brands/128/lines/intensive-barrier-care/hero/1.png",
       enterFrom: "right",
       enterDelay: 0.25,
       depth: 38,
@@ -29,13 +29,13 @@ const entry: SubBrand = {
       mobile: { left: "15%", top: "-16%", width: "74%" },
     },
   ],
-  showcaseTitle: "/brand/128/intensive-barrier-care/showcase/title.png",
+  showcaseTitle: "/media/brands/128/lines/intensive-barrier-care/showcase/title.png",
   showcaseTitleAspect: "4649 / 3703",
   showcaseTitleOffsetY: "52px",
   showcaseTitleMobileOffsetY: "22px",
   // showcaseSpacing: "compact",
   featured: {
-    image: "/brand/128/intensive-barrier-care/showcase/1.png",
+    image: "/media/brands/128/lines/intensive-barrier-care/showcase/1.png",
     label: { en: "Facial Wash Intensive Barrier Care", id: "Facial Wash Intensive Barrier Care" },
   },
   featuredAspect: "4687 / 2233",
@@ -43,11 +43,11 @@ const entry: SubBrand = {
   cardAspect: "2302 / 2987",
   cards: [
     {
-      image: "/brand/128/intensive-barrier-care/showcase/2.png",
+      image: "/media/brands/128/lines/intensive-barrier-care/showcase/2.png",
       label: { en: "Primer Intensive Barrier Care", id: "Primer Intensive Barrier Care" },
     },
     {
-      image: "/brand/128/intensive-barrier-care/showcase/3.png",
+      image: "/media/brands/128/lines/intensive-barrier-care/showcase/3.png",
       label: { en: "Boost Intensive Barrier Care", id: "Boost Intensive Barrier Care" },
     },
   ],

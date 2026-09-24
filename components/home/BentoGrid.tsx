@@ -31,17 +31,17 @@ const layout: Record<string, string> = {
 };
 
 // Banner images for the bento. All assets must come from
-// /public/home/brand-grid so this section stays consistent with its
+// /public/media/home/brand-grid so this section stays consistent with its
 // dedicated folder. Brands without an asset there fall back to solid color.
 const bentoImage: Record<string, string> = {
-  "nestle-pure-life": "/home/brand-grid/nestle-pure-life.jpg",
-  "hair-energy": "/home/brand-grid/hair-energy.jpg",
-  "make-it": "/home/brand-grid/make-it.jpg",
-  "barber-daily": "/home/brand-grid/barber-daily.jpg",
-  wonhae: "/home/brand-grid/wonhae.jpg",
-  "makarizo-professional": "/home/brand-grid/makarizo-professional.jpg",
-  fitmeup: "/home/brand-grid/fitmeup.png",
-  floaty: "/home/brand-grid/floaty.png",
+  "nestle-pure-life": "/media/home/brand-grid/nestle-pure-life.jpg",
+  "hair-energy": "/media/home/brand-grid/hair-energy.jpg",
+  "make-it": "/media/home/brand-grid/make-it.jpg",
+  "barber-daily": "/media/home/brand-grid/barber-daily.jpg",
+  wonhae: "/media/home/brand-grid/wonhae.jpg",
+  "makarizo-professional": "/media/home/brand-grid/makarizo-professional.jpg",
+  fitmeup: "/media/home/brand-grid/fitmeup.png",
+  floaty: "/media/home/brand-grid/floaty.png",
 };
 
 // Object-position per banner — plain CSS `"X% Y%"`, so this is the one place

@@ -11,7 +11,7 @@ const entry: SubBrand = {
     // Light MK3 banner: dark hero copy, controls, and navbar keep sufficient contrast.
     theme: "dark",
     bannerBg: "#e5e0df",
-    heroWordmark: "/brand/mk3/damage-repair/hero/wordmark.png",
+    heroWordmark: "/media/brands/mk3/lines/damage-repair/hero/wordmark.png",
     heroWordmarkAspect: "1519 / 631",
     // The folder ships ONE composed cluster (shampoo + conditioner + hair mask +
     // restructuring serum), so the hero is a single layer. Width is min(vw, vh) so the
@@ -20,25 +20,25 @@ const entry: SubBrand = {
     // The PNG carries transparent padding (the products fill ~75% × 83% of the canvas),
     // so the layer box is larger than the cluster looks.
     heroLayers: [
-      { src: "/brand/mk3/damage-repair/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
+      { src: "/media/brands/mk3/lines/damage-repair/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(57vw, 91vh)", aspectRatio: "3380 / 3034", left: "52.5%", top: "14.8%",
         mobile: { left: "-6%", top: "-7%", width: "110%" } },
     ],
-    showcaseTitle: "/brand/mk3/damage-repair/showcase/title.png",
+    showcaseTitle: "/media/brands/mk3/lines/damage-repair/showcase/title.png",
     showcaseTitleAspect: "4153 / 3401",
     showcaseTitleOffsetY: "70px",
     showcaseTitleMobileOffsetY: "28px",
     showcaseTitleMobileOffsetX: "-8px",
     // The leave-in mask ships as a landscape card, so it takes the full-width slot.
-    featured: { image: "/brand/mk3/damage-repair/showcase/5.png", label: { en: "Leave-In Hair Mask — a no-rinse hair mask", id: "Leave-In Hair Mask — masker rambut tanpa bilas" } },
+    featured: { image: { en: "/media/brands/mk3/lines/damage-repair/showcase/5.en.png", id: "/media/brands/mk3/lines/damage-repair/showcase/5.id.png" }, label: { en: "Leave-In Hair Mask — a no-rinse hair mask", id: "Leave-In Hair Mask — masker rambut tanpa bilas" } },
     featuredAspect: "4811 / 2261",
     featuredPosition: "bottom",
     cardAspect: "1151 / 1493",
     cards: [
-      { image: "/brand/mk3/damage-repair/showcase/1.png", label: { en: "Shampoo Damage Repair", id: "Shampoo Damage Repair" } },
-      { image: "/brand/mk3/damage-repair/showcase/2.png", label: { en: "Conditioner Repair & Revive", id: "Conditioner Repair & Revive" } },
-      { image: "/brand/mk3/damage-repair/showcase/3.png", label: { en: "Hair Mask Repair & Revive", id: "Hair Mask Repair & Revive" } },
-      { image: "/brand/mk3/damage-repair/showcase/4.png", label: { en: "Restructuring Serum Repair & Revive", id: "Restructuring Serum Repair & Revive" } },
+      { image: { en: "/media/brands/mk3/lines/damage-repair/showcase/1.en.png", id: "/media/brands/mk3/lines/damage-repair/showcase/1.id.png" }, label: { en: "Shampoo Damage Repair", id: "Shampoo Damage Repair" } },
+      { image: { en: "/media/brands/mk3/lines/damage-repair/showcase/2.en.png", id: "/media/brands/mk3/lines/damage-repair/showcase/2.id.png" }, label: { en: "Conditioner Repair & Revive", id: "Conditioner Repair & Revive" } },
+      { image: { en: "/media/brands/mk3/lines/damage-repair/showcase/3.en.png", id: "/media/brands/mk3/lines/damage-repair/showcase/3.id.png" }, label: { en: "Hair Mask Repair & Revive", id: "Hair Mask Repair & Revive" } },
+      { image: { en: "/media/brands/mk3/lines/damage-repair/showcase/4.en.png", id: "/media/brands/mk3/lines/damage-repair/showcase/4.id.png" }, label: { en: "Restructuring Serum Repair & Revive", id: "Restructuring Serum Repair & Revive" } },
     ],
   };
 

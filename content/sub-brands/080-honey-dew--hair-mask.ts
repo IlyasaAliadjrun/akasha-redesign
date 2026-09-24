@@ -13,7 +13,7 @@ const entry: SubBrand = {
     // 070-honey-dew--shampoo.ts.
     bannerBg: "#EFEFEF",
     theme: "accent-light",
-    heroWordmark: "/brand/honey-dew/hair-mask/hero/wordmark.png",
+    heroWordmark: "/media/brands/honey-dew/lines/hair-mask/hero/wordmark.png",
     heroWordmarkAspect: "1789 / 284",
     heroWordmarkWidth: "25vw",
     heroWordmarkMobileWidth: "45vw",
@@ -22,10 +22,10 @@ const entry: SubBrand = {
       // channel), so the canvas has to run much wider than the visible tube (and hang
       // above the banner top) to land the tube at the reference's size and position:
       // ≈27 vw wide, spanning 19 %–74 % of the banner height.
-      { src: "/brand/honey-dew/hair-mask/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 40, width: "min(67vw, 80vh)", aspectRatio: "3058 / 3865", left: "55%", top: "1%",
+      { src: "/media/brands/honey-dew/lines/hair-mask/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 40, width: "min(67vw, 80vh)", aspectRatio: "3058 / 3865", left: "55%", top: "1%",
         mobile: { left: "-13%", top: "-45%", width: "125%" } },
     ],
-    showcaseTitle: "/brand/honey-dew/hair-mask/showcase/title.png",
+    showcaseTitle: { en: "/media/brands/honey-dew/lines/hair-mask/showcase/title.en.png", id: "/media/brands/honey-dew/lines/hair-mask/showcase/title.id.png" },
     showcaseTitleAspect: "4950 / 5828",
     // The reference shows the title graphic alone — no variant card grid was
     // delivered for this line (hair-mask/showcase/ holds only title.png).

@@ -7,7 +7,7 @@ import { useLocale } from "@/lib/locale/LocaleProvider";
 import { BRAND } from "@/dictionaries/brand";
 
 // Image cards shown directly beneath BrandIntro. Renders nothing unless
-// the brand provides `about` entries (assets live in /public/brand/{slug}/about).
+// the brand provides `about` entries (assets live in /public/media/brands/{slug}/about).
 // Mobile: horizontal swipe slider with nav arrows (like Explore the lineup).
 // sm+: grid whose column count follows how many cards the brand actually has
 // (3 assets → 3 columns, 2 → 2, 1 → a single card kept at 3-column size), so a

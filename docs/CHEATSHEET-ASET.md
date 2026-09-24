@@ -4,97 +4,100 @@
 
 > ⚙️ **Lebar section seragam ±980px** (area gambar ±900px desktop) — kecuali main banner & banner brand yang full-bleed. Rasio kartu **sama** di desktop & HP; hanya **banner** yang beda per viewport (lihat bawah).
 
-## 📁 Struktur folder: **per halaman → per section**
+## 📁 Struktur folder: **dua akar — `media/` (gambar) & `documents/` (PDF/DOC)**
 
 ```
 public/
-├── home/                        ← Beranda
-│   ├── hero-carousel/           banner slider utama
-│   ├── division-cards/          kartu divisi
-│   └── brand-grid/              grid "Ten brands. One family."
-├── brand/{brand-slug}/          ← Halaman brand (1 folder per brand)
-│   ├── hero/                    banner hero (berlapis/parallax)
-│   ├── product-lineup/          foto SKU
-│   ├── about/                   3 kartu About
-│   ├── showcase/                poster 3D + banner varian
-│   └── {sub-brand}/             ← Halaman sub-brand (product line), cth creambath/
-│       ├── hero/                banner sub-brand (berlapis/parallax)
-│       └── showcase/            gambar title + gambar tiap kartu varian
-│                                (gambar kartu SUDAH termasuk background & border)
-├── about/ investor/ governance/ contact/ careers/   ← Halaman lain
-│   └── hero/                    desktop.jpg + mobile.jpg
-├── docs/                        ← Dokumen investor & tata kelola (PDF/DOC)
-│   ├── annual-report/covers/    sampul laporan tahunan   → 2012.png … 2025.png
-│   └── sustainability-report/covers/   sampul lap. keberlanjutan → 2021.jpg … 2025.png
-└── shared/                      logo navbar (dipakai semua halaman)
+├── media/
+│   ├── shared/                      logo navbar (dipakai semua halaman)
+│   ├── home/                        ← Beranda
+│   │   ├── hero-carousel/           banner slider utama
+│   │   ├── division-cards/          kartu divisi
+│   │   └── brand-grid/              grid "Ten brands. One family."
+│   ├── pages/{page}/hero/           ← About · Investor · Governance · Contact · Careers
+│   │                                  desktop.jpg + mobile.jpg
+│   ├── brands/{brand-slug}/         ← Halaman brand (1 folder per brand)
+│   │   ├── hero/                    banner hero (berlapis/parallax)
+│   │   ├── product-lineup/          foto SKU
+│   │   ├── about/                   3 kartu About
+│   │   ├── showcase/                poster 3D + banner varian
+│   │   └── lines/{line-slug}/       ← Halaman sub-brand (product line), cth lines/creambath/
+│   │       ├── hero/                banner sub-brand (berlapis/parallax)
+│   │       └── showcase/            gambar title + gambar tiap kartu varian
+│   │                                (gambar kartu SUDAH termasuk background & border)
+│   └── reports/{annual-report|sustainability-report}/   sampul laporan → 2025.png
+└── documents/                       ← PDF/DOC — annual-report/2025.pdf,
+                                       financial-report/2025/q1.pdf, gms/2026/…, disclosure/2026-06-12-….pdf
 ```
 
-**`public/docs/` tidak ikut aturan locale.** Semua aset lain hidup di `public/en/…` dan `public/id/…`; dokumen dan sampulnya tidak, karena isinya identik di kedua bahasa. Nama berkas PDF juga **dipertahankan apa adanya dari situs sumber** (huruf besar, angka, dsb.) supaya bisa dilacak balik saat arsip diperbarui — ini pengecualian dari aturan huruf-kecil di bawah. Yang mengikuti aturan hanyalah sampulnya, yang dinamai per tahun: `2025.png`.
+**Satu file untuk kedua bahasa**, kecuali gambar yang **tulisannya menempel di gambar** (headline showcase, slogan banner, wordmark berteks): kirim **dua file** — `title.en.png` + `title.id.png`, akhiran bahasa tepat sebelum ekstensi, wajib berpasangan. Yang menentukan adalah isi gambarnya, bukan jenis section-nya.
 
-**Aturan nama file:** semua **huruf kecil + tanda hubung** (slug). `BARBER-DAILY.jpg` → `barber-daily.jpg`.
-Nama brand di folder pakai slug juga: `hair-energy/`, `nestle-pure-life/`.
+**Aturan nama file:** semua **huruf kecil + tanda hubung** (slug), tanpa spasi atau garis bawah. `BARBER-DAILY.jpg` → `barber-daily.jpg`.
+Nama folder brand/sub-brand = slug-nya: `hair-energy/`, `make-it/`, `lines/creambath/`.
+
+**Cek otomatis:** `npm run verify:assets` — gagal kalau ada path yang filenya tidak ada, nama melanggar aturan, atau path gaya lama.
 
 ## 📋 Ukuran semua aset
 
 | Aset | Folder | Rasio | Resolusi | Fit | Format |
 |---|---|:---:|:---:|:---:|:---:|
-| Banner slider beranda | `home/hero-carousel/` | **16:9** | 2560×1440 | COVER | jpg |
-| Kartu divisi beranda | `home/division-cards/` | **3:4** | 1200×1600 | COVER · rail horizontal · hover list | jpg/png |
-| Grid brand — tile besar | `home/brand-grid/` | **2:1** | 1600×800 | COVER | jpg |
-| Grid brand — tile kecil | `home/brand-grid/` | **1:1** | 1080×1080 | COVER | jpg |
-| Banner brand (hero) | `brand/{slug}/hero/` | **16:9** | 2560×1440 | COVER* | jpg/png |
-| **Hero halaman — desktop** | `{page}/hero/desktop.jpg` | **16:9** | 2560×1440 | COVER | jpg |
-| **Hero halaman — HP** | `{page}/hero/mobile.jpg` | **9:16** | 1080×1920 | COVER | jpg |
-| **Sampul laporan** (tahunan & keberlanjutan) | `docs/{annual-report\|sustainability-report}/covers/{tahun}` | **16:15** (≈1.067) | 1200×1125 | COVER | jpg/png |
-| Foto produk (lineup) | `brand/{slug}/product-lineup/` | **1:1** | 1200×1200 | CONTAIN | **PNG** |
-| 3 kartu "About" | `brand/{slug}/about/` | **3:4** | 1200×1600 | COVER | jpg |
-| Showcase — gambar utama | `brand/{slug}/showcase/title.png` | **bebas** (cth 1.37:1) | 5219×3799 | CONTAIN | png |
-| Showcase varian — latar `{n}-2` | `brand/{slug}/showcase/` | **2.128:1** | 5010×2354 | COVER | jpg/png |
-| Showcase varian — produk `{n}-1` | `brand/{slug}/showcase/` | **~3:4** | 2687×3660 | — | **PNG** |
-| Bleaching Powder — title | `brand/concept-ultimax/bleaching-powder/showcase/title.png` | **1.909:1** | 4661×2442 | CONTAIN | png |
-| Bleaching Powder — featured | `brand/concept-ultimax/bleaching-powder/showcase/1.png` | **2.204:1** | 5365×2434 | CONTAIN | png |
-| Finest Toothpaste — hero layers | `brand/finest/finest-toothpaste/hero/1.png`, `2.png` | **0.684:1 / 0.671:1** | 3026×4424 / 3176×4735 | CONTAIN | png |
-| Finest Toothpaste — showcase title (maks. 768px) | `brand/finest/finest-toothpaste/showcase/title.png` | **1.123:1** | 4376×3898 | CONTAIN | png |
-| Finest Toothpaste — showcase products | `brand/finest/finest-toothpaste/showcase/1-1.png`, `2-1.png` | **1.199:1 / 1.191:1** | 5065×4223 / 4416×3708 | CONTAIN | png |
-| Finest Toothpaste — showcase backgrounds | `brand/finest/finest-toothpaste/showcase/1-2.png`, `2-2.png` | **2.128:1** | 4810×2260 / 4810×2261 | COVER | png |
-| Make It Extrait d’Intense — wordmark | `brand/makeit/makeit-extrait-dintense/hero/wordmark.png` | **3.356:1** | 1121×334 | CONTAIN | png |
-| Make It Extrait d’Intense — hero product | `brand/makeit/makeit-extrait-dintense/hero/1.png` | **0.729:1** | 3779×5181 | CONTAIN | png |
-| Make It Extrait d’Intense — showcase title | `brand/makeit/makeit-extrait-dintense/showcase/title.png` | **0.956:1** | 4803×5026 | CONTAIN | png |
-| Make It Fragrance Enhancing Primer — wordmark | `brand/makeit/makeit-fragrance-enhancing-primer/hero/wordmark.png` | **3.356:1** | 1121×334 | CONTAIN | png |
-| Make It Fragrance Enhancing Primer — hero product | `brand/makeit/makeit-fragrance-enhancing-primer/hero/1.png` | **0.820:1** | 4396×5360 | CONTAIN | png |
-| Make It Fragrance Enhancing Primer — showcase title | `brand/makeit/makeit-fragrance-enhancing-primer/showcase/title.png` | **0.944:1** | 4744×5026 | CONTAIN | png |
-| Make It Extrait de Parfum — hero layers | `brand/makeit/makeit-extrait-de-parfum/hero/1.png`, `2.png` | **0.696:1 / 0.735:1** | 3013×4330 / 3242×4411 | CONTAIN | png |
-| Make It Extrait de Parfum — showcase title | `brand/makeit/makeit-extrait-de-parfum/showcase/title.png` | **0.991:1** | 4867×4912 | CONTAIN | png |
-| Make It Extrait de Parfum — showcase cards | `brand/makeit/makeit-extrait-de-parfum/showcase/1.png`, `2.png`, `4.png`, `5.png` | **0.771:1** | 2302×2986 | CONTAIN | png |
-| Make It Extrait de Parfum — featured | `brand/makeit/makeit-extrait-de-parfum/showcase/3.png` | **1.586:1** | 4687×2956 | CONTAIN | png |
-| 128 Bright & Radiance — hero wordmark & cluster | `brand/128/bright-radiance/hero/wordmark.png`, `cluster.png` | **1.526:1 / 1.640:1** | 2160×1415 / 3493×2130 | CONTAIN | png |
-| 128 Bright & Radiance — showcase title | `brand/128/bright-radiance/showcase/title.png` | **1.280:1** | 4742×3703 | CONTAIN | png |
-| 128 Bright & Radiance — showcase cards | `brand/128/bright-radiance/showcase/1.png`–`4.png` | **0.771:1** | 2302×2986 / 2302×2987 | CONTAIN | png |
-| 128 Ace Pro — hero wordmark & products | `brand/128/ace-pro/hero/wordmark.png`, `1.png` | **1.526:1 / 0.679:1** | 2160×1415 / 2377×3502 | CONTAIN | png |
-| 128 Ace Pro — showcase title | `brand/128/ace-pro/showcase/title.png` | **1.314:1** | 4865×3703 | CONTAIN | png |
-| 128 Ace Pro — showcase banners | `brand/128/ace-pro/showcase/1.png`, `2.png` | **2.099:1** | 4687×2233 / 4687×2234 | COVER | png |
-| 128 Advanced Age Repair — hero wordmark & product | `brand/128/advanced-age-repair/hero/wordmark.png`, `1.png` | **1.526:1 / 0.652:1** | 2160×1415 / 2317×3552 | CONTAIN | png |
-| 128 Advanced Age Repair — showcase title | `brand/128/advanced-age-repair/showcase/title.png` | **1.255:1** | 4648×3703 | CONTAIN | png |
-| 128 Intensive Barrier Care — hero wordmark & cluster | `brand/128/intensive-barrier-care/hero/wordmark.png`, `1.png` | **1.526:1 / 0.645:1** | 2160×1415 / 2784×4313 | CONTAIN | png |
-| 128 Intensive Barrier Care — showcase title | `brand/128/intensive-barrier-care/showcase/title.png` | **1.255:1** | 4649×3703 | CONTAIN | png |
-| 128 Intensive Barrier Care — featured & cards | `brand/128/intensive-barrier-care/showcase/1.png`–`3.png` | **2.099:1 / 0.771:1** | 4687×2233 / 2302×2987 | CONTAIN | png |
-| Rebonding System Super Gold — hero wordmark & product | `brand/rebonding-system/super-gold/hero/wordmark.png`, `1.png` | **3.968:1 / 1.015:1** | 1123×283 / 2482×2446 | CONTAIN | png |
-| Rebonding System Super Gold — showcase title | `brand/rebonding-system/super-gold/showcase/title.png` | **1.690:1** | 5093×3013 | CONTAIN | png |
-| Rebonding System Gold Edition — hero wordmark & product | `brand/rebonding-system/gold-edition/hero/wordmark.png`, `1.png` | **3.968:1 / 1.044:1** | 1123×283 / 1921×1840 | CONTAIN | png |
-| Rebonding System Gold Edition — showcase title | `brand/rebonding-system/gold-edition/showcase/title.png` | **1.684:1** | 5101×3029 | CONTAIN | png |
-| Rebonding System Anti Resistant — hero wordmark & product | `brand/rebonding-system/anti-resistant/hero/wordmark.png`, `1.png` | **3.968:1 / 1.010:1** | 1123×283 / 2659×2632 | CONTAIN | png |
-| Rebonding System Anti Resistant — showcase title | `brand/rebonding-system/anti-resistant/showcase/title.png` | **1.703:1** | 5159×3029 | CONTAIN | png |
-| Rebonding System Extremely Damaged — hero wordmark & product | `brand/rebonding-system/extremely-damaged/hero/wordmark.png`, `1.png` | **3.968:1 / 1.045:1** | 1123×283 / 1921×1839 | CONTAIN | png |
-| Rebonding System Extremely Damaged — showcase title | `brand/rebonding-system/extremely-damaged/showcase/title.png` | **1.703:1** | 5177×3039 | CONTAIN | png |
-| HydroPrisma Mild — hero cluster | `brand/hydroprisma/mild/hero/1.png` | **0.809:1** | 2863×3538 | CONTAIN | png |
-| HydroPrisma Mild — showcase title | `brand/hydroprisma/mild/showcase/title.png` | **1.394:1** | 4192×3008 | CONTAIN | png |
-| HydroPrisma Mild — cards & featured | `brand/hydroprisma/mild/showcase/1.png`, `2.png`, `3.png` | **0.771:1 / 1.341:1** | 2302×2986 / 4687×3494 | CONTAIN | png |
-| HydroPrisma Medium — hero wordmark & cluster | `brand/hydroprisma/medium/hero/wordmark.png`, `1.png` | **4.822:1 / 0.838:1** | 1548×321 / 3541×4225 | CONTAIN | png |
-| HydroPrisma Medium — showcase title | `brand/hydroprisma/medium/showcase/title.png` | **1.156:1** | 4335×3749 | CONTAIN | png |
-| HydroPrisma Medium — cards & featured | `brand/hydroprisma/medium/showcase/1.png`, `2.png`, `3.png` | **0.771:1 / 1.341:1** | 2302×2986 / 4687×3494 | CONTAIN | png |
-| HydroPrisma Strong — hero wordmark & cluster | `brand/hydroprisma/strong/hero/wordmark.png`, `1.png` | **4.822:1 / 0.825:1** | 1548×321 / 3297×3994 | CONTAIN | png |
-| HydroPrisma Strong — showcase title | `brand/hydroprisma/strong/showcase/title.png` | **1.201:1** | 4171×3474 | CONTAIN | png |
-| HydroPrisma Strong — cards & featured | `brand/hydroprisma/strong/showcase/1.png`, `2.png`, `3.png` | **0.771:1 / 1.341:1** | 2302×2986 / 4687×3494 | CONTAIN | png |
+| Banner slider beranda | `media/home/hero-carousel/` | **16:9** | 2560×1440 | COVER | jpg |
+| Kartu divisi beranda | `media/home/division-cards/` | **3:4** | 1200×1600 | COVER · rail horizontal · hover list | jpg/png |
+| Grid brand — tile besar | `media/home/brand-grid/` | **2:1** | 1600×800 | COVER | jpg |
+| Grid brand — tile kecil | `media/home/brand-grid/` | **1:1** | 1080×1080 | COVER | jpg |
+| Banner brand (hero) | `media/brands/{slug}/hero/` | **16:9** | 2560×1440 | COVER* | jpg/png |
+| **Hero halaman — desktop** | `media/pages/{page}/hero/desktop.jpg` | **16:9** | 2560×1440 | COVER | jpg |
+| **Hero halaman — HP** | `media/pages/{page}/hero/mobile.jpg` | **9:16** | 1080×1920 | COVER | jpg |
+| **Sampul laporan** (tahunan & keberlanjutan) | `media/reports/{annual-report\|sustainability-report}/{tahun}` | **16:15** (≈1.067) | 1200×1125 | COVER | jpg/png |
+| Foto produk (lineup) | `media/brands/{slug}/product-lineup/` | **1:1** | 1200×1200 | CONTAIN | **PNG** |
+| 3 kartu "About" | `media/brands/{slug}/about/` | **3:4** | 1200×1600 | COVER | jpg |
+| Showcase — gambar utama | `media/brands/{slug}/showcase/title.png` | **bebas** (cth 1.37:1) | 5219×3799 | CONTAIN | png |
+| Showcase varian — latar `{n}-2` | `media/brands/{slug}/showcase/` | **2.128:1** | 5010×2354 | COVER | jpg/png |
+| Showcase varian — produk `{n}-1` | `media/brands/{slug}/showcase/` | **~3:4** | 2687×3660 | — | **PNG** |
+| Bleaching Powder — title | `media/brands/concept-ultimax/lines/bleaching-powder/showcase/title.png` | **1.909:1** | 4661×2442 | CONTAIN | png |
+| Bleaching Powder — featured | `media/brands/concept-ultimax/lines/bleaching-powder/showcase/1.png` | **2.204:1** | 5365×2434 | CONTAIN | png |
+| Finest Toothpaste — hero layers | `media/brands/finest/lines/finest-toothpaste/hero/1.png`, `2.png` | **0.684:1 / 0.671:1** | 3026×4424 / 3176×4735 | CONTAIN | png |
+| Finest Toothpaste — showcase title (maks. 768px) | `media/brands/finest/lines/finest-toothpaste/showcase/title.png` | **1.123:1** | 4376×3898 | CONTAIN | png |
+| Finest Toothpaste — showcase products | `media/brands/finest/lines/finest-toothpaste/showcase/1-1.png`, `2-1.png` | **1.199:1 / 1.191:1** | 5065×4223 / 4416×3708 | CONTAIN | png |
+| Finest Toothpaste — showcase backgrounds | `media/brands/finest/lines/finest-toothpaste/showcase/1-2.png`, `2-2.png` | **2.128:1** | 4810×2260 / 4810×2261 | COVER | png |
+| Make It Extrait d’Intense — wordmark | `media/brands/make-it/lines/makeit-extrait-dintense/hero/wordmark.png` | **3.356:1** | 1121×334 | CONTAIN | png |
+| Make It Extrait d’Intense — hero product | `media/brands/make-it/lines/makeit-extrait-dintense/hero/1.png` | **0.729:1** | 3779×5181 | CONTAIN | png |
+| Make It Extrait d’Intense — showcase title | `media/brands/make-it/lines/makeit-extrait-dintense/showcase/title.png` | **0.956:1** | 4803×5026 | CONTAIN | png |
+| Make It Fragrance Enhancing Primer — wordmark | `media/brands/make-it/lines/makeit-fragrance-enhancing-primer/hero/wordmark.png` | **3.356:1** | 1121×334 | CONTAIN | png |
+| Make It Fragrance Enhancing Primer — hero product | `media/brands/make-it/lines/makeit-fragrance-enhancing-primer/hero/1.png` | **0.820:1** | 4396×5360 | CONTAIN | png |
+| Make It Fragrance Enhancing Primer — showcase title | `media/brands/make-it/lines/makeit-fragrance-enhancing-primer/showcase/title.png` | **0.944:1** | 4744×5026 | CONTAIN | png |
+| Make It Extrait de Parfum — hero layers | `media/brands/make-it/lines/makeit-extrait-de-parfum/hero/1.png`, `2.png` | **0.696:1 / 0.735:1** | 3013×4330 / 3242×4411 | CONTAIN | png |
+| Make It Extrait de Parfum — showcase title | `media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/title.png` | **0.991:1** | 4867×4912 | CONTAIN | png |
+| Make It Extrait de Parfum — showcase cards | `media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/1.png`, `2.png`, `4.png`, `5.png` | **0.771:1** | 2302×2986 | CONTAIN | png |
+| Make It Extrait de Parfum — featured | `media/brands/make-it/lines/makeit-extrait-de-parfum/showcase/3.png` | **1.586:1** | 4687×2956 | CONTAIN | png |
+| 128 Bright & Radiance — hero wordmark & cluster | `media/brands/128/lines/bright-radiance/hero/wordmark.png`, `cluster.png` | **1.526:1 / 1.640:1** | 2160×1415 / 3493×2130 | CONTAIN | png |
+| 128 Bright & Radiance — showcase title | `media/brands/128/lines/bright-radiance/showcase/title.png` | **1.280:1** | 4742×3703 | CONTAIN | png |
+| 128 Bright & Radiance — showcase cards | `media/brands/128/lines/bright-radiance/showcase/1.png`–`4.png` | **0.771:1** | 2302×2986 / 2302×2987 | CONTAIN | png |
+| 128 Ace Pro — hero wordmark & products | `media/brands/128/lines/ace-pro/hero/wordmark.png`, `1.png` | **1.526:1 / 0.679:1** | 2160×1415 / 2377×3502 | CONTAIN | png |
+| 128 Ace Pro — showcase title | `media/brands/128/lines/ace-pro/showcase/title.png` | **1.314:1** | 4865×3703 | CONTAIN | png |
+| 128 Ace Pro — showcase banners | `media/brands/128/lines/ace-pro/showcase/1.png`, `2.png` | **2.099:1** | 4687×2233 / 4687×2234 | COVER | png |
+| 128 Advanced Age Repair — hero wordmark & product | `media/brands/128/lines/advanced-age-repair/hero/wordmark.png`, `1.png` | **1.526:1 / 0.652:1** | 2160×1415 / 2317×3552 | CONTAIN | png |
+| 128 Advanced Age Repair — showcase title | `media/brands/128/lines/advanced-age-repair/showcase/title.png` | **1.255:1** | 4648×3703 | CONTAIN | png |
+| 128 Intensive Barrier Care — hero wordmark & cluster | `media/brands/128/lines/intensive-barrier-care/hero/wordmark.png`, `1.png` | **1.526:1 / 0.645:1** | 2160×1415 / 2784×4313 | CONTAIN | png |
+| 128 Intensive Barrier Care — showcase title | `media/brands/128/lines/intensive-barrier-care/showcase/title.png` | **1.255:1** | 4649×3703 | CONTAIN | png |
+| 128 Intensive Barrier Care — featured & cards | `media/brands/128/lines/intensive-barrier-care/showcase/1.png`–`3.png` | **2.099:1 / 0.771:1** | 4687×2233 / 2302×2987 | CONTAIN | png |
+| Rebonding System Super Gold — hero wordmark & product | `media/brands/rebonding-system/lines/super-gold/hero/wordmark.png`, `1.png` | **3.968:1 / 1.015:1** | 1123×283 / 2482×2446 | CONTAIN | png |
+| Rebonding System Super Gold — showcase title | `media/brands/rebonding-system/lines/super-gold/showcase/title.png` | **1.690:1** | 5093×3013 | CONTAIN | png |
+| Rebonding System Gold Edition — hero wordmark & product | `media/brands/rebonding-system/lines/gold-edition/hero/wordmark.png`, `1.png` | **3.968:1 / 1.044:1** | 1123×283 / 1921×1840 | CONTAIN | png |
+| Rebonding System Gold Edition — showcase title | `media/brands/rebonding-system/lines/gold-edition/showcase/title.png` | **1.684:1** | 5101×3029 | CONTAIN | png |
+| Rebonding System Anti Resistant — hero wordmark & product | `media/brands/rebonding-system/lines/anti-resistant/hero/wordmark.png`, `1.png` | **3.968:1 / 1.010:1** | 1123×283 / 2659×2632 | CONTAIN | png |
+| Rebonding System Anti Resistant — showcase title | `media/brands/rebonding-system/lines/anti-resistant/showcase/title.png` | **1.703:1** | 5159×3029 | CONTAIN | png |
+| Rebonding System Extremely Damaged — hero wordmark & product | `media/brands/rebonding-system/lines/extremely-damaged/hero/wordmark.png`, `1.png` | **3.968:1 / 1.045:1** | 1123×283 / 1921×1839 | CONTAIN | png |
+| Rebonding System Extremely Damaged — showcase title | `media/brands/rebonding-system/lines/extremely-damaged/showcase/title.png` | **1.703:1** | 5177×3039 | CONTAIN | png |
+| HydroPrisma Mild — hero cluster | `media/brands/hydroprisma/lines/mild/hero/1.png` | **0.809:1** | 2863×3538 | CONTAIN | png |
+| HydroPrisma Mild — showcase title | `media/brands/hydroprisma/lines/mild/showcase/title.png` | **1.394:1** | 4192×3008 | CONTAIN | png |
+| HydroPrisma Mild — cards & featured | `media/brands/hydroprisma/lines/mild/showcase/1.png`, `2.png`, `3.png` | **0.771:1 / 1.341:1** | 2302×2986 / 4687×3494 | CONTAIN | png |
+| HydroPrisma Medium — hero wordmark & cluster | `media/brands/hydroprisma/lines/medium/hero/wordmark.png`, `1.png` | **4.822:1 / 0.838:1** | 1548×321 / 3541×4225 | CONTAIN | png |
+| HydroPrisma Medium — showcase title | `media/brands/hydroprisma/lines/medium/showcase/title.png` | **1.156:1** | 4335×3749 | CONTAIN | png |
+| HydroPrisma Medium — cards & featured | `media/brands/hydroprisma/lines/medium/showcase/1.png`, `2.png`, `3.png` | **0.771:1 / 1.341:1** | 2302×2986 / 4687×3494 | CONTAIN | png |
+| HydroPrisma Strong — hero wordmark & cluster | `media/brands/hydroprisma/lines/strong/hero/wordmark.png`, `1.png` | **4.822:1 / 0.825:1** | 1548×321 / 3297×3994 | CONTAIN | png |
+| HydroPrisma Strong — showcase title | `media/brands/hydroprisma/lines/strong/showcase/title.png` | **1.201:1** | 4171×3474 | CONTAIN | png |
+| HydroPrisma Strong — cards & featured | `media/brands/hydroprisma/lines/strong/showcase/1.png`, `2.png`, `3.png` | **0.771:1 / 1.341:1** | 2302×2986 / 4687×3494 | CONTAIN | png |
 
 \* Banner brand: **COVER & full screen di desktop MAUPUN HP**. Di HP (potret) sisi kiri-kanan terpotong banyak → taruh semua branding/subjek **benar-benar di tengah**. (`bannerBg` kini hanya warna latar saat loading.)
 

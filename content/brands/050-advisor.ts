@@ -18,7 +18,7 @@ const entry: Brand = {
     // No dedicated 3:4 brand-card art; the CrossSell card is the only consumer, so it
     // reuses the About hair-texture photo (already 3:4). The hero itself renders from
     // `heroLayers`, never from this.
-    heroImage: "/brand/advisor/about/3.png",
+    heroImage: "/media/brands/advisor/about/3.png",
     // Per-brand layered parallax banner, same pattern as Hair Energy: three products
     // clustered on the right of a flat banner, wordmark + copy on the left. Order in
     // this array = stacking (last = front). Every canvas has a different amount of
@@ -26,13 +26,13 @@ const entry: Brand = {
     // bottles read at a comparable *visual* size (they are NOT the same number).
     heroLayers: [
       // Dual Defense Shampoo — front/centre, sits slightly lower, enters from the TOP (2nd).
-      { src: "/brand/advisor/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(41vw, 65vh)", aspectRatio: "2812 / 3502", left: "56%", top: "5%",
+      { src: "/media/brands/advisor/hero/2.png", depth: 72, enterFrom: "top", enterDelay: 0.2, width: "min(41vw, 65vh)", aspectRatio: "2812 / 3502", left: "56%", top: "5%",
         mobile: { left: "4%", top: "18.5%", width: "min(75vw, 35vh)" } },
       // Hair Recovery Vitamax — back row, left of the cluster, enters from the LEFT (1st).
-      { src: "/brand/advisor/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(23vw, 36vh)", aspectRatio: "1560 / 2402", left: "57.7%", top: "39%",
+      { src: "/media/brands/advisor/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(23vw, 36vh)", aspectRatio: "1560 / 2402", left: "57.7%", top: "39%",
         mobile: { left: "11.5%", top: "41%", width: "min(37vw, 23vh)" } },
       // Hair Mask Repair — back row, right of the cluster, enters from the RIGHT (3rd).
-      { src: "/brand/advisor/hero/3.png", depth: 32, enterFrom: "top", enterDelay: 0.1, width: "min(24vw, 43vh)", aspectRatio: "1814 / 2527", left: "69.5%", top: "30%",
+      { src: "/media/brands/advisor/hero/3.png", depth: 32, enterFrom: "top", enterDelay: 0.1, width: "min(24vw, 43vh)", aspectRatio: "1814 / 2527", left: "69.5%", top: "30%",
         mobile: { left: "33%", top: "25%", width: "min(55vw, 29vh)" } },
     ],
     // The wordmark carries no tagline of its own (unlike VICA/Wonhae), so the hero
@@ -40,7 +40,7 @@ const entry: Brand = {
     // taken from the brand's own showcase title art ("TEKNOLOGI PERAWATAN RAMBUT",
     // "#ScalpAndHairExpert", "Diformulasikan oleh Apoteker").
     heroContent: {
-      logo: "/brand/advisor/hero/wordmark.png",
+      logo: "/media/brands/advisor/hero/wordmark.png",
       logoAspect: "1825 / 623",
       logoWidth: "24vw",
       maxWidth: "34vw",
@@ -61,24 +61,24 @@ const entry: Brand = {
     // carousel (guide §B.3 default) until that asset is delivered.
     hero: false,
     products: [
-      { name: "Dual Defense Shampoo", variant: { en: "Anti Dandruff & Hair Fall", id: "Anti Ketombe & Rambut Rontok" }, size: { en: "200 mL", id: "200 mL" }, image: "/brand/advisor/product-lineup/advisor-02.png" },
-      { name: "Hair & Scalp Tonic", variant: { en: "Anti Dandruff & Hair Fall", id: "Anti Ketombe & Rambut Rontok" }, size: { en: "140 mL", id: "140 mL" }, image: "/brand/advisor/product-lineup/advisor-13.png" },
-      { name: "Hair & Scalp Tonic", variant: { en: "Anti Dandruff & Hair Fall", id: "Anti Ketombe & Rambut Rontok" }, size: { en: "60 mL", id: "60 mL" }, image: "/brand/advisor/product-lineup/advisor-12.png" },
-      { name: "Hair Mask Repair", variant: { en: "Dry & Damaged Hair", id: "Rambut Kering & Rusak" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/advisor/product-lineup/advisor-01.png" },
-      { name: "Hair Mask Repair", variant: { en: "Dry & Damaged Hair", id: "Rambut Kering & Rusak" }, size: { en: "30 mL", id: "30 mL" }, image: "/brand/advisor/product-lineup/advisor-14.png" },
-      { name: "Hair Protection Keratin Spray", variant: { en: "Dry & Damaged Hair", id: "Rambut Kering & Rusak" }, size: { en: "60 mL", id: "60 mL" }, image: "/brand/advisor/product-lineup/advisor-11.png" },
-      { name: "Hair Recovery Vitamax", variant: { en: "Dry & Damaged Hair", id: "Rambut Kering & Rusak" }, size: { en: "8 mL × 3", id: "8 mL × 3" }, image: "/brand/advisor/product-lineup/advisor-05.png" },
+      { name: "Dual Defense Shampoo", variant: { en: "Anti Dandruff & Hair Fall", id: "Anti Ketombe & Rambut Rontok" }, size: { en: "200 mL", id: "200 mL" }, image: "/media/brands/advisor/product-lineup/advisor-02.png" },
+      { name: "Hair & Scalp Tonic", variant: { en: "Anti Dandruff & Hair Fall", id: "Anti Ketombe & Rambut Rontok" }, size: { en: "140 mL", id: "140 mL" }, image: "/media/brands/advisor/product-lineup/advisor-13.png" },
+      { name: "Hair & Scalp Tonic", variant: { en: "Anti Dandruff & Hair Fall", id: "Anti Ketombe & Rambut Rontok" }, size: { en: "60 mL", id: "60 mL" }, image: "/media/brands/advisor/product-lineup/advisor-12.png" },
+      { name: "Hair Mask Repair", variant: { en: "Dry & Damaged Hair", id: "Rambut Kering & Rusak" }, size: { en: "100 mL", id: "100 mL" }, image: "/media/brands/advisor/product-lineup/advisor-01.png" },
+      { name: "Hair Mask Repair", variant: { en: "Dry & Damaged Hair", id: "Rambut Kering & Rusak" }, size: { en: "30 mL", id: "30 mL" }, image: "/media/brands/advisor/product-lineup/advisor-14.png" },
+      { name: "Hair Protection Keratin Spray", variant: { en: "Dry & Damaged Hair", id: "Rambut Kering & Rusak" }, size: { en: "60 mL", id: "60 mL" }, image: "/media/brands/advisor/product-lineup/advisor-11.png" },
+      { name: "Hair Recovery Vitamax", variant: { en: "Dry & Damaged Hair", id: "Rambut Kering & Rusak" }, size: { en: "8 mL × 3", id: "8 mL × 3" }, image: "/media/brands/advisor/product-lineup/advisor-05.png" },
     ],
     about: [
-      { title: { en: "Formulated by Pharmacists", id: "Diformulasikan oleh Apoteker" }, image: "/brand/advisor/about/1.png" },
-      { title: { en: "Clinically Dosed Active Ingredients", id: "Bahan Aktif Berdosis Klinis" }, image: "/brand/advisor/about/2.png" },
-      { title: { en: "Solutions for Scalp & Hair", id: "Solusi untuk Kulit Kepala & Rambut" }, image: "/brand/advisor/about/3.png" },
+      { title: { en: "Formulated by Pharmacists", id: "Diformulasikan oleh Apoteker" }, image: "/media/brands/advisor/about/1.png" },
+      { title: { en: "Clinically Dosed Active Ingredients", id: "Bahan Aktif Berdosis Klinis" }, image: "/media/brands/advisor/about/2.png" },
+      { title: { en: "Solutions for Scalp & Hair", id: "Solusi untuk Kulit Kepala & Rambut" }, image: "/media/brands/advisor/about/3.png" },
     ],
     // Poster-style showcase (same engine as Hair Energy): title graphic, then one
     // banner per product line with the giant line name baked into the card and the
     // product resting centred on top.
     showcase: {
-      hero: "/brand/advisor/showcase/title.png",
+      hero: { en: "/media/brands/advisor/showcase/title.en.png", id: "/media/brands/advisor/showcase/title.id.png" },
       heroAspect: "4606 / 3409",
       productAlign: "center",
       // The banners are finished cards: rounded corners, card grey, and a sub-copy that
@@ -95,15 +95,15 @@ const entry: Brand = {
         // banner — the Hair Energy proportion. All values are %, so the composition
         // scales identically on mobile; no per-viewport override is needed.
         // CLINICAL SHAMPOO — Dual Defense Shampoo
-        { bg: "/brand/advisor/showcase/1-2.png", product: "/brand/advisor/showcase/1-1.png", bgAspect: "4810 / 2260", productAspect: "1 / 1", productHeight: "125%", productShiftY: "-3%", },
+        { bg: { en: "/media/brands/advisor/showcase/1-2.en.png", id: "/media/brands/advisor/showcase/1-2.id.png" }, product: "/media/brands/advisor/showcase/1-1.png", bgAspect: "4810 / 2260", productAspect: "1 / 1", productHeight: "125%", productShiftY: "-3%", },
         // HAIR MASK — Hair Mask Repair
-        { bg: "/brand/advisor/showcase/2-2.png", product: "/brand/advisor/showcase/2-1.png", bgAspect: "4810 / 2261", productAspect: "1 / 1", productHeight: "154%" },
+        { bg: { en: "/media/brands/advisor/showcase/2-2.en.png", id: "/media/brands/advisor/showcase/2-2.id.png" }, product: "/media/brands/advisor/showcase/2-1.png", bgAspect: "4810 / 2261", productAspect: "1 / 1", productHeight: "154%" },
         // HAIR TONIC — Hair & Scalp Tonic
-        { bg: "/brand/advisor/showcase/3-2.png", product: "/brand/advisor/showcase/3-1.png", bgAspect: "4810 / 2260", productAspect: "2652 / 3400", productHeight: "150%", productShiftY: "5%", productShiftX: "-13.5%",},
+        { bg: { en: "/media/brands/advisor/showcase/3-2.en.png", id: "/media/brands/advisor/showcase/3-2.id.png" }, product: "/media/brands/advisor/showcase/3-1.png", bgAspect: "4810 / 2260", productAspect: "2652 / 3400", productHeight: "150%", productShiftY: "5%", productShiftX: "-13.5%",},
         // VITAMAX — Hair Recovery Vitamax
-        { bg: "/brand/advisor/showcase/4-2.png", product: "/brand/advisor/showcase/4-1.png", bgAspect: "4810 / 2260", productAspect: "1 / 1", productHeight: "140%", productShiftY: "2%", },
+        { bg: { en: "/media/brands/advisor/showcase/4-2.en.png", id: "/media/brands/advisor/showcase/4-2.id.png" }, product: "/media/brands/advisor/showcase/4-1.png", bgAspect: "4810 / 2260", productAspect: "1 / 1", productHeight: "140%", productShiftY: "2%", },
         // KERATIN SPRAY — Hair Protection Keratin Spray
-        { bg: "/brand/advisor/showcase/5-2.png", product: "/brand/advisor/showcase/5-1.png", bgAspect: "4810 / 2260", productAspect: "1 / 1", productHeight: "132%", productShiftY: "3.5%", },
+        { bg: { en: "/media/brands/advisor/showcase/5-2.en.png", id: "/media/brands/advisor/showcase/5-2.id.png" }, product: "/media/brands/advisor/showcase/5-1.png", bgAspect: "4810 / 2260", productAspect: "1 / 1", productHeight: "132%", productShiftY: "3.5%", },
       ],
     },
   };

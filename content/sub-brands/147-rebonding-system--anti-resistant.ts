@@ -16,13 +16,13 @@ const entry: SubBrand = {
   bannerBg: "#F2EFE9",
   theme: "dark",
   heroWordmark:
-    "/brand/rebonding-system/anti-resistant/hero/wordmark.png",
+    "/media/brands/rebonding-system/lines/anti-resistant/hero/wordmark.png",
   heroWordmarkAspect: "1123 / 283",
   heroWordmarkWidth: "min(21vw, 520px)",
   heroWordmarkMobileWidth: "48vw",
   heroLayers: [
     {
-      src: "/brand/rebonding-system/anti-resistant/hero/1.png",
+      src: "/media/brands/rebonding-system/lines/anti-resistant/hero/1.png",
       enterFrom: "right",
       enterDelay: 0.25,
       depth: 44,
@@ -38,7 +38,7 @@ const entry: SubBrand = {
     },
   ],
   showcaseTitle:
-    "/brand/rebonding-system/anti-resistant/showcase/title.png",
+    "/media/brands/rebonding-system/lines/anti-resistant/showcase/title.png",
   showcaseTitleAspect: "5159 / 3029",
   showcaseTitleSize: "wide",
   showcaseWidth: "wide",

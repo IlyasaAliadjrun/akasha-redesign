@@ -174,87 +174,89 @@ export const DIVIDEND_HISTORY: {
 // ---------------------------------------------------------------------------
 // Arsip dokumen
 //
-// Setiap `file` menunjuk ke berkas di public/docs/, hasil unduhan dari
-// akashainternational.com. Nama berkas dipertahankan apa adanya dari sumber —
-// jangan dirapikan, karena itulah yang mencocokkannya kembali ke sumber saat
-// arsip diperbarui. Tiga berkas RUPS memakai nama identik di tahun berbeda dan
-// diberi awalan YYYY-MM agar tidak saling menimpa.
+// Setiap `file` menunjuk ke public/documents/, `cover` ke public/media/reports/.
+// Penamaan baku (lihat docs/PANDUAN-ASET.md §2):
+//   annual-report/{tahun}.pdf · sustainability-report/{tahun}.pdf
+//   financial-report/{tahun}/{q1|q2|q3|fy}[-ojk-letter].pdf
+//   gms/{tahun}/{slug}.{pdf|doc} · disclosure/{yyyy-mm[-dd]}-{slug}.pdf
+// Nama berkas asli dari akashainternational.com tercatat di
+// docs/asset-migration-map.json.
 // ---------------------------------------------------------------------------
 
 // `cover` = thumbnail sampul laporan, ~16:15, di-crop `object-cover`.
-const AR = "/docs/annual-report";
+const AR = "/documents/annual-report";
 
 export const ANNUAL_REPORTS: { year: string; file: string; cover: string }[] = [
   {
     year: "2025",
-    file: `${AR}/Annual-Report-2025.pdf`,
-    cover: `${AR}/covers/2025.png`,
+    file: `${AR}/2025.pdf`,
+    cover: "/media/reports/annual-report/2025.png",
   },
   {
     year: "2024",
-    file: `${AR}/ANNUAL-REPORT-ADES-2024.pdf`,
-    cover: `${AR}/covers/2024.png`,
+    file: `${AR}/2024.pdf`,
+    cover: "/media/reports/annual-report/2024.png",
   },
   {
     year: "2023",
-    file: `${AR}/ANNUAL-REPORT-ADES-2023.pdf`,
-    cover: `${AR}/covers/2023.png`,
+    file: `${AR}/2023.pdf`,
+    cover: "/media/reports/annual-report/2023.png",
   },
   {
     year: "2022",
-    file: `${AR}/ANNUAL-REPORT-ADES-2022.pdf`,
-    cover: `${AR}/covers/2022.png`,
+    file: `${AR}/2022.pdf`,
+    cover: "/media/reports/annual-report/2022.png",
   },
   {
     year: "2021",
-    file: `${AR}/ADES-AR-2021-eReporting_300522_3.pdf`,
-    cover: `${AR}/covers/2021.jpg`,
+    file: `${AR}/2021.pdf`,
+    cover: "/media/reports/annual-report/2021.jpg",
   },
   {
     year: "2020",
-    file: `${AR}/AR-2020-Akasha-Wira-International-Tbk-Rev-828-06-2021e-reporting.pdf`,
-    cover: `${AR}/covers/2020.jpg`,
+    file: `${AR}/2020.pdf`,
+    cover: "/media/reports/annual-report/2020.jpg",
   },
   {
     year: "2019",
-    file: `${AR}/Laporan-Tahunan-Akasha-31-Desember-2019-Final.pdf`,
-    cover: `${AR}/covers/2019.jpg`,
+    file: `${AR}/2019.pdf`,
+    cover: "/media/reports/annual-report/2019.jpg",
   },
   {
     year: "2018",
     // Nama berkas sumber tertulis "2108"; isinya laporan tahunan 2018.
-    file: `${AR}/ADES-AR-2108-eReporting-300419.pdf`,
-    cover: `${AR}/covers/2018.jpg`,
+    file: `${AR}/2018.pdf`,
+    cover: "/media/reports/annual-report/2018.jpg",
   },
   {
     year: "2017",
-    file: `${AR}/Annual-Report-2017-AWI.pdf`,
-    cover: `${AR}/covers/2017.png`,
+    file: `${AR}/2017.pdf`,
+    cover: "/media/reports/annual-report/2017.png",
   },
   {
     year: "2016",
-    file: `${AR}/ANNUAL-REPORT-2016-AWI.pdf.pdf`,
-    cover: `${AR}/covers/2016.png`,
+    file: `${AR}/2016.pdf`,
+    cover: "/media/reports/annual-report/2016.png",
   },
   {
     year: "2015",
-    file: `${AR}/ANNUAL-REPORT-2015-AWI.pdf`,
-    cover: `${AR}/covers/2015.png`,
+    file: `${AR}/2015.pdf`,
+    cover: "/media/reports/annual-report/2015.png",
   },
   {
     year: "2014",
-    file: `${AR}/Annual-Report-2014-AWI.pdf`,
-    cover: `${AR}/covers/2014.png`,
+    file: `${AR}/2014.pdf`,
+    cover: "/media/reports/annual-report/2014.png",
   },
   {
     year: "2013",
-    file: `${AR}/AR2013-AWI-FINAL-250414.pdf`,
-    cover: `${AR}/covers/2013.png`,
+    file: `${AR}/2013.pdf`,
+    cover: "/media/reports/annual-report/2013.png",
   },
   {
     year: "2012",
-    file: `${AR}/Annual-Report-2012.pdf`,
-    cover: `${AR}/covers/2012.png`,
+    file: `${AR}/2012.pdf`,
+    cover: "/media/reports/annual-report/2012.png",
   },
 ];
 
@@ -263,28 +265,28 @@ export const ANNUAL_REPORTS: { year: string; file: string; cover: string }[] = [
 export const SUSTAINABILITY_REPORTS: { year: string; file: string; cover: string }[] = [
   {
     year: "2025",
-    file: "/docs/sustainability-report/Sustainability-Report-ADES-2025.pdf",
-    cover: "/docs/sustainability-report/covers/2025.png",
+    file: "/documents/sustainability-report/2025.pdf",
+    cover: "/media/reports/sustainability-report/2025.png",
   },
   {
     year: "2024",
-    file: "/docs/sustainability-report/SUSTAINABILITY-REPORT-ADES-2024.pdf",
-    cover: "/docs/sustainability-report/covers/2024.png",
+    file: "/documents/sustainability-report/2024.pdf",
+    cover: "/media/reports/sustainability-report/2024.png",
   },
   {
     year: "2023",
-    file: "/docs/sustainability-report/SUSTAINABILITY-REPORT-ADES-2023.pdf",
-    cover: "/docs/sustainability-report/covers/2023.png",
+    file: "/documents/sustainability-report/2023.pdf",
+    cover: "/media/reports/sustainability-report/2023.png",
   },
   {
     year: "2022",
-    file: "/docs/sustainability-report/SUSTAINABILITY-REPORT-ADES-2022.pdf",
-    cover: "/docs/sustainability-report/covers/2022.png",
+    file: "/documents/sustainability-report/2022.pdf",
+    cover: "/media/reports/sustainability-report/2022.png",
   },
   {
     year: "2021",
-    file: "/docs/sustainability-report/ADES-SR-2021-eReporting.pdf",
-    cover: "/docs/sustainability-report/covers/2021.jpg",
+    file: "/documents/sustainability-report/2021.pdf",
+    cover: "/media/reports/sustainability-report/2021.jpg",
   },
 ];
 
@@ -296,7 +298,7 @@ export type FinancialPeriod = {
   letter?: string;
 };
 
-const FR = "/docs/financial-report";
+const FR = "/documents/financial-report";
 
 export const FINANCIAL_REPORT_ARCHIVE: {
   year: string;
@@ -307,11 +309,11 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/PT-Akasha-Wira-International-Tbk_December-31-2025-Audited-Financial-Statements_CLIENT-RELEASED.pdf`,
+        file: `${FR}/2025/fy.pdf`,
       },
       {
         label: { en: "March", id: "Maret" },
-        file: `${FR}/LAPORAN-KUARTALAN-MARET-2025.pdf`,
+        file: `${FR}/2025/q1.pdf`,
       },
     ],
   },
@@ -320,19 +322,19 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/Annual-Financial-Report-December-2024.pdf`,
+        file: `${FR}/2024/fy.pdf`,
       },
       {
         label: { en: "September", id: "September" },
-        file: `${FR}/LAPORAN-KUARTALAN-SEPTEMBER-2024.pdf`,
+        file: `${FR}/2024/q3.pdf`,
       },
       {
         label: { en: "June", id: "Juni" },
-        file: `${FR}/LAPORAN-KUARTALAN-JUNI-2024.pdf`,
+        file: `${FR}/2024/q2.pdf`,
       },
       {
         label: { en: "March", id: "Maret" },
-        file: `${FR}/LAPORAN-KUARTALAN-MARET-2024.pdf`,
+        file: `${FR}/2024/q1.pdf`,
       },
     ],
   },
@@ -341,23 +343,23 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/PT-Akasha-Wira-International-December-31-2023-Audited-Financial-Statements_CLIENT_RELEASED_FINAL_MARCH272024.pdf`,
-        letter: `${FR}/PENJELASAN-OJK_31-DEC-2023.pdf`,
+        file: `${FR}/2023/fy.pdf`,
+        letter: `${FR}/2023/fy-ojk-letter.pdf`,
       },
       {
         label: { en: "September", id: "September" },
-        file: `${FR}/AWI-REPORT-SEP-2023_1.pdf`,
-        letter: `${FR}/PENJELASAN-OJK_30-SEP-2023.pdf`,
+        file: `${FR}/2023/q3.pdf`,
+        letter: `${FR}/2023/q3-ojk-letter.pdf`,
       },
       {
         label: { en: "June", id: "Juni" },
-        file: `${FR}/AWI-REPORT-JUNE-2023-FINAL.pdf`,
-        letter: `${FR}/PENJELASAN-OJK_30-JUNI-2023.pdf`,
+        file: `${FR}/2023/q2.pdf`,
+        letter: `${FR}/2023/q2-ojk-letter.pdf`,
       },
       {
         label: { en: "March", id: "Maret" },
-        file: `${FR}/PT-AKASHA-WIRA-INTERNATIONAL-MAR-2023.pdf`,
-        letter: `${FR}/Penjelasan-OJK-31-Maret-2023.pdf`,
+        file: `${FR}/2023/q1.pdf`,
+        letter: `${FR}/2023/q1-ojk-letter.pdf`,
       },
     ],
   },
@@ -366,21 +368,21 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/PT-AKASHA-WIRA-INTERNATIONAL-2022-AUDIT-REPORT.pdf`,
-        letter: `${FR}/PENJELASAN-OJK-31-DEC-2022.pdf`,
+        file: `${FR}/2022/fy.pdf`,
+        letter: `${FR}/2022/fy-ojk-letter.pdf`,
       },
       {
         label: { en: "September", id: "September" },
-        file: `${FR}/PT-Akasha-Wira-International-Tbk-SEP-2022.pdf`,
+        file: `${FR}/2022/q3.pdf`,
       },
       {
         label: { en: "June", id: "Juni" },
-        file: `${FR}/PT-Akasha-Wira-International-JUN-22.pdf`,
+        file: `${FR}/2022/q2.pdf`,
       },
       {
         label: { en: "March", id: "Maret" },
-        file: `${FR}/PT-Akasha-Wira-International-MAR-22.pdf`,
-        letter: `${FR}/Penjelasan-OJK-31-Maret-2022.pdf`,
+        file: `${FR}/2022/q1.pdf`,
+        letter: `${FR}/2022/q1-ojk-letter.pdf`,
       },
     ],
   },
@@ -389,22 +391,22 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/PT-AKASHA-WIRA-INTERNATIONAL-2021-AUDITED-FINANCIAL-STATEMENTS.pdf`,
-        letter: `${FR}/Penjelasan-OJK-31-Des-2021.pdf`,
+        file: `${FR}/2021/fy.pdf`,
+        letter: `${FR}/2021/fy-ojk-letter.pdf`,
       },
       {
         label: { en: "September", id: "September" },
-        file: `${FR}/LK-Q3-PT-Akasha-Wira-International-SEP-21.pdf`,
-        letter: `${FR}/Penjelasan-OJK-30-Sep-2021.pdf`,
+        file: `${FR}/2021/q3.pdf`,
+        letter: `${FR}/2021/q3-ojk-letter.pdf`,
       },
       {
         label: { en: "June", id: "Juni" },
-        file: `${FR}/LK-PT-Akasha-Wira-International-JUN-21.pdf`,
+        file: `${FR}/2021/q2.pdf`,
       },
       {
         label: { en: "March", id: "Maret" },
-        file: `${FR}/PT-Akasha-Wira-International-31-MAR-21.pdf`,
-        letter: `${FR}/Surat-Penjelasan-OJK_Q1-2021.pdf`,
+        file: `${FR}/2021/q1.pdf`,
+        letter: `${FR}/2021/q1-ojk-letter.pdf`,
       },
     ],
   },
@@ -413,23 +415,23 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/PT-Akasha-Wira-International-Tbk-FINAL-PDF.pdf`,
-        letter: `${FR}/OJK-Explanation_Des-20.pdf`,
+        file: `${FR}/2020/fy.pdf`,
+        letter: `${FR}/2020/fy-ojk-letter.pdf`,
       },
       {
         label: { en: "September", id: "September" },
-        file: `${FR}/LK-Q3-2020-PT-Akasha-Wira-International-SEP-20.pdf`,
-        letter: `${FR}/Surat-Penjelasan-OJK_Q3-2020.pdf`,
+        file: `${FR}/2020/q3.pdf`,
+        letter: `${FR}/2020/q3-ojk-letter.pdf`,
       },
       {
         label: { en: "June", id: "Juni" },
-        file: `${FR}/PT-Akasha-Wira-International-JUN-20_signed.pdf`,
-        letter: `${FR}/PENJELASAN-OJK_Jun-20.pdf`,
+        file: `${FR}/2020/q2.pdf`,
+        letter: `${FR}/2020/q2-ojk-letter.pdf`,
       },
       {
         label: { en: "March", id: "Maret" },
-        file: `${FR}/PT-Akasha-Wira-International-MAR-20-signed.pdf`,
-        letter: `${FR}/PENJELASAN-OJK_Mar20.pdf`,
+        file: `${FR}/2020/q1.pdf`,
+        letter: `${FR}/2020/q1-ojk-letter.pdf`,
       },
     ],
   },
@@ -438,22 +440,22 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/Audit-Report-AWI-19-270320-FINAL.pdf`,
-        letter: `${FR}/Surat-Penjelasan-LK-Dec-2019.pdf`,
+        file: `${FR}/2019/fy.pdf`,
+        letter: `${FR}/2019/fy-ojk-letter.pdf`,
       },
       {
         label: { en: "September", id: "September" },
-        file: `${FR}/PT-Akasha-Wira-International-SEP-19_1.pdf`,
-        letter: `${FR}/Surat-Penjelasan-LK-Sep-2019.pdf`,
+        file: `${FR}/2019/q3.pdf`,
+        letter: `${FR}/2019/q3-ojk-letter.pdf`,
       },
       {
         label: { en: "June", id: "Juni" },
-        file: `${FR}/LK-Q2-PT-Akasha-Wira-International-JUN-19_signed.pdf`,
-        letter: `${FR}/Surat-penjelasan-laporan-keuangan-Juli-2019.pdf`,
+        file: `${FR}/2019/q2.pdf`,
+        letter: `${FR}/2019/q2-ojk-letter.pdf`,
       },
       {
         label: { en: "March", id: "Maret" },
-        file: `${FR}/LK-Q1-PT-Akasha-Wira-International-MAR-19-dan-hal-ttd.pdf`,
+        file: `${FR}/2019/q1.pdf`,
       },
     ],
   },
@@ -462,23 +464,23 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/Audit-Report-PT-Akasha-Wira-International-Tbk-31-Dec-2018-Revisi.pdf`,
-        letter: `${FR}/PENJELASAN-PERUBAHAN-20-OJK_31-DEC-2018.pdf`,
+        file: `${FR}/2018/fy.pdf`,
+        letter: `${FR}/2018/fy-ojk-letter.pdf`,
       },
       {
         label: { en: "September", id: "September" },
-        file: `${FR}/Laporan-Keuangan-Kuartalan-Quartely-Financial-Report-September-2018.pdf`,
-        letter: `${FR}/Surat-Penjelasan-Perubahan-Jumlah-Aset-Letter-on-Chang-of-Aset-September-2018.pdf`,
+        file: `${FR}/2018/q3.pdf`,
+        letter: `${FR}/2018/q3-ojk-letter.pdf`,
       },
       {
         label: { en: "June", id: "Juni" },
-        file: `${FR}/Quarterly-Financial-Report-30-June-2018.pdf`,
-        letter: `${FR}/Letter-on-Change-of-Assets-30-June-2018.pdf`,
+        file: `${FR}/2018/q2.pdf`,
+        letter: `${FR}/2018/q2-ojk-letter.pdf`,
       },
       {
         label: { en: "March", id: "Maret" },
-        file: `${FR}/Quarterly-Financial-Report-March-2018.pdf`,
-        letter: `${FR}/Letter-on-Change-of-Assets-March-2018.pdf`,
+        file: `${FR}/2018/q1.pdf`,
+        letter: `${FR}/2018/q1-ojk-letter.pdf`,
       },
     ],
   },
@@ -487,18 +489,18 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/Annual-Financial-Report-December-2017.pdf`,
-        letter: `${FR}/Penjelasan-Perubahan-Aset-lebih-dari-20-desember.pdf`,
+        file: `${FR}/2017/fy.pdf`,
+        letter: `${FR}/2017/fy-ojk-letter.pdf`,
       },
       {
         label: { en: "June", id: "Juni" },
-        file: `${FR}/Quarterly_Report_June_2017.pdf`,
-        letter: `${FR}/Penjelasan-Perubahan-Aset-lebih-dari-20-June-2017.pdf`,
+        file: `${FR}/2017/q2.pdf`,
+        letter: `${FR}/2017/q2-ojk-letter.pdf`,
       },
       {
         label: { en: "March", id: "Maret" },
-        file: `${FR}/Quarterly_Report_March_2017.pdf`,
-        letter: `${FR}/Penjelasan-Perubahan-Aset-lebih-dari-20-maret-2017.pdf`,
+        file: `${FR}/2017/q1.pdf`,
+        letter: `${FR}/2017/q1-ojk-letter.pdf`,
       },
     ],
   },
@@ -507,21 +509,21 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/Annual-Financial-Report-December-2016.pdf`,
-        letter: `${FR}/Surat-Penjelasan-Perubahan-Jumlah-Aset-Lebih-dari-20-PDF.pdf`,
+        file: `${FR}/2016/fy.pdf`,
+        letter: `${FR}/2016/fy-ojk-letter.pdf`,
       },
       {
         label: { en: "September", id: "September" },
-        file: `${FR}/Quarterly_Report_Sept_2016.pdf`,
-        letter: `${FR}/Penjelasan-Perubahan-Aset-lebih-dari-20-sept.pdf`,
+        file: `${FR}/2016/q3.pdf`,
+        letter: `${FR}/2016/q3-ojk-letter.pdf`,
       },
       {
         label: { en: "June", id: "Juni" },
-        file: `${FR}/Quarterly-Financial-Report-June-2016.pdf`,
+        file: `${FR}/2016/q2.pdf`,
       },
       {
         label: { en: "March", id: "Maret" },
-        file: `${FR}/Quarterly-Report-March-2016.pdf`,
+        file: `${FR}/2016/q1.pdf`,
       },
     ],
   },
@@ -530,27 +532,27 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/Annual-Financial-Report-December-2015.pdf`,
-        letter: `${FR}/Surat-Penjelasan-Perubahan-Jumlah-Aset-Lebih-dari20.pdf`,
+        file: `${FR}/2015/fy.pdf`,
+        letter: `${FR}/2015/fy-ojk-letter.pdf`,
       },
       {
         label: {
           en: "Newspaper publication of the 2015 statements",
           id: "Bukti iklan koran laporan keuangan 2015",
         },
-        file: `${FR}/Bukti-Iklan-Koran-LK-2015-di-Ekonomi-Neraca.pdf`,
+        file: `${FR}/2015/fy-newspaper-publication.pdf`,
       },
       {
         label: { en: "September", id: "September" },
-        file: `${FR}/Quarterly-Report-Sept-2015.pdf`,
+        file: `${FR}/2015/q3.pdf`,
       },
       {
         label: { en: "June", id: "Juni" },
-        file: `${FR}/Quarterly_Report_June_2015.pdf`,
+        file: `${FR}/2015/q2.pdf`,
       },
       {
         label: { en: "March", id: "Maret" },
-        file: `${FR}/Quarterly-Financial-Report-March-2015.pdf`,
+        file: `${FR}/2015/q1.pdf`,
       },
     ],
   },
@@ -559,14 +561,14 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/Annual-Financial-Report-December-2014.pdf`,
+        file: `${FR}/2014/fy.pdf`,
       },
       {
         label: { en: "September", id: "September" },
-        file: `${FR}/Quarterly-Report-Sep-2014.pdf`,
+        file: `${FR}/2014/q3.pdf`,
       },
-      { label: { en: "June", id: "Juni" }, file: `${FR}/Quarterly-Report-June-2014.pdf` },
-      { label: { en: "March", id: "Maret" }, file: `${FR}/Quarterly-Report-March-2014.pdf` },
+      { label: { en: "June", id: "Juni" }, file: `${FR}/2014/q2.pdf` },
+      { label: { en: "March", id: "Maret" }, file: `${FR}/2014/q1.pdf` },
     ],
   },
   {
@@ -574,14 +576,14 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/Annual-Financial-Report-December-2013.pdf`,
+        file: `${FR}/2013/fy.pdf`,
       },
       {
         label: { en: "September", id: "September" },
-        file: `${FR}/Quarterly-Financial-Report-September-2013.pdf`,
+        file: `${FR}/2013/q3.pdf`,
       },
-      { label: { en: "June", id: "Juni" }, file: `${FR}/Quarterly-Report-jun-2013.pdf` },
-      { label: { en: "March", id: "Maret" }, file: `${FR}/Quarterly-Report-March-2013.pdf` },
+      { label: { en: "June", id: "Juni" }, file: `${FR}/2013/q2.pdf` },
+      { label: { en: "March", id: "Maret" }, file: `${FR}/2013/q1.pdf` },
     ],
   },
   {
@@ -589,19 +591,19 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
-        file: `${FR}/Annual-Financial-Report-December-2012.pdf`,
+        file: `${FR}/2012/fy.pdf`,
       },
       {
         label: { en: "September", id: "September" },
-        file: `${FR}/Quarterly-Financial-Report-September-2012.pdf`,
+        file: `${FR}/2012/q3.pdf`,
       },
-      { label: { en: "June", id: "Juni" }, file: `${FR}/Quarterly-Report-june-2012.pdf` },
-      { label: { en: "March", id: "Maret" }, file: `${FR}/Quarterly-Report-March-2012.pdf` },
+      { label: { en: "June", id: "Juni" }, file: `${FR}/2012/q2.pdf` },
+      { label: { en: "March", id: "Maret" }, file: `${FR}/2012/q1.pdf` },
     ],
   },
 ];
 
-const GMS = "/docs/gms";
+const GMS = "/documents/gms";
 
 export const GMS_ARCHIVE: {
   year: string;
@@ -614,35 +616,35 @@ export const GMS_ARCHIVE: {
     documents: [
       {
         label: { en: "Announcement of General Meeting", id: "Pengumuman RUPS" },
-        file: `${GMS}/Pengumuman-RUPS-ADES-2026.pdf`,
+        file: `${GMS}/2026/announcement-of-general-meeting.pdf`,
       },
       {
         label: { en: "Invitation to the shareholders", id: "Panggilan kepada pemegang saham" },
-        file: `${GMS}/Panggilan-RUPS-26-MEI-2026.pdf`,
+        file: `${GMS}/2026/invitation-to-the-shareholders.pdf`,
       },
       {
         label: { en: "Meeting agenda material", id: "Materi mata acara rapat" },
-        file: `${GMS}/BAHAN-MATA-ACARA-RAPAT-17-JUNI-2026.pdf`,
+        file: `${GMS}/2026/meeting-agenda-material.pdf`,
       },
       {
         label: { en: "Meeting rules for AGMS", id: "Tata tertib RUPST" },
-        file: `${GMS}/TATA-TERTIB-RUPS-17-JUNI-2026.pdf`,
+        file: `${GMS}/2026/meeting-rules-for-agms.pdf`,
       },
       {
         label: { en: "Power of attorney for individual", id: "Surat kuasa perorangan" },
-        file: `${GMS}/SURAT-KUASA-INDIVIDU-RUPS-17-JUNI-2026.doc`,
+        file: `${GMS}/2026/power-of-attorney-for-individual.doc`,
       },
       {
         label: { en: "Curriculum vitae — Mr. Hagi Yufantra", id: "Curriculum vitae — Bapak Hagi Yufantra" },
-        file: `${GMS}/CV-Hagi-Yufantra-untuk-Website.pdf`,
+        file: `${GMS}/2026/curriculum-vitae-mr-hagi-yufantra.pdf`,
       },
       {
         label: { en: "Curriculum vitae — Mr. Rudy Hidayat", id: "Curriculum vitae — Bapak Rudy Hidayat" },
-        file: `${GMS}/CV-Pak-Rudy-untuk-Web-dan-RUPS.pdf`,
+        file: `${GMS}/2026/curriculum-vitae-mr-rudy-hidayat.pdf`,
       },
       {
         label: { en: "Summary of the General Meeting", id: "Risalah RUPS" },
-        file: `${GMS}/RISALAH-RAPAT-RUPS-17-JUNI-2026.pdf`,
+        file: `${GMS}/2026/summary-of-the-general-meeting.pdf`,
       },
     ],
   },
@@ -652,27 +654,27 @@ export const GMS_ARCHIVE: {
     documents: [
       {
         label: { en: "Announcement of General Meeting", id: "Pengumuman RUPS" },
-        file: `${GMS}/Pengumuman-Rapat-Umum-Pemegang-Saham-18-Juni-2025.pdf`,
+        file: `${GMS}/2025/announcement-of-general-meeting.pdf`,
       },
       {
         label: { en: "Invitation to the shareholders", id: "Panggilan kepada pemegang saham" },
-        file: `${GMS}/Panggilan-RUPS-18-Juni-2025.pdf`,
+        file: `${GMS}/2025/invitation-to-the-shareholders.pdf`,
       },
       {
         label: { en: "Meeting agenda material", id: "Materi mata acara rapat" },
-        file: `${GMS}/BAHAN-MATA-ACARA-RUPS-18-JUNI-2025.pdf`,
+        file: `${GMS}/2025/meeting-agenda-material.pdf`,
       },
       {
         label: { en: "Meeting rules for AGMS", id: "Tata tertib RUPST" },
-        file: `${GMS}/TATA-TERTIB-RUPS-18-JUNI-2025.pdf`,
+        file: `${GMS}/2025/meeting-rules-for-agms.pdf`,
       },
       {
         label: { en: "Power of attorney for individual", id: "Surat kuasa perorangan" },
-        file: `${GMS}/SURAT-KUASA-INDIVIDU-RUPS-18-JUNI-2025.doc`,
+        file: `${GMS}/2025/power-of-attorney-for-individual.doc`,
       },
       {
         label: { en: "Summary of the General Meeting", id: "Risalah RUPS" },
-        file: `${GMS}/Risalah-RUPS-18-Juni-2025.pdf`,
+        file: `${GMS}/2025/summary-of-the-general-meeting.pdf`,
       },
     ],
   },
@@ -682,27 +684,27 @@ export const GMS_ARCHIVE: {
     documents: [
       {
         label: { en: "Announcement of General Meeting", id: "Pengumuman RUPS" },
-        file: `${GMS}/Pengumuman-RUPST-dan-RUPSLB-ADES-2024.pdf`,
+        file: `${GMS}/2024/announcement-of-general-meeting.pdf`,
       },
       {
         label: { en: "Invitation to the shareholders", id: "Panggilan kepada pemegang saham" },
-        file: `${GMS}/Panggilan-RUPS-12-JUNI-2024.pdf`,
+        file: `${GMS}/2024/invitation-to-the-shareholders.pdf`,
       },
       {
         label: { en: "Meeting agenda material", id: "Materi mata acara rapat" },
-        file: `${GMS}/BAHAN-MATA-ACARA-RUPS-12-JUNI-2024.pdf`,
+        file: `${GMS}/2024/meeting-agenda-material.pdf`,
       },
       {
         label: { en: "Meeting rules for AGMS and EGMS", id: "Tata tertib RUPST dan RUPSLB" },
-        file: `${GMS}/TATA-TERTIB-RUPS-dan-RUPSLB-12-JUNI-2024.pdf`,
+        file: `${GMS}/2024/meeting-rules-for-agms-and-egms.pdf`,
       },
       {
         label: { en: "Power of attorney for corporate", id: "Surat kuasa badan hukum" },
-        file: `${GMS}/POWER-ATTORNEY-FOR-INDIVIDUAL-RUPS-2024.doc`,
+        file: `${GMS}/2024/power-of-attorney-for-corporate.doc`,
       },
       {
         label: { en: "Summary of the General Meeting", id: "Risalah RUPS" },
-        file: `${GMS}/Risalah-RUPS-13-Juni-2024.pdf`,
+        file: `${GMS}/2024/summary-of-the-general-meeting.pdf`,
       },
     ],
   },
@@ -712,39 +714,39 @@ export const GMS_ARCHIVE: {
     documents: [
       {
         label: { en: "Announcement of General Meeting", id: "Pengumuman RUPS" },
-        file: `${GMS}/PENGUMUMAN-RUPS-NOTICE-OF-THE-MEETING-15-MAY-2023.pdf`,
+        file: `${GMS}/2023/announcement-of-general-meeting.pdf`,
       },
       {
         label: { en: "Invitation to the shareholders", id: "Panggilan kepada pemegang saham" },
-        file: `${GMS}/Panggilan-RUPS-21-JUNI-2023.pdf`,
+        file: `${GMS}/2023/invitation-to-the-shareholders.pdf`,
       },
       {
         label: { en: "Meeting agenda material", id: "Materi mata acara rapat" },
-        file: `${GMS}/BAHAN-MATA-ACARA-RUPS-21-JUNI-2023.pdf`,
+        file: `${GMS}/2023/meeting-agenda-material.pdf`,
       },
       {
         label: { en: "Meeting rules for AGMS and EGMS", id: "Tata tertib RUPST dan RUPSLB" },
-        file: `${GMS}/TATA-TERTIB-RUPS-dan-RUPSLB-21-JUNI-2023.pdf`,
+        file: `${GMS}/2023/meeting-rules-for-agms-and-egms.pdf`,
       },
       {
         label: { en: "Power of attorney for corporate", id: "Surat kuasa badan hukum" },
-        file: `${GMS}/2023-05-POWER-ATTORNEY-CORPORATION-TO-BAE.doc`,
+        file: `${GMS}/2023/power-of-attorney-for-corporate.doc`,
       },
       {
         label: { en: "Power of attorney for individual", id: "Surat kuasa perorangan" },
-        file: `${GMS}/2023-05-POWER-ATTORNEY-FOR-INDIVIDUAL.doc`,
+        file: `${GMS}/2023/power-of-attorney-for-individual.doc`,
       },
       {
         label: { en: "Curriculum vitae — Mr. Julianto", id: "Curriculum vitae — Bapak Julianto" },
-        file: `${GMS}/CV-Bpk-Julianto.pdf`,
+        file: `${GMS}/2023/curriculum-vitae-mr-julianto.pdf`,
       },
       {
         label: { en: "Summary of the General Meeting", id: "Risalah RUPS" },
-        file: `${GMS}/Risalah-RUPS-21-Juni-2023.pdf`,
+        file: `${GMS}/2023/summary-of-the-general-meeting.pdf`,
       },
       {
         label: { en: "Abridged minutes of the meeting", id: "Ringkasan risalah RUPST dan RUPSLB" },
-        file: `${GMS}/Ringkasan-Risalah-RUPST-dan-RUPSLB-21-Juni-2023.pdf`,
+        file: `${GMS}/2023/abridged-minutes-of-the-meeting.pdf`,
       },
     ],
   },
@@ -754,38 +756,38 @@ export const GMS_ARCHIVE: {
     documents: [
       {
         label: { en: "Announcement of General Meeting", id: "Pengumuman RUPS" },
-        file: `${GMS}/Announcement-of-General-Meeting-of-Shareholders-6-July-2022.pdf`,
+        file: `${GMS}/2022/announcement-of-general-meeting.pdf`,
       },
       {
         label: { en: "Invitation to the shareholders", id: "Panggilan kepada pemegang saham" },
-        file: `${GMS}/Panggilan-RUPS-Bilingual-6-Juli-2022.pdf`,
+        file: `${GMS}/2022/invitation-to-the-shareholders.pdf`,
       },
       {
         label: { en: "Meeting agenda material", id: "Materi mata acara rapat" },
-        file: `${GMS}/BAHAN-MATA-ACARA-RAPAT-6-JULI-2022.pdf`,
+        file: `${GMS}/2022/meeting-agenda-material.pdf`,
       },
       {
         label: { en: "Meeting rules for AGMS and EGMS", id: "Tata tertib RUPS dan RUPSLB" },
-        file: `${GMS}/Tata-Tertib-RUPS-dan-RUPSLB-2022.pdf`,
+        file: `${GMS}/2022/meeting-rules-for-agms-and-egms.pdf`,
       },
       {
         label: { en: "Power of attorney for individual", id: "Surat kuasa perorangan" },
-        file: `${GMS}/2022-06-POWER-ATTORNEY-FOR-INDIVIDUAL.doc`,
+        file: `${GMS}/2022/power-of-attorney-for-individual.doc`,
       },
       {
         label: { en: "Power of attorney for corporate", id: "Surat kuasa badan hukum" },
-        file: `${GMS}/2022-06-POWER-ATTORNEY-CORPORATION-TO-BAE.doc`,
+        file: `${GMS}/2022/power-of-attorney-for-corporate.doc`,
       },
       {
         label: {
           en: "Curriculum vitae — Mr. Raimond Bing Lesnussa",
           id: "Curriculum vitae — Bapak Raimond Bing Lesnussa",
         },
-        file: `${GMS}/CV-Pak-Bing-2.pdf`,
+        file: `${GMS}/2022/curriculum-vitae-mr-raimond-bing-lesnussa.pdf`,
       },
       {
         label: { en: "Summary of the meeting", id: "Risalah rapat" },
-        file: `${GMS}/Risalah-Rapat-6-Juli-2022.pdf`,
+        file: `${GMS}/2022/summary-of-the-meeting.pdf`,
       },
     ],
   },
@@ -795,27 +797,27 @@ export const GMS_ARCHIVE: {
     documents: [
       {
         label: { en: "Announcement of General Meeting", id: "Pengumuman RUPS" },
-        file: `${GMS}/2021-07-Pengumuman-RUPS-Notice-of-the-Meeting-bilingual.pdf`,
+        file: `${GMS}/2021/announcement-of-general-meeting.pdf`,
       },
       {
         label: { en: "Invitation of the meeting", id: "Panggilan rapat" },
-        file: `${GMS}/INVITATION-OF-THE-MEETING-Bilingual.pdf`,
+        file: `${GMS}/2021/invitation-of-the-meeting.pdf`,
       },
       {
         label: { en: "Material of the meeting", id: "Materi rapat" },
-        file: `${GMS}/THE-MATERIAL-OF-THE-MEETING-bilingual.pdf`,
+        file: `${GMS}/2021/material-of-the-meeting.pdf`,
       },
       {
         label: { en: "Power of attorney for corporate (BAE)", id: "Surat kuasa badan hukum (BAE)" },
-        file: `${GMS}/POWER-OF-ATTORNEY-CORPORATE-BAE.pdf`,
+        file: `${GMS}/2021/power-of-attorney-for-corporate-bae.pdf`,
       },
       {
         label: { en: "Power of attorney for individual (BAE)", id: "Surat kuasa perorangan (BAE)" },
-        file: `${GMS}/POWER-OF-ATTORNEY-INDIVIDUAL-BAE.pdf`,
+        file: `${GMS}/2021/power-of-attorney-for-individual-bae.pdf`,
       },
       {
         label: { en: "Announcement of minutes summary", id: "Pengumuman ringkasan risalah" },
-        file: `${GMS}/RINGKASAN-RISALAH-RUPS-AKASHA-ENG.pdf`,
+        file: `${GMS}/2021/announcement-of-minutes-summary.pdf`,
       },
     ],
   },
@@ -828,34 +830,34 @@ export const GMS_ARCHIVE: {
           en: "Announcement to the shareholders (21 July 2020)",
           id: "Pengumuman kepada pemegang saham (21 Juli 2020)",
         },
-        file: `${GMS}/2020-07-Pengumuman-RUPS-Notice-of-the-Meeting-bilingual.pdf`,
+        file: `${GMS}/2020/announcement-to-the-shareholders-21-july-2020.pdf`,
       },
       {
         label: { en: "Invitation to the shareholders", id: "Panggilan kepada pemegang saham" },
-        file: `${GMS}/PANGGILAN-RAPAT-MEETING-INVITATION-Bilingual-5-AUGUST-2020-rev.pdf`,
+        file: `${GMS}/2020/invitation-to-the-shareholders.pdf`,
       },
       {
         label: { en: "Power of attorney for corporate to BAE", id: "Surat kuasa badan hukum ke BAE" },
-        file: `${GMS}/2020-08-POWER-ATTORNEY-CORPORATION-TO-BAE.doc`,
+        file: `${GMS}/2020/power-of-attorney-for-corporate-to-bae.doc`,
       },
       {
         label: { en: "Power of attorney for corporate", id: "Surat kuasa badan hukum" },
-        file: `${GMS}/POWER-OF-ATTORNEY-CORPORATE.doc`,
+        file: `${GMS}/2020/power-of-attorney-for-corporate.doc`,
       },
       {
         label: { en: "Power of attorney for individual to BAE", id: "Surat kuasa perorangan ke BAE" },
-        file: `${GMS}/POWER-OF-ATTORNEY-INDIVIDUAL-TO-BAE.doc`,
+        file: `${GMS}/2020/power-of-attorney-for-individual-to-bae.doc`,
       },
       {
         label: { en: "Power of attorney for individual", id: "Surat kuasa perorangan" },
-        file: `${GMS}/POWER-OF-ATTORNEY-INDIVIDUAL.doc`,
+        file: `${GMS}/2020/power-of-attorney-for-individual.doc`,
       },
       {
         label: {
           en: "Announcement of abridged minutes (27 August 2020)",
           id: "Pengumuman ringkasan risalah (27 Agustus 2020)",
         },
-        file: `${GMS}/ANNOUNCEMENT-ABRIDGE-ENGLISH-MINUTES-OF-MEETING-27-AUGUST-2020.pdf`,
+        file: `${GMS}/2020/announcement-of-abridged-minutes-27-august-2020.pdf`,
       },
     ],
   },
@@ -865,18 +867,18 @@ export const GMS_ARCHIVE: {
     documents: [
       {
         label: { en: "Announcement of AGM and EGM", id: "Pengumuman RUPST dan RUPSLB" },
-        file: `${GMS}/Announcement-of-AGM-adan-EGM-29-May-2019.pdf`,
+        file: `${GMS}/2019/announcement-of-agm-and-egm.pdf`,
       },
       {
         label: { en: "Invitation of the meeting (7 May 2019)", id: "Panggilan rapat (7 Mei 2019)" },
-        file: `${GMS}/3b-Invitation-of-The-Meeting-English-7-Mei-2019clean-Clean-2.pdf`,
+        file: `${GMS}/2019/invitation-of-the-meeting-7-may-2019.pdf`,
       },
       {
         label: {
           en: "Abridged minutes of the meeting (29 May 2019)",
           id: "Ringkasan risalah rapat (29 Mei 2019)",
         },
-        file: `${GMS}/PENGUMUMAN-ENGLISH-KORAN-RINGKASAN-RISALAH-RAPAT-29-MEI-2019-Rev-Notaris.pdf`,
+        file: `${GMS}/2019/abridged-minutes-of-the-meeting-29-may-2019.pdf`,
       },
     ],
   },
@@ -886,19 +888,19 @@ export const GMS_ARCHIVE: {
     documents: [
       {
         label: { en: "Notice of the meeting (30 April 2018)", id: "Pemberitahuan rapat (30 April 2018)" },
-        file: `${GMS}/Notice-of-the-Meeting-30-April-2018-PT.-Akasha-Wira-International-English.pdf`,
+        file: `${GMS}/2018/notice-of-the-meeting-30-april-2018.pdf`,
       },
       {
         label: { en: "Invitation of the meeting (16 May 2018)", id: "Panggilan rapat (16 Mei 2018)" },
-        file: `${GMS}/Invitation-of-The-Meeting-16-May-2018-English.pdf`,
+        file: `${GMS}/2018/invitation-of-the-meeting-16-may-2018.pdf`,
       },
       {
         label: { en: "Invitation to the public expose", id: "Undangan paparan publik" },
-        file: `${GMS}/INVITATION-PUBLIC-EXPOSE-7-JUNE-2018-ENGLISH.pdf`,
+        file: `${GMS}/2018/invitation-to-the-public-expose.pdf`,
       },
       {
         label: { en: "Abridged minutes of the meeting", id: "Ringkasan risalah rapat" },
-        file: `${GMS}/The-Abridge-Minutes-of-Meeting-RUPS-AWI-7-June-2018-English.pdf`,
+        file: `${GMS}/2018/abridged-minutes-of-the-meeting.pdf`,
       },
     ],
   },
@@ -908,15 +910,15 @@ export const GMS_ARCHIVE: {
     documents: [
       {
         label: { en: "Notice of the meeting (12 May 2017)", id: "Pemberitahuan rapat (12 Mei 2017)" },
-        file: `${GMS}/Notice-of-the-Meeting-12-May-2017-PT-AKASHA-WIRA-INTERNATIONAL-TBK-English1.pdf`,
+        file: `${GMS}/2017/notice-of-the-meeting-12-may-2017.pdf`,
       },
       {
         label: { en: "Invitation of the meeting (29 May 2017)", id: "Panggilan rapat (29 Mei 2017)" },
-        file: `${GMS}/Invitation-of-The-Meeting-29-May-2017-English.pdf`,
+        file: `${GMS}/2017/invitation-of-the-meeting-29-may-2017.pdf`,
       },
       {
         label: { en: "Abridged minutes of the meeting", id: "Ringkasan risalah rapat" },
-        file: `${GMS}/The-Abridge-Minutes-of-Meeting-RUPS-AWI-20-juni-2017.pdf`,
+        file: `${GMS}/2017/abridged-minutes-of-the-meeting.pdf`,
       },
     ],
   },
@@ -926,39 +928,39 @@ export const GMS_ARCHIVE: {
     documents: [
       {
         label: { en: "Notice of the meeting (10 May 2016)", id: "Pemberitahuan rapat (10 Mei 2016)" },
-        file: `${GMS}/Notice-of-the-Meeting-10-May-2016-English.pdf`,
+        file: `${GMS}/2016/notice-of-the-meeting-10-may-2016.pdf`,
       },
       {
         label: { en: "Invitation of the meeting (25 May 2016)", id: "Panggilan rapat (25 Mei 2016)" },
-        file: `${GMS}/Invitation-of-The-Meeting-25-May-2016-English.pdf`,
+        file: `${GMS}/2016/invitation-of-the-meeting-25-may-2016.pdf`,
       },
       {
         label: {
           en: "Abridged minutes of the meeting (16 June 2016)",
           id: "Ringkasan risalah rapat (16 Juni 2016)",
         },
-        file: `${GMS}/Website-Announcment-The-Abridge-Minutes-of-Meeting-RUPS-AWI-16-Juni-2016-English.pdf`,
+        file: `${GMS}/2016/abridged-minutes-of-the-meeting-16-june-2016.pdf`,
       },
       {
         label: {
           en: "Notice of the meeting (13 September 2016)",
           id: "Pemberitahuan rapat (13 September 2016)",
         },
-        file: `${GMS}/Notice-of-the-Meeting-13-Sep-2016-PT-AKASHA-WIRA-INTERNATIONAL-TBK-English.pdf`,
+        file: `${GMS}/2016/notice-of-the-meeting-13-september-2016.pdf`,
       },
       {
         label: {
           en: "Invitation of the meeting (28 September 2016)",
           id: "Panggilan rapat (28 September 2016)",
         },
-        file: `${GMS}/Invitation-of-The-Meeting-28-September-2016-English.pdf`,
+        file: `${GMS}/2016/invitation-of-the-meeting-28-september-2016.pdf`,
       },
       {
         label: {
           en: "Abridged minutes of the meeting (20 October 2016)",
           id: "Ringkasan risalah rapat (20 Oktober 2016)",
         },
-        file: `${GMS}/The-Abridge-Minutes-of-Meeting-RUPS-AWI-20-October-2016-English-PDF.pdf`,
+        file: `${GMS}/2016/abridged-minutes-of-the-meeting-20-october-2016.pdf`,
       },
     ],
   },
@@ -968,39 +970,39 @@ export const GMS_ARCHIVE: {
     documents: [
       {
         label: { en: "Notice of the meeting", id: "Pemberitahuan rapat" },
-        file: `${GMS}/Notice-of-the-Meeting-PT-AKASHA-WIRA-INTERNATIONAL-TBK1.pdf`,
+        file: `${GMS}/2015/notice-of-the-meeting.pdf`,
       },
       {
         label: { en: "Invitation of the meeting (10 March 2015)", id: "Panggilan rapat (10 Maret 2015)" },
-        file: `${GMS}/Invitation-of-The-Meeting-10-March-2015-English.pdf`,
+        file: `${GMS}/2015/invitation-of-the-meeting-10-march-2015.pdf`,
       },
       {
         label: {
           en: "Abridged minutes of the EGMS (1 April 2015)",
           id: "Ringkasan risalah RUPSLB (1 April 2015)",
         },
-        file: `${GMS}/RINGKASAN-RISALAH-KORAN-RAPAT-PDF-EGSM-1-April-2015Inggris.pdf`,
+        file: `${GMS}/2015/abridged-minutes-of-the-egms-1-april-2015.pdf`,
       },
       {
         label: { en: "Notice of the meeting (12 May 2015)", id: "Pemberitahuan rapat (12 Mei 2015)" },
-        file: `${GMS}/Notice-of-the-Meeting-12-May-2015-PT-AKASHA-WIRA-INTERNATIONAL-TBK-english.pdf`,
+        file: `${GMS}/2015/notice-of-the-meeting-12-may-2015.pdf`,
       },
       {
         label: { en: "Invitation of the meeting (27 May 2015)", id: "Panggilan rapat (27 Mei 2015)" },
-        file: `${GMS}/Invitation-of-The-Meeting-English-27-Mei-2015-Clean.pdf`,
+        file: `${GMS}/2015/invitation-of-the-meeting-27-may-2015.pdf`,
       },
       {
         label: {
           en: "Abridged minutes of the meeting (18 June 2015)",
           id: "Ringkasan risalah rapat (18 Juni 2015)",
         },
-        file: `${GMS}/Website-Announcment-EnglishThe-Abridge-Minutes-of-Meeting-RUPS-AWI-18-juni-2015-English.pdf`,
+        file: `${GMS}/2015/abridged-minutes-of-the-meeting-18-june-2015.pdf`,
       },
     ],
   },
 ];
 
-const DISC = "/docs/disclosure";
+const DISC = "/documents/disclosure";
 
 export const DISCLOSURES: {
   date: Localized<string>;
@@ -1013,7 +1015,7 @@ export const DISCLOSURES: {
       en: "Disclosure of information on the addition of business activities",
       id: "Keterbukaan informasi atas penambahan kegiatan usaha",
     },
-    file: `${DISC}/KETERBUKAAN-INFORMASI-PENAMBAHAN-KEGIATAN-USAHA-12-JUNI-2026.pdf`,
+    file: `${DISC}/2026-06-12-addition-of-business-activities.pdf`,
   },
   {
     date: { en: "12 June 2026", id: "12 Juni 2026" },
@@ -1021,7 +1023,7 @@ export const DISCLOSURES: {
       en: "Full report — feasibility study of PT Akasha Wira International Tbk",
       id: "Laporan lengkap — studi kelayakan PT Akasha Wira International Tbk",
     },
-    file: `${DISC}/FEASIBILITY-STUDY-AKASHA.pdf`,
+    file: `${DISC}/2026-06-12-full-report-feasibility-study.pdf`,
   },
   {
     date: { en: "8 June 2026", id: "8 Juni 2026" },
@@ -1029,7 +1031,7 @@ export const DISCLOSURES: {
       en: "Disclosure of information on the addition of business activities",
       id: "Keterbukaan informasi atas penambahan kegiatan usaha",
     },
-    file: `${DISC}/Keterbukaan-informasi-Penambahan-Kegiatan-Usaha-update-8-Juni-2026.pdf`,
+    file: `${DISC}/2026-06-08-addition-of-business-activities.pdf`,
   },
   {
     date: { en: "8 June 2026", id: "8 Juni 2026" },
@@ -1037,7 +1039,7 @@ export const DISCLOSURES: {
       en: "Full report — feasibility study of PT Akasha Wira International Tbk",
       id: "Laporan lengkap — studi kelayakan PT Akasha Wira International Tbk",
     },
-    file: `${DISC}/FULL-REPORT-FEASIBILTY-STUDY-AKASHA-UPDATE-8-JUNI-2026.pdf`,
+    file: `${DISC}/2026-06-08-full-report-feasibility-study.pdf`,
   },
   {
     date: { en: "May 2026", id: "Mei 2026" },
@@ -1045,7 +1047,7 @@ export const DISCLOSURES: {
       en: "Disclosure of information on the addition of business activities",
       id: "Keterbukaan informasi atas penambahan kegiatan usaha",
     },
-    file: `${DISC}/Keterbukaan-Informasi-Penambahan-Kegiatan-Usaha.pdf`,
+    file: `${DISC}/2026-05-addition-of-business-activities.pdf`,
   },
   {
     date: { en: "May 2026", id: "Mei 2026" },
@@ -1053,7 +1055,7 @@ export const DISCLOSURES: {
       en: "Disclosure of information — resignation of President Director Wihardjo Hadiseputro and Commissioner Nana Puspa Dewi",
       id: "Keterbukaan informasi — pengunduran diri Presiden Direktur Wihardjo Hadiseputro dan Komisaris Nana Puspa Dewi",
     },
-    file: `${DISC}/Keterbukaan-Informasi-Pengunduran-Diri-Presiden-Direktur-Wihardjo-Hadiseputro-dan-Komisaris-Nana-Puspa-Dewi.pdf`,
+    file: `${DISC}/2026-05-resignation-of-president-director-wihardjo-hadiseputro-and-commissioner-nana-puspa-dewi.pdf`,
   },
   {
     date: { en: "19 June 2025", id: "19 Juni 2025" },
@@ -1061,7 +1063,7 @@ export const DISCLOSURES: {
       en: "Public expose notification",
       id: "Pemberitahuan paparan publik",
     },
-    file: `${DISC}/PEMBERITAHUAN-PUBLIC-EXPOSE-19-JUNI-2025.pdf`,
+    file: `${DISC}/2025-06-19-public-expose-notification.pdf`,
   },
   {
     date: { en: "March 2025", id: "Maret 2025" },
@@ -1069,7 +1071,7 @@ export const DISCLOSURES: {
       en: "Disclosure of information — resignation of Director Raimond Bing Lesnussa",
       id: "Keterbukaan informasi — pengunduran diri Direktur Raimond Bing Lesnussa",
     },
-    file: `${DISC}/Keterbukaan-Informasi-Pengunduran-Diri-Direktur-Raimond-Bing-Lesnussa.pdf`,
+    file: `${DISC}/2025-03-resignation-of-director-raimond-bing-lesnussa.pdf`,
   },
   {
     date: { en: "13 June 2024", id: "13 Juni 2024" },
@@ -1077,7 +1079,7 @@ export const DISCLOSURES: {
       en: "Public expose notification",
       id: "Pemberitahuan paparan publik",
     },
-    file: `${DISC}/PEMBERITAHUAN-PUBLIC-EXPOSE-12-JUNI-2024.pdf`,
+    file: `${DISC}/2024-06-13-public-expose-notification.pdf`,
   },
   {
     date: { en: "13 June 2023", id: "13 Juni 2023" },
@@ -1085,7 +1087,7 @@ export const DISCLOSURES: {
       en: "Disclosure of information to shareholders",
       id: "Keterbukaan informasi kepada pemegang saham",
     },
-    file: `${DISC}/Keterbukaan-Informasi-Revisi.pdf`,
+    file: `${DISC}/2023-06-13-information-to-shareholders.pdf`,
   },
   {
     date: { en: "22 June 2023", id: "22 Juni 2023" },
@@ -1093,7 +1095,7 @@ export const DISCLOSURES: {
       en: "Public expose notification",
       id: "Pemberitahuan paparan publik",
     },
-    file: `${DISC}/PEMBERITAHUAN-PUBLIC-EXPOSE-22-JUNI-2023.pdf`,
+    file: `${DISC}/2023-06-22-public-expose-notification.pdf`,
   },
   {
     date: { en: "15 May 2023", id: "15 Mei 2023" },
@@ -1101,7 +1103,7 @@ export const DISCLOSURES: {
       en: "Disclosure of information to shareholders",
       id: "Keterbukaan informasi kepada pemegang saham",
     },
-    file: `${DISC}/Keterbukaan-Informasi-Penambahan-Kegiatan-Usaha-1.pdf`,
+    file: `${DISC}/2023-05-15-information-to-shareholders.pdf`,
   },
   {
     date: { en: "May 2023", id: "Mei 2023" },
@@ -1109,7 +1111,7 @@ export const DISCLOSURES: {
       en: "Disclosure of information — resignation of Independent Commissioner Ms. Miscellia Dotulong",
       id: "Keterbukaan informasi — pengunduran diri Komisaris Independen Ibu Miscellia Dotulong",
     },
-    file: `${DISC}/Pengunduran-Diri-Komisaris-Independen.pdf`,
+    file: `${DISC}/2023-05-resignation-of-independent-commissioner-ms-miscellia-dotulong.pdf`,
   },
   {
     date: { en: "May 2022", id: "Mei 2022" },
@@ -1117,7 +1119,7 @@ export const DISCLOSURES: {
       en: "Disclosure of information — resignation of Commissioner Mr. Danny Yuwono",
       id: "Keterbukaan informasi — pengunduran diri Komisaris Bapak Danny Yuwono",
     },
-    file: `${DISC}/Disclosure-of-Information-Resignation-Member-of-Commissioners-Mr-Danny-Yuwono.pdf`,
+    file: `${DISC}/2022-05-resignation-of-commissioner-mr-danny-yuwono.pdf`,
   },
   {
     date: { en: "2021", id: "2021" },
@@ -1125,7 +1127,7 @@ export const DISCLOSURES: {
       en: "Public expose notification",
       id: "Pemberitahuan paparan publik",
     },
-    file: `${DISC}/PUBLIC-EXPOSE-NOTIFICATION-2021.pdf`,
+    file: `${DISC}/2021-public-expose-notification.pdf`,
   },
   {
     date: { en: "21 July 2020", id: "21 Juli 2020" },
@@ -1133,7 +1135,7 @@ export const DISCLOSURES: {
       en: "Circular to shareholders",
       id: "Surat edaran kepada pemegang saham",
     },
-    file: `${DISC}/CIRCULAR-TO-THE-SHAREHOLDERS-SURAT-EDARAN-PEMEGANG-SAHAM.pdf`,
+    file: `${DISC}/2020-07-21-circular-to-shareholders.pdf`,
   },
   {
     date: { en: "20 April 2018", id: "20 April 2018" },
@@ -1141,7 +1143,7 @@ export const DISCLOSURES: {
       en: "Disclosure on the resignation of Mr. Ari Wisnubroto as Director",
       id: "Keterbukaan informasi atas pengunduran diri Bapak Ari Wisnubroto sebagai Direktur",
     },
-    file: `${DISC}/Disclosure-on-Resignation-of-Mr-Ari-Wisnubroto.pdf`,
+    file: `${DISC}/2018-04-20-resignation-of-mr-ari-wisnubroto-as-director.pdf`,
   },
   {
     date: { en: "6 June 2016", id: "6 Juni 2016" },
@@ -1149,7 +1151,7 @@ export const DISCLOSURES: {
       en: "Disclosure on share price volatility",
       id: "Keterbukaan informasi atas volatilitas harga saham",
     },
-    file: `${DISC}/Disclosure-Shares-Volatility-6-June-2016-English.pdf`,
+    file: `${DISC}/2016-06-06-share-price-volatility.pdf`,
   },
 ];
 
@@ -1159,14 +1161,14 @@ export const ANNOUNCEMENTS: { title: Localized<string>; file: string }[] = [
       en: "Announcement on the change of Corporate Secretary of PT Akasha Wira International Tbk",
       id: "Pengumuman perubahan Sekretaris Perusahaan PT Akasha Wira International Tbk",
     },
-    file: "/docs/announcement/PENGUMUMAN-PERGANTIAN-SEKRETARIS-PERUSAHAAN-PT-AKASHA-WIRA-INTERNATIONAL-TBK.pdf",
+    file: "/documents/announcement/change-of-corporate-secretary.pdf",
   },
   {
     title: {
       en: "Announcement on the change of the Audit Committee of PT Akasha Wira International Tbk",
       id: "Pengumuman perubahan Komite Audit PT Akasha Wira International Tbk",
     },
-    file: "/docs/announcement/Pemberitahuan-Pergantian-Komite-Audit.pdf",
+    file: "/documents/announcement/change-of-audit-committee.pdf",
   },
 ];
 
@@ -1177,25 +1179,25 @@ export const CSR_REPORTS: { year: string; page: string; file: string }[] = [
   {
     year: "2021",
     page: "79",
-    file: "/docs/annual-report/ADES-AR-2021-eReporting_300522_3.pdf",
+    file: "/documents/annual-report/2021.pdf",
   },
   {
     year: "2020",
     page: "81",
-    file: "/docs/annual-report/AR-2020-Akasha-Wira-International-Tbk-Rev-828-06-2021e-reporting.pdf",
+    file: "/documents/annual-report/2020.pdf",
   },
   {
     year: "2019",
     page: "78",
-    file: "/docs/annual-report/Laporan-Tahunan-Akasha-31-Desember-2019-Final.pdf",
+    file: "/documents/annual-report/2019.pdf",
   },
   {
     year: "2018",
     page: "60",
-    file: "/docs/annual-report/ADES-AR-2108-eReporting-300419.pdf",
+    file: "/documents/annual-report/2018.pdf",
   },
-  { year: "2017", page: "64", file: "/docs/annual-report/Annual-Report-2017-AWI.pdf" },
-  { year: "2016", page: "60", file: "/docs/annual-report/ANNUAL-REPORT-2016-AWI.pdf.pdf" },
+  { year: "2017", page: "64", file: "/documents/annual-report/2017.pdf" },
+  { year: "2016", page: "60", file: "/documents/annual-report/2016.pdf" },
 ];
 
 export const INVESTOR_SECTIONS: {
@@ -1297,7 +1299,7 @@ export const GOVERNANCE_PILLARS: {
 }[] = [
   {
     id: "article-of-association",
-    href: "/docs/governance/Akta-19-tgl-080715-Perubahan-AD-Restatement-AHU-AH-01-03-0953311-dan-0953310.pdf",
+    href: "/documents/governance/articles-of-association.pdf",
     title: { en: "Article of Association", id: "Anggaran Dasar" },
     desc: {
       en: "Article of Association — the foundational legal document governing the company's structure, rights, and obligations.",
@@ -1311,7 +1313,7 @@ export const GOVERNANCE_PILLARS: {
   },
   {
     id: "bod-boc-charter",
-    href: "/docs/governance/BOARD-OF-DIRECTORS-COMMUNICATION-POLICY-ING-Pdf.pdf",
+    href: "/documents/governance/communication-policy.pdf",
     title: { en: "BOD & BOC Charter", id: "Direksi & Komisaris Charter" },
     desc: {
       en: "Governance guidelines for the Board of Directors and Board of Commissioners in carrying out their oversight functions.",

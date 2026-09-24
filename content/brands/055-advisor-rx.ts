@@ -22,7 +22,7 @@ const entry: Brand = {
     // No dedicated 3:4 brand-card art was delivered; CrossSell is the only consumer
     // of `heroImage` and the About hair photo is already 3:4, so it stands in. The
     // hero itself always renders from `heroLayers`, never from this.
-    heroImage: "/brand/advisor-rx/about/3.png",
+    heroImage: "/media/brands/advisor-rx/about/3.png",
     // Layered parallax banner, same pattern as Hair Energy: the product cluster sits
     // on the right of a flat clinical banner, wordmark + copy on the left. Array
     // order = stacking (last = front). Every canvas carries a DIFFERENT amount of
@@ -32,16 +32,16 @@ const entry: Brand = {
     // (250 mL shampoo > 100 mL mask/tonic > 40 mL serum) and on a shared baseline.
     heroLayers: [
       // Strong Hair Boosting Mask (100 mL) — middle, enters from the TOP (1st).
-      { src: "/brand/advisor-rx/hero/2.png", depth: 54, enterFrom: "top", enterDelay: 0.2, width: "min(40vw, 63vh)", maxWidth: "1493px", aspectRatio: "1 / 1", left: "59.6%", top: "8%",
+      { src: "/media/brands/advisor-rx/hero/2.png", depth: 54, enterFrom: "top", enterDelay: 0.2, width: "min(40vw, 63vh)", maxWidth: "1493px", aspectRatio: "1 / 1", left: "59.6%", top: "8%",
         mobile: { left: "19.5%", top: "19.5%", width: "min(63vw, 33vh)" } },
       // Strong Hair Shampoo (250 mL) — largest, left of the cluster, enters from the LEFT (2nd).
-      { src: "/brand/advisor-rx/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(51vw, 82vh)", maxWidth: "1944px", aspectRatio: "1 / 1", left: "47%", top: "11.7%",
+      { src: "/media/brands/advisor-rx/hero/1.png", depth: 36, enterFrom: "left", enterDelay: 0, width: "min(51vw, 82vh)", maxWidth: "1944px", aspectRatio: "1 / 1", left: "47%", top: "11.7%",
         mobile: { left: "-8.5%", top: "20%", width: "min(87vw, 45vh)" } },
       // Strong Hair Tonic (100 mL) — between the mask and serum, enters from the RIGHT (3rd).
-      { src: "/brand/advisor-rx/hero/3.png", depth: 72, enterFrom: "right", enterDelay: 0.4, width: "min(40vw, 74vh)", maxWidth: "1711px", aspectRatio: "1 / 1", left: "63.6%", top: "17%",
+      { src: "/media/brands/advisor-rx/hero/3.png", depth: 72, enterFrom: "right", enterDelay: 0.4, width: "min(40vw, 74vh)", maxWidth: "1711px", aspectRatio: "1 / 1", left: "63.6%", top: "17%",
         mobile: { left: "27%", top: "24.5%", width: "min(75vw, 37vh)" } },
         // Strong Hair Scalp Serum (40 mL) — smallest, front/right, enters from the RIGHT (4th).
-      { src: "/brand/advisor-rx/hero/4.png", depth: 84, enterFrom: "right", enterDelay: 0.6, width: "min(20vw, 30vh)", maxWidth: "746px", aspectRatio: "1491 / 2058", left: "69%", top: "49.2%",
+      { src: "/media/brands/advisor-rx/hero/4.png", depth: 84, enterFrom: "right", enterDelay: 0.6, width: "min(20vw, 30vh)", maxWidth: "746px", aspectRatio: "1491 / 2058", left: "69%", top: "49.2%",
         mobile: { left: "38%", top: "42.5%", width: "min(29vw, 16vh)" } },
     ],
     // The wordmark is a plain lockup with no tagline baked in (unlike VICA/Wonhae),
@@ -49,7 +49,7 @@ const entry: Brand = {
     // + CTA. Copy is lifted from the brand's own showcase title art ("ERA BARU SOLUSI
     // RAMBUT KLINIS", "#ScalpAndHairExpert", "Teruji Secara Dermatologi").
     heroContent: {
-      logo: "/brand/advisor-rx/hero/wordmark.png",
+      logo: "/media/brands/advisor-rx/hero/wordmark.png",
       logoAspect: "1887 / 486",
       logoWidth: "24vw",
       maxWidth: "34vw",
@@ -71,25 +71,25 @@ const entry: Brand = {
     // homepage carousel (guide §B.3 default) until that asset is delivered.
     hero: false,
     products: [
-      { name: "Strong Hair Shampoo", variant: { en: "Regenaxil™", id: "Regenaxil™" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-07.png" },
-      { name: "Strong Hair Boosting Mask", variant: { en: "Regenaxil™", id: "Regenaxil™" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-06.png" },
-      { name: "Strong Hair Hair Tonic", variant: { en: "Regenaxil™", id: "Regenaxil™" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-04.png" },
-      { name: "Strong Hair Scalp Serum", variant: { en: "Regenaxil™", id: "Regenaxil™" }, size: { en: "40 mL", id: "40 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-03.png" },
-      { name: "Strong Hair 4 Steps Regimen", variant: { en: "Complete Package", id: "Paket Lengkap" }, image: "/brand/advisor-rx/product-lineup/advisor-16.png" },
-      { name: "Grey Hair Shampoo", variant: { en: "Melanolix™", id: "Melanolix™" }, size: { en: "250 mL", id: "250 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-08.png" },
-      { name: "Grey Hair Boosting Mask", variant: { en: "Melanolix™", id: "Melanolix™" }, size: { en: "100 mL", id: "100 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-09.png" },
-      { name: "Grey Hair Scalp Serum", variant: { en: "Melanolix™", id: "Melanolix™" }, size: { en: "40 mL", id: "40 mL" }, image: "/brand/advisor-rx/product-lineup/advisor-10.png" },
-      { name: "Grey Hair 3 Steps Regimen", variant: { en: "Complete Package", id: "Paket Lengkap" }, image: "/brand/advisor-rx/product-lineup/advisor-15.png" },
+      { name: "Strong Hair Shampoo", variant: { en: "Regenaxil™", id: "Regenaxil™" }, size: { en: "250 mL", id: "250 mL" }, image: "/media/brands/advisor-rx/product-lineup/advisor-07.png" },
+      { name: "Strong Hair Boosting Mask", variant: { en: "Regenaxil™", id: "Regenaxil™" }, size: { en: "100 mL", id: "100 mL" }, image: "/media/brands/advisor-rx/product-lineup/advisor-06.png" },
+      { name: "Strong Hair Hair Tonic", variant: { en: "Regenaxil™", id: "Regenaxil™" }, size: { en: "100 mL", id: "100 mL" }, image: "/media/brands/advisor-rx/product-lineup/advisor-04.png" },
+      { name: "Strong Hair Scalp Serum", variant: { en: "Regenaxil™", id: "Regenaxil™" }, size: { en: "40 mL", id: "40 mL" }, image: "/media/brands/advisor-rx/product-lineup/advisor-03.png" },
+      { name: "Strong Hair 4 Steps Regimen", variant: { en: "Complete Package", id: "Paket Lengkap" }, image: "/media/brands/advisor-rx/product-lineup/advisor-16.png" },
+      { name: "Grey Hair Shampoo", variant: { en: "Melanolix™", id: "Melanolix™" }, size: { en: "250 mL", id: "250 mL" }, image: "/media/brands/advisor-rx/product-lineup/advisor-08.png" },
+      { name: "Grey Hair Boosting Mask", variant: { en: "Melanolix™", id: "Melanolix™" }, size: { en: "100 mL", id: "100 mL" }, image: "/media/brands/advisor-rx/product-lineup/advisor-09.png" },
+      { name: "Grey Hair Scalp Serum", variant: { en: "Melanolix™", id: "Melanolix™" }, size: { en: "40 mL", id: "40 mL" }, image: "/media/brands/advisor-rx/product-lineup/advisor-10.png" },
+      { name: "Grey Hair 3 Steps Regimen", variant: { en: "Complete Package", id: "Paket Lengkap" }, image: "/media/brands/advisor-rx/product-lineup/advisor-15.png" },
     ],
     about: [
-      { title: { en: "Dermatologically Tested", id: "Teruji Secara Dermatologis" }, image: "/brand/advisor-rx/about/1.png" },
-      { title: { en: "Formulated with Selected Ingredients", id: "Formula dengan Bahan Pilihan" }, image: "/brand/advisor-rx/about/2.png" },
-      { title: { en: "Clinical Hair Solutions", id: "Solusi Rambut Klinis" }, image: "/brand/advisor-rx/about/3.png" },
+      { title: { en: "Dermatologically Tested", id: "Teruji Secara Dermatologis" }, image: "/media/brands/advisor-rx/about/1.png" },
+      { title: { en: "Formulated with Selected Ingredients", id: "Formula dengan Bahan Pilihan" }, image: "/media/brands/advisor-rx/about/2.png" },
+      { title: { en: "Clinical Hair Solutions", id: "Solusi Rambut Klinis" }, image: "/media/brands/advisor-rx/about/3.png" },
     ],
     // Poster-style showcase (same engine as Hair Energy): the title graphic, then one
     // banner per line — each linking through to its sub-brand page.
     showcase: {
-      hero: "/brand/advisor-rx/showcase/title.png",
+      hero: { en: "/media/brands/advisor-rx/showcase/title.en.png", id: "/media/brands/advisor-rx/showcase/title.id.png" },
       heroAspect: "4630 / 3361",
       productAlign: "center",
       // The banners are finished cards: rounded corners, flat brand colour, and a
@@ -105,10 +105,10 @@ const entry: Brand = {
         // as wide as the banner (frameRatio ÷ clusterRatio). All values are %, so the
         // composition scales identically on mobile; no per-viewport override needed.
         // STRONG HAIR — 4-step regimen (cluster 5423×3139 → 2.127 / 1.728 ≈ 123 %)
-        { bg: "/brand/advisor-rx/showcase/1-2.png", product: "/brand/advisor-rx/showcase/1-1.png", bgAspect: "4810 / 2261", 
+        { bg: { en: "/media/brands/advisor-rx/showcase/1-2.en.png", id: "/media/brands/advisor-rx/showcase/1-2.id.png" }, product: "/media/brands/advisor-rx/showcase/1-1.png", bgAspect: "4810 / 2261", 
           productAspect: "5423 / 3139", productHeight: "123%", productShiftY: "4%", productShiftX: "-10%", href: "/brands/advisor-rx/strong-hair" },
         // GREY HAIR — 3-step regimen (cluster 5592×2330 → 2.128 / 2.400 ≈ 89 %)
-        { bg: "/brand/advisor-rx/showcase/2-2.png", product: "/brand/advisor-rx/showcase/2-1.png", bgAspect: "4810 / 2260", 
+        { bg: { en: "/media/brands/advisor-rx/showcase/2-2.en.png", id: "/media/brands/advisor-rx/showcase/2-2.id.png" }, product: "/media/brands/advisor-rx/showcase/2-1.png", bgAspect: "4810 / 2260", 
           productAspect: "5592 / 2330", productHeight: "89%", productShiftY: "-5%", href: "/brands/advisor-rx/grey-hair" },
       ],
     },

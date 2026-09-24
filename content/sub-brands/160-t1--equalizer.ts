@@ -10,16 +10,16 @@ const entry: SubBrand = {
     accentHex: "#5C3427", // Equalizer terracotta, sampled from the line's banner art
     bannerBg: "#B0B783",
     theme: "accent-light",
-    heroWordmark: "/brand/t1/equalizer/hero/wordmark.png",
+    heroWordmark: "/media/brands/t1/lines/equalizer/hero/wordmark.png",
     heroWordmarkAspect: "1424 / 556",
     // One composed cluster (shampoo + conditioner). The bottles fill 54% × 71% of the
     // canvas starting 20% down, so the layer box is much larger than the cluster looks.
     heroLayers: [
-      { src: "/brand/t1/equalizer/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
+      { src: "/media/brands/t1/lines/equalizer/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(58vw, 70vh)", aspectRatio: "3526 / 4774", left: "57%", top: "0%",
         mobile: { left: "-5%", top: "-43%", width: "110%" } },
     ],
-    showcaseTitle: "/brand/t1/equalizer/showcase/title.png",
+    showcaseTitle: { en: "/media/brands/t1/lines/equalizer/showcase/title.en.png", id: "/media/brands/t1/lines/equalizer/showcase/title.id.png" },
     showcaseTitleAspect: "4343 / 4027",
     showcaseTitleOffsetY: "122px",
     showcaseTitleOffsetX: "-35px",
@@ -30,8 +30,8 @@ const entry: SubBrand = {
     // cards the same size and aligned instead of letterboxing them.
     cardAspect: "2302 / 3379",
     cards: [
-      { image: "/brand/t1/equalizer/showcase/1.png", label: { en: "Equalizer Shampoo — for sensitive & dry scalp", id: "Equalizer Shampoo — kulit kepala sensitif & kering" } },
-      { image: "/brand/t1/equalizer/showcase/2.png", label: { en: "Equalizer Conditioner — for sensitive & dry hair", id: "Equalizer Conditioner — rambut sensitif & kering" } },
+      { image: "/media/brands/t1/lines/equalizer/showcase/1.png", label: { en: "Equalizer Shampoo — for sensitive & dry scalp", id: "Equalizer Shampoo — kulit kepala sensitif & kering" } },
+      { image: "/media/brands/t1/lines/equalizer/showcase/2.png", label: { en: "Equalizer Conditioner — for sensitive & dry hair", id: "Equalizer Conditioner — rambut sensitif & kering" } },
     ],
   };
 

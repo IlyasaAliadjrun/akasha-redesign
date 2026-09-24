@@ -13,7 +13,7 @@ const entry: SubBrand = {
     accentHex: "#5C3427",
     bannerBg: "#B0B783",
     theme: "accent-light",
-    heroWordmark: "/brand/t1/micellar/hero/wordmark.png",
+    heroWordmark: "/media/brands/t1/lines/micellar/hero/wordmark.png",
     heroWordmarkAspect: "1424 / 556",
     // The folder ships ONE composed cluster (shampoo + conditioner), so the hero is a
     // single layer. The PNG is mostly transparent padding — the bottles fill 54% × 71%
@@ -21,19 +21,19 @@ const entry: SubBrand = {
     // the cluster looks, and `top` compensates for that offset.
     // `mobile` values are % of the SubBrandHero mobile cluster box.
     heroLayers: [
-      { src: "/brand/t1/micellar/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
+      { src: "/media/brands/t1/lines/micellar/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(58vw, 70vh)", aspectRatio: "3493 / 4751", left: "57%", top: "0%",
         mobile: { left: "-5%", top: "-43%", width: "110%" } },
     ],
-    showcaseTitle: "/brand/t1/micellar/showcase/title.png",
+    showcaseTitle: { en: "/media/brands/t1/lines/micellar/showcase/title.en.png", id: "/media/brands/t1/lines/micellar/showcase/title.id.png" },
     showcaseTitleAspect: "3992 / 3243",
     cardAspect: "2302 / 2987",
     showcaseTitleOffsetY: "32px",
     showcaseTitleMobileOffsetY: "12px",
     showcaseTitleMobileOffsetX: "-9px",
     cards: [
-      { image: "/brand/t1/micellar/showcase/1.png", label: { en: "Micellar Shampoo — for sensitive & oily scalp", id: "Micellar Shampoo — kulit kepala sensitif & berminyak" } },
-      { image: "/brand/t1/micellar/showcase/2.png", label: { en: "Micellar Conditioner — for sensitive & oily hair", id: "Micellar Conditioner — rambut sensitif & berminyak" } },
+      { image: "/media/brands/t1/lines/micellar/showcase/1.png", label: { en: "Micellar Shampoo — for sensitive & oily scalp", id: "Micellar Shampoo — kulit kepala sensitif & berminyak" } },
+      { image: "/media/brands/t1/lines/micellar/showcase/2.png", label: { en: "Micellar Conditioner — for sensitive & oily hair", id: "Micellar Conditioner — rambut sensitif & berminyak" } },
     ],
   };
 

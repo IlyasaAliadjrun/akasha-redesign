@@ -33,8 +33,8 @@ export default function GovernancePage({ params }: { params: { locale: string } 
     <>
       {/* HERO */}
       <PageHero
-        desktop="/governance/hero/desktop.jpg"
-        mobile="/governance/hero/mobile.jpg"
+        desktop="/media/pages/governance/hero/desktop.jpg"
+        mobile="/media/pages/governance/hero/mobile.jpg"
         title={t(GOVERNANCE_PAGE.hero.title)}
         subtitle={t(GOVERNANCE_PAGE.hero.subtitle)}
         tone="dark"

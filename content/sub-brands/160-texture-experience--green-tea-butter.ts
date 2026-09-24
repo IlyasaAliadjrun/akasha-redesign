@@ -15,27 +15,27 @@ const entry: SubBrand = {
     accentHex: "#423A31",
     bannerBg: "#eee8e0",
     theme: "accent-light",
-    heroWordmark: "/brand/texture-experience/green-tea-butter/hero/wordmark.png",
+    heroWordmark: "/media/brands/texture-experience/lines/green-tea-butter/hero/wordmark.png",
     heroWordmarkAspect: "502 / 214",
     // One composed cluster (creambath tube + Tea Blossom hair perfume) → a single
     // layer. The PNG has heavy transparent padding (the products fill ~56% × 77% of the
     // canvas), so the layer box is much larger than the pair looks.
     heroLayers: [
-      { src: "/brand/texture-experience/green-tea-butter/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
+      { src: "/media/brands/texture-experience/lines/green-tea-butter/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(36vw, 85vh)", aspectRatio: "3463 / 3991", left: "55%", top: "5.5%",
         mobile: { left: "-6%", top: "-26%", width: "106%" } },
     ],
-    showcaseTitle: "/brand/texture-experience/green-tea-butter/showcase/title.png",
+    showcaseTitle: "/media/brands/texture-experience/lines/green-tea-butter/showcase/title.png",
     showcaseTitleAspect: "4134 / 3233",
     // This variant ships no landscape creambath card — all four SKU are portrait cards,
     // so the grid carries them and there is no full-width featured slot (as in the
     // reference).
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/texture-experience/green-tea-butter/showcase/1.png", label: { en: "Shampoo Green Tea Butter", id: "Shampoo Green Tea Butter" } },
-      { image: "/brand/texture-experience/green-tea-butter/showcase/2.png", label: { en: "Conditioner Green Tea Butter", id: "Conditioner Green Tea Butter" } },
-      { image: "/brand/texture-experience/green-tea-butter/showcase/3.png", label: { en: "Creambath Green Tea Butter", id: "Creambath Green Tea Butter" } },
-      { image: "/brand/texture-experience/green-tea-butter/showcase/4.png", label: { en: "Hair Perfume Tea Blossom", id: "Hair Perfume Tea Blossom" } },
+      { image: { en: "/media/brands/texture-experience/lines/green-tea-butter/showcase/1.en.png", id: "/media/brands/texture-experience/lines/green-tea-butter/showcase/1.id.png" }, label: { en: "Shampoo Green Tea Butter", id: "Shampoo Green Tea Butter" } },
+      { image: { en: "/media/brands/texture-experience/lines/green-tea-butter/showcase/2.en.png", id: "/media/brands/texture-experience/lines/green-tea-butter/showcase/2.id.png" }, label: { en: "Conditioner Green Tea Butter", id: "Conditioner Green Tea Butter" } },
+      { image: { en: "/media/brands/texture-experience/lines/green-tea-butter/showcase/3.en.png", id: "/media/brands/texture-experience/lines/green-tea-butter/showcase/3.id.png" }, label: { en: "Creambath Green Tea Butter", id: "Creambath Green Tea Butter" } },
+      { image: { en: "/media/brands/texture-experience/lines/green-tea-butter/showcase/4.en.png", id: "/media/brands/texture-experience/lines/green-tea-butter/showcase/4.id.png" }, label: { en: "Hair Perfume Tea Blossom", id: "Hair Perfume Tea Blossom" } },
     ],
   };
 

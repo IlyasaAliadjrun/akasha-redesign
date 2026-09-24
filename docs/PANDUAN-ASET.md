@@ -55,47 +55,65 @@ Bagian luar zona aman bisa terpotong tergantung ukuran layar.
 
 ## 2. Struktur folder — **per halaman → per section** ⭐
 
-Sejak perapian aset, `public/` disusun mengikuti **halaman** situs, lalu dipecah lagi per **section** di halaman itu. Jadi kalau kamu diminta "ganti kartu About Hair Energy", tempatnya langsung ketemu: `public/brand/hair-energy/about/`.
+`public/` hanya punya **dua akar**: `media/` untuk semua gambar, `documents/` untuk semua PDF/DOC. Di dalam `media/`, aset disusun mengikuti **halaman** situs, lalu dipecah per **section** di halaman itu. Kalau diminta "ganti kartu About Hair Energy", tempatnya langsung ketemu: `public/media/brands/hair-energy/about/`.
 
 ```
 public/
-├── home/                        ← Beranda
-│   ├── hero-carousel/           banner slider utama      → nestle-pure-life.jpg, hair-energy.jpg, …
-│   ├── division-cards/          kartu divisi             → beverage.jpg, food.jpg, beauty.png, mens.png
-│   └── brand-grid/              grid "Ten brands…"       → hair-energy.jpg, wonhae.jpg, …
-├── brand/                       ← Halaman brand — 1 folder per brand, pakai slug
-│   ├── hair-energy/
-│   │   ├── hero/                1.png 2.png 3.png wordmark.png
-│   │   ├── product-lineup/      shampoo-aloe-melon-170ml.png, …
-│   │   ├── about/               1.png 2.png 3.png
-│   │   └── showcase/            title.png, 1-1.png, 1-2.png, 2-1.png, …
-│   └── nestle-pure-life/
-│       ├── hero/                background.jpg, 1.png, 1-mobile.png, wordmark.png
-│       ├── product-lineup/      330ml.jpg, 600ml.jpg, 1500ml.jpg, galon-15l.jpg
-│       └── about/               1.png 2.png 3.png
-├── about/                       ← Halaman lain — hero full screen, 2 aset
-│   └── hero/                    desktop.jpg (16:9) + mobile.jpg (9:16)
-├── investor/  governance/  contact/  careers/
-│   └── hero/                    idem — desktop.jpg + mobile.jpg
-├── docs/                        ← Dokumen investor & tata kelola (PDF/DOC) + sampulnya
-│   ├── annual-report/           PDF laporan tahunan 2012–2025
-│   │   └── covers/              2012.png … 2025.png   ← satu-satunya gambar di sini
-│   ├── sustainability-report/   PDF laporan keberlanjutan 2021–2025
-│   │   └── covers/              2021.jpg … 2025.png
-│   ├── financial-report/  gms/  disclosure/  announcement/  governance/   ← PDF saja
-└── shared/                      logo-white.png, logo-color.png  (navbar, semua halaman)
+├── media/                                ← SEMUA gambar
+│   ├── shared/                           logo-white.png, logo-color.png (navbar, semua halaman)
+│   ├── home/                             ← Beranda
+│   │   ├── hero-carousel/                nestle-pure-life.jpg, hair-energy.jpg, …
+│   │   ├── division-cards/               beverage.jpg, food.jpg, beauty.png, mens.png
+│   │   └── brand-grid/                   hair-energy.jpg, wonhae.jpg, …
+│   ├── pages/{page}/hero/                ← About · Investor · Governance · Contact · Careers
+│   │                                        desktop.jpg (16:9) + mobile.jpg (9:16)
+│   ├── brands/{slug}/                    ← Halaman brand — nama folder = slug brand
+│   │   ├── hero/                         1.png 2.png wordmark.png
+│   │   ├── product-lineup/               shampoo-aloe-melon-170ml.png, …
+│   │   ├── about/                        1.png 2.png 3.png
+│   │   ├── showcase/                     title.en.png, title.id.png, 1-1.png, 1-2.en.png, …
+│   │   └── lines/{line}/                 ← Sub-brand (product line), mis. lines/creambath/
+│   │       ├── hero/
+│   │       └── showcase/
+│   └── reports/                          ← Sampul laporan di halaman Investor
+│       ├── annual-report/                2012.png … 2025.png
+│       └── sustainability-report/        2021.jpg … 2025.png
+└── documents/                            ← SEMUA PDF/DOC (diunduh apa adanya)
+    ├── annual-report/                    2012.pdf … 2025.pdf
+    ├── sustainability-report/            2021.pdf … 2025.pdf
+    ├── financial-report/{tahun}/         q1.pdf q2.pdf q3.pdf fy.pdf (+ fy-ojk-letter.pdf)
+    ├── gms/{tahun}/                      meeting-agenda-material.pdf, power-of-attorney-for-individual.doc, …
+    ├── disclosure/                       2026-06-12-addition-of-business-activities.pdf, …
+    ├── announcement/                     change-of-audit-committee.pdf, …
+    └── governance/                       articles-of-association.pdf, communication-policy.pdf
 ```
 
-> **`public/docs/` dikecualikan dari dua aturan.** Pertama, tidak ikut pemisahan locale: aset lain digandakan ke `public/en/…` dan `public/id/…`, dokumen dan sampulnya tidak, karena isinya sama persis di kedua bahasa. Kedua, nama berkas PDF **dipertahankan apa adanya dari situs sumber** (huruf besar, angka, ejaan asli) supaya bisa dilacak balik saat arsip diperbarui — bukan slug huruf kecil. Aturan slug tetap berlaku untuk gambarnya, yang dinamai per tahun: `2025.png`.
+**Kenapa hanya dua akar?** Keduanya **tidak ikut pemisahan bahasa** — satu file melayani `/en` dan `/id` sekaligus — dan keduanya kelak dipindah utuh ke object storage dengan susunan kunci yang sama persis. Jangan menaruh aset di luar `media/` atau `documents/`.
+
+### Satu file atau dua file? (varian bahasa)
+
+Penentunya satu pertanyaan: **apakah ada tulisan yang menempel di dalam gambarnya?**
+
+| Gambar | Kirim | Nama file |
+|---|---|---|
+| Tanpa tulisan di gambar (foto produk, potret, latar polos) — teks ditaruh sebagai HTML | **1 file**, dipakai kedua bahasa | `title.png` |
+| Tulisan menempel di gambar (headline showcase, slogan di banner, wordmark berteks) | **2 file**, satu per bahasa | `title.en.png` + `title.id.png` |
+
+Akhiran `.en` / `.id` ditaruh **tepat sebelum ekstensi**, dan keduanya **wajib ada berpasangan**. Kategori section tidak menentukan apa-apa: `showcase/title` bisa dua file di satu brand dan satu file di brand lain — tergantung isi gambarnya.
+
+> Developer: field gambar yang punya dua versi ditulis sebagai `{ en: "…title.en.png", id: "…title.id.png" }` (tipe `LocalizedAsset` di [lib/locale/paths.ts](../lib/locale/paths.ts)); yang satu versi cukup string biasa. Resolver sudah menangani keduanya.
 
 ### Aturan penamaan
 
-1. **Semua huruf kecil + tanda hubung** (gaya slug). `BARBER-DAILY.jpg` → `barber-daily.jpg`; `HE Shampoo Kiwi 170mL.png` → `shampoo-kiwi-170ml.png`. Jangan pakai spasi.
-2. **Nama folder brand = slug brand** (sama persis dengan URL-nya): `hair-energy/`, `nestle-pure-life/`, `barber-daily/`.
+1. **Semua huruf kecil + tanda hubung** (gaya slug), termasuk ekstensi. `BARBER-DAILY.jpg` → `barber-daily.jpg`; `HE Shampoo Kiwi 170mL.png` → `shampoo-kiwi-170ml.png`. **Tidak boleh ada spasi, garis bawah, atau huruf besar.**
+2. **Nama folder brand = slug brand** (sama persis dengan URL-nya): `hair-energy/`, `nestle-pure-life/`, `make-it/`. Folder sub-brand = slug sub-brand, di dalam `lines/`.
 3. Di dalam section, dua gaya nama dipakai:
    - **Urutan** — kalau posisinya yang penting: `1.png`, `2.png`, `1-1.png`, `1-2.png`.
    - **Nama produk (slug)** — kalau identitasnya yang penting: `shampoo-aloe-melon-170ml.png`, `galon-15l.jpg`.
 4. Prefiks brand di nama file **tidak perlu lagi** — foldernya sudah menyebut brand. (`HE Shampoo …` → `shampoo-…`.)
+5. **Dokumen** dinamai menurut isinya, bukan nama file dari pengirim: tahun untuk laporan (`2025.pdf`), periode untuk laporan keuangan (`q1`…`q3`, `fy`), tanggal di depan untuk keterbukaan informasi (`2026-06-12-…`). Nama asli dari situs lama tercatat di [asset-migration-map.json](asset-migration-map.json).
+
+> **Cek otomatis:** jalankan `npm run verify:assets` setelah menambah atau mengganti aset. Script ini gagal kalau ada path di kode yang filenya tidak ada, nama yang melanggar aturan di atas, atau path gaya lama (`/brand/…`, `/docs/…`).
 
 | Section | Pola nama | Contoh |
 |---|---|---|
@@ -111,17 +129,17 @@ public/
 
 | # | Dipakai di | Folder | Rasio | Resolusi master | Tampilan | Format |
 |---|---|---|---|---|---|---|
-| 1 | **Banner slider** beranda | `home/hero-carousel/` | **16:9** | 2560×1440 | COVER | jpg/webp |
-| 2 | **Kartu divisi** beranda | `home/division-cards/` | **3:4** | 1200×1600 | COVER · rail horizontal | jpg/webp |
-| 3 | **Grid brand** beranda | `home/brand-grid/` | **2:1** (lebar) / **1:1** (kecil) | 1600×800 / 1080×1080 | COVER | jpg/webp |
-| 4 | **Banner brand** (hero halaman brand) | `brand/{slug}/hero/` | **16:9** | 2560×1440 | COVER (desktop & HP, layar penuh) | jpg/png/webp |
-| 5 | **Foto produk** (Explore the lineup) | `brand/{slug}/product-lineup/` | **1:1** | 1200×1200 | CONTAIN | **PNG transparan** |
-| 6 | **3 kartu "About"** | `brand/{slug}/about/` | **3:4** | 1200×1600 | COVER | jpg/webp |
-| 7 | **Showcase – gambar utama** | `brand/{slug}/showcase/title.png` | **bebas** (cth 1.37:1) | 5219×3799 / 2000² | CONTAIN | png/webp |
-| 8 | **Showcase – banner varian** (2 layer parallax) | `brand/{slug}/showcase/{n}-1`,`{n}-2` | latar **2.128:1** + produk **3:4** | 5010×2354 / 2687×3660 | latar COVER · produk PNG | jpg/png |
-| 9 | **Hero halaman** (About/Investor/dll) — desktop | `{page}/hero/desktop.jpg` | **16:9** | 2560×1440 | COVER, layar penuh | jpg/webp |
-| 9b | **Hero halaman** — HP | `{page}/hero/mobile.jpg` | **9:16** | 1080×1920 | COVER, layar penuh | jpg/webp |
-| 10 | **Sampul laporan** (tahunan & keberlanjutan) | `docs/{jenis}/covers/{tahun}` | **16:15** (≈1.067) | 1200×1125 | COVER | jpg/png |
+| 1 | **Banner slider** beranda | `media/home/hero-carousel/` | **16:9** | 2560×1440 | COVER | jpg/webp |
+| 2 | **Kartu divisi** beranda | `media/home/division-cards/` | **3:4** | 1200×1600 | COVER · rail horizontal | jpg/webp |
+| 3 | **Grid brand** beranda | `media/home/brand-grid/` | **2:1** (lebar) / **1:1** (kecil) | 1600×800 / 1080×1080 | COVER | jpg/webp |
+| 4 | **Banner brand** (hero halaman brand) | `media/brands/{slug}/hero/` | **16:9** | 2560×1440 | COVER (desktop & HP, layar penuh) | jpg/png/webp |
+| 5 | **Foto produk** (Explore the lineup) | `media/brands/{slug}/product-lineup/` | **1:1** | 1200×1200 | CONTAIN | **PNG transparan** |
+| 6 | **3 kartu "About"** | `media/brands/{slug}/about/` | **3:4** | 1200×1600 | COVER | jpg/webp |
+| 7 | **Showcase – gambar utama** | `media/brands/{slug}/showcase/title.png` | **bebas** (cth 1.37:1) | 5219×3799 / 2000² | CONTAIN | png/webp |
+| 8 | **Showcase – banner varian** (2 layer parallax) | `media/brands/{slug}/showcase/{n}-1`,`{n}-2` | latar **2.128:1** + produk **3:4** | 5010×2354 / 2687×3660 | latar COVER · produk PNG | jpg/png |
+| 9 | **Hero halaman** (About/Investor/dll) — desktop | `media/pages/{page}/hero/desktop.jpg` | **16:9** | 2560×1440 | COVER, layar penuh | jpg/webp |
+| 9b | **Hero halaman** — HP | `media/pages/{page}/hero/mobile.jpg` | **9:16** | 1080×1920 | COVER, layar penuh | jpg/webp |
+| 10 | **Sampul laporan** (tahunan & keberlanjutan) | `media/reports/{jenis}/{tahun}` | **16:15** (≈1.067) | 1200×1125 | COVER | jpg/png |
 
 > Folder `marquee` berjalan di beranda **memakai ulang** gambar Kartu Divisi (#2) — tidak perlu aset baru.
 
@@ -155,7 +173,7 @@ Ini jawaban ringkas "rasio terbaiknya berapa untuk desktop & HP". **Kartu** = ra
 
 ### 🏠 BERANDA (Homepage)
 
-#### 1) Banner Slider Utama — `public/home/hero-carousel/`
+#### 1) Banner Slider Utama — `public/media/home/hero-carousel/`
 - **Rasio:** 16:9 — **Resolusi:** 2560×1440 (minimum 1920×1080)
 - **Tampilan:** COVER. Desktop = layar penuh. **HP = pita lebar (1/3 tinggi layar)** — ini disengaja (beda dari banner brand yang kini full screen di HP).
 - **Panduan komposisi:**
@@ -164,7 +182,7 @@ Ini jawaban ringkas "rasio terbaiknya berapa untuk desktop & HP". **Kartu** = ra
   - Di HP terpotong sedikit **kiri–kanan**; di layar lebar bisa terpotong sedikit **atas–bawah**.
 - Contoh file saat ini: `nestle-pure-life.jpg`, `hair-energy.jpg`. **Nama file = slug brand.**
 
-#### 2) Kartu Divisi — `public/home/division-cards/`
+#### 2) Kartu Divisi — `public/media/home/division-cards/`
 - **Rasio:** 3:4 (potret) — **Resolusi:** 1200×1600 (min 900×1200)
 - **Tampilan:** COVER, bentuk kartu potret. Sama di desktop & HP.
 - **Panduan:** subjek di tengah; bagian bawah kartu tertimpa teks putih (nama divisi) — sisakan ruang.
@@ -173,7 +191,7 @@ Ini jawaban ringkas "rasio terbaiknya berapa untuk desktop & HP". **Kartu** = ra
 - **Interaksi hover/focus:** kartu diberi overlay gelap tambahan dan menampilkan daftar brand dalam divisinya; setiap nama brand menjadi link ke halaman brand terkait.
 - Catatan: `makarizo-professional.png` ada di folder ini tapi **tidak dipakai** — sisa dari waktu "Professional" masih jadi divisi sendiri.
 
-#### 3) Grid Brand ("Ten brands. One family.") — `public/home/brand-grid/`
+#### 3) Grid Brand ("Ten brands. One family.") — `public/media/home/brand-grid/`
 - **Rasio:** kotak **lebar 2:1** (1600×800) untuk tile besar; **1:1** (1080×1080) untuk tile kecil.
 - **Tampilan:** COVER. Subjek cenderung **agak ke kanan** (lebih aman untuk tile sempit).
 - **Nama file = slug brand:** `hair-energy.jpg`, `wonhae.jpg`.
@@ -182,13 +200,13 @@ Ini jawaban ringkas "rasio terbaiknya berapa untuk desktop & HP". **Kartu** = ra
 
 ### 📄 HALAMAN BRAND (Brand Page)
 
-#### 4) Banner Brand (Hero) — `public/brand/{slug}/hero/`
+#### 4) Banner Brand (Hero) — `public/media/brands/{slug}/hero/`
 - **Rasio per viewport:** **Desktop 16:9** (2560×1440) · **Mobile 9:16** (1290×2290, min 1080×1920).
 - **Tampilan:** **COVER, layar penuh (1 layar) di desktop MAUPUN HP.** (Sebelumnya HP CONTAIN/strip — sekarang HP juga full screen.)
 - **Idealnya 2 aset:** satu 16:9 untuk desktop, satu 9:16 untuk HP (potret). Dengan 1 aset 16:9 saja, di HP sisi kiri-kanan terpotong parah.
 
 ##### 4b) Banner Brand — versi PARALLAX BERLAPIS, **kustom per brand** (animated)
-Banner hero bisa dirakit dari **beberapa layer terpisah** yang dianimasikan sendiri-sendiri (`heroLayers` + `heroContent` di `lib/brands.ts`). **Efek & komposisi boleh beda tiap brand.** Aset ditaruh di **`brand/{slug}/hero/`**.
+Banner hero bisa dirakit dari **beberapa layer terpisah** yang dianimasikan sendiri-sendiri (`heroLayers` + `heroContent` di `lib/brands.ts`). **Efek & komposisi boleh beda tiap brand.** Aset ditaruh di **`media/brands/{slug}/hero/`**.
 
 **Aset per layer:**
 - **Produk:** tiap produk = **PNG transparan, potret** (~3:4), 1 botol/tube per file. **Nama file = urutan layer.** Contoh Hair Energy: `1.png` (creambath), `2.png` (shampoo), `3.png` (scentsations) — 2687×3660.
@@ -204,29 +222,29 @@ Banner hero bisa dirakit dari **beberapa layer terpisah** yang dianimasikan send
 **Teks HTML (tagline + tombol)** lewat `heroContent`: `logo` (wordmark), `tagline`, `ctaText`/`ctaHref`, posisi (`left`), warna (`theme`). Ini HTML asli (bukan gambar) → tajam & bisa diklik.
 
 > Karena banner ini **full-screen di HP (potret)**, komposisi desktop (teks kiri + produk kanan) akan menyempit di HP — atur ulang posisi/ukuran per brand bila perlu. Subjek penting jangan mepet tepi.
-- Contoh: `brand/hair-energy/hero/` (latar oranye solid `#F36C21`, tanpa file latar).
+- Contoh: `media/brands/hair-energy/hero/` (latar oranye solid `#F36C21`, tanpa file latar).
 - **Tips desain:** karena di HP banyak terpotong, pertimbangkan komposisi yang aman dibaca baik dalam bingkai lebar (desktop) maupun irisan tengah yang sempit (HP).
 
-#### 5) Foto Produk (Explore the lineup) — `public/brand/{slug}/product-lineup/`
+#### 5) Foto Produk (Explore the lineup) — `public/media/brands/{slug}/product-lineup/`
 - **Rasio:** 1:1 (persegi) — **Resolusi:** 1200×1200 (min 1000×1000)
 - **Tampilan:** CONTAIN. **Wajib PNG dengan latar transparan.**
 - **Panduan:** 1 produk per file, **di tengah**, beri sedikit ruang kosong di sekeliling. Tidak perlu bayangan/latar.
 - **Nama file = nama produk dalam slug**, tanpa prefiks brand: `shampoo-active-menthol-170ml.png`, `creambath-kiwi-500ml.png`, `330ml.jpg`, `galon-15l.jpg`.
 
-#### 6) Tiga Kartu "About" — `public/brand/{slug}/about/`
+#### 6) Tiga Kartu "About" — `public/media/brands/{slug}/about/`
 - **Rasio:** 3:4 (potret) — **Resolusi:** 1200×1600 (min 900×1200)
 - **Tampilan:** COVER. Ada **judul putih** di kiri-bawah tiap kartu — sisakan area agak gelap/kosong di sana.
 - **Nama file = urutan:** `1.png`, `2.png`, `3.png` (urutannya = urutan tampil di halaman).
 
-#### 7) Showcase — Gambar Utama (orang) — `public/brand/{slug}/showcase/title.png`
+#### 7) Showcase — Gambar Utama (orang) — `public/media/brands/{slug}/showcase/title.png`
 - **Rasio:** bebas (mengikuti gambar). Dua pola yang dipakai sekarang:
   - **Landscape** (Hair Energy) — cth `5219×3799 (~1.37:1)`, teks kampanye menyatu di dalam gambar.
   - **Potret** (Nestlé Pure Life) — cth `2048×3179 (~0.64:1)`, **cutout orang tanpa teks**.
 - **Tampilan:** CONTAIN (tampil utuh), poster di tengah sebagai "jangkar" di atas banner varian (#8). Boleh transparan atau latar solid.
 - **Catatan developer:** rasio asli diisi di `showcase.heroAspect`. Untuk title **potret**, WAJIB set `showcase.heroMaxWidth` (mis. `"min(72vw, 22rem)"`) supaya tinggi title tidak jauh lebih besar dari title landscape (default lebarnya 768px → potret jadi kelewat tinggi). Kalau ganti gambar dengan rasio beda, beri tahu developer.
-- Contoh: `brand/hair-energy/showcase/title.png` (landscape), `brand/nestle-pure-life/showcase/title.png` (potret).
+- Contoh: `media/brands/hair-energy/showcase/title.png` (landscape), `media/brands/nestle-pure-life/showcase/title.png` (potret).
 
-#### 8) Showcase — Banner Varian Produk (PARALLAX BERLAPIS) — `public/brand/{slug}/showcase/`
+#### 8) Showcase — Banner Varian Produk (PARALLAX BERLAPIS) — `public/media/brands/{slug}/showcase/`
 Tiap banner varian = **2 layer terpisah** yang dianimasikan sendiri-sendiri (parallax saat scroll + animasi masuk). Penamaan file: **`{n}-1`** dan **`{n}-2`** (n = urutan banner: 1, 2, 3, …).
 
 | Layer | File | Isi | Rasio | Resolusi | Animasi masuk |
@@ -242,14 +260,14 @@ Tiap banner varian = **2 layer terpisah** yang dianimasikan sendiri-sendiri (par
 - **Produk** boleh **menjorok keluar** (lebih tinggi dari banner) — beri ruang transparan, jangan dipotong mepet.
 - Developer menautkan tiap banner sebagai `{ bg: "{n}-2.png", product: "{n}-1.png", bgAspect, productAspect, productHeight }`. Rasio & tinggi produk diisi per aset. Arah masuk kiri/kanan otomatis dari urutan.
 - **Make It:** latar `1-2` memakai **4810×2261**, sedangkan `2-2` dan `3-2` memakai **4810×2260**. Ketiganya ditampilkan dengan rasio asli dan tanpa parallax latar agar seluruh tulisan di tepi kartu tetap terlihat pada desktop maupun HP.
-- Contoh: `brand/hair-energy/showcase/1-1.png` + `1-2.png` (mode center), `brand/nestle-pure-life/showcase/1-1.png` … `4-*` (mode sides).
-- Catatan: **opsional & reusable** — brand lain cukup sediakan `{n}-1`/`{n}-2` dengan rasio sama di `brand/{slug}/showcase/`.
+- Contoh: `media/brands/hair-energy/showcase/1-1.png` + `1-2.png` (mode center), `media/brands/nestle-pure-life/showcase/1-1.png` … `4-*` (mode sides).
+- Catatan: **opsional & reusable** — brand lain cukup sediakan `{n}-1`/`{n}-2` dengan rasio sama di `media/brands/{slug}/showcase/`.
 
 ---
 
 ### 📄 HALAMAN LAIN (About · Investor · Governance · Contact · Careers)
 
-#### 9) Hero Halaman — `public/{page}/hero/desktop.jpg` + `mobile.jpg`
+#### 9) Hero Halaman — `public/media/pages/{page}/hero/desktop.jpg` + `mobile.jpg`
 
 Modelnya **sama seperti banner brand**: foto full screen (COVER, 1 layar penuh) dengan **judul + subjudul sebagai teks HTML di atasnya** — bukan bagian dari foto. Ini aset pertama yang benar-benar punya **2 versi terpisah** desktop & HP.
 
@@ -297,7 +315,7 @@ Yang terpasang sekarang:
 
 ---
 
-#### 10) Sampul Laporan — `public/docs/annual-report/covers/` + `public/docs/sustainability-report/covers/`
+#### 10) Sampul Laporan — `public/media/reports/annual-report/` + `public/media/reports/sustainability-report/`
 
 Thumbnail sampul yang tampil di kartu arsip **Laporan Tahunan** dan **Laporan Keberlanjutan** di halaman Investor. Satu gambar per tahun, dinamai persis tahunnya: `2025.png`, `2019.jpg`.
 
@@ -315,31 +333,31 @@ Thumbnail sampul yang tampil di kartu arsip **Laporan Tahunan** dan **Laporan Ke
 
 **Resolusi itu penting di sini.** Kotaknya kecil (251px), tapi layar retina butuh 2× → minimal 502px sisi lebar. Sampul 2023–2025 hasil unduhan hanya 589×533, pas-pasan; 2012–2022 sudah 1584×1486 dan aman. Kalau tim desain punya file aslinya, kirim ulang yang 1200×1125.
 
-> Developer: dirender di [app/[locale]/investor/page.tsx](../app/%5Blocale%5D/investor/page.tsx) lewat `next/image` `fill` + `sizes="(min-width: 1024px) 18vw, (min-width: 640px) 30vw, 45vw"`, di dalam kotak `aspect-[16/15]`. Path-nya ada di `ANNUAL_REPORTS` / `SUSTAINABILITY_REPORTS` ([lib/investor.ts](../lib/investor.ts)), field `cover`, bersebelahan dengan `file` (PDF-nya). Tidak lewat `localizeAsset` — lihat catatan pengecualian di §2.
+> Developer: dirender di [app/[locale]/investor/page.tsx](../app/%5Blocale%5D/investor/page.tsx) lewat `next/image` `fill` + `sizes="(min-width: 1024px) 18vw, (min-width: 640px) 30vw, 45vw"`, di dalam kotak `aspect-[16/15]`. Path-nya ada di `ANNUAL_REPORTS` / `SUSTAINABILITY_REPORTS` ([lib/investor.ts](../lib/investor.ts)), field `cover`, bersebelahan dengan `file` (PDF-nya). Path di bawah `media/` tidak diberi prefix bahasa — lihat §2.
 
 ---
 
 ## 4. Penamaan Folder per Brand
 
-Setiap brand punya **satu folder** berisi semua sectionnya — dinamai persis seperti **slug** brand itu (sama dengan URL-nya, `/brands/hair-energy` → `brand/hair-energy/`).
+Setiap brand punya **satu folder** berisi semua sectionnya — dinamai persis seperti **slug** brand itu (sama dengan URL-nya, `/brands/hair-energy` → `media/brands/hair-energy/`).
 
 | Jenis aset | Pola folder | Contoh (Hair Energy) |
 |---|---|---|
-| Banner brand (hero) | `brand/{slug}/hero/` | `brand/hair-energy/hero/1.png` |
-| Foto produk | `brand/{slug}/product-lineup/` | `brand/hair-energy/product-lineup/shampoo-kiwi-170ml.png` |
-| Kartu About | `brand/{slug}/about/` | `brand/hair-energy/about/1.png` |
-| Showcase utama | `brand/{slug}/showcase/title.png` | `brand/hair-energy/showcase/title.png` |
-| Showcase varian | `brand/{slug}/showcase/{n}-1`,`{n}-2` | `brand/hair-energy/showcase/1-1.png` |
+| Banner brand (hero) | `media/brands/{slug}/hero/` | `media/brands/hair-energy/hero/1.png` |
+| Foto produk | `media/brands/{slug}/product-lineup/` | `media/brands/hair-energy/product-lineup/shampoo-kiwi-170ml.png` |
+| Kartu About | `media/brands/{slug}/about/` | `media/brands/hair-energy/about/1.png` |
+| Showcase utama | `media/brands/{slug}/showcase/title.png` | `media/brands/hair-energy/showcase/title.png` |
+| Showcase varian | `media/brands/{slug}/showcase/{n}-1`,`{n}-2` | `media/brands/hair-energy/showcase/1-1.png` |
 
-Slug brand yang berlaku sekarang (nama folder aset = slug ini, **huruf kecil semua**): `nestle-pure-life`, `vica`, `asters`, `advisor`, `hair-energy`, `t1`, `128`, `salon-daily`, `honey-dew`, `concept-ultimax`, `rebonding-system`, `texture-experience`, `mk3`, `inoskin`, `lou`, `make-it` (folder aset: `makeit`), `finest`, `barber-daily`, `wonhae`, `omoide`, `floaty`, `fitmeup`. Beberapa brand/sub-brand punya folder aset tapi belum di-wire (mis. `advisor-rx`, `hydroprisma`, dan sub-brand `advisor-rx/grey-hair`, `advisor-rx/strong-hair`) — itu normal.
+Slug brand yang berlaku sekarang (nama folder aset = slug ini, **huruf kecil semua**): `nestle-pure-life`, `vica`, `asters`, `advisor`, `hair-energy`, `t1`, `128`, `salon-daily`, `honey-dew`, `concept-ultimax`, `rebonding-system`, `texture-experience`, `mk3`, `inoskin`, `lou`, `make-it`, `finest`, `barber-daily`, `wonhae`, `omoide`, `floaty`, `fitmeup`. Beberapa brand/sub-brand punya folder aset tapi belum di-wire (mis. `advisor-rx`, `hydroprisma`, dan sub-brand `advisor-rx/lines/grey-hair`, `advisor-rx/lines/strong-hair`) — itu normal.
 
 > Registrasi brand kini **otomatis dari `content/brands/*.ts`** (satu file per brand), bukan lagi didaftarkan manual. Lihat [BRAND_PAGE_GUIDE.md](BRAND_PAGE_GUIDE.md) §5.
 
-> **Makarizo** dan **Makarizo Professional** adalah brand payung — keduanya **tidak punya halaman sendiri** (`/brands/makarizo` sengaja 404), jadi tidak perlu folder aset. Aset masuk ke sub-brand-nya (mis. `brand/hair-energy/`).
+> **Makarizo** dan **Makarizo Professional** adalah brand payung — keduanya **tidak punya halaman sendiri** (`/brands/makarizo` sengaja 404), jadi tidak perlu folder aset. Aset masuk ke sub-brand-nya (mis. `media/brands/hair-energy/`).
 
 > Kalau ragu nama folder/file, **kirim apa adanya** dan beri tahu developer — penamaan final disambungkan di kode.
 
-### 4a. Halaman Sub-Brand (Product Line) — `public/brand/{brand}/{sub-brand}/`
+### 4a. Halaman Sub-Brand (Product Line) — `public/media/brands/{brand}/lines/{sub-brand}/`
 
 Sub-brand = **lini produk** di dalam sebuah brand (cth Hair Energy → Fibertherapy Creambath, Scentsations, Shampoo, Vitaglitz). Halamannya di `/brands/{brand}/{sub-brand}` (cth `/brands/hair-energy/creambath`), **tidak ada di navbar** — diakses dari banner varian di showcase halaman brand. Layout: **banner (parallax) → showcase (gambar title + grid kartu) → cross-sell → CTA** (tanpa About, lineup, & blok kandungan).
 
@@ -347,31 +365,31 @@ Aset ditaruh **bersarang di dalam folder brand induk**:
 
 | Bagian | Folder | Isi | Fit | Parallax? |
 |---|---|---|:---:|:---:|
-| Banner hero | `brand/{brand}/{sub}/hero/` | `wordmark.png` (logo, fade-in) + layer produk PNG **dinamai angka urut fade-in** (`1.png`, `2.png`, …). Produk 1 fade-in dari kiri, produk 2 dari kanan. Judul/subjudul/tombol = teks HTML, **bukan** gambar. Di HP urutannya vertikal: wordmark → produk → wording. | contain | **ya** |
-| Showcase — title | `brand/{brand}/{sub}/showcase/` | 1 gambar title di atas grid kartu. | contain | tidak |
-| Showcase — kartu | `brand/{brand}/{sub}/showcase/` | 1 gambar per varian. **Gambar SUDAH termasuk background + border kartunya** — developer hanya menempatkan gambar, tidak menambah bingkai/latar apa pun. | contain | **tidak** (gambar utuh) |
+| Banner hero | `media/brands/{brand}/lines/{sub}/hero/` | `wordmark.png` (logo, fade-in) + layer produk PNG **dinamai angka urut fade-in** (`1.png`, `2.png`, …). Produk 1 fade-in dari kiri, produk 2 dari kanan. Judul/subjudul/tombol = teks HTML, **bukan** gambar. Di HP urutannya vertikal: wordmark → produk → wording. | contain | **ya** |
+| Showcase — title | `media/brands/{brand}/lines/{sub}/showcase/` | 1 gambar title di atas grid kartu. | contain | tidak |
+| Showcase — kartu | `media/brands/{brand}/lines/{sub}/showcase/` | 1 gambar per varian. **Gambar SUDAH termasuk background + border kartunya** — developer hanya menempatkan gambar, tidak menambah bingkai/latar apa pun. | contain | **tidak** (gambar utuh) |
 
 - **Rasio kartu:** semua kartu di satu halaman **rasionya sama** (biar grid rapi) — beri tahu developer rasio title, kartu grid, dan kartu featured (full-width) supaya diset di `lib/subBrands.ts` (`showcaseTitleAspect`, `cardAspect`, `featuredAspect`) dan tidak ada ruang kosong.
 - **Inoskin Young & Bright:** area kartu yang terlihat memakai rasio **2304×2987**. Margin kanvas transparan pada `1.png`, `2.png`, dan `5.png` dipotong saat render dengan COVER + posisi tepi; artwork kartunya tetap utuh dan jarak grid konsisten di desktop maupun HP.
 - **Bleaching Powder:** `showcase/title.png` memakai rasio **4661×2442 (1.909:1)** dan kartu featured `showcase/1.png` memakai rasio **5365×2434 (2.204:1)**. Keduanya ditampilkan utuh dengan `object-contain` pada desktop dan mobile; jangan memasukkan aset landscape ini ke slot portrait karena akan menghasilkan ruang kosong berlebih.
-- **Finest Toothpaste:** hero memakai dua layer transparan `hero/1.png` (**3026×4424**) dan `hero/2.png` (**3176×4735**) dengan `object-contain` pada desktop/mobile. Showcase memakai title `showcase/title.png` (**4376×3898; 1.123:1**) pada lebar maksimum **768px**, sama seperti title showcase brand Finest. Dua banner berlapis memakai lebar konten **`max-w-content`**: produk `1-1.png` (**5065×4223**) di atas latar `1-2.png` (**4810×2260**), dan produk `2-1.png` (**4416×3708**) di atas latar `2-2.png` (**4810×2261**). Frame kedua banner memakai rasio **4810:2261 (2.128:1)**, `object-cover` untuk latar, `object-contain` untuk produk, serta perilaku yang sama pada desktop/mobile di `public/{locale}/brand/finest/finest-toothpaste/`.
-- **Make It Extrait d’Intense:** hero memakai wordmark transparan `hero/wordmark.png` (**1121×334; 3.356:1**) dan satu layer produk `hero/1.png` (**3779×5181; 0.729:1**), keduanya `object-contain` pada desktop/mobile di atas latar maroon `#7D2628`. Showcase memakai satu title lebar `showcase/title.png` (**4803×5026; 0.956:1**) dengan `object-contain` dan batas `max-w-content`. Semua aset berada di `public/{locale}/brand/makeit/makeit-extrait-dintense/`.
-- **Make It Fragrance Enhancing Primer:** hero memakai wordmark transparan `hero/wordmark.png` (**1121×334; 3.356:1**) dan satu layer produk `hero/1.png` (**4396×5360; 0.820:1**), keduanya `object-contain` pada desktop/mobile di atas latar maroon `#7D2628`. Showcase memakai satu title lebar `showcase/title.png` (**4744×5026; 0.944:1**) dengan `object-contain` dan batas `max-w-content`. Semua aset berada di `public/{locale}/brand/makeit/makeit-fragrance-enhancing-primer/`.
-- **Make It Extrait de Parfum:** hero memakai wordmark transparan `hero/wordmark.png` (**1121×334**) serta dua layer produk `hero/1.png` (**3013×4330; 0.696:1**) dan `hero/2.png` (**3242×4411; 0.735:1**) dengan `object-contain` pada desktop/mobile di atas latar maroon `#7D2628`. Showcase mengikuti pola Strawberry Yoghurt: title `showcase/title.png` (**4867×4912; 0.991:1**), empat kartu portrait **2302×2986 (0.771:1)**, dan featured landscape `showcase/3.png` (**4687×2956; 1.586:1**) di tengah. Semua aset berada di `public/{locale}/brand/makeit/makeit-extrait-de-parfum/`.
-- **128 Bright & Radiance:** hero memakai salinan wordmark brand 128 `hero/wordmark.png` (**2160×1415; 1.526:1**) dan cluster produk `hero/cluster.png` (**3493×2130; 1.640:1**) dengan `object-contain` pada desktop/mobile di atas latar coral `#FBA084`. Showcase memakai title `showcase/title.png` (**4742×3703; 1.280:1**) dan empat kartu portrait `showcase/1.png`–`4.png` (**2302×2986/2987; 0.771:1**) yang juga ditampilkan utuh dengan `object-contain`. Semua aset berada di `public/{locale}/brand/128/bright-radiance/`.
-- **128 Ace Pro:** hero memakai salinan wordmark brand 128 `hero/wordmark.png` (**2160×1415; 1.526:1**) dan cluster dua produk `hero/1.png` (**2377×3502; 0.679:1**) dengan `object-contain` pada desktop/mobile di atas latar hijau `#AABD7A`. Showcase memakai title `showcase/title.png` (**4865×3703; 1.314:1**) dan dua banner lengkap `showcase/1.png` / `2.png` (**4687×2233/2234; 2.099:1**). Banner ditampilkan utuh sebagai artwork tunggal dengan `object-cover` dan tanpa layer produk tambahan di `public/{locale}/brand/128/ace-pro/`.
-- **128 Advanced Age Repair:** hero memakai salinan wordmark brand 128 `hero/wordmark.png` (**2160×1415; 1.526:1**) dan produk moisturizer `hero/1.png` (**2317×3552; 0.652:1**) dengan `object-contain` pada desktop/mobile di atas latar ungu `#826D99`. Showcase memakai title `showcase/title.png` (**4648×3703; 1.255:1**) dengan `object-contain` pada lebar konten penuh, sehingga komposisi produk dan manfaat tetap utuh. Semua aset berada di `public/{locale}/brand/128/advanced-age-repair/`.
-- **128 Intensive Barrier Care:** hero memakai salinan wordmark brand 128 `hero/wordmark.png` (**2160×1415; 1.526:1**) dan cluster tiga produk `hero/1.png` (**2784×4313; 0.645:1**) dengan `object-contain` pada desktop/mobile di atas latar beige `#CFA985`. Showcase memakai title `showcase/title.png` (**4649×3703; 1.255:1**), featured Facial Wash landscape `showcase/1.png` (**4687×2233; 2.099:1**), serta kartu Primer dan Boost `showcase/2.png` / `3.png` (**2302×2987; 0.771:1**). Semua ditampilkan utuh dengan `object-contain` di `public/{locale}/brand/128/intensive-barrier-care/`.
-- **Rebonding System Super Gold:** hero memakai wordmark transparan `hero/wordmark.png` (**1123×283; 3.968:1**) dan satu layer produk `hero/1.png` (**2482×2446; 1.015:1**) dengan `object-contain` pada desktop/mobile di atas latar warm off-white `#F2EFE9`. Showcase memakai komposisi title lebar `showcase/title.png` (**5093×3013; 1.690:1**) dengan `object-contain` dan batas `max-w-content`; tidak ada kartu produk tambahan. Semua aset berada di `public/{locale}/brand/rebonding-system/super-gold/`.
-- **Rebonding System Gold Edition:** hero memakai wordmark transparan `hero/wordmark.png` (**1123×283; 3.968:1**) dan satu layer produk `hero/1.png` (**1921×1840; 1.044:1**) dengan `object-contain` pada desktop/mobile di atas latar warm off-white `#F2EFE9`. Showcase memakai komposisi title lebar `showcase/title.png` (**5101×3029; 1.684:1**) dengan `object-contain` dan batas `max-w-content`; tidak ada kartu produk tambahan. Semua aset berada di `public/{locale}/brand/rebonding-system/gold-edition/`.
-- **Rebonding System Anti Resistant:** hero memakai wordmark transparan `hero/wordmark.png` (**1123×283; 3.968:1**) dan satu layer produk `hero/1.png` (**2659×2632; 1.010:1**) dengan `object-contain` pada desktop/mobile di atas latar warm off-white `#F2EFE9`. Showcase memakai komposisi title lebar `showcase/title.png` (**5159×3029; 1.703:1**) dengan `object-contain` dan batas `max-w-content`; tidak ada kartu produk tambahan. Semua aset berada di `public/{locale}/brand/rebonding-system/anti-resistant/`.
-- **Rebonding System Extremely Damaged:** hero memakai wordmark transparan `hero/wordmark.png` (**1123×283; 3.968:1**) dan satu layer produk `hero/1.png` (**1921×1839; 1.045:1**) dengan `object-contain` pada desktop/mobile di atas latar warm off-white `#F2EFE9`. Showcase memakai komposisi title lebar `showcase/title.png` (**5177×3039; 1.703:1**) dengan `object-contain` dan batas `max-w-content`; tidak ada kartu produk tambahan. Semua aset berada di `public/{locale}/brand/rebonding-system/extremely-damaged/`.
-- **HydroPrisma Mild:** hero memakai cluster produk `hero/1.png` (**2863×3538; 0.809:1**) dengan `object-contain` pada desktop/mobile di atas latar lavender `#EAE6EF`, menggunakan wordmark HydroPrisma dari asset parent. Showcase memakai title `showcase/title.png` (**4192×3008; 1.394:1**), dua kartu portrait `showcase/1.png`–`2.png` (**2302×2986; 0.771:1**), dan featured Milky Neutralizer `showcase/3.png` (**4687×3494; 1.341:1**), semuanya `object-contain`. Semua aset sub-brand berada di `public/{locale}/brand/hydroprisma/mild/`.
-- **HydroPrisma Medium:** hero memakai wordmark `hero/wordmark.png` (**1548×321; 4.822:1**) dan cluster produk `hero/1.png` (**3541×4225; 0.838:1**) dengan `object-contain` pada desktop/mobile di atas latar lavender `#EAE6EF`. Showcase memakai title `showcase/title.png` (**4335×3749; 1.156:1**), dua kartu portrait `showcase/1.png`–`2.png` (**2302×2986; 0.771:1**), dan featured Milky Neutralizer `showcase/3.png` (**4687×3494; 1.341:1**), semuanya `object-contain`. Semua aset berada di `public/{locale}/brand/hydroprisma/medium/`.
-- **HydroPrisma Strong:** hero memakai wordmark `hero/wordmark.png` (**1548×321; 4.822:1**) dan cluster produk `hero/1.png` (**3297×3994; 0.825:1**) dengan `object-contain` pada desktop/mobile di atas latar lavender `#EAE6EF`. Showcase memakai title `showcase/title.png` (**4171×3474; 1.201:1**), dua kartu portrait `showcase/1.png`–`2.png` (**2302×2986; 0.771:1**), dan featured Milky Neutralizer `showcase/3.png` (**4687×3494; 1.341:1**), semuanya `object-contain`. Semua aset berada di `public/{locale}/brand/hydroprisma/strong/`.
+- **Finest Toothpaste:** hero memakai dua layer transparan `hero/1.png` (**3026×4424**) dan `hero/2.png` (**3176×4735**) dengan `object-contain` pada desktop/mobile. Showcase memakai title `showcase/title.png` (**4376×3898; 1.123:1**) pada lebar maksimum **768px**, sama seperti title showcase brand Finest. Dua banner berlapis memakai lebar konten **`max-w-content`**: produk `1-1.png` (**5065×4223**) di atas latar `1-2.png` (**4810×2260**), dan produk `2-1.png` (**4416×3708**) di atas latar `2-2.png` (**4810×2261**). Frame kedua banner memakai rasio **4810:2261 (2.128:1)**, `object-cover` untuk latar, `object-contain` untuk produk, serta perilaku yang sama pada desktop/mobile di `public/media/brands/finest/lines/finest-toothpaste/`.
+- **Make It Extrait d’Intense:** hero memakai wordmark transparan `hero/wordmark.png` (**1121×334; 3.356:1**) dan satu layer produk `hero/1.png` (**3779×5181; 0.729:1**), keduanya `object-contain` pada desktop/mobile di atas latar maroon `#7D2628`. Showcase memakai satu title lebar `showcase/title.png` (**4803×5026; 0.956:1**) dengan `object-contain` dan batas `max-w-content`. Semua aset berada di `public/media/brands/make-it/lines/makeit-extrait-dintense/`.
+- **Make It Fragrance Enhancing Primer:** hero memakai wordmark transparan `hero/wordmark.png` (**1121×334; 3.356:1**) dan satu layer produk `hero/1.png` (**4396×5360; 0.820:1**), keduanya `object-contain` pada desktop/mobile di atas latar maroon `#7D2628`. Showcase memakai satu title lebar `showcase/title.png` (**4744×5026; 0.944:1**) dengan `object-contain` dan batas `max-w-content`. Semua aset berada di `public/media/brands/make-it/lines/makeit-fragrance-enhancing-primer/`.
+- **Make It Extrait de Parfum:** hero memakai wordmark transparan `hero/wordmark.png` (**1121×334**) serta dua layer produk `hero/1.png` (**3013×4330; 0.696:1**) dan `hero/2.png` (**3242×4411; 0.735:1**) dengan `object-contain` pada desktop/mobile di atas latar maroon `#7D2628`. Showcase mengikuti pola Strawberry Yoghurt: title `showcase/title.png` (**4867×4912; 0.991:1**), empat kartu portrait **2302×2986 (0.771:1)**, dan featured landscape `showcase/3.png` (**4687×2956; 1.586:1**) di tengah. Semua aset berada di `public/media/brands/make-it/lines/makeit-extrait-de-parfum/`.
+- **128 Bright & Radiance:** hero memakai salinan wordmark brand 128 `hero/wordmark.png` (**2160×1415; 1.526:1**) dan cluster produk `hero/cluster.png` (**3493×2130; 1.640:1**) dengan `object-contain` pada desktop/mobile di atas latar coral `#FBA084`. Showcase memakai title `showcase/title.png` (**4742×3703; 1.280:1**) dan empat kartu portrait `showcase/1.png`–`4.png` (**2302×2986/2987; 0.771:1**) yang juga ditampilkan utuh dengan `object-contain`. Semua aset berada di `public/media/brands/128/lines/bright-radiance/`.
+- **128 Ace Pro:** hero memakai salinan wordmark brand 128 `hero/wordmark.png` (**2160×1415; 1.526:1**) dan cluster dua produk `hero/1.png` (**2377×3502; 0.679:1**) dengan `object-contain` pada desktop/mobile di atas latar hijau `#AABD7A`. Showcase memakai title `showcase/title.png` (**4865×3703; 1.314:1**) dan dua banner lengkap `showcase/1.png` / `2.png` (**4687×2233/2234; 2.099:1**). Banner ditampilkan utuh sebagai artwork tunggal dengan `object-cover` dan tanpa layer produk tambahan di `public/media/brands/128/lines/ace-pro/`.
+- **128 Advanced Age Repair:** hero memakai salinan wordmark brand 128 `hero/wordmark.png` (**2160×1415; 1.526:1**) dan produk moisturizer `hero/1.png` (**2317×3552; 0.652:1**) dengan `object-contain` pada desktop/mobile di atas latar ungu `#826D99`. Showcase memakai title `showcase/title.png` (**4648×3703; 1.255:1**) dengan `object-contain` pada lebar konten penuh, sehingga komposisi produk dan manfaat tetap utuh. Semua aset berada di `public/media/brands/128/lines/advanced-age-repair/`.
+- **128 Intensive Barrier Care:** hero memakai salinan wordmark brand 128 `hero/wordmark.png` (**2160×1415; 1.526:1**) dan cluster tiga produk `hero/1.png` (**2784×4313; 0.645:1**) dengan `object-contain` pada desktop/mobile di atas latar beige `#CFA985`. Showcase memakai title `showcase/title.png` (**4649×3703; 1.255:1**), featured Facial Wash landscape `showcase/1.png` (**4687×2233; 2.099:1**), serta kartu Primer dan Boost `showcase/2.png` / `3.png` (**2302×2987; 0.771:1**). Semua ditampilkan utuh dengan `object-contain` di `public/media/brands/128/lines/intensive-barrier-care/`.
+- **Rebonding System Super Gold:** hero memakai wordmark transparan `hero/wordmark.png` (**1123×283; 3.968:1**) dan satu layer produk `hero/1.png` (**2482×2446; 1.015:1**) dengan `object-contain` pada desktop/mobile di atas latar warm off-white `#F2EFE9`. Showcase memakai komposisi title lebar `showcase/title.png` (**5093×3013; 1.690:1**) dengan `object-contain` dan batas `max-w-content`; tidak ada kartu produk tambahan. Semua aset berada di `public/media/brands/rebonding-system/lines/super-gold/`.
+- **Rebonding System Gold Edition:** hero memakai wordmark transparan `hero/wordmark.png` (**1123×283; 3.968:1**) dan satu layer produk `hero/1.png` (**1921×1840; 1.044:1**) dengan `object-contain` pada desktop/mobile di atas latar warm off-white `#F2EFE9`. Showcase memakai komposisi title lebar `showcase/title.png` (**5101×3029; 1.684:1**) dengan `object-contain` dan batas `max-w-content`; tidak ada kartu produk tambahan. Semua aset berada di `public/media/brands/rebonding-system/lines/gold-edition/`.
+- **Rebonding System Anti Resistant:** hero memakai wordmark transparan `hero/wordmark.png` (**1123×283; 3.968:1**) dan satu layer produk `hero/1.png` (**2659×2632; 1.010:1**) dengan `object-contain` pada desktop/mobile di atas latar warm off-white `#F2EFE9`. Showcase memakai komposisi title lebar `showcase/title.png` (**5159×3029; 1.703:1**) dengan `object-contain` dan batas `max-w-content`; tidak ada kartu produk tambahan. Semua aset berada di `public/media/brands/rebonding-system/lines/anti-resistant/`.
+- **Rebonding System Extremely Damaged:** hero memakai wordmark transparan `hero/wordmark.png` (**1123×283; 3.968:1**) dan satu layer produk `hero/1.png` (**1921×1839; 1.045:1**) dengan `object-contain` pada desktop/mobile di atas latar warm off-white `#F2EFE9`. Showcase memakai komposisi title lebar `showcase/title.png` (**5177×3039; 1.703:1**) dengan `object-contain` dan batas `max-w-content`; tidak ada kartu produk tambahan. Semua aset berada di `public/media/brands/rebonding-system/lines/extremely-damaged/`.
+- **HydroPrisma Mild:** hero memakai cluster produk `hero/1.png` (**2863×3538; 0.809:1**) dengan `object-contain` pada desktop/mobile di atas latar lavender `#EAE6EF`, menggunakan wordmark HydroPrisma dari asset parent. Showcase memakai title `showcase/title.png` (**4192×3008; 1.394:1**), dua kartu portrait `showcase/1.png`–`2.png` (**2302×2986; 0.771:1**), dan featured Milky Neutralizer `showcase/3.png` (**4687×3494; 1.341:1**), semuanya `object-contain`. Semua aset sub-brand berada di `public/media/brands/hydroprisma/lines/mild/`.
+- **HydroPrisma Medium:** hero memakai wordmark `hero/wordmark.png` (**1548×321; 4.822:1**) dan cluster produk `hero/1.png` (**3541×4225; 0.838:1**) dengan `object-contain` pada desktop/mobile di atas latar lavender `#EAE6EF`. Showcase memakai title `showcase/title.png` (**4335×3749; 1.156:1**), dua kartu portrait `showcase/1.png`–`2.png` (**2302×2986; 0.771:1**), dan featured Milky Neutralizer `showcase/3.png` (**4687×3494; 1.341:1**), semuanya `object-contain`. Semua aset berada di `public/media/brands/hydroprisma/lines/medium/`.
+- **HydroPrisma Strong:** hero memakai wordmark `hero/wordmark.png` (**1548×321; 4.822:1**) dan cluster produk `hero/1.png` (**3297×3994; 0.825:1**) dengan `object-contain` pada desktop/mobile di atas latar lavender `#EAE6EF`. Showcase memakai title `showcase/title.png` (**4171×3474; 1.201:1**), dua kartu portrait `showcase/1.png`–`2.png` (**2302×2986; 0.771:1**), dan featured Milky Neutralizer `showcase/3.png` (**4687×3494; 1.341:1**), semuanya `object-contain`. Semua aset berada di `public/media/brands/hydroprisma/lines/strong/`.
 - **Skeleton:** selama folder masih kosong, tiap slot gambar tampil sebagai **kotak placeholder polos** (abu muda, tanpa bingkai) — jadi halaman sudah tampil sebagai wireframe. Begitu aset dimasukkan & path diisi di [lib/subBrands.ts](../lib/subBrands.ts), gambar asli langsung menggantikannya.
 - **Teks** (tagline hero, tombol) diisi di `lib/subBrands.ts`; sisanya (judul, nama varian) sudah menyatu di dalam gambar showcase.
-- Contoh folder: `brand/hair-energy/creambath/hero/`, `brand/hair-energy/creambath/showcase/`.
+- Contoh folder: `media/brands/hair-energy/lines/creambath/hero/`, `media/brands/hair-energy/lines/creambath/showcase/`.
 
 ---
 

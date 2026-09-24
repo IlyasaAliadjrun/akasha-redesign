@@ -22,7 +22,7 @@ Lebih kecil = **buram permanen** — optimizer Next **tidak pernah** memperbesar
 
 # BAGIAN 1 — HALAMAN BRAND (`/brands/{slug}`)
 
-## § 1. Hero — `public/brand/{slug}/hero/`
+## § 1. Hero — `public/media/brands/{slug}/hero/`
 
 Hero setinggi `100svh`, jadi ukurannya ikut **viewport**, bukan kolom konten.
 
@@ -57,7 +57,7 @@ Hair Energy `min(28vw, 56vh)` → 28 × 40 = 1120 → **1200 px** (dibulatkan na
 
 ---
 
-## § 2. Product Lineup — `public/brand/{slug}/product-lineup/`
+## § 2. Product Lineup — `public/media/brands/{slug}/product-lineup/`
 
 Kartu: `w-[80vw] sm:w-[46vw] md:w-[34vw] lg:w-[27vw] max-w-[380px]`, panggung `aspect-square`, hover `scale(1.10)`.
 
@@ -74,7 +74,7 @@ Kartu: `w-[80vw] sm:w-[46vw] md:w-[34vw] lg:w-[27vw] max-w-[380px]`, panggung `a
 
 ---
 
-## § 3. About (3 kartu) — `public/brand/{slug}/about/`
+## § 3. About (3 kartu) — `public/media/brands/{slug}/about/`
 
 Grid 3 kolom di `sm+`, slider swipe di HP. `object-cover`, hover `scale(1.05)`.
 
@@ -91,7 +91,7 @@ Grid 3 kolom di `sm+`, slider swipe di HP. `object-cover`, hover `scale(1.05)`.
 
 ---
 
-## § 4. Showcase — `public/brand/{slug}/showcase/`
+## § 4. Showcase — `public/media/brands/{slug}/showcase/`
 
 ### 4a. `title.png` — poster utama
 
@@ -133,7 +133,7 @@ Tinggi = `productHeight` × 360 px. Nilai tertinggi yang terpakai saat ini adala
 
 # BAGIAN 2 — HALAMAN SUB-BRAND (`/brands/{slug}/{line}`)
 
-Contoh: `/brands/hair-energy/creambath`. Aset di `public/brand/{slug}/{line}/`.
+Contoh: `/brands/hair-energy/creambath`. Aset di `public/media/brands/{slug}/lines/{line}/`.
 
 Section ini pakai **lebar tetap dalam px** (bukan vw), jadi targetnya jauh lebih kecil dari halaman brand.
 
@@ -162,7 +162,7 @@ Total sekarang: **123,6 MB**. Target setelah perbaikan: **±12 MB**.
 
 Legenda: 🔴 kritis · 🟠 boros · 🟢 sudah pas
 
-## Hair Energy (`/brand/hair-energy/`)
+## Hair Energy (`/media/brands/hair-energy/`)
 
 | File | Sekarang | Target | Status |
 |---|---|---|:---:|
@@ -175,7 +175,7 @@ Legenda: 🔴 kritis · 🟠 boros · 🟢 sudah pas
 | `showcase/1-1,2-1,3-1.png` | 2687×3660 · 1,2–2,0 MB | **734×1000** | 🔴 3,7× |
 | `showcase/4-1.png` | 1470×2073 · **2,5 MB** | **709×1000** | 🔴 file terberat per-piksel |
 
-## Nestlé Pure Life (`/brand/nestle-pure-life/`)
+## Nestlé Pure Life (`/media/brands/nestle-pure-life/`)
 
 | File | Sekarang | Target | Status |
 |---|---|---|:---:|
@@ -191,7 +191,7 @@ Legenda: 🔴 kritis · 🟠 boros · 🟢 sudah pas
 | `showcase/{n}-2.png` | 1102×488 · 421–429 KB | **1800×797** | 🔴 **kurang besar** |
 | `showcase/{n}-1.png` | 434×484 · 69–204 KB | **897×1000** | 🔴 **kurang besar** — varian 1 dirender 450 px tinggi, jadi buram bahkan di layar non-Retina |
 
-## VICA (`/brand/vica/`)
+## VICA (`/media/brands/vica/`)
 
 | File | Sekarang | Target | Status |
 |---|---|---|:---:|

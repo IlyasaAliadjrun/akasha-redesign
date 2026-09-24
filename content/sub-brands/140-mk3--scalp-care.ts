@@ -11,17 +11,17 @@ const entry: SubBrand = {
     // Light MK3 banner: dark hero copy, controls, and navbar keep sufficient contrast.
     theme: "dark",
     bannerBg: "#E7E3E0",
-    heroWordmark: "/brand/mk3/scalp-care/hero/wordmark.png",
+    heroWordmark: "/media/brands/mk3/lines/scalp-care/hero/wordmark.png",
     heroWordmarkAspect: "1519 / 631",
     // One composed cluster (exfoliator + shampoo + both scalp serums) → a single layer.
     // It fills ~88% × 90% of its canvas, so the layer box is only slightly larger than
     // the visible cluster.
     heroLayers: [
-      { src: "/brand/mk3/scalp-care/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
+      { src: "/media/brands/mk3/lines/scalp-care/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(35vw, 60vh)", aspectRatio: "2340 / 2860", left: "59.6%", top: "15.7%",
         mobile: { left: "5%", top: "-12%", width: "85%" } },
     ],
-    showcaseTitle: "/brand/mk3/scalp-care/showcase/title.png",
+    showcaseTitle: "/media/brands/mk3/lines/scalp-care/showcase/title.png",
     showcaseTitleAspect: "4107 / 3321",
     showcaseTitleOffsetY: "110px",
     // These four card graphics carry different amounts of baked-in vertical margin
@@ -30,10 +30,10 @@ const entry: SubBrand = {
     // shorter ones simply centred in their cell.
     cardAspect: "1151 / 1641",
     cards: [
-      { image: "/brand/mk3/scalp-care/showcase/1.png", label: { en: "Scalp Exfoliator Dandruff & Hair Fall", id: "Scalp Exfoliator Dandruff & Hair Fall" } },
-      { image: "/brand/mk3/scalp-care/showcase/2.png", label: { en: "Shampoo Dandruff & Hair Fall", id: "Shampoo Dandruff & Hair Fall" } },
-      { image: "/brand/mk3/scalp-care/showcase/3.png", label: { en: "Scalp Serum Hair Fall Treatment", id: "Scalp Serum Hair Fall Treatment" } },
-      { image: "/brand/mk3/scalp-care/showcase/4.png", label: { en: "Scalp Serum Dandruff Treatment", id: "Scalp Serum Dandruff Treatment" } },
+      { image: { en: "/media/brands/mk3/lines/scalp-care/showcase/1.en.png", id: "/media/brands/mk3/lines/scalp-care/showcase/1.id.png" }, label: { en: "Scalp Exfoliator Dandruff & Hair Fall", id: "Scalp Exfoliator Dandruff & Hair Fall" } },
+      { image: { en: "/media/brands/mk3/lines/scalp-care/showcase/2.en.png", id: "/media/brands/mk3/lines/scalp-care/showcase/2.id.png" }, label: { en: "Shampoo Dandruff & Hair Fall", id: "Shampoo Dandruff & Hair Fall" } },
+      { image: { en: "/media/brands/mk3/lines/scalp-care/showcase/3.en.png", id: "/media/brands/mk3/lines/scalp-care/showcase/3.id.png" }, label: { en: "Scalp Serum Hair Fall Treatment", id: "Scalp Serum Hair Fall Treatment" } },
+      { image: { en: "/media/brands/mk3/lines/scalp-care/showcase/4.en.png", id: "/media/brands/mk3/lines/scalp-care/showcase/4.id.png" }, label: { en: "Scalp Serum Dandruff Treatment", id: "Scalp Serum Dandruff Treatment" } },
     ],
   };
 

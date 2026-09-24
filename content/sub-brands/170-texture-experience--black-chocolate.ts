@@ -15,28 +15,28 @@ const entry: SubBrand = {
     accentHex: "#423A31",
     bannerBg: "#eee8e0",
     theme: "accent-light",
-    heroWordmark: "/brand/texture-experience/black-chocolate/hero/wordmark.png",
+    heroWordmark: "/media/brands/texture-experience/lines/black-chocolate/hero/wordmark.png",
     heroWordmarkAspect: "502 / 214",
     // One composed cluster (creambath tube + Choco Hazelnut hair perfume) → a single
     // layer. The PNG has transparent padding (the products fill ~66% × 76% of the
     // canvas), so the layer box is larger than the pair looks.
     heroLayers: [
-      { src: "/brand/texture-experience/black-chocolate/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
+      { src: "/media/brands/texture-experience/lines/black-chocolate/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(33vw, 85vh)", aspectRatio: "3040 / 3778", left: "55.5%", top: "4%",
         mobile: { left: "-5.5%", top: "-29%", width: "98%" } },
     ],
-    showcaseTitle: "/brand/texture-experience/black-chocolate/showcase/title.png",
+    showcaseTitle: "/media/brands/texture-experience/lines/black-chocolate/showcase/title.png",
     showcaseTitleAspect: "3870 / 3233",
     // The creambath line-up ships as a landscape card, so it takes the full-width slot.
-    featured: { image: "/brand/texture-experience/black-chocolate/showcase/3.png", label: { en: "Creambath Black Chocolate — sachet, tube & jar", id: "Creambath Black Chocolate — sachet, tube & jar" } },
+    featured: { image: { en: "/media/brands/texture-experience/lines/black-chocolate/showcase/3.en.png", id: "/media/brands/texture-experience/lines/black-chocolate/showcase/3.id.png" }, label: { en: "Creambath Black Chocolate — sachet, tube & jar", id: "Creambath Black Chocolate — sachet, tube & jar" } },
     featuredAspect: "4695 / 2222",
     featuredPosition: "middle",
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/texture-experience/black-chocolate/showcase/1.png", label: { en: "Shampoo Black Chocolate", id: "Shampoo Black Chocolate" } },
-      { image: "/brand/texture-experience/black-chocolate/showcase/2.png", label: { en: "Conditioner Black Chocolate", id: "Conditioner Black Chocolate" } },
-      { image: "/brand/texture-experience/black-chocolate/showcase/4.png", label: { en: "Hair Perfume Choco Hazelnut", id: "Hair Perfume Choco Hazelnut" } },
-      { image: "/brand/texture-experience/black-chocolate/showcase/5.png", label: { en: "Smooth-Bright Body Essence Black Chocolate", id: "Smooth-Bright Body Essence Black Chocolate" } },
+      { image: { en: "/media/brands/texture-experience/lines/black-chocolate/showcase/1.en.png", id: "/media/brands/texture-experience/lines/black-chocolate/showcase/1.id.png" }, label: { en: "Shampoo Black Chocolate", id: "Shampoo Black Chocolate" } },
+      { image: { en: "/media/brands/texture-experience/lines/black-chocolate/showcase/2.en.png", id: "/media/brands/texture-experience/lines/black-chocolate/showcase/2.id.png" }, label: { en: "Conditioner Black Chocolate", id: "Conditioner Black Chocolate" } },
+      { image: { en: "/media/brands/texture-experience/lines/black-chocolate/showcase/4.en.png", id: "/media/brands/texture-experience/lines/black-chocolate/showcase/4.id.png" }, label: { en: "Hair Perfume Choco Hazelnut", id: "Hair Perfume Choco Hazelnut" } },
+      { image: { en: "/media/brands/texture-experience/lines/black-chocolate/showcase/5.en.png", id: "/media/brands/texture-experience/lines/black-chocolate/showcase/5.id.png" }, label: { en: "Smooth-Bright Body Essence Black Chocolate", id: "Smooth-Bright Body Essence Black Chocolate" } },
     ],
   };
 

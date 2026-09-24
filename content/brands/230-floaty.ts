@@ -28,7 +28,7 @@ const entry: Brand = {
       // transparent margin is discounted); the 880px cap keeps DPR 2 at 1760px, just
       // inside the 1795px natural width, so it never renders above its own resolution
       // on the widest breakpoints.
-      { src: "/brand/floaty/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
+      { src: "/media/brands/floaty/hero/1.png", depth: 30, enterFrom: "right", enterDelay: 0.3,
         // `top` is a % of the hero, but the layer's height comes from vw — so a fixed
         // % drifts as the hero's aspect changes and the cluster ends up stacked above
         // the wordmark on shorter/narrower desktops. The calc keeps the layer's own
@@ -45,7 +45,7 @@ const entry: Brand = {
     // and the navbar paints itself white. maxWidth caps the logo at 528px = half its
     // natural 1057px width, so it never renders above its own resolution at DPR 2.
     heroContent: {
-      logo: "/brand/floaty/hero/wordmark.png",
+      logo: "/media/brands/floaty/hero/wordmark.png",
       logoAspect: "1057 / 465",
       logoWidth: "30vw",
       maxWidth: "528px",
@@ -66,9 +66,9 @@ const entry: Brand = {
     // The gram weight rides in `variant` (not `size`) because the card's React key is
     // name+variant: two "Original" SKUs that differ only in `size` would collide.
     products: [
-      { name: "Snack", variant: { en: "Original 60g", id: "Original 60g" }, image: "/brand/floaty/product-lineup/original-60g.png" },
-      { name: "Snack", variant: { en: "Terserah 60g", id: "Terserah 60g" }, image: "/brand/floaty/product-lineup/terserah-60g.png" },
-      { name: "Snack", variant: { en: "Original 16g", id: "Original 16g" }, image: "/brand/floaty/product-lineup/original-16g.png" },
+      { name: "Snack", variant: { en: "Original 60g", id: "Original 60g" }, image: "/media/brands/floaty/product-lineup/original-60g.png" },
+      { name: "Snack", variant: { en: "Terserah 60g", id: "Terserah 60g" }, image: "/media/brands/floaty/product-lineup/terserah-60g.png" },
+      { name: "Snack", variant: { en: "Original 16g", id: "Original 16g" }, image: "/media/brands/floaty/product-lineup/original-16g.png" },
     ],
     // The about art is a FINISHED card: rounded corners, gradient, and the label are
     // all baked into the image (bottom-left) — exactly where BrandAbout prints its own
@@ -77,9 +77,9 @@ const entry: Brand = {
     // in length, purely to keep React's list keys unique. Once the designer supplies
     // about art WITHOUT baked-in wording, the real titles belong here.
     about: [
-      { title: { en: "​", id: "​" }, image: "/brand/floaty/about/1.png" },
-      { title: { en: "​​", id: "​​" }, image: "/brand/floaty/about/2.png" },
-      { title: { en: "​​​", id: "​​​" }, image: "/brand/floaty/about/3.png" },
+      { title: { en: "​", id: "​" }, image: "/media/brands/floaty/about/1.png" },
+      { title: { en: "​​", id: "​​" }, image: "/media/brands/floaty/about/2.png" },
+      { title: { en: "​​​", id: "​​​" }, image: "/media/brands/floaty/about/3.png" },
     ],
     // Showcase — title poster then four SKU banners. Each bg ({n}-2) is a designed blue
     // card (2335×1052) whose wording leaves one side clear, and the pack ({n}-1) sits
@@ -88,7 +88,7 @@ const entry: Brand = {
     // aspect is locked, so the composition is identical at every breakpoint and no
     // `mobile` override is needed.
     showcase: {
-      hero: "/brand/floaty/showcase/title.png",
+      hero: "/media/brands/floaty/showcase/title.png",
       heroAspect: "2340 / 1444",
       productAlign: "center",
       bannerAspect: "2335 / 1052",
@@ -100,15 +100,15 @@ const entry: Brand = {
       // fit that still shows the whole pack.
       variants: [
         // SALT & SAVORY — wording left (ends at 53%), Original 60 g to the right.
-        { bg: "/brand/floaty/showcase/1-2.png", product: "/brand/floaty/showcase/1-1.png", bgAspect: "2335 / 1052", productAspect: "1504 / 1047", productHeight: "100%", productShiftX: "33%" },
+        { bg: "/media/brands/floaty/showcase/1-2.png", product: "/media/brands/floaty/showcase/1-1.png", bgAspect: "2335 / 1052", productAspect: "1504 / 1047", productHeight: "100%", productShiftX: "33%" },
         // FULL OF MYSTERY — wording right (starts at 50%), Terserah to the left.
-        { bg: "/brand/floaty/showcase/2-2.png", product: "/brand/floaty/showcase/2-1.png", bgAspect: "2335 / 1052", productAspect: "1504 / 1047", productHeight: "100%", productShiftX: "-35%" },
+        { bg: "/media/brands/floaty/showcase/2-2.png", product: "/media/brands/floaty/showcase/2-1.png", bgAspect: "2335 / 1052", productAspect: "1504 / 1047", productHeight: "100%", productShiftX: "-35%" },
         // SMALL SIZE · BIG TASTE — wording on both sides, so the 16 g pack is sized to
         // sit inside the 41–58% gap between them, well under the 60 g banners.
-        { bg: "/brand/floaty/showcase/3-2.png", product: "/brand/floaty/showcase/3-1.png", bgAspect: "2335 / 1052", productAspect: "1504 / 1047", productHeight: "95%", productShiftX: "0%" },
+        { bg: "/media/brands/floaty/showcase/3-2.png", product: "/media/brands/floaty/showcase/3-1.png", bgAspect: "2335 / 1052", productAspect: "1504 / 1047", productHeight: "95%", productShiftX: "0%" },
         // COMING SOON — wording is a single line across the top, so the unbranded pack
         // is centred and dropped until its flat bottom meets the card's bottom edge.
-        { bg: "/brand/floaty/showcase/4-2.png", product: "/brand/floaty/showcase/4-1.png", bgAspect: "2335 / 1052", productAspect: "1503 / 1047", productHeight: "95%", productShiftY: "15%" },
+        { bg: "/media/brands/floaty/showcase/4-2.png", product: "/media/brands/floaty/showcase/4-1.png", bgAspect: "2335 / 1052", productAspect: "1503 / 1047", productHeight: "95%", productShiftY: "15%" },
       ],
     },
     reasons: [

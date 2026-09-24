@@ -1,4 +1,4 @@
-import type { Localized } from "@/lib/locale/paths";
+import type { Localized, LocalizedAsset } from "@/lib/locale/paths";
 
 export type DivisionId =
   | "beverage"
@@ -46,7 +46,7 @@ export type HeroLayer = {
 //   product — portrait product that sits centred and overflows the banner top &
 //             bottom, sliding in from the left (odd banner) or right (even banner).
 export type ShowcaseVariant = {
-  bg: string;
+  bg: LocalizedAsset;
   // Omit when the background artwork already includes the product composition.
   product?: string;
   // When set, the whole banner becomes a link — used to send each variant to its
@@ -87,7 +87,7 @@ export type ShowcaseVariant = {
 // logo/wordmark image, a tagline, and a CTA button. Positioned & coloured via CSS
 // so it's reusable per brand.
 export type HeroContent = {
-  logo?: string;
+  logo?: LocalizedAsset;
   logoAspect?: string; // intrinsic ratio of the logo, e.g. "1576 / 1086"
   logoWidth?: string; // CSS width, e.g. "32vw"
   logoOffsetX?: string;
@@ -154,7 +154,7 @@ export type Brand = {
   description: Localized<string>;
   accentClass: string; // tailwind bg class
   accentHex: string;
-  heroImage: string;
+  heroImage: LocalizedAsset;
   // Optional layered/parallax hero. When set, it overrides `heroImage` and the
   // layers animate at different scroll speeds (see BrandHero). Assets must be
   // separated into layers (background/product opaque + decoration PNG transparan).
@@ -179,9 +179,9 @@ export type Brand = {
   }[];
   features?: { title: Localized<string>; body: Localized<string>; image: string }[];
   reasons?: { icon: string; title: Localized<string>; body: Localized<string> }[];
-  about?: { image: string; title: Localized<string> }[];
-  // Poster-style showcase: a title graphic (brand/{slug}/showcase/title) with layered
-  // parallax variant banners (brand/{slug}/showcase/{n}-{1,2}) overlapping its bottom edge.
+  about?: { image: LocalizedAsset; title: Localized<string> }[];
+  // Poster-style showcase: a title graphic (media/brands/{slug}/showcase/title) with layered
+  // parallax variant banners (media/brands/{slug}/showcase/{n}-{1,2}) overlapping its bottom edge.
   // `heroAspect` = hero's intrinsic ratio (CSS aspect-ratio; defaults to square).
   // `heroMaxWidth` caps the title width (CSS, e.g. "22rem") — needed for a portrait
   //   title so it doesn't render far taller than a landscape one at the 768px default.
@@ -191,7 +191,7 @@ export type Brand = {
   // `parallax` = whether banners drift on scroll (default true); set false for a
   //   fully static showcase (NPL).
   showcase?: {
-    hero: string;
+    hero: LocalizedAsset;
     heroAspect?: string;
     heroMaxWidth?: string;
     heroOffsetX?: string;
@@ -221,7 +221,7 @@ export const DIVISIONS: {
     tagline: { en: "Purity you can taste", id: "Kemurnian yang terasa" },
     brandCount: 2,
     accentHex: "#0066CC",
-    image: "/home/division-cards/beverage.jpg",
+    image: "/media/home/division-cards/beverage.jpg",
   },
     {
     id: "food",
@@ -232,7 +232,7 @@ export const DIVISIONS: {
     },
     brandCount: 4,
     accentHex: "#E85D2C",
-    image: "/home/division-cards/food.jpg",
+    image: "/media/home/division-cards/food.jpg",
   },
   {
     id: "beauty",
@@ -240,7 +240,7 @@ export const DIVISIONS: {
     tagline: { en: "Confidence, bottled", id: "Rasa percaya diri, dalam sebotol" },
     brandCount: 6,
     accentHex: "#C9956B",
-    image: "/home/division-cards/beauty.png",
+    image: "/media/home/division-cards/beauty.png",
   },
   {
     id: "mens",
@@ -248,7 +248,7 @@ export const DIVISIONS: {
     tagline: { en: "Groomed, every day", id: "Tampil rapi, setiap hari" },
     brandCount: 1,
     accentHex: "#5B6B7F",
-    image: "/home/division-cards/mens.png",
+    image: "/media/home/division-cards/mens.png",
   },
 ];
 

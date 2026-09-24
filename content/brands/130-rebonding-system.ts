@@ -22,7 +22,7 @@ const entry: Brand = {
     // No standalone 3:4 brand card art — CrossSell reads this; the hero renders from
     // `heroLayers`. The About straight-hair shot is square with the subject centred,
     // so it crops cleanly to 3:4.
-    heroImage: "/brand/rebonding-system/about/3.png",
+    heroImage: "/media/brands/rebonding-system/about/3.png",
     // Hero — flat warm off-white banner (bannerBg; the folder ships no background
     // plate) with the wordmark + wording on the left and the Step 1/Step 2 trio
     // staggered on the right. Hair Energy pattern. Widths use min(vw, vh) with the
@@ -33,20 +33,20 @@ const entry: Brand = {
     // below are markedly wider than the products look.
     heroLayers: [
       // Anti Resistant+ jar — back, highest and left of the pair, enters from the LEFT.
-      { src: "/brand/rebonding-system/hero/2.png", depth: 36, enterFrom: "left", enterDelay: 0,
+      { src: "/media/brands/rebonding-system/hero/2.png", depth: 36, enterFrom: "left", enterDelay: 0,
         width: "min(28.5vw, 35.5vh)", maxWidth: "1002px", aspectRatio: "2004 / 1965", left: "63.3%", top: "14.2%",
         mobile: { left: "24%", top: "24.5%", width: "min(42vw, 28vh)" } },
       // Super Gold+ jar — right of the pair and slightly lower, enters from the RIGHT (3rd).
-      { src: "/brand/rebonding-system/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4,
+      { src: "/media/brands/rebonding-system/hero/3.png", depth: 54, enterFrom: "right", enterDelay: 0.4,
         width: "min(20vw, 47.5vh)", maxWidth: "1066px", aspectRatio: "2132 / 2100", left: "69%", top: "34.4%",
         mobile: { left: "39%", top: "36%", width: "min(44vw, 29vh)" } },
       // Milky Neutralizer+ bottle — front, tilted across the pair, drops in from the TOP (2nd).
-      { src: "/brand/rebonding-system/hero/1.png", depth: 72, enterFrom: "top", enterDelay: 0.2,
+      { src: "/media/brands/rebonding-system/hero/1.png", depth: 72, enterFrom: "top", enterDelay: 0.2,
         width: "min(43vw, 54vh)", maxWidth: "1362px", aspectRatio: "2724 / 3019", left: "57.5%", top: "35%",
         mobile: { left: "11%", top: "37%", width: "min(60vw, 40vh)" } },
     ],
     heroContent: {
-      logo: "/brand/rebonding-system/hero/wordmark.png",
+      logo: "/media/brands/rebonding-system/hero/wordmark.png",
       logoAspect: "1796 / 451",
       logoWidth: "30vw",
       maxWidth: "32vw",
@@ -68,16 +68,16 @@ const entry: Brand = {
     // canvas and one amount of padding, and the Step 2 bottle is genuinely taller
     // and slimmer than the jars, so no `imageScale` correction is needed.
     products: [
-      { name: "Hair Straightening", variant: { en: "Super Gold+", id: "Super Gold+" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 SG.png" },
-      { name: "Hair Straightening", variant: { en: "Gold Edition+", id: "Gold Edition+" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 GE.png" },
-      { name: "Hair Straightening", variant: { en: "Anti Resistant+", id: "Anti Resistant+" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 AR.png" },
-      { name: "Hair Straightening", variant: { en: "Extremely Damaged+", id: "Extremely Damaged+" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/rebonding-system/product-lineup/RBS New Step 1 500mL Jar Imagery 20241111 ED.png" },
-      { name: "Milky Neutralizer+", variant: { en: "For All Hair Types", id: "Untuk Semua Jenis Rambut" }, size: { en: "500 mL", id: "500 mL" }, image: "/brand/rebonding-system/product-lineup/RBS New Step 2 500mL Bottle Imagery 20241111 (3).png" },
+      { name: "Hair Straightening", variant: { en: "Super Gold+", id: "Super Gold+" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/rebonding-system/product-lineup/rbs-new-step-1-500ml-jar-imagery-20241111-sg.png" },
+      { name: "Hair Straightening", variant: { en: "Gold Edition+", id: "Gold Edition+" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/rebonding-system/product-lineup/rbs-new-step-1-500ml-jar-imagery-20241111-ge.png" },
+      { name: "Hair Straightening", variant: { en: "Anti Resistant+", id: "Anti Resistant+" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/rebonding-system/product-lineup/rbs-new-step-1-500ml-jar-imagery-20241111-ar.png" },
+      { name: "Hair Straightening", variant: { en: "Extremely Damaged+", id: "Extremely Damaged+" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/rebonding-system/product-lineup/rbs-new-step-1-500ml-jar-imagery-20241111-ed.png" },
+      { name: "Milky Neutralizer+", variant: { en: "For All Hair Types", id: "Untuk Semua Jenis Rambut" }, size: { en: "500 mL", id: "500 mL" }, image: "/media/brands/rebonding-system/product-lineup/rbs-new-step-2-500ml-bottle-imagery-20241111-3.png" },
     ],
     about: [
-      { title: { en: "Hydrolyzed Keratin", id: "Hydrolyzed Keratin" }, image: "/brand/rebonding-system/about/1.png" },
-      { title: { en: "Hydrolyzed Milk Protein", id: "Hydrolyzed Milk Protein" }, image: "/brand/rebonding-system/about/2.png" },
-      { title: { en: "Natural Straight", id: "Lurus Alami" }, image: "/brand/rebonding-system/about/3.png" },
+      { title: { en: "Hydrolyzed Keratin", id: "Hydrolyzed Keratin" }, image: "/media/brands/rebonding-system/about/1.png" },
+      { title: { en: "Hydrolyzed Milk Protein", id: "Hydrolyzed Milk Protein" }, image: "/media/brands/rebonding-system/about/2.png" },
+      { title: { en: "Natural Straight", id: "Lurus Alami" }, image: "/media/brands/rebonding-system/about/3.png" },
     ],
     // Showcase — the "Rambut Lurus Yang Sehat, Kuat, Lembut & Berkilau" poster, then
     // the four variant banners. Each bg ({n}-2) is a designed 4810×2260 off-white card
@@ -91,25 +91,25 @@ const entry: Brand = {
     // every value stays far below the source resolution. `productShiftY` lifts each
     // jar off the baked-in caption into the upper-middle band the artwork leaves free.
     showcase: {
-      hero: "/brand/rebonding-system/showcase/title.png",
+      hero: { en: "/media/brands/rebonding-system/showcase/title.en.png", id: "/media/brands/rebonding-system/showcase/title.id.png" },
       heroAspect: "4594 / 3387",
       productAlign: "center",
       bannerAspect: "4810 / 2260",
       variants: [
         // SUPER GOLD — SG+ jar (tight render, 78% fill)
-        { bg: "/brand/rebonding-system/showcase/1-2.png", product: "/brand/rebonding-system/showcase/1-1.png",
+        { bg: { en: "/media/brands/rebonding-system/showcase/1-2.en.png", id: "/media/brands/rebonding-system/showcase/1-2.id.png" }, product: "/media/brands/rebonding-system/showcase/1-1.png",
           bgAspect: "4810 / 2261", productAspect: "2132 / 2100", productHeight: "82%", productShiftX: "-3%", productShiftY: "-1%",
           href: "/brands/rebonding-system/super-gold" },
         // GOLD EDITION — GE+ jar (padded render, 63% fill → taller box for the same jar)
-        { bg: "/brand/rebonding-system/showcase/2-2.png", product: "/brand/rebonding-system/showcase/2-1.png",
+        { bg: { en: "/media/brands/rebonding-system/showcase/2-2.en.png", id: "/media/brands/rebonding-system/showcase/2-2.id.png" }, product: "/media/brands/rebonding-system/showcase/2-1.png",
           bgAspect: "4810 / 2260", productAspect: "1922 / 2045", productHeight: "68%", productShiftY: "-18%",
           href: "/brands/rebonding-system/gold-edition" },
         // ANTI RESISTANT — AR+ jar (tight render)
-        { bg: "/brand/rebonding-system/showcase/3-2.png", product: "/brand/rebonding-system/showcase/3-1.png",
+        { bg: { en: "/media/brands/rebonding-system/showcase/3-2.en.png", id: "/media/brands/rebonding-system/showcase/3-2.id.png" }, product: "/media/brands/rebonding-system/showcase/3-1.png",
           bgAspect: "4810 / 2260", productAspect: "2004 / 1965", productHeight: "85%", productShiftY: "-12%",
           href: "/brands/rebonding-system/anti-resistant" },
         // EXTREMELY DAMAGED — ED+ jar (padded render)
-        { bg: "/brand/rebonding-system/showcase/4-2.png", product: "/brand/rebonding-system/showcase/4-1.png",
+        { bg: { en: "/media/brands/rebonding-system/showcase/4-2.en.png", id: "/media/brands/rebonding-system/showcase/4-2.id.png" }, product: "/media/brands/rebonding-system/showcase/4-1.png",
           bgAspect: "4810 / 2261", productAspect: "1922 / 2045", productHeight: "72%", productShiftX: "-2%", productShiftY: "-11%",
           href: "/brands/rebonding-system/extremely-damaged" },
       ],

@@ -16,7 +16,7 @@ const entry: SubBrand = {
     accentHex: "#423A31",
     bannerBg: "#eee8e0",
     theme: "accent-light",
-    heroWordmark: "/brand/texture-experience/strawberry-yoghurt/hero/wordmark.png",
+    heroWordmark: "/media/brands/texture-experience/lines/strawberry-yoghurt/hero/wordmark.png",
     heroWordmarkAspect: "502 / 214",
     // The folder ships ONE composed cluster (creambath tube + Berry Smoothie hair
     // perfume), so the hero is a single layer. Width is min(vw, vh) so the cluster
@@ -25,22 +25,22 @@ const entry: SubBrand = {
     // The PNG carries heavy transparent padding (the products fill ~56% × 75% of the
     // canvas), so the layer box is much larger than the cluster looks.
     heroLayers: [
-      { src: "/brand/texture-experience/strawberry-yoghurt/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
+      { src: "/media/brands/texture-experience/lines/strawberry-yoghurt/hero/1.png", enterFrom: "right", enterDelay: 0.2, depth: 50,
         width: "min(36vw, 85vh)", aspectRatio: "3443 / 3941", left: "55%", top: "5.5%",
         mobile: { left: "-12.5%", top: "-26%", width: "106%" } },
     ],
-    showcaseTitle: "/brand/texture-experience/strawberry-yoghurt/showcase/title.png",
+    showcaseTitle: "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/title.png",
     showcaseTitleAspect: "4169 / 3233",
     // The creambath line-up ships as a landscape card, so it takes the full-width slot.
-    featured: { image: "/brand/texture-experience/strawberry-yoghurt/showcase/3.png", label: { en: "Creambath Strawberry Yoghurt — sachet, tube & jar", id: "Creambath Strawberry Yoghurt — sachet, tube & jar" } },
+    featured: { image: { en: "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/3.en.png", id: "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/3.id.png" }, label: { en: "Creambath Strawberry Yoghurt — sachet, tube & jar", id: "Creambath Strawberry Yoghurt — sachet, tube & jar" } },
     featuredAspect: "4695 / 2222",
     featuredPosition: "middle",
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/texture-experience/strawberry-yoghurt/showcase/1.png", label: { en: "Shampoo Strawberry Yoghurt", id: "Shampoo Strawberry Yoghurt" } },
-      { image: "/brand/texture-experience/strawberry-yoghurt/showcase/2.png", label: { en: "Conditioner Strawberry Yoghurt", id: "Conditioner Strawberry Yoghurt" } },
-      { image: "/brand/texture-experience/strawberry-yoghurt/showcase/4.png", label: { en: "Hair Perfume Berry Smoothie", id: "Hair Perfume Berry Smoothie" } },
-      { image: "/brand/texture-experience/strawberry-yoghurt/showcase/5.png", label: { en: "Smooth-Bright Body Essence Strawberry Yoghurt", id: "Smooth-Bright Body Essence Strawberry Yoghurt" } },
+      { image: { en: "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/1.en.png", id: "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/1.id.png" }, label: { en: "Shampoo Strawberry Yoghurt", id: "Shampoo Strawberry Yoghurt" } },
+      { image: { en: "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/2.en.png", id: "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/2.id.png" }, label: { en: "Conditioner Strawberry Yoghurt", id: "Conditioner Strawberry Yoghurt" } },
+      { image: { en: "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/4.en.png", id: "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/4.id.png" }, label: { en: "Hair Perfume Berry Smoothie", id: "Hair Perfume Berry Smoothie" } },
+      { image: { en: "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/5.en.png", id: "/media/brands/texture-experience/lines/strawberry-yoghurt/showcase/5.id.png" }, label: { en: "Smooth-Bright Body Essence Strawberry Yoghurt", id: "Smooth-Bright Body Essence Strawberry Yoghurt" } },
     ],
   };
 

@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocale } from "@/lib/locale/LocaleProvider";
 import { home } from "@/dictionaries/home";
 
-// Hero carousel — one slide per asset in /public/home/hero-carousel.
+// Hero carousel — one slide per asset in /public/media/home/hero-carousel.
 // max-w on the h1 is sized to fit "Nestlé Pure Life" on one line; anything
 // longer (e.g. "Makarizo Hair Energy") wraps naturally to a second line.
 // `light: true` marks banners that are bright enough to need dark UI (black
@@ -31,7 +31,7 @@ const slides: Slide[] = [
     name: "Nestlé Pure Life",
     tag: { en: "Fresh, even without the chill", id: "Gak dingin tetep seger" },
     bg: "#D20B68",
-    image: "/home/hero-carousel/nestle-pure-life.jpg",
+    image: "/media/home/hero-carousel/nestle-pure-life.jpg",
     pos: "75% 50%",
   },
   {
@@ -39,7 +39,7 @@ const slides: Slide[] = [
     name: "Makarizo Hair Energy",
     tag: { en: "Fragrance that lasts all day", id: "Wangi sepanjang hari" },
     bg: "#DA5B14",
-    image: "/home/hero-carousel/hair-energy.jpg",
+    image: "/media/home/hero-carousel/hair-energy.jpg",
     pos: "75% 50%",
   },
   {
@@ -47,7 +47,7 @@ const slides: Slide[] = [
     name: "Make It",
     tag: { en: "Your scent. Your story", id: "Aromamu. Ceritamu." },
     bg: "#640113",
-    image: "/home/hero-carousel/make-it.jpg",
+    image: "/media/home/hero-carousel/make-it.jpg",
     pos: "80% 50%",
   },
   {
@@ -58,7 +58,7 @@ const slides: Slide[] = [
       id: "Perawatan ala barbershop, setiap hari",
     },
     bg: "#793E1C",
-    image: "/home/hero-carousel/barber-daily.jpg",
+    image: "/media/home/hero-carousel/barber-daily.jpg",
     pos: "80% 50%",
   },
   {
@@ -66,7 +66,7 @@ const slides: Slide[] = [
     name: "Wonhae",
     tag: { en: "Korean flavors, Indonesian hearts", id: "Cita rasa Korea, hati Indonesia" },
     bg: "#FDDC57",
-    image: "/home/hero-carousel/wonhae.jpg",
+    image: "/media/home/hero-carousel/wonhae.jpg",
     light: true,
     pos: "75% 50%",
   },
@@ -78,7 +78,7 @@ const slides: Slide[] = [
       id: "43 tahun besar bersama salon Indonesia",
     },
     bg: "#E0DCD3",
-    image: "/home/hero-carousel/makarizo-professional.jpg",
+    image: "/media/home/hero-carousel/makarizo-professional.jpg",
     light: true,
     pos: "75% 50%",
   },

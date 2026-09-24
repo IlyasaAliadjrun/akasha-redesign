@@ -13,7 +13,7 @@ const entry: SubBrand = {
     // 070-honey-dew--shampoo.ts.
     bannerBg: "#EFEFEF",
     theme: "accent-light",
-    heroWordmark: "/brand/honey-dew/hair-serum/hero/wordmark.png",
+    heroWordmark: "/media/brands/honey-dew/lines/hair-serum/hero/wordmark.png",
     heroWordmarkAspect: "1789 / 284",
     heroLayers: [
       // ASSET GAP: no product PNG was delivered inside hair-serum/hero/ (the folder
@@ -26,16 +26,16 @@ const entry: SubBrand = {
       // diagonal stack, so its height cannot also be matched.
       // `left` is pushed past the reference's own x so the (wider) stand-in cluster
       // still clears the tagline's right edge instead of sitting on top of it.
-      { src: "/brand/honey-dew/showcase/2-1.png", enterFrom: "right", enterDelay: 0.2, depth: 40, width: "min(65.5vw, 77vh)", aspectRatio: "2399 / 2689", left: "58%", top: "7%",
+      { src: "/media/brands/honey-dew/showcase/2-1.png", enterFrom: "right", enterDelay: 0.2, depth: 40, width: "min(65.5vw, 77vh)", aspectRatio: "2399 / 2689", left: "58%", top: "7%",
         mobile: { left: "-10%", top: "-37%", width: "125%" } },
     ],
-    showcaseTitle: "/brand/honey-dew/hair-serum/showcase/title.png",
+    showcaseTitle: { en: "/media/brands/honey-dew/lines/hair-serum/showcase/title.en.png", id: "/media/brands/honey-dew/lines/hair-serum/showcase/title.id.png" },
     showcaseTitleAspect: "5256 / 4153",
     // Both card graphics are 2302×2986 / 2301×2986 — one shared ratio.
     cardAspect: "2302 / 2986",
     cards: [
-      { image: "/brand/honey-dew/hair-serum/showcase/1.png", label: { en: "Honey Dew Nutriv Serum", id: "Honey Dew Nutriv Serum" } },
-      { image: "/brand/honey-dew/hair-serum/showcase/2.png", label: { en: "Honey Dew Restructuring Serum", id: "Honey Dew Restructuring Serum" } },
+      { image: { en: "/media/brands/honey-dew/lines/hair-serum/showcase/1.en.png", id: "/media/brands/honey-dew/lines/hair-serum/showcase/1.id.png" }, label: { en: "Honey Dew Nutriv Serum", id: "Honey Dew Nutriv Serum" } },
+      { image: { en: "/media/brands/honey-dew/lines/hair-serum/showcase/2.en.png", id: "/media/brands/honey-dew/lines/hair-serum/showcase/2.id.png" }, label: { en: "Honey Dew Restructuring Serum", id: "Honey Dew Restructuring Serum" } },
     ],
   };
 
