@@ -1,0 +1,8 @@
+# /etc/cron.d/akasha-backup  (root:root, mode 0644)
+# PostgreSQL backups via pgBackRest, stanza "akasha". Times are server local time.
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# Full backup every Sunday 01:30, differential Monday–Saturday 01:30.
+30 1 * * 0    postgres  pgbackrest --stanza=akasha --type=full backup
+30 1 * * 1-6  postgres  pgbackrest --stanza=akasha --type=diff backup

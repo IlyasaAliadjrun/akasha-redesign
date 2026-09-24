@@ -1,0 +1,15 @@
+{
+  "identities": [
+    {
+      "name": "akasha-web",
+      "credentials": [
+        { "accessKey": "CHANGE_ME_ACCESS_KEY", "secretKey": "CHANGE_ME_SECRET_KEY" }
+      ],
+      "actions": ["Read", "Write", "List", "Tagging", "Admin"]
+    },
+    {
+      "name": "anonymous",
+      "actions": ["Read:akasha-media", "Read:akasha-documents"]
+    }
+  ]
+}

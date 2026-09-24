@@ -1,0 +1,3 @@
+# /etc/sudoers.d/akasha-deploy  (root:root, mode 0440 — install with: visudo -cf <file>)
+# Lets deploy/scripts/deploy.sh restart the website and nothing else.
+akasha ALL=(root) NOPASSWD: /usr/bin/systemctl restart akasha-web

@@ -26,7 +26,7 @@ The primary audience is Indonesian, so user-facing copy may mix Indonesian and E
 | Animation | **Framer Motion 11** |
 | Fonts | Plus Jakarta Sans (via `next/font/google`) |
 | Images | `next/image` with remote patterns whitelisted in [next.config.mjs](next.config.mjs) |
-| Node | Node 20 (matches `@types/node ^20`) |
+| Node | **Node 24 LTS** — pinned in `.nvmrc` and `package.json` `engines` (matches `@types/node ^24`) |
 
 There is no test framework, no Storybook, no linter config beyond `next lint`, and no CI configured in this repo.
 
@@ -42,6 +42,7 @@ npm run build    # production build (this is the closest thing to a CI check —
 npm run build:verify # same build, reserved for infra / final-integration sessions (see below)
 npm run start    # serve the production build
 npm run lint     # next lint (eslint-config-next, `next/core-web-vitals`) — baseline is clean
+npm run verify:assets # every /media + /documents path in code exists; names follow PANDUAN-ASET §2
 ```
 
 **Before opening a PR, you must at minimum run `npm run build` and confirm it succeeds.** There are no unit tests to run.
@@ -93,9 +94,19 @@ components/
 └── layout/                   Navbar, MegaMenu, Footer, BackToTop
 
 lib/
-├── brands.ts                 Source of truth for all 9 brands, products, features, divisions
-└── investor.ts               Financial/investor data
+├── brands.ts                 Brand types, DIVISIONS, helpers (brands themselves: content/brands/)
+└── investor.ts               Financial/investor data + document archive index
+
+content/                      brands/*.ts, sub-brands/*.ts (auto-discovered), pages/*.ts (page copy)
+public/
+├── media/                    ALL images — see §9.7
+└── documents/                ALL PDF/DOC downloads — see §9.7
+scripts/                      Repo checks run through npm scripts (verify-assets.mjs)
+deploy/                       Self-hosted server runbook + config (SETUP.md, Caddyfile, systemd units)
+docs/                         Asset guides for the design team, brand-page guide
 ```
+
+Pages live under `app/[locale]/` (`en` / `id`); `middleware.ts` redirects `/` to the visitor's language.
 
 There are no other top-level source folders. `node_modules/`, `.next/`, and `tsconfig.tsbuildinfo` are generated and gitignored — never edit them.
 
@@ -133,7 +144,7 @@ All brand slugs are defined in [lib/brands.ts](lib/brands.ts) and rendered throu
 
 - **Not in the navbar.** A sub-brand page is reached only by clicking a variant banner in the parent brand's showcase — wire it with `href` on the `ShowcaseVariant` in [lib/brands.ts](lib/brands.ts).
 - **Layout** = brand page minus About + Product-lineup: **banner (parallax) → showcase (title image + card grid) → cross-sell → CTA**. The banner keeps parallax; the showcase does **not** (each card image is whole). Card images already include their own background + border, so no card chrome is drawn around them — the image is placed as-is (see `SubBrandShowcase`). Cross-sell + CTA use the **parent** brand ("Rasakan Hair Energy sekarang").
-- **Skeleton-first.** Every image field in `SUB_BRANDS` may be empty — an empty slot renders a plain placeholder, so the page works as a wireframe until assets are dropped into `public/brand/{parent}/{line}/{hero,showcase}/` and the paths are filled in. Copy is placeholder too; replace with real wording.
+- **Skeleton-first.** Every image field in `SUB_BRANDS` may be empty — an empty slot renders a plain placeholder, so the page works as a wireframe until assets are dropped into `public/media/brands/{parent}/lines/{line}/{hero,showcase}/` and the paths are filled in. Copy is placeholder too; replace with real wording.
 - Terminology note: `components/brand/SubBrandPage.tsx` is a *different, older* thing (the template for a brand that has a `parent` umbrella, e.g. Hair Energy under Makarizo). The product-line template is `components/subbrand/SubBrandTemplate.tsx`.
 
 ---
@@ -173,6 +184,11 @@ Any change that touches an image, an aspect ratio, a section's width, or how an 
 4. **Best ratio per viewport.** Cards (product, About, division, brand grid, showcase) keep the **same** ratio on both viewports. Full-bleed banners **differ**: the brand banner is 16:9 on desktop but wants a separate **9:16** mobile asset. Record the chosen ratio for *both* views in the guide (see PANDUAN §2b "Rasio terbaik per viewport").
 5. **Fit matters.** `object-cover` crops (keep the subject centered in the safe-zone); `object-contain` shows the whole asset (needs a clean solid/transparent background). Always state which one applies.
 6. **next/image hygiene.** Always `fill` + an accurate `sizes`; ship one high-res master per asset (≥2× retina) and let the system downscale.
+7. **Where assets live.** Images go under `public/media/…`, downloads under `public/documents/…` — nowhere else. Both
+   roots are locale-agnostic: one file serves `/en` and `/id`, and `localizeAsset()` never prefixes them. Only artwork
+   with **text baked into the image** gets two files, `name.en.ext` + `name.id.ext`, referenced as
+   `{ en: "…", id: "…" }` in a `LocalizedAsset` field. Names are lowercase kebab-case. Run `npm run verify:assets`
+   after any asset change — full rules in PANDUAN-ASET §2.
 
 ---
 
@@ -209,7 +225,8 @@ For any change touching code:
 2. For UI changes, run `npm run dev` and visually confirm the page renders correctly (parallel sessions: with their own
    `NEXT_DIST_DIR`+`PORT`). State explicitly if you couldn't verify visually.
 3. Check both desktop and mobile widths — many components rely on responsive Tailwind classes.
-4. If you touched a brand page, verify **every brand slug** still behaves: each slug in `pageBrands()` renders 200, and each umbrella slug (`makarizo`, `makarizo-professional`) returns 404. They share one route.
+4. If you added, moved, or renamed an asset, run `npm run verify:assets`.
+5. If you touched a brand page, verify **every brand slug** still behaves: each slug in `pageBrands()` renders 200, and each umbrella slug (`makarizo`, `makarizo-professional`) returns 404. They share one route.
 
 If `npm run build` fails, **fix the root cause**. Do not weaken types, suppress errors with `@ts-ignore`, or comment out broken code to make the build pass.
 
@@ -229,7 +246,8 @@ If `npm run build` fails, **fix the root cause**. Do not weaken types, suppress 
 
 ## 14. Platform notes
 
-The maintainer develops on **Windows 11 with PowerShell**. Paths in this repo use forward slashes in code (`@/components/...`) but file system operations may need backslashes when run from PowerShell. If you generate shell scripts, prefer cross-platform npm scripts in `package.json` over `.sh` files.
+The maintainer develops on **Windows 11 with PowerShell**. Paths in this repo use forward slashes in code (`@/components/...`) but file system operations may need backslashes when run from PowerShell. If you generate shell scripts, prefer cross-platform npm scripts in `package.json` over `.sh` files. The one
+exception is `deploy/`, whose scripts run only on the Ubuntu production server.
 
 ---
 

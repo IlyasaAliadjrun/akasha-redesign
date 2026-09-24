@@ -1,0 +1,38 @@
+# /etc/systemd/system/akasha-web.service
+# Runs the current standalone release. deploy/scripts/deploy.sh swaps the
+# /home/akasha/current symlink and restarts this unit.
+[Unit]
+Description=Akasha Wira International — website (Next.js standalone)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=akasha
+Group=akasha
+WorkingDirectory=/home/akasha/current
+EnvironmentFile=/etc/akasha/web.env
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=3
+
+# On a 4 GB box the image optimizer (sharp decoding multi-MB PNG masters) is the
+# memory spike. Cap it so the kernel reclaims/kills this unit — which restarts in
+# seconds — instead of PostgreSQL.
+MemoryHigh=1200M
+MemoryMax=1600M
+
+# Hardening. The only writable path is the shared Next cache (image + ISR cache).
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/akasha/shared/next-cache
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target
