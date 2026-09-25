@@ -6,6 +6,7 @@ import BentoGrid from "@/components/home/BentoGrid";
 import CompanyStatement from "@/components/home/CompanyStatement";
 import type { Locale } from "@/lib/locale/paths";
 import { home } from "@/dictionaries/home";
+import { ABOUT_PAGE } from "@/content/pages/about";
 import { organizationJsonLd, pageMetadata } from "@/lib/seo";
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
@@ -33,7 +34,14 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       <DivisionCards />
       <BentoGrid />
       {/* <SensoryStrip /> */}
-      <CompanyStatement />
+      <CompanyStatement
+        vision={{
+          label: ABOUT_PAGE.vision.eyebrow[locale],
+          text: `${ABOUT_PAGE.vision.line1[locale]} ${ABOUT_PAGE.vision.line2[locale]}`,
+        }}
+        mission={{ label: ABOUT_PAGE.mission.eyebrow[locale], text: ABOUT_PAGE.mission.body[locale] }}
+        stats={ABOUT_PAGE.stats.map((s) => ({ n: s.n, l: s.l[locale] }))}
+      />
     </>
   );
 }

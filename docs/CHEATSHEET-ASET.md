@@ -54,7 +54,7 @@ Nama folder brand/sub-brand = slug-nya: `hair-energy/`, `make-it/`, `lines/cream
 | **Foto pengurus** (About) | `media/pages/about/organization/{nama-slug}.jpg` | **5:7** | 900×1260 | COVER, anchor atas | jpg |
 | Logo sertifikasi (About) | `media/pages/about/certifications/{nama}.png` | bebas | tinggi ≥ 256 px (tampil 56 px) | CONTAIN, transparan | png |
 | **Gambar share** (preview link WhatsApp/LinkedIn/X) | `media/pages/{page}/hero/og.jpg` · default `media/shared/og.jpg` | **1.91:1** | **1200×630** | dipotong otomatis oleh platform — subjek di tengah | jpg < 300 KB |
-| Gambar share brand / sub-brand | `media/brands/{slug}/hero/og.jpg` · `…/lines/{line}/hero/og.jpg` — **dibuat otomatis** `npm run og:generate` | **1.91:1** | 1200×630 | wordmark di tengah | jpg |
+| Gambar share brand / sub-brand | `media/brands/{slug}/hero/og.jpg` · `…/lines/{line}/hero/og.jpg` — **dibuat otomatis** `npm run og:generate`; juga jadi thumbnail "Lainnya dari Akasha" (106×56 / HP 88×48, 20% bawah terpotong) | **1.91:1** | 1200×630 | wordmark di tengah | jpg |
 | Favicon / ikon aplikasi | `app/icon.png` · `app/apple-icon.png` (bukan di `public/`) | **1:1** | 512×512 · 180×180 | logo di tengah, latar putih | png |
 | Foto produk (lineup) | `media/brands/{slug}/product-lineup/` | **1:1** | 1200×1200 | CONTAIN | **PNG** |
 | 3 kartu "About" | `media/brands/{slug}/about/` | **3:4** | 1200×1600 | COVER | jpg |
@@ -140,6 +140,8 @@ DESKTOP 16:9                     HP 9:16
 └─────────────┴──────────┘       └─────────────┘
   kosong/polos  mulai di 36%
 ```
+
+**Hero About dipakai 2×:** `pages/about/hero/desktop.jpg` + `mobile.jpg` juga jadi latar **penutup homepage** ("Kami tak sekadar membuat produk") — COVER full-bleed, digelapkan ~85% dengan teks putih di tengah. Desktop tampil ±1440×700 (lebih lebar dari 16:9 → atas/bawah sedikit terpotong), HP ±390×800 (pakai `mobile.jpg`). Ganti foto About = ikut berganti di homepage.
 
 - **Desktop:** subjek di **KANAN mulai ±36% dari kiri**. Sisakan **kiri 36% kosong/polos** untuk teks — kolom teksnya dipatok di situ, subjek yang lebih ke kiri **akan ketimpa**.
 - **HP:** subjek di **BAWAH/tengah**, sisakan **atas ±35% kosong/polos** untuk teks.

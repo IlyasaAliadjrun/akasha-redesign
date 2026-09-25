@@ -275,8 +275,8 @@ export const ABOUT_PAGE = {
 
   stats: [
     { n: "40+", l: { en: "Years in business", id: "Tahun berkarya" } },
-    { n: "10", l: { en: "Consumer brands", id: "Brand konsumen" } },
-    { n: "4", l: { en: "Industries", id: "Industri" } },
+    { n: "10+", l: { en: "Consumer brands", id: "Brand konsumen" } },
+    { n: "4", l: { en: "Business units", id: "Unit bisnis" } },
     { n: "6", l: { en: "Operating locations", id: "Lokasi operasional" } },
   ] satisfies StatEntry[],
 

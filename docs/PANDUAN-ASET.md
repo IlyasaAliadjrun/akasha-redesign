@@ -137,7 +137,7 @@ Akhiran `.en` / `.id` ditaruh **tepat sebelum ekstensi**, dan keduanya **wajib a
 | 6 | **3 kartu "About"** | `media/brands/{slug}/about/` | **3:4** | 1200×1600 | COVER | jpg/webp |
 | 7 | **Showcase – gambar utama** | `media/brands/{slug}/showcase/title.png` | **bebas** (cth 1.37:1) | 5219×3799 / 2000² | CONTAIN | png/webp |
 | 8 | **Showcase – banner varian** (2 layer parallax) | `media/brands/{slug}/showcase/{n}-1`,`{n}-2` | latar **2.128:1** + produk **3:4** | 5010×2354 / 2687×3660 | latar COVER · produk PNG | jpg/png |
-| 9 | **Hero halaman** (About/Investor/dll) — desktop | `media/pages/{page}/hero/desktop.jpg` | **16:9** | 2560×1440 | COVER, layar penuh | jpg/webp |
+| 9 | **Hero halaman** (About/Investor/dll) — desktop | `media/pages/{page}/hero/desktop.jpg` | **16:9** | 2560×1440 | COVER, layar penuh (hero About juga jadi latar gelap penutup homepage) | jpg/webp |
 | 9b | **Hero halaman** — HP | `media/pages/{page}/hero/mobile.jpg` | **9:16** | 1080×1920 | COVER, layar penuh | jpg/webp |
 | 10 | **Sampul laporan** (tahunan & keberlanjutan) | `media/reports/{jenis}/{tahun}` | **16:15** (≈1.067) | 1200×1125 | COVER | jpg/png |
 | 11 | **Foto pengurus** (Komisaris & Direksi, halaman About) | `media/pages/about/organization/{nama-slug}.jpg` | **5:7** potret | 900×1260 | COVER, anchor atas | jpg |
@@ -401,6 +401,8 @@ Gambar yang muncul saat link halaman dibagikan di WhatsApp, LinkedIn, Facebook, 
 Saat ini dibuat otomatis dari `desktop.jpg` tiap halaman (potongan 1200×630). Kalau desain mau versi khusus — misalnya dengan judul halaman di atas foto — cukup timpa `og.jpg`. Halaman tanpa `og.jpg` sendiri memakai `media/shared/og.jpg` (logo Akasha di latar putih).
 
 **Halaman brand & sub-brand** memakai `media/brands/{slug}/hero/og.jpg` dan `media/brands/{brand}/lines/{line}/hero/og.jpg`. File ini **dibuat otomatis** oleh `npm run og:generate`: wordmark brand di kartu putih (atau kartu gelap/warna brand kalau wordmark-nya putih), strip warna brand di atas, logo Akasha di bawah; sub-brand ditambah nama lininya. Jalankan setelah menambah brand/sub-brand baru — file yang sudah ada **tidak ditimpa**, jadi `og.jpg` buatan desainer aman (pakai `npm run og:generate -- --force` untuk membuat ulang semuanya). Brand tanpa `og.jpg` otomatis memakai gambar default.
+
+**Juga tampil di halaman:** `og.jpg` brand dipakai sebagai **thumbnail logo** di seksi "Lainnya dari Akasha" (akhir setiap halaman brand & sub-brand) — kotak 106×56 px di desktop, 88×48 px di HP, sama rasionya. Thumbnail memotong **seperlima bagian bawah** kartu (area logo Akasha kecil), jadi kalau desainer membuat `og.jpg` sendiri: taruh wordmark di tengah/atas, jangan ada info penting di 20% bawah.
 
 #### 14) Favicon / Ikon Aplikasi — `app/icon.png`, `app/apple-icon.png`
 

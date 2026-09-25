@@ -36,16 +36,12 @@ export const home = {
     scrollDown: { en: "Scroll down", id: "Gulir ke bawah" },
   },
   statement: {
-    heading1: { en: "We don't just make products.", id: "Kami tak sekadar membuat produk." },
-    heading2: {
-      en: "We craft moments — of freshness, confidence, flavor, and joy.",
-      id: "Kami menciptakan momen — kesegaran, kepercayaan diri, cita rasa, dan kebahagiaan.",
-    },
+    // The vision and mission themselves come from content/pages/about.ts.
     tagline: {
       en: "Akasha Wira International · Since 1985",
       id: "Akasha Wira International · Sejak 1985",
     },
-    ourStory: { en: "Our Story", id: "Kisah Kami" },
-    investorRelations: { en: "Investor Relations", id: "Hubungan Investor" },
+    aboutUs: { en: "About us", id: "Tentang kami" },
+    investorRelations: { en: "Investor relations", id: "Hubungan investor" },
   },
 };
