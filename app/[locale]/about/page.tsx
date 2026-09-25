@@ -45,9 +45,6 @@ const CERT_STYLE = {
   rating: "text-[#1D4ED8] bg-[#1D4ED8]/10",
 } as const;
 
-// PROPER colours are the programme's own rating names, best to lowest.
-const PROPER_SWATCH = ["bg-[#C9A227]", "bg-[#2F9E44]", "bg-[#1D4ED8]", "bg-[#D63A3A]", "bg-ink"] as const;
-
 const mapsUrl = (address: string) =>
   `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 
@@ -128,7 +125,6 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
         desktop="/media/pages/about/hero/desktop.jpg"
         mobile="/media/pages/about/hero/mobile.jpg"
         title={t(ABOUT_PAGE.hero.title)}
-        subtitle={t(ABOUT_PAGE.hero.subtitle)}
         tone="light"
         bg="#AEC0CD"
       />
@@ -211,7 +207,6 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
               {t(ABOUT_PAGE.coreValue.heading)}
             </h2>
-            <p className="mt-4 text-ink/60">{t(ABOUT_PAGE.coreValue.body)}</p>
           </div>
           <ol className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
             {ABOUT_PAGE.values.map((v, i) => (
@@ -323,7 +318,6 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
                     )}
                   </div>
                   <h4 className="mt-5 text-xl font-extrabold tracking-tightish">{t(unit.label)}</h4>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/55">{t(unit.note)}</p>
                   <ul className="mt-6 space-y-3 border-t border-ink/10 pt-5">
                     {unit.people.map((person) => (
                       <li key={person.name} className="flex items-center gap-3">
@@ -511,32 +505,6 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
                   <h3 className="mt-1.5 text-2xl font-extrabold tracking-tightish">{c.code}</h3>
                   <div className="mt-1 font-semibold text-ink/80">{t(c.title)}</div>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/55">{t(c.scope)}</p>
-                  {c.kind === "rating" && (
-                    <div className="mt-5" role="img" aria-label={`PROPER: ${t(ABOUT_PAGE.achievements.properScale[ABOUT_PAGE.achievements.properCurrent])}`}>
-                      <div className="flex gap-1">
-                        {ABOUT_PAGE.achievements.properScale.map((level, i) => (
-                          <span
-                            key={level.en}
-                            className={`h-2 flex-1 rounded-full ${PROPER_SWATCH[i]} ${
-                              i === ABOUT_PAGE.achievements.properCurrent ? "" : "opacity-20"
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      <div className="mt-1.5 flex text-[11px] lg:text-[10px] text-ink/45" aria-hidden>
-                        {ABOUT_PAGE.achievements.properScale.map((level, i) => (
-                          <span
-                            key={level.en}
-                            className={`flex-1 text-center ${
-                              i === ABOUT_PAGE.achievements.properCurrent ? "font-bold text-[#1D4ED8]" : ""
-                            }`}
-                          >
-                            {t(level)}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </article>
               );
             })}

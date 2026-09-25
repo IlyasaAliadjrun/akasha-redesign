@@ -49,7 +49,6 @@ type PersonEntry = {
 type UnitEntry = {
   reportsTo: "commissioners" | "directors";
   label: Localized<string>;
-  note: Localized<string>;
   people: PersonEntry[];
 };
 
@@ -92,19 +91,15 @@ export const ABOUT_PAGE = {
       id: "Tentang kami — Akasha Wira International",
     },
     description: {
-      en: "PT Akasha Wira International Tbk (IDX: ADES). Building great brands that have touched every moment of Indonesian consumers' lives since 1985.",
-      id: "PT Akasha Wira International Tbk (IDX: ADES). Sejak 1985 membangun brand-brand hebat yang menyentuh setiap momen konsumen Indonesia.",
+      en: "Company profile of PT Akasha Wira International Tbk (IDX: ADES) — overview, vision and mission, core value, organization structure, locations and shareholders.",
+      id: "Profil PT Akasha Wira International Tbk (IDX: ADES) — sekilas perusahaan, visi dan misi, nilai inti, struktur organisasi, lokasi, dan pemegang saham.",
     },
   },
 
   hero: {
     title: {
-      en: "Great brands through great people.",
-      id: "Brand hebat melalui orang-orang hebat.",
-    },
-    subtitle: {
-      en: "Building the quality of life of Indonesian consumers for four decades through brands that touch everyday moments.",
-      id: "Membangun kualitas hidup konsumen Indonesia selama empat dekade melalui brand-brand yang menyentuh momen sehari-hari.",
+      en: "About us.",
+      id: "Tentang kami.",
     },
   },
 
@@ -130,10 +125,10 @@ export const ABOUT_PAGE = {
 
   // ── Company overview ───────────────────────────────────────────────────────
   overview: {
-    eyebrow: { en: "Company overview", id: "Sekilas perusahaan" },
+    eyebrow: { en: "Company profile", id: "Profil perusahaan" },
     heading: {
-      en: "Four decades, four industries.",
-      id: "Empat dekade, empat industri.",
+      en: "Overview of the company.",
+      id: "Sekilas perusahaan.",
     },
     body: {
       en: "PT Akasha Wira International Tbk was established in 1985 as PT Alfindo Putrasetia and has carried its current name since 2010. A foreign-investment company listed on the Indonesia Stock Exchange as ADES, it is controlled by Sofos Pte. Ltd. of Singapore.",
@@ -194,8 +189,8 @@ export const ABOUT_PAGE = {
     {
       title: { en: "Cosmetics", id: "Kosmetika" },
       body: {
-        en: "Hair care since 2010, when the Makarizo production line was acquired — consumer and professional salon ranges.",
-        id: "Perawatan rambut sejak 2010, saat lini produksi Makarizo diakuisisi — untuk konsumen maupun salon profesional.",
+        en: "Hair care since 2010, when the company acquired production machinery and equipment from PT Damai Sejahtera Mulia to make Makarizo.",
+        id: "Perawatan rambut sejak 2010, saat perusahaan mengakuisisi mesin dan peralatan produksi dari PT Damai Sejahtera Mulia untuk memproduksi Makarizo.",
       },
       plant: "Gunung Putri",
     },
@@ -210,8 +205,8 @@ export const ABOUT_PAGE = {
     {
       title: { en: "Foods", id: "Makanan" },
       body: {
-        en: "Korean ready-to-eat meals since 2020, expanded in 2025 with snacks and confectionery under Wonhae and Floaty.",
-        id: "Makanan Korea siap saji sejak 2020, diperluas pada 2025 dengan camilan dan kembang gula di bawah Wonhae dan Floaty.",
+        en: "Korean ready-to-eat meals since 2020, expanded in 2025 with snacks (Floaty, Wonhae), confectionery and more ready-to-eat products.",
+        id: "Makanan Korea siap saji sejak 2020, diperluas pada 2025 dengan camilan (Floaty, Wonhae), kembang gula, dan produk siap saji lainnya.",
       },
       plant: "Cicurug, Sukabumi",
     },
@@ -221,12 +216,8 @@ export const ABOUT_PAGE = {
   coreValue: {
     eyebrow: { en: "Core value", id: "Nilai inti" },
     heading: {
-      en: "ATEAM — how we work.",
-      id: "ATEAM — cara kami bekerja.",
-    },
-    body: {
-      en: "Five values, one word: the way every Akasha team works together.",
-      id: "Lima nilai, satu kata: cara setiap tim Akasha bekerja bersama.",
+      en: "ATEAM core values.",
+      id: "Nilai inti ATEAM.",
     },
   },
 
@@ -281,21 +272,21 @@ export const ABOUT_PAGE = {
   ] satisfies StatEntry[],
 
   journey: {
-    eyebrow: { en: "Our Journey", id: "Perjalanan Kami" },
+    eyebrow: { en: "History", id: "Sejarah" },
     heading: {
-      en: "Four decades of our journey.",
-      id: "Empat dekade perjalanan.",
+      en: "Company history.",
+      id: "Sejarah perusahaan.",
     },
     body: {
-      en: "From a local bottled-water company in 1985 to a multi-division FMCG group today.",
-      id: "Dari perusahaan air minum lokal di 1985 hingga grup FMCG multi-divisi hari ini.",
+      en: "From PT Alfindo Putrasetia in 1985 to PT Akasha Wira International Tbk today.",
+      id: "Dari PT Alfindo Putrasetia pada 1985 hingga PT Akasha Wira International Tbk hari ini.",
     },
   },
 
   timeline: [
     {
       year: "1985",
-      title: { en: "Foundation", id: "Fondasi" },
+      title: { en: "Established", id: "Berdiri" },
       body: {
         en: "The company was established as PT Alfindo Putrasetia.",
         id: "Perusahaan berdiri sebagai PT Alfindo Putrasetia.",
@@ -303,7 +294,7 @@ export const ABOUT_PAGE = {
     },
     {
       year: "1986",
-      title: { en: "First bottle", id: "Botol pertama" },
+      title: { en: "Commercial production", id: "Produksi komersial" },
       body: {
         en: "Commercial production of bottled drinking water began.",
         id: "Produksi komersial air minum dalam kemasan dimulai.",
@@ -321,13 +312,13 @@ export const ABOUT_PAGE = {
       year: "1997",
       title: { en: "Bonus shares", id: "Saham bonus" },
       body: {
-        en: "Issuance of 38 million bonus shares to strengthen the capital structure.",
-        id: "Penerbitan 38 juta saham bonus untuk memperkuat struktur permodalan.",
+        en: "38 million bonus shares issued from additional paid-in capital.",
+        id: "Penerbitan 38 juta saham bonus dari tambahan modal disetor.",
       },
     },
     {
       year: "2004",
-      title: { en: "Global alliance", id: "Aliansi global" },
+      title: { en: "Water Partners Bottling", id: "Water Partners Bottling" },
       body: {
         en: "Water Partners Bottling S.A. (a Nestlé & Coca-Cola joint venture) became the majority shareholder. The name changed to PT AdeS Waters Indonesia, Tbk, and Nestlé Pure Life was launched.",
         id: "Water Partners Bottling S.A. (JV Nestlé & Coca-Cola) menjadi pemegang saham mayoritas. Nama berubah jadi PT AdeS Waters Indonesia, Tbk, dan Nestlé Pure Life diluncurkan.",
@@ -337,8 +328,8 @@ export const ABOUT_PAGE = {
       year: "2007",
       title: { en: "Vica Royal", id: "Vica Royal" },
       body: {
-        en: "Launch of Vica Royal gallon products, widening the home-delivery water range.",
-        id: "Peluncuran produk galon Vica Royal, memperluas lini air minum untuk rumah tangga.",
+        en: "Vica Royal gallons launched to replace Ades products, after the Ades trademark licence with The Coca-Cola Company was not renewed.",
+        id: "Galon Vica Royal diluncurkan untuk menggantikan produk Ades, setelah lisensi merek Ades dengan The Coca-Cola Company tidak diperpanjang.",
       },
     },
     {
@@ -351,10 +342,10 @@ export const ABOUT_PAGE = {
     },
     {
       year: "2010",
-      title: { en: "Expansion & rebranding", id: "Ekspansi & rebranding" },
+      title: { en: "New name and hair care", id: "Nama baru dan perawatan rambut" },
       body: {
-        en: "The name changed to PT Akasha Wira International Tbk. Expanded into cosmetics through the acquisition of the Makarizo production line.",
-        id: "Nama berubah menjadi PT Akasha Wira International Tbk. Ekspansi ke kosmetika melalui akuisisi lini produksi Makarizo.",
+        en: "The name changed to PT Akasha Wira International Tbk, and commercial production of Makarizo hair care began after the company acquired production machinery and equipment from PT Damai Sejahtera Mulia.",
+        id: "Nama berubah menjadi PT Akasha Wira International Tbk, dan produksi komersial perawatan rambut Makarizo dimulai setelah perusahaan mengakuisisi mesin dan peralatan produksi dari PT Damai Sejahtera Mulia.",
       },
     },
     {
@@ -383,7 +374,7 @@ export const ABOUT_PAGE = {
     },
     {
       year: "2020",
-      title: { en: "Into foods", id: "Masuk ke makanan" },
+      title: { en: "Ready-to-eat foods", id: "Makanan siap saji" },
       body: {
         en: "Korean ready-to-eat meals began at the Sukabumi plant, and Vica launched in 600 ml bottles.",
         id: "Produksi makanan Korea siap saji dimulai di pabrik Sukabumi, dan Vica hadir dalam kemasan 600 ml.",
@@ -391,10 +382,10 @@ export const ABOUT_PAGE = {
     },
     {
       year: "2025",
-      title: { en: "New product lines", id: "Lini produk baru" },
+      title: { en: "Food and beverage lines", id: "Lini makanan dan minuman" },
       body: {
-        en: "Nestlé Pure Life 15 L PET gallons, Fitmeup, ready-to-drink milks, and Wonhae and Floaty snacks and confectionery.",
-        id: "Galon PET 15 L Nestlé Pure Life, Fitmeup, susu siap minum, serta camilan dan kembang gula Wonhae dan Floaty.",
+        en: "Ready-to-drink Creamy Banana Milk and Cheesecake Milk, Floaty and Wonhae snacks, Mini Bites confectionery, and Wonhae Topokki ready-to-eat meals.",
+        id: "Minuman siap saji Creamy Banana Milk dan Cheesecake Milk, camilan Floaty dan Wonhae, kembang gula Mini Bites, serta makanan siap saji Wonhae Topokki.",
       },
     },
   ] satisfies TimelineEntry[],
@@ -403,8 +394,8 @@ export const ABOUT_PAGE = {
   organization: {
     eyebrow: { en: "Organization structure", id: "Struktur organisasi" },
     heading: {
-      en: "The people who lead Akasha.",
-      id: "Yang memimpin Akasha.",
+      en: "Board of Commissioners and Board of Directors.",
+      id: "Dewan Komisaris dan Direksi.",
     },
     body: {
       en: "Delivering the best quality consumer solution to address consumer needs for a quality lifestyle, to sustain our commitment to stakeholders — through our great people, great culture, and great system.",
@@ -424,8 +415,8 @@ export const ABOUT_PAGE = {
       id: "Komite & divisi",
     },
     unitsHeading: {
-      en: "How the company is run.",
-      id: "Bagaimana perusahaan dijalankan.",
+      en: "Organization structure 2025.",
+      id: "Struktur perusahaan 2025.",
     },
     reportsToCommissioners: {
       en: "Reports to the Board of Commissioners",
@@ -455,8 +446,8 @@ export const ABOUT_PAGE = {
       photo: "/media/pages/about/organization/rudy-hidayat.jpg",
       since: { en: "17 June 2026", id: "17 Juni 2026" },
       bio: {
-        en: "Master of Science in Industrial Engineering and Management Sciences, Eindhoven University of Technology (1996). Formerly Sales Director of PT Multi Bintang Indonesia Tbk, Special Project Director at Heineken Asia Pacific, Independent Commissioner of PT Jobubu Jarum Minahasa Tbk, and most recently President Director of PT Blue Gas Indonesia.",
-        id: "Master of Science di bidang Industrial Engineering and Management Sciences, Eindhoven University of Technology (1996). Pernah menjabat Sales Director PT Multi Bintang Indonesia Tbk, Special Project Director Heineken Asia Pacific, Komisaris Independen PT Jobubu Jarum Minahasa Tbk, dan terakhir Presiden Direktur PT Blue Gas Indonesia.",
+        en: "Master of Science in Industrial Engineering and Management Sciences, Eindhoven University of Technology (1996). Formerly Sales Director of PT Multi Bintang Indonesia Tbk, Special Project Director at Heineken Asia Pacific, Independent Commissioner of PT Jobobu Jarum Minahasa Tbk, and most recently President Director of PT Blue Gas Indonesia.",
+        id: "Master of Science di bidang Industrial Engineering and Management Sciences, Eindhoven University of Technology (1996). Pernah menjabat Sales Director PT Multi Bintang Indonesia Tbk, Special Project Director Heineken Asia Pacific, Komisaris Independen PT Jobobu Jarum Minahasa Tbk, dan terakhir Presiden Direktur PT Blue Gas Indonesia.",
       },
     },
     {
@@ -500,10 +491,6 @@ export const ABOUT_PAGE = {
     {
       reportsTo: "commissioners",
       label: { en: "Audit Committee", id: "Komite Audit" },
-      note: {
-        en: "Assists the Board of Commissioners in overseeing financial reporting, internal control and audit.",
-        id: "Membantu Dewan Komisaris mengawasi pelaporan keuangan, pengendalian internal, dan audit.",
-      },
       people: [
         { name: "Julianto", role: { en: "Chairman", id: "Ketua" } },
         { name: "Zulbahri", role: { en: "Member", id: "Anggota" } },
@@ -513,19 +500,11 @@ export const ABOUT_PAGE = {
     {
       reportsTo: "directors",
       label: { en: "Internal Audit", id: "Audit Internal" },
-      note: {
-        en: "Independent assurance over risk management, control and governance.",
-        id: "Penjaminan independen atas manajemen risiko, pengendalian, dan tata kelola.",
-      },
       people: [{ name: "Wendi Jaya Wardana" }],
     },
     {
       reportsTo: "directors",
       label: { en: "Corporate Secretary", id: "Sekretaris Perusahaan" },
-      note: {
-        en: "Our link with regulators, the stock exchange, shareholders and the public.",
-        id: "Penghubung dengan regulator, bursa efek, pemegang saham, dan publik.",
-      },
       people: [{ name: "Aprianti Kartika" }],
     },
   ] satisfies UnitEntry[],
@@ -576,8 +555,8 @@ export const ABOUT_PAGE = {
   governanceNote: {
     // Split around the inline link to the Governance page.
     textBefore: {
-      en: "A two-tier structure under Indonesia's Limited Liability Company Law — the Board of Commissioners oversees the running of the company, while the Board of Directors manages its operations. More on the ",
-      id: "Struktur dua-tingkat sesuai UU Perseroan Terbatas Indonesia — Komisaris mengawasi jalannya perseroan, Direksi menjalankan pengelolaan perusahaan. Selengkapnya di halaman ",
+      en: "More on the company's governance on the ",
+      id: "Selengkapnya tentang tata kelola perusahaan di halaman ",
     },
     linkLabel: "Governance",
     textAfter: {
@@ -588,14 +567,14 @@ export const ABOUT_PAGE = {
 
   // ── Locations ──────────────────────────────────────────────────────────────
   footprint: {
-    eyebrow: { en: "Footprint", id: "Jejak operasi" },
+    eyebrow: { en: "Locations", id: "Lokasi" },
     heading: {
-      en: "Our operations in Indonesia.",
-      id: "Operasi kami di Indonesia.",
+      en: "Head office, distribution hub and production sites.",
+      id: "Kantor pusat, pusat distribusi, dan lokasi produksi.",
     },
     body: {
-      en: "Head office and distribution hub in Jakarta, and four factories across West and East Java — bringing our products closer to consumers across the archipelago.",
-      id: "Kantor pusat dan pusat distribusi di Jakarta, serta empat pabrik di Jawa Barat dan Jawa Timur — mendekatkan produk ke konsumen di seluruh nusantara.",
+      en: "Head office and distribution hub in Jakarta, and four factories in West and East Java.",
+      id: "Kantor pusat dan pusat distribusi di Jakarta, serta empat pabrik di Jawa Barat dan Jawa Timur.",
     },
     makesLabel: { en: "Produces", id: "Memproduksi" },
     mapsLabel: { en: "Open in Google Maps", id: "Buka di Google Maps" },
@@ -658,22 +637,13 @@ export const ABOUT_PAGE = {
   achievements: {
     eyebrow: { en: "Achievements", id: "Pencapaian" },
     heading: {
-      en: "Certified to international standards.",
-      id: "Tersertifikasi standar internasional.",
+      en: "Certifications and ratings.",
+      id: "Sertifikasi dan peringkat.",
     },
     body: {
       en: "The management systems and ratings in place across our operations, as reported in the 2025 Annual Report.",
       id: "Sistem manajemen dan peringkat yang diterapkan di seluruh operasi kami, sebagaimana dilaporkan dalam Laporan Tahunan 2025.",
     },
-    // PROPER ratings from best to lowest, as set by the Ministry of Environment.
-    properScale: [
-      { en: "Gold", id: "Emas" },
-      { en: "Green", id: "Hijau" },
-      { en: "Blue", id: "Biru" },
-      { en: "Red", id: "Merah" },
-      { en: "Black", id: "Hitam" },
-    ],
-    properCurrent: 2, // index into properScale — Blue
   },
 
   certifications: [
@@ -727,8 +697,8 @@ export const ABOUT_PAGE = {
         id: "Peringkat kinerja pengelolaan lingkungan",
       },
       scope: {
-        en: "Meets every environmental requirement set by the Ministry of Environment",
-        id: "Memenuhi seluruh persyaratan pengelolaan lingkungan dari Kementerian Lingkungan Hidup",
+        en: "Blue rating — all required aspects fulfilled",
+        id: "Peringkat Biru — seluruh aspek yang dipersyaratkan telah dipenuhi",
       },
     },
   ] satisfies AchievementEntry[],
@@ -741,8 +711,8 @@ export const ABOUT_PAGE = {
       id: "Struktur pemegang saham.",
     },
     body: {
-      en: "A total of 589.896.800 shares outstanding, held by a strategic controlling shareholder and public shareholders.",
-      id: "Total 589.896.800 lembar saham beredar, terdiri dari pengendali strategis dan saham publik.",
+      en: "A total of 589.896.800 shares outstanding, held by the controlling shareholder and public shareholders.",
+      id: "Total 589.896.800 lembar saham beredar, terdiri dari pemegang saham pengendali dan saham publik.",
     },
     ctaText: {
       en: "Go to Investor Centre",

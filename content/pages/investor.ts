@@ -8,7 +8,7 @@ type DocArchiveCopy = {
 
 export const INVESTOR_PAGE: {
   meta: { title: Localized<string>; description: Localized<string> };
-  hero: { title: Localized<string>; subtitle: Localized<string> };
+  hero: { title: Localized<string> };
   metrics: {
     netSales: { label: Localized<string> };
     netIncome: { label: Localized<string> };
@@ -64,7 +64,6 @@ export const INVESTOR_PAGE: {
       ticker: { k: Localized<string>; v: Localized<string> };
       exchange: { k: Localized<string>; v: Localized<string> };
       ipoDate: { k: Localized<string>; v: Localized<string> };
-      sector: { k: Localized<string>; v: Localized<string> };
       parValue: { k: Localized<string>; v: Localized<string> };
       authorizedShares: { k: Localized<string>; unit: Localized<string> };
       outstandingShares: { k: Localized<string>; unit: Localized<string> };
@@ -112,7 +111,6 @@ export const INVESTOR_PAGE: {
   governanceCta: {
     eyebrow: Localized<string>;
     heading: Localized<string>;
-    paragraph: Localized<string>;
     link: Localized<string>;
   };
 } = {
@@ -130,10 +128,6 @@ export const INVESTOR_PAGE: {
     title: {
       en: "Investor centre.",
       id: "Investor centre.",
-    },
-    subtitle: {
-      en: "Financial performance, share structure, and information disclosure for shareholders and the public.",
-      id: "Performa keuangan, struktur saham, dan keterbukaan informasi untuk pemegang saham dan publik.",
     },
   },
   metrics: {
@@ -157,10 +151,10 @@ export const INVESTOR_PAGE: {
   },
   chart: {
     eyebrow: { en: "Financial Highlights", id: "Ikhtisar Keuangan" },
-    heading: { en: "Five-year growth.", id: "Pertumbuhan lima tahun." },
+    heading: { en: "Net sales and net income, 2021–2025.", id: "Penjualan bersih dan laba bersih, 2021–2025." },
     paragraph: {
-      en: "Net sales nearly tripled in four years while the net margin held steady — hover or tap a year for the full figures.",
-      id: "Penjualan bersih hampir tiga kali lipat dalam empat tahun dengan margin laba yang tetap terjaga — arahkan kursor atau ketuk satu tahun untuk angka lengkapnya.",
+      en: "Hover or tap a year for the full figures.",
+      id: "Arahkan kursor atau ketuk satu tahun untuk angka lengkapnya.",
     },
     netSales: { en: "Net sales", id: "Penjualan bersih" },
     netIncome: { en: "Net income", id: "Laba bersih" },
@@ -200,12 +194,12 @@ export const INVESTOR_PAGE: {
   chronological: {
     eyebrow: { en: "Chronological share", id: "Kronologi saham" },
     heading: {
-      en: "From 15 million to 589 million shares.",
-      id: "Dari 15 juta jadi 589 juta lembar.",
+      en: "Share issuance history.",
+      id: "Riwayat penerbitan saham.",
     },
     paragraph: {
-      en: "The journey of ADES's capitalization on the Indonesia Stock Exchange since its 1994 IPO.",
-      id: "Perjalanan permodalan ADES di Bursa Efek Indonesia sejak IPO 1994.",
+      en: "Corporate actions affecting ADES shares since the 1994 initial public offering.",
+      id: "Aksi korporasi atas saham ADES sejak penawaran umum perdana 1994.",
     },
     unit: { en: "shares", id: "lembar" },
     parLabel: { en: "par value", id: "par value" },
@@ -232,10 +226,6 @@ export const INVESTOR_PAGE: {
       ipoDate: {
         k: { en: "IPO Date", id: "IPO Date" },
         v: { en: "14 June 1994", id: "14 Juni 1994" },
-      },
-      sector: {
-        k: { en: "Sector", id: "Sektor" },
-        v: { en: "Consumer Non-Cyclicals", id: "Consumer Non-Cyclicals" },
       },
       parValue: {
         k: { en: "Par Value", id: "Nilai Nominal" },
@@ -270,8 +260,8 @@ export const INVESTOR_PAGE: {
         close: { en: "Closing price", id: "Harga penutupan" },
         axis: { en: "Rp per share", id: "Rp per lembar saham" },
         summary: {
-          en: "Daily ADES closing price from 23 July to 18 September 2026, ranging from Rp 30,375 to Rp 38,850 and ending at Rp 32,175. Full figures in the table below.",
-          id: "Harga penutupan harian ADES dari 23 Juli sampai 18 September 2026, bergerak antara Rp 30.375 dan Rp 38.850 dan ditutup di Rp 32.175. Angka lengkapnya ada di tabel di bawah.",
+          en: "Daily ADES closing price from 27 July to 24 September 2026, ranging from Rp 30,375 to Rp 38,850 and ending at Rp 34,900. Full figures in the table below.",
+          id: "Harga penutupan harian ADES dari 27 Juli sampai 24 September 2026, bergerak antara Rp 30.375 dan Rp 38.850 dan ditutup di Rp 34.900. Angka lengkapnya ada di tabel di bawah.",
         },
       },
       dailyTable: { en: "Daily figures", id: "Angka harian" },
@@ -285,8 +275,8 @@ export const INVESTOR_PAGE: {
     eyebrow: { en: "Dividends", id: "Dividen" },
     heading: { en: "Dividend history.", id: "Riwayat dividen." },
     paragraph: {
-      en: "Distribution recorded on the company's dividend page. Subsequent years are covered in the annual reports.",
-      id: "Pembagian yang tercatat pada halaman dividen perusahaan. Tahun-tahun berikutnya diuraikan di laporan tahunan.",
+      en: "Distribution recorded on the company's dividend page.",
+      id: "Pembagian yang tercatat pada halaman dividen perusahaan.",
     },
     columns: {
       year: { en: "Year", id: "Tahun" },
@@ -299,16 +289,16 @@ export const INVESTOR_PAGE: {
     eyebrow: { en: "Annual report", id: "Laporan tahunan" },
     heading: { en: "Annual reports.", id: "Laporan tahunan." },
     paragraph: {
-      en: "Management review, financial performance, governance, and social responsibility — one volume per financial year.",
-      id: "Tinjauan manajemen, kinerja keuangan, tata kelola, dan tanggung jawab sosial — satu jilid per tahun buku.",
+      en: "Annual reports, 2012–2025.",
+      id: "Laporan tahunan, 2012–2025.",
     },
   },
   financialReports: {
     eyebrow: { en: "Financial report", id: "Laporan keuangan" },
     heading: { en: "Financial statements.", id: "Laporan keuangan." },
     paragraph: {
-      en: "Audited year-end statements and interim statements for each quarter, back to the 2012 financial year.",
-      id: "Laporan audited akhir tahun dan laporan interim tiap kuartal, hingga tahun buku 2012.",
+      en: "Annual year-end statements and interim statements for each quarter, back to the 2012 financial year.",
+      id: "Laporan tahunan akhir tahun dan laporan interim tiap kuartal, hingga tahun buku 2012.",
     },
     // Surat penjelasan OJK atas perubahan jumlah aset lebih dari 20%.
     letterLabel: {
@@ -320,16 +310,16 @@ export const INVESTOR_PAGE: {
     eyebrow: { en: "Sustainability report", id: "Laporan keberlanjutan" },
     heading: { en: "Sustainability reports.", id: "Laporan keberlanjutan." },
     paragraph: {
-      en: "Annual reporting on environmental, social, and governance performance, published since the 2021 financial year.",
-      id: "Pelaporan tahunan atas kinerja lingkungan, sosial, dan tata kelola, terbit sejak tahun buku 2021.",
+      en: "Sustainability reports, 2021–2025.",
+      id: "Laporan keberlanjutan, 2021–2025.",
     },
   },
   archiveDownloadLabel: { en: "Download PDF", id: "Unduh PDF" },
   resources: {
     eyebrow: { en: "Resources", id: "Sumber daya" },
     heading: {
-      en: "All investor documents.",
-      id: "Semua dokumen investor.",
+      en: "Investor documents.",
+      id: "Dokumen investor.",
     },
     viewLink: { en: "View ›", id: "Lihat ›" },
   },
@@ -339,12 +329,8 @@ export const INVESTOR_PAGE: {
       id: "Tata kelola perusahaan yang baik",
     },
     heading: {
-      en: "Governance principles that underpin every decision.",
-      id: "Prinsip tata kelola yang menopang setiap keputusan.",
-    },
-    paragraph: {
-      en: "TARIF — Transparency, Accountability, Responsibility, Independency, Fairness.",
-      id: "TARIF — Transparansi, Akuntabilitas, Responsibilitas, Independensi, Fairness.",
+      en: "Articles of Association, GMS and information disclosure.",
+      id: "Anggaran Dasar, RUPS, dan keterbukaan informasi.",
     },
     link: { en: "View the governance page", id: "Lihat halaman governance" },
   },

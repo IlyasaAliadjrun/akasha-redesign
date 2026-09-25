@@ -52,7 +52,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             </div>
             <ul className="space-y-2 text-sm">
               <li><a href="https://shop.akasha.co.id" target="_blank" rel="noreferrer" className="hover:text-white transition">{t(NAV.onlineShop)}</a></li>
-              <li><a href="tel:+628111934500" className="hover:text-white transition">+62 811 1934 5000</a></li>
+              <li><a href="https://wa.me/6281119345000" target="_blank" rel="noreferrer" className="hover:text-white transition">+62 811 1934 5000</a></li>
               <li className="text-white/50">{t(FOOTER.customerCare)}</li>
             </ul>
           </div>

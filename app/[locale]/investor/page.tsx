@@ -97,7 +97,6 @@ export default function InvestorPage({ params }: { params: { locale: string } })
         desktop="/media/pages/investor/hero/desktop.jpg"
         mobile="/media/pages/investor/hero/mobile.jpg"
         title={t(INVESTOR_PAGE.hero.title)}
-        subtitle={t(INVESTOR_PAGE.hero.subtitle)}
         tone="dark"
         bg="#0F4930"
       />
@@ -466,7 +465,6 @@ export default function InvestorPage({ params }: { params: { locale: string } })
               { k: t(INVESTOR_PAGE.stockInfo.rows.ticker.k), v: t(INVESTOR_PAGE.stockInfo.rows.ticker.v) },
               { k: t(INVESTOR_PAGE.stockInfo.rows.exchange.k), v: t(INVESTOR_PAGE.stockInfo.rows.exchange.v) },
               { k: t(INVESTOR_PAGE.stockInfo.rows.ipoDate.k), v: t(INVESTOR_PAGE.stockInfo.rows.ipoDate.v) },
-              { k: t(INVESTOR_PAGE.stockInfo.rows.sector.k), v: t(INVESTOR_PAGE.stockInfo.rows.sector.v) },
               { k: t(INVESTOR_PAGE.stockInfo.rows.parValue.k), v: t(INVESTOR_PAGE.stockInfo.rows.parValue.v) },
               {
                 k: t(INVESTOR_PAGE.stockInfo.rows.authorizedShares.k),
@@ -690,9 +688,6 @@ export default function InvestorPage({ params }: { params: { locale: string } })
           <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
             {t(INVESTOR_PAGE.governanceCta.heading)}
           </h2>
-          <p className="mt-6 text-ink/60">
-            {t(INVESTOR_PAGE.governanceCta.paragraph)}
-          </p>
           <Link
             href={href("/governance")}
             className="mt-10 inline-block text-sm font-semibold px-6 py-3 rounded-full bg-ink text-white hover:opacity-90 transition-opacity duration-300"

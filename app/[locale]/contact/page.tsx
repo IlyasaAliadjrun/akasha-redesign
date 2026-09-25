@@ -32,7 +32,6 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
         desktop="/media/pages/contact/hero/desktop.jpg"
         mobile="/media/pages/contact/hero/mobile.jpg"
         title={t(CONTACT_PAGE.hero.title)}
-        subtitle={t(CONTACT_PAGE.hero.subtitle)}
         tone="light"
         bg="#E5B91A"
       />
@@ -44,13 +43,16 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
               <div className="text-sm uppercase tracking-[0.2em] font-bold text-ink/60 mb-3">
                 {t(CONTACT_PAGE.customerCare.label)}
               </div>
+              {/* The official site lists this number as WhatsApp, text only. */}
               <a
-                href="tel:+6281119345000"
+                href="https://wa.me/6281119345000"
+                target="_blank"
+                rel="noreferrer"
                 className="text-2xl font-extrabold tracking-tightish block"
               >
                 +62 811 1934 5000
               </a>
-              <p className="text-ink/60 text-sm mt-2">{t(CONTACT_PAGE.customerCare.hours)}</p>
+              <p className="text-ink/60 text-sm mt-2">{t(CONTACT_PAGE.customerCare.note)}</p>
             </div>
 
             <div>
@@ -63,7 +65,6 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
               >
                 info@akashainternational.com
               </a>
-              <p className="text-ink/60 text-sm mt-2">{t(CONTACT_PAGE.email.note)}</p>
             </div>
 
             <div>

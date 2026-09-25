@@ -2,18 +2,7 @@ import type { Localized } from "@/lib/locale/paths";
 
 export const GOVERNANCE_PAGE: {
   meta: { title: Localized<string>; description: Localized<string> };
-  hero: { title: Localized<string>; subtitle: Localized<string> };
-  principles: { eyebrow: Localized<string>; heading: Localized<string> };
-  structure: {
-    eyebrow: Localized<string>;
-    heading: Localized<string>;
-    paragraph: Localized<string>;
-    cards: {
-      title: Localized<string>;
-      subtitle: Localized<string>;
-      description: Localized<string>;
-    }[];
-  };
+  hero: { title: Localized<string> };
   documents: {
     eyebrow: Localized<string>;
     heading: Localized<string>;
@@ -62,81 +51,9 @@ export const GOVERNANCE_PAGE: {
   },
   hero: {
     title: {
-      en: "Governance that builds trust.",
-      id: "Tata kelola yang membangun kepercayaan.",
+      en: "Good corporate governance.",
+      id: "Tata kelola perusahaan.",
     },
-    subtitle: {
-      en: "A commitment to five principles — transparency, accountability, responsibility, independency, and fairness — in every corporate decision.",
-      id: "Komitmen pada lima prinsip — transparansi, akuntabilitas, responsibilitas, independensi, dan fairness — dalam setiap keputusan perusahaan.",
-    },
-  },
-  principles: {
-    eyebrow: {
-      en: "Five principles",
-      id: "Lima prinsip",
-    },
-    heading: {
-      en: "TARIF — five GCG principles.",
-      id: "TARIF — lima prinsip GCG.",
-    },
-  },
-  structure: {
-    eyebrow: {
-      en: "Governance structure",
-      id: "Struktur tata kelola",
-    },
-    heading: {
-      en: "Corporate organs.",
-      id: "Organ perusahaan.",
-    },
-    paragraph: {
-      en: "A two-tier structure under Indonesia's Limited Liability Company Law — separating the management function from the oversight function.",
-      id: "Struktur dua-tingkat sesuai UU Perseroan Terbatas Indonesia — memisahkan fungsi pengelolaan dan pengawasan.",
-    },
-    cards: [
-      {
-        title: {
-          en: "General Meeting of Shareholders",
-          id: "General Meeting of Shareholders",
-        },
-        subtitle: {
-          en: "Highest authority",
-          id: "Otoritas tertinggi",
-        },
-        description: {
-          en: "Strategic decisions such as approving annual reports, dividend distribution, and the appointment of the Board of Directors and Board of Commissioners.",
-          id: "Keputusan strategis seperti persetujuan laporan tahunan, pembagian dividen, dan pengangkatan Direksi serta Komisaris.",
-        },
-      },
-      {
-        title: {
-          en: "Board of Commissioners",
-          id: "Board of Commissioners",
-        },
-        subtitle: {
-          en: "Oversight",
-          id: "Pengawasan",
-        },
-        description: {
-          en: "Oversees the management carried out by the Board of Directors and provides advice to the Board of Directors.",
-          id: "Mengawasi jalannya kepengurusan oleh Direksi dan memberi nasihat kepada Direksi.",
-        },
-      },
-      {
-        title: {
-          en: "Board of Directors",
-          id: "Board of Directors",
-        },
-        subtitle: {
-          en: "Management",
-          id: "Pengelolaan",
-        },
-        description: {
-          en: "Runs the management of the company for the benefit and purposes of the company.",
-          id: "Menjalankan pengurusan perusahaan untuk kepentingan dan tujuan perseroan.",
-        },
-      },
-    ],
   },
   documents: {
     eyebrow: {
@@ -162,12 +79,12 @@ export const GOVERNANCE_PAGE: {
       id: "Rapat Umum Pemegang Saham",
     },
     heading: {
-      en: "Every meeting, on the record.",
-      id: "Setiap rapat, tercatat.",
+      en: "GMS documents, 2015–2026.",
+      id: "Dokumen RUPS, 2015–2026.",
     },
     paragraph: {
-      en: "Notice, invitation, agenda material, meeting rules, power of attorney, and summary of the minutes — published for every annual and extraordinary meeting since 2015.",
-      id: "Pemberitahuan, panggilan, materi mata acara, tata tertib, surat kuasa, dan ringkasan risalah — dipublikasikan untuk setiap RUPS tahunan dan luar biasa sejak 2015.",
+      en: "Notices, invitations, agenda material, meeting rules, powers of attorney and summaries of the minutes of the General Meeting of Shareholders, 2015–2026.",
+      id: "Pemberitahuan, panggilan, materi mata acara, tata tertib, surat kuasa, dan ringkasan risalah Rapat Umum Pemegang Saham, 2015–2026.",
     },
     documentsLabel: {
       en: "documents",
@@ -180,12 +97,12 @@ export const GOVERNANCE_PAGE: {
       id: "Keterbukaan informasi",
     },
     heading: {
-      en: "Material information, disclosed.",
-      id: "Informasi material, dibuka.",
+      en: "Disclosure documents.",
+      id: "Dokumen keterbukaan informasi.",
     },
     paragraph: {
-      en: "Disclosures submitted to the Financial Services Authority and the Indonesia Stock Exchange — corporate actions, changes to the boards, public expose, and feasibility studies.",
-      id: "Keterbukaan yang disampaikan kepada Otoritas Jasa Keuangan dan Bursa Efek Indonesia — aksi korporasi, perubahan susunan pengurus, paparan publik, dan studi kelayakan.",
+      en: "Information disclosures published by the company — corporate actions, changes to the boards, public expose, and feasibility studies.",
+      id: "Keterbukaan informasi yang dipublikasikan perusahaan — aksi korporasi, perubahan susunan pengurus, paparan publik, dan studi kelayakan.",
     },
   },
   announcement: {
@@ -194,12 +111,12 @@ export const GOVERNANCE_PAGE: {
       id: "Pengumuman",
     },
     heading: {
-      en: "Official announcements.",
-      id: "Pengumuman resmi.",
+      en: "Announcements.",
+      id: "Pengumuman.",
     },
     paragraph: {
-      en: "Announcements published by the company to shareholders and the public.",
-      id: "Pengumuman yang diterbitkan perusahaan kepada pemegang saham dan publik.",
+      en: "Announcements published by the company.",
+      id: "Pengumuman yang diterbitkan perusahaan.",
     },
   },
   csr: {
@@ -208,12 +125,12 @@ export const GOVERNANCE_PAGE: {
       id: "Tanggung Jawab Sosial Perusahaan",
     },
     heading: {
-      en: "Growing together with the community.",
-      id: "Tumbuh bersama komunitas.",
+      en: "CSR programmes.",
+      id: "Program CSR.",
     },
     paragraph: {
-      en: "Sustainable contributions to the environment, health, education, and community empowerment around our areas of operation. Each year's programme is reported as a chapter of the Annual Report.",
-      id: "Kontribusi berkelanjutan kepada lingkungan, kesehatan, pendidikan, dan pemberdayaan masyarakat di sekitar area operasi kami. Program tiap tahun dilaporkan sebagai bab dalam Laporan Tahunan.",
+      en: "Sustainable contributions to the environment, health, education, and community empowerment around our areas of operation. The 2016–2021 programmes can be read in each year's Annual Report.",
+      id: "Kontribusi berkelanjutan kepada lingkungan, kesehatan, pendidikan, dan pemberdayaan masyarakat di sekitar area operasi kami. Program 2016–2021 dapat dibaca di Laporan Tahunan masing-masing tahun.",
     },
     reportsLabel: {
       en: "Where to read it",

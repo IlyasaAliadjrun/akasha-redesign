@@ -221,7 +221,7 @@ export const SHARE_ACTIONS: {
   },
   {
     date: { en: "4 Aug 1997", id: "4 Agu 1997" },
-    action: { en: "Bonus Share Issuance (100 : 294)", id: "Penerbitan Saham Bonus (100 : 294)" },
+    action: { en: "Bonus Share Issuance", id: "Penerbitan Saham Bonus" },
     shares: "38.000.000",
     par: "Rp 1.000",
   },
@@ -233,7 +233,7 @@ export const SHARE_ACTIONS: {
   },
   {
     date: { en: "5 Dec 2007", id: "5 Des 2007" },
-    action: { en: "Rights Issue II", id: "Penawaran Umum Terbatas II" },
+    action: { en: "Rights Issue II (100 : 294)", id: "Penawaran Umum Terbatas II (100 : 294)" },
     shares: "440.176.800",
     par: "Rp 1.000",
   },
@@ -276,11 +276,9 @@ export const OUTSTANDING_SHARES_COUNT = 589_896_800;
 // Information. Sumbernya menuliskan deret ini inline di HTML dan memperbaruinya
 // secara manual — jadi ini POTRET, bukan umpan langsung. Perbarui bersama
 // SHARE_PRICE_DAILY_AS_OF setiap kali arsip ditarik ulang.
-export const SHARE_PRICE_DAILY_AS_OF = { year: 2026, month: 9, day: 18 };
+export const SHARE_PRICE_DAILY_AS_OF = { year: 2026, month: 9, day: 24 };
 
 export const SHARE_PRICE_DAILY: { month: number; day: number; close: number }[] = [
-  { month: 7, day: 23, close: 35_400 },
-  { month: 7, day: 24, close: 36_275 },
   { month: 7, day: 27, close: 38_850 },
   { month: 7, day: 28, close: 38_425 },
   { month: 7, day: 29, close: 37_800 },
@@ -319,6 +317,10 @@ export const SHARE_PRICE_DAILY: { month: number; day: number; close: number }[] 
   { month: 9, day: 16, close: 31_975 },
   { month: 9, day: 17, close: 32_500 },
   { month: 9, day: 18, close: 32_175 },
+  { month: 9, day: 21, close: 31_975 },
+  { month: 9, day: 22, close: 31_950 },
+  { month: 9, day: 23, close: 31_800 },
+  { month: 9, day: 24, close: 34_900 },
 ];
 
 export function dailySharePriceSummary() {
@@ -499,7 +501,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2025",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2025/fy.pdf`,
       },
       {
@@ -520,7 +522,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2024",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2024/fy.pdf`,
       },
       {
@@ -541,7 +543,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2023",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2023/fy.pdf`,
         letter: `${FR}/2023/fy-ojk-letter.pdf`,
       },
@@ -566,7 +568,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2022",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2022/fy.pdf`,
         letter: `${FR}/2022/fy-ojk-letter.pdf`,
       },
@@ -589,7 +591,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2021",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2021/fy.pdf`,
         letter: `${FR}/2021/fy-ojk-letter.pdf`,
       },
@@ -613,7 +615,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2020",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2020/fy.pdf`,
         letter: `${FR}/2020/fy-ojk-letter.pdf`,
       },
@@ -638,7 +640,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2019",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2019/fy.pdf`,
         letter: `${FR}/2019/fy-ojk-letter.pdf`,
       },
@@ -662,7 +664,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2018",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2018/fy.pdf`,
         letter: `${FR}/2018/fy-ojk-letter.pdf`,
       },
@@ -687,7 +689,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2017",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2017/fy.pdf`,
         letter: `${FR}/2017/fy-ojk-letter.pdf`,
       },
@@ -707,7 +709,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2016",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2016/fy.pdf`,
         letter: `${FR}/2016/fy-ojk-letter.pdf`,
       },
@@ -730,7 +732,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2015",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2015/fy.pdf`,
         letter: `${FR}/2015/fy-ojk-letter.pdf`,
       },
@@ -759,7 +761,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2014",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2014/fy.pdf`,
       },
       {
@@ -774,7 +776,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2013",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2013/fy.pdf`,
       },
       {
@@ -789,7 +791,7 @@ export const FINANCIAL_REPORT_ARCHIVE: {
     year: "2012",
     periods: [
       {
-        label: { en: "December (audited)", id: "Desember (audited)" },
+        label: { en: "December (annual)", id: "Desember (tahunan)" },
         file: `${FR}/2012/fy.pdf`,
       },
       {
@@ -1062,7 +1064,7 @@ export const GMS_ARCHIVE: {
   },
   {
     year: "2019",
-    date: { en: "7 & 29 May 2019", id: "7 & 29 Mei 2019" },
+    date: { en: "29 May 2019", id: "29 Mei 2019" },
     documents: [
       {
         label: { en: "Announcement of AGM and EGM", id: "Pengumuman RUPST dan RUPSLB" },
@@ -1204,7 +1206,8 @@ export const GMS_ARCHIVE: {
 const DISC = "/documents/disclosure";
 
 export const DISCLOSURES: {
-  date: Localized<string>;
+  // Only where the source states a date — some disclosures are listed undated.
+  date?: Localized<string>;
   title: Localized<string>;
   file: string;
 }[] = [
@@ -1241,7 +1244,6 @@ export const DISCLOSURES: {
     file: `${DISC}/2026-06-08-full-report-feasibility-study.pdf`,
   },
   {
-    date: { en: "May 2026", id: "Mei 2026" },
     title: {
       en: "Disclosure of information on the addition of business activities",
       id: "Keterbukaan informasi atas penambahan kegiatan usaha",
@@ -1249,7 +1251,6 @@ export const DISCLOSURES: {
     file: `${DISC}/2026-05-addition-of-business-activities.pdf`,
   },
   {
-    date: { en: "May 2026", id: "Mei 2026" },
     title: {
       en: "Disclosure of information — resignation of President Director Wihardjo Hadiseputro and Commissioner Nana Puspa Dewi",
       id: "Keterbukaan informasi — pengunduran diri Presiden Direktur Wihardjo Hadiseputro dan Komisaris Nana Puspa Dewi",
@@ -1265,7 +1266,6 @@ export const DISCLOSURES: {
     file: `${DISC}/2025-06-19-public-expose-notification.pdf`,
   },
   {
-    date: { en: "March 2025", id: "Maret 2025" },
     title: {
       en: "Disclosure of information — resignation of Director Raimond Bing Lesnussa",
       id: "Keterbukaan informasi — pengunduran diri Direktur Raimond Bing Lesnussa",
@@ -1305,7 +1305,6 @@ export const DISCLOSURES: {
     file: `${DISC}/2023-05-15-information-to-shareholders.pdf`,
   },
   {
-    date: { en: "May 2023", id: "Mei 2023" },
     title: {
       en: "Disclosure of information — resignation of Independent Commissioner Ms. Miscellia Dotulong",
       id: "Keterbukaan informasi — pengunduran diri Komisaris Independen Ibu Miscellia Dotulong",
@@ -1313,7 +1312,6 @@ export const DISCLOSURES: {
     file: `${DISC}/2023-05-resignation-of-independent-commissioner-ms-miscellia-dotulong.pdf`,
   },
   {
-    date: { en: "May 2022", id: "Mei 2022" },
     title: {
       en: "Disclosure of information — resignation of Commissioner Mr. Danny Yuwono",
       id: "Keterbukaan informasi — pengunduran diri Komisaris Bapak Danny Yuwono",
@@ -1419,8 +1417,8 @@ export const INVESTOR_SECTIONS: {
     href: "#financial-report",
     title: { en: "Financial Report", id: "Laporan Keuangan" },
     desc: {
-      en: "Audited and quarterly interim financial statements, 2012–2026.",
-      id: "Laporan keuangan audited dan interim per kuartal, 2012–2026.",
+      en: "Annual and quarterly interim financial statements, 2012–2026.",
+      id: "Laporan keuangan tahunan dan interim per kuartal, 2012–2026.",
     },
   },
   {
@@ -1482,8 +1480,8 @@ export const INVESTOR_SECTIONS: {
     href: "/governance#disclosure",
     title: { en: "Disclosure", id: "Keterbukaan Informasi" },
     desc: {
-      en: "Information disclosure in accordance with POJK regulations.",
-      id: "Keterbukaan informasi sesuai POJK.",
+      en: "Information disclosures published by the company.",
+      id: "Keterbukaan informasi yang dipublikasikan perusahaan.",
     },
   },
 ];
@@ -1492,7 +1490,6 @@ export const GOVERNANCE_PILLARS: {
   id: string;
   href: string;
   title: Localized<string>;
-  desc: Localized<string>;
   note?: Localized<string>;
   icon: string;
 }[] = [
@@ -1500,13 +1497,9 @@ export const GOVERNANCE_PILLARS: {
     id: "article-of-association",
     href: "/documents/governance/articles-of-association.pdf",
     title: { en: "Article of Association", id: "Anggaran Dasar" },
-    desc: {
-      en: "Article of Association — the foundational legal document governing the company's structure, rights, and obligations.",
-      id: "Anggaran Dasar — dokumen legal fondasi yang mengatur struktur, hak, dan kewajiban perusahaan.",
-    },
     note: {
-      en: "Deed No. 19 · AHU-AH-01-03-0953311 & 0953310 · 7 August 2015",
-      id: "Akta No. 19 · AHU-AH-01-03-0953311 & 0953310 · 7 Agustus 2015",
+      en: "Deed No. 19 · 8 July 2015 · AHU-AH.01.03-0953310 & 0953311",
+      id: "Akta No. 19 · 8 Juli 2015 · AHU-AH.01.03-0953310 & 0953311",
     },
     icon: "📜",
   },
@@ -1514,10 +1507,6 @@ export const GOVERNANCE_PILLARS: {
     id: "bod-boc-charter",
     href: "/documents/governance/communication-policy.pdf",
     title: { en: "BOD & BOC Charter", id: "Direksi & Komisaris Charter" },
-    desc: {
-      en: "Governance guidelines for the Board of Directors and Board of Commissioners in carrying out their oversight functions.",
-      id: "Pedoman tata kelola untuk Dewan Direksi dan Dewan Komisaris dalam menjalankan fungsi pengawasan.",
-    },
     note: {
       en: "Shareholders, Investors and Stakeholders Communication Policy",
       id: "Kebijakan Komunikasi dengan Pemegang Saham, Investor, dan Pemangku Kepentingan",
@@ -1528,13 +1517,9 @@ export const GOVERNANCE_PILLARS: {
     id: "csr",
     href: "#csr",
     title: { en: "Corporate Social Responsibility", id: "Tanggung Jawab Sosial Perusahaan" },
-    desc: {
-      en: "Social responsibility programs and sustained contribution to community and environment.",
-      id: "Program tanggung jawab sosial dan kontribusi berkelanjutan terhadap komunitas serta lingkungan.",
-    },
     note: {
-      en: "Reported as a chapter within each year's Annual Report",
-      id: "Dilaporkan sebagai bab di dalam Laporan Tahunan tiap tahun",
+      en: "2016–2021 programmes are reported in each year's Annual Report",
+      id: "Program 2016–2021 dilaporkan di Laporan Tahunan masing-masing tahun",
     },
     icon: "🌱",
   },
@@ -1542,77 +1527,18 @@ export const GOVERNANCE_PILLARS: {
     id: "announcement",
     href: "#announcement",
     title: { en: "Announcement", id: "Pengumuman" },
-    desc: {
-      en: "Official company announcements to the public and shareholders.",
-      id: "Pengumuman resmi perusahaan kepada publik dan pemegang saham.",
-    },
     icon: "📢",
   },
   {
     id: "disclosure",
     href: "#disclosure",
     title: { en: "Disclosure Information", id: "Keterbukaan Informasi" },
-    desc: {
-      en: "Material information disclosure per OJK and Indonesia Stock Exchange regulations.",
-      id: "Keterbukaan informasi material sesuai ketentuan OJK dan Bursa Efek Indonesia.",
-    },
     icon: "🔍",
   },
   {
     id: "gms",
     href: "#gms",
     title: { en: "General Meeting of Shareholders", id: "Rapat Umum Pemegang Saham" },
-    desc: {
-      en: "Procedures and documentation for the annual and extraordinary General Meeting of Shareholders (GMS).",
-      id: "Prosedur dan dokumentasi Rapat Umum Pemegang Saham (RUPS) tahunan dan luar biasa.",
-    },
     icon: "🤝",
-  },
-];
-
-export const GCG_PRINCIPLES: {
-  letter: string;
-  title: Localized<string>;
-  body: Localized<string>;
-}[] = [
-  {
-    letter: "T",
-    title: { en: "Transparency", id: "Transparansi" },
-    body: {
-      en: "Disclosure of material and relevant information in a timely and accurate manner.",
-      id: "Pengungkapan informasi yang material dan relevan secara tepat waktu dan akurat.",
-    },
-  },
-  {
-    letter: "A",
-    title: { en: "Accountability", id: "Akuntabilitas" },
-    body: {
-      en: "Clarity of function and accountability across every organ of the company.",
-      id: "Kejelasan fungsi dan pertanggungjawaban seluruh organ perusahaan.",
-    },
-  },
-  {
-    letter: "R",
-    title: { en: "Responsibility", id: "Responsibilitas" },
-    body: {
-      en: "Compliance with regulations and social responsibility toward stakeholders.",
-      id: "Kepatuhan terhadap peraturan dan tanggung jawab sosial terhadap stakeholder.",
-    },
-  },
-  {
-    letter: "I",
-    title: { en: "Independency", id: "Independensi" },
-    body: {
-      en: "Professional management free of conflicts of interest.",
-      id: "Pengelolaan secara profesional tanpa benturan kepentingan.",
-    },
-  },
-  {
-    letter: "F",
-    title: { en: "Fairness", id: "Fairness" },
-    body: {
-      en: "Fair and equal treatment for all shareholders.",
-      id: "Perlakuan yang adil dan setara bagi seluruh pemegang saham.",
-    },
   },
 ];
