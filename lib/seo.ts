@@ -1,5 +1,3 @@
-import fs from "node:fs";
-import path from "node:path";
 import type { Metadata } from "next";
 import { defaultLocale, locales, type Locale } from "@/lib/locale/paths";
 
@@ -18,10 +16,12 @@ export const DEFAULT_OG_IMAGE = "/media/shared/og.jpg";
 const OG_LOCALE: Record<Locale, string> = { en: "en_US", id: "id_ID" };
 
 // Brand share images come from `npm run og:generate`; a page whose file is
-// missing falls back to the default card instead of a broken preview. Metadata
-// is resolved while pages are statically generated, with public/ beside cwd.
-export const shareImage = (src: string) =>
-  fs.existsSync(path.join(process.cwd(), "public", src)) ? src : DEFAULT_OG_IMAGE;
+// missing falls back to the default card instead of a broken preview. The list
+// of files on disk is built in next.config.mjs — never stat public/ from here
+// (see the note there).
+const OG_IMAGES = new Set<string>(JSON.parse(process.env.OG_IMAGES || "[]"));
+
+export const shareImage = (src: string) => (OG_IMAGES.has(src) ? src : DEFAULT_OG_IMAGE);
 
 // Search results cut descriptions at ~160 characters. Brand copy is written for
 // the page, not for that limit, so keep whole sentences up to it, and top a short

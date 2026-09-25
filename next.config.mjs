@@ -28,9 +28,24 @@ function isolatedTsconfig() {
   return file;
 }
 
+// Brand/line share images that exist on disk, for `shareImage` in lib/seo.ts.
+// Listed here (and inlined through `env`) because stat-ing public/ from app code
+// makes the file tracer bundle all of public/ (~2 GB) into every serverless
+// function, past Vercel's 250 MB limit. Read once per `next build` / `next dev`
+// start — restart dev after dropping in a new og.jpg.
+function ogImages() {
+  const root = "public/media/brands";
+  if (!fs.existsSync(root)) return [];
+  return fs
+    .readdirSync(root, { recursive: true })
+    .map((p) => `/media/brands/${String(p).split("\\").join("/")}`)
+    .filter((p) => p.endsWith("/hero/og.jpg"));
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   distDir,
+  env: { OG_IMAGES: JSON.stringify(ogImages()) },
   // Self-hosted deploys run `.next/standalone/server.js` (see deploy/SETUP.md).
   // Vercel ignores this and keeps using its own output.
   output: "standalone",
