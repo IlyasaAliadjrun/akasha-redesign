@@ -4,6 +4,8 @@ import { getBrand } from "@/lib/brands";
 import { SUB_BRANDS, getSubBrand } from "@/lib/subBrands";
 import { locales, type Locale } from "@/lib/locale/paths";
 import { resolveSubBrand } from "@/lib/locale/resolve";
+import { fitDescription, pageMetadata, shareImage } from "@/lib/seo";
+import { BRAND } from "@/dictionaries/brand";
 import SubBrandTemplate from "@/components/subbrand/SubBrandTemplate";
 
 // Sub-brand (product-line) pages, e.g. /brands/hair-energy/creambath. Statically
@@ -23,11 +25,17 @@ export function generateMetadata({
   const sub = getSubBrand(params.slug, params.line);
   const parent = getBrand(params.slug);
   if (!sub || !parent) return {};
-  const resolved = resolveSubBrand(sub, params.locale as Locale);
-  return {
+  const locale = params.locale as Locale;
+  const resolved = resolveSubBrand(sub, locale);
+  const tagline = resolved.tagline.replace(/\s+/g, " ").trim().replace(/([^.!?])$/, "$1.");
+  const about = BRAND.seo.lineDescription[locale].replace("{brand}", parent.name);
+  return pageMetadata({
+    locale,
+    path: `/brands/${sub.parent}/${sub.slug}`,
     title: `${resolved.name} — ${parent.name} — Akasha Wira International`,
-    description: resolved.tagline,
-  };
+    description: fitDescription(tagline, about),
+    image: shareImage(`/media/brands/${sub.parent}/lines/${sub.slug}/hero/og.jpg`),
+  });
 }
 
 export default function Page({

@@ -3,27 +3,204 @@ import type { Localized } from "@/lib/locale/paths";
 
 export const FINANCIAL_YEARS = [2025, 2024, 2023, 2022, 2021] as const;
 
-// Angka dalam Rp juta, kecuali EPS (Rp)
-export const FINANCIALS = {
-  netSales:         [2_726_974, 1_956_431, 1_525_445, 1_290_992,   935_075],
-  grossProfit:      [1_430_497, 1_006_211,   810_936,   670_752,   499_568],
-  operatingIncome:  [  885_670,   629_638,   484_693,   452_537,   328_221],
-  netIncome:        [  741_580,   527_368,   395_798,   364_972,   265_758],
-  eps:              [    1_257,       894,       671,       619,       451], // Rp
-  totalAssets:      [3_568_781, 2_696_874, 2_085_182, 1_645_582, 1_304_108],
-  totalLiabilities: [  568_078,   438_373,   355_374,   310_746,   334_291],
-  totalEquity:      [3_000_703, 2_258_501, 1_729_808, 1_334_836,   969_817],
-  currentRatio:     [     4.04,      4.04,      4.12,      3.20,      2.51],
+// Ikhtisar keuangan lengkap, baris demi baris seperti tabel di halaman Financial
+// Highlights (urutan, pengelompokan, dan angkanya). Setiap `values` sejajar
+// dengan FINANCIAL_YEARS. Angka negatif = beban, ditampilkan dalam kurung;
+// `null` = tidak ada nilai ("–" di sumber).
+export type FinancialUnit =
+  | "rp-million" // Rp juta
+  | "rp" // Rupiah penuh (laba per saham)
+  | "shares" // lembar, angka penuh
+  | "percent"
+  | "times"; // rasio, mis. 4,04
+
+export type FinancialKey =
+  | "netSales"
+  | "costOfGoodsSold"
+  | "grossProfit"
+  | "operatingExpense"
+  | "operatingIncome"
+  | "otherIncome"
+  | "incomeBeforeTax"
+  | "netIncome"
+  | "netIncomeParent"
+  | "netIncomeNonControlling"
+  | "comprehensiveIncome"
+  | "comprehensiveIncomeParent"
+  | "comprehensiveIncomeNonControlling"
+  | "outstandingShares"
+  | "eps"
+  | "netWorkingCapital"
+  | "currentAssets"
+  | "fixedAssets"
+  | "otherNonCurrentAssets"
+  | "totalAssets"
+  | "currentLiabilities"
+  | "deferredTaxLiabilities"
+  | "otherNonCurrentLiabilities"
+  | "totalLiabilities"
+  | "totalEquity"
+  | "netIncomeToAssets"
+  | "netIncomeToEquity"
+  | "currentRatio"
+  | "liabilitiesToEquity"
+  | "liabilitiesToAssets"
+  | "grossMargin"
+  | "operatingMargin"
+  | "netMargin";
+
+export type FinancialRow = {
+  key: FinancialKey;
+  label: Localized<string>;
+  unit: FinancialUnit;
+  values: (number | null)[];
+  total?: boolean; // baris subtotal / jumlah
+  sub?: boolean; // rincian atribusi di bawah baris jumlah di atasnya
 };
 
-export const RATIOS = {
-  roa:             [21, 20, 19, 22, 20], // Net Income / Total Assets (%)
-  roe:             [25, 23, 23, 27, 27], // Net Income / Total Equity (%)
-  grossMargin:     [52, 51, 53, 52, 53],
-  operatingMargin: [32, 32, 32, 35, 35],
-  netMargin:       [27, 27, 26, 28, 28],
+export type FinancialGroup = {
+  id: string;
+  title: Localized<string>;
+  rows: FinancialRow[];
 };
 
+export const FINANCIAL_STATEMENT: FinancialGroup[] = [
+  {
+    id: "income",
+    title: { en: "Income statement", id: "Laba rugi" },
+    rows: [
+      { key: "netSales", unit: "rp-million",
+        label: { en: "Net sales", id: "Penjualan bersih" },
+        values: [2_726_974, 1_956_431, 1_525_445, 1_290_992, 935_075] },
+      { key: "costOfGoodsSold", unit: "rp-million",
+        label: { en: "Cost of goods sold", id: "Beban pokok penjualan" },
+        values: [-1_296_477, -950_220, -714_509, -620_240, -435_507] },
+      { key: "grossProfit", unit: "rp-million", total: true,
+        label: { en: "Gross profit", id: "Laba kotor" },
+        values: [1_430_497, 1_006_211, 810_936, 670_752, 499_568] },
+      { key: "operatingExpense", unit: "rp-million",
+        label: { en: "Operating expenses", id: "Beban usaha" },
+        values: [-544_827, -376_573, -326_243, -218_215, -171_347] },
+      { key: "operatingIncome", unit: "rp-million", total: true,
+        label: { en: "Operating income", id: "Laba usaha" },
+        values: [885_670, 629_638, 484_693, 452_537, 328_221] },
+      { key: "otherIncome", unit: "rp-million",
+        label: { en: "Other income (expenses), net", id: "Penghasilan (beban) lain-lain, bersih" },
+        values: [51_509, 38_090, 18_971, 11_771, 9_607] },
+      { key: "incomeBeforeTax", unit: "rp-million", total: true,
+        label: { en: "Income before income tax", id: "Laba sebelum pajak penghasilan" },
+        values: [937_179, 667_728, 503_664, 464_308, 337_828] },
+      { key: "netIncome", unit: "rp-million", total: true,
+        label: { en: "Net income", id: "Laba bersih" },
+        values: [741_580, 527_368, 395_798, 364_972, 265_758] },
+      { key: "netIncomeParent", unit: "rp-million", sub: true,
+        label: { en: "Attributable to the parent entity", id: "Dapat diatribusikan ke entitas induk" },
+        values: [741_580, 527_368, 395_798, 364_972, 265_758] },
+      { key: "netIncomeNonControlling", unit: "rp-million", sub: true,
+        label: { en: "Attributable to non-controlling interest", id: "Dapat diatribusikan ke kepentingan non-pengendali" },
+        values: [null, null, null, null, null] },
+      { key: "comprehensiveIncome", unit: "rp-million", total: true,
+        label: { en: "Total comprehensive income for the year", id: "Jumlah laba komprehensif tahun berjalan" },
+        values: [742_202, 528_693, 394_972, 365_019, 269_309] },
+      { key: "comprehensiveIncomeParent", unit: "rp-million", sub: true,
+        label: { en: "Attributable to the parent entity", id: "Dapat diatribusikan ke entitas induk" },
+        values: [742_202, 528_693, 394_972, 365_019, 269_309] },
+      { key: "comprehensiveIncomeNonControlling", unit: "rp-million", sub: true,
+        label: { en: "Attributable to non-controlling interest", id: "Dapat diatribusikan ke kepentingan non-pengendali" },
+        values: [null, null, null, null, null] },
+    ],
+  },
+  {
+    id: "perShare",
+    title: { en: "Per share & working capital", id: "Per saham & modal kerja" },
+    rows: [
+      { key: "outstandingShares", unit: "shares",
+        label: { en: "Outstanding shares (full amount)", id: "Jumlah saham beredar (angka penuh)" },
+        values: [589_896_800, 589_896_800, 589_896_800, 589_896_800, 589_896_800] },
+      { key: "eps", unit: "rp",
+        label: { en: "Net income per share (Rp)", id: "Laba bersih per saham (Rp)" },
+        values: [1_257, 894, 671, 619, 451] },
+      { key: "netWorkingCapital", unit: "rp-million",
+        label: { en: "Net working capital", id: "Modal kerja bersih" },
+        values: [1_557_594, 1_167_857, 931_296, 560_600, 405_027] },
+    ],
+  },
+  {
+    id: "position",
+    title: { en: "Financial position", id: "Posisi keuangan" },
+    rows: [
+      { key: "currentAssets", unit: "rp-million",
+        label: { en: "Current assets", id: "Aset lancar" },
+        values: [2_070_722, 1_551_646, 1_230_110, 815_319, 673_394] },
+      { key: "fixedAssets", unit: "rp-million",
+        label: { en: "Fixed assets, net", id: "Aset tetap, bersih" },
+        values: [1_190_039, 910_229, 745_409, 708_363, 503_588] },
+      { key: "otherNonCurrentAssets", unit: "rp-million",
+        label: { en: "Other non-current assets", id: "Aset tidak lancar lain" },
+        values: [308_020, 234_999, 109_663, 121_900, 127_126] },
+      { key: "totalAssets", unit: "rp-million", total: true,
+        label: { en: "Total assets", id: "Jumlah aset" },
+        values: [3_568_781, 2_696_874, 2_085_182, 1_645_582, 1_304_108] },
+      { key: "currentLiabilities", unit: "rp-million",
+        label: { en: "Current liabilities", id: "Liabilitas jangka pendek" },
+        values: [513_128, 383_789, 298_814, 254_719, 268_367] },
+      { key: "deferredTaxLiabilities", unit: "rp-million",
+        label: { en: "Deferred tax liabilities, net", id: "Liabilitas pajak tangguhan, bersih" },
+        values: [15_364, 15_160, 17_652, 19_995, 21_999] },
+      { key: "otherNonCurrentLiabilities", unit: "rp-million",
+        label: { en: "Other non-current liabilities", id: "Liabilitas jangka panjang lain" },
+        values: [39_586, 39_424, 38_908, 36_032, 43_925] },
+      { key: "totalLiabilities", unit: "rp-million", total: true,
+        label: { en: "Total liabilities", id: "Jumlah liabilitas" },
+        values: [568_078, 438_373, 355_374, 310_746, 334_291] },
+      { key: "totalEquity", unit: "rp-million", total: true,
+        label: { en: "Total equity", id: "Jumlah ekuitas" },
+        values: [3_000_703, 2_258_501, 1_729_808, 1_334_836, 969_817] },
+    ],
+  },
+  {
+    id: "ratios",
+    title: { en: "Key ratios", id: "Rasio utama" },
+    rows: [
+      { key: "netIncomeToAssets", unit: "percent",
+        label: { en: "Net income to total assets", id: "Laba bersih terhadap jumlah aset" },
+        values: [21, 20, 19, 22, 20] },
+      { key: "netIncomeToEquity", unit: "percent",
+        label: { en: "Net income to total equity", id: "Laba bersih terhadap jumlah ekuitas" },
+        values: [25, 23, 23, 27, 27] },
+      { key: "currentRatio", unit: "times",
+        label: { en: "Current ratio", id: "Rasio lancar" },
+        values: [4.04, 4.04, 4.12, 3.20, 2.51] },
+      { key: "liabilitiesToEquity", unit: "times",
+        label: { en: "Total liabilities to total equity", id: "Jumlah liabilitas terhadap jumlah ekuitas" },
+        values: [0.19, 0.19, 0.21, 0.23, 0.34] },
+      { key: "liabilitiesToAssets", unit: "times",
+        label: { en: "Total liabilities to total assets", id: "Jumlah liabilitas terhadap jumlah aset" },
+        values: [0.16, 0.16, 0.17, 0.19, 0.26] },
+      { key: "grossMargin", unit: "percent",
+        label: { en: "Gross profit to net sales", id: "Laba kotor terhadap penjualan bersih" },
+        values: [52, 51, 53, 52, 53] },
+      { key: "operatingMargin", unit: "percent",
+        label: { en: "Operating income to net sales", id: "Laba usaha terhadap penjualan bersih" },
+        values: [32, 32, 32, 35, 35] },
+      { key: "netMargin", unit: "percent",
+        label: { en: "Net income to net sales", id: "Laba bersih terhadap penjualan bersih" },
+        values: [27, 27, 26, 28, 28] },
+    ],
+  },
+];
+
+export function financialValues(key: FinancialKey): number[] {
+  for (const group of FINANCIAL_STATEMENT) {
+    const row = group.rows.find((r) => r.key === key);
+    if (row) return row.values.map((v) => v ?? 0);
+  }
+  throw new Error(`Unknown financial row: ${key}`);
+}
+
+// IPO listing date per the company profile (Bapepam effective 2 May 1994,
+// listed 14 June 1994). The source's chronological-share table says 31 March
+// 1994, which predates the registration becoming effective.
 export const SHARE_ACTIONS: {
   date: Localized<string>;
   action: Localized<string>;
@@ -31,13 +208,13 @@ export const SHARE_ACTIONS: {
   par: string;
 }[] = [
   {
-    date: { en: "31 Mar 1994", id: "31 Mar 1994" },
+    date: { en: "14 Jun 1994", id: "14 Jun 1994" },
     action: { en: "Initial Public Offering (IPO)", id: "Penawaran Umum Perdana (IPO)" },
     shares: "15.000.000",
     par: "Rp 1.000",
   },
   {
-    date: { en: "31 Mar 1994", id: "31 Mar 1994" },
+    date: { en: "14 Jun 1994", id: "14 Jun 1994" },
     action: { en: "Listing of Founders Shares", id: "Pencatatan Saham Pendiri" },
     shares: "23.000.000",
     par: "Rp 1.000",
@@ -79,7 +256,8 @@ export const SHAREHOLDERS: {
   ratio: number; // lebar bar, 0–1
 }[] = [
   {
-    name: { en: "Waters Partners Bottling S.A.", id: "Waters Partners Bottling S.A." },
+    // Spelled as in the Annual Report; the source site's share-holders page has "Waters".
+    name: { en: "Water Partners Bottling S.A.", id: "Water Partners Bottling S.A." },
     shares: "538.896.713",
     percent: "91,35%",
     ratio: 0.9135,
@@ -305,11 +483,32 @@ export const FINANCIAL_REPORT_ARCHIVE: {
   periods: FinancialPeriod[];
 }[] = [
   {
+    year: "2026",
+    periods: [
+      {
+        label: { en: "June", id: "Juni" },
+        file: `${FR}/2026/q2.pdf`,
+      },
+      {
+        label: { en: "March", id: "Maret" },
+        file: `${FR}/2026/q1.pdf`,
+      },
+    ],
+  },
+  {
     year: "2025",
     periods: [
       {
         label: { en: "December (audited)", id: "Desember (audited)" },
         file: `${FR}/2025/fy.pdf`,
+      },
+      {
+        label: { en: "September", id: "September" },
+        file: `${FR}/2025/q3.pdf`,
+      },
+      {
+        label: { en: "June", id: "Juni" },
+        file: `${FR}/2025/q2.pdf`,
       },
       {
         label: { en: "March", id: "Maret" },
@@ -1220,8 +1419,8 @@ export const INVESTOR_SECTIONS: {
     href: "#financial-report",
     title: { en: "Financial Report", id: "Laporan Keuangan" },
     desc: {
-      en: "Audited and quarterly interim financial statements, 2012–2025.",
-      id: "Laporan keuangan audited dan interim per kuartal, 2012–2025.",
+      en: "Audited and quarterly interim financial statements, 2012–2026.",
+      id: "Laporan keuangan audited dan interim per kuartal, 2012–2026.",
     },
   },
   {

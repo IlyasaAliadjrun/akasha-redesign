@@ -9,13 +9,15 @@
 ```
 public/
 ├── media/
-│   ├── shared/                      logo navbar (dipakai semua halaman)
+│   ├── shared/                      logo navbar (dipakai semua halaman) + og.jpg (gambar share default)
 │   ├── home/                        ← Beranda
 │   │   ├── hero-carousel/           banner slider utama
 │   │   ├── division-cards/          kartu divisi
 │   │   └── brand-grid/              grid "Ten brands. One family."
 │   ├── pages/{page}/hero/           ← About · Investor · Governance · Contact · Careers
-│   │                                  desktop.jpg + mobile.jpg
+│   │                                  desktop.jpg + mobile.jpg + og.jpg (share WhatsApp/LinkedIn)
+│   ├── pages/about/organization/    foto pengurus 5:7 → hanjaya-limanto.jpg, …
+│   ├── pages/about/certifications/  logo sertifikasi → iso.png, fssc-22000.png, bpom.png, proper.png
 │   ├── brands/{brand-slug}/         ← Halaman brand (1 folder per brand)
 │   │   ├── hero/                    banner hero (berlapis/parallax)
 │   │   ├── product-lineup/          foto SKU
@@ -49,6 +51,11 @@ Nama folder brand/sub-brand = slug-nya: `hair-energy/`, `make-it/`, `lines/cream
 | **Hero halaman — desktop** | `media/pages/{page}/hero/desktop.jpg` | **16:9** | 2560×1440 | COVER | jpg |
 | **Hero halaman — HP** | `media/pages/{page}/hero/mobile.jpg` | **9:16** | 1080×1920 | COVER | jpg |
 | **Sampul laporan** (tahunan & keberlanjutan) | `media/reports/{annual-report\|sustainability-report}/{tahun}` | **16:15** (≈1.067) | 1200×1125 | COVER | jpg/png |
+| **Foto pengurus** (About) | `media/pages/about/organization/{nama-slug}.jpg` | **5:7** | 900×1260 | COVER, anchor atas | jpg |
+| Logo sertifikasi (About) | `media/pages/about/certifications/{nama}.png` | bebas | tinggi ≥ 256 px (tampil 56 px) | CONTAIN, transparan | png |
+| **Gambar share** (preview link WhatsApp/LinkedIn/X) | `media/pages/{page}/hero/og.jpg` · default `media/shared/og.jpg` | **1.91:1** | **1200×630** | dipotong otomatis oleh platform — subjek di tengah | jpg < 300 KB |
+| Gambar share brand / sub-brand | `media/brands/{slug}/hero/og.jpg` · `…/lines/{line}/hero/og.jpg` — **dibuat otomatis** `npm run og:generate` | **1.91:1** | 1200×630 | wordmark di tengah | jpg |
+| Favicon / ikon aplikasi | `app/icon.png` · `app/apple-icon.png` (bukan di `public/`) | **1:1** | 512×512 · 180×180 | logo di tengah, latar putih | png |
 | Foto produk (lineup) | `media/brands/{slug}/product-lineup/` | **1:1** | 1200×1200 | CONTAIN | **PNG** |
 | 3 kartu "About" | `media/brands/{slug}/about/` | **3:4** | 1200×1600 | COVER | jpg |
 | Showcase — gambar utama | `media/brands/{slug}/showcase/title.png` | **bebas** (cth 1.37:1) | 5219×3799 | CONTAIN | png |
@@ -154,6 +161,7 @@ DESKTOP 16:9                     HP 9:16
 | **Hero halaman** | **16:9** | **9:16** (aset mobile terpisah) ✅ sudah ada |
 | **Banner brand (hero)** | **16:9** | **9:16** (aset mobile terpisah) ⚠️ belum ada |
 | **Sampul laporan** | **16:15** (kotak ±251×235) | **16:15** (kotak ±163×153) | sama |
+| **Foto pengurus** | **5:7** (lebar 180–200 px) | **5:7** (lebar 112 px) | sama |
 | Semua kartu (divisi, brand grid, produk, About, showcase) | sama seperti tabel atas | **sama** |
 
 → Hanya **hero halaman** & **banner brand** yang butuh aset HP terpisah (9:16). Sisanya 1 aset cukup.

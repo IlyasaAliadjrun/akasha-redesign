@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { locales, type Locale } from "@/lib/locale/paths";
+import { DEFAULT_OG_IMAGE, INDEXABLE, SITE_NAME, SITE_URL } from "@/lib/seo";
 import { LocaleProvider } from "@/lib/locale/LocaleProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -43,6 +44,9 @@ export const dynamicParams = false;
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale = params.locale as Locale;
   return {
+    metadataBase: new URL(SITE_URL),
+    robots: INDEXABLE ? { index: true, follow: true } : { index: false, follow: false },
+    openGraph: { siteName: SITE_NAME, images: [DEFAULT_OG_IMAGE] },
     title: "Akasha Wira International — Great Brands, Great People",
     description:
       locale === "id"

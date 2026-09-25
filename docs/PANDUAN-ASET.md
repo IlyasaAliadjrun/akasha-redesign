@@ -140,6 +140,10 @@ Akhiran `.en` / `.id` ditaruh **tepat sebelum ekstensi**, dan keduanya **wajib a
 | 9 | **Hero halaman** (About/Investor/dll) — desktop | `media/pages/{page}/hero/desktop.jpg` | **16:9** | 2560×1440 | COVER, layar penuh | jpg/webp |
 | 9b | **Hero halaman** — HP | `media/pages/{page}/hero/mobile.jpg` | **9:16** | 1080×1920 | COVER, layar penuh | jpg/webp |
 | 10 | **Sampul laporan** (tahunan & keberlanjutan) | `media/reports/{jenis}/{tahun}` | **16:15** (≈1.067) | 1200×1125 | COVER | jpg/png |
+| 11 | **Foto pengurus** (Komisaris & Direksi, halaman About) | `media/pages/about/organization/{nama-slug}.jpg` | **5:7** potret | 900×1260 | COVER, anchor atas | jpg |
+| 12 | **Logo sertifikasi** (halaman About) | `media/pages/about/certifications/{nama}.png` | bebas (logo apa adanya) | tinggi ≥ 256 px | CONTAIN, latar transparan | png |
+| 13 | **Gambar share** (preview link) | `media/pages/{page}/hero/og.jpg` · default `media/shared/og.jpg` | **1.91:1** | 1200×630 | dipotong platform, subjek di tengah | jpg |
+| 14 | **Favicon / ikon aplikasi** | `app/icon.png`, `app/apple-icon.png` | **1:1** | 512×512 · 180×180 | logo di tengah, latar putih | png |
 
 > Folder `marquee` berjalan di beranda **memakai ulang** gambar Kartu Divisi (#2) — tidak perlu aset baru.
 
@@ -162,6 +166,7 @@ Ini jawaban ringkas "rasio terbaiknya berapa untuk desktop & HP". **Kartu** = ra
 | Showcase — banner varian (latar `-2`) | 2.128:1 | 2.128:1 | Layer latar + teks. |
 | Showcase — banner varian (produk `-1`) | ~3:4 (PNG) | ~3:4 | Produk di tengah, menjorok keluar. |
 | **Sampul laporan** | **16:15** — kotak ±251×235 | **16:15** — kotak ±163×153 | Kartu, jadi rasionya sama di kedua viewport. Hanya kotaknya yang mengecil (5 kolom → 2 kolom). |
+| **Foto pengurus** | **5:7** — lebar 180–200 px | **5:7** — lebar 112 px (sm: 160 px) | Kartu, rasio sama. Foto di samping nama & bio; di HP bio turun ke bawah foto. |
 
 **Inti:** hanya **banner brand** yang benar-benar butuh aset berbeda untuk HP (9:16). Sisanya 1 aset per rasio sudah cukup.
 
@@ -334,6 +339,79 @@ Thumbnail sampul yang tampil di kartu arsip **Laporan Tahunan** dan **Laporan Ke
 **Resolusi itu penting di sini.** Kotaknya kecil (251px), tapi layar retina butuh 2× → minimal 502px sisi lebar. Sampul 2023–2025 hasil unduhan hanya 589×533, pas-pasan; 2012–2022 sudah 1584×1486 dan aman. Kalau tim desain punya file aslinya, kirim ulang yang 1200×1125.
 
 > Developer: dirender di [app/[locale]/investor/page.tsx](../app/%5Blocale%5D/investor/page.tsx) lewat `next/image` `fill` + `sizes="(min-width: 1024px) 18vw, (min-width: 640px) 30vw, 45vw"`, di dalam kotak `aspect-[16/15]`. Path-nya ada di `ANNUAL_REPORTS` / `SUSTAINABILITY_REPORTS` ([lib/investor.ts](../lib/investor.ts)), field `cover`, bersebelahan dengan `file` (PDF-nya). Path di bawah `media/` tidak diberi prefix bahasa — lihat §2.
+
+---
+
+#### 11) Foto Pengurus — `public/media/pages/about/organization/`
+
+Potret Dewan Komisaris dan Direksi di seksi **Struktur organisasi** halaman About. Satu file per orang, dinamai slug namanya: `hanjaya-limanto.jpg`, `fany-soegiarto.jpg`.
+
+| | Nilai |
+|---|---|
+| **Rasio** | **5:7** potret |
+| **Resolusi master** | 900×1260 (minimum 454×636) |
+| **Tampilan** | COVER, **dijangkar ke atas** — kepala tidak pernah terpotong |
+| **Kotak tampil** | desktop lebar 180–200 px · tablet 160 px · HP 112 px |
+| **Latar** | polos terang, seragam untuk semua pengurus |
+
+**Komposisi:** kepala dan bahu, wajah di sepertiga atas, ruang kosong secukupnya di atas kepala. Karena di-crop dari atas, bagian bawah (dada ke bawah) yang akan terpotong kalau rasio file berbeda.
+
+**Resolusi saat ini:** foto Hanjaya Limanto dan Julianto hanya 454×636 dari situs lama — cukup tajam untuk kotak 200 px, tapi itulah alasan fotonya **tidak** ditampilkan selebar kartu. Latar foto Julianto (abu kecokelatan) juga berbeda dari yang lain; minta sesi foto dengan latar seragam kalau ada kesempatan.
+
+> Developer: data di `commissioners` / `directors` ([content/pages/about.ts](../content/pages/about.ts)), field `photo`; dirender `next/image` `fill` + `object-top` di dalam `aspect-[5/7]`.
+
+---
+
+#### 12) Logo Sertifikasi — `public/media/pages/about/certifications/`
+
+Logo di kartu seksi **Pencapaian** halaman About. Satu logo bisa dipakai beberapa kartu (ketiga kartu ISO memakai `iso.png`).
+
+| File | Sumber | Dipakai untuk |
+|---|---|---|
+| `iso.png` | ISO (Wikimedia Commons, `ISO logo red.svg`) | ISO 9001 · ISO 45001 · ISO 14001 |
+| `fssc-22000.png` | fssc.com (SVG resmi) | FSSC 22000 |
+| `bpom.png` | Badan POM (Wikipedia) | CPKB |
+| `proper.png` | proper.kemenlh.go.id — **hanya 118×56**, minta versi besar ke KLH | PROPER |
+
+| | Nilai |
+|---|---|
+| **Rasio** | bebas — logo ditampilkan utuh |
+| **Resolusi master** | tinggi minimal 256 px (tampil 56 px, jadi ≥ 2× retina tetap tajam) |
+| **Tampilan** | CONTAIN, rata kiri, di panel putih rounded setinggi 96 px |
+| **Kotak tampil** | tinggi 56 px × lebar maks 180 px, sama di desktop dan HP |
+| **Latar** | transparan |
+
+**Catatan pemakaian:** ISO sebenarnya tidak mengizinkan logonya dipakai perusahaan sebagai tanda "tersertifikasi"; yang resmi adalah tanda lembaga sertifikasi di sertifikat Akasha (mis. SGS/TÜV/Sucofindo). FSSC 22000 dan PROPER juga punya aturan logo. Kalau tim QA/legal punya file tanda resmi, cukup ganti file di folder ini.
+
+> Developer: field `logo` di `certifications` ([content/pages/about.ts](../content/pages/about.ts)); kalau kosong, halaman menggambar ikon bawaan.
+
+---
+
+#### 13) Gambar Share (Open Graph) — `public/media/pages/{page}/hero/og.jpg`
+
+Gambar yang muncul saat link halaman dibagikan di WhatsApp, LinkedIn, Facebook, atau X. **Tidak tampil di halaman itu sendiri.**
+
+| | Nilai |
+|---|---|
+| **Rasio** | **1.91:1** |
+| **Resolusi** | **1200×630** — satu ukuran untuk semua platform (desktop/HP sama) |
+| **Tampilan** | tiap platform memotong sedikit (WhatsApp kadang jadi kotak) → subjek & teks penting di **tengah** |
+| **Ukuran file** | jpg, di bawah 300 KB (WhatsApp mengabaikan gambar yang terlalu berat) |
+
+Saat ini dibuat otomatis dari `desktop.jpg` tiap halaman (potongan 1200×630). Kalau desain mau versi khusus — misalnya dengan judul halaman di atas foto — cukup timpa `og.jpg`. Halaman tanpa `og.jpg` sendiri memakai `media/shared/og.jpg` (logo Akasha di latar putih).
+
+**Halaman brand & sub-brand** memakai `media/brands/{slug}/hero/og.jpg` dan `media/brands/{brand}/lines/{line}/hero/og.jpg`. File ini **dibuat otomatis** oleh `npm run og:generate`: wordmark brand di kartu putih (atau kartu gelap/warna brand kalau wordmark-nya putih), strip warna brand di atas, logo Akasha di bawah; sub-brand ditambah nama lininya. Jalankan setelah menambah brand/sub-brand baru — file yang sudah ada **tidak ditimpa**, jadi `og.jpg` buatan desainer aman (pakai `npm run og:generate -- --force` untuk membuat ulang semuanya). Brand tanpa `og.jpg` otomatis memakai gambar default.
+
+#### 14) Favicon / Ikon Aplikasi — `app/icon.png`, `app/apple-icon.png`
+
+Ikon di tab browser, hasil pencarian Google, dan shortcut layar HP. Letaknya di folder `app/`, **bukan** `public/` — Next.js membaca nama file ini secara otomatis.
+
+| File | Ukuran | Isi |
+|---|---|---|
+| `app/icon.png` | 512×512 | huruf "A" + daun kuning dari logo, latar putih, margin 12% |
+| `app/apple-icon.png` | 180×180 | sama, margin 14% (iOS membulatkan sudutnya sendiri) |
+
+Harus tetap terbaca di ukuran 16–32 px → pakai simbol saja, **bukan** wordmark "Akasha" lengkap.
 
 ---
 

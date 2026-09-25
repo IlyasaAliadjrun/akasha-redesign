@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import PageHero from "@/components/page/PageHero";
 import { type Locale, type Localized } from "@/lib/locale/paths";
 import { CAREERS_PAGE } from "@/content/pages/careers";
@@ -10,10 +11,13 @@ export function generateMetadata({
   params: { locale: string };
 }): Metadata {
   const locale = params.locale as Locale;
-  return {
+  return pageMetadata({
+    locale,
+    path: "/careers",
     title: CAREERS_PAGE.meta.title[locale],
     description: CAREERS_PAGE.meta.description[locale],
-  };
+    image: "/media/pages/careers/hero/og.jpg",
+  });
 }
 
 export default function CareersPage({ params }: { params: { locale: string } }) {
@@ -47,7 +51,7 @@ export default function CareersPage({ params }: { params: { locale: string } }) 
       <section className="py-24 bg-[#FAFAFA]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="max-w-2xl mb-14">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(CAREERS_PAGE.reality.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -76,7 +80,7 @@ export default function CareersPage({ params }: { params: { locale: string } }) 
       <section data-theme="dark" className="py-24 lg:py-32 bg-ink text-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="max-w-2xl mb-14">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(CAREERS_PAGE.looking.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -104,7 +108,7 @@ export default function CareersPage({ params }: { params: { locale: string } }) 
       <section className="py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="max-w-2xl mb-14">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(CAREERS_PAGE.divisions.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -136,7 +140,7 @@ export default function CareersPage({ params }: { params: { locale: string } }) 
       {/* CTA */}
       <section className="py-24 lg:py-32 bg-[#FAFAFA]">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-4">
+          <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-4">
             {t(CAREERS_PAGE.cta.eyebrow)}
           </div>
           <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">

@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import {
   FINANCIAL_YEARS,
-  FINANCIALS,
-  RATIOS,
+  FINANCIAL_STATEMENT,
+  financialValues,
+  type FinancialUnit,
   SHARE_ACTIONS,
   SHARE_PRICE_DAILY,
   SHARE_PRICE_DAILY_AS_OF,
@@ -22,8 +24,10 @@ import {
 } from "@/lib/investor";
 import { INVESTOR_PAGE } from "@/content/pages/investor";
 import RevenueChart from "@/components/investor/RevenueChart";
+import { formatRupiahCompact } from "@/lib/format";
 import SharePriceChart from "@/components/investor/SharePriceChart";
 import PageHero from "@/components/page/PageHero";
+import FoldedArchive from "@/components/page/FoldedArchive";
 import { localizeHref, type Locale, type Localized } from "@/lib/locale/paths";
 
 export function generateMetadata({
@@ -32,10 +36,13 @@ export function generateMetadata({
   params: { locale: string };
 }): Metadata {
   const locale = params.locale as Locale;
-  return {
+  return pageMetadata({
+    locale,
+    path: "/investor",
     title: INVESTOR_PAGE.meta.title[locale],
     description: INVESTOR_PAGE.meta.description[locale],
-  };
+    image: "/media/pages/investor/hero/og.jpg",
+  });
 }
 
 export default function InvestorPage({ params }: { params: { locale: string } }) {
@@ -52,10 +59,21 @@ export default function InvestorPage({ params }: { params: { locale: string } })
   } ${SHARE_PRICE_DAILY_AS_OF.year}`;
   const latestYear = FINANCIAL_YEARS[0];
   const earliestYear = FINANCIAL_YEARS[FINANCIAL_YEARS.length - 1];
-  const netSalesLatest = FINANCIALS.netSales[0];
-  const netSalesPrev = FINANCIALS.netSales[1];
-  const netIncomeLatest = FINANCIALS.netIncome[0];
-  const netIncomePrev = FINANCIALS.netIncome[1];
+  const netSales = financialValues("netSales");
+  const netIncome = financialValues("netIncome");
+  const eps = financialValues("eps");
+  const netSalesLatest = netSales[0];
+  const netSalesPrev = netSales[1];
+  const netIncomeLatest = netIncome[0];
+  const netIncomePrev = netIncome[1];
+  // Mirrors the source table: expenses in brackets, "–" where there is no value.
+  const formatFinancial = (v: number | null, unit: FinancialUnit) => {
+    if (v === null) return "–";
+    if (unit === "percent") return `${v}%`;
+    if (unit === "times")
+      return v.toLocaleString(numberLocale, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return v < 0 ? `(${fmt(-v)})` : fmt(v);
+  };
   const revGrowth = ((netSalesLatest - netSalesPrev) / netSalesPrev) * 100;
   const niGrowth = ((netIncomeLatest - netIncomePrev) / netIncomePrev) * 100;
 
@@ -90,19 +108,19 @@ export default function InvestorPage({ params }: { params: { locale: string } })
           {[
             {
               label: `${t(INVESTOR_PAGE.metrics.netSales.label)} ${latestYear}`,
-              value: `Rp ${fmt(netSalesLatest / 1000)} M`,
+              value: formatRupiahCompact(netSalesLatest, locale),
               sub: `${revGrowth >= 0 ? "+" : ""}${revGrowth.toFixed(1)}% YoY`,
               positive: revGrowth >= 0,
             },
             {
               label: `${t(INVESTOR_PAGE.metrics.netIncome.label)} ${latestYear}`,
-              value: `Rp ${fmt(netIncomeLatest / 1000)} M`,
+              value: formatRupiahCompact(netIncomeLatest, locale),
               sub: `${niGrowth >= 0 ? "+" : ""}${niGrowth.toFixed(1)}% YoY`,
               positive: niGrowth >= 0,
             },
             {
               label: `${t(INVESTOR_PAGE.metrics.eps.label)} ${latestYear}`,
-              value: `Rp ${fmt(FINANCIALS.eps[0])}`,
+              value: `Rp ${fmt(eps[0])}`,
               sub: t(INVESTOR_PAGE.metrics.eps.sub),
             },
             {
@@ -112,10 +130,11 @@ export default function InvestorPage({ params }: { params: { locale: string } })
             },
           ].map((m) => (
             <div key={m.label}>
-              <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-3">
+              <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-3">
                 {m.label}
               </div>
-              <div className="text-3xl lg:text-4xl font-extrabold tracking-tightish">
+              {/* 2-up on phones: "589.896.800" at text-3xl is wider than a 360px column. */}
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tightish tabular-nums">
                 {m.value}
               </div>
               {m.sub && (
@@ -139,31 +158,32 @@ export default function InvestorPage({ params }: { params: { locale: string } })
       {/* REVENUE CHART */}
       <section id="financial-highlights" className="scroll-mt-24 py-24 bg-[#FAFAFA]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="flex items-end justify-between gap-6 mb-10">
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
-                {t(INVESTOR_PAGE.chart.eyebrow)}
-              </div>
-              <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
-                {t(INVESTOR_PAGE.chart.heading)}
-              </h2>
+          <div className="mb-10 max-w-2xl">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+              {t(INVESTOR_PAGE.chart.eyebrow)}
             </div>
-            <div className="hidden md:flex items-center gap-6 text-xs">
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-sm bg-accent-beverage" />
-                <span className="text-ink/60">{t(INVESTOR_PAGE.chart.legendNetSales)}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-sm bg-ink" />
-                <span className="text-ink/60">{t(INVESTOR_PAGE.chart.legendNetIncome)}</span>
-              </div>
-            </div>
+            <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
+              {t(INVESTOR_PAGE.chart.heading)}
+            </h2>
+            <p className="mt-4 text-ink/60">{t(INVESTOR_PAGE.chart.paragraph)}</p>
           </div>
 
           <RevenueChart
             years={[...FINANCIAL_YEARS].reverse()}
-            netSales={[...FINANCIALS.netSales].reverse()}
-            netIncome={[...FINANCIALS.netIncome].reverse()}
+            netSales={[...netSales].reverse()}
+            netIncome={[...netIncome].reverse()}
+            locale={locale}
+            labels={{
+              netSales: t(INVESTOR_PAGE.chart.netSales),
+              netIncome: t(INVESTOR_PAGE.chart.netIncome),
+              netMargin: t(INVESTOR_PAGE.chart.netMargin),
+              salesGrowth: t(INVESTOR_PAGE.chart.salesGrowth),
+              incomeGrowth: t(INVESTOR_PAGE.chart.incomeGrowth),
+              cagrNote: t(INVESTOR_PAGE.chart.cagrNote),
+              marginNote: t(INVESTOR_PAGE.chart.marginNote),
+              yoy: t(INVESTOR_PAGE.chart.yoy),
+              axis: t(INVESTOR_PAGE.chart.axis),
+            }}
           />
         </div>
       </section>
@@ -172,7 +192,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
       <section className="py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="mb-10">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(INVESTOR_PAGE.table.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -184,10 +204,12 @@ export default function InvestorPage({ params }: { params: { locale: string } })
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full min-w-[720px] text-sm">
               <thead>
                 <tr className="border-b border-ink/10 text-left text-[11px] uppercase tracking-[0.2em] font-bold text-ink/50">
-                  <th className="py-4 pr-6">{t(INVESTOR_PAGE.table.metricHeader)}</th>
+                  <th className="sticky left-0 z-10 bg-white py-4 pr-6">
+                    {t(INVESTOR_PAGE.table.metricHeader)}
+                  </th>
                   {FINANCIAL_YEARS.map((y) => (
                     <th key={y} className="py-4 px-4 text-right tabular-nums">
                       {y}
@@ -195,46 +217,60 @@ export default function InvestorPage({ params }: { params: { locale: string } })
                   ))}
                 </tr>
               </thead>
-              <tbody className="tabular-nums">
-                {[
-                  { label: t(INVESTOR_PAGE.table.rows.netSales), values: FINANCIALS.netSales },
-                  { label: t(INVESTOR_PAGE.table.rows.grossProfit), values: FINANCIALS.grossProfit },
-                  { label: t(INVESTOR_PAGE.table.rows.operatingIncome), values: FINANCIALS.operatingIncome },
-                  { label: t(INVESTOR_PAGE.table.rows.netIncome), values: FINANCIALS.netIncome },
-                  { label: t(INVESTOR_PAGE.table.rows.eps), values: FINANCIALS.eps },
-                  { label: t(INVESTOR_PAGE.table.rows.totalAssets), values: FINANCIALS.totalAssets },
-                  { label: t(INVESTOR_PAGE.table.rows.totalLiabilities), values: FINANCIALS.totalLiabilities },
-                  { label: t(INVESTOR_PAGE.table.rows.totalEquity), values: FINANCIALS.totalEquity },
-                  { label: t(INVESTOR_PAGE.table.rows.currentRatio), values: FINANCIALS.currentRatio },
-                ].map(({ label, values }) => (
-                  <tr
-                    key={label}
-                    className="border-b border-ink/5 hover:bg-ink/[0.02] transition-colors"
-                  >
-                    <td className="py-4 pr-6 font-semibold">{label}</td>
-                    {values.map((v, i) => (
-                      <td key={i} className="py-4 px-4 text-right">
-                        {typeof v === "number" && v % 1 !== 0
-                          ? v.toFixed(2)
-                          : fmt(v as number)}
-                      </td>
-                    ))}
+              {FINANCIAL_STATEMENT.map((group) => (
+                <tbody key={group.id} className="tabular-nums">
+                  <tr>
+                    <th
+                      colSpan={FINANCIAL_YEARS.length + 1}
+                      className="sticky left-0 bg-white pt-10 pb-3 text-left text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage"
+                    >
+                      {t(group.title)}
+                    </th>
                   </tr>
-                ))}
-              </tbody>
+                  {group.rows.map((row) => (
+                    <tr
+                      key={row.key}
+                      className={row.total ? "border-t border-ink/15" : "border-t border-ink/5"}
+                    >
+                      <th
+                        scope="row"
+                        className={`sticky left-0 z-10 bg-white py-3 pr-6 text-left ${
+                          row.sub
+                            ? "pl-4 text-[13px] font-normal text-ink/55"
+                            : row.total
+                            ? "font-bold"
+                            : "font-medium text-ink/80"
+                        }`}
+                      >
+                        {t(row.label)}
+                      </th>
+                      {row.values.map((v, i) => (
+                        <td
+                          key={FINANCIAL_YEARS[i]}
+                          className={`py-3 px-4 text-right whitespace-nowrap ${
+                            row.total ? "font-bold" : row.sub ? "text-ink/55" : ""
+                          }`}
+                        >
+                          {formatFinancial(v, row.unit)}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              ))}
             </table>
           </div>
 
           <div className="mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
             {[
-              { label: t(INVESTOR_PAGE.table.ratios.roa), values: RATIOS.roa },
-              { label: t(INVESTOR_PAGE.table.ratios.roe), values: RATIOS.roe },
-              { label: t(INVESTOR_PAGE.table.ratios.grossMargin), values: RATIOS.grossMargin },
-              { label: t(INVESTOR_PAGE.table.ratios.operatingMargin), values: RATIOS.operatingMargin },
-              { label: t(INVESTOR_PAGE.table.ratios.netMargin), values: RATIOS.netMargin },
+              { label: t(INVESTOR_PAGE.table.ratios.roa), values: financialValues("netIncomeToAssets") },
+              { label: t(INVESTOR_PAGE.table.ratios.roe), values: financialValues("netIncomeToEquity") },
+              { label: t(INVESTOR_PAGE.table.ratios.grossMargin), values: financialValues("grossMargin") },
+              { label: t(INVESTOR_PAGE.table.ratios.operatingMargin), values: financialValues("operatingMargin") },
+              { label: t(INVESTOR_PAGE.table.ratios.netMargin), values: financialValues("netMargin") },
             ].map((r) => (
               <div key={r.label} className="bg-[#FAFAFA] rounded-2xl p-6">
-                <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
+                <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
                   {r.label}
                 </div>
                 <div className="text-3xl font-extrabold tracking-tightish">
@@ -254,7 +290,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
       <section id="chronological-share" className="scroll-mt-24 py-24 bg-ink text-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="mb-14">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(INVESTOR_PAGE.chronological.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -289,7 +325,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
       <section id="stock-information" className="scroll-mt-24 py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="max-w-2xl">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(INVESTOR_PAGE.stockInfo.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -304,7 +340,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
           <div className="mt-14">
             <div className="flex flex-wrap items-end justify-between gap-6 mb-6">
               <div>
-                <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
+                <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
                   {t(INVESTOR_PAGE.stockInfo.daily.label)}
                 </div>
                 <div className="text-sm text-ink/50">
@@ -313,7 +349,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
               </div>
               <div className="flex flex-wrap gap-8 sm:gap-12">
                 <div>
-                  <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
+                  <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
                     {t(INVESTOR_PAGE.stockInfo.daily.lastClose)}
                   </div>
                   <div className="text-3xl lg:text-4xl font-extrabold tracking-tightish">
@@ -321,7 +357,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
                   </div>
                 </div>
                 <div>
-                  <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
+                  <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
                     {t(INVESTOR_PAGE.stockInfo.daily.periodChange)}
                   </div>
                   <div
@@ -336,7 +372,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
                   </div>
                 </div>
                 <div>
-                  <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
+                  <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-2">
                     {t(INVESTOR_PAGE.stockInfo.daily.marketCap)}
                   </div>
                   <div className="text-3xl lg:text-4xl font-extrabold tracking-tightish">
@@ -398,7 +434,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
 
           <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-6">
+              <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-ink/50 mb-6">
                 {t(INVESTOR_PAGE.stockInfo.shareholders.heading)} ·{" "}
                 {t(SHAREHOLDING_AS_OF)}
               </div>
@@ -459,7 +495,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
       <section id="dividends" className="scroll-mt-24 py-24 bg-[#FAFAFA]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="mb-10 max-w-2xl">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(INVESTOR_PAGE.dividends.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -501,7 +537,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
       <section id="financial-report" className="scroll-mt-24 py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="mb-14 max-w-2xl">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(INVESTOR_PAGE.financialReports.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -512,8 +548,12 @@ export default function InvestorPage({ params }: { params: { locale: string } })
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {FINANCIAL_REPORT_ARCHIVE.map((year) => (
+          <FoldedArchive
+            items={FINANCIAL_REPORT_ARCHIVE}
+            yearOf={(year) => year.year}
+            locale={locale}
+            gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+            render={(year) => (
               <div key={year.year} className="bg-[#FAFAFA] rounded-3xl p-7">
                 <div className="text-3xl font-extrabold tracking-tightish tabular-nums mb-5">
                   {year.year}
@@ -528,7 +568,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
                         href={p.file}
                         target="_blank"
                         rel="noreferrer"
-                        className="group flex items-center justify-between gap-4"
+                        className="group -my-3 flex items-center justify-between gap-4 py-3"
                       >
                         <span className="text-sm text-ink/70 transition-colors group-hover:text-ink">
                           {t(p.label)}
@@ -542,7 +582,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
                           href={p.letter}
                           target="_blank"
                           rel="noreferrer"
-                          className="mt-1.5 inline-block text-xs text-ink/40 underline decoration-ink/20 underline-offset-2 transition-colors hover:text-ink/70"
+                          className="-mb-2 -mt-0.5 inline-block py-2 text-xs text-ink/40 underline decoration-ink/20 underline-offset-2 transition-colors hover:text-ink/70"
                         >
                           {t(INVESTOR_PAGE.financialReports.letterLabel)}
                         </a>
@@ -551,8 +591,8 @@ export default function InvestorPage({ params }: { params: { locale: string } })
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
+            )}
+          />
         </div>
       </section>
 
@@ -565,7 +605,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
         >
           <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
             <div className="mb-14 max-w-2xl">
-              <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+              <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
                 {t(archive.copy.eyebrow)}
               </div>
               <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -613,7 +653,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
       <section className="py-24 bg-[#FAFAFA]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="mb-10">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(INVESTOR_PAGE.resources.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -644,7 +684,7 @@ export default function InvestorPage({ params }: { params: { locale: string } })
       {/* GOVERNANCE CTA */}
       <section className="py-24 bg-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-4">
+          <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-4">
             {t(INVESTOR_PAGE.governanceCta.eyebrow)}
           </div>
           <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">

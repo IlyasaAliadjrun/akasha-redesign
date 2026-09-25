@@ -156,7 +156,7 @@ export default function HeroCarousel() {
             {s.name}
           </h1>
           <p
-            className={`mt-2 sm:mt-4 max-w-[22ch] sm:max-w-none text-[clamp(10px,1.2vw,17px)] font-light ${
+            className={`mt-2 sm:mt-4 max-w-[22ch] sm:max-w-none text-[clamp(12px,1.2vw,17px)] font-light ${
               light ? "text-ink/80" : "text-white/85"
             }`}
           >
@@ -241,7 +241,8 @@ export default function HeroCarousel() {
             key={sl.slug}
             onClick={() => goTo(idx)}
             aria-label={`${t(home.carousel.goToSlide)} ${sl.name}`}
-            className="group relative h-5 sm:h-8 shrink-0 flex items-center justify-center"
+            // The visible dot is 4px on phones; the button around it stays finger-sized.
+            className="group relative h-8 min-w-[24px] sm:min-w-0 shrink-0 flex items-center justify-center"
           >
             <span
               className={`block rounded-full transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${

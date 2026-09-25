@@ -1,5 +1,5 @@
 {
-  "_readme": "Old -> new public asset paths from the 2026-09 standardization (public/{en,id} + public/docs -> public/media + public/documents). Use it to rebase in-flight work that still references old paths.",
+  "_readme": "Old -> new public asset paths from the 2026-09 standardization (public/{en,id} + public/docs -> public/media + public/documents). Use it to rebase in-flight work that still references old paths. `sources` lists documents added after the migration, keyed by their standardized path, with the original URL.",
   "media": {
     "/about/hero/desktop.jpg": "/media/pages/about/hero/desktop.jpg",
     "/about/hero/mobile.jpg": "/media/pages/about/hero/mobile.jpg",
@@ -1834,5 +1834,11 @@
     "/docs/announcement/Pemberitahuan-Pergantian-Komite-Audit.pdf": "/documents/announcement/change-of-audit-committee.pdf",
     "/docs/governance/Akta-19-tgl-080715-Perubahan-AD-Restatement-AHU-AH-01-03-0953311-dan-0953310.pdf": "/documents/governance/articles-of-association.pdf",
     "/docs/governance/BOARD-OF-DIRECTORS-COMMUNICATION-POLICY-ING-Pdf.pdf": "/documents/governance/communication-policy.pdf"
+  },
+  "sources": {
+    "/documents/financial-report/2025/q2.pdf": "https://akashainternational.com/wp-content/uploads/2026/09/LAPORAN-KUARTALAN-30-JUNI-25.pdf",
+    "/documents/financial-report/2025/q3.pdf": "https://akashainternational.com/wp-content/uploads/2026/09/LAPORAN-KUARTALAN-30-SEPTEMBER-2025.pdf",
+    "/documents/financial-report/2026/q1.pdf": "https://akashainternational.com/wp-content/uploads/2026/09/LAPORAN-KUARTALAN-31-MARET-2026.pdf",
+    "/documents/financial-report/2026/q2.pdf": "https://akashainternational.com/wp-content/uploads/2026/09/LAPORAN-KUARTALAN-30-JUNE-2026.pdf"
   }
 }

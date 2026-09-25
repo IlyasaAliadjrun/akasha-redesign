@@ -18,8 +18,16 @@ export const INVESTOR_PAGE: {
   chart: {
     eyebrow: Localized<string>;
     heading: Localized<string>;
-    legendNetSales: Localized<string>;
-    legendNetIncome: Localized<string>;
+    paragraph: Localized<string>;
+    netSales: Localized<string>;
+    netIncome: Localized<string>;
+    netMargin: Localized<string>;
+    salesGrowth: Localized<string>;
+    incomeGrowth: Localized<string>;
+    cagrNote: Localized<string>; // "{span}" is replaced with e.g. "2021–2025"
+    marginNote: Localized<string>;
+    yoy: Localized<string>;
+    axis: Localized<string>;
   };
   table: {
     eyebrow: Localized<string>;
@@ -28,17 +36,6 @@ export const INVESTOR_PAGE: {
     heading: Localized<string>;
     paragraph: Localized<string>;
     metricHeader: Localized<string>;
-    rows: {
-      netSales: Localized<string>;
-      grossProfit: Localized<string>;
-      operatingIncome: Localized<string>;
-      netIncome: Localized<string>;
-      eps: Localized<string>;
-      totalAssets: Localized<string>;
-      totalLiabilities: Localized<string>;
-      totalEquity: Localized<string>;
-      currentRatio: Localized<string>;
-    };
     ratios: {
       roa: Localized<string>;
       roe: Localized<string>;
@@ -121,8 +118,8 @@ export const INVESTOR_PAGE: {
 } = {
   meta: {
     title: {
-      en: "Investor Centre — Akasha Wira International",
-      id: "Investor Centre — Akasha Wira International",
+      en: "Investor centre — Akasha Wira International",
+      id: "Pusat investor — Akasha Wira International",
     },
     description: {
       en: "Share information, financial statements, capital structure, and governance of PT Akasha Wira International Tbk (IDX: ADES).",
@@ -161,8 +158,19 @@ export const INVESTOR_PAGE: {
   chart: {
     eyebrow: { en: "Financial Highlights", id: "Ikhtisar Keuangan" },
     heading: { en: "Five-year growth.", id: "Pertumbuhan lima tahun." },
-    legendNetSales: { en: "Net Sales", id: "Penjualan Bersih" },
-    legendNetIncome: { en: "Net Income", id: "Laba Bersih" },
+    paragraph: {
+      en: "Net sales nearly tripled in four years while the net margin held steady — hover or tap a year for the full figures.",
+      id: "Penjualan bersih hampir tiga kali lipat dalam empat tahun dengan margin laba yang tetap terjaga — arahkan kursor atau ketuk satu tahun untuk angka lengkapnya.",
+    },
+    netSales: { en: "Net sales", id: "Penjualan bersih" },
+    netIncome: { en: "Net income", id: "Laba bersih" },
+    netMargin: { en: "Net margin", id: "Margin laba bersih" },
+    salesGrowth: { en: "Net sales growth per year", id: "Pertumbuhan penjualan per tahun" },
+    incomeGrowth: { en: "Net income growth per year", id: "Pertumbuhan laba bersih per tahun" },
+    cagrNote: { en: "Compound average (CAGR), {span}", id: "Rata-rata majemuk (CAGR), {span}" },
+    marginNote: { en: "In", id: "Pada" },
+    yoy: { en: "▲ Net sales growth versus the previous year", id: "▲ Pertumbuhan penjualan bersih dibanding tahun sebelumnya" },
+    axis: { en: "Rp · T = trillion, B = billion", id: "Rp · T = triliun, M = miliar" },
   },
   table: {
     eyebrow: { en: "Consolidated figures", id: "Angka konsolidasian" },
@@ -171,21 +179,10 @@ export const INVESTOR_PAGE: {
       id: "Laporan keuangan,",
     },
     paragraph: {
-      en: "Figures in Rp million except EPS (Rp) and ratios (%).",
-      id: "Angka dalam Rp juta kecuali EPS (Rp) dan rasio (%).",
+      en: "Figures in Rp million, except outstanding shares (full amount), net income per share (Rp), and ratios. Amounts in brackets are expenses.",
+      id: "Angka dalam Rp juta, kecuali jumlah saham beredar (angka penuh), laba bersih per saham (Rp), dan rasio. Angka dalam kurung adalah beban.",
     },
-    metricHeader: { en: "Metric", id: "Metrik" },
-    rows: {
-      netSales: { en: "Net Sales", id: "Penjualan Bersih" },
-      grossProfit: { en: "Gross Profit", id: "Laba Kotor" },
-      operatingIncome: { en: "Operating Income", id: "Laba Operasional" },
-      netIncome: { en: "Net Income", id: "Laba Bersih" },
-      eps: { en: "EPS (Rp)", id: "EPS (Rp)" },
-      totalAssets: { en: "Total Assets", id: "Total Aset" },
-      totalLiabilities: { en: "Total Liabilities", id: "Total Liabilitas" },
-      totalEquity: { en: "Total Equity", id: "Total Ekuitas" },
-      currentRatio: { en: "Current Ratio", id: "Rasio Lancar" },
-    },
+    metricHeader: { en: "Rp million", id: "Rp juta" },
     ratios: {
       roa: { en: "ROA", id: "ROA" },
       roe: { en: "ROE", id: "ROE" },
@@ -217,8 +214,8 @@ export const INVESTOR_PAGE: {
     eyebrow: { en: "Stock information", id: "Informasi saham" },
     heading: { en: "Capitalization & shares.", id: "Permodalan & saham." },
     paragraph: {
-      en: "ADES has been listed on the Indonesia Stock Exchange since 31 March 1994, with a par value of Rp 1,000 per share.",
-      id: "ADES tercatat di Bursa Efek Indonesia sejak 31 Maret 1994 dengan nilai nominal Rp 1.000 per lembar saham.",
+      en: "ADES has been listed on the Indonesia Stock Exchange since 14 June 1994, with a par value of Rp 1,000 per share.",
+      id: "ADES tercatat di Bursa Efek Indonesia sejak 14 Juni 1994 dengan nilai nominal Rp 1.000 per lembar saham.",
     },
     rows: {
       ticker: {
@@ -234,7 +231,7 @@ export const INVESTOR_PAGE: {
       },
       ipoDate: {
         k: { en: "IPO Date", id: "IPO Date" },
-        v: { en: "31 March 1994", id: "31 Maret 1994" },
+        v: { en: "14 June 1994", id: "14 Juni 1994" },
       },
       sector: {
         k: { en: "Sector", id: "Sektor" },

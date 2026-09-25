@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import type { HeroLayer } from "@/lib/brands";
 import type { ResolvedBrand } from "@/lib/locale/resolve";
@@ -105,6 +105,7 @@ function ParallaxLayer({
 export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
   const ref = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
+  const reduce = useReducedMotion();
   const { t } = useLocale();
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -165,6 +166,9 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
       className="relative w-full overflow-hidden h-[100svh] min-h-[480px] md:min-h-[560px]"
       style={{ backgroundColor: brand.bannerBg ?? brand.accentHex }}
     >
+      {/* The visible name is wordmark artwork (a desktop and a mobile copy), so the
+          page heading is text for search engines and screen readers. */}
+      <h1 className="sr-only">{brand.name}</h1>
       {layers?.length ? (
         layers.map((l, i) => (
           <ParallaxLayer
@@ -296,10 +300,10 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
             e.preventDefault();
             window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
           }}
-          animate={{ y: [0, 6, 0] }}
+          animate={reduce ? undefined : { y: [0, 6, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
           aria-label={t(BRAND.common.scrollDown)}
-          className="flex flex-col items-center gap-1 sm:gap-2 text-white/70 hover:text-white transition-colors duration-500"
+          className="-m-3 flex flex-col items-center gap-1 p-3 sm:gap-2 text-white/70 hover:text-white transition-colors duration-500"
         >
           <span className="sm:hidden flex flex-col items-center -space-y-1.5">
             <svg width="18" height="10" viewBox="0 0 24 14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="M4 4l8 7 8-7" /></svg>
@@ -307,7 +311,7 @@ export default function BrandHero({ brand }: { brand: ResolvedBrand }) {
           </span>
           <span className="hidden sm:flex relative w-[20px] h-[32px] rounded-full border-[1.5px] border-current items-start justify-center pt-[6px]">
             <motion.span
-              animate={{ y: [0, 8, 0], opacity: [1, 0.2, 1] }}
+              animate={reduce ? undefined : { y: [0, 8, 0], opacity: [1, 0.2, 1] }}
               transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
               className="block w-[2px] h-[5px] rounded-full bg-current"
             />

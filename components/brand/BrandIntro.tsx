@@ -21,7 +21,8 @@ export default function BrandIntro({ brand }: { brand: ResolvedBrand }) {
         >
           {t(BRAND.intro.about)} {brand.name}
         </div>
-        <p className="text-[32px] md:text-[44px] lg:text-[56px] leading-[1.1] tracking-tightish font-extrabold">
+        {/* break-words: unbreakable copy like "#SensitiveScalpSolution" (T1) is wider than a phone at 32px. */}
+        <p className="text-[32px] md:text-[44px] lg:text-[56px] leading-[1.1] tracking-tightish font-extrabold break-words">
           {brand.description.split(". ").slice(0, 1).join(". ")}.
           {brand.description.split(". ").length > 1 && (
             <span className="block text-ink/40 font-light mt-3">

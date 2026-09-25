@@ -52,11 +52,11 @@ export const GOVERNANCE_PAGE: {
 } = {
   meta: {
     title: {
-      en: "Good Corporate Governance — Akasha Wira International",
-      id: "Tata Kelola Perusahaan yang Baik — Akasha Wira International",
+      en: "Good corporate governance — Akasha Wira International",
+      id: "Tata kelola perusahaan — Akasha Wira International",
     },
     description: {
-      en: "Corporate governance of PT Akasha Wira International Tbk — Articles of Association, Board of Directors & Commissioners Charter, CSR, GMS documents, and information disclosure.",
+      en: "Governance at PT Akasha Wira International Tbk — Articles of Association, board charters, CSR, GMS documents and information disclosure.",
       id: "Tata kelola perusahaan PT Akasha Wira International Tbk — Anggaran Dasar, Charter Direksi & Komisaris, CSR, dokumen RUPS, dan keterbukaan informasi.",
     },
   },
@@ -235,8 +235,8 @@ export const GOVERNANCE_PAGE: {
       id: "Investor Centre",
     },
     heading: {
-      en: "View ADES's financial performance.",
-      id: "Lihat performa keuangan ADES.",
+      en: "View Akasha Wira International financial performance.",
+      id: "Lihat performa keuangan Akasha Wira International.",
     },
     linkText: {
       en: "Go to Investor Centre",

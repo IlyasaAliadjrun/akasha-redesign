@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { getBrand, isUmbrella, pageBrands } from "@/lib/brands";
 import { locales, type Locale } from "@/lib/locale/paths";
 import { resolveBrand } from "@/lib/locale/resolve";
+import { fitDescription, pageMetadata, shareImage } from "@/lib/seo";
+import { BRAND } from "@/dictionaries/brand";
 import BrandPage from "@/components/brand/BrandPage";
 import SubBrandPage from "@/components/brand/SubBrandPage";
 
@@ -19,11 +21,18 @@ export function generateMetadata({
 }): Metadata {
   const brand = getBrand(params.slug);
   if (!brand || isUmbrella(brand)) return {};
-  const resolved = resolveBrand(brand, params.locale as Locale);
-  return {
+  const locale = params.locale as Locale;
+  const resolved = resolveBrand(brand, locale);
+  return pageMetadata({
+    locale,
+    path: `/brands/${brand.slug}`,
     title: `${resolved.name} — Akasha Wira International`,
-    description: resolved.description,
-  };
+    description: fitDescription(
+      resolved.description,
+      BRAND.seo.brandDescription[locale].replace("{brand}", resolved.name),
+    ),
+    image: shareImage(`/media/brands/${brand.slug}/hero/og.jpg`),
+  });
 }
 
 export default function Page({

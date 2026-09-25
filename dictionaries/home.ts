@@ -2,6 +2,16 @@
 // { en, id } pairs consumed via useLocale()'s t() helper.
 
 export const home = {
+  meta: {
+    title: {
+      en: "Akasha Wira International — Great brands, great people",
+      id: "Akasha Wira International — Brand hebat, orang hebat",
+    },
+    description: {
+      en: "PT Akasha Wira International Tbk (IDX: ADES), home of Nestlé Pure Life, Vica, Makarizo, Hair Energy and Wonhae — serving Indonesia since 1985.",
+      id: "PT Akasha Wira International Tbk (IDX: ADES), rumah bagi Nestlé Pure Life, Vica, Makarizo, Hair Energy, dan Wonhae — melayani Indonesia sejak 1985.",
+    },
+  },
   hero: {
     discover: { en: "Discover", id: "Temukan" },
   },

@@ -76,12 +76,12 @@ export default function DivisionCards() {
     <section className="bg-white py-16 sm:py-20 md:py-24 lg:py-32">
       <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 md:mb-12 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
         <div>
-          <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-ink/60 mb-3">
+          <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.2em] font-bold text-ink/60 mb-3">
             {t(home.divisions.eyebrow)}
           </div>
           <h2 className="text-headline font-extrabold tracking-tightish max-w-5xl">
-            <span className="block whitespace-nowrap">{t(home.divisions.heading1)}</span>
-            <span className="block whitespace-nowrap">{t(home.divisions.heading2)}</span>
+            <span className="block sm:whitespace-nowrap">{t(home.divisions.heading1)}</span>
+            <span className="block sm:whitespace-nowrap">{t(home.divisions.heading2)}</span>
           </h2>
         </div>
         <div className="hidden md:flex items-center gap-3 shrink-0">

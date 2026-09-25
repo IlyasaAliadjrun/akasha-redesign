@@ -22,12 +22,12 @@ export const CONTACT_PAGE: {
 } = {
   meta: {
     title: {
-      en: "Contact — Akasha Wira International",
-      id: "Contact — Akasha Wira International",
+      en: "Contact us — Akasha Wira International",
+      id: "Hubungi kami — Akasha Wira International",
     },
     description: {
-      en: "Get in touch with PT Akasha Wira International Tbk — Customer Care, Media, Investor Relations.",
-      id: "Hubungi PT Akasha Wira International Tbk — Customer Care, Media, Investor Relations.",
+      en: "Get in touch with PT Akasha Wira International Tbk — customer care, our Jakarta head office, media and investor relations, and the official online shop.",
+      id: "Hubungi PT Akasha Wira International Tbk — layanan pelanggan, kantor pusat di Jakarta, media dan hubungan investor, serta toko online resmi kami.",
     },
   },
   hero: {

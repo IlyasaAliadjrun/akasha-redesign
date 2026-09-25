@@ -36,8 +36,8 @@ export const CAREERS_PAGE: {
 } = {
   meta: {
     title: {
-      en: "Work With Us — Akasha Wira International",
-      id: "Work With Us — Akasha Wira International",
+      en: "Work with us — Akasha Wira International",
+      id: "Karier — Akasha Wira International",
     },
     description: {
       en: "Join the team building Indonesia's biggest brands. Developing careers, cross-functional work, autonomy, and clear responsibility from day one.",

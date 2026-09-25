@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import {
   GOVERNANCE_PILLARS,
   GCG_PRINCIPLES,
@@ -11,6 +12,7 @@ import {
 } from "@/lib/investor";
 import { GOVERNANCE_PAGE } from "@/content/pages/governance";
 import PageHero from "@/components/page/PageHero";
+import FoldedArchive from "@/components/page/FoldedArchive";
 import { localizeHref, type Locale, type Localized } from "@/lib/locale/paths";
 
 export function generateMetadata({
@@ -19,10 +21,13 @@ export function generateMetadata({
   params: { locale: string };
 }): Metadata {
   const locale = params.locale as Locale;
-  return {
+  return pageMetadata({
+    locale,
+    path: "/governance",
     title: GOVERNANCE_PAGE.meta.title[locale],
     description: GOVERNANCE_PAGE.meta.description[locale],
-  };
+    image: "/media/pages/governance/hero/og.jpg",
+  });
 }
 
 export default function GovernancePage({ params }: { params: { locale: string } }) {
@@ -45,7 +50,7 @@ export default function GovernancePage({ params }: { params: { locale: string } 
       <section className="py-24 lg:py-32 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="mb-14 lg:mb-20 max-w-2xl">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(GOVERNANCE_PAGE.principles.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -73,7 +78,7 @@ export default function GovernancePage({ params }: { params: { locale: string } 
       <section className="py-24 bg-[#FAFAFA]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="mb-14 max-w-2xl">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(GOVERNANCE_PAGE.structure.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -87,7 +92,7 @@ export default function GovernancePage({ params }: { params: { locale: string } 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {GOVERNANCE_PAGE.structure.cards.map((o) => (
               <div key={t(o.title)} className="bg-white rounded-3xl p-8">
-                <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-4">
+                <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-4">
                   {t(o.subtitle)}
                 </div>
                 <div className="text-xl lg:text-2xl font-extrabold tracking-tightish mb-3">
@@ -104,7 +109,7 @@ export default function GovernancePage({ params }: { params: { locale: string } 
       <section className="py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="mb-14 max-w-2xl">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(GOVERNANCE_PAGE.documents.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -154,7 +159,7 @@ export default function GovernancePage({ params }: { params: { locale: string } 
       <section id="gms" className="scroll-mt-24 py-24 bg-[#FAFAFA]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="mb-14 max-w-2xl">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(GOVERNANCE_PAGE.gms.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -163,8 +168,12 @@ export default function GovernancePage({ params }: { params: { locale: string } 
             <p className="mt-4 text-ink/60">{t(GOVERNANCE_PAGE.gms.paragraph)}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {GMS_ARCHIVE.map((m) => (
+          <FoldedArchive
+            items={GMS_ARCHIVE}
+            yearOf={(m) => m.year}
+            locale={locale}
+            gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+            render={(m) => (
               <div key={m.year} className="bg-white rounded-3xl p-7">
                 <div className="flex items-baseline justify-between gap-4 mb-1">
                   <div className="text-3xl font-extrabold tracking-tightish tabular-nums">
@@ -182,7 +191,7 @@ export default function GovernancePage({ params }: { params: { locale: string } 
                       href={d.file}
                       target="_blank"
                       rel="noreferrer"
-                      className="group flex items-center justify-between gap-4 border-b border-ink/5 pb-3 last:border-0 last:pb-0"
+                      className="group -my-3 flex items-center justify-between gap-4 border-b border-ink/5 py-3 last:border-0"
                     >
                       <span className="text-sm text-ink/70 transition-colors group-hover:text-ink">
                         {t(d.label)}
@@ -194,8 +203,8 @@ export default function GovernancePage({ params }: { params: { locale: string } 
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
+            )}
+          />
         </div>
       </section>
 
@@ -203,7 +212,7 @@ export default function GovernancePage({ params }: { params: { locale: string } 
       <section id="disclosure" className="scroll-mt-24 py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="mb-14 max-w-2xl">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(GOVERNANCE_PAGE.disclosure.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -240,7 +249,7 @@ export default function GovernancePage({ params }: { params: { locale: string } 
       <section id="announcement" className="scroll-mt-24 py-24 bg-[#FAFAFA]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="mb-14 max-w-2xl">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(GOVERNANCE_PAGE.announcement.eyebrow)}
             </div>
             <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -281,7 +290,7 @@ export default function GovernancePage({ params }: { params: { locale: string } 
         className="scroll-mt-24 py-24 bg-accent-wellness text-white"
       >
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/80 mb-5">
+          <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.3em] font-bold text-white/80 mb-5">
             {t(GOVERNANCE_PAGE.csr.eyebrow)}
           </div>
           <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">
@@ -292,7 +301,7 @@ export default function GovernancePage({ params }: { params: { locale: string } 
           </p>
 
           <div className="mt-12">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-white/60 mb-5">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-white/60 mb-5">
               {t(GOVERNANCE_PAGE.csr.reportsLabel)}
             </div>
             <div className="flex flex-wrap justify-center gap-3">
@@ -328,7 +337,7 @@ export default function GovernancePage({ params }: { params: { locale: string } 
       {/* INVESTOR CTA */}
       <section className="py-24 bg-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/60 mb-4">
+          <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-ink/60 mb-4">
             {t(GOVERNANCE_PAGE.investorCta.eyebrow)}
           </div>
           <h2 className="text-headline font-extrabold tracking-tightish leading-[1.05]">

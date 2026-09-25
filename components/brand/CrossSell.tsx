@@ -48,7 +48,7 @@ export default function CrossSell({ current }: { current: { slug: string } }) {
   return (
     <section className="bg-[#FAFAFA] py-24">
       <div className="max-w-content mx-auto px-6 lg:px-10">
-        <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-ink/60 mb-3">
+        <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-ink/60 mb-3">
           {t(BRAND.crossSell.eyebrow)}
         </div>
         <h2 className="text-headline font-extrabold tracking-tightish mb-12">

@@ -110,7 +110,7 @@ export default function PageHero({
           animate={reduce ? undefined : { y: [0, 6, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
           aria-label={t(BRAND.common.scrollDown)}
-          className={`flex flex-col items-center gap-1 sm:gap-2 transition-colors duration-500 ${chevronColor}`}
+          className={`-m-3 flex flex-col items-center gap-1 p-3 sm:gap-2 transition-colors duration-500 ${chevronColor}`}
         >
           <span className="sm:hidden flex flex-col items-center -space-y-1.5">
             <svg width="18" height="10" viewBox="0 0 24 14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="M4 4l8 7 8-7" /></svg>

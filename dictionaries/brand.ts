@@ -12,6 +12,23 @@ export const BRAND = {
     next: { en: "Next", id: "Berikutnya" },
     learnMore: { en: "Learn more", id: "Pelajari lebih lanjut" },
     buy: { en: "Buy", id: "Beli" },
+    // "{range}" → "2012–2023"
+    archiveShow: { en: "Show archive {range}", id: "Lihat arsip {range}" },
+    archiveHide: { en: "Hide archive", id: "Sembunyikan arsip" },
+  },
+  seo: {
+    // Tops up a brand's meta description when its own copy is very short.
+    brandDescription: {
+      en: "{brand} by PT Akasha Wira International Tbk.",
+      id: "{brand} oleh PT Akasha Wira International Tbk.",
+    },
+    // Appended to a product line's tagline so its meta description says what the
+    // page is. "{brand}" is the parent brand's name. Kept short so it still fits
+    // within 160 characters after a long tagline.
+    lineDescription: {
+      en: "A {brand} line by PT Akasha Wira International Tbk.",
+      id: "Lini {brand} dari PT Akasha Wira International Tbk.",
+    },
   },
   intro: {
     // "About " + brand.name -> "About Nestlé" / "Tentang Nestlé"
@@ -44,9 +61,5 @@ export const BRAND = {
   subBrandShowcase: {
     titleImage: { en: "Showcase title image", id: "Gambar title showcase" },
     image: { en: "Image", id: "Gambar" },
-  },
-  investor: {
-    netSales: { en: "Net Sales", id: "Penjualan Bersih" },
-    netIncome: { en: "Net Income", id: "Laba Bersih" },
   },
 };

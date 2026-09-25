@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import PageHero from "@/components/page/PageHero";
 import { localizeHref, type Locale, type Localized } from "@/lib/locale/paths";
 import { CONTACT_PAGE } from "@/content/pages/contact";
@@ -10,10 +11,13 @@ export function generateMetadata({
   params: { locale: string };
 }): Metadata {
   const locale = params.locale as Locale;
-  return {
+  return pageMetadata({
+    locale,
+    path: "/contact",
     title: CONTACT_PAGE.meta.title[locale],
     description: CONTACT_PAGE.meta.description[locale],
-  };
+    image: "/media/pages/contact/hero/og.jpg",
+  });
 }
 
 export default function ContactPage({ params }: { params: { locale: string } }) {
@@ -55,7 +59,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
               </div>
               <a
                 href="mailto:info@akashainternational.com"
-                className="text-lg font-semibold break-words"
+                className="-my-2.5 inline-block py-2.5 text-lg font-semibold break-words"
               >
                 info@akashainternational.com
               </a>
@@ -84,7 +88,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                 href="https://shop.akasha.co.id"
                 target="_blank"
                 rel="noreferrer"
-                className="text-lg font-semibold"
+                className="-my-2.5 inline-block py-2.5 text-lg font-semibold"
               >
                 shop.akasha.co.id →
               </a>
@@ -98,7 +102,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       <section className="py-24 bg-[#FAFAFA]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="max-w-2xl">
-            <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
+            <div className="text-[11px] lg:text-[10px] uppercase tracking-[0.25em] font-bold text-accent-beverage mb-3">
               {t(CONTACT_PAGE.investorRelations.label)}
             </div>
             <p className="text-xl md:text-2xl leading-[1.35] font-medium text-ink/75">
