@@ -58,6 +58,18 @@
 	}
 }
 
+# ── Go-live on the main domain: www → apex ────────────────────────────────────
+# Uncomment at cutover, once SITE_DOMAIN is akashainternational.com and the www
+# record points at this server (deploy/SETUP.md "Pindah domain"). The old
+# WordPress site answers on the apex too, so keep one canonical host. Left off
+# while SITE_DOMAIN is the staging subdomain — it would request a certificate
+# for www.staging…, which has no DNS record.
+#
+# www.{$SITE_DOMAIN} {
+# 	import security_headers
+# 	redir https://{$SITE_DOMAIN}{uri} permanent
+# }
+
 # ── Backend phase: public read access to object storage ──────────────────────
 # Uncomment when public/media and public/documents move to SeaweedFS and
 # ASSETS_DOMAIN is set in caddy.env. Only GET/HEAD reach SeaweedFS; writes stay

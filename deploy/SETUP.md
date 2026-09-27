@@ -89,6 +89,68 @@ Cukup untuk situs saat ini. **Untuk fase backend, rencanakan naik ke 8 GB**: pan
 
 ---
 
+## Jalur cepat — go-live tanpa backend
+
+Untuk menayangkan situs secepatnya. **PostgreSQL, pgBackRest, dan SeaweedFS dilewati** — situs belum memakainya; pasang nanti di fase backend (§4–§6). Urutannya: **A. setup server → B. staging → C. pindah domain.**
+
+### Fakta DNS saat ini (dicek 26 Sep 2026)
+
+| Hal | Nilai |
+|---|---|
+| Nameserver publik | **Cloudflare** (`fred.ns.cloudflare.com`, `nicole.ns.cloudflare.com`) — ubah record di dashboard Cloudflare |
+| `akashainternational.com` dan `www` | A → `103.164.219.185` (WordPress), **TTL 300**, *DNS only* (awan abu-abu) |
+| DNS internal kantor | `awihp.akasha.co.id` menjawab domain yang sama dengan IP internal `10.101.3.84` (*split DNS*) |
+| `staging.akashainternational.com` | belum ada |
+
+**Split DNS:** komputer di jaringan kantor bertanya ke DNS internal, bukan Cloudflare. Setiap record yang dibuat/diubah di Cloudflare **harus juga dibuat/diubah di DNS internal** (ke IP internal server baru), kalau tidak, orang kantor tetap melihat situs lama — atau tidak bisa membuka staging sama sekali.
+
+### A. Setup server (±setengah hari)
+
+| Langkah | Bagian runbook |
+|---|---|
+| Dasar OS: paket, user `akasha`, SSH hanya kunci, firewall, update otomatis, swap, batas log | §2.1–§2.7 |
+| Lewati bind mount PostgreSQL | ~~§2.8~~ |
+| Ambil repo — **pakai deploy key (SSH) walau repo masih publik**, supaya deploy tidak putus saat repo dijadikan privat | §2.9 (bagian "repo privat") |
+| Node.js 24 | §3 |
+| Lewati PostgreSQL, backup, SeaweedFS | ~~§4–§6~~ |
+| Caddy — `caddy.env`: `SITE_DOMAIN=staging.akashainternational.com`, `ACME_EMAIL=` email IT | §7 |
+| `web.env` — biarkan `NEXT_PUBLIC_SITE_URL=https://akashainternational.com` dan **`SITE_INDEXABLE=false`** | §8.1 |
+| Izin restart + layanan, lalu deploy pertama | §8.2–§8.3 |
+
+`NEXT_PUBLIC_SITE_URL` sengaja tetap domain utama walau server masih di staging: canonical dan sitemap harus menunjuk alamat final, dan `SITE_INDEXABLE=false` menjaga staging keluar dari Google.
+
+### B. Staging
+
+1. Cloudflare → DNS → **Add record**: `A`, name `staging`, IPv4 = IP publik server, **Proxy status: DNS only**, TTL Auto.
+2. DNS internal kantor: record `staging` → IP internal server.
+3. `dig +short staging.akashainternational.com` (dari luar kantor) harus mengembalikan IP server, lalu jalankan Caddy (§9 langkah 3).
+4. Uji: checklist §11 (lewati butir backup), plus:
+   ```bash
+   curl -sI https://staging.akashainternational.com/robots.txt   # isinya harus "Disallow: /"
+   curl -sI https://staging.akashainternational.com/our-profile  # 308 → /en/about (redirect URL lama)
+   ```
+
+### C. Pindah domain (pagi hari, trafik rendah)
+
+1. `sudo nano /etc/akasha/web.env` → `SITE_INDEXABLE=true`, lalu deploy ulang (`deploy.sh`) — build baru membaca nilai ini.
+2. `sudo nano /etc/caddy/caddy.env` → `SITE_DOMAIN=akashainternational.com`. Di `/etc/caddy/Caddyfile`, **aktifkan blok `www.{$SITE_DOMAIN}`** (redirect `www` → domain utama).
+3. Cloudflare: ubah record **`akashainternational.com`** dan **`www`** ke IP publik server baru (tetap *DNS only*). DNS internal kantor: ubah keduanya ke IP internal server baru.
+4. Tunggu ±5 menit (TTL 300), lalu:
+   ```bash
+   sudo caddy validate --config /etc/caddy/Caddyfile --envfile /etc/caddy/caddy.env
+   sudo systemctl restart caddy
+   curl -sI https://akashainternational.com/en                 # 200
+   curl -sI https://www.akashainternational.com/               # 301 → https://akashainternational.com/
+   curl -sI https://akashainternational.com/financial-report/  # 308 → /en/investor#financial-report
+   curl -s  https://akashainternational.com/robots.txt         # Allow + Sitemap
+   ```
+5. Google Search Console (properti `akashainternational.com`): **Sitemaps** → kirim `https://akashainternational.com/sitemap.xml`; **URL Inspection** → *Request indexing* untuk `/en`, `/id`, `/en/about`, `/en/investor`.
+6. **Server WordPress jangan dimatikan** beberapa minggu. Jalur kembali: kembalikan kedua record A di Cloudflare ke `103.164.219.185` — efektif dalam ±5 menit.
+
+Redirect URL lama (35 halaman + 196 dokumen `/wp-content/uploads/…`) ada di `lib/legacy-redirects.json` dan dipasang lewat `next.config.mjs`. Dua halaman lama tanpa padanan dibiarkan 404: `/terms-and-condition/` dan `/term-and-condition-pedro-store/`.
+
+---
+
 ## 2. Dasar OS
 
 ### 2.1 Pembaruan & paket dasar

@@ -42,10 +42,25 @@ function ogImages() {
     .filter((p) => p.endsWith("/hero/og.jpg"));
 }
 
+// Old WordPress URLs (pages and /wp-content/uploads documents) that search
+// engines and other sites still link to. Permanent redirects carry their ranking
+// over to the new pages once this site replaces WordPress on the same domain.
+function legacyRedirects() {
+  const { pages, documents } = JSON.parse(fs.readFileSync("lib/legacy-redirects.json", "utf8"));
+  return Object.entries({ ...pages, ...documents }).map(([source, destination]) => ({
+    source,
+    destination,
+    permanent: true,
+  }));
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   distDir,
   env: { OG_IMAGES: JSON.stringify(ogImages()) },
+  async redirects() {
+    return legacyRedirects();
+  },
   // Self-hosted deploys run `.next/standalone/server.js` (see deploy/SETUP.md).
   // Vercel ignores this and keeps using its own output.
   output: "standalone",
