@@ -99,7 +99,7 @@ Untuk menayangkan situs secepatnya. **PostgreSQL, pgBackRest, dan SeaweedFS dile
 |---|---|
 | Nameserver publik | **Cloudflare** (`fred.ns.cloudflare.com`, `nicole.ns.cloudflare.com`) — ubah record di dashboard Cloudflare |
 | `akashainternational.com` dan `www` | A → `103.164.219.185` (WordPress), **TTL 300**, *DNS only* (awan abu-abu) |
-| DNS internal kantor | `awihp.akasha.co.id` menjawab domain yang sama dengan IP internal `10.101.3.84` (*split DNS*) |
+| DNS internal kantor | server DNS kantor menjawab domain yang sama dengan IP internal (*split DNS*) — detailnya di catatan IT, bukan di repo |
 | `staging.akashainternational.com` | belum ada |
 
 **Split DNS:** komputer di jaringan kantor bertanya ke DNS internal, bukan Cloudflare. Setiap record yang dibuat/diubah di Cloudflare **harus juga dibuat/diubah di DNS internal** (ke IP internal server baru), kalau tidak, orang kantor tetap melihat situs lama — atau tidak bisa membuka staging sama sekali.
@@ -206,7 +206,11 @@ sudo dpkg-reconfigure -plow unattended-upgrades    # pilih "Yes"
 
 Menampung puncak memori saat build, supaya build tidak memicu OOM yang mematikan layanan lain.
 
+**Cek dulu `swapon --show`.** Installer Ubuntu biasanya sudah membuat `/swap.img` — kalau ukurannya sudah ±4G, lewati pembuatan swapfile dan jalankan dua baris `vm.swappiness` di bawah saja. Dua swap sekaligus hanya memboroskan partisi `/` yang 30 GB.
+
 ```bash
+swapon --show
+# hanya kalau belum ada swap ±4G:
 sudo fallocate -l 4G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile && sudo swapon /swapfile
@@ -238,23 +242,25 @@ findmnt /var/lib/postgresql      # harus menunjukkan sumber /home/data/postgresq
 
 ### 2.9 Ambil repo (berkas konfigurasi + kode)
 
-**Repo publik** — cukup clone lewat HTTPS (lompati bagian deploy key).
+**Pakai deploy key walau repo masih publik** — repo ini akan dijadikan privat; clone lewat SSH dari awal berarti deploy tidak putus saat itu terjadi. Buat deploy key khusus server (hanya baca):
 
-**Repo privat** — buat deploy key khusus server (hanya baca):
+`sudo -u` (bukan `sudo -iu`) di sini disengaja: `-i` melewatkan perintah lewat shell login, dan argumen kosong `-N ''` hilang di jalan — `ssh-keygen` lalu gagal dengan "Too many arguments".
 
 ```bash
-sudo -iu akasha ssh-keygen -t ed25519 -N "" -f /home/akasha/.ssh/github_deploy -C "akasha-server"
-sudo -iu akasha cat /home/akasha/.ssh/github_deploy.pub
+sudo -u akasha mkdir -p -m 700 /home/akasha/.ssh
+sudo -u akasha ssh-keygen -t ed25519 -N '' -f /home/akasha/.ssh/github_deploy -C "akasha-server"
+sudo cat /home/akasha/.ssh/github_deploy.pub
 ```
 
 Tempel kunci publik itu di GitHub → repo → *Settings → Deploy keys → Add deploy key* (**tanpa** centang *Allow write access*). Lalu:
 
 ```bash
-sudo -iu akasha tee /home/akasha/.ssh/config >/dev/null <<'EOF'
+sudo -u akasha tee /home/akasha/.ssh/config >/dev/null <<'EOF'
 Host github.com
   IdentityFile ~/.ssh/github_deploy
   IdentitiesOnly yes
 EOF
+sudo chmod 600 /home/akasha/.ssh/config
 sudo -iu akasha ssh -T git@github.com     # jawab "yes"; harus muncul "successfully authenticated"
 ```
 
